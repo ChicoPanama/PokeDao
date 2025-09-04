@@ -1,0 +1,16 @@
+{
+  "name": "pokedao",
+  "private": true,
+  "version": "0.0.0",
+  "description": "PokeDAO monorepo",
+  "workspaces": [
+    "api",
+    "bot",
+    "worker",
+    "ml"
+  ],
+  "scripts": {
+    "build": "echo \"(root) nothing to build\"",
+    "dev": "echo \"run package-level dev scripts\""
+  }
+}
