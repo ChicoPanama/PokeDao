@@ -1,0 +1,20 @@
+# Node
+node_modules/
+dist/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env
+.env
+.env.local
+
+# Mac
+.DS_Store
+
+# Docker
+*.pid
