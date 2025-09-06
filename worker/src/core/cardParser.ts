@@ -1,63 +1,63 @@
 import { CardData } from '../types/interfaces.js';
 
 export class CardParser {
-  static parseCardName(cardName: string): CardData {
-    const name = cardName.toLowerCase();
-    
-    // Extract Pokemon name
-    const pokemonNames = [
-      'charizard', 'blastoise', 'venusaur', 'pikachu', 'raichu',
-      'alakazam', 'machamp', 'gengar', 'chansey', 'mewtwo', 
-      'mew', 'lugia', 'ho-oh', 'pidgeot', 'arcanine'
-    ];
-    
-    let pokemon = 'Unknown';
-    for (const p of pokemonNames) {
-      if (name.includes(p)) {
-        pokemon = p.charAt(0).toUpperCase() + p.slice(1);
-        break;
-      }
-    }
-    
-    // Extract set
-    let set = 'Unknown';
-    if (name.includes('base set')) set = 'Base Set';
-    else if (name.includes('jungle')) set = 'Jungle';
-    else if (name.includes('fossil')) set = 'Fossil';
-    else if (name.includes('aquapolis')) set = 'Aquapolis';
-    else if (name.includes('expedition')) set = 'Expedition';
-    else if (name.includes('paldea')) set = 'Paldea Evolved';
-    
-    // Extract number
-    const numberMatch = name.match(/#(\d+)/);
-    const number = numberMatch ? numberMatch[1] : undefined;
-    
-    // Extract grade
-    const gradeMatch = name.match(/(psa|bgs|cgc)\s*(\d+(?:\.\d+)?)/);
-    const grade = gradeMatch ? `${gradeMatch[1].toUpperCase()} ${gradeMatch[2]}` : undefined;
-    
-    // Extract condition
-    let condition = 'Unknown';
-    if (name.includes('mint')) condition = 'Mint';
-    else if (name.includes('near mint')) condition = 'Near Mint';
-    else if (grade) condition = 'Graded';
-    
-    // Language
-    const language = name.includes('japanese') ? 'Japanese' : 'English';
-    
-    // Special attributes
-    const isFirstEdition = name.includes('1st edition');
-    const isHolo = name.includes('holo');
-    
-    return {
-      name: pokemon,
-      set,
-      number,
-      grade,
-      condition,
-      language,
-      isFirstEdition,
-      isHolo
+  parseCardName(cardName: string): CardData {
+    const parsed: CardData = {
+      name: 'Unknown',
+      set: 'Unknown',
+      number: undefined,
+      grade: undefined,
+      grader: undefined,
+      language: 'English',
+      isHolo: false,
+      isFirstEdition: false,
+      isShadowless: false
     };
+
+    // Extract card name (usually the Pokemon name)
+    const nameMatch = cardName.match(/(?:^|\s)([\w\s]+?)(?:\s+(?:Base|Team|Neo|Gym|Expedition|Aquapolis)|\s+#|\s+CGC|\s+PSA|\s+BGS|$)/i);
+    if (nameMatch) {
+      parsed.name = nameMatch[1].trim();
+    }
+
+    // Extract set information
+    if (cardName.toLowerCase().includes('base set')) {
+      parsed.set = 'Base Set';
+    } else if (cardName.toLowerCase().includes('team rocket')) {
+      parsed.set = 'Team Rocket';
+    } else if (cardName.toLowerCase().includes('jungle')) {
+      parsed.set = 'Jungle';
+    } else if (cardName.toLowerCase().includes('fossil')) {
+      parsed.set = 'Fossil';
+    } else if (cardName.toLowerCase().includes('neo')) {
+      parsed.set = 'Neo Genesis';
+    } else if (cardName.toLowerCase().includes('gym')) {
+      parsed.set = 'Gym Heroes';
+    }
+
+    // Extract card number
+    const numberMatch = cardName.match(/#(\d+)/);
+    if (numberMatch) {
+      parsed.number = numberMatch[1];
+    }
+
+    // Extract grade and grader
+    const gradeMatch = cardName.match(/(CGC|PSA|BGS)\s+(\d+(?:\.\d+)?)/i);
+    if (gradeMatch) {
+      parsed.grader = gradeMatch[1].toUpperCase();
+      parsed.grade = `${parsed.grader} ${gradeMatch[2]}`;
+    }
+
+    // Check for language
+    if (cardName.toLowerCase().includes('japanese')) {
+      parsed.language = 'Japanese';
+    }
+
+    // Check for special attributes
+    parsed.isHolo = cardName.toLowerCase().includes('holo');
+    parsed.isFirstEdition = cardName.toLowerCase().includes('1st edition');
+    parsed.isShadowless = cardName.toLowerCase().includes('shadowless');
+
+    return parsed;
   }
 }

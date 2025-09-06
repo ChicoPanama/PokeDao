@@ -1,10 +1,13 @@
-nano src/types/interfaces.tsexport interface APIConfig {
+export interface CardData {
   name: string;
-  baseURL: string;
-  apiKey?: string;
-  rateLimit: number; // requests per minute
-  timeout: number;
-  retryAttempts: number;
+  set: string;
+  number?: string;
+  grade?: string;
+  grader?: string;
+  language: string;
+  isHolo: boolean;
+  isFirstEdition: boolean;
+  isShadowless: boolean;
 }
 
 export interface PriceSource {
@@ -13,39 +16,23 @@ export interface PriceSource {
   confidence: number;
   timestamp: Date;
   grade?: string;
-  condition?: string;
 }
 
-export interface CardData {
-  name: string;
-  set: string;
-  number?: string;
-  grade?: string;
-  condition: string;
-  language: 'English' | 'Japanese';
-  isFirstEdition?: boolean;
-  isHolo?: boolean;
+export interface LowestPrice {
+  price: number;
+  source: string;
+  link: string;
 }
 
-export interface CardAnalysis {
-  card: CardData;
-  pricing: {
-    listedPrice: number;
-    marketValue: number;
-    confidence: number;
-    sources: PriceSource[];
-    gradedPremium?: number;
-  };
-  assessment: 'UNDERVALUED' | 'FAIRLY_VALUED' | 'OVERVALUED';
-  recommendation: 'STRONG_BUY' | 'BUY' | 'HOLD' | 'PASS' | 'AVOID';
+export interface MarketTrend {
+  direction: 'up' | 'down' | 'stable';
+  strength: number;
+  timeframe: string;
+}
+
+export interface InvestmentRecommendation {
+  action: 'BUY' | 'HOLD' | 'SELL' | 'PASS';
+  confidence: number;
   reasoning: string;
-  trend: 'RISING' | 'STABLE' | 'DECLINING';
-  investmentThesis: string;
-  lastTwoSales: { price: number; date: string; platform: string }[];
-}
-
-export interface SearchStrategy {
-  primary: string;
-  fallbacks: string[];
-  fuzzy?: string[];
+  targetPrice?: number;
 }

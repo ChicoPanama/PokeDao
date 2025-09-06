@@ -1,19 +1,20 @@
 {
-  "name": "@pokedao/worker",
+  "name": "@pokedao/worker", 
   "version": "0.0.0",
   "type": "module",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "dev": "tsx watch src/index.ts",
-    "test": "vitest"
+    "dev": "tsx watch src/index.ts", 
+    "test": "vitest",
+    "analyze": "tsx src/test-ai-system.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.6.0",
     "axios": "^1.6.0",
-    "bullmq": "^4.15.4",
+    "bullmq": "^4.15.4", 
     "cheerio": "^1.0.0-rc.12",
-    "dotenv": "^16.6.1",
+    "dotenv": "^16.3.1",
     "openai": "^5.19.1",
     "pino": "^8.16.2",
     "playwright": "^1.40.0",
@@ -21,7 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.9.0",
-    "tsx": "^4.19.2",
+    "tsx": "^4.19.2", 
     "typescript": "^5.6.3",
     "vitest": "^0.34.6"
   }
