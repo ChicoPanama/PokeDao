@@ -16,7 +16,7 @@ async function inspectCards() {
     
     // Extract actual card elements and their structure
     const cardData = await page.evaluate(() => {
-      // Look for common card container patterns
+      // @ts-ignore: document is available in browser context
       const possibleSelectors = [
         'div[class*="card"]',
         'div[class*="item"]', 
@@ -24,9 +24,10 @@ async function inspectCards() {
         'a[href*="assets/solana"]'
       ]
       
-      let foundElements = []
+      let foundElements: any[] = []
       
       for (const selector of possibleSelectors) {
+        // @ts-ignore: document is available in browser context
         const elements = document.querySelectorAll(selector)
         if (elements.length > 0) {
           foundElements.push({

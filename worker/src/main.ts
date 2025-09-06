@@ -46,12 +46,12 @@ async function main() {
       console.log(`Assessment: ${analysis.assessment}`);
       
       console.log(`\nPrice Sources (${analysis.pricing.sources.length}):`);
-      analysis.pricing.sources.forEach((source, idx) => {
+      analysis.pricing.sources.forEach((source: any, idx: number) => {
         console.log(`  ${idx+1}. ${source.source}: $${source.price.toLocaleString()} (${(source.confidence * 100).toFixed(0)}% confidence)`);
       });
       
       console.log(`\nLast Two Sales:`);
-      analysis.lastTwoSales.forEach((sale, idx) => {
+      analysis.lastTwoSales.forEach((sale: any, idx: number) => {
         console.log(`  ${idx+1}. $${sale.price.toLocaleString()} on ${sale.date} (${sale.platform})`);
       });
       
@@ -71,7 +71,12 @@ async function main() {
       await new Promise(resolve => setTimeout(resolve, 3000));
       
     } catch (error) {
-      console.error(`Error analyzing ${card.name}:`, error.message);
+      if (typeof error === 'object' && error !== null && 'message' in error) {
+        // @ts-ignore
+        console.error(`Error analyzing ${card.name}:`, error.message);
+      } else {
+        console.error(`Error analyzing ${card.name}:`, error);
+      }
     }
   }
   

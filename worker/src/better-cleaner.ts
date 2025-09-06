@@ -7,7 +7,7 @@ class BetterDataCleaner {
       console.log("Getting broader sample of realistic cards...")
       
       // Get multiple pages to see better price distribution
-      let allCards = []
+  let allCards: any[] = []
       
       for (let page = 1; page <= 10; page++) {
         const response = await axios.get("https://api.collectorcrypt.com/marketplace", {
@@ -20,15 +20,15 @@ class BetterDataCleaner {
           headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" }
         })
         
-        const pageCards = response.data.filterNFtCard || []
-        allCards = allCards.concat(pageCards)
-        console.log(`Page ${page}: ${pageCards.length} cards`)
+  const pageCards: any[] = response.data.filterNFtCard || []
+  allCards = allCards.concat(pageCards)
+  console.log(`Page ${page}: ${pageCards.length} cards`)
       }
       
       console.log(`Total sample: ${allCards.length} cards`)
       
       // More realistic filtering
-      const realisticCards = allCards.filter(card => {
+      const realisticCards = allCards.filter((card: any) => {
         const listing = card.listing || {}
         const price = listing.price || 0
         const currency = listing.currency || "USDC"

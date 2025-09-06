@@ -1,4 +1,9 @@
-import { type SourceData } from "./multi-source-collector.js"
+
+// Stub for SourceData type (original import missing)
+type SourceData = {
+  price: number | null;
+  source: string;
+};
 
 interface FairValueResult {
   collectorCryptPrice: number

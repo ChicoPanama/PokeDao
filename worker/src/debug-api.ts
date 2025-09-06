@@ -40,7 +40,12 @@ async function debugAPIResponse() {
     console.log(JSON.stringify(response.data, null, 2).substring(0, 1000))
     
   } catch (error) {
-    console.error("API Error:", error.response?.status, error.message)
+    if (typeof error === 'object' && error !== null && 'response' in error && 'message' in error) {
+      // @ts-ignore
+      console.error("API Error:", error.response?.status, error.message)
+    } else {
+      console.error("API Error:", error)
+    }
   }
 }
 

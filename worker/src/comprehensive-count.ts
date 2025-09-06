@@ -35,16 +35,19 @@ async function comprehensiveCardCount() {
         
         // Multiple scroll strategies
         await page.evaluate(() => {
+          // @ts-ignore: window/document are available in browser context
           window.scrollTo(0, document.body.scrollHeight)
         })
         await page.waitForTimeout(2000)
         
         await page.evaluate(() => {
+          // @ts-ignore: window is available in browser context
           window.scrollBy(0, 1000)
         })
         await page.waitForTimeout(1000)
         
         currentCount = await page.evaluate(() => {
+          // @ts-ignore: document is available in browser context
           return document.querySelectorAll("a.link-card").length
         })
         
@@ -55,10 +58,12 @@ async function comprehensiveCardCount() {
       
       // Sample price range for this sort
       const priceRange = await page.evaluate(() => {
+        // @ts-ignore: document is available in browser context
         const cards = document.querySelectorAll("a.link-card")
-        const prices = []
+        const prices: number[] = []
         
-        Array.from(cards).slice(0, 10).forEach(card => {
+        Array.from(cards).slice(0, 10).forEach((card: any) => {
+          // @ts-ignore: card is HTMLElement
           const priceEl = card.querySelector(".card__details__insurance-value__insurance")
           const price = parseFloat(priceEl?.textContent?.trim() || "0")
           if (price > 0) prices.push(price)

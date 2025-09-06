@@ -14,17 +14,20 @@ async function extractActualPrices() {
     
     // Extract cards with their price structure
     const cardsWithPrices = await page.evaluate(() => {
+      // @ts-ignore: document is available in browser context
       const cardLinks = document.querySelectorAll("a.link-card")
-      const results = []
+      const results: any[] = []
       
-      Array.from(cardLinks).slice(0, 10).forEach((card, index) => {
+      Array.from(cardLinks).slice(0, 10).forEach((card: any, index: number) => {
+        // @ts-ignore: card is HTMLElement
         const cardDiv = card.querySelector(".card")
         
         // Look for numeric text that could be prices
+        // @ts-ignore: cardDiv is HTMLElement
         const allElements = cardDiv?.querySelectorAll("*") || []
-        const priceElements = []
+        const priceElements: any[] = []
         
-        allElements.forEach(el => {
+        allElements.forEach((el: any) => {
           const text = el.textContent?.trim() || ""
           // Look for standalone numbers that could be prices
           if (text.match(/^\d{1,4}$/) && parseInt(text) > 0) {

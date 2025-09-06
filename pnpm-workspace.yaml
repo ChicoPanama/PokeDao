@@ -1,6 +1,13 @@
 packages:
-  - "api"
-  - "bot"
-  - "worker"
-  - "ml"
-  - "prisma"
+  - api
+  - bot
+  - worker
+  - ml
+  - prisma
+
+onlyBuiltDependencies:
+  - '@prisma/client'
+  - '@prisma/engines'
+  - esbuild
+  - msgpackr-extract
+  - prisma

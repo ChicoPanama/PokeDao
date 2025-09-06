@@ -14,15 +14,17 @@ async function broadPriceSearch() {
     
     // Search for any text containing SOL or USDC anywhere on page
     const allPriceText = await page.evaluate(() => {
-      const bodyText = document.body.innerText
+  // @ts-ignore: document is available in browser context
+  const bodyText = document.body.innerText
       const solMatches = bodyText.match(/\d+\.?\d*\s*SOL/gi) || []
       const usdcMatches = bodyText.match(/\d+\.?\d*\s*USDC/gi) || []
       
       // Also look for elements with these patterns
-      const allElements = document.querySelectorAll("*")
-      const priceElements = []
+  // @ts-ignore: document is available in browser context
+  const allElements = document.querySelectorAll("*")
+      const priceElements: any[] = []
       
-      allElements.forEach(el => {
+      allElements.forEach((el: any) => {
         const text = el.textContent?.trim() || ""
         if (text.match(/^\d+\.?\d*\s*(SOL|USDC)$/i)) {
           priceElements.push({

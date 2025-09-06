@@ -19,10 +19,11 @@ async function inspectSite() {
     
     // Look for any links to marketplace or cards
     const links = await page.evaluate(() => {
+      // @ts-ignore: document is available in browser context
       const allLinks = Array.from(document.querySelectorAll('a'))
       return allLinks
-        .map(link => ({ text: link.textContent?.trim(), href: link.href }))
-        .filter(link => link.text && (
+        .map((link: any) => ({ text: link.textContent?.trim(), href: link.href }))
+        .filter((link: any) => link.text && (
           link.text.toLowerCase().includes('market') ||
           link.text.toLowerCase().includes('card') ||
           link.text.toLowerCase().includes('shop') ||

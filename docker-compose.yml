@@ -1,42 +1,49 @@
 services:
-  # PokeDAO Telegram Bot
-  bot:
-    build: ./bot
-    container_name: pokedao-bot
-    environment:
-      - NODE_ENV=development
-      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/pokedao
-      - REDIS_URL=redis://redis:6379
-    depends_on:
-      - db
-      - redis
-    volumes:
-      # Mount source code for hot reload during development
-      - ./bot/src:/app/src
-    restart: unless-stopped
-
-  # Database
   db:
-    image: postgres:17-alpine
+    image: postgres:16
     container_name: pokedao-db
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: pokedao
-    ports: 
-      - "5432:5432"
-    volumes: 
-      - dbdata:/var/lib/postgresql/data
     restart: unless-stopped
+    environment:
+      POSTGRES_USER: pokedao
+      POSTGRES_PASSWORD: pokedao
+      POSTGRES_DB: pokedao
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pokedao -d pokedao"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
 
-  # Redis for caching/queues
   redis:
     image: redis:7-alpine
     container_name: pokedao-redis
-    ports: 
-      - "6379:6379"
     restart: unless-stopped
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
 
-volumes:
-  dbdata:
+  api:
+    image: node:20-bullseye
+    container_name: pokedao-api
+    working_dir: /app
+    # Debian path: install openssl, enable pnpm, install, generate Prisma, run dev
+    command: bash -lc "apt-get update && apt-get install -y openssl && corepack enable && pnpm i && pnpm -w exec prisma generate && PORT=3000 pnpm -F api dev"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DATABASE_URL: "postgresql://pokedao:pokedao@db:5432/pokedao"
+      REDIS_URL: "redis://redis:6379"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy

@@ -17,6 +17,7 @@ async function investigatePrices() {
     
     // Look for price-related elements
     const priceInfo = await page.evaluate(() => {
+      // @ts-ignore: document is available in browser context
       const possiblePriceSelectors = [
         "[class*=\"price\"]",
         "[class*=\"cost\"]", 
@@ -29,16 +30,17 @@ async function investigatePrices() {
         "button[class*=\"purchase\"]"
       ]
       
-      let foundElements = []
+      let foundElements: any[] = []
       
       for (const selector of possiblePriceSelectors) {
         try {
+          // @ts-ignore: document is available in browser context
           const elements = document.querySelectorAll(selector)
           if (elements.length > 0) {
             foundElements.push({
               selector,
               count: elements.length,
-              samples: Array.from(elements).slice(0, 3).map(el => ({
+              samples: Array.from(elements).slice(0, 3).map((el: any) => ({
                 text: el.textContent?.trim(),
                 html: el.outerHTML.substring(0, 150)
               }))
@@ -48,6 +50,7 @@ async function investigatePrices() {
       }
       
       // Also check all text for SOL or $ patterns
+      // @ts-ignore: document is available in browser context
       const bodyText = document.body.innerText
       const solMatches = bodyText.match(/\d+\.?\d*\s*SOL/gi) || []
       const dollarMatches = bodyText.match(/\$\d+\.?\d*/gi) || []
@@ -56,6 +59,7 @@ async function investigatePrices() {
         elements: foundElements,
         solPrices: solMatches.slice(0, 5),
         dollarPrices: dollarMatches.slice(0, 5),
+        // @ts-ignore: document is available in browser context
         title: document.title
       }
     })

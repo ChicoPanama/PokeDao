@@ -57,7 +57,12 @@ async function testAISystem() {
       console.log(`🔗 Buy Now: ${analysis.pricing.lowestPrice.link}`);
 
     } catch (error) {
-      console.error(`Error: ${error.message}`);
+      if (typeof error === 'object' && error !== null && 'message' in error) {
+        // @ts-ignore
+        console.error(`Error: ${error.message}`);
+      } else {
+        console.error('Error:', error);
+      }
     }
   }
 

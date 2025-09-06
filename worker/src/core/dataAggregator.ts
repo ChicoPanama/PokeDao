@@ -204,7 +204,7 @@ export class DataAggregator {
     const lowestSale = sortedSales[0];
     
     const searchQuery = this.generateSearchQuery(cardData);
-    const purchaseLinks = {
+    const purchaseLinks: { [key: string]: string } = {
       'eBay': `https://www.ebay.com/sch/i.html?_nkw=${encodeURIComponent(searchQuery)}&_sop=15&rt=nc&LH_BIN=1`,
       'TCGPlayer': `https://www.tcgplayer.com/search/pokemon/product?q=${encodeURIComponent(searchQuery)}&view=grid`,
       'PSA APR': `https://www.psacard.com/auctionprices/search?q=${encodeURIComponent(searchQuery)}`,
@@ -230,7 +230,7 @@ export class DataAggregator {
         lowestPrice: {
           price: lowestSale.price,
           source: lowestSale.source,
-          link: purchaseLinks[lowestSale.source] || purchaseLinks['eBay']
+            link: purchaseLinks[lowestSale.source as string] || purchaseLinks['eBay']
         }
       };
     }

@@ -14,16 +14,19 @@ async function findPriceLocation() {
     
     // Look at first few cards to find price pattern
     const priceStructure = await page.evaluate(() => {
+      // @ts-ignore: document is available in browser context
       const firstCards = Array.from(document.querySelectorAll("a.link-card")).slice(0, 3)
       
-      return firstCards.map((card, index) => {
+      return firstCards.map((card: any, index: number) => {
+        // @ts-ignore: card is HTMLElement
         const cardDiv = card.querySelector(".card")
         
         // Look for text containing SOL or USDC
+        // @ts-ignore: cardDiv is HTMLElement
         const allElements = cardDiv?.querySelectorAll("*") || []
-        const priceElements = []
+        const priceElements: any[] = []
         
-        allElements.forEach(el => {
+        allElements.forEach((el: any) => {
           const text = el.textContent?.trim() || ""
           if (text.match(/\d+\.?\d*\s*(SOL|USDC)/i)) {
             priceElements.push({

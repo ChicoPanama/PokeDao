@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { DeepSeekCardEvaluator, type CardData } from './deepseek-evaluator.js'
+import { DeepSeekCardEvaluator, CardData } from './deepseek-evaluator.js'
 
 async function runBatchEvaluation() {
   console.log('🚀 PokeDAO Batch Evaluation Starting...')
@@ -26,7 +26,7 @@ async function runBatchEvaluation() {
   console.log(`📋 Found ${investmentCandidates.length} investment candidates`)
   
   // Test with just 5 cards first
-  const testCards = investmentCandidates.slice(0, 5)
+  const testCards: CardData[] = investmentCandidates.slice(0, 5)
   console.log(`🎯 Testing with ${testCards.length} cards first`)
   
   const apiKey = process.env.DEEPSEEK_API_KEY

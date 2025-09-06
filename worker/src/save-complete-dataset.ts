@@ -11,7 +11,7 @@ class CollectorCryptAPI {
     try {
       console.log("Fetching and SAVING complete dataset...")
       
-      let allCards = []
+  let allCards: any[] = []
       let page = 1
       let totalPages = 179
       
@@ -38,7 +38,7 @@ class CollectorCryptAPI {
         const pageCards = response.data.filterNFtCard || []
         if (pageCards.length === 0) break
         
-        allCards = allCards.concat(pageCards)
+  allCards = allCards.concat(pageCards)
         
         if (page % 20 === 0) {
           console.log(`Progress: ${page}/${totalPages} (${((page/totalPages)*100).toFixed(1)}%) - ${allCards.length} cards`)
@@ -56,7 +56,12 @@ class CollectorCryptAPI {
       return allCards
       
     } catch (error) {
-      console.error("API Error:", error.response?.status, error.message)
+      if (typeof error === 'object' && error !== null && 'response' in error && 'message' in error) {
+        // @ts-ignore
+        console.error("API Error:", error.response?.status, error.message)
+      } else {
+        console.error("API Error:", error)
+      }
       return []
     }
   }

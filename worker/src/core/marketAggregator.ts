@@ -1,7 +1,7 @@
 import { PriceSource } from '../types/interfaces.js';
 
 export class MarketAggregator {
-  private sourceWeights = {
+  private sourceWeights: { [key: string]: number } = {
     'eBay Sold Listings': 0.40,
     'Pokemon TCG API': 0.30,
     'Price Tracker API': 0.20,

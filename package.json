@@ -12,5 +12,9 @@
   "scripts": {
     "build": "echo \"(root) nothing to build\"",
     "dev": "echo \"run package-level dev scripts\""
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.22.0",
+    "prisma": "^5.22.0"
   }
 }

@@ -5,7 +5,7 @@ async function discoverEndpoints() {
   const page = await browser.newPage()
   
   // Track all network requests
-  const requests = []
+  const requests: Array<{ url: string; method: string; resourceType: string }> = []
   page.on("request", request => {
     const url = request.url()
     if (url.includes("collectorcrypt.com") && 
@@ -26,7 +26,10 @@ async function discoverEndpoints() {
     await page.waitForTimeout(5000)
     
     // Try to trigger more API calls by scrolling
-    await page.evaluate(() => window.scrollBy(0, 1000))
+    await page.evaluate(() => {
+      // @ts-ignore: window is available in browser context
+      window.scrollBy(0, 1000)
+    })
     await page.waitForTimeout(3000)
     
     console.log("Discovered API endpoints:")

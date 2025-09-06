@@ -1,96 +1,106 @@
-import Fastify from 'fastify'
-import cors from '@fastify/cors'
-import { PrismaClient } from '@prisma/client'
-import dotenv from 'dotenv'
+import 'dotenv/config';
+import Fastify from "fastify";
+import cors from "@fastify/cors";
+import { PrismaClient } from "@prisma/client";
+import Redis from "ioredis";
 
-dotenv.config()
+// worker helpers (exported by @pokedao/worker)
+import { normalizeCardQuery, getComparableSales, sanitizeComps, computeFairValue } from "@pokedao/worker";
 
-const prisma = new PrismaClient()
-const fastify = Fastify({
-  logger: {
-    level: 'info'
-  }
-})
+const PORT = Number(process.env.PORT || 3000);
+const HOST = "0.0.0.0";
 
-// Register CORS
-await fastify.register(cors, {
-  origin: true
-})
+const prisma = new PrismaClient();
+const redis = new Redis(process.env.REDIS_URL || "redis://redis:6379");
 
-// Health check endpoint
-fastify.get('/health', async (request, reply) => {
-  return { ok: true, timestamp: new Date().toISOString() }
-})
+async function buildServer() {
+  const app = Fastify({
+    logger: {
+      level: "info",
+      transport:
+        process.env.NODE_ENV !== "production"
+          ? { target: "pino-pretty", options: { colorize: true } }
+          : undefined,
+    },
+  });
 
-// Get all cards
-fastify.get('/api/cards', async (request, reply) => {
-  const cards = await prisma.card.findMany({
-    include: {
-      listings: {
-        where: { isActive: true }
-      },
-      evaluations: {
-        orderBy: { createdAt: 'desc' },
-        take: 1
+  await app.register(cors, { origin: true });
+
+  // basic health
+  app.get("/health", async () => ({ ok: true }));
+
+  // db connectivity check
+  app.get("/db-check", async () => {
+    const rows = await prisma.$queryRaw<Array<{ now: Date }>>`SELECT NOW() as now`;
+    return { ok: true, dbNow: rows[0]?.now };
+  });
+
+  // fair value endpoint
+  app.get("/fv", async (req, reply) => {
+    try {
+      const q = req.query as Record<string, string | undefined>;
+      const name = (q.name || "").trim();
+      const set = (q.set || "").trim();
+      const listPrice = Number(q.listPrice || "0");
+
+      if (!name || !set) {
+        reply.code(400);
+        return { ok: false, error: "Missing required query params: name & set" };
       }
-    }
-  })
-  return { cards }
-})
-
-// Get card by ID
-fastify.get('/api/cards/:id', async (request, reply) => {
-  const { id } = request.params as { id: string }
-  
-  const card = await prisma.card.findUnique({
-    where: { id },
-    include: {
-      listings: {
-        where: { isActive: true }
-      },
-      evaluations: {
-        orderBy: { createdAt: 'desc' }
+      if (!Number.isFinite(listPrice) || listPrice <= 0) {
+        reply.code(400);
+        return { ok: false, error: "Invalid listPrice" };
       }
-    }
-  })
-  
-  if (!card) {
-    reply.code(404)
-    return { error: 'Card not found' }
-  }
-  
-  return { card }
-})
 
-// Create a new listing
-fastify.post('/api/listings', async (request, reply) => {
-  const body = request.body as any
-  
-  const listing = await prisma.listing.create({
-    data: {
-      cardId: body.cardId,
-      source: body.source,
-      price: body.price,
-      currency: body.currency || 'USD',
-      url: body.url,
-      seller: body.seller
-    }
-  })
-  
-  return { listing }
-})
+      const norm = normalizeCardQuery({ name, set });
+      const { comps } = await getComparableSales(norm);
+      const usable = sanitizeComps(comps);
 
-// Start server
-const start = async () => {
-  try {
-    const port = parseInt(process.env.PORT || '3001')
-    await fastify.listen({ port, host: '0.0.0.0' })
-    console.log(`🚀 API Server running on http://localhost:${port}`)
-    console.log(`📊 Health check: http://localhost:${port}/health`)
-  } catch (err) {
-    fastify.log.error(err)
-    process.exit(1)
-  }
+      const { fv, confidence, basis } = computeFairValue(usable);
+
+      const discountPct = fv > 0 ? ((fv - listPrice) / fv) * 100 : 0;
+      const qualified = fv > 0 && discountPct >= 15 && confidence >= 0.5;
+
+      return {
+        ok: true,
+        input: { name, set, listPrice },
+        fv: Math.round(fv * 100) / 100,
+        confidence: Math.round(confidence * 100) / 100,
+        basis,
+        discountPct: Math.round(discountPct * 10) / 10,
+        qualified,
+        comps: usable,
+      };
+    } catch (err: any) {
+      req.log.error({ err }, "fv route error");
+      reply.code(500);
+      return { ok: false, error: "Internal error" };
+    }
+  });
+
+  // test alert publisher (prep for Telegram bot)
+  app.post("/alerts/test", async (_req, reply) => {
+    const payload = {
+      title: "Test High-Value Card",
+      set: "Base Set",
+      listPrice: 100,
+      fv: 128.5,
+      discountPct: 22.2,
+      ts: new Date().toISOString(),
+    };
+    await redis.publish("deals", JSON.stringify(payload));
+    return reply.send({ ok: true, published: true, payload });
+  });
+
+  return app;
 }
 
-start()
+buildServer()
+  .then((app) => app.listen({ port: PORT, host: HOST }))
+  .then(() => {
+    console.log(`[api] listening on http://${HOST}:${PORT}`);
+  })
+  .catch((err) => {
+    console.error("[api] failed to start:", err);
+    process.exit(1);
+  });

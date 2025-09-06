@@ -308,8 +308,8 @@ class CompleteMarketSystem {
         max_tokens: 1800
       })
 
-      const analysis = response.choices[0]?.message?.content
-      return this.parseEnhancedResponse(sources, analysis)
+  const analysis = response.choices[0]?.message?.content ?? undefined;
+  return this.parseEnhancedResponse(sources, analysis)
       
     } catch (error) {
       console.error(`DeepSeek analysis failed: ${error}`)

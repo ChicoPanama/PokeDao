@@ -117,7 +117,7 @@ Focus on collectibles fundamentals, population scarcity, and market timing.`;
   }
 
   private getFallbackForSection(section: string): string {
-    const fallbacks = {
+    const fallbacks: { [key: string]: string } = {
       'ANALYSIS': 'Market analysis based on recent comparable sales and established collector demand patterns.',
       'TREND': 'Price trends indicate stable market conditions with potential for appreciation in premium grades.',
       'THESIS': 'Investment fundamentals supported by collectible scarcity and sustained market interest.',
@@ -139,8 +139,8 @@ Focus on collectibles fundamentals, population scarcity, and market timing.`;
   }
 
   private mapConfidenceToNumber(confidence: string): number {
-    const mapping = { 'high': 0.9, 'medium': 0.75, 'low': 0.6 };
-    return mapping[confidence] || 0.75;
+  const mapping: { [key: string]: number } = { 'high': 0.9, 'medium': 0.75, 'low': 0.6 };
+  return mapping[confidence] || 0.75;
   }
 
   private generateAssessment(marketValue: number, listedPrice: number): string {
