@@ -1,10 +1,11 @@
 import fs from 'fs'
 import { DeepSeekCardEvaluator, CardData } from './deepseek-evaluator.js'
+import { logger } from './logger.js'
 
 async function runBatchEvaluation() {
-  console.log('🚀 PokeDAO Batch Evaluation Starting...')
+  logger.info('🚀 PokeDAO Batch Evaluation Starting...')
   
-  console.log('📊 Loading complete dataset...')
+  logger.info('📊 Loading complete dataset...')
   const rawData = fs.readFileSync('complete-dataset.json', 'utf8')
   const allCards = JSON.parse(rawData)
   
@@ -23,36 +24,36 @@ async function runBatchEvaluation() {
     )
   })
   
-  console.log(`📋 Found ${investmentCandidates.length} investment candidates`)
+  logger.info(`📋 Found ${investmentCandidates.length} investment candidates`)
   
   // Test with just 5 cards first
   const testCards: CardData[] = investmentCandidates.slice(0, 5)
-  console.log(`🎯 Testing with ${testCards.length} cards first`)
+  logger.info(`🎯 Testing with ${testCards.length} cards first`)
   
   const apiKey = process.env.DEEPSEEK_API_KEY
   if (!apiKey) {
-    console.error('❌ DEEPSEEK_API_KEY environment variable not set')
+    logger.error('❌ DEEPSEEK_API_KEY environment variable not set')
     process.exit(1)
   }
   
   const evaluator = new DeepSeekCardEvaluator(apiKey)
   
   try {
-    console.log('🧠 Starting DeepSeek evaluation...')
+    logger.info('🧠 Starting DeepSeek evaluation...')
     const results = await evaluator.evaluateBatch(testCards, 2)
     
-    console.log('💾 Saving results...')
+    logger.info('💾 Saving results...')
     evaluator.saveResults(results, 'test-evaluation.json')
     
-    console.log('📈 Generating report...')
+    logger.info('📈 Generating report...')
     evaluator.generateReport(results)
     
-    console.log('\n✅ Test evaluation completed!')
-    console.log('📁 Check test-evaluation.json for detailed results')
+    logger.info('\n✅ Test evaluation completed!')
+    logger.info('📁 Check test-evaluation.json for detailed results')
     
   } catch (error) {
-    console.error('❌ Evaluation failed:', error)
+    logger.error('❌ Evaluation failed:', error)
   }
 }
 
-runBatchEvaluation().catch(console.error)
+runBatchEvaluation().catch(logger.error)

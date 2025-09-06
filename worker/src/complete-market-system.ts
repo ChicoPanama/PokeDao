@@ -1,6 +1,7 @@
 import fs from 'fs'
 import axios from 'axios'
 import { DeepSeekCardEvaluator } from './deepseek-evaluator.js'
+import { logger } from './logger.js'
 
 interface MarketSources {
   cardName: string
@@ -51,7 +52,7 @@ class CompleteMarketSystem {
   }
 
   async analyzeCard(cardName: string, listedPrice: number): Promise<CompleteAnalysis> {
-    console.log(`Analyzing: ${cardName}`)
+    logger.info(`Analyzing: ${cardName}`)
     
     // Gather all market sources
     const sources = await this.gatherMarketSources(cardName, listedPrice)
@@ -63,7 +64,7 @@ class CompleteMarketSystem {
   }
 
   private async gatherMarketSources(cardName: string, listedPrice: number): Promise<MarketSources> {
-    console.log(`  Gathering market data...`)
+    logger.info(`  Gathering market data...`)
     
     // Get eBay sold listings data
     const ebayData = await this.getEbaySoldListings(cardName)
@@ -89,7 +90,7 @@ class CompleteMarketSystem {
 
   private async getEbaySoldListings(cardName: string) {
     try {
-      console.log(`  Fetching eBay sold listings...`)
+      logger.info(`  Fetching eBay sold listings...`)
       
       // Clean card name for search
       const searchTerm = this.cleanCardNameForSearch(cardName)
@@ -117,7 +118,7 @@ class CompleteMarketSystem {
       
       const averagePrice = recentSales.reduce((sum, sale) => sum + sale.price, 0) / recentSales.length
       
-      console.log(`  eBay: Found ${recentSales.length} recent sales, avg $${averagePrice.toLocaleString()}`)
+      logger.info(`  eBay: Found ${recentSales.length} recent sales, avg $${averagePrice.toLocaleString()}`)
       
       return {
         recentSales,
@@ -126,7 +127,7 @@ class CompleteMarketSystem {
       }
       
     } catch (error) {
-      console.log(`  eBay: Failed to fetch data`)
+      logger.warn(`  eBay: Failed to fetch data`)
       return null
     }
   }
@@ -138,7 +139,7 @@ class CompleteMarketSystem {
       const term = searchTerms[i]
       
       try {
-        console.log(`  Pokemon TCG API: Trying "${term}"`)
+        logger.info(`  Pokemon TCG API: Trying "${term}"`)
         
         const response = await axios.get('https://api.pokemontcg.io/v2/cards', {
           params: {
@@ -160,7 +161,7 @@ class CompleteMarketSystem {
             const marketPrice = prices.holofoil?.market || prices.normal?.market || prices.reverseHolofoil?.market
             
             if (marketPrice && marketPrice > 1) {
-              console.log(`  Pokemon TCG API: Success - $${marketPrice}`)
+              logger.info(`  Pokemon TCG API: Success - $${marketPrice}`)
               return {
                 pokemon: term,
                 marketPrice,
@@ -175,7 +176,7 @@ class CompleteMarketSystem {
         await new Promise(resolve => setTimeout(resolve, 1000))
         
       } catch (error) {
-        console.log(`  Pokemon TCG API: Failed attempt ${i + 1}`)
+        logger.warn(`  Pokemon TCG API: Failed attempt ${i + 1}`)
         
         // If it's a network error, wait longer before next attempt
         if (i < searchTerms.length - 1) {
@@ -184,7 +185,7 @@ class CompleteMarketSystem {
       }
     }
     
-    console.log(`  Pokemon TCG API: All attempts failed`)
+    logger.warn(`  Pokemon TCG API: All attempts failed`)
     return null
   }
 
@@ -290,7 +291,7 @@ class CompleteMarketSystem {
     const prompt = this.buildEnhancedPrompt(sources)
     
     try {
-      console.log(`  Running DeepSeek analysis...`)
+      logger.info(`  Running DeepSeek analysis...`)
       
       const response = await this.evaluator['client'].chat.completions.create({
         model: 'deepseek-chat',
@@ -312,7 +313,7 @@ class CompleteMarketSystem {
   return this.parseEnhancedResponse(sources, analysis)
       
     } catch (error) {
-      console.error(`DeepSeek analysis failed: ${error}`)
+      logger.error(`DeepSeek analysis failed: ${error}`)
       return this.createFallbackAnalysis(sources)
     }
   }
@@ -398,7 +399,7 @@ Provide analysis in JSON format:
         }
       }
     } catch (error) {
-      console.error('Error parsing response:', error)
+      logger.error('Error parsing response:', error)
     }
     
     return this.createFallbackAnalysis(sources)

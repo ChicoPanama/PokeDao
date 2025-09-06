@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
     devDependencies:
       '@prisma/client':
         specifier: ^5.22.0
@@ -122,8 +126,11 @@ importers:
       '@prisma/client':
         specifier: ^5.6.0
         version: 5.22.0(prisma@5.22.0)
+      '@types/axios':
+        specifier: ^0.14.4
+        version: 0.14.4
       axios:
-        specifier: ^1.6.0
+        specifier: ^1.11.0
         version: 1.11.0
       bullmq:
         specifier: ^4.15.4
@@ -132,7 +139,7 @@ importers:
         specifier: ^1.0.0-rc.12
         version: 1.1.2
       dotenv:
-        specifier: ^16.3.1
+        specifier: ^16.6.1
         version: 16.6.1
       openai:
         specifier: ^5.19.1
@@ -674,6 +681,10 @@ packages:
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
+
+  '@types/axios@0.14.4':
+    resolution: {integrity: sha512-9JgOaunvQdsQ/qW2OPmE5+hCeUB52lQSolecrFrthct55QekhmXEwT203s20RL+UHtCQc15y3VXpby9E7Kkh/g==}
+    deprecated: This is a stub types definition. axios provides its own type definitions, so you do not need this installed.
 
   '@types/chai-subset@1.3.6':
     resolution: {integrity: sha512-m8lERkkQj+uek18hXOZuec3W/fCRTrU4hrnXjH3qhHy96ytuPaPiWGgu7sJb7tZxZonO75vYAjCvpe/e4VUwRw==}
@@ -1870,6 +1881,12 @@ snapshots:
     optional: true
 
   '@sinclair/typebox@0.27.8': {}
+
+  '@types/axios@0.14.4':
+    dependencies:
+      axios: 1.11.0
+    transitivePeerDependencies:
+      - debug
 
   '@types/chai-subset@1.3.6(@types/chai@4.3.20)':
     dependencies:

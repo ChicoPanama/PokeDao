@@ -2,7 +2,7 @@ import { Bot } from 'grammy';
 import * as dotenv from 'dotenv';
 
 // Load environment variables
-dotenv.config({ path: '../../.env' });
+dotenv.config({ path: './.env' });
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 
