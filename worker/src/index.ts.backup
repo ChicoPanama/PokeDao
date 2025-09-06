@@ -1,0 +1,97 @@
+import { PrismaClient } from '@prisma/client'
+import { chromium } from 'playwright'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const prisma = new PrismaClient()
+
+class CollectorCryptScraper {
+  private browser: any
+  private page: any
+
+  async init() {
+    this.browser = await chromium.launch({ headless: true })
+    this.page = await this.browser.newPage()
+    console.log('🕷️ Scraper initialized')
+  }
+
+  async scrapeListings() {
+    try {
+      console.log('📡 Scraping Collector Crypt...')
+      
+      // Navigate to Collector Crypt marketplace
+      await this.page.goto('https://collectorcrypt.com/marketplace', {
+        waitUntil: 'networkidle'
+      })
+
+      // Wait for cards to load
+      await this.page.waitForSelector('.card-item', { timeout: 10000 })
+
+      // Extract card data
+      const listings = await this.page.evaluate(() => {
+        const cardElements = document.querySelectorAll('.card-item')
+        const cards = []
+
+        cardElements.forEach((element) => {
+          const name = element.querySelector('.card-name')?.textContent?.trim()
+          const price = element.querySelector('.price')?.textContent?.trim()
+          const link = element.querySelector('a')?.href
+          
+          if (name && price && link) {
+            cards.push({
+              name,
+              price: parseFloat(price.replace(/[^0-9.]/g, '')),
+              url: link,
+              source: 'collector_crypt'
+            })
+          }
+        })
+
+        return cards
+      })
+
+      console.log(`Found ${listings.length} listings`)
+      return listings
+
+    } catch (error) {
+      console.error('Scraping error:', error)
+      return []
+    }
+  }
+
+  async close() {
+    if (this.browser) {
+      await this.browser.close()
+    }
+  }
+}
+
+// Main scraper loop
+async function main() {
+  const scraper = new CollectorCryptScraper()
+  
+  try {
+    await scraper.init()
+    
+    // Run scraper every 5 minutes
+    setInterval(async () => {
+      const listings = await scraper.scrapeListings()
+      
+      for (const listing of listings) {
+        // Save to database (simplified for now)
+        console.log(`Found: ${listing.name} - $${listing.price}`)
+      }
+    }, 5 * 60 * 1000)
+
+    // Run once immediately
+    const initialListings = await scraper.scrapeListings()
+    console.log(`Initial scrape found ${initialListings.length} listings`)
+
+  } catch (error) {
+    console.error('Scraper error:', error)
+  }
+}
+
+console.log('🚀 Worker service starting...')
+main()

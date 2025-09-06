@@ -1,0 +1,84 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Card {
+  id          String   @id @default(cuid())
+  name        String
+  set         String
+  number      String
+  variant     String?
+  grade       String?
+  condition   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  listings    Listing[]
+  evaluations Evaluation[]
+  
+  @@unique([set, number, variant, grade])
+}
+
+model Listing {
+  id          String   @id @default(cuid())
+  cardId      String
+  source      String
+  price       Float
+  currency    String   @default("USD")
+  url         String
+  seller      String?
+  isActive    Boolean  @default(true)
+  scrapedAt   DateTime @default(now())
+  
+  card        Card     @relation(fields: [cardId], references: [id])
+  evaluations Evaluation[]
+}
+
+model User {
+  id          String   @id @default(cuid())
+  telegramId  String   @unique
+  username    String?
+  firstName   String?
+  lastName    String?
+  referralCode String  @unique
+  referredBy  String?
+  createdAt   DateTime @default(now())
+  
+  purchases   Purchase[]
+  referrals   User[]     @relation("UserReferrals")
+  referrer    User?      @relation("UserReferrals", fields: [referredBy], references: [referralCode])
+}
+
+model Evaluation {
+  id              String   @id @default(cuid())
+  cardId          String
+  listingId       String
+  fairValue       Float
+  discount        Float
+  investmentThesis String
+  riskLevel       String
+  projectedReturn Float?
+  confidence      Float
+  createdAt       DateTime @default(now())
+  
+  card            Card     @relation(fields: [cardId], references: [id])
+  listing         Listing  @relation(fields: [listingId], references: [id])
+}
+
+model Purchase {
+  id          String   @id @default(cuid())
+  userId      String
+  listingId   String
+  amount      Float
+  fee         Float
+  status      String
+  txHash      String?
+  createdAt   DateTime @default(now())
+  
+  user        User     @relation(fields: [userId], references: [id])
+}

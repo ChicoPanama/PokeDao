@@ -1,0 +1,9 @@
+Add this to the end of your main() function in index.ts:
+
+  // Save raw data for analysis
+  console.log("Saving raw dataset...")
+  const fs = await import("fs/promises")
+  await fs.writeFile("raw-dataset.json", JSON.stringify(cards, null, 2))
+  console.log("Raw dataset saved to raw-dataset.json")
+  
+  return cards

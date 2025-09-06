@@ -1,0 +1,106 @@
+import axios, { AxiosInstance } from 'axios';
+import { APIConfig, PriceSource, CardData } from '../types/interfaces.js';
+import { RateLimiter, Cache } from '../utils/rateLimiter.js';
+
+export class PriceTrackerAPI {
+  private client: AxiosInstance;
+  private rateLimiter: RateLimiter;
+  private cache: Cache;
+  private config: APIConfig;
+
+  constructor(apiKey: string) {
+    this.config = {
+      name: 'Pokemon Price Tracker',
+      baseURL: 'https://www.pokemonpricetracker.com/api/v2',
+      apiKey,
+      rateLimit: 60,
+      timeout: 15000,
+      retryAttempts: 3
+    };
+
+    this.client = axios.create({
+      baseURL: this.config.baseURL,
+      timeout: this.config.timeout,
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    this.rateLimiter = new RateLimiter(this.config.rateLimit, 60000);
+    this.cache = new Cache(45);
+  }
+
+  async searchCard(searchTerms: string[], cardData: CardData): Promise<PriceSource[]> {
+    const cacheKey = `tracker-${searchTerms[0]}-${cardData.grade}`;
+    const cached = this.cache.get(cacheKey);
+    if (cached) return cached;
+
+    const sources: PriceSource[] = [];
+
+    for (const term of searchTerms) {
+      try {
+        await this.rateLimiter.acquire();
+        
+        console.log(`  Price Tracker API: Searching "${term}"`);
+        
+        const response = await this.client.get('/cards/search', {
+          params: {
+            name: term,
+            set: cardData.set !== 'Unknown' ? cardData.set : undefined,
+            grade: cardData.grade,
+            condition: cardData.condition,
+            language: cardData.language.toLowerCase()
+          }
+        });
+
+        const cards = response.data?.results || [];
+        
+        for (const card of cards) {
+          const priceSource = this.extractPriceFromCard(card);
+          if (priceSource) {
+            sources.push(priceSource);
+            console.log(`  Price Tracker API: Found ${card.name} - $${priceSource.price}`);
+          }
+        }
+
+        if (sources.length > 0) break;
+        
+      } catch (error) {
+        console.log(`  Price Tracker API: Failed for "${term}" - ${error.response?.status || error.message}`);
+        continue;
+      }
+    }
+
+    this.cache.set(cacheKey, sources);
+    return sources;
+  }
+
+  private extractPriceFromCard(card: any): PriceSource | null {
+    let price = 0;
+    let confidence = 0.8;
+
+    // Prioritize TCGPlayer prices
+    if (card.prices?.tcgplayer?.market) {
+      price = card.prices.tcgplayer.market;
+      confidence = 0.9;
+    } else if (card.prices?.ebay?.average) {
+      price = card.prices.ebay.average;
+      confidence = 0.8;
+    } else if (card.prices?.cardmarket?.average) {
+      price = card.prices.cardmarket.average;
+      confidence = 0.7;
+    }
+
+    if (price <= 0) return null;
+
+    return {
+      source: 'Price Tracker API',
+      price,
+      confidence,
+      timestamp: new Date(),
+      grade: card.grade,
+      condition: card.condition
+    };
+  }
+}

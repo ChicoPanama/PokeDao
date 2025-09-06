@@ -1,0 +1,192 @@
+[
+  {
+    "rank": 1,
+    "cardName": "1996 #113 Chansey CGC 10 Gem Mint Pokemon Japanese Base Set Holo",
+    "listedPrice": 40600,
+    "analysis": {
+      "cardName": "1996 #113 Chansey CGC 10 Gem Mint Pokemon Japanese Base Set Holo",
+      "listedPrice": 40600,
+      "marketValue": 13.78,
+      "fairValueAssessment": {
+        "status": "OVERVALUED",
+        "percentage": "-100.0%"
+      },
+      "cardHistory": "1996 Japanese Base Set Chansey represents Pokemon's earliest international era with extremely rare CGC 10 specimens. Blue-chip vintage collectible commanding premium due to era's poor print quality and surviving population scarcity.",
+      "recentSales": [
+        {
+          "price": 14,
+          "date": "2025-08-30",
+          "platform": "eBay"
+        },
+        {
+          "price": 12,
+          "date": "2025-08-08",
+          "platform": "eBay"
+        }
+      ],
+      "trendPrediction": {
+        "direction": "RISING",
+        "confidence": 90,
+        "reasoning": "Strong upward indicators: vintage appreciation cycle, perfect grade scarcity, international collector interest, foundational set recognition."
+      },
+      "bestPurchaseOption": {
+        "price": 13,
+        "seller": "TCGPlayer",
+        "url": "https://www.tcgplayer.com/search?q=Chansey%2010%20Gem"
+      },
+      "dataSource": "Pokemon TCG API"
+    }
+  },
+  {
+    "rank": 2,
+    "cardName": "2003 #149 Lugia-Holo PSA 10 Aquapolis Pokemon",
+    "listedPrice": 40000,
+    "analysis": {
+      "cardName": "2003 #149 Lugia-Holo PSA 10 Aquapolis Pokemon",
+      "listedPrice": 40000,
+      "marketValue": 15000,
+      "fairValueAssessment": {
+        "status": "OVERVALUED",
+        "percentage": "-62.5%"
+      },
+      "cardHistory": "Aquapolis Lugia from 2003 e-Card series features revolutionary dot-code technology and holographic effects. PSA 10 specimens exceptionally rare due to printing sensitivity and card stock issues of the experimental series.",
+      "recentSales": [
+        {
+          "price": 14936,
+          "date": "2025-08-29",
+          "platform": "TCGPlayer"
+        },
+        {
+          "price": 17120,
+          "date": "2025-08-13",
+          "platform": "COMC"
+        }
+      ],
+      "trendPrediction": {
+        "direction": "STABLE",
+        "confidence": 65,
+        "reasoning": "Balanced market indicators suggest price stability."
+      },
+      "bestPurchaseOption": {
+        "price": 13800,
+        "seller": "TCGPlayer",
+        "url": "https://www.tcgplayer.com/search?q=Lugia-Holo%2010%20Aquapolis"
+      },
+      "dataSource": "Market Estimation"
+    }
+  },
+  {
+    "rank": 3,
+    "cardName": "2023 #062 PIKACHU PSA 9 POKEMON PAL EN-PALDEA EVOLVED | 2024 RAIN CITY SHOWCASE",
+    "listedPrice": 30000,
+    "analysis": {
+      "cardName": "2023 #062 PIKACHU PSA 9 POKEMON PAL EN-PALDEA EVOLVED | 2024 RAIN CITY SHOWCASE",
+      "listedPrice": 30000,
+      "marketValue": 22.19,
+      "fairValueAssessment": {
+        "status": "OVERVALUED",
+        "percentage": "-99.9%"
+      },
+      "cardHistory": "Established Pokemon TCG collectible with documented market performance and collector recognition. Graded authentication provides condition certainty and market confidence supporting sustained value appreciation.",
+      "recentSales": [
+        {
+          "price": 25,
+          "date": "2025-08-30",
+          "platform": "TCGPlayer"
+        },
+        {
+          "price": 22,
+          "date": "2025-08-18",
+          "platform": "eBay"
+        }
+      ],
+      "trendPrediction": {
+        "direction": "FALLING",
+        "confidence": 65,
+        "reasoning": "Downward pressure from: modern card supply uncertainty."
+      },
+      "bestPurchaseOption": {
+        "price": 20,
+        "seller": "TCGPlayer",
+        "url": "https://www.tcgplayer.com/search?q=PIKACHU%209%20POKEMON"
+      },
+      "dataSource": "Pokemon TCG API"
+    }
+  },
+  {
+    "rank": 4,
+    "cardName": "2001 #116 JAPANESE BASE EXPANSION PACK HOLO ALAKAZAM BGS 9 POKEMON",
+    "listedPrice": 28000,
+    "analysis": {
+      "cardName": "2001 #116 JAPANESE BASE EXPANSION PACK HOLO ALAKAZAM BGS 9 POKEMON",
+      "listedPrice": 28000,
+      "marketValue": 34.05,
+      "fairValueAssessment": {
+        "status": "OVERVALUED",
+        "percentage": "-99.9%"
+      },
+      "cardHistory": "Early millennium Pokemon card from expansion into advanced holographic technology and international market growth. Period represents quality improvement while maintaining collectible scarcity appealing to serious collectors.",
+      "recentSales": [
+        {
+          "price": 36,
+          "date": "2025-08-31",
+          "platform": "eBay"
+        },
+        {
+          "price": 35,
+          "date": "2025-08-21",
+          "platform": "eBay"
+        }
+      ],
+      "trendPrediction": {
+        "direction": "STABLE",
+        "confidence": 65,
+        "reasoning": "Balanced market indicators suggest price stability."
+      },
+      "bestPurchaseOption": {
+        "price": 31,
+        "seller": "TCGPlayer",
+        "url": "https://www.tcgplayer.com/search?q=JAPANESE%20BASE%20EXPANSION"
+      },
+      "dataSource": "Pokemon TCG API"
+    }
+  },
+  {
+    "rank": 5,
+    "cardName": "2001 #123 JAPANESE EXPEDITION 1ST EDITION HOLO PIDGEOT PSA 10 POKEMON",
+    "listedPrice": 22120,
+    "analysis": {
+      "cardName": "2001 #123 JAPANESE EXPEDITION 1ST EDITION HOLO PIDGEOT PSA 10 POKEMON",
+      "listedPrice": 22120,
+      "marketValue": 45000,
+      "fairValueAssessment": {
+        "status": "UNDERVALUED",
+        "percentage": "+103.4%"
+      },
+      "cardHistory": "Early millennium Pokemon card from expansion into advanced holographic technology and international market growth. Period represents quality improvement while maintaining collectible scarcity appealing to serious collectors.",
+      "recentSales": [
+        {
+          "price": 43393,
+          "date": "2025-08-29",
+          "platform": "eBay"
+        },
+        {
+          "price": 44862,
+          "date": "2025-08-03",
+          "platform": "COMC"
+        }
+      ],
+      "trendPrediction": {
+        "direction": "RISING",
+        "confidence": 80,
+        "reasoning": "Strong upward indicators: perfect grade scarcity, international collector interest."
+      },
+      "bestPurchaseOption": {
+        "price": 41400,
+        "seller": "TCGPlayer",
+        "url": "https://www.tcgplayer.com/search?q=JAPANESE%20EXPEDITION%201ST"
+      },
+      "dataSource": "Market Estimation"
+    }
+  }
+]

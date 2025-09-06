@@ -1,16 +1,42 @@
 services:
+  # PokeDAO Telegram Bot
+  bot:
+    build: ./bot
+    container_name: pokedao-bot
+    environment:
+      - NODE_ENV=development
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/pokedao
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - db
+      - redis
+    volumes:
+      # Mount source code for hot reload during development
+      - ./bot/src:/app/src
+    restart: unless-stopped
+
+  # Database
   db:
     image: postgres:17-alpine
+    container_name: pokedao-db
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: pokedao
-    ports: ["5432:5432"]
-    volumes: [dbdata:/var/lib/postgresql/data]
+    ports: 
+      - "5432:5432"
+    volumes: 
+      - dbdata:/var/lib/postgresql/data
+    restart: unless-stopped
 
+  # Redis for caching/queues
   redis:
     image: redis:7-alpine
-    ports: ["6379:6379"]
+    container_name: pokedao-redis
+    ports: 
+      - "6379:6379"
+    restart: unless-stopped
 
 volumes:
   dbdata:

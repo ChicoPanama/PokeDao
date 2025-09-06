@@ -1,0 +1,82 @@
+{
+  "summary": {
+    "totalCards": 10,
+    "averageScore": 6.4,
+    "recommendations": {
+      "STRONG_BUY": 0,
+      "BUY": 3,
+      "HOLD": 7,
+      "PASS": 0,
+      "AVOID": 0
+    }
+  },
+  "topOpportunities": [
+    {
+      "cardName": "1996 #64 JAPANESE BASE SET KADABRA BGS 10 BLACK LABEL POKEMON",
+      "currentPrice": 1500,
+      "priceUSD": 1500,
+      "investmentTier": "High-value",
+      "evaluationScore": 8,
+      "fairValueEstimate": 1200,
+      "investmentThesis": "This is a strong investment due to its extreme rarity as a Japanese Base Set BGS 10 Black Label, the highest possible grade, combined with the card's historical significance and the fact that Kadabra was removed from later prints, adding unique collectibility. However, the high current price limits short-term upside potential.",
+      "riskFactors": [
+        "Market correction in high-end collectibles reducing demand",
+        "Potential oversaturation if more high-grade copies surface",
+        "Liquidity risk due to niche buyer pool for premium-graded Japanese cards"
+      ],
+      "opportunities": [
+        "Continued appreciation driven by scarcity of Black Label 10s and vintage Japanese sets",
+        "Increased demand from Japanese market collectors and investors",
+        "Potential for Kadabra's cultural and historical significance to drive further interest"
+      ],
+      "recommendation": "BUY",
+      "confidence": 80,
+      "evaluatedAt": "2025-09-05T06:46:22.383Z"
+    },
+    {
+      "cardName": "2022 #221 Full Art/Mewtwo Vstar BGS 10 Black Label Japanese Sword & Shield Vstar Universe Pokemon",
+      "currentPrice": 1000,
+      "priceUSD": 1000,
+      "investmentTier": "High-value",
+      "evaluationScore": 8,
+      "fairValueEstimate": 850,
+      "investmentThesis": "This is a premium investment-grade card featuring Mewtwo, one of Pokémon's most iconic characters, in a Japanese-exclusive BGS 10 Black Label - the highest possible grade. The combination of character popularity, perfect condition certification, and limited Japanese print run creates strong long-term appreciation potential.",
+      "riskFactors": [
+        "Premium pricing leaves limited short-term upside",
+        "Black Label premium could compress if grading standards change",
+        "Japanese market cards can have lower liquidity in Western markets"
+      ],
+      "opportunities": [
+        "Mewtwo remains perpetually popular with collectors and players",
+        "Vstar Universe is considered a premium Japanese set with strong collector appeal",
+        "Black Label 10s consistently command significant premiums over regular gem mint grades"
+      ],
+      "recommendation": "BUY",
+      "confidence": 80,
+      "evaluatedAt": "2025-09-05T06:46:50.407Z"
+    },
+    {
+      "cardName": "2006 #105 LATIAS-GOLD STAR PSA 10 POKEMON WORLD CHAMPIONSHIPS PROMO | B-L-S",
+      "currentPrice": 15000,
+      "priceUSD": 15000,
+      "investmentTier": "Premium",
+      "evaluationScore": 8,
+      "fairValueEstimate": 12000,
+      "investmentThesis": "This is a strong investment due to its extreme rarity as a World Championships promo with limited distribution, gold star status, and PSA 10 grade, positioning it as a high-end collectible with historical significance and appeal to both vintage collectors and Latias enthusiasts.",
+      "riskFactors": [
+        "High price concentration risk in a single asset",
+        "Potential market correction affecting ultra-premium segment",
+        "Liquidity challenges due to niche appeal and high cost"
+      ],
+      "opportunities": [
+        "Continued appreciation from scarcity and aging set appeal",
+        "Growing interest in gold star and promo cards from vintage collectors",
+        "Potential cultural resurgence of Latias/Latios in media boosting demand"
+      ],
+      "recommendation": "BUY",
+      "confidence": 80,
+      "evaluatedAt": "2025-09-05T06:46:50.332Z"
+    }
+  ],
+  "generatedAt": "2025-09-05T06:47:22.083Z"
+}
