@@ -11,7 +11,10 @@
   ],
   "scripts": {
     "build": "echo \"(root) nothing to build\"",
-    "dev": "echo \"run package-level dev scripts\""
+    "dev": "echo \"run package-level dev scripts\"",
+    "prisma:check": "prisma validate && prisma generate",
+    "typecheck:api": "tsc -p packages/api/tsconfig.json --noEmit",
+    "dev-check": "bash scripts/dev-check.sh"
   },
   "devDependencies": {
     "@prisma/client": "^5.22.0",
