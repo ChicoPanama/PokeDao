@@ -4,6 +4,7 @@ packages:
   - worker
   - ml
   - prisma
+  - utils
 
 onlyBuiltDependencies:
   - '@prisma/client'

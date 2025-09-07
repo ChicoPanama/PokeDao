@@ -133,6 +133,22 @@ importers:
         specifier: ^0.34.6
         version: 0.34.6(playwright@1.55.0)
 
+  utils:
+    dependencies:
+      '@prisma/client':
+        specifier: '*'
+        version: 5.22.0(prisma@6.15.0(typescript@5.9.2))
+    devDependencies:
+      '@types/node':
+        specifier: ^20.19.13
+        version: 20.19.13
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(playwright@1.55.0)
+
   worker:
     dependencies:
       '@prisma/client':
