@@ -10,6 +10,24 @@ function loadAndValidateEnv(required = []) {
     console.error('Please add them to your `.env` (not committed) or configure your environment.');
     process.exit(1);
   }
+
+  // Basic type/format validations
+  if (required.includes('PORT')) {
+    const port = Number(process.env.PORT);
+    if (!Number.isInteger(port) || port <= 0 || port > 65535) {
+      console.error('❌ PORT must be a valid TCP port integer (1-65535)');
+      process.exit(1);
+    }
+  }
+
+  if (required.includes('REDIS_URL')) {
+    // Very light validation for redis url
+    const url = process.env.REDIS_URL || '';
+    if (!url.startsWith('redis://') && !url.startsWith('rediss://')) {
+      console.error('❌ REDIS_URL should start with redis:// or rediss://');
+      process.exit(1);
+    }
+  }
 }
 
 module.exports = loadAndValidateEnv;
