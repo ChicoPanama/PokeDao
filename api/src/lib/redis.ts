@@ -1,10 +1,16 @@
-import { Redis } from "ioredis";
+import { createClient } from 'redis';
 
-const url = process.env.REDIS_URL || "redis://redis:6379";
+const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
 
-let client: Redis | undefined;
+const client = createClient({ url: redisUrl });
+
+client.on('error', (err) => {
+  console.error('Redis Client Error', err);
+});
 
 export function getRedis() {
-  if (!client) client = new Redis(url);
+  if (!client.isOpen) {
+    client.connect();
+  }
   return client;
 }

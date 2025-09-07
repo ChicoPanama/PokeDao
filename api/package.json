@@ -17,6 +17,7 @@
     "fastify": "^4.29.1",
     "ioredis": "^5.7.0",
     "pino": "^8.21.0",
+    "redis": "^4.7.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {

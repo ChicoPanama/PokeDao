@@ -1,8 +1,8 @@
 import { Bot } from 'grammy';
-import * as dotenv from 'dotenv';
+import loadAndValidateEnv from './lib/validate-env.js';
 
-// Load environment variables
-dotenv.config({ path: './.env' });
+// Validate required variables for the bot
+loadAndValidateEnv(['TELEGRAM_BOT_TOKEN']);
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 

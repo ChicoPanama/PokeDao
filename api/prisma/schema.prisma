@@ -20,6 +20,7 @@ model Card {
   
   listings    Listing[]
   evaluations Evaluation[]
+  watchlistItems WatchlistItem[]
   
   @@unique([set, number, variant, grade])
 }
@@ -52,6 +53,8 @@ model User {
   purchases   Purchase[]
   referrals   User[]     @relation("UserReferrals")
   referrer    User?      @relation("UserReferrals", fields: [referredBy], references: [referralCode])
+  referralEvents ReferralEvent[]
+  watchlistItems WatchlistItem[]
 }
 
 model Evaluation {
@@ -81,4 +84,31 @@ model Purchase {
   createdAt   DateTime @default(now())
   
   user        User     @relation(fields: [userId], references: [id])
+}
+
+model Comp {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ReferralEvent {
+  id        String   @id @default(cuid())
+  userId    String
+  code      String
+  path      String
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model WatchlistItem {
+  id        String   @id @default(cuid())
+  userId    String
+  cardId    String
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  card      Card     @relation(fields: [cardId], references: [id])
 }

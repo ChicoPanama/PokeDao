@@ -16,8 +16,7 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "vitest run",
-    "dev": "tsx src/index.ts"
+    "test": "vitest run"
   },
   "dependencies": {
     "@prisma/client": "^5.6.0",

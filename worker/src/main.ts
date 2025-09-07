@@ -1,8 +1,9 @@
-import dotenv from 'dotenv';
 import fs from 'fs';
 import { MarketAnalyzer } from './core/marketAnalyzer.js';
+import loadAndValidateEnv from './lib/validate-env.js';
 
-dotenv.config();
+// Validate worker-required env vars early
+loadAndValidateEnv(['POKEMON_TCG_API_KEY', 'PRICE_TRACKER_API_KEY', 'DEEPSEEK_API_KEY']);
 
 async function main() {
   console.log('Pokemon Card Market Analysis System v2.0');
@@ -39,9 +40,9 @@ async function main() {
       console.log(`Set: ${analysis.card.set} | Grade: ${analysis.card.grade || 'Ungraded'}`);
       console.log(`Language: ${analysis.card.language} | Condition: ${analysis.card.condition}`);
       
-      console.log(`\nPricing Analysis:`);
-      console.log(`Listed Price: $${analysis.pricing.listedPrice.toLocaleString()}`);
+  console.log(`Listed Price: $${analysis.pricing.listedPrice.toLocaleString()}`);
       console.log(`Market Value: $${analysis.pricing.marketValue.toLocaleString()}`);
+      
       console.log(`Confidence: ${(analysis.pricing.confidence * 100).toFixed(1)}%`);
       console.log(`Assessment: ${analysis.assessment}`);
       
