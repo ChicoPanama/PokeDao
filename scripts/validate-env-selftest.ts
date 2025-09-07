@@ -1,4 +1,4 @@
-import loadAndValidateEnv from './validate-env.js';
+import loadAndValidateEnv from './validate-env';
 
 /**
  * Simple developer self-test. Run with: node ./scripts/validate-env-selftest.js
