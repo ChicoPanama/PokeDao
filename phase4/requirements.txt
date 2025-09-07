@@ -1,0 +1,45 @@
+# PokeDAO Phase 4 - Production Data Pipeline Requirements
+# Core Dependencies
+aiohttp==3.9.1
+asyncio-throttle==1.0.2
+requests==2.31.0
+python-dotenv==1.0.0
+
+# Solana Blockchain Integration
+solana==0.30.2
+solders==0.18.1
+base58==2.1.1
+
+# Database Integration
+asyncpg==0.29.0
+prisma==0.11.0
+sqlalchemy==2.0.23
+
+# Data Processing
+pandas==2.1.4
+numpy==1.24.3
+python-dateutil==2.8.2
+
+# Validation and Quality
+pydantic==2.5.2
+marshmallow==3.20.1
+
+# API Integration  
+httpx==0.25.2
+urllib3==2.1.0
+
+# Utilities
+click==8.1.7
+rich==13.7.0
+loguru==0.7.2
+
+# Development and Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-mock==3.12.0
+black==23.11.0
+isort==5.12.0
+
+# Optional: Enhanced blockchain features
+# anchor-client==0.18.0  # Uncomment if using Anchor programs
+# metaplex==1.1.0        # Uncomment for advanced NFT metadata

@@ -1,0 +1,167 @@
+{
+  "title_patterns": [
+    {
+      "name": "delta_species",
+      "pattern": "(?P<name>[\\w\\s\\-'é.]+?)\\s*δ\\s*\\(Delta Species\\)\\s*#?(?P<number>\\d{1,3})\\s*(?P<set>[\\w\\s]+?)\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.95,
+      "description": "Name δ (Delta Species) #Number Set Grade"
+    },
+    {
+      "name": "modern_variants",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s+(?P<variant_suffix>ex|EX|GX|V|VMAX|VSTAR)\\s*(?P<set>[\\w\\s]+?)\\s*#?(?P<number>\\d{1,3})\\s*(?P<variant>holo|holographic|reverse|promo|alt\\s*art|full\\s*art|secret\\s*rare)?\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.95,
+      "description": "Name EX/GX/V/VMAX Set #Number Variant Grade"
+    },
+    {
+      "name": "dark_series",
+      "pattern": "(?P<name>Dark\\s+[\\w\\s\\-'é.δ]+?)\\s*\\((?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\)\\s*(?P<set>[\\w\\s]+?)\\s*(?P<variant>holo|holographic|reverse|promo|rare)?\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.9,
+      "description": "Dark Pokemon (Number/Total) Set Variant Grade"
+    },
+    {
+      "name": "possessive_name",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?'s\\s+[\\w\\s\\-'é.δ]+?)\\s+(?P<set>[\\w\\s]+?)\\s*#?(?P<number>\\d{1,3})\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.9,
+      "description": "Name with possessive Set #Number Grade"
+    },
+    {
+      "name": "parenthetical_number",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s*\\((?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\)\\s*-\\s*(?P<set>[\\w\\s]+?)\\s*-\\s*(?P<variant>holo|holographic|reverse|promo|rare)?.*?(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.9,
+      "description": "Name (Number/Total) - Set - Variant - Grade"
+    },
+    {
+      "name": "ungraded_parenthetical",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s*\\((?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\)\\s*-?\\s*(?P<set>[\\w\\s]+?)\\s*-?\\s*(?P<variant>holo|holographic|reverse|promo|rare)?\\s+(?P<condition>Near Mint|Mint|Excellent|Good|Poor|Heavily Played|Lightly Played|Played)",
+      "confidence": 0.85,
+      "description": "Name (Number/Total) Set Variant Condition"
+    },
+    {
+      "name": "variant_before_number",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s+(?P<set>[\\w\\s]+?)\\s+(?P<variant>holo|holographic|reverse|promo)\\s*#?(?P<number>\\d{1,3})\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.85,
+      "description": "Name Set Variant #Number Grade"
+    },
+    {
+      "name": "pokemon_prefix",
+      "pattern": "(?:pokemon\\s+)?(?P<name>[\\w\\s\\-'é.δ]+?)\\s+(?P<year>19\\d{2}|20\\d{2})?\\s*(?P<set>[\\w\\s]+?)\\s+(?P<edition>1st\\s+edition\\s+|unlimited\\s+|shadowless\\s+)?#?(?P<number>\\d{1,3})\\s*(?P<variant>holo|holographic|reverse|promo)?\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.8,
+      "description": "Pokemon Name Year Set Edition #Number Variant Grade"
+    },
+    {
+      "name": "standard_format",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s+(?P<set>[\\w\\s]+?)\\s*#?(?P<number>\\d{1,3})(?:/\\d{1,3})?\\s*(?P<variant>holo|holographic|reverse|promo)?\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.8,
+      "description": "Name Set #Number Variant Grade"
+    },
+    {
+      "name": "dash_separated",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s*-\\s*(?P<set>[\\w\\s]+?)\\s*-\\s*#?(?P<number>\\d{1,3})\\s*-?\\s*(?P<variant>holo|holographic|reverse|promo|rare)?\\s*-?\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.75,
+      "description": "Name - Set - #Number - Variant - Grade"
+    },
+    {
+      "name": "simple_ungraded",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s*\\((?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\)\\s*-?\\s*(?P<set>[\\w\\s]+?)\\s*-?\\s*(?P<variant>.*?)$",
+      "confidence": 0.6,
+      "description": "Name (Number/Total) Set Variant"
+    }
+  ],
+  "grade_patterns": [
+    {
+      "pattern": "PSA\\s*(\\d+(?:\\.5)?)",
+      "format": "PSA {score}",
+      "company": "PSA"
+    },
+    {
+      "pattern": "BGS\\s*(\\d+(?:\\.5)?)",
+      "format": "BGS {score}",
+      "company": "BGS"
+    },
+    {
+      "pattern": "CGC\\s*(\\d+(?:\\.5)?)",
+      "format": "CGC {score}",
+      "company": "CGC"
+    },
+    {
+      "pattern": "(?:near\\s+mint|nm|mint|m)(?!\\w)",
+      "format": "raw",
+      "company": "raw"
+    },
+    {
+      "pattern": "(?:light(?:ly)?\\s+played|lp)(?!\\w)",
+      "format": "raw",
+      "company": "raw"
+    },
+    {
+      "pattern": "(?:played|moderately\\s+played|mp|p)(?!\\w)",
+      "format": "raw",
+      "company": "raw"
+    },
+    {
+      "pattern": "(?:heavily\\s+played|damaged|hp|dmg)(?!\\w)",
+      "format": "raw",
+      "company": "raw"
+    }
+  ],
+  "variant_patterns": [
+    {
+      "pattern": "holo(?:graphic)?(?!\\w)",
+      "normalized": "holo"
+    },
+    {
+      "pattern": "reverse(?:\\s+holo)?(?!\\w)",
+      "normalized": "reverse"
+    },
+    {
+      "pattern": "promo(?:tional)?(?!\\w)",
+      "normalized": "promo"
+    },
+    {
+      "pattern": "full\\s+art(?!\\w)",
+      "normalized": "fullart"
+    },
+    {
+      "pattern": "alt(?:ernate)?\\s+art(?!\\w)",
+      "normalized": "altart"
+    },
+    {
+      "pattern": "secret\\s+rare(?!\\w)",
+      "normalized": "secret"
+    },
+    {
+      "pattern": "rainbow\\s+rare(?!\\w)",
+      "normalized": "rainbow"
+    },
+    {
+      "pattern": "gold(?!\\w)",
+      "normalized": "gold"
+    },
+    {
+      "pattern": "(?:non[\\s-]?holo|regular)(?!\\w)",
+      "normalized": "nonholo"
+    }
+  ],
+  "cleaning_patterns": [
+    {
+      "pattern": "pokemon\\s+",
+      "replacement": "",
+      "description": "Remove Pokemon prefix"
+    },
+    {
+      "pattern": "\\s*\\(?(?:mint|near mint|nm|excellent|exc|good|poor|damaged)\\)?\\s*",
+      "replacement": " ",
+      "description": "Remove condition words not part of grade"
+    },
+    {
+      "pattern": "\\s+",
+      "replacement": " ",
+      "description": "Normalize whitespace"
+    },
+    {
+      "pattern": "^\\s+|\\s+$",
+      "replacement": "",
+      "description": "Trim whitespace"
+    }
+  ]
+}
