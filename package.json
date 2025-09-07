@@ -21,6 +21,7 @@
     "prisma": "^5.22.0"
   },
   "dependencies": {
+    "redis": "^5.8.2",
     "typescript": "^5.9.2"
   }
 }
