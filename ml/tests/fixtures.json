@@ -1,0 +1,134 @@
+[
+  {
+    "title": "Charizard Base Set #4 PSA 10",
+    "expected": {
+      "name": "Charizard",
+      "set_code": "base1",
+      "number": "004",
+      "variant": null,
+      "grade": "PSA 10",
+      "card_key": "base1-004-base-psa10"
+    }
+  },
+  {
+    "title": "Pokemon Charizard 1998 Base Set Unlimited #004 BGS 9.5",
+    "expected": {
+      "name": "Charizard",
+      "set_code": "base1", 
+      "number": "004",
+      "variant": null,
+      "grade": "BGS 9.5",
+      "card_key": "base1-004-base-bgs95"
+    }
+  },
+  {
+    "title": "Charizard (4/102) - Base Set - Holo Rare - PSA 9",
+    "expected": {
+      "name": "Charizard",
+      "set_code": "base1",
+      "number": "004", 
+      "variant": "holo",
+      "grade": "PSA 9",
+      "card_key": "base1-004-holo-psa9"
+    }
+  },
+  {
+    "title": "Pikachu Jungle #60 PSA 8",
+    "expected": {
+      "name": "Pikachu",
+      "set_code": "jungle",
+      "number": "060",
+      "variant": null,
+      "grade": "PSA 8",
+      "card_key": "jungle-060-base-psa8"
+    }
+  },
+  {
+    "title": "Blastoise Base Set Holo #2 BGS 9",
+    "expected": {
+      "name": "Blastoise",
+      "set_code": "base1",
+      "number": "002",
+      "variant": "holo",
+      "grade": "BGS 9",
+      "card_key": "base1-002-holo-bgs9"
+    }
+  },
+  {
+    "title": "Team Rocket's Mewtwo Team Rocket #14 PSA 10",
+    "expected": {
+      "name": "Team Rocket's Mewtwo",
+      "set_code": "teamrocket",
+      "number": "014",
+      "variant": null,
+      "grade": "PSA 10", 
+      "card_key": "teamrocket-014-base-psa10"
+    }
+  },
+  {
+    "title": "Venomoth Jungle #29 Holo PSA 9",
+    "expected": {
+      "name": "Venomoth",
+      "set_code": "jungle",
+      "number": "029",
+      "variant": "holo",
+      "grade": "PSA 9",
+      "card_key": "jungle-029-holo-psa9"
+    }
+  },
+  {
+    "title": "Dark Charizard (4/82) Team Rocket Holo PSA 8",
+    "expected": {
+      "name": "Dark Charizard",
+      "set_code": "teamrocket",
+      "number": "004",
+      "variant": "holo",
+      "grade": "PSA 8",
+      "card_key": "teamrocket-004-holo-psa8"
+    }
+  },
+  {
+    "title": "Charizard ex XY Evolutions #12 Full Art PSA 10",
+    "expected": {
+      "name": "Charizard",
+      "set_code": "xyevolutions", 
+      "number": "012",
+      "variant": "fullart",
+      "grade": "PSA 10",
+      "card_key": "xyevolutions-012-fullart-psa10"
+    }
+  },
+  {
+    "title": "Alakazam (1/102) Base Set Holo Near Mint",
+    "expected": {
+      "name": "Alakazam",
+      "set_code": "base1",
+      "number": "001",
+      "variant": "holo",
+      "grade": "raw",
+      "card_key": "base1-001-holo-raw"
+    }
+  },
+  {
+    "title": "Pikachu (58/102) - Base Set - Common",
+    "expected": {
+      "name": "Pikachu",
+      "set_code": "base1",
+      "number": "058",
+      "variant": null,
+      "grade": "raw",
+      "card_key": "base1-058-base-raw"
+    }
+  },
+  {
+    "title": "Mew δ (Delta Species) #11 Holon Phantoms CGC 9.5",
+    "expected": {
+      "name": "Mew Delta",
+      "set_code": "holonphantoms",
+      "number": "011",
+      "variant": null,
+      "grade": "CGC 9.5",
+      "should_fail": false
+    }
+  }
+]

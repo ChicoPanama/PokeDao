@@ -6,3 +6,14 @@ dist/
 .env.*.local
 .DS_Store
 .env.*.local
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,98 @@
+{
+  "base_set": {
+    "code": "base1",
+    "aliases": ["base set", "base", "1st edition base", "unlimited base", "shadowless"],
+    "total_cards": 102,
+    "year": 1998
+  },
+  "jungle": {
+    "code": "jungle",
+    "aliases": ["jungle set", "jungle expansion"],
+    "total_cards": 64,
+    "year": 1999
+  },
+  "fossil": {
+    "code": "fossil",
+    "aliases": ["fossil set", "fossil expansion"],
+    "total_cards": 62,
+    "year": 1999
+  },
+  "team_rocket": {
+    "code": "teamrocket",
+    "aliases": ["team rocket", "rocket", "tr"],
+    "total_cards": 82,
+    "year": 2000
+  },
+  "gym_heroes": {
+    "code": "gymheroes",
+    "aliases": ["gym heroes", "heroes"],
+    "total_cards": 132,
+    "year": 2000
+  },
+  "gym_challenge": {
+    "code": "gymchallenge", 
+    "aliases": ["gym challenge", "challenge"],
+    "total_cards": 132,
+    "year": 2000
+  },
+  "neo_genesis": {
+    "code": "neogenesis",
+    "aliases": ["neo genesis", "genesis", "neo 1"],
+    "total_cards": 111,
+    "year": 2000
+  },
+  "neo_discovery": {
+    "code": "neodiscovery",
+    "aliases": ["neo discovery", "discovery", "neo 2"],
+    "total_cards": 75,
+    "year": 2001
+  },
+  "neo_revelation": {
+    "code": "neorevelation",
+    "aliases": ["neo revelation", "revelation", "neo 3"],
+    "total_cards": 66,
+    "year": 2001
+  },
+  "neo_destiny": {
+    "code": "neodestiny",
+    "aliases": ["neo destiny", "destiny", "neo 4"],
+    "total_cards": 113,
+    "year": 2001
+  },
+  "xy_evolutions": {
+    "code": "xyevolutions",
+    "aliases": ["xy evolutions", "evolutions", "evo"],
+    "total_cards": 108,
+    "year": 2016
+  },
+  "burning_shadows": {
+    "code": "burningshadows",
+    "aliases": ["burning shadows", "shadows", "sm3"],
+    "total_cards": 147,
+    "year": 2017
+  },
+  "hidden_fates": {
+    "code": "hiddenfates",
+    "aliases": ["hidden fates", "hf", "sm11.5"],
+    "total_cards": 68,
+    "year": 2019
+  },
+  "champions_path": {
+    "code": "championspath",
+    "aliases": ["champions path", "cp", "swsh3.5"],
+    "total_cards": 73,
+    "year": 2020
+  },
+  "brilliant_stars": {
+    "code": "brilliantstars",
+    "aliases": ["brilliant stars", "brs", "swsh9"],
+    "total_cards": 172,
+    "year": 2022
+  },
+  "holon_phantoms": {
+    "code": "holonphantoms",
+    "aliases": ["holon phantoms", "phantoms", "hp"],
+    "total_cards": 110,
+    "year": 2006
+  }
+}

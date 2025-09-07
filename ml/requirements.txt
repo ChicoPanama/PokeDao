@@ -1,0 +1,21 @@
+# PokeDAO Normalization Engine Dependencies
+# Phase 2: Card title parsing and normalization
+
+# Core parsing and validation
+regex==2023.10.3        # Enhanced regex with Unicode support
+pydantic==2.5.0         # Data validation and settings
+fuzzywuzzy==0.18.0      # Fuzzy string matching for sets
+python-Levenshtein==0.23.0  # Fast string distance calculations
+
+# Testing and development
+pytest==7.4.3          # Testing framework
+pytest-benchmark==4.0.0  # Performance benchmarking
+pytest-cov==4.0.0      # Test coverage
+
+# Data handling
+orjson==3.9.10          # Fast JSON parsing for set data
+dataclasses-json==0.6.1  # JSON serialization for dataclasses
+
+# Optional: Future ML enhancements
+# scikit-learn==1.3.2   # For advanced pattern learning
+# spacy==3.7.2          # NLP for complex parsing
