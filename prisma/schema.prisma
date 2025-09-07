@@ -15,29 +15,40 @@ model Card {
   variant   String?
   grade     String?
   condition String?
+  cardKey   String?  // Normalized grouping key for price aggregation
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   listings       Listing[]
   evaluations    Evaluation[]
   watchlistItems WatchlistItem[]
+  catalogItems   SourceCatalogItem[]
+  priceCache     PriceCache[]
+  modelInsights  ModelInsight[]
 
   @@unique([set, number, variant, grade])
+  @@index([cardKey])
 }
 
 model Listing {
-  id        String   @id @default(cuid())
-  cardId    String
-  source    String
-  price     Float
-  currency  String   @default("USD")
-  url       String
-  seller    String?
-  isActive  Boolean  @default(true)
-  scrapedAt DateTime @default(now())
+  id           String   @id @default(cuid())
+  cardId       String
+  source       String
+  sourceItemId String?  // Reference to external source ID
+  price        Float
+  currency     String   @default("USD")
+  url          String
+  seller       String?
+  isActive     Boolean  @default(true)
+  condition    String?  // Near Mint, Played, etc.
+  raw          Json?    // Raw scraping data
+  scrapedAt    DateTime @default(now())
 
-  card        Card         @relation(fields: [cardId], references: [id])
-  evaluations Evaluation[]
+  card         Card         @relation(fields: [cardId], references: [id])
+  evaluations  Evaluation[]
+
+  @@index([source, scrapedAt])
+  @@index([sourceItemId])
 }
 
 model User {
@@ -111,4 +122,92 @@ model WatchlistItem {
 
   user User @relation(fields: [userId], references: [id])
   card Card @relation(fields: [cardId], references: [id])
+}
+
+// === PHASE 1: PokeDAO Core Tables ===
+
+model SourceCatalogItem {
+  id           String   @id @default(cuid())
+  source       String   // "collector_crypt", "ebay", "fanatics", "goldin"
+  sourceItemId String   // External ID from source
+  title        String   // Raw title from source
+  setName      String?  // Parsed/normalized set name  
+  number       String?  // Card number
+  grade        String?  // PSA 10, BGS 9.5, etc.
+  url          String   // Link to original listing
+  cardKey      String?  // Normalized key for grouping
+  cardId       String?  // Link to canonical Card
+  lastSeenAt   DateTime @default(now())
+  createdAt    DateTime @default(now())
+  
+  // Relations
+  card         Card?         @relation(fields: [cardId], references: [id])
+  insights     ModelInsight[] @relation("CatalogInsights")
+  
+  @@unique([source, sourceItemId])
+  @@index([cardKey])
+  @@index([source, lastSeenAt])
+  @@index([cardId])
+}
+
+model PriceCache {
+  id          String   @id @default(cuid())
+  cardKey     String   // Normalized card identifier
+  cardId      String?  // Optional link to canonical card
+  windowDays  Int      // 7, 30, 90
+  median      Decimal  @db.Decimal(10,2)
+  iqr         Decimal  @db.Decimal(10,2) // Interquartile range
+  sampleSize  Int      // Number of listings used
+  updatedAt   DateTime @default(now())
+  
+  // Relations
+  card        Card?    @relation(fields: [cardId], references: [id])
+  
+  @@unique([cardKey, windowDays])
+  @@index([cardKey])
+  @@index([cardId])
+}
+
+model ModelInsight {
+  id               String   @id @default(cuid())
+  cardKey          String?  // If normalized
+  cardId           String?  // Link to canonical card
+  catalogItemId    String?  // Link to SourceCatalogItem
+  verdict          String   // "BUY", "WATCH", "AVOID"
+  fairValue        Decimal? @db.Decimal(10,2)
+  confidence       Float    // 0.0 to 1.0
+  risks            String[] // Array of risk factors
+  rationale        String?  // AI explanation text
+  inputHash        String   // Hash of input data for caching
+  model            String   @default("deepseek")
+  expiresAt        DateTime // TTL for cache invalidation
+  createdAt        DateTime @default(now())
+  
+  // Relations
+  card             Card?              @relation(fields: [cardId], references: [id])
+  catalogItem      SourceCatalogItem? @relation("CatalogInsights", fields: [catalogItemId], references: [id])
+  
+  @@unique([inputHash])
+  @@index([cardKey, createdAt])
+  @@index([verdict, expiresAt])
+  @@index([cardId])
+  @@index([catalogItemId])
+}
+
+model ScrapeCursor {
+  id        String   @id @default(cuid()) 
+  source    String   @unique // "collector_crypt", "ebay", etc.
+  cursor    String   // JSON or string cursor for pagination
+  updatedAt DateTime @default(now())
+}
+
+model RateBudget {
+  id            String   @id @default(cuid())
+  source        String   @unique
+  maxPerWindow  Int      // Max requests per window
+  windowSec     Int      // Window size in seconds  
+  lastResetAt   DateTime @default(now())
+  usedCount     Int      @default(0)
+  
+  @@index([source, lastResetAt])
 }

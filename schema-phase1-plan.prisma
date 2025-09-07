@@ -1,0 +1,118 @@
+// PHASE 1 SCHEMA ADDITIONS - Optimized for existing schema integration
+
+// ADD TO EXISTING Card model:
+model Card {
+  // ... existing fields ...
+  cardKey      String?  // ADD: Normalized grouping key
+  
+  // ADD new relations:
+  catalogItems   SourceCatalogItem[]
+  priceCache     PriceCache[]
+  modelInsights  ModelInsight[]
+  
+  // MODIFY existing unique constraint to include cardKey option:
+  @@unique([set, number, variant, grade])
+  @@index([cardKey]) // ADD
+}
+
+// MODIFY existing Listing to support snapshots:
+model Listing {
+  // ... existing fields ...
+  // ADD snapshot support:
+  sourceItemId String?  // Reference to external source
+  raw          Json?    // Raw scraping data
+  
+  // ADD relation to catalog:
+  catalogItem  SourceCatalogItem? @relation(fields: [sourceItemId], references: [sourceItemId])
+}
+
+// NEW TABLES:
+
+model SourceCatalogItem {
+  id           String   @id @default(cuid())
+  source       String   // "collector_crypt", "ebay", "fanatics"
+  sourceItemId String   // External ID from source
+  title        String   // Raw title from source
+  setName      String?  // Parsed/normalized set name  
+  number       String?  // Card number
+  grade        String?  // PSA 10, BGS 9.5, etc.
+  url          String   // Link to original listing
+  cardKey      String?  // Normalized key for grouping
+  cardId       String?  // Link to canonical Card
+  lastSeenAt   DateTime @default(now())
+  createdAt    DateTime @default(now())
+  
+  // Relations
+  card         Card?      @relation(fields: [cardId], references: [id])
+  listings     Listing[]  // Connect to existing Listing
+  insights     ModelInsight[]
+  
+  @@unique([source, sourceItemId])
+  @@index([cardKey])
+  @@index([source, lastSeenAt])
+  @@index([cardId])
+}
+
+model PriceCache {
+  id          String   @id @default(cuid())
+  cardKey     String   // Normalized card identifier
+  cardId      String?  // Optional link to canonical card
+  windowDays  Int      // 7, 30, 90
+  median      Decimal  @db.Decimal(10,2)
+  iqr         Decimal  @db.Decimal(10,2) // Interquartile range
+  sampleSize  Int      // Number of listings used
+  updatedAt   DateTime @default(now())
+  
+  // Relations
+  card        Card?    @relation(fields: [cardId], references: [id])
+  
+  @@unique([cardKey, windowDays])
+  @@index([cardKey])
+  @@index([cardId])
+}
+
+model ModelInsight {
+  id           String   @id @default(cuid())
+  cardKey      String?  // If normalized
+  cardId       String?  // Link to canonical card
+  sourceItemId String?  // If specific to one listing
+  verdict      String   // "BUY", "WATCH", "AVOID"
+  fairValue    Decimal? @db.Decimal(10,2)
+  confidence   Float    // 0.0 to 1.0
+  risks        String[] // Array of risk factors
+  rationale    String?  // AI explanation
+  inputHash    String   // Hash of input data for caching
+  model        String   @default("deepseek")
+  expiresAt    DateTime // TTL for cache invalidation
+  createdAt    DateTime @default(now())
+  
+  // Relations
+  card         Card?              @relation(fields: [cardId], references: [id])
+  catalogItem  SourceCatalogItem? @relation(fields: [sourceItemId], references: [sourceItemId])
+  
+  @@unique([inputHash])
+  @@index([cardKey, createdAt])
+  @@index([verdict, expiresAt])
+  @@index([cardId])
+}
+
+model ScrapeCursor {
+  id        String   @id @default(cuid()) 
+  source    String   @unique // "collector_crypt", "ebay", etc.
+  cursor    String   // JSON or string cursor for pagination
+  updatedAt DateTime @default(now())
+}
+
+model RateBudget {
+  id            String   @id @default(cuid())
+  source        String   @unique
+  maxPerWindow  Int      // Max requests per window
+  windowSec     Int      // Window size in seconds  
+  lastResetAt   DateTime @default(now())
+  usedCount     Int      @default(0)
+  
+  @@index([source, lastResetAt])
+}
+
+// OPTIONAL: Keep existing Evaluation or merge with ModelInsight
+// Recommendation: Keep both - Evaluation for detailed analysis, ModelInsight for quick verdicts
