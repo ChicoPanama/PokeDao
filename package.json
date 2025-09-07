@@ -10,7 +10,8 @@
     "ml"
   ],
   "scripts": {
-    "build": "echo \"(root) nothing to build\"",
+    "build:scripts": "tsc -p ./scripts/tsconfig.json",
+    "build": "pnpm -w -r --filter ./... run build || true",
     "dev": "echo \"run package-level dev scripts\""
   },
   "devDependencies": {
