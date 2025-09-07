@@ -1,116 +1,57 @@
-# PokeDAO
 # 🃏 PokeDAO
 
-**The Bloomberg Terminal for Pokémon cards.**  
-PokeDAO is an AI-powered trading assistant that helps collectors and investors discover undervalued cards, track market trends, and act fast — all while being community-owned through DAO mechanics.
+PokeDAO is an intelligent trading assistant for collectible cards.  
+It is built to be the Bloomberg Terminal of Pokémon cards: a single platform where collectors and investors can discover new listings, understand true market value, and make informed decisions quickly.
 
 ---
 
-## 🚀 Vision & Core Value
+## 🌍 What Is PokeDAO?
 
-- **Vision**: Become the one-stop AI trading terminal for Pokémon cards and beyond.  
-- **Core Value**: Real-time discovery → AI valuation → clear investment guidance → one-tap execution.  
-- **Differentiator**:  
-  - AI-driven insights powered by **DeepSeek**.  
-  - DAO-enabled governance and community ownership.  
+PokeDAO unifies scattered card market data into one streamlined experience.  
+Instead of checking multiple sites, users receive a real-time feed of listings combined with clear valuations and insights.  
 
----
-
-## 🧩 MVP (Minimum Viable Product)
-
-The first milestone focuses on **one core flow: scrape → analyze → alert.**
-
-### 1. Data Layer
-- Scraper for **Collector Crypt** (expand later to eBay, PSA, TCGPlayer).  
-- Normalized schema: set, card name, number, rarity, grade, price.  
-
-### 2. AI Layer (DeepSeek)
-- Normalized data fed into **DeepSeek**.  
-- Outputs include:  
-  - Short description of the card.  
-  - Trend insights.  
-  - Investment tags: **Buy / Watch / Avoid**.  
-  - Projected growth outlook.  
-
-### 3. Telegram Bot
-- Real-time alerts for new listings.  
-- Buttons: `Add to Watchlist` | `View Trends` | `Buy Link`.  
-- Early revenue test: **1% referral fee** on purchases.  
+The platform highlights opportunities the moment they appear, explains the context behind each card, and provides simple calls to action such as **Buy**, **Watch**, or **Avoid**. Whether through the Telegram bot or the web dashboard, PokeDAO makes it easier for collectors and investors to stay ahead of the market.
 
 ---
 
-## 📊 Core Features (Phase II–III)
+## ⚡ What Powers It
 
-- **Web Dashboard**:  
-  - Live feed of listings (sortable/filterable).  
-  - Card detail pages with pricing history + AI insights.  
-  - Watchlist synced from Telegram.  
+At its core, PokeDAO is powered by a continuous data pipeline and intelligent analysis. Scrapers collect and normalize card information from sources like Collector Crypt, with plans to expand to eBay, PSA, and TCGPlayer. This data flows into an analysis layer that identifies rarity, compares pricing trends, and evaluates potential growth.  
 
-- **Analytics / Rankings**:  
-  - “Top 100 Value Cards” list auto-updated daily.  
-  - Market heatmaps (sets, grades, trends).  
-
-- **DAO Layer**:  
-  - Tokenized governance.  
-  - Fee split (75% dev / 25% DAO).  
-  - DAO treasury for independent card purchases.  
+The Telegram bot delivers instant alerts when new cards appear, while the dashboard provides a deeper view into listings, watchlists, and historical pricing. Behind the scenes, the system is supported by a modern stack including Node.js, PostgreSQL, Redis, and Docker for reliability and scale.
 
 ---
 
-## 🌐 Advanced Features (Phase IV–V)
+## ✨ Why PokeDAO?
 
-- **Trading Terminal**:  
-  - Real-time multi-market feed.  
-  - Advanced charts (momentum, liquidity).  
-  - AI-driven trading signals.  
-
-- **Referral Architecture**:  
-  - Incentives modeled after Maestro, Bloom, Banana.  
-  - Growth through Telegram group integrations.  
-
-- **Multi-Collectible Expansion**:  
-  - Extend beyond Pokémon → Yu-Gi-Oh, Magic, Sports Cards.  
-  - AI auto-adaptation for each category.  
+PokeDAO brings speed by delivering alerts the moment cards are listed.  
+It adds clarity through transparent, data-driven valuations.  
+And it provides confidence by helping collectors and investors act with information they can trust.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer       | Tech                                                                 |
+| Layer       | Technology                                                           |
 |-------------|----------------------------------------------------------------------|
-| **Backend** | Node.js (API), Prisma (ORM), PostgreSQL                              |
-| **Workers** | Python/Node.js scraping cron jobs                                    |
-| **AI**      | DeepSeek (investment engine), OpenAI fallback (summaries)            |
-| **Bot**     | Aiogram (Python) or Telegraf (Node.js)                               |
-| **Frontend**| Next.js + Tailwind                                                   |
-| **Infra**   | Docker, Redis (caching), Vercel/Render                               |
+| Backend     | Node.js API, Prisma ORM, PostgreSQL                                  |
+| Workers     | Python/Node.js scraping jobs                                         |
+| Analysis    | DeepSeek with fallback summarization                                 |
+| Bot         | Aiogram (Python) or Telegraf (Node.js)                               |
+| Frontend    | Next.js + Tailwind                                                   |
+| Infra       | Docker, Redis, Vercel/Render                                         |
 
 ---
 
-## 💰 Business Model
+## 🤝 Community
 
-- **1% transaction fee** on referral purchases.  
-- **DAO token** for governance & fee alignment.  
-- **Premium features**: Pro dashboard, early alerts, deep analytics.  
+PokeDAO is built for collectors and investors who believe trading cards deserve the same level of intelligence and accessibility as any financial market. It is open, collaborative, and driven by the people who use it.
 
 ---
 
-## 🗺️ Roadmap
+## 📜 License
 
-| Phase | Focus Area | Key Deliverables |
-|-------|------------|------------------|
-| **0** | Foundation | Monorepo setup, DB schema (users, cards, listings, watchlists). |
-| **I** | MVP | Scraper + AI + Telegram bot with alerts end-to-end. |
-| **II** | Dashboard | Web dashboard, watchlist sync, Top 100 rankings. |
-| **III** | DAO | Token launch, treasury mechanics, referral system. |
-| **IV** | Terminal | Real-time feed, advanced analytics, multi-collectible expansion. |
-
----
-
-## 🤝 Contributing
-
-We welcome contributions from builders, collectors, and AI enthusiasts.  
-If you’d like to get involved, open an issue or submit a pull request.  
+Open-source under the **MIT License**.  
 
 ---
 
