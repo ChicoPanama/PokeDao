@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeDAO External Data Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin: 10px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            margin: 0 0 10px 0;
+            color: #5a67d8;
+            font-size: 1.1rem;
+        }
+        
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin: 5px 0;
+        }
+        
+        .stat-card .label {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+        
+        .section {
+            background: white;
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            margin: 0 0 20px 0;
+            color: #2d3748;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        
+        .signals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .signal-card {
+            border: 1px solid #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f7fafc;
+        }
+        
+        .signal-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .signal-buy { background: #48bb78; color: white; }
+        .signal-strong_buy { background: #38a169; color: white; }
+        .signal-watch { background: #ed8936; color: white; }
+        .signal-hold { background: #718096; color: white; }
+        
+        .priority-high { border-left: 4px solid #f56565; }
+        .priority-medium { border-left: 4px solid #ed8936; }
+        .priority-low { border-left: 4px solid #48bb78; }
+        
+        .confidence {
+            font-weight: bold;
+            color: #2d3748;
+        }
+        
+        .endpoints {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .endpoint {
+            background: #edf2f7;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        
+        .endpoint a {
+            color: #5a67d8;
+            text-decoration: none;
+        }
+        
+        .endpoint a:hover {
+            text-decoration: underline;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #718096;
+        }
+        
+        .error {
+            background: #fed7d7;
+            color: #c53030;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🃏 PokeDAO External Data Dashboard</h1>
+            <p>Real-time market analysis from 24,307 Pokemon cards</p>
+            <p id="last-updated">Loading...</p>
+        </div>
+        
+        <div class="stats-grid" id="stats-grid">
+            <div class="loading">Loading statistics...</div>
+        </div>
+        
+        <div class="section">
+            <h2>📈 Top Market Signals</h2>
+            <div id="signals-container">
+                <div class="loading">Loading market signals...</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🔧 API Endpoints</h2>
+            <div class="endpoints">
+                <div class="endpoint">
+                    <strong>Health:</strong><br>
+                    <a href="/health" target="_blank">GET /health</a>
+                </div>
+                <div class="endpoint">
+                    <strong>Status:</strong><br>
+                    <a href="/external/status" target="_blank">GET /external/status</a>
+                </div>
+                <div class="endpoint">
+                    <strong>Preview:</strong><br>
+                    <a href="/external/preview/collector-crypt?limit=5" target="_blank">GET /external/preview/collector-crypt</a>
+                </div>
+                <div class="endpoint">
+                    <strong>Signals:</strong><br>
+                    <a href="/external/signals?limit=10&priority=high" target="_blank">GET /external/signals</a>
+                </div>
+                <div class="endpoint">
+                    <strong>Analytics:</strong><br>
+                    <a href="/external/analytics" target="_blank">GET /external/analytics</a>
+                </div>
+                <div class="endpoint">
+                    <strong>Discovery:</strong><br>
+                    <a href="/external/discovery" target="_blank">GET /external/discovery</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 Data Quality & Coverage</h2>
+            <div id="quality-stats">
+                <div class="loading">Loading data quality metrics...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function fetchData() {
+            try {
+                // Fetch analytics data
+                const analyticsResponse = await fetch('/external/analytics');
+                const analytics = await analyticsResponse.json();
+                
+                if (analytics.ok) {
+                    updateStats(analytics.analytics);
+                    updateQualityStats(analytics.analytics);
+                    document.getElementById('last-updated').textContent = 
+                        `Last updated: ${new Date(analytics.generatedAt).toLocaleString()}`;
+                }
+                
+                // Fetch top signals
+                const signalsResponse = await fetch('/external/signals?limit=12&priority=high');
+                const signals = await signalsResponse.json();
+                
+                if (signals.ok) {
+                    updateSignals(signals.signals);
+                }
+                
+            } catch (error) {
+                console.error('Failed to fetch data:', error);
+                document.getElementById('stats-grid').innerHTML = 
+                    '<div class="error">Failed to load data. Please check the API server.</div>';
+            }
+        }
+        
+        function updateStats(analytics) {
+            const statsGrid = document.getElementById('stats-grid');
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <h3>Total Cards</h3>
+                    <div class="value">${analytics.overview.totalCards.toLocaleString()}</div>
+                    <div class="label">Collector Crypt Dataset</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Graded Cards</h3>
+                    <div class="value">${analytics.overview.gradedPercentage}%</div>
+                    <div class="label">${analytics.overview.gradedCards.toLocaleString()} cards</div>
+                </div>
+                <div class="stat-card">
+                    <h3>High Grade (9.0+)</h3>
+                    <div class="value">${analytics.overview.highGradePercentage}%</div>
+                    <div class="label">${analytics.overview.highGradeCards.toLocaleString()} cards</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Market Value</h3>
+                    <div class="value">$${parseFloat(analytics.valuation.totalMarketValue).toLocaleString()}</div>
+                    <div class="label">Insured Value</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Avg Card Value</h3>
+                    <div class="value">$${parseFloat(analytics.valuation.avgInsuredValue).toFixed(0)}</div>
+                    <div class="label">Per card</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Signals</h3>
+                    <div class="value">${analytics.signals.totalSignals}</div>
+                    <div class="label">${analytics.signals.buySignals} BUY, ${analytics.signals.watchSignals} WATCH</div>
+                </div>
+            `;
+        }
+        
+        function updateSignals(signals) {
+            const container = document.getElementById('signals-container');
+            
+            if (signals.length === 0) {
+                container.innerHTML = '<div class="loading">No signals found</div>';
+                return;
+            }
+            
+            container.innerHTML = `
+                <div class="signals-grid">
+                    ${signals.map(signal => `
+                        <div class="signal-card priority-${signal.priority}">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <span class="signal-badge signal-${signal.signal.toLowerCase()}">${signal.signal}</span>
+                                <span class="confidence">${(signal.confidence * 100).toFixed(0)}%</span>
+                            </div>
+                            <h4 style="margin: 0 0 8px 0; color: #2d3748;">${signal.cardName || 'Unknown Card'}</h4>
+                            <div style="font-size: 0.9rem; color: #718096; margin-bottom: 8px;">
+                                ${signal.set ? `Set: ${signal.set}` : ''} 
+                                ${signal.number ? `#${signal.number}` : ''}
+                                ${signal.grade ? `| ${signal.grade}` : ''}
+                            </div>
+                            <div style="font-weight: bold; color: #38a169; margin-bottom: 8px;">
+                                ${signal.insuredValue ? `$${signal.insuredValue.toLocaleString()}` : 'No value data'}
+                            </div>
+                            <div style="font-size: 0.85rem; color: #4a5568;">
+                                ${signal.reasoning}
+                            </div>
+                            <div style="font-size: 0.75rem; color: #a0aec0; margin-top: 8px;">
+                                Risk: ${signal.riskLevel} | Cap: ${signal.marketCap}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+        
+        function updateQualityStats(analytics) {
+            const container = document.getElementById('quality-stats');
+            container.innerHTML = `
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Vintage Cards</h3>
+                        <div class="value">${analytics.overview.vintagePercentage}%</div>
+                        <div class="label">${analytics.overview.vintageCards.toLocaleString()} cards (1998-1999)</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Insured Coverage</h3>
+                        <div class="value">${analytics.overview.insuredPercentage}%</div>
+                        <div class="label">${analytics.overview.insuredCards.toLocaleString()} cards</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Max Single Value</h3>
+                        <div class="value">$${parseFloat(analytics.valuation.maxInsuredValue).toLocaleString()}</div>
+                        <div class="label">Highest insured card</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Auto-refresh every 30 seconds
+        fetchData();
+        setInterval(fetchData, 30000);
+    </script>
+</body>
+</html>
