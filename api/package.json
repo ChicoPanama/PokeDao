@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsx watch src/index.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "test:external": "tsx test-external-integration.ts"
   },
   "dependencies": {
     "@fastify/cors": "^9.0.1",

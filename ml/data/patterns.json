@@ -1,6 +1,12 @@
 {
   "title_patterns": [
     {
+      "name": "pokemon_dash_format_exact",
+      "pattern": "Pokemon\\s*-\\s*(?P<name>[\\w\\s\\-'é.δ]+?)\\s*-\\s*(?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\s*-\\s*(?P<set>[^-]+?)\\s*-\\s*(?P<variant>.+)$",
+      "confidence": 0.98,
+      "description": "Pokemon - Name - Number/Total - Set - Variant (exact match)"
+    },
+    {
       "name": "delta_species",
       "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s*\\(Delta Species\\)\\s*#?(?P<number>\\d{1,3})\\s+(?P<set>[\\w\\s]+?)\\s+(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)",
       "confidence": 0.95,
@@ -17,6 +23,36 @@
       "pattern": "(?P<name>Dark\\s+[\\w\\s\\-'é.δ]+?)\\s*\\((?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\)\\s+(?P<set>[\\w\\s]+?)\\s+(?P<variant>holo|holographic|reverse|promo|rare)?\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)",
       "confidence": 0.9,
       "description": "Dark Pokemon (Number/Total) Set Variant Grade"
+    },
+    {
+      "name": "standard_brackets_parentheses",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s*\\((?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\)\\s*\\[(?P<set>[^\\]]+)\\]\\s*(?P<variant>holo|holographic|reverse|promo|rare|common|uncommon)?\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.95,
+      "description": "Name (Number/Total) [Set] Variant Grade - Standard TCG format"
+    },
+    {
+      "name": "pokemon_dash_format",
+      "pattern": "Pokemon\\s*-\\s*(?P<name>[\\w\\s\\-'é.δ]+?)\\s*-\\s*(?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\s*-\\s*(?P<set>[^-]+?)\\s*-\\s*(?P<variant>.*?)$",
+      "confidence": 0.90,
+      "description": "Pokemon - Name - Number/Total - Set - Variant"
+    },
+    {
+      "name": "pokemon_dash_format_alt",
+      "pattern": "Pokemon\\s*-\\s*(?P<name>[\\w\\s\\-'é.δ]+?)\\s*-\\s*(?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\s*-\\s*(?P<set>[^-]+?)\\s*-\\s*(?P<variant>holo\\s*rare|common|uncommon|rare|holo|holographic)(?:\\s+(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?))?",
+      "confidence": 0.88,
+      "description": "Pokemon - Name - Number/Total - Set - Variant Grade (refined)"
+    },
+    {
+      "name": "dark_hash_format",
+      "pattern": "(?P<name>Dark\\s+[\\w\\s\\-'é.δ]+?)\\s+(?P<variant>holo|holographic)?\\s*#(?P<number>\\d{1,3})\\s+(?P<set>[\\w\\s]+?)\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)",
+      "confidence": 0.88,
+      "description": "Dark Pokemon Holo #Number Set Grade"
+    },
+    {
+      "name": "simple_space_format",
+      "pattern": "(?P<name>[\\w\\s\\-'é.δ]+?)\\s+(?P<set>Neo\\s+Genesis|Base\\s+Set|Jungle|Fossil|Team\\s+Rocket|Gym\\s+Heroes|Gym\\s+Challenge|[\\w\\s]+?)\\s+(?P<number>\\d{1,3})/(?P<total>\\d{1,3})\\s+(?P<variant>holo|holographic|reverse|promo|rare|common|uncommon)?\\s*(?P<edition>first\\s+edition|1st\\s+edition)?\\s*(?P<grade>PSA\\s*\\d+(?:\\.5)?|BGS\\s*\\d+(?:\\.5)?|CGC\\s*\\d+(?:\\.5)?)?",
+      "confidence": 0.85,
+      "description": "Name Set Number/Total Variant Edition Grade"
     },
     {
       "name": "possessive_name",
@@ -144,9 +180,9 @@
   ],
   "cleaning_patterns": [
     {
-      "pattern": "pokemon\\s+",
+      "pattern": "(?<!^)pokemon\\s+",
       "replacement": "",
-      "description": "Remove Pokemon prefix"
+      "description": "Remove Pokemon prefix (but not at start of title)"
     },
     {
       "pattern": "\\s+",

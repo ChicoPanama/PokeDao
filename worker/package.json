@@ -16,7 +16,13 @@
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test-integration": "npx tsx src/test-integration.ts",
+    "harvest": "npx tsx src/smart-collector-crypt-harvester.ts",
+    "harvest-recover": "npx tsx src/smart-collector-crypt-harvester.ts --recover",
+    "smart-harvest": "npx tsx src/resumable-harvester.ts",
+    "harvest-reset": "npx tsx src/resumable-harvester.ts reset",
+    "dev": "npx tsx src/index.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.6.0",

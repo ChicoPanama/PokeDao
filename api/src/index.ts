@@ -12,6 +12,14 @@ import type { FastifyBaseLogger } from "fastify";
 import { normalizeCardQuery, getComparableSales, sanitizeComps, computeFairValue } from "@pokedao/worker";
 import { Prisma } from "@prisma/client";
 
+// External data integration endpoints
+import { 
+  getExternalDataStatus, 
+  previewNormalization, 
+  getMarketSignals, 
+  getDiscoveryEndpoints 
+} from "./external-data-endpoints.js";
+
 const PORT = Number(process.env.PORT || 3000);
 const HOST = "0.0.0.0";
 
@@ -234,6 +242,78 @@ async function buildServer() {
       };
     } catch (err: any) {
       logger.error?.({ err }, 'card details route error'); // Use optional chaining for safety
+      reply.code(500);
+      return { ok: false, error: 'Internal error' };
+    }
+  });
+
+  // External data integration endpoints
+  
+  // Get status of all external data sources
+  app.get('/external/status', async (req, reply) => {
+    try {
+      const status = await getExternalDataStatus();
+      return { ok: true, sources: status, generatedAt: new Date().toISOString() };
+    } catch (err: any) {
+      app.log.error({ err }, 'external status error');
+      reply.code(500);
+      return { ok: false, error: 'Internal error' };
+    }
+  });
+
+  // Preview normalization without saving to database
+  app.get('/external/preview/:source', async (req, reply) => {
+    try {
+      const { source } = req.params as { source: string };
+      const q = req.query as Record<string, string | undefined>;
+      const limit = Math.min(50, Math.max(1, Number(q.limit || '10')));
+      
+      const preview = await previewNormalization(source, limit);
+      return { 
+        ok: true, 
+        source, 
+        previews: preview, 
+        count: preview.length,
+        generatedAt: new Date().toISOString() 
+      };
+    } catch (err: any) {
+      app.log.error({ err }, 'normalization preview error');
+      reply.code(500);
+      return { ok: false, error: 'Internal error' };
+    }
+  });
+
+  // Get AI-powered market signals from external data
+  app.get('/external/signals', async (req, reply) => {
+    try {
+      const q = req.query as Record<string, string | undefined>;
+      const limit = Math.min(100, Math.max(1, Number(q.limit || '20')));
+      
+      const signals = await getMarketSignals(limit);
+      return { 
+        ok: true, 
+        signals, 
+        count: signals.length,
+        generatedAt: new Date().toISOString() 
+      };
+    } catch (err: any) {
+      app.log.error({ err }, 'market signals error');
+      reply.code(500);
+      return { ok: false, error: 'Internal error' };
+    }
+  });
+
+  // Discovery endpoints for integration testing
+  app.get('/external/discovery', async (req, reply) => {
+    try {
+      const discovery = await getDiscoveryEndpoints();
+      return { 
+        ok: true, 
+        discovery,
+        generatedAt: new Date().toISOString() 
+      };
+    } catch (err: any) {
+      app.log.error({ err }, 'discovery endpoints error');
       reply.code(500);
       return { ok: false, error: 'Internal error' };
     }
