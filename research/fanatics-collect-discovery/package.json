@@ -1,0 +1,23 @@
+{
+  "name": "fanatics-collect-discovery",
+  "version": "1.0.0",
+  "description": "API discovery framework for Fanatics Collect platform",
+  "main": "static-discovery.js",
+  "scripts": {
+    "static": "npx tsx static-discovery.ts",
+    "dynamic": "npx tsx dynamic-discovery.ts",
+    "fanaticscollect-static": "npx tsx fanaticscollect-static-discovery.ts",
+    "fanaticscollect-dynamic": "npx tsx fanaticscollect-dynamic-discovery.ts",
+    "normalize": "python3 normalize-test.py",
+    "full": "npm run static && npm run dynamic && npm run normalize",
+    "auction-discovery": "npm run fanaticscollect-static && npm run fanaticscollect-dynamic"
+  },
+  "dependencies": {
+    "@types/node": "^20.0.0",
+    "@types/node-fetch": "^2.6.13",
+    "axios": "^1.6.0",
+    "node-fetch": "^3.3.2",
+    "playwright": "^1.40.0",
+    "tsx": "^4.0.0"
+  }
+}

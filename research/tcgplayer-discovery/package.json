@@ -1,0 +1,19 @@
+{
+  "name": "tcgplayer-discovery",
+  "version": "1.0.0",
+  "description": "API discovery framework for TCGPlayer platform",
+  "main": "static-discovery.js",
+  "scripts": {
+    "static": "npx tsx static-discovery.ts",
+    "dynamic": "npx tsx dynamic-discovery.ts",
+    "full": "npm run static && npm run dynamic"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.15.0",
+    "@types/node": "^20.0.0",
+    "axios": "^1.6.0",
+    "playwright": "^1.40.0",
+    "prisma": "^6.15.0",
+    "tsx": "^4.0.0"
+  }
+}
