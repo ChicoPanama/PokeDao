@@ -1,0 +1,150 @@
+/*
+  Fanatics Collect Separate Database Schema
+  ========================================
+  
+  Separate from main PokeDAO database to:
+  - Test data quality before integration
+  - Allow independent development
+  - Easy merging when ready
+  - Preserve existing 24,307 Collector Crypt records
+*/
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/fanatics-client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./fanatics-collect.db"
+}
+
+// Fanatics-specific card model
+model FanaticsCard {
+  id          Int      @id @default(autoincrement())
+  
+  // Core card data
+  title       String
+  price       Int      @default(0)  // Price in cents
+  priceText   String?  // Original price text
+  lotId       String?  // Fanatics lot ID
+  lotUrl      String?  // Direct lot URL
+  imageUrl    String?  // Card image URL
+  
+  // Classification
+  source      String   // 'fanatics-active' or 'fanatics-sold'
+  cardType    String   @default("pokemon") // Always pokemon for now
+  isValidated Boolean  @default(false)     // Manual validation flag
+  
+  // Marketplace data
+  pageNumber  Int?     // Which page it was found on
+  soldDate    String?  // For sold cards
+  
+  // Metadata
+  scrapedAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Raw data preservation
+  rawData     Json?    // Store complete extracted data
+  
+  @@index([source])
+  @@index([price])
+  @@index([scrapedAt])
+  @@index([lotId])
+}
+
+// Harvest session tracking
+model FanaticsHarvestSession {
+  id            Int      @id @default(autoincrement())
+  sessionId     String   @unique
+  
+  // Session metadata
+  harvestType   String   // 'test', 'full', 'graphql'
+  startUrl      String
+  configUsed    Json     // Store harvester configuration
+  
+  // Progress tracking
+  totalPages    Int      @default(50)
+  processedPages Int     @default(0)
+  totalCards    Int      @default(0)
+  errors        Json?    // Store error details
+  
+  // Timing
+  startTime     DateTime @default(now())
+  endTime       DateTime?
+  duration      Int?     // Duration in milliseconds
+  
+  // Results
+  isComplete    Boolean  @default(false)
+  isSuccessful  Boolean  @default(false)
+  resultSummary Json?    // Store final results
+  
+  @@index([sessionId])
+  @@index([harvestType])
+  @@index([startTime])
+}
+
+// GraphQL response tracking for optimization
+model FanaticsGraphQLResponse {
+  id          Int      @id @default(autoincrement())
+  
+  // Request details
+  operationName String
+  url         String
+  
+  // Response data
+  responseData Json
+  cardCount   Int      @default(0)  // How many cards in this response
+  
+  // Metadata
+  capturedAt  DateTime @default(now())
+  sessionId   String?  // Link to harvest session
+  
+  @@index([operationName])
+  @@index([sessionId])
+  @@index([capturedAt])
+}
+
+// Price tracking for trend analysis
+model FanaticsPriceHistory {
+  id        Int      @id @default(autoincrement())
+  
+  cardId    Int
+  card      FanaticsCard @relation(fields: [cardId], references: [id])
+  
+  price     Int      // Price in cents
+  priceText String   // Original price text
+  source    String   // 'active' or 'sold'
+  
+  recordedAt DateTime @default(now())
+  
+  @@index([cardId])
+  @@index([recordedAt])
+}
+
+// Data quality metrics
+model FanaticsDataQuality {
+  id            Int      @id @default(autoincrement())
+  
+  sessionId     String
+  
+  // Quality metrics
+  totalCards    Int
+  cardsWithPrice Int
+  cardsWithImage Int
+  cardsWithLotId Int
+  duplicateCount Int
+  
+  // Validation results
+  pokemonValidation Int  // How many passed Pokemon validation
+  priceValidation   Int  // How many have valid prices
+  urlValidation     Int  // How many have valid URLs
+  
+  // Summary
+  qualityScore  Float    // Overall quality score 0-1
+  
+  recordedAt    DateTime @default(now())
+  
+  @@index([sessionId])
+  @@index([qualityScore])
+}

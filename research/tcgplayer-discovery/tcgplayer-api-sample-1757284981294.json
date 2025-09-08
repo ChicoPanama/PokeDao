@@ -1,0 +1,1250 @@
+{
+  "categories": [
+    {
+      "order": 0,
+      "title": "Magic",
+      "full-title": "Magic: The Gathering",
+      "url": "/search/magic/product?productLineName=magic&page=1",
+      "shopAllUrl": "/search/magic/product?productLineName=magic&page=1",
+      "listosUrl": "https://shop.tcgplayer.com/magic/product/show?ListingType=ListingsWithPhotos",
+      "articlesUrl": "/content/magic-the-gathering/articles",
+      "decksUrl": "/content/magic-the-gathering/decks",
+      "advancedSearchUrl": "https://shop.tcgplayer.com/magic?newSearch=true",
+      "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/magic-the-gathering/price-guides",
+      "menus": [
+        {
+          "order": 1,
+          "title": "Latest Sets",
+          "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/magic-the-gathering",
+          "links": [
+            {
+              "title": "Duskmourn: House of Horror",
+              "url": "https://www.tcgplayer.com/search/magic/duskmourn-house-of-horror"
+            },
+            {
+              "title": "Mystery Booster 2",
+              "url": "https://www.tcgplayer.com/search/magic/mystery-booster-2"
+            },
+            {
+              "title": "Bloomburrow",
+              "url": "https://www.tcgplayer.com/search/magic/bloomburrow"
+            },
+            {
+              "title": "Universes Beyond: Assassin's Creed",
+              "url": "https://www.tcgplayer.com/search/magic/universes-beyond-assassins-creed"
+            },
+            {
+              "title": "Modern Horizons 3",
+              "url": "https://www.tcgplayer.com/search/magic/modern-horizons-3"
+            },
+            {
+              "title": "Outlaws of Thunder Junction",
+              "url": "https://www.tcgplayer.com/search/magic/outlaws-of-thunder-junction"
+            },
+            {
+              "title": "Universes Beyond: Fallout",
+              "url": "https://www.tcgplayer.com/search/magic/universes-beyond-fallout"
+            },
+            {
+              "title": "Murders at Karlov Manor",
+              "url": "https://www.tcgplayer.com/search/magic/murders-at-karlov-manor"
+            },
+            {
+              "title": "Ravnica Remastered",
+              "url": "https://www.tcgplayer.com/search/magic/ravnica-remastered"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "title": "Articles",
+          "url": "/content/magic-the-gathering",
+          "links": [
+            {
+              "title": "All Articles",
+              "url": "/content/magic-the-gathering/articles"
+            },
+            {
+              "title": "ChannelFireball",
+              "url": "/content/magic-the-gathering/channelfireball"
+            },
+            {
+              "title": "Commander Bestiary",
+              "url": "/content/magic-the-gathering/commander-bestiary"
+            },
+            {
+              "title": "Standard",
+              "url": "/content/magic-the-gathering/articles/format/standard"
+            },
+            {
+              "title": "Modern",
+              "url": "/content/magic-the-gathering/articles/format/modern"
+            },
+            {
+              "title": "Commander",
+              "url": "/content/magic-the-gathering/articles/format/commander"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "title": "Decks",
+          "url": "/content/magic-the-gathering/decks",
+          "links": [
+            {
+              "title": "Standard",
+              "url": "/content/magic-the-gathering/decks/format/standard"
+            },
+            {
+              "title": "Modern",
+              "url": "/content/magic-the-gathering/decks/format/modern"
+            },
+            {
+              "title": "Pioneer",
+              "url": "/content/magic-the-gathering/decks/format/pioneer"
+            },
+            {
+              "title": "Commander",
+              "url": "/content/magic-the-gathering/decks/format/commander"
+            },
+            {
+              "title": "Deck Search",
+              "url": "/content/magic-the-gathering/decks/advanced-search"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "title": "More",
+          "url": "",
+          "links": [
+            {
+              "title": "Mass Entry",
+              "url": "https://www.tcgplayer.com/massentry?productline=Magic"
+            },
+            {
+              "title": "Gift Cards",
+              "url": "https://shop.tcgplayer.com/giftcard"
+            },
+            {
+              "title": "Help",
+              "url": "https://help.tcgplayer.com/hc/en-us"
+            }
+          ]
+        }
+      ],
+      "feature": {
+        "title": "Duskmourn: House of Horror",
+        "subtitle": "",
+        "imageUrl": "",
+        "imageUrlSm": "web/release/2024-09/mtg_duskmourn_house_of_horror_search.jpg",
+        "ctaText": "Preorder Now",
+        "ctaUrl": "https://www.tcgplayer.com/search/magic/duskmourn-house-of-horror"
+      }
+    },
+    {
+      "order": 1,
+      "title": "Yu-Gi-Oh!",
+      "full-title": "Yu-Gi-Oh!",
+      "url": "/search/yugioh/product?productLineName=yugioh&page=1",
+      "shopAllUrl": "/search/yugioh/product?productLineName=yugioh&page=1",
+      "listosUrl": "https://shop.tcgplayer.com/yugioh/product/show?ListingType=ListingsWithPhoto",
+      "articlesUrl": "/content/yugioh/articles",
+      "decksUrl": "/content/yugioh/decks",
+      "advancedSearchUrl": "https://shop.tcgplayer.com/yugioh?newSearch=true",
+      "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/yugioh/price-guides",
+      "menus": [
+        {
+          "order": 1,
+          "title": "Latest Sets",
+          "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/yugioh",
+          "links": [
+            {
+              "title": "Quarter Century Bonanza",
+              "url": "https://www.tcgplayer.com/search/yugioh/quarter-century-bonanza"
+            },
+            {
+              "title": "Rage of the Abyss",
+              "url": "https://www.tcgplayer.com/search/yugioh/rage-of-the-abyss"
+            },
+            {
+              "title": "25th Anniversary Tins: Dueling Mirrors",
+              "url": "https://www.tcgplayer.com/search/yugioh/25th-anniversary-tin-dueling-mirrors"
+            },
+            {
+              "title": "Retro Pack (2020 Date Reprint)",
+              "url": "https://www.tcgplayer.com/search/yugioh/retro-pack-2020-date-reprint"
+            },
+            {
+              "title": "Light of Destruction (2020 Date Reprint)",
+              "url": "https://www.tcgplayer.com/search/yugioh/light-of-destruction-2020-date-reprint"
+            },
+            {
+              "title": "The Infinite Forbidden",
+              "url": "https://www.tcgplayer.com/search/yugioh/the-infinite-forbidden"
+            },
+            {
+              "title": "Battles of Legend: Terminal Revenge",
+              "url": "https://www.tcgplayer.com/search/yugioh/battles-of-legend-terminal-revenge"
+            },
+            {
+              "title": "25th Anniversary Rarity Collection II",
+              "url": "https://www.tcgplayer.com/search/yugioh/25th-anniversary-rarity-collection-ii"
+            },
+            {
+              "title": "Legacy of Destruction",
+              "url": "https://www.tcgplayer.com/search/yugioh/legacy-of-destruction"
+            },
+            {
+              "title": "Speed Duel GX: Midterm Destruction",
+              "url": "https://www.tcgplayer.com/search/yugioh/speed-duel-gx-midterm-destruction"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "title": "Articles",
+          "url": "/content/yugioh",
+          "links": [
+            {
+              "title": "All Articles",
+              "url": "/content/yugioh/articles"
+            },
+            {
+              "title": "Advanced",
+              "url": "/content/yugioh/articles/format/advanced"
+            },
+            {
+              "title": "Speed Duel",
+              "url": "/content/yugioh/articles/format/speed-duel"
+            },
+            {
+              "title": "Edison",
+              "url": "/content/yugioh/articles/format/edison-format"
+            },
+            {
+              "title": "Goat",
+              "url": "/content/yugioh/articles/format/goat-format"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "title": "Decks",
+          "url": "/content/yugioh/decks",
+          "links": [
+            {
+              "title": "Advanced",
+              "url": "/content/yugioh/decks/format/advanced"
+            },
+            {
+              "title": "Deck Search",
+              "url": "/content/yugioh/decks/advanced-search"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "title": "More",
+          "url": "",
+          "links": [
+            {
+              "title": "Mass Entry",
+              "url": "https://www.tcgplayer.com/massentry?productline=Yugioh"
+            },
+            {
+              "title": "Gift Cards",
+              "url": "https://shop.tcgplayer.com/giftcard"
+            },
+            {
+              "title": "Help",
+              "url": "https://help.tcgplayer.com/hc/en-us"
+            }
+          ]
+        }
+      ],
+      "feature": {
+        "title": "25th Anniversary Tins: Dueling Mirrors",
+        "subtitle": "",
+        "imageUrl": "",
+        "imageUrlSm": "web/release/2024-09/ygo_25th_anniversary_tin_dueling_mirrors_search_300x158.jpg",
+        "ctaText": "Order Now",
+        "ctaUrl": "https://www.tcgplayer.com/search/yugioh/25th-anniversary-tin-dueling-mirrors"
+      }
+    },
+    {
+      "order": 2,
+      "title": "Pokémon",
+      "full-title": "Pokémon",
+      "url": "/search/pokemon/product?productLineName=pokemon&page=1",
+      "shopAllUrl": "/search/pokemon/product?productLineName=pokemon&page=1",
+      "listosUrl": "https://shop.tcgplayer.com/pokemon/product/show?ListingType=ListingsWithPhotos",
+      "articlesUrl": "/content/pokemon/articles",
+      "decksUrl": "/content/pokemon/decks",
+      "advancedSearchUrl": "https://shop.tcgplayer.com/pokemon?newSearch=true",
+      "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/pokemon/price-guides",
+      "menus": [
+        {
+          "order": 1,
+          "title": "Latest Sets",
+          "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/pokemon",
+          "links": [
+            {
+              "title": "Stellar Crown",
+              "url": "https://www.tcgplayer.com/search/pokemon/sv07-stellar-crown"
+            },
+            {
+              "title": "Shrouded Fable",
+              "url": "https://www.tcgplayer.com/search/pokemon/sv-shrouded-fable"
+            },
+            {
+              "title": "Twilight Masquerade",
+              "url": "https://www.tcgplayer.com/search/pokemon/sv06-twilight-masquerade"
+            },
+            {
+              "title": "Temporal Forces",
+              "url": "https://www.tcgplayer.com/search/pokemon/sv05-temporal-forces"
+            },
+            {
+              "title": "SV: Paldean Fates",
+              "url": "https://www.tcgplayer.com/search/pokemon/sv-paldean-fates"
+            },
+            {
+              "title": "Paradox Rift",
+              "url": "https://www.tcgplayer.com/search/pokemon/sv04-paradox-rift"
+            },
+            {
+              "title": "SV: Scarlet & Violet 151",
+              "url": "https://www.tcgplayer.com/search/pokemon/sv-scarlet-and-violet-151"
+            },
+            {
+              "title": "McDonald's Promos 2023",
+              "url": "https://www.tcgplayer.com/search/pokemon/mcdonalds-promos-2023"
+            },
+            {
+              "title": "Obsidian Flames",
+              "url": "https://www.tcgplayer.com/search/pokemon/sv03-obsidian-flames"
+            },
+            {
+              "title": "Paldea Evolved",
+              "url": "https://www.tcgplayer.com/search/pokemon/sv02-paldea-evolved"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "title": "More",
+          "url": "",
+          "links": [
+            {
+              "title": "Mass Entry",
+              "url": "https://www.tcgplayer.com/massentry?productline=Pokemon"
+            },
+            {
+              "title": "Gift Cards",
+              "url": "https://shop.tcgplayer.com/giftcard"
+            },
+            {
+              "title": "Help",
+              "url": "https://help.tcgplayer.com/hc/en-us"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "title": "Articles",
+          "url": "/content/pokemon",
+          "links": [
+            {
+              "title": "All Articles",
+              "url": "/content/pokemon/articles"
+            }
+          ]
+        }
+      ],
+      "feature": {
+        "title": "Stellar Crown",
+        "subtitle": "",
+        "imageUrl": "",
+        "imageUrlSm": "web/release/2024-09/pkm_stellar_crown_search.jpg",
+        "ctaText": "Order Now",
+        "ctaUrl": "https://www.tcgplayer.com/search/pokemon/sv07-stellar-crown"
+      }
+    },
+    {
+      "order": 3,
+      "title": "Disney Lorcana",
+      "full-title": "Disney Lorcana",
+      "url": "/search/lorcana-tcg/product?productLineName=lorcana-tcg&page=1",
+      "shopAllUrl": "/search/lorcana-tcg/product?productLineName=lorcana-tcg&page=1",
+      "listosUrl": "/search/lorcana-tcg/product?productLineName=lorcana-tcg&page=1",
+      "articlesUrl": "/content/disney-lorcana/articles",
+      "decksUrl": "/content/disney-lorcana/decks",
+      "advancedSearchUrl": "https://shop.tcgplayer.com/lorcana-tcg",
+      "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana/price-guides",
+      "menus": [
+        {
+          "order": 1,
+          "title": "Latest Sets",
+          "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana",
+          "links": [
+            {
+              "title": "Azurite Sea",
+              "url": "https://www.tcgplayer.com/search/lorcana-tcg/azurite-sea"
+            },
+            {
+              "title": "Shimmering Skies",
+              "url": "https://www.tcgplayer.com/search/lorcana-tcg/shimmering-skies"
+            },
+            {
+              "title": "Ursula's Return",
+              "url": "https://www.tcgplayer.com/search/lorcana-tcg/ursulas-return"
+            },
+            {
+              "title": "Into the Inklands",
+              "url": "https://www.tcgplayer.com/search/lorcana-tcg/into-the-inklands"
+            },
+            {
+              "title": "Rise of the Floodborn",
+              "url": "https://www.tcgplayer.com/search/lorcana-tcg/rise-of-the-floodborn"
+            },
+            {
+              "title": "The First Chapter",
+              "url": "https://www.tcgplayer.com/search/lorcana-tcg/the-first-chapter"
+            },
+            {
+              "title": "D23 Promos",
+              "url": "https://www.tcgplayer.com/search/lorcana-tcg/d23-promos"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "title": "Articles",
+          "url": "/content/disney-lorcana",
+          "links": [
+            {
+              "title": "All Articles",
+              "url": "/content/disney-lorcana/articles"
+            },
+            {
+              "title": "Constructed",
+              "url": "/content/disney-lorcana/articles/format/constructed"
+            },
+            {
+              "title": "Limited",
+              "url": "/content/disney-lorcana/articles/format/limited"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "title": "Decks",
+          "url": "/content/disney-lorcana/decks",
+          "links": [
+            {
+              "title": "Constructed",
+              "url": "/content/disney-lorcana/decks/format/constructed"
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "title": "More",
+          "url": "",
+          "links": [
+            {
+              "title": "Mass Entry",
+              "url": "https://www.tcgplayer.com/massentry?productline=Lorcana%20TCG"
+            },
+            {
+              "title": "Gift Cards",
+              "url": "https://shop.tcgplayer.com/giftcard"
+            },
+            {
+              "title": "Help",
+              "url": "https://help.tcgplayer.com/hc/en-us"
+            }
+          ]
+        }
+      ],
+      "feature": {
+        "title": "Shimmering Skies",
+        "subtitle": "",
+        "imageUrl": "",
+        "imageUrlSm": "web/release/2024-08/disney_lorcana_shimmering_skies_search.jpg",
+        "ctaText": "Order Now",
+        "ctaUrl": "https://www.tcgplayer.com/search/lorcana-tcg/shimmering-skies"
+      }
+    },
+    {
+      "order": 4,
+      "title": "One Piece",
+      "full-title": "One Piece Card Game",
+      "url": "/search/one-piece-card-game/product?productLineName=one-piece-card-game&page=1",
+      "shopAllUrl": "/search/one-piece-card-game/product?productLineName=one-piece-card-game&page=1",
+      "listosUrl": "https://shop.tcgplayer.com/one-piece-card-game/product/show?ListingType=ListingsWithPhotos",
+      "articlesUrl": "/content/more-games/one-piece",
+      "decksUrl": "",
+      "advancedSearchUrl": "https://shop.tcgplayer.com/one-piece-card-game?newSearch=true",
+      "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/one-piece-card-game/price-guides",
+      "menus": [
+        {
+          "order": 1,
+          "title": "Latest Sets",
+          "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/one-piece-card-game",
+          "links": [
+            {
+              "title": "Two Legends",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/two-legends"
+            },
+            {
+              "title": "Starter Deck 14: 3D2Y",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/starter-deck-14-3d2y"
+            },
+            {
+              "title": "500 Years in the Future",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/500-years-in-the-future"
+            },
+            {
+              "title": "Extra Booster: Memorial Collection",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/extra-booster-memorial-collection"
+            },
+            {
+              "title": "Ultra Deck: The Three Brothers",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/ultra-deck-the-three-brothers"
+            },
+            {
+              "title": "Starter Deck 12: Zoro and Sanji",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/starter-deck-12-zoro-and-sanji"
+            },
+            {
+              "title": "Wings of the Captain",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/wings-of-the-captain"
+            },
+            {
+              "title": "Starter Deck 11: Uta",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/starter-deck-11-uta"
+            },
+            {
+              "title": "Awakening of the New Era",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/awakening-of-the-new-era"
+            },
+            {
+              "title": "Ultra Deck: The Three Captains",
+              "url": "https://www.tcgplayer.com/search/one-piece-card-game/ultra-deck-the-three-captains"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "title": "More",
+          "url": "",
+          "links": [
+            {
+              "title": "Articles",
+              "url": "/content/more-games/one-piece"
+            },
+            {
+              "title": "Mass Entry",
+              "url": "https://www.tcgplayer.com/massentry?productline=One%20Piece%20Card%20Game"
+            },
+            {
+              "title": "Gift Cards",
+              "url": "https://shop.tcgplayer.com/giftcard"
+            },
+            {
+              "title": "Help",
+              "url": "https://help.tcgplayer.com/hc/en-us"
+            }
+          ]
+        }
+      ],
+      "feature": {
+        "title": "Two Legends",
+        "subtitle": "",
+        "imageUrl": "",
+        "imageUrlSm": "web/release/2024-09/One_Piece_Two_Legends_search_300x158.jpg",
+        "ctaText": "Order Now",
+        "ctaUrl": "https://www.tcgplayer.com/search/one-piece-card-game/two-legends"
+      },
+      "viewAllUrl": "/all"
+    },
+    {
+      "order": 5,
+      "title": "Digimon",
+      "full-title": "Digimon Card Game",
+      "url": "/search/digimon-card-game/product?productLineName=digimon-card-game&page=1",
+      "shopAllUrl": "/search/digimon-card-game/product?productLineName=digimon-card-game&page=1",
+      "listosUrl": "https://shop.tcgplayer.com/digimon-card-game/product/show?ListingType=ListingsWithPhotos",
+      "articlesUrl": "/content/more-games/digimon-card-game",
+      "decksUrl": "",
+      "advancedSearchUrl": "https://shop.tcgplayer.com/digimon-card-game?newSearch=true",
+      "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/digimon-card-game/price-guides",
+      "menus": [
+        {
+          "order": 1,
+          "title": "Latest Sets",
+          "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/digimon-card-game",
+          "links": [
+            {
+              "title": "Digimon LIBERATOR",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/digimon-liberator"
+            },
+            {
+              "title": "Secret Crisis",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/secret-crisis"
+            },
+            {
+              "title": "Infernal Ascension",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/infernal-ascension"
+            },
+            {
+              "title": "Beginning Observer",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/beginning-observer"
+            },
+            {
+              "title": "Starter Deck 17: Double Typhoon Advanced Deck Set",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/starter-deck-17-double-typhoon-advanced-deck-set"
+            },
+            {
+              "title": "Exceed Apocalypse",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/exceed-apocalypse"
+            },
+            {
+              "title": "Animal Colosseum",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/animal-colosseum"
+            },
+            {
+              "title": "Blast Ace Booster",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/blast-ace"
+            },
+            {
+              "title": "Starter Deck 16: Wolf of Friendship",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/starter-deck-16-wolf-of-friendship"
+            },
+            {
+              "title": "Starter Deck 15: Dragon of Courage",
+              "url": "https://www.tcgplayer.com/search/digimon-card-game/starter-deck-15-dragon-of-courage"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "title": "More",
+          "url": "",
+          "links": [
+            {
+              "title": "Articles",
+              "url": "/content/more-games/digimon-card-game"
+            },
+            {
+              "title": "Mass Entry",
+              "url": "https://www.tcgplayer.com/massentry?productline=Digimon%20Card%20Game"
+            },
+            {
+              "title": "Gift Cards",
+              "url": "https://shop.tcgplayer.com/giftcard"
+            },
+            {
+              "title": "Help",
+              "url": "https://help.tcgplayer.com/hc/en-us"
+            }
+          ]
+        }
+      ],
+      "feature": {
+        "title": "Digimon LIBERATOR",
+        "subtitle": "",
+        "imageUrl": "",
+        "imageUrlSm": "web/release/2024-09/dcg_liberator_search.jpg",
+        "ctaText": "Order Now",
+        "ctaUrl": "https://www.tcgplayer.com/search/digimon-card-game/digimon-liberator"
+      },
+      "viewAllUrl": "/all"
+    },
+    {
+      "order": 6,
+      "title": "Star Wars: Unlimited",
+      "full-title": "Star Wars: Unlimited",
+      "url": "/search/star-wars-unlimited/product?productLineName=star-wars-unlimited&page=1",
+      "shopAllUrl": "/search/star-wars-unlimited/product?productLineName=star-wars-unlimited&page=1",
+      "listosUrl": "https://shop.tcgplayer.com/star-wars-unlimited/product/show?ListingType=ListingsWithPhotos",
+      "articlesUrl": "/content/more-games/star-wars-unlimited",
+      "decksUrl": "",
+      "advancedSearchUrl": "https://shop.tcgplayer.com/star-wars-unlimited?newSearch=true",
+      "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/star-wars-unlimited/price-guides",
+      "menus": [
+        {
+          "order": 1,
+          "title": "Latest Sets",
+          "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/star-wars-unlimited",
+          "links": [
+            {
+              "title": "Twilight of the Republic",
+              "url": "https://www.tcgplayer.com/search/star-wars-unlimited/twilight-of-the-republic"
+            },
+            {
+              "title": "2024 Convention Exclusive",
+              "url": "https://www.tcgplayer.com/search/star-wars-unlimited/2024-convention-exclusive"
+            },
+            {
+              "title": "Shadows of the Galaxy",
+              "url": "https://www.tcgplayer.com/search/star-wars-unlimited/shadows-of-the-galaxy"
+            },
+            {
+              "title": "Shadows of the Galaxy: Weekly Play Promos",
+              "url": "https://www.tcgplayer.com/search/star-wars-unlimited/shadows-of-the-galaxy-weekly-play-promos"
+            },
+            {
+              "title": "Spark of Rebellion",
+              "url": "https://www.tcgplayer.com/search/star-wars-unlimited/spark-of-rebellion"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "title": "Articles",
+          "url": "",
+          "links": [
+            {
+              "title": "All Articles",
+              "url": "/content/more-games/star-wars-unlimited"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "title": "More",
+          "url": "",
+          "links": [
+            {
+              "title": "Mass Entry",
+              "url": "https://www.tcgplayer.com/massentry?productline=Star%20Wars%20Unlimited"
+            },
+            {
+              "title": "Gift Cards",
+              "url": "https://shop.tcgplayer.com/giftcard"
+            },
+            {
+              "title": "Sell With Us",
+              "url": "https://seller.tcgplayer.com/"
+            },
+            {
+              "title": "Help",
+              "url": "https://help.tcgplayer.com/hc/en-us"
+            },
+            {
+              "title": "Subscribe to TCGplayer",
+              "url": "https://www.tcgplayer.com/subscription?itm_source=marketplace&itm_medium=navigation_bar&itm_campaign=subscribe_to_tcgplayer"
+            }
+          ]
+        }
+      ],
+      "feature": {
+        "title": "Twilight of the Republic",
+        "subtitle": "",
+        "imageUrl": "",
+        "imageUrlSm": "web/release/2024-11/swu_twilight_of_the_republic_set_image.jpg",
+        "ctaText": "Preorder Now",
+        "ctaUrl": "https://www.tcgplayer.com/search/star-wars-unlimited/twilight-of-the-republic"
+      },
+      "viewAllUrl": "/all"
+    },
+    {
+      "order": 7,
+      "title": "Flesh and Blood",
+      "full-title": "Flesh and Blood",
+      "url": "/search/flesh-and-blood-tcg/product?productLineName=flesh-and-blood-tcg&page=1",
+      "shopAllUrl": "/search/flesh-and-blood-tcg/product?productLineName=flesh-and-blood-tcg&page=1",
+      "listosUrl": "https://shop.tcgplayer.com/flesh-and-blood-tcg/product/show?ListingType=ListingsWithPhotos",
+      "articlesUrl": "/content/flesh-and-blood/articles",
+      "decksUrl": "",
+      "advancedSearchUrl": "https://shop.tcgplayer.com/flesh-and-blood-tcg?newSearch=true",
+      "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/flesh-and-blood-tcg/price-guides",
+      "menus": [
+        {
+          "order": 1,
+          "title": "Latest Sets",
+          "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/flesh-and-blood-tcg",
+          "links": [
+            {
+              "title": "Rosetta",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/rosetta"
+            },
+            {
+              "title": "1st Strike",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/1st-strike"
+            },
+            {
+              "title": "Armory Deck: Azalea",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/armory-deck-azalea"
+            },
+            {
+              "title": "Armory Deck: Boltyn",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/armory-deck-boltyn"
+            },
+            {
+              "title": "Part the Mistveil",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/part-the-mistveil"
+            },
+            {
+              "title": "Armory Deck: Kayo",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/armory-deck-kayo"
+            },
+            {
+              "title": "Heavy Hitters",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/heavy-hitters"
+            },
+            {
+              "title": "Bright Lights",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/bright-lights"
+            },
+            {
+              "title": "Round the Table",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/round-the-table-tccxlss"
+            },
+            {
+              "title": "Dusk till Dawn",
+              "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/dusk-till-dawn"
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "title": "Articles",
+          "url": "/content/flesh-and-blood",
+          "links": [
+            {
+              "title": "All Articles",
+              "url": "/content/flesh-and-blood/articles"
+            },
+            {
+              "title": "Blitz",
+              "url": "/content/flesh-and-blood/articles/format/blitz"
+            },
+            {
+              "title": "Classic Constructed",
+              "url": "/content/flesh-and-blood/articles/format/classic-constructed"
+            },
+            {
+              "title": "Commoner",
+              "url": "/content/flesh-and-blood/articles/format/commoner"
+            },
+            {
+              "title": "Limited",
+              "url": "/content/flesh-and-blood/articles/format/limited"
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "title": "More",
+          "url": "",
+          "links": [
+            {
+              "title": "Mass Entry",
+              "url": "https://www.tcgplayer.com/massentry?productline=Flesh%20%26%20Blood%20TCG"
+            },
+            {
+              "title": "Gift Cards",
+              "url": "https://shop.tcgplayer.com/giftcard"
+            },
+            {
+              "title": "Help",
+              "url": "https://help.tcgplayer.com/hc/en-us"
+            }
+          ]
+        }
+      ],
+      "feature": {
+        "title": "Rosetta",
+        "subtitle": "",
+        "imageUrl": "",
+        "imageUrlSm": "web/release/2024-09/fab_rosetta_search.jpg",
+        "ctaText": "Preorder Now",
+        "ctaUrl": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/rosetta"
+      },
+      "viewAllUrl": "/all"
+    }
+  ],
+  "more": {
+    "order": 999,
+    "title": "More",
+    "full-title": "More Products & Options",
+    "url": "/search/all/product",
+    "shopAllUrl": "",
+    "listosUrl": "",
+    "articlesUrl": "",
+    "decksUrl": "",
+    "advancedSearchUrl": "",
+    "priceGuideUrl": "",
+    "menus": [
+      {
+        "order": 1,
+        "title": "Popular Games",
+        "url": "",
+        "links": [
+          {
+            "title": "Cardfight!! Vanguard",
+            "url": "https://www.tcgplayer.com/search/cardfight-vanguard/product?productLineName=cardfight-vanguard"
+          },
+          {
+            "title": "Dragon Ball Super: Fusion World",
+            "url": "https://www.tcgplayer.com/search/dragon-ball-super-fusion-world/product?productLineName=dragon-ball-super-fusion-world"
+          },
+          {
+            "title": "Dragon Ball Super: Masters",
+            "url": "https://www.tcgplayer.com/search/dragon-ball-super-ccg/product?productLineName=dragon-ball-super-ccg"
+          },
+          {
+            "title": "Final Fantasy",
+            "url": "https://www.tcgplayer.com/search/final-fantasy-tcg/product?productLineName=final-fantasy-tcg"
+          },
+          {
+            "title": "Grand Archive TCG",
+            "url": "https://www.tcgplayer.com/search/grand-archive/product?productLineName=grand-archive"
+          },
+          {
+            "title": "Gundam Card Game",
+            "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/gundam-card-game"
+          },
+          {
+            "title": "Riftbound: League of Legends Trading Card Game",
+            "url": "https://www.tcgplayer.com/search/riftbound-league-of-legends-trading-card-game/product?productLineName=riftbound-league-of-legends-trading-card-game&page=1&view=grid"
+          },
+          {
+            "title": "Shadowverse: Evolve",
+            "url": "https://www.tcgplayer.com/search/shadowverse-evolve/product?productLineName=shadowverse-evolve"
+          },
+          {
+            "title": "Sorcery: Contested Realm",
+            "url": "https://www.tcgplayer.com/search/sorcery-contested-realm/product?productLineName=sorcery-contested-realm"
+          },
+          {
+            "title": "Union Arena",
+            "url": "https://www.tcgplayer.com/search/union-arena/product?productLineName=union-arena"
+          },
+          {
+            "title": "UniVersus",
+            "url": "https://www.tcgplayer.com/search/universus/product?productLineName=universus&view=grid"
+          },
+          {
+            "title": "Weiss Schwarz",
+            "url": "https://www.tcgplayer.com/search/weiss-schwarz/product?productLineName=weiss-schwarz"
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "title": "All Other Games",
+        "url": "",
+        "links": [
+          {
+            "title": "Akora TCG",
+            "url": "https://www.tcgplayer.com/search/akora/product?productLineName=akora&page=1"
+          },
+          {
+            "title": "Alpha Clash",
+            "url": "https://www.tcgplayer.com/search/alpha-clash/product?productLineName=alpha-clash&page=1"
+          },
+          {
+            "title": "Argent Saga TCG",
+            "url": "https://www.tcgplayer.com/search/argent-saga-tcg/product?productLineName=argent-saga-tcg&page=1"
+          },
+          {
+            "title": "BAKUGAN TCG",
+            "url": "https://www.tcgplayer.com/search/bakugan-tcg/product?productLineName=bakugan-tcg"
+          },
+          {
+            "title": "Battle Spirits Saga",
+            "url": "https://www.tcgplayer.com/search/battle-spirits-saga/product?productLineName=battle-spirits-saga&page=1&view=grid&inStock=true"
+          },
+          {
+            "title": "Chrono Clash System",
+            "url": "https://www.tcgplayer.com/search/chrono-clash-system/product?productLineName=chrono-clash-system"
+          },
+          {
+            "title": "D & D Miniatures",
+            "url": "https://www.tcgplayer.com/search/d-and-d-miniatures/product?productLineName=d-and-d-miniatures"
+          },
+          {
+            "title": "Dice Masters",
+            "url": "https://www.tcgplayer.com/search/dice-masters/product?productLineName=dice-masters"
+          },
+          {
+            "title": "Dragoborne",
+            "url": "https://www.tcgplayer.com/search/dragoborne/product?productLineName=dragoborne"
+          },
+          {
+            "title": "Dragon Ball Z TCG",
+            "url": "https://www.tcgplayer.com/search/dragon-ball-z-tcg/product?productLineName=dragon-ball-z-tcg"
+          },
+          {
+            "title": "Elestrals",
+            "url": "https://www.tcgplayer.com/search/elestrals/product?productLineName=elestrals"
+          },
+          {
+            "title": "Exodus TCG",
+            "url": "https://www.tcgplayer.com/search/exodus-tcg/product?productLineName=exodus-tcg"
+          },
+          {
+            "title": "Force of Will",
+            "url": "https://www.tcgplayer.com/search/force-of-will/product?productLineName=force-of-will"
+          },
+          {
+            "title": "Funko Pop! Vinyl",
+            "url": "https://www.tcgplayer.com/search/funko/product?productLineName=funko"
+          },
+          {
+            "title": "Future Card Buddyfight",
+            "url": "https://www.tcgplayer.com/search/future-card-buddyfight/product?productLineName=future-card-buddyfight"
+          },
+          {
+            "title": "Gate Ruler",
+            "url": "https://www.tcgplayer.com/search/gate-ruler/product?productLineName=gate-ruler"
+          },
+          {
+            "title": "Godzilla Card Game",
+            "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/godzilla-card-game"
+          },
+          {
+            "title": "Gundam Card Game",
+            "url": "https://www.tcgplayer.com/search/gundam-card-game/product?productLineName=gundam-card-game&view=grid"
+          },
+          {
+            "title": "HeroClix",
+            "url": "https://www.tcgplayer.com/search/heroclix/product?productLineName=heroclix"
+          },
+          {
+            "title": "hololive OFFICIAL CARD GAME",
+            "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/hololive-official-card-game"
+          },
+          {
+            "title": "Keyforge",
+            "url": "https://www.tcgplayer.com/search/keyforge/product?productLineName=keyforge"
+          },
+          {
+            "title": "Kryptik",
+            "url": "https://www.tcgplayer.com/search/kryptik-tcg/product?productLineName=kryptik-tcg"
+          },
+          {
+            "title": "Lightseekers TCG",
+            "url": "https://www.tcgplayer.com/search/lightseekers-tcg/product?productLineName=lightseekers-tcg"
+          },
+          {
+            "title": "MetaX TCG",
+            "url": "https://www.tcgplayer.com/search/metax-tcg/product?productLineName=metax-tcg"
+          },
+          {
+            "title": "MetaZoo",
+            "url": "https://www.tcgplayer.com/search/metazoo/product?productLineName=metazoo"
+          },
+          {
+            "title": "Munchkin CCG",
+            "url": "https://www.tcgplayer.com/search/munchkin-ccg/product?productLineName=munchkin-ccg"
+          },
+          {
+            "title": "My Little Pony CCG",
+            "url": "https://www.tcgplayer.com/search/my-little-pony-ccg/product?productLineName=my-little-pony-ccg"
+          },
+          {
+            "title": "Osprey Books",
+            "url": "/search/books/osprey-books?setName=osprey-books&productLineName=books&page=1"
+          },
+          {
+            "title": "Star Wars: Destiny",
+            "url": "https://www.tcgplayer.com/search/star-wars-destiny/product?productLineName=star-wars-destiny"
+          },
+          {
+            "title": "The Caster Chronicles",
+            "url": "https://www.tcgplayer.com/search/the-caster-chronicles/product?productLineName=the-caster-chronicles"
+          },
+          {
+            "title": "Transformers TCG",
+            "url": "https://www.tcgplayer.com/search/transformers-tcg/product?productLineName=transformers-tcg"
+          },
+          {
+            "title": "Warhammer Age of Sigmar Champions",
+            "url": "https://www.tcgplayer.com/search/warhammer-age-of-sigmar-champions-tcg/product?productLineName=warhammer-age-of-sigmar-champions-tcg"
+          },
+          {
+            "title": "WIXOSS",
+            "url": "https://www.tcgplayer.com/search/wixoss/product?productLineName=wixoss"
+          },
+          {
+            "title": "World of Warcraft TCG",
+            "url": "https://www.tcgplayer.com/search/wow/product?productLineName=wow"
+          },
+          {
+            "title": "Zombie World Order TCG",
+            "url": "https://www.tcgplayer.com/search/zombie-world-order-tcg/product?productLineName=zombie-world-order-tcg"
+          }
+        ]
+      },
+      {
+        "order": 3,
+        "title": "Gift Cards & Supplies",
+        "url": "",
+        "links": [
+          {
+            "title": "Bulk Lots",
+            "url": "https://www.tcgplayer.com/search/bulk-lots/product?productLineName=bulk-lots"
+          },
+          {
+            "title": "Gift Cards",
+            "url": "https://www.tcgplayer.com/giftcard"
+          },
+          {
+            "title": "Playmats",
+            "url": "https://www.tcgplayer.com/search/playmats/product?productLineName=playmats&q=play&view=grid&inStock=true&page=1"
+          },
+          {
+            "title": "Card Sleeves",
+            "url": "https://www.tcgplayer.com/search/card-sleeves/product"
+          },
+          {
+            "title": "Deck Boxes",
+            "url": "https://www.tcgplayer.com/search/deck-boxes/product"
+          },
+          {
+            "title": "Life Counters",
+            "url": "https://www.tcgplayer.com/search/life-counters/product?productLineName=life-counters&q=life+&view=grid&inStock=true&page=1"
+          },
+          {
+            "title": "Storage Binders",
+            "url": "https://www.tcgplayer.com/search/storage-albums/product"
+          },
+          {
+            "title": "Protective Pages",
+            "url": "https://www.tcgplayer.com/search/protective-pages/product?productLineName=protective-pages&view=grid&inStock=true&page=1"
+          },
+          {
+            "title": "Dice",
+            "url": "https://www.tcgplayer.com/search/collectible-storage/product?productLineName=collectible-storage&q=dice&view=grid&page=1"
+          },
+          {
+            "title": "All Supplies",
+            "url": "https://www.tcgplayer.com/search/all/product?ProductTypeName=Supplies&view=grid"
+          }
+        ]
+      }
+    ],
+    "feature": {
+      "title": "TCGplayer Gift Cards",
+      "subtitle": "",
+      "imageUrl": "",
+      "imageUrlSm": "web/promo/2025-02/Set-Image-Gift-Cards%402x.jpg",
+      "ctaText": "Shop Gift Cards",
+      "ctaUrl": "https://www.tcgplayer.com/giftcard"
+    }
+  },
+  "articles": {
+    "order": 1000,
+    "title": "Articles",
+    "full-title": "TCGplayer Articles",
+    "url": "www.tcgplayer.com",
+    "shopAllUrl": "/content/",
+    "listosUrl": "",
+    "articlesUrl": "/content/",
+    "decksUrl": "",
+    "advancedSearchUrl": "",
+    "priceGuideUrl": "",
+    "menus": [
+      {
+        "order": 1,
+        "title": "Popular Game Content",
+        "url": "",
+        "links": [
+          {
+            "title": "Magic: The Gathering",
+            "url": "/content/magic-the-gathering"
+          },
+          {
+            "title": "Yu-Gi-Oh!",
+            "url": "/content/yugioh"
+          },
+          {
+            "title": "One Piece",
+            "url": "/content/more-games/one-piece"
+          },
+          {
+            "title": "Pokémon",
+            "url": "/content/pokemon"
+          },
+          {
+            "title": "Disney Lorcana",
+            "url": "/content/disney-lorcana"
+          },
+          {
+            "title": "Flesh and Blood",
+            "url": "/content/flesh-and-blood"
+          }
+        ]
+      },
+      {
+        "order": 2,
+        "title": "Content in More Games",
+        "url": "/content/more-games",
+        "links": [
+          {
+            "title": "Battle Spirits Saga",
+            "url": "/content/more-games/battle-spirits-saga"
+          },
+          {
+            "title": "Cardfight!! Vanguard",
+            "url": "/content/more-games/cardfight-vanguard"
+          },
+          {
+            "title": "Digimon Card Game",
+            "url": "/content/more-games/digimon-card-game"
+          },
+          {
+            "title": "Dragon Ball Super: Fusion World",
+            "url": "/content/more-games/dragon-ball-super-fusion-world"
+          },
+          {
+            "title": "Grand Archive TCG",
+            "url": "/content/more-games/grand-archive-tcg"
+          },
+          {
+            "title": "Gundam Card Game",
+            "url": "/content/series/gundam-card-game"
+          },
+          {
+            "title": "Shadowverse: Evolve",
+            "url": "/content/more-games/shadowverse-evolve"
+          },
+          {
+            "title": "Sorcery: Contested Realm",
+            "url": "/content/more-games/sorcery-contested-realm"
+          },
+          {
+            "title": "Star Wars: Unlimited",
+            "url": "/content/more-games/star-wars-unlimited"
+          },
+          {
+            "title": "Union Arena",
+            "url": "/content/more-games/union-arena"
+          },
+          {
+            "title": "Universus",
+            "url": "/content/more-games/universus"
+          },
+          {
+            "title": "Weiss Schwarz",
+            "url": "/content/more-games/weiss-schwarz"
+          }
+        ]
+      }
+    ],
+    "feature": {
+      "title": "TCGplayer Gift Cards",
+      "subtitle": "",
+      "imageUrl": "",
+      "imageUrlSm": "web/promo/2025-02/Set-Image-Gift-Cards%402x.jpg",
+      "ctaText": "Shop Gift Cards",
+      "ctaUrl": "https://www.tcgplayer.com/giftcard"
+    }
+  }
+}

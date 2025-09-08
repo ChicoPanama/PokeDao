@@ -1,0 +1,35 @@
+INFO:normalize:Successfully parsed: Lugia Neo Genesis 9/111 Holo First Edition -> neogenesis-009-holo-raw
+{
+  "status": "success",
+  "results": [
+    {
+      "title": "Charizard (4/102) [Base Set] Holo Rare",
+      "success": false,
+      "error": "Could not parse title with sufficient confidence: Charizard (4/102) [Base Set] Holo Rare"
+    },
+    {
+      "title": "Pokemon - Pikachu - 58/102 - Base Set - Common",
+      "success": false,
+      "error": "Could not parse title with sufficient confidence: Pokemon - Pikachu - 58/102 - Base Set - Common"
+    },
+    {
+      "title": "Dark Charizard Holo #4 Team Rocket PSA 10",
+      "success": false,
+      "error": "Could not parse title with sufficient confidence: Dark Charizard Holo #4 Team Rocket PSA 10"
+    },
+    {
+      "title": "Lugia Neo Genesis 9/111 Holo First Edition",
+      "success": true,
+      "card_key": "neogenesis-009-holo-raw",
+      "confidence": 0.95,
+      "pokemon": "Lugia",
+      "set": "neogenesis",
+      "number": "009"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "successful": 1,
+    "failed": 3
+  }
+}

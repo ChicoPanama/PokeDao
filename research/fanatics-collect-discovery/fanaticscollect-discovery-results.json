@@ -1,0 +1,322 @@
+[
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/auctions",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/weekly-auction",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/items",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/lots",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/bids",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/search",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/products",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/catalog",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/cards",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/pokemon",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/collectibles",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/categories",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/listings",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/marketplace",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/v1/auctions",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/v1/items",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/v1/search",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/v2/auctions",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/v2/items",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/api/v2/search",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/graphql",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/gql",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/_api/auctions",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/_api/items",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/_next/api/auctions",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=utf-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/_next/api/items",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=utf-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/rest/auctions",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/rest/items",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/services/auctions",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/services/items",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/data/auctions.json",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=utf-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/data/items.json",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=utf-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/data/categories.json",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=utf-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/auctions.json",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=utf-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/items.json",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=utf-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/ajax/auctions",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/ajax/search",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/ajax/lots",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/xhr/auctions",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanaticscollect.com/xhr/search",
+    "method": "GET",
+    "status": 404,
+    "responseType": "text/html; charset=UTF-8",
+    "hasData": false,
+    "description": "404 Not Found (HTML)"
+  }
+]

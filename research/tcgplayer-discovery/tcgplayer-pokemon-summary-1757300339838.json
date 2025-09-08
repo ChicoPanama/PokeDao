@@ -1,0 +1,77 @@
+{
+  "totalProducts": 0,
+  "setBreakdown": [
+    {
+      "title": "Stellar Crown",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "Shrouded Fable",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "Twilight Masquerade",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "Temporal Forces",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "SV: Paldean Fates",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "Paradox Rift",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "SV: Scarlet & Violet 151",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "McDonald's Promos 2023",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "Obsidian Flames",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "Paldea Evolved",
+      "menuCategory": "Latest Sets",
+      "productCount": 0
+    },
+    {
+      "title": "All Pokemon Products",
+      "menuCategory": "Main",
+      "productCount": 0
+    },
+    {
+      "title": "Pokemon Advanced Search",
+      "menuCategory": "Search",
+      "productCount": 0
+    }
+  ],
+  "errors": [
+    {
+      "set": "Stellar Crown",
+      "error": "Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.",
+      "timestamp": "2025-09-08T02:58:51.859Z"
+    },
+    {
+      "set": "Shrouded Fable",
+      "error": "Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.",
+      "timestamp": "2025-09-08T02:58:57.800Z"
+    }
+  ]
+}

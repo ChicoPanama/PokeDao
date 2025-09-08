@@ -1,0 +1,75 @@
+{
+  "cards": [],
+  "sessions": [
+    {
+      "sessionId": "test_1757299367066",
+      "harvestType": "test",
+      "configUsed": {
+        "testPages": [
+          1,
+          2,
+          3,
+          25,
+          50
+        ],
+        "maxTestPages": 5,
+        "useGraphQL": true,
+        "htmlFallback": true,
+        "saveToDatabase": true,
+        "cardSelector": "[class*=\"card\"]",
+        "delayBetweenPages": 2000,
+        "pageTimeout": 25000
+      },
+      "startTime": "2025-09-08T02:43:43.055Z",
+      "totalCards": 0,
+      "qualityMetrics": {
+        "totalCards": 0,
+        "cardsWithPrice": 0,
+        "cardsWithImage": 0,
+        "cardsWithLotUrl": 0,
+        "avgPrice": null,
+        "priceRange": {
+          "min": null,
+          "max": null
+        }
+      },
+      "performance": {
+        "html": [
+          {
+            "page": 1,
+            "loadTime": 5537,
+            "cardCount": 0,
+            "method": "html"
+          },
+          {
+            "page": 2,
+            "loadTime": 3493,
+            "cardCount": 0,
+            "method": "html"
+          },
+          {
+            "page": 3,
+            "loadTime": 2819,
+            "cardCount": 0,
+            "method": "html"
+          },
+          {
+            "page": 25,
+            "loadTime": 2569,
+            "cardCount": 0,
+            "method": "html"
+          },
+          {
+            "page": 50,
+            "loadTime": 2568,
+            "cardCount": 0,
+            "method": "html"
+          }
+        ],
+        "graphql": []
+      }
+    }
+  ],
+  "graphqlResponses": [],
+  "qualityMetrics": []
+}

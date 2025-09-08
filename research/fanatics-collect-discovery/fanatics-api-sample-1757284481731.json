@@ -1,0 +1,281 @@
+{
+  "h.key": "FV6UE-NU9YW-CXWJW-PCRG3-DV54L",
+  "h.d": "www.collegebasketballstore.com",
+  "h.t": 1757284481684,
+  "h.cr": "7c1c41cfea6938a8cef752ff0469b54dbf0e4e02-73615130-c1a5e986",
+  "session_id": "cf6f36f2-4924-44c6-b77c-17818ee070be",
+  "site_domain": "www.fanatics.com",
+  "beacon_url": "//17de4c0e.akstat.io/",
+  "autorun": false,
+  "instrument_xhr": true,
+  "beacon_interval": 60,
+  "BW": {
+    "enabled": false
+  },
+  "RT": {
+    "session_exp": 1800
+  },
+  "ResourceTiming": {
+    "enabled": true,
+    "splitAtPath": true
+  },
+  "History": {
+    "enabled": true,
+    "auto": true
+  },
+  "CrossDomain": {
+    "sending": false,
+    "cross_domain_url": ""
+  },
+  "Errors": {
+    "enabled": true,
+    "monitorTimeout": true,
+    "monitorEvents": true,
+    "maxErrors": 10,
+    "sendAfterOnload": true,
+    "sendInterval": 5000
+  },
+  "Continuity": {
+    "enabled": true,
+    "waitAfterOnload": 1000
+  },
+  "TPAnalytics": {
+    "enabled": true
+  },
+  "PageParams": {
+    "xhr": "match",
+    "pageGroups": [
+      {
+        "type": "Regexp",
+        "parameter1": ".*.com/account/(\\w+)",
+        "parameter2": "account:$1",
+        "on": [
+          "navigation"
+        ]
+      },
+      {
+        "type": "Regexp",
+        "parameter1": ".*.com/thank-you/*",
+        "parameter2": "THKU",
+        "on": [
+          "navigation"
+        ]
+      },
+      {
+        "type": "Regexp",
+        "parameter1": ".*.com/shipping/*",
+        "parameter2": "SHPG",
+        "on": [
+          "navigation"
+        ]
+      },
+      {
+        "type": "Regexp",
+        "parameter1": ".*.com/payment/*",
+        "parameter2": "CHKT",
+        "on": [
+          "navigation"
+        ]
+      },
+      {
+        "type": "Regexp",
+        "parameter1": ".*.com/register/*",
+        "parameter2": "RGTR",
+        "on": [
+          "navigation"
+        ]
+      },
+      {
+        "type": "Regexp",
+        "parameter1": ".*.com/login/*",
+        "parameter2": "LOGN",
+        "on": [
+          "navigation"
+        ]
+      },
+      {
+        "type": "Custom",
+        "parameter1": "__platform_data__.initialAppContext.pageTypeCode",
+        "on": [
+          "navigation"
+        ]
+      },
+      {
+        "type": "URLPattern",
+        "parameter1": "ui-route=*",
+        "parameter2": "$0",
+        "on": [
+          "navigation",
+          "xhr"
+        ]
+      }
+    ],
+    "customMetrics": [
+      {
+        "name": "Conversion",
+        "index": 0,
+        "type": "URLPatternType",
+        "label": "cmet.Conversion",
+        "dataType": "Percentage",
+        "match": "boolean",
+        "xhr_ok": true,
+        "parameter1": ".*/thank-you/*"
+      },
+      {
+        "name": "Orders",
+        "index": 1,
+        "type": "URLPatternType",
+        "label": "cmet.Orders",
+        "dataType": "Number",
+        "xhr_ok": true,
+        "parameter1": "*/thank-you/*"
+      },
+      {
+        "name": "Order Total",
+        "index": 2,
+        "type": "Custom",
+        "label": "cmet.Order_Total",
+        "dataType": "Currency",
+        "xhr_ok": true,
+        "parameter2": "*/thank-you/*",
+        "parameter1": "window._orderDetails.summary.grandTotal.baseCurrencyValue"
+      },
+      {
+        "name": "Platform Size",
+        "index": 3,
+        "type": "Custom",
+        "label": "cmet.Platform_Size",
+        "dataType": "Number",
+        "xhr_ok": true,
+        "parameter1": "__platform_data__.size"
+      },
+      {
+        "name": "Topnav View",
+        "index": 5,
+        "type": "URLPatternType",
+        "label": "cmet.Topnav_View",
+        "dataType": "Number",
+        "parameter1": "*m-TOPNAV"
+      }
+    ],
+    "customTimers": [
+      {
+        "name": "Product Images",
+        "index": 1,
+        "type": "ResourceTiming",
+        "label": "custom1",
+        "start": "startTime",
+        "end": "responseEnd",
+        "url": "https://fanatics.frgimages.com/FFImage/thumb.aspx*"
+      },
+      {
+        "name": "Content Images",
+        "index": 2,
+        "type": "ResourceTiming",
+        "label": "custom2",
+        "xhr_ok": true,
+        "start": "startTime",
+        "end": "responseEnd",
+        "url": "https://www.fanatics.com/content/*"
+      }
+    ],
+    "customDimensions": [
+      {
+        "name": "Hostname",
+        "index": 0,
+        "type": "JavaScriptVar",
+        "label": "cdim.Hostname",
+        "dataType": "Text",
+        "varName": "__platform_data__.initialAppContext.requestHost"
+      },
+      {
+        "name": "Search Provider",
+        "index": 8,
+        "type": "JavaScriptVar",
+        "label": "cdim.Search_Provider",
+        "dataType": "Text",
+        "xhr_ok": true,
+        "varName": "platform.data.initialAppContext.lumenSettings.settings.SEARCH_SERVICE_PROVIDER.settings.searchServiceProvider"
+      },
+      {
+        "name": "JerseyCarousel",
+        "index": 2,
+        "type": "JavaScriptVar",
+        "label": "cdim.JerseyCarousel",
+        "dataType": "Text",
+        "xhr_ok": true,
+        "varName": "__platform_data__.initialAppContext.lumenSettings.settings.CART_CONTENT_ROW_5.type"
+      },
+      {
+        "name": "BazaarVoice",
+        "index": 6,
+        "type": "JavaScriptVar",
+        "label": "cdim.BazaarVoice",
+        "dataType": "Text",
+        "xhr_ok": true,
+        "varName": "__platform_data__.initialAppContext.lumenSettings.settings.PRODUCT_RATING.treatment"
+      },
+      {
+        "name": "IsRealUser",
+        "index": 1,
+        "type": "JavaScriptVar",
+        "label": "cdim.IsRealUser",
+        "dataType": "Boolean",
+        "xhr_ok": true,
+        "varName": "platform.data.initialAppContext.botDetails.enableMPulse"
+      },
+      {
+        "name": "FPP Dept Car",
+        "index": 7,
+        "type": "JavaScriptVar",
+        "label": "cdim.FPP_Dept_Car",
+        "dataType": "Text",
+        "xhr_ok": true,
+        "varName": "platform.data.initialAppContext.lumenSettings.settings.DEPARTMENTS_CAROUSEL.settings.fetchAndRenderOption"
+      },
+      {
+        "name": "CSS Vars",
+        "index": 5,
+        "type": "JavaScriptVar",
+        "label": "cdim.CSS_Vars",
+        "dataType": "Boolean",
+        "xhr_ok": true,
+        "varName": "platform.data.initialAppContext.lumenSettings.settings.THEMES.settings.useCSSVars"
+      },
+      {
+        "name": "DPR",
+        "index": 4,
+        "type": "JavaScriptVar",
+        "label": "cdim.DPR",
+        "dataType": "Numeric",
+        "xhr_ok": true,
+        "varName": "devicePixelRatio"
+      },
+      {
+        "name": "Screen Width",
+        "index": 3,
+        "type": "JavaScriptVar",
+        "label": "cdim.Screen_Width",
+        "dataType": "Numeric",
+        "xhr_ok": true,
+        "varName": "document.documentElement.clientWidth"
+      },
+      {
+        "name": "Image Optimize",
+        "index": 9,
+        "type": "JavaScriptVar",
+        "label": "cdim.Image_Optimize",
+        "dataType": "Boolean",
+        "xhr_ok": true,
+        "varName": "platform.data.initialAppContext.lumenSettings.settings.PERFORMANCE.settings.enableOptimizedProductImages"
+      }
+    ],
+    "urlPatterns": [],
+    "params": true
+  },
+  "Akamai": {
+    "enabled": true,
+    "dns_prefetch_enabled": true
+  },
+  "user_ip": "be67388b8"
+}

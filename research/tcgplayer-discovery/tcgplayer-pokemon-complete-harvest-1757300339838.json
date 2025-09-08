@@ -1,0 +1,104 @@
+{
+  "metadata": {
+    "extractedAt": "2025-09-08T02:58:59.838Z",
+    "totalProducts": 0,
+    "processedSets": 2,
+    "totalSets": 12,
+    "errors": 2,
+    "source": "tcgplayer_set_harvester",
+    "method": "navigation_api_plus_scraping"
+  },
+  "session": {
+    "startTime": "2025-09-08T02:58:46.864Z",
+    "pokemonSets": [
+      {
+        "title": "Stellar Crown",
+        "url": "https://www.tcgplayer.com/search/pokemon/sv07-stellar-crown",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv07-stellar-crown",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "Shrouded Fable",
+        "url": "https://www.tcgplayer.com/search/pokemon/sv-shrouded-fable",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv-shrouded-fable",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "Twilight Masquerade",
+        "url": "https://www.tcgplayer.com/search/pokemon/sv06-twilight-masquerade",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv06-twilight-masquerade",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "Temporal Forces",
+        "url": "https://www.tcgplayer.com/search/pokemon/sv05-temporal-forces",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv05-temporal-forces",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "SV: Paldean Fates",
+        "url": "https://www.tcgplayer.com/search/pokemon/sv-paldean-fates",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv-paldean-fates",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "Paradox Rift",
+        "url": "https://www.tcgplayer.com/search/pokemon/sv04-paradox-rift",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv04-paradox-rift",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "SV: Scarlet & Violet 151",
+        "url": "https://www.tcgplayer.com/search/pokemon/sv-scarlet-and-violet-151",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv-scarlet-and-violet-151",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "McDonald's Promos 2023",
+        "url": "https://www.tcgplayer.com/search/pokemon/mcdonalds-promos-2023",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/mcdonalds-promos-2023",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "Obsidian Flames",
+        "url": "https://www.tcgplayer.com/search/pokemon/sv03-obsidian-flames",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv03-obsidian-flames",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "Paldea Evolved",
+        "url": "https://www.tcgplayer.com/search/pokemon/sv02-paldea-evolved",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv02-paldea-evolved",
+        "menuCategory": "Latest Sets"
+      },
+      {
+        "title": "All Pokemon Products",
+        "url": "/search/pokemon/product?productLineName=pokemon&page=1",
+        "fullUrl": "https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&page=1",
+        "menuCategory": "Main"
+      },
+      {
+        "title": "Pokemon Advanced Search",
+        "url": "https://shop.tcgplayer.com/pokemon?newSearch=true",
+        "fullUrl": "https://shop.tcgplayer.com/pokemon?newSearch=true",
+        "menuCategory": "Search"
+      }
+    ],
+    "allProducts": [],
+    "totalProducts": 0,
+    "processedSets": 2,
+    "errors": [
+      {
+        "set": "Stellar Crown",
+        "error": "Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.",
+        "timestamp": "2025-09-08T02:58:51.859Z"
+      },
+      {
+        "set": "Shrouded Fable",
+        "error": "Too many arguments. If you need to pass more than 1 argument to the function wrap them in an object.",
+        "timestamp": "2025-09-08T02:58:57.800Z"
+      }
+    ]
+  },
+  "products": []
+}

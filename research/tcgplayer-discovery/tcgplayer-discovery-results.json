@@ -1,0 +1,514 @@
+[
+  {
+    "endpoint": "https://www.tcgplayer.com/catalog/categories",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/catalog/products",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/pricing/product",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/pricing/group",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/pricing/sku",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/inventory/products",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/v1/catalog/categories",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/v1/catalog/products",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/v1/pricing/product",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/v2/catalog/categories",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/v2/catalog/products",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/v2/pricing/product",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/api/products",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/api/search",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/api/cards",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/api/pokemon",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/api/listings",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/api/marketplace",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/api/inventory",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/api/pricing",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/graphql",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/gql",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/_api/products",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/rest/products",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/services/products",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/data/products.json",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/products.json",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/massentry/getproducts",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/massentry/search",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/product/search",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/catalog/search",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://www.tcgplayer.com/pricing/search",
+    "method": "GET",
+    "status": 200,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "200 OK (website) (HTML)"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/catalog/categories",
+    "method": "GET",
+    "status": 401,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "401 Unauthorized (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/catalog/products",
+    "method": "GET",
+    "status": 401,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "401 Unauthorized (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/pricing/product",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/pricing/group",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/pricing/sku",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/inventory/products",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/v1/catalog/categories",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/v1/catalog/products",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/v1/pricing/product",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/v2/catalog/categories",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/v2/catalog/products",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/v2/pricing/product",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/api/products",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/api/search",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/api/cards",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/api/pokemon",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/api/listings",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/api/marketplace",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/api/inventory",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/api/pricing",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/graphql",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/gql",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/_api/products",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/rest/products",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/services/products",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/data/products.json",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/products.json",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/massentry/getproducts",
+    "method": "GET",
+    "status": 405,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "405 Method Not Allowed (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/massentry/search",
+    "method": "GET",
+    "status": 405,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "405 Method Not Allowed (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/product/search",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/catalog/search",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  },
+  {
+    "endpoint": "https://api.tcgplayer.com/pricing/search",
+    "method": "GET",
+    "status": 404,
+    "responseType": "application/json; charset=utf-8",
+    "hasData": true,
+    "description": "404 Not Found (api) (JSON) - Contains data!"
+  }
+]

@@ -1,0 +1,123 @@
+{
+  "timestamp": "2025-09-08T02:44:34.757Z",
+  "url": "https://www.fanaticscollect.com/weekly-auction?category=Trading+Card+Games+%3E+Pok%C3%A9mon+(English),Trading+Card+Games+%3E+Pok%C3%A9mon+(Japanese),Trading+Card+Games+%3E+Pok%C3%A9mon+(Other+Languages)&type=WEEKLY&itemsPerPage=48&page=1",
+  "pageInfo": {
+    "title": "Weekly Auction at Fanatics Collect | Explore Trading Cards & Collectibles",
+    "bodyLength": 8756,
+    "hasPokemon": true,
+    "hasPrice": true,
+    "url": "https://www.fanaticscollect.com/weekly-auction?category=Trading+Card+Games+%3E+Pok%C3%A9mon+(English),Trading+Card+Games+%3E+Pok%C3%A9mon+(Japanese),Trading+Card+Games+%3E+Pok%C3%A9mon+(Other+Languages)&type=WEEKLY&itemsPerPage=48&page=1"
+  },
+  "selectorTests": [
+    {
+      "selector": "[class*=\"card\"]",
+      "count": 48
+    },
+    {
+      "selector": "[class*=\"item\"]",
+      "count": 947
+    },
+    {
+      "selector": "[class*=\"auction\"]",
+      "count": 0
+    },
+    {
+      "selector": "[class*=\"lot\"]",
+      "count": 2
+    },
+    {
+      "selector": "[data-testid*=\"item\"]",
+      "count": 0
+    },
+    {
+      "selector": ".group",
+      "count": 96
+    },
+    {
+      "selector": "div[class*=\"group\"]",
+      "count": 97
+    }
+  ],
+  "extractedCards": [
+    {
+      "index": 0,
+      "text": "26WA190 Lot: 105932009 Pokemon Japanese Heartgold Collection 1st Edition Holo Ho-Oh Legend PSA 10$25022 bids00M25S, extended to next windowLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group/status group relative h-auto w-full rounded-lg border-transparent",
+      "tagName": "DIV"
+    },
+    {
+      "index": 1,
+      "text": "26WA190 Lot: 105932009 Pokemon Japanese Heartgold Collection 1st Edition Holo Ho-Oh Legend PSA 10$25022 bids00M25S, extended to next windowLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group flex h-full w-full flex-1 cursor-pointer flex-col items-start justify-start rounded-lg border bg-white text-neutral-950 outline-none ring-2 ring-transparent transition focus:ring-2 focus:ring-blue-600 mobOnlyCards:duration-480 mobOnlyCards:ease-in-out mobOnlyCards:hover:shadow-card-hover",
+      "tagName": "DIV"
+    },
+    {
+      "index": 2,
+      "text": "34WA190 Lot: 10800F42016 Pokemon Japanese 20th Anniversary 1st Edition Charizard EX #90 PSA 10 GEM$1,55028 bids00M25S, extended to next windowLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group/status group relative h-auto w-full rounded-lg border-transparent",
+      "tagName": "DIV"
+    },
+    {
+      "index": 3,
+      "text": "34WA190 Lot: 10800F42016 Pokemon Japanese 20th Anniversary 1st Edition Charizard EX #90 PSA 10 GEM$1,55028 bids00M25S, extended to next windowLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group flex h-full w-full flex-1 cursor-pointer flex-col items-start justify-start rounded-lg border bg-white text-neutral-950 outline-none ring-2 ring-transparent transition focus:ring-2 focus:ring-blue-600 mobOnlyCards:duration-480 mobOnlyCards:ease-in-out mobOnlyCards:hover:shadow-card-hover",
+      "tagName": "DIV"
+    },
+    {
+      "index": 4,
+      "text": "52WA190 Lot: 11363F22019 Pokemon Japanese SWSH Promo Stamp Box Pikachu BGS 10 PRISTINE, BLACK LABEL$4,10031 bids00M25S, extended to next windowLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group/status group relative h-auto w-full rounded-lg border-transparent",
+      "tagName": "DIV"
+    },
+    {
+      "index": 5,
+      "text": "52WA190 Lot: 11363F22019 Pokemon Japanese SWSH Promo Stamp Box Pikachu BGS 10 PRISTINE, BLACK LABEL$4,10031 bids00M25S, extended to next windowLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group flex h-full w-full flex-1 cursor-pointer flex-col items-start justify-start rounded-lg border bg-white text-neutral-950 outline-none ring-2 ring-transparent transition focus:ring-2 focus:ring-blue-600 mobOnlyCards:duration-480 mobOnlyCards:ease-in-out mobOnlyCards:hover:shadow-card-hover",
+      "tagName": "DIV"
+    },
+    {
+      "index": 6,
+      "text": "71WA190 Lot: 11363F12019 Pokemon Japanese SWSH Promo Stamp Box Pikachu #227 BGS 10 BLACK LABEL$4,10042 bids00M25S, extended to next windowLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group/status group relative h-auto w-full rounded-lg border-transparent",
+      "tagName": "DIV"
+    },
+    {
+      "index": 7,
+      "text": "71WA190 Lot: 11363F12019 Pokemon Japanese SWSH Promo Stamp Box Pikachu #227 BGS 10 BLACK LABEL$4,10042 bids00M25S, extended to next windowLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group flex h-full w-full flex-1 cursor-pointer flex-col items-start justify-start rounded-lg border bg-white text-neutral-950 outline-none ring-2 ring-transparent transition focus:ring-2 focus:ring-blue-600 mobOnlyCards:duration-480 mobOnlyCards:ease-in-out mobOnlyCards:hover:shadow-card-hover",
+      "tagName": "DIV"
+    },
+    {
+      "index": 8,
+      "text": "21WA190 Lot: 97862002 Pokemon Expedition E-Reader Demo Glossy Pichu #58 PSA 9 MINT$16516 bids00M25S, bid is needed to extend itemLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group/status group relative h-auto w-full rounded-lg border-transparent",
+      "tagName": "DIV"
+    },
+    {
+      "index": 9,
+      "text": "21WA190 Lot: 97862002 Pokemon Expedition E-Reader Demo Glossy Pichu #58 PSA 9 MINT$16516 bids00M25S, bid is needed to extend itemLog in...",
+      "hasPrice": true,
+      "hasPokemon": true,
+      "className": "group flex h-full w-full flex-1 cursor-pointer flex-col items-start justify-start rounded-lg border bg-white text-neutral-950 outline-none ring-2 ring-transparent transition focus:ring-2 focus:ring-blue-600 mobOnlyCards:duration-480 mobOnlyCards:ease-in-out mobOnlyCards:hover:shadow-card-hover",
+      "tagName": "DIV"
+    }
+  ]
+}

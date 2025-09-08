@@ -1,0 +1,1566 @@
+{
+  "data": {
+    "collectListings": [
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 31,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 38000,
+          "currency": "USD"
+        },
+        "favoritedCount": 50,
+        "highestBidder": false,
+        "id": "dbe864c4-8419-11f0-9361-062ea38a136d",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5UM0FKY04wUGtqUFU0ZXo2OGppK0hlNEIwYWdud25scFFuUXdkd3pkWFZZdEVPTVgzQUM1aTVVdkdwWnBseDVmeGlhOENCSUZUUnRRSzdxdGZVTjlBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjdjNmIyZDU2Y2I0Y2FkZmIyNjQ3ZTQ1NmIzNjBlODhkYWU1MTkxZDY4N2NkMTI1MTEyNDFmMmU2ODVkNDE2ZTMifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZiclFHQjdxMzVZZnA1NFl0eGlxb2Jla0h1VFpBM0hmbEJNWjN1SzZEZ2FxK3VqMGJ3ZTNTd2xydEZXWVRxWjhueWM5bG1QVzJwem1ObWpLUlFFYjBnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjYyZDMxNjI1YjJiNDVkOWMxZTY4NGQwNjY1NmFlYzI4YjNlZGNkNTNlZWEyNzA3MTczZjlmOGI4MDgxNDczYjcifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImZPbGR5T2E2OE1KUjNQVGp1bVZ1bWN2VUo3SmQ1T0Y2dUdmdG50dG45YXN0Qi9QcFZtQkZ4SmZTOThVQWpvRk1tT2UxVW1hb0xuSXVvUmtZbGpzdDJBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjE4YmQzMTk1ZTA5MWQ1YTc2ODc4NjcxMjMyYWRlMjFlMmU4NTIxMmE5MTQ4ZDllNmJiNWQ5ZmE4YThiM2M3YTIifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5UM0FKY04wUGtqUFU0ZXo2OGppK0hlNEIwYWdud25scFFuUXdkd3pkWFZZdEVPTVgzQUM1aTVVdkdwWnBseDVwQzlobHI4WG1FdkRlVVd4K25OOGhnPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjU4ZDI3OTlkNmMzNWJkMGY0Yzk2NjRhNDFkMTcwOTA5ODBjN2I5NGVkZjc2Yzc1ODkxNDQzY2ExYTBmNjIyMDEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZiclFHQjdxMzVZZnA1NFl0eGlxb2Jla0h1VFpBM0hmbEJNWjN1SzZEZ2FxK3VqMGJ3ZTNTd2xydEZXWVRxWjhlSmdpTVVMZVRvanU3ZWRHVlFSakdnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjliNzQ2MDJmY2VhNzYxYTRmMGVlZTU0YmE5OTExMTY0Mzc4NDllOGQ4ZGJiNDUyODJmOTg1ZDhkZWQ4OTE0NzgifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImZPbGR5T2E2OE1KUjNQVGp1bVZ1bWN2VUo3SmQ1T0Y2dUdmdG50dG45YXN0Qi9QcFZtQkZ4SmZTOThVQWpvRk1aQnd0RlFTZGxKakJlTGFsWFF1akVBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImQ5MDViNmVmNTZlMzAyYTBjNTJlM2JhY2ViOTQ1MDJiZmI3MzAzYzk4MjEyYTllZjllNjgwNDZhMDkwOGE1MWIifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5UM0FKY04wUGtqUFU0ZXo2OGppK0hlNEIwYWdud25scFFuUXdkd3pkWFZZdEVPTVgzQUM1aTVVdkdwWnBseDVmeGlhOENCSUZUUnRRSzdxdGZVTjlBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjdjNmIyZDU2Y2I0Y2FkZmIyNjQ3ZTQ1NmIzNjBlODhkYWU1MTkxZDY4N2NkMTI1MTEyNDFmMmU2ODVkNDE2ZTMifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5UM0FKY04wUGtqUFU0ZXo2OGppK0hlNEIwYWdud25scFFuUXdkd3pkWFZZdEVPTVgzQUM1aTVVdkdwWnBseDVwQzlobHI4WG1FdkRlVVd4K25OOGhnPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjU4ZDI3OTlkNmMzNWJkMGY0Yzk2NjRhNDFkMTcwOTA5ODBjN2I5NGVkZjc2Yzc1ODkxNDQzY2ExYTBmNjIyMDEifQ=="
+        ],
+        "integerId": 5318848,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 3011F2",
+        "marketplaceEyeAppeal": null,
+        "slug": "1997-spx-silver-michael-jordan-6-bgs-9-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1997 SPx Silver Michael Jordan #6 BGS 9 MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 33,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 90000,
+          "currency": "USD"
+        },
+        "favoritedCount": 71,
+        "highestBidder": false,
+        "id": "745ab69e-6b88-11f0-8f14-0a5394c12597",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlpUaUV5aUk5Z0ZMR1dwdEN6WnlycE9OMFI4RFpnQkNiSnBrbzZZbW9jV2JobGE1ZlFuSnhxUFFHYUh5RDJ5eDRGbTBOMzUxTWw0UXpXQjI2Q1Q4N0dRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjU2MjYxMjllZDJlYzg2ODVkYjkyNmY4NTM2NzMzMGIwMDBlYjI3ZjM1MWY4OWQ0ZjJhMjU3NGEzMGRlNjM3OTQifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InlkZ3hPZk9sNDlzS3JqNU9WVW5EN3NPSXp2S09GSUZFM0NSSkx3M0Q2eEg3cEYrWmlYUnQ4NnVkL3cvaFArbFl0T3J5a0NyZkttRW55UEt6YUkydzVRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImRiZTNlYjI1ZWE2OGE1ZjQxOGQ2YzM3NjI2ODkzZTExNzFhM2E3ZWMzZWU0MWZjNGI1OTYzMDUxY2UzMTkzYzkifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InVHSENOZHNyOHVYRGhQM3dQcEc5Q204YnJ4RlVYRi95RGFxNTlRcDYxc0dyRlo2cE5vc0I5K0Y5RnljTE9zbU5tc0tmMVgzRjZDRWNuMTMwbnNzWWhRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjU2OTdmMGEyZTk0NzZhNzEwNTg0NTc4NDBkMTY2NjQ0M2RlNTM4NWZjYWJjNDFlMWM0MmZmYzEwMzA1NWU2ZDkifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlpUaUV5aUk5Z0ZMR1dwdEN6WnlycE9OMFI4RFpnQkNiSnBrbzZZbW9jV2FDTkhvSGRzRjBqbkNjeWhwVGdpYjFQODdscm5zbkhNejZaR0JXSi9KVzlBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImU4Yjc3NzZhYzRlNzQ3ZDJmNDY2Zjg2Y2IxMjc5ZGIxMjVlNzIzY2NkMmUyNTgxYjUyY2U1YjA4YzhkOWI4NjEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InlkZ3hPZk9sNDlzS3JqNU9WVW5EN3NPSXp2S09GSUZFM0NSSkx3M0Q2eEVwWGRsR1VqZ1ltZ0JBUU5hNXUzRDZlSUNmbS9uMHVkYUJ3YWZaYWttckR3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjYzNDBkOTA5YjMwZjVjMzI3MmIxMGFmZGRjMjdkOGY3YWQwODQ2MWUxYjcxYjFhNjAyYTRkYTRhZDMzNzE2Y2MifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InVHSENOZHNyOHVYRGhQM3dQcEc5Q204YnJ4RlVYRi95RGFxNTlRcDYxc0VYSzFUTEtCZG5PV1NGMlk2VS9DVzFEaW8zd2taU0NZS1lsZEptQkpDRWFRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImYzZTMwN2UzNWYzNzI3ZWNiNzJmM2YxMzdiMDE1ODJhYzJmMjNjNzRmNzhkMDE0OTFiOWNlYjgyZDU3YjdiNjYifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlpUaUV5aUk5Z0ZMR1dwdEN6WnlycE9OMFI4RFpnQkNiSnBrbzZZbW9jV2JobGE1ZlFuSnhxUFFHYUh5RDJ5eDRGbTBOMzUxTWw0UXpXQjI2Q1Q4N0dRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjU2MjYxMjllZDJlYzg2ODVkYjkyNmY4NTM2NzMzMGIwMDBlYjI3ZjM1MWY4OWQ0ZjJhMjU3NGEzMGRlNjM3OTQifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlpUaUV5aUk5Z0ZMR1dwdEN6WnlycE9OMFI4RFpnQkNiSnBrbzZZbW9jV2FDTkhvSGRzRjBqbkNjeWhwVGdpYjFQODdscm5zbkhNejZaR0JXSi9KVzlBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImU4Yjc3NzZhYzRlNzQ3ZDJmNDY2Zjg2Y2IxMjc5ZGIxMjVlNzIzY2NkMmUyNTgxYjUyY2U1YjA4YzhkOWI4NjEifQ=="
+        ],
+        "integerId": 5248034,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 6723",
+        "marketplaceEyeAppeal": null,
+        "slug": "1958-alifabolaget-brasilien-team-w-pele-auto-dna-10-649-psa-3-vg",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA/DNA Population 1 of 2 - Just Two Graded Higher",
+        "title": "1958 Alifabolaget Brasilien Team w/ Pele AUTO DNA 10 #649 PSA 3 VG"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 64,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 127500,
+          "currency": "USD"
+        },
+        "favoritedCount": 129,
+        "highestBidder": false,
+        "id": "7d6095f0-8123-11f0-8df2-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhlWXR3Sy8vTUdPT1p1azBHQU1STi9YeFNJYkgweGxsSTRKRE8zZzh0Y2pYSjFZN2pXSHI2ek1PZGFWUmZGWGRtZFNYMU5jb3hLa2k3M2EzWFY2QnZ3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImVmNjU4MzMyZGYzYzkwYjgxZWQ2ZTA1YmQxZTMxZWQzNjhmOWI1NDczNjhlODQ4YTQ2YjlmNDZmMTYwOGE1ZjUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ikk4anJaaEF4dFdhNHVVdUJEajJlM0g5NnlWZytBQ0hBNkZDa3FGR0R1SG04WjZhenVObnYwWW1CaXlybU1MRkxSUU1waS95cCtvMlErQitxTTk2V0l3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImYxNjJlN2NkNGY1MTY0MGQyMGUxNTZhOTY4NGRlYjUwZWI3MTUxYjU3YjBlNjAyMmIxZmQ4MzMyYWMzMTZlZjUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdxMDJkcWFrdkZoSThEdlQ3Y3RNbW5YQVlVMjg2YWZwRUh6R2NwNXArUENzNzk5TDk5T2J1N1RRaGtiWWxhcmQzTmUzNkJTby9aMEFKcTN3Zy9neUlnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjY5ODM3ODFjNjU3ZGViYTk0ZTQyMTM5NDM5N2E2NzYzZjVlMzBkNmE5YTI2ZTE3MGYwYjM3MGE1YmU2ZmI2ODgifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhlWXR3Sy8vTUdPT1p1azBHQU1STi9YeFNJYkgweGxsSTRKRE8zZzh0Y2o0cXJoQk4rczdSMUlTY2NGMThvYTNZWXhzajluMU9VTDRXMnpRYlF0NzV3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImNiNWI4YzIyOTYzMDk3Mzc0OTU2NmJlNTM4Nzg2ZjU5MTcxOTk4MzQyMjZlZjliYjMyMGYwNjg1MjZiMWQyYzIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ikk4anJaaEF4dFdhNHVVdUJEajJlM0g5NnlWZytBQ0hBNkZDa3FGR0R1SG1aVkFlY3hGb0hCbnhDK3g5UXQ1dU1KdVhaOXpvTTQwSEdBQThuQjBsY2t3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjAwYjg5NjFjMDVjZGM5MzYzNjE4YTgxYjk4OWE3ZWI5M2VmNmEyM2IyMjM2MjVjOTIzOGEyODc1ODQzNGMzYTgifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdxMDJkcWFrdkZoSThEdlQ3Y3RNbW5YQVlVMjg2YWZwRUh6R2NwNXArUEJsMlk3eVVpWnBpSDMrMmhtb2Exa1RMV2NlK2RJd3BrR0lxSENwM2hrZUt3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImFmMDZiMGM2YTE3YTY3ZTk4ZGExZWRlNmU0NWY3Y2VkMDBiMWNhZjI5MjQzY2I3OWFkZjU0Y2VjY2VkYjNlZGUifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhlWXR3Sy8vTUdPT1p1azBHQU1STi9YeFNJYkgweGxsSTRKRE8zZzh0Y2pYSjFZN2pXSHI2ek1PZGFWUmZGWGRtZFNYMU5jb3hLa2k3M2EzWFY2QnZ3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImVmNjU4MzMyZGYzYzkwYjgxZWQ2ZTA1YmQxZTMxZWQzNjhmOWI1NDczNjhlODQ4YTQ2YjlmNDZmMTYwOGE1ZjUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhlWXR3Sy8vTUdPT1p1azBHQU1STi9YeFNJYkgweGxsSTRKRE8zZzh0Y2o0cXJoQk4rczdSMUlTY2NGMThvYTNZWXhzajluMU9VTDRXMnpRYlF0NzV3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImNiNWI4YzIyOTYzMDk3Mzc0OTU2NmJlNTM4Nzg2ZjU5MTcxOTk4MzQyMjZlZjliYjMyMGYwNjg1MjZiMWQyYzIifQ=="
+        ],
+        "integerId": 5309022,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 7083",
+        "marketplaceEyeAppeal": null,
+        "slug": "2015-futera-unique-versus-lionel-messi-cristiano-ronaldo-patch-57-psa-7-nrmt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA Population 1 of 2 - Just One Graded Higher",
+        "title": "2015 Futera Unique Versus Lionel Messi & Cristiano Ronaldo PATCH /57 PSA 7 NRMT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 20,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 22000,
+          "currency": "USD"
+        },
+        "favoritedCount": 47,
+        "highestBidder": false,
+        "id": "7b530d04-763a-11f0-8877-0267d1dc09b9",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImUweFl0cFJqMDZmNTNLdGp1V2pyNFVFaHFWNy9EU3VrQlVHSDhjVEZUL3BqWnpaQndCdVZTbndPdXdYNnpWQzUwYUg2OWJuejNlRFM0ZWdEdFluNHRRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImU3MmY4YTFlODVlNjRjMDg3MDkxMDdhODQ2ZmI0ZmZhYTU4Zjg4OGE3YTczMmZiNTBhOTViZWJlYjEwNTYzMDkifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik15bFdzM25RemVjTTFkU0xEVUxsSWphOG83UXlISnJkTzgzMnE3Uzh4WWVWaTdtNlMwTUdhUWdJcWZ6Z0UzY3FySnIwbjJxT3YwdGxUMHFDVkt1Unp3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjdiYWUwNzNlZGZkNTE3YTMwZTZkNzhiZTI0MTkwYTZmNmQwYzc5NjIwY2Q5OWMxMjI4ZGQwZjAzNjYwNmFmZWQifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlduN2VwME5rbHVxWHVwUGdQYk1BcXVKRVlpUzRkYnM3SjJ0VFcrN2s1dWp4bHVFQnpGOHovcmE2Q0FITGU3QUNxSlVXMXpwckZzVW1WbVA4QXlHRFlnPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjdmOWY3MmM4OGVlZjQyYjUyMGRkNmRiNjBhNWY5ZGNiOTY1ZDQ0ZjU1MmU4MWFlYTRmN2IxOGQzM2U5YjRlNDYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImUweFl0cFJqMDZmNTNLdGp1V2pyNFVFaHFWNy9EU3VrQlVHSDhjVEZUL3BqWnpaQndCdVZTbndPdXdYNnpWQzVmMEQ2Q1p3bnZCVGEzamg5VFcxdWN3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImI0YjNiM2Y5NDNmOTgzZGNiNGZiMWMzYmI3NzY5MDFmNmE5MTFhMDM2ZjcyMWRiY2MyMTcyMzk0NzM2NzljODUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik15bFdzM25RemVjTTFkU0xEVUxsSWphOG83UXlISnJkTzgzMnE3Uzh4WWVWaTdtNlMwTUdhUWdJcWZ6Z0UzY3Fpem44b0JOUGp5enJqSitLdE91QmRRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjFhNmY5OTUzZWViYzFhMTQ4ODk4MzU4MzA0YzYzOTQ3N2MyMjZjNmI3YWU4ZmQ4YmJjZGI1ZjBkMGIxNGNiMjkifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlduN2VwME5rbHVxWHVwUGdQYk1BcXVKRVlpUzRkYnM3SjJ0VFcrN2s1dWp4bHVFQnpGOHovcmE2Q0FITGU3QUM4MEM1OU4vMWNJMFJIL01mTEx3REp3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImRlZDZhY2FjNTc5ZjMzYjZkOTBkOTcxMjliOGNlOWM2ZDA0NTRkNjUxY2Q0NjIwNmMzZjQ2NjczZDc0ODRmZDYifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImUweFl0cFJqMDZmNTNLdGp1V2pyNFVFaHFWNy9EU3VrQlVHSDhjVEZUL3BqWnpaQndCdVZTbndPdXdYNnpWQzUwYUg2OWJuejNlRFM0ZWdEdFluNHRRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImU3MmY4YTFlODVlNjRjMDg3MDkxMDdhODQ2ZmI0ZmZhYTU4Zjg4OGE3YTczMmZiNTBhOTViZWJlYjEwNTYzMDkifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImUweFl0cFJqMDZmNTNLdGp1V2pyNFVFaHFWNy9EU3VrQlVHSDhjVEZUL3BqWnpaQndCdVZTbndPdXdYNnpWQzVmMEQ2Q1p3bnZCVGEzamg5VFcxdWN3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImI0YjNiM2Y5NDNmOTgzZGNiNGZiMWMzYmI3NzY5MDFmNmE5MTFhMDM2ZjcyMWRiY2MyMTcyMzk0NzM2NzljODUifQ=="
+        ],
+        "integerId": 5276823,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 2947",
+        "marketplaceEyeAppeal": null,
+        "slug": "1996-stadium-club-fusion-members-only-die-cut-michael-jordan-f1-cgc-auth",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1996 Stadium Club Fusion Members Only Die-Cut Michael Jordan #F1 CGC AUTH"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 31,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 80000,
+          "currency": "USD"
+        },
+        "favoritedCount": 68,
+        "highestBidder": false,
+        "id": "79d27366-8139-11f0-8907-0afcc285279b",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InJrZlN2dTY1U2pXN041Uy9PWWlROEJQa0hlRmh1bjVxOVg1YUQzdkpLWFZ5SlB2Qm9rRG9rdTUyVjZOcjF3OUdoSXgzblNoMGhSMjdpWmtsbndydkV3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImNlZjk5NzIyZTE5NjNmZmYxNTQ5YjNjZTVkNTMwNzdhNTM4ZGZiOWU5NjRkMzBlOTIyMmY3MGZiN2MwZmRkOGQifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkV2OFcwL2x5cHNLOFBXR0UvMzEvcEs0MnZ2eFM0NEhTQkZ1VGZ6aGt4T05HWkNjczZ5OTgrVnpyRk5rUVhsLzZXcDBxellabG1DM2NLM2RKR29uUW13PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6Ijc0MjY2MmM1ZWE3ZGZmZTg4YmU5OWY4MjcyZjliZTE2Mzc2MjcxMjg4YmFkZjUzZWFmYmM0NDE3NDBkNTU1ZDIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjJiSU9ZUVlmU2xZOGZmeTMvaWxmcFBML0p4bGF3SHc1Nk1Oa0dTL3RsWmRDTFNxM3RmL05teWRIYlYvM21QbkplVnBBL3NFNk1Qd1hycjRTSHF0bXRRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImE2ZDY2NWQ4MzZhYjFiNjBlNmEyNDU4MzUwODhjNmVmMzQ0NjcxZTBkNDI4YTA2MjI3NjBjYmUzZjA3NGY0NmQifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InJrZlN2dTY1U2pXN041Uy9PWWlROEJQa0hlRmh1bjVxOVg1YUQzdkpLWFZ5SlB2Qm9rRG9rdTUyVjZOcjF3OUdsWFpmajJCTGlWbm5KelNKT21ZdGtBPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjUyMjQ0MTQ5YzkxNDEyYzBmNmFhODVkNDExZWQ3ODViYTU2NGFkM2UwN2E4M2EwZWQ1NTM3ZTY1ZjEyYzA3YzEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkV2OFcwL2x5cHNLOFBXR0UvMzEvcEs0MnZ2eFM0NEhTQkZ1VGZ6aGt4T05HWkNjczZ5OTgrVnpyRk5rUVhsLzZIWTF6TmI2ckMzMUFrb0kxODlsT0x3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImM0YjczZWZmMWVjNjc2MzY1MjY2MjY0OTIzMGIyN2VhZTI1NTcyNjQwNDI2OTFlNjkxZWY4ZmIwMzcwZWMxYzgifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjJiSU9ZUVlmU2xZOGZmeTMvaWxmcFBML0p4bGF3SHc1Nk1Oa0dTL3RsWmRDTFNxM3RmL05teWRIYlYvM21QbkpUbkJSMDNjd0dVbmxtQnpESk9mejJ3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImUyNWVhZDZjODkxMmRmZGVhYzcxN2FlMzViOGNlNzlkZTNhZmE2YjU5N2NiOThlOGUwOThlM2M2MmMxYjllNTkifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InJrZlN2dTY1U2pXN041Uy9PWWlROEJQa0hlRmh1bjVxOVg1YUQzdkpLWFZ5SlB2Qm9rRG9rdTUyVjZOcjF3OUdoSXgzblNoMGhSMjdpWmtsbndydkV3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImNlZjk5NzIyZTE5NjNmZmYxNTQ5YjNjZTVkNTMwNzdhNTM4ZGZiOWU5NjRkMzBlOTIyMmY3MGZiN2MwZmRkOGQifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InJrZlN2dTY1U2pXN041Uy9PWWlROEJQa0hlRmh1bjVxOVg1YUQzdkpLWFZ5SlB2Qm9rRG9rdTUyVjZOcjF3OUdsWFpmajJCTGlWbm5KelNKT21ZdGtBPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjUyMjQ0MTQ5YzkxNDEyYzBmNmFhODVkNDExZWQ3ODViYTU2NGFkM2UwN2E4M2EwZWQ1NTM3ZTY1ZjEyYzA3YzEifQ=="
+        ],
+        "integerId": 5309294,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 3588",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-goodwin-exquisite-tribute-black-sabrina-ionescu-rc-patch-auto-11-bgs-85",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2021 Goodwin Exquisite Tribute Black Sabrina Ionescu RC PATCH AUTO 1/1 BGS 8.5"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 21,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 62500,
+          "currency": "USD"
+        },
+        "favoritedCount": 53,
+        "highestBidder": false,
+        "id": "b3426c0c-73d1-11f0-96ae-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ikx3UUxBbDJpczF5YmlWQWc5NDdTdmZWYk9LQjhIY3M5T0RrblJVTlk4eHljakNjWWhJcXdnaDZKMFd5ZGZmblhPUDhSNjdnL2RzQVNWdk44alJtRFVBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjEzZjAzYjYzNDY5NGIyNDM4MDJkNmJkNTI3MGZhZWQzNTg5MjI5ODYzZmNiYTdmY2UxY2IzMzI2NzUzNjc2ODQifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik9LVGpYbWhWWDZFeVFkOTBvbUMyekswblUxRlBRRWhyUGlQVGo1ZUF4ZEhGK3ozNk5DalhVcnRWeXEyN2t2dFU5SktpQXBzUmV2eFI1bTh5TDg1NFBBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImYwMDNjOTkxYWU4Mjg1ZTA2ZDgyMzc0NzhhNWZlYTZlNWZkYmVkN2JlMGJkZDBiMGY2ZGI5NjNjMGEyNWFkYTIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik9LVGpYbWhWWDZFeVFkOTBvbUMyekswblUxRlBRRWhyUGlQVGo1ZUF4ZEhGK3ozNk5DalhVcnRWeXEyN2t2dFU5SktpQXBzUmV2eFI1bTh5TDg1NFBBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImYwMDNjOTkxYWU4Mjg1ZTA2ZDgyMzc0NzhhNWZlYTZlNWZkYmVkN2JlMGJkZDBiMGY2ZGI5NjNjMGEyNWFkYTIifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ikx3UUxBbDJpczF5YmlWQWc5NDdTdmZWYk9LQjhIY3M5T0RrblJVTlk4eHdvYUorMHE4cnJsNFBlRWV5ME4zUm5rUTZtUXE4T1htRE1jRjBET2o3R2pnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjBmZGQxZWNlNTI5YTYxYzcxNTFhNzk2NWNkZWUyODlhMmEwM2NlYjk2YzYxZTAzNjc0NTlkN2MxN2JhZjZmZjkifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik9LVGpYbWhWWDZFeVFkOTBvbUMyekswblUxRlBRRWhyUGlQVGo1ZUF4ZEZRRlliZ0F2Ky9QRWVLMkZycXI0WEIwd2xLbjJVVFZ4aE1Lb1FRalpKV1l3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjU3OTAzNTJmOGU1N2Y3MDMwYzA1Y2QzZTIyODcwYzc5NzQzZmE3YjY2N2QwODMzMWY0YTM1ZTVjMDY0OWI5MmYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik9LVGpYbWhWWDZFeVFkOTBvbUMyekswblUxRlBRRWhyUGlQVGo1ZUF4ZEZRRlliZ0F2Ky9QRWVLMkZycXI0WEIwd2xLbjJVVFZ4aE1Lb1FRalpKV1l3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjU3OTAzNTJmOGU1N2Y3MDMwYzA1Y2QzZTIyODcwYzc5NzQzZmE3YjY2N2QwODMzMWY0YTM1ZTVjMDY0OWI5MmYifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ikx3UUxBbDJpczF5YmlWQWc5NDdTdmZWYk9LQjhIY3M5T0RrblJVTlk4eHljakNjWWhJcXdnaDZKMFd5ZGZmblhPUDhSNjdnL2RzQVNWdk44alJtRFVBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjEzZjAzYjYzNDY5NGIyNDM4MDJkNmJkNTI3MGZhZWQzNTg5MjI5ODYzZmNiYTdmY2UxY2IzMzI2NzUzNjc2ODQifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ikx3UUxBbDJpczF5YmlWQWc5NDdTdmZWYk9LQjhIY3M5T0RrblJVTlk4eHdvYUorMHE4cnJsNFBlRWV5ME4zUm5rUTZtUXE4T1htRE1jRjBET2o3R2pnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjBmZGQxZWNlNTI5YTYxYzcxNTFhNzk2NWNkZWUyODlhMmEwM2NlYjk2YzYxZTAzNjc0NTlkN2MxN2JhZjZmZjkifQ=="
+        ],
+        "integerId": 5270922,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 6123",
+        "marketplaceEyeAppeal": null,
+        "slug": "2014-fleer-showcase-metal-universe-green-wayne-gretzky-100-3-psa-8-nm-mt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA Population 1 of 2 - Just One Graded Higher",
+        "title": "2014 Fleer Showcase Metal Universe Green Wayne Gretzky /100 #3 PSA 8 NM-MT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 51,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 180000,
+          "currency": "USD"
+        },
+        "favoritedCount": 135,
+        "highestBidder": false,
+        "id": "486c2c0a-81ec-11f0-8fe8-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlppUlFmdTJXWTJGNEI5TE1qUW5mK1EvMUlmYWJHYm9sUUZ1NmtWWGxmZTJicXNHR2RzaUZuU3FlZkdkbkRHamJ3Nm9DRzlrOG9neC93S216QW51NEp3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjY2ZDY4OWFlNTdhNmMyNGY1OTAxYzUzZjVhMzQ1ODljOTdhYmU0ZTkwMzcxZDMxNjdmZDg3YzViYzhlNTM3MmYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InoxREFIRXlndXFhOUhac2ZxSG9pelZhQ1ZiTVJSaU1SY3VTMDRQVEVJcndBMXkrNE9Va2dZNU0xRjlHTTYwQnRwNHRsN29neDFwV0ZTb2hXNDYxYTN3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjlkYjRjNjcyOTJkMzUyOWExMjM0NmEwMDlkZmE2MzY5NTQ0ZDFiNmE5MDljNTMzODRjMzEwODlhNzhmNmRlOTUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IllUZ0ZkTEltUW9LRzlERVByY0lTcFhuL01ZY1VtUnMzUFVCU25BeENpOHpGUGdxdFNBcElFaW1scFQwRXN0Y0tnZFZ6V1ByNnhhR29kcWtGTnRZVGx3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjlkY2IwMDAyZWJlNmVjYTBiYTI0YzMxMzBmNzI4ODNhZjcwODgyMDFlMTllMDE4NTVhMWQ4NGIzODExZjY0MTAifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlppUlFmdTJXWTJGNEI5TE1qUW5mK1EvMUlmYWJHYm9sUUZ1NmtWWGxmZTJicXNHR2RzaUZuU3FlZkdkbkRHamJkZ3AzOWVEYWpCRUd3ZG5PUzJ0aWF3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjZiMDU4M2NmY2I5NDk2NzZhMDQ2YTYzYTFlYzEzYWU2YzU2ZDNmZWI4MzBhMWY1Mjk5YmRiODdiZmU2ZmI4NjcifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InoxREFIRXlndXFhOUhac2ZxSG9pelZhQ1ZiTVJSaU1SY3VTMDRQVEVJcndBMXkrNE9Va2dZNU0xRjlHTTYwQnQ5WFZRS0J4YjQ1Y3dMZkZIek1xWEd3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImE2YmVkZTIwMjQ2MmEzNDk0YjM4N2Q5NDAzYjljOGIzYThiOTlkYWUyODM1ZDg1OTA1OTY5MjlhNmJjY2JiMzkifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IllUZ0ZkTEltUW9LRzlERVByY0lTcFhuL01ZY1VtUnMzUFVCU25BeENpOHpGUGdxdFNBcElFaW1scFQwRXN0Y0tobGpwV2ZLZjhuS3hUZkJ1bUorV3FRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImJmYzNkMTY2Y2ExODY2Y2I2ZmQwZTBlMTc0MzZiNzI2NDg5MWEyMTRiNDVmMDE2Yzc3N2RlYmZlMWFjOWIyYjQifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlppUlFmdTJXWTJGNEI5TE1qUW5mK1EvMUlmYWJHYm9sUUZ1NmtWWGxmZTJicXNHR2RzaUZuU3FlZkdkbkRHamJ3Nm9DRzlrOG9neC93S216QW51NEp3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjY2ZDY4OWFlNTdhNmMyNGY1OTAxYzUzZjVhMzQ1ODljOTdhYmU0ZTkwMzcxZDMxNjdmZDg3YzViYzhlNTM3MmYifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlppUlFmdTJXWTJGNEI5TE1qUW5mK1EvMUlmYWJHYm9sUUZ1NmtWWGxmZTJicXNHR2RzaUZuU3FlZkdkbkRHamJkZ3AzOWVEYWpCRUd3ZG5PUzJ0aWF3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjZiMDU4M2NmY2I5NDk2NzZhMDQ2YTYzYTFlYzEzYWU2YzU2ZDNmZWI4MzBhMWY1Mjk5YmRiODdiZmU2ZmI4NjcifQ=="
+        ],
+        "integerId": 5311888,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 3000",
+        "marketplaceEyeAppeal": null,
+        "slug": "1997-skybox-premium-star-rubies-tim-duncan-rookie-50-112-psa-7mc-nrmt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1997 Skybox Premium Star Rubies Tim Duncan ROOKIE /50 #112 PSA 7(mc) NRMT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 16,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 112500,
+          "currency": "USD"
+        },
+        "favoritedCount": 51,
+        "highestBidder": false,
+        "id": "75701ae2-839d-11f0-8d82-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhpVzQ1VzhpUGMzYW82em5EVWhpTGtzbFdEdUtCMHFHbVJic3AzcGc0TFl4ajZLTzJuR3BCZUMvekNOSS9lOWhiUmpnK1hJZUFaeVZGYVY4b0Y3Q1l3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjAyNTAzYzlhZjVmOTlmMTdlZGUwNWExNTYxNTE2ZTZhZTcwOGU1YzdiMGEyNzUyOWVmNWNkMjI5ZTdiMzc2Y2IifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhMTU5EYldTVENUSEs5Yk9oY0hzSnVNRnkxTXFnbXdoeDBMN09PZXpZSDdPblpHSXk3V2xybE0yVk1OQ0pzMXVraVAyc2RBZTlST1h6RHFuTXZ1Y3V3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjA5NzRlY2RhM2VjZjE1MGQ2OGRlZjZlMzkwNjJjNmYyN2ZiYmExZDhhYmExNmJlMGYyZTA2MWU3YmRkODIyNGIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImZqNkk1eHFzaEJXajBQMVluVkdzYzIyTWFPWHJwWGxnV0UvYTBNVldncWVjcTg0VWZUa2ZhclJwTmhheER1V2taRWEwcTk0aTluLzlMSXFrQWloWHJRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjBlMWJlNjhkYmIyY2I1N2VmYWE3Y2MyYWYwMTU2NDgzNWY3MDU1ZjU4M2M1NTM1YzA3ODRlZWVhYWNkOTY2ZmYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhpVzQ1VzhpUGMzYW82em5EVWhpTGtzbFdEdUtCMHFHbVJic3AzcGc0TFladmxrdzljQm8vZy82Q2tSbGFkdDZvQXZwUnJHeUg4Yk16bzFvTUhRMFhBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6Ijg4Mzc3NzczMjJiMDA3ZmEzYTRhMTUzNDI5YzliYWI5NDdiMjc1MDVjMDgyZTg2OWUxZDEwZjJiNjJjNTU2NTIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhMTU5EYldTVENUSEs5Yk9oY0hzSnVNRnkxTXFnbXdoeDBMN09PZXpZSDZhaHczVGZHMW1SL09GN2piNW5tek9HUkFYZktZazVHMnhRMHZsaW4zMHl3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjE2MzA3YTk3NWFmODAyN2FjOGNjYzgzN2VhYmFhNTM2Y2I3OTlmMGNjMjc5NGI0Y2QxYzg3NjY1MDBiMGZiMjkifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImZqNkk1eHFzaEJXajBQMVluVkdzYzIyTWFPWHJwWGxnV0UvYTBNVldncWZUMThFb09NemJXUjBwd2tBSGlzY2s4NldsYy9tV2h2aXNPSDl0V0pSTHlRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImY3MzFhYTZlNThjMDBlYzFhMzFlZGYzMGIzNjliNjdmMDJlMWJjNjZiNGM0ZTUyZjRhMDJkMTE5MjZlYjBkZjYifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhpVzQ1VzhpUGMzYW82em5EVWhpTGtzbFdEdUtCMHFHbVJic3AzcGc0TFl4ajZLTzJuR3BCZUMvekNOSS9lOWhiUmpnK1hJZUFaeVZGYVY4b0Y3Q1l3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjAyNTAzYzlhZjVmOTlmMTdlZGUwNWExNTYxNTE2ZTZhZTcwOGU1YzdiMGEyNzUyOWVmNWNkMjI5ZTdiMzc2Y2IifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhpVzQ1VzhpUGMzYW82em5EVWhpTGtzbFdEdUtCMHFHbVJic3AzcGc0TFladmxrdzljQm8vZy82Q2tSbGFkdDZvQXZwUnJHeUg4Yk16bzFvTUhRMFhBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6Ijg4Mzc3NzczMjJiMDA3ZmEzYTRhMTUzNDI5YzliYWI5NDdiMjc1MDVjMDgyZTg2OWUxZDEwZjJiNjJjNTU2NTIifQ=="
+        ],
+        "integerId": 5317700,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 2968",
+        "marketplaceEyeAppeal": "None",
+        "slug": "1997-hoops-high-voltage-500-michael-jordan-missing-serial-bgs-altered-auth",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1997 Hoops High Voltage 500 Michael Jordan Missing Serial # BGS ALTERED AUTH"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 35,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 82500,
+          "currency": "USD"
+        },
+        "favoritedCount": 82,
+        "highestBidder": false,
+        "id": "77d1cb10-7cb7-11f0-a2e8-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im9aTVRvMkkwbFI0Q2dXelAzMzkvVTExUWNEVjRzd0R0U2lQSEJFS21Bckx5bUxGcTV3TGtGeWZTQUY0TTVGTzc4R3kwTHlONXpHbE5vN05Cc3hxdHlnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImY3YmRlZDU4OTQ2N2UzZWJiMGZiNDhhNDMzZDJkNGMzNWVhY2JkNjYwZjMzY2Y2ZGVkMTEzZTYwZjQ5ZmJiM2MifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlFhVUxZUWZXcUEyYkRmR1Q2NjZNMkR6djNCRUd0alRRZmVIVDdhcXhud2FubytDNnByajVBZkg2blYxem5URXBROEEvOU85T3orVHNkQlV4WTZ1TFRRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjQxOTdiNWRkM2I5MmYzNWZmOWUwMTJlN2ZhMGU4NWM5NzhmMDQ1YmE0ZDg5MDQ1OGQ2NzUzM2U5NzA2YjYyYjYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik9Dek9odytJNWxBOHFhSFEvTDBPbGJ6c0M1T1gvRElSLzE0VWNoNFF5WGFDZ1pDZkdFaGpmM0xGNjVRUVovVDBGTElyMWlJa2prWGZDQ0lpL0FRcnJRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjAyOTdlMzQyMGIyODRjYTlmMmI4YWE5MjM2NDgzOGFhMDNiNDI4M2EyMDNhMWU4OWE1NTQ5YjA0YjE2NTAxNDYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im9aTVRvMkkwbFI0Q2dXelAzMzkvVTExUWNEVjRzd0R0U2lQSEJFS21Bckx5bUxGcTV3TGtGeWZTQUY0TTVGTzdacE5IM3lMbGtjUFVQYjgxdFcvNGJ3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImU1MDU4ZDUyNmIwZDI0MzQ5N2E1N2NjZDQxYmUwMjI2YzQ0YTBhMzc3OWYwZjUzNzBjN2IyYjdkYWM5ZmNkNmEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlFhVUxZUWZXcUEyYkRmR1Q2NjZNMkR6djNCRUd0alRRZmVIVDdhcXhud1k1eWx2WjhCMTlJK3MwSmFNcUtKY3ZPQVM1ZVcwRGNkOERldjFibDFad013PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjY5ZmI5NjkxMzE4MDlhZDkxNzZjYTU3M2U4YmQyMmJhODQxMDkwM2Q2YTk5YjY1YjJkZmJhNGI5NTk0ZTZjODIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik9Dek9odytJNWxBOHFhSFEvTDBPbGJ6c0M1T1gvRElSLzE0VWNoNFF5WGFDZ1pDZkdFaGpmM0xGNjVRUVovVDBxWnFUME5hV2s2SUM4YWFrVDkzSzZnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImYxMTlhZjcyYWE0NDU2ODMzZjU3NzZiYjRiZTVhNjM2NjliODIzNWJjYTExNGJjNDdiNjMyZWJjMjAwNjdiYzkifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im9aTVRvMkkwbFI0Q2dXelAzMzkvVTExUWNEVjRzd0R0U2lQSEJFS21Bckx5bUxGcTV3TGtGeWZTQUY0TTVGTzc4R3kwTHlONXpHbE5vN05Cc3hxdHlnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImY3YmRlZDU4OTQ2N2UzZWJiMGZiNDhhNDMzZDJkNGMzNWVhY2JkNjYwZjMzY2Y2ZGVkMTEzZTYwZjQ5ZmJiM2MifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im9aTVRvMkkwbFI0Q2dXelAzMzkvVTExUWNEVjRzd0R0U2lQSEJFS21Bckx5bUxGcTV3TGtGeWZTQUY0TTVGTzdacE5IM3lMbGtjUFVQYjgxdFcvNGJ3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImU1MDU4ZDUyNmIwZDI0MzQ5N2E1N2NjZDQxYmUwMjI2YzQ0YTBhMzc3OWYwZjUzNzBjN2IyYjdkYWM5ZmNkNmEifQ=="
+        ],
+        "integerId": 5297658,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 7186",
+        "marketplaceEyeAppeal": null,
+        "slug": "2022-panini-prizm-world-cup-qatar-black-manuel-neuer-11-114-psa-9-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA Population 1 of 1 - None Graded Higher",
+        "title": "2022 Panini Prizm World Cup Qatar Black Manuel Neuer 1/1 #114 PSA 9 MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 14,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 41000,
+          "currency": "USD"
+        },
+        "favoritedCount": 41,
+        "highestBidder": false,
+        "id": "7574aac6-839d-11f0-9931-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkF2MTFmUGJXTmZienczb2dJZkVoTW50ZUdqc1N3bHB1M3NWTlBMSDJHMG8zWWt0U0E1ZHU1Z3pvbndtekdlWjFodnZyU2lOd3ZmQU8zS21MREtoWXlnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImNjZjdmNjYyYzZmNjVlZGVlNGE4NGM1YTMzNjhlZTI1NzU4MWMxMDdhZGEwMDM0MjQ3YTk4ZWZkNGUxNzk4ODQifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhMTU5EYldTVENUSEs5Yk9oY0hzSnVNRnkxTXFnbXdoeDBMN09PZXpZSDcxYklPZ2dlWG5BdzJRUzVqUzBZTXBNK2E0MEtJN2ZpN1U3em9zK0VtSEhRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImZkZWMwZTE1MDQwMWJlYmFjMzgxOTE5MDUyM2JkZDVjMjc5YzJhZjk5MjZkNGYwYTdlYzg1NDZmMGNmNjEzMjYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlRTblRFa01DWHN5ajJ5WC9oTEF0UVVxQW1XNG9pM3k2Mmo1TnRLdnFNMEk0QXNBeHJ6WnJnZzRWVGdrcTFOSkwvdm80Szl5d2JuWXJINU5FWVFRSWxnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjZhZTQzZTFmZDg4Njc4NjA3NmFhOTdlNTM2NDI5ZTViYTIwMDY1N2UxNDk4MDNiMDNkYTY5NWZhYjRhMTdiMWQifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkF2MTFmUGJXTmZienczb2dJZkVoTW50ZUdqc1N3bHB1M3NWTlBMSDJHMG9HVWlWWGNRdWtETFcweS9jWUh6aWhYaCtidnpCK0FBSTN1SkZBMGRTQ1l3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImVhOGNlNjFmNTA3ZWY2ZmI3NGQzODBkMGEyYWEzMjFlODNjMjU1OWYzNDMwNmY4YjRiY2Q0YTNkZWVkZmNhMWMifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhMTU5EYldTVENUSEs5Yk9oY0hzSnVNRnkxTXFnbXdoeDBMN09PZXpZSDYvem1vMzBMMG5Wc2FxRDJkcy9NTS8zcE5nYjlNUjVRaVpFcG9xWTRxSUZnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjM5NzllODY2MDg5OTBhMDg0ZTE5MWNjNzhmYjIxODA4ZjY4MGMxNDRhZDhhODRjNWRhMzEyZDE0M2M0NzgyMjMifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlRTblRFa01DWHN5ajJ5WC9oTEF0UVVxQW1XNG9pM3k2Mmo1TnRLdnFNMExaeWVBb0ZlUHpnZENJQzc2ZjV4bHdGbDhnR0hvWHAzNzZVRHIrZXZiYXNRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImQ4N2ZlNGVhOTNiMGJlM2QyMzVmY2I1ZDcyMTkyZDUwNjFkMmEwNWFlZmY5MjI3NzgyMzQ5YmRhNzQ1MDc0Y2MifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkF2MTFmUGJXTmZienczb2dJZkVoTW50ZUdqc1N3bHB1M3NWTlBMSDJHMG8zWWt0U0E1ZHU1Z3pvbndtekdlWjFodnZyU2lOd3ZmQU8zS21MREtoWXlnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImNjZjdmNjYyYzZmNjVlZGVlNGE4NGM1YTMzNjhlZTI1NzU4MWMxMDdhZGEwMDM0MjQ3YTk4ZWZkNGUxNzk4ODQifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkF2MTFmUGJXTmZienczb2dJZkVoTW50ZUdqc1N3bHB1M3NWTlBMSDJHMG9HVWlWWGNRdWtETFcweS9jWUh6aWhYaCtidnpCK0FBSTN1SkZBMGRTQ1l3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImVhOGNlNjFmNTA3ZWY2ZmI3NGQzODBkMGEyYWEzMjFlODNjMjU1OWYzNDMwNmY4YjRiY2Q0YTNkZWVkZmNhMWMifQ=="
+        ],
+        "integerId": 5317701,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 3032",
+        "marketplaceEyeAppeal": "None",
+        "slug": "1997-hoops-high-voltage-500-volts-missing-serial-allen-iverson-cgc-85-nm-mt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "CGC Population 1 of 1 - None Graded Higher",
+        "title": "1997 Hoops High Voltage 500 Volts Missing Serial # Allen Iverson CGC 8.5 NM-MT+"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 23,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 92500,
+          "currency": "USD"
+        },
+        "favoritedCount": 72,
+        "highestBidder": false,
+        "id": "762cf9f8-82be-11f0-b3b1-02c6bcfbd167",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InNrVWcrVFp0UFVnak1YaDd2MGFVUHMrczBoSm5hUzkvWncxQ3pRYTZ1OGN1VTd4Z1RaQkNzL29ySjBZY05UbStvd3ZQN285SWVoZS9hSWNEVi9XM0FnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImY2YmZiNDQ5NmQ1N2U0NWMyYTllOTFmZGIxNTNhZTY1MjhhYTExMDAyZWZjZjUxNTEwYTYyYjI2NmVhZWE3MDYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFMSDFSdzV1T1g3cHNDd29rZnh4dE43eEN6alFIQ1FqRVN4N0dLR3JzdHB2ZWtOWW5IbWt0Qlg5ck9RR3c5YUFvN0c1aDhEL281b2pPVjhtYWt2aVVBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImI3MmYxOGZiNTg4NjRmNTdkMGUwZWQ2ZmNlYjlhMWQ5M2VlNDhhNjkyMjE3OTljNGVlZTVkNzA1YTIwYzNmZDQifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InhRN281N2lhd09QREJad05PakFNOGU5RVErUWxhMFg2UDRMQ0JMMUdKVDhId1VqalBoMlNpWGJzTTljK0JCKzg2SW9UbjN4U0ZONnczUEFOL05mNzVRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjVmN2JkMTM4N2NlNmRhNzVjOWJhMWVmZWZkY2VmZDE4NWExNzk3ZGVmYzk5YmRiMjhmM2I1NjNkYmYzYTIwZGYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InNrVWcrVFp0UFVnak1YaDd2MGFVUHMrczBoSm5hUzkvWncxQ3pRYTZ1OGNpZzA2NFdBWFh3QURYMzd1SjJoeTM5QWJINGVDNVBxK040YUxEUjJkQmRRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImRkZTk0MjRmODA3MzkyMzI2MWY2ODZlNDVlOTkwYTQ0ZDA0OWQzYWNlY2YzZmJhM2Q5NjBjZTQwNGI2YmE1OWIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFMSDFSdzV1T1g3cHNDd29rZnh4dE43eEN6alFIQ1FqRVN4N0dLR3JzdHB2NlcxTytzcStxdEJucmlLSWlya3JQNjdFd3FwL3pINzhJajZUd2tJM0FRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjRkMTBhNWNhZDhiYWYzMDAyYjUwMzNhNzUyNjA3ZmRmZWQ4YjcwNDMzODU1M2Y4OGYwNDlhOWI2NzhhZjRiNjkifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InhRN281N2lhd09QREJad05PakFNOGU5RVErUWxhMFg2UDRMQ0JMMUdKVC9vZUlDZWttYUZkSEJUZHVuQUlSQVZ4Vmt3NnJWL3RqT1JWcGx2a0NXYlZ3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImE2ODM5YTM2NDAzNjY4ZjJmZmI2NmJjYzU3ZDUzMjJkNzNhMmIxOGY5YTFkNWM2YTczMjhlZjRlMGEwYjM3YWQifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InNrVWcrVFp0UFVnak1YaDd2MGFVUHMrczBoSm5hUzkvWncxQ3pRYTZ1OGN1VTd4Z1RaQkNzL29ySjBZY05UbStvd3ZQN285SWVoZS9hSWNEVi9XM0FnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImY2YmZiNDQ5NmQ1N2U0NWMyYTllOTFmZGIxNTNhZTY1MjhhYTExMDAyZWZjZjUxNTEwYTYyYjI2NmVhZWE3MDYifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InNrVWcrVFp0UFVnak1YaDd2MGFVUHMrczBoSm5hUzkvWncxQ3pRYTZ1OGNpZzA2NFdBWFh3QURYMzd1SjJoeTM5QWJINGVDNVBxK040YUxEUjJkQmRRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImRkZTk0MjRmODA3MzkyMzI2MWY2ODZlNDVlOTkwYTQ0ZDA0OWQzYWNlY2YzZmJhM2Q5NjBjZTQwNGI2YmE1OWIifQ=="
+        ],
+        "integerId": 5313860,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 6667",
+        "marketplaceEyeAppeal": null,
+        "slug": "1946-monte-cudine-discs-soccer-alfredo-di-stefano-rookie-psa-2-gd",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA Population 1 of 4 - Five Graded Higher",
+        "title": "1946 Monte Cudine Discs Soccer Alfredo Di Stefano ROOKIE PSA 2 GD"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 29,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 210000,
+          "currency": "USD"
+        },
+        "favoritedCount": 149,
+        "highestBidder": false,
+        "id": "b1654594-7a16-11f0-b6a0-067e98e66425",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ild5RzVMekdqU1Bta2ttTS9CUWtFcnNSSVNQaElabHovSS94MkdpUkdzZkpvbCtDSWRuUGRLS0xuei95ajFtRjdocWVTd0FPOUFQdk9UbEpRcGd5NVdBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImY2YmFiNGFmYmU4YWRlNTYwMTY3ODQ1N2Y2MDU4OTlkNjg4YWQxYzU2Y2ViYzA3Yjg1Yzc1ZmEzMTZhODg4ODUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InpZc1V2T0FGeGNZVnd4SzVvQTVvK2xYaE9mOHBrZ1FqUU9mQlVBR1JSWnpuczZXc2U0N3ZwYnlwb1lybk1PS0N0WVozcGNYQWErZVpxcTlSQnhLdmRBPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImRiYjkxMTM3Njc3ZjEyZWMyOTNjYzQ1ZDhkYjU3OWRkNjQzMzlhNTIyYjllYzdkNmZjZTBlN2Q3OWFlODFiZjUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhpTTQ3blBQM2FIUVQ5Q2xwY1dPZXBjbkx3UG0yd1FSMHJOWDErRHRMS01OZmM4bi9GNUlBanZtV3J3b0QyQmpHZ3cxajNlVVRpRWdtNVhIZUxNQ0VBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImZjYTZlNzE2MDZkMGE0NzMzMTcwYTdlYWExNDcyMmYwYmUwMWM3ODVlMDUwMjk5NTFmMjJjYjA5NzVkNWMxYmYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ild5RzVMekdqU1Bta2ttTS9CUWtFcnNSSVNQaElabHovSS94MkdpUkdzZkpvbCtDSWRuUGRLS0xuei95ajFtRjc5Tk5SY010eEhtY3c3TUNXM3dyb3F3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImE3YzU1YzM5ZjMxNGJjZDBlZDY3MTllZTQxMjEzZjYxZjI2MDYwNTA2OTQ2YmM5MmU3Nzc5NGI4ZjhkMGZiNDEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InpZc1V2T0FGeGNZVnd4SzVvQTVvK2xYaE9mOHBrZ1FqUU9mQlVBR1JSWnpuczZXc2U0N3ZwYnlwb1lybk1PS0NGeG9XMHNqTGYxbkJBdXZrTDZTK3B3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjYyYTkzODI0NDljZjg4NWE0NDEwMGE3YWE4NGZhNmFiMTYxMmQ3OGUwOTllZmRkNTY0MzUxZjgzNmM4NDM5OGYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhpTTQ3blBQM2FIUVQ5Q2xwY1dPZXBjbkx3UG0yd1FSMHJOWDErRHRMS01OZmM4bi9GNUlBanZtV3J3b0QyQmowYXQ1K2NGdHdLSmFhc1RidUF4S1NRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImFlOTIxYjdiZTYyMDFmYzM1MWQwMmVlOWQ3YmY1N2Y2NGU0YjcyYjM5YjI0MTYyMTZmZjM3ZTYxZGY5M2RmMDMifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ild5RzVMekdqU1Bta2ttTS9CUWtFcnNSSVNQaElabHovSS94MkdpUkdzZkpvbCtDSWRuUGRLS0xuei95ajFtRjdocWVTd0FPOUFQdk9UbEpRcGd5NVdBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImY2YmFiNGFmYmU4YWRlNTYwMTY3ODQ1N2Y2MDU4OTlkNjg4YWQxYzU2Y2ViYzA3Yjg1Yzc1ZmEzMTZhODg4ODUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ild5RzVMekdqU1Bta2ttTS9CUWtFcnNSSVNQaElabHovSS94MkdpUkdzZkpvbCtDSWRuUGRLS0xuei95ajFtRjc5Tk5SY010eEhtY3c3TUNXM3dyb3F3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImE3YzU1YzM5ZjMxNGJjZDBlZDY3MTllZTQxMjEzZjYxZjI2MDYwNTA2OTQ2YmM5MmU3Nzc5NGI4ZjhkMGZiNDEifQ=="
+        ],
+        "integerId": 5289791,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 7067",
+        "marketplaceEyeAppeal": null,
+        "slug": "2013-topps-epl-star-players-gold-cristiano-ronaldo-auto-50-sp-cr-bgs-9-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "BGS Population 1 of 5 - Five Graded Higher",
+        "title": "2013 Topps EPL Star Players Gold Cristiano Ronaldo AUTO /50 #SP-CR BGS 9 MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 22,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 13000,
+          "currency": "USD"
+        },
+        "favoritedCount": 34,
+        "highestBidder": false,
+        "id": "711e673a-7ee5-11f0-aab3-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjB2S05pYWIxMEJLSktFa0VaUnBxM1ZxOUJEWWlZWVJYRHE3NHA3VmZhM0ZrMXcvcEJLWmNXR2pMUkRtOUhGK1Z0aWJ6Z2tkaVZGWW1lN1hIUVp1Mnh3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImRhMWE5NjU5ZjAxZDY5NWVlYjUxMTdmNDMxMTgwNmZmMTYxZDFkYmM1MzRlOWYyOWY1OTNjY2M3MDNmZDM3NGEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjB2S05pYWIxMEJLSktFa0VaUnBxM1ZxOUJEWWlZWVJYRHE3NHA3VmZhM0ZrMXcvcEJLWmNXR2pMUkRtOUhGK1Z0aWJ6Z2tkaVZGWW1lN1hIUVp1Mnh3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImRhMWE5NjU5ZjAxZDY5NWVlYjUxMTdmNDMxMTgwNmZmMTYxZDFkYmM1MzRlOWYyOWY1OTNjY2M3MDNmZDM3NGEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjB2S05pYWIxMEJLSktFa0VaUnBxM1ZxOUJEWWlZWVJYRHE3NHA3VmZhM0ZrMXcvcEJLWmNXR2pMUkRtOUhGK1Z0aWJ6Z2tkaVZGWW1lN1hIUVp1Mnh3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImRhMWE5NjU5ZjAxZDY5NWVlYjUxMTdmNDMxMTgwNmZmMTYxZDFkYmM1MzRlOWYyOWY1OTNjY2M3MDNmZDM3NGEifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjB2S05pYWIxMEJLSktFa0VaUnBxM1ZxOUJEWWlZWVJYRHE3NHA3VmZhM0ZrRncxcWhtQkhYZkkvbEY2T01ZbWpaWC8xcWtQQXFhMDM1RXVCMFlCNXpnPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjEyMDAwZTkyNDEwY2UxMTQ2OGY2OTBlM2JlYTYzNWU0MTExZWIyM2VmNDI0OGI5Yzk4OWM3MzM0Yjc3NmU0ODUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjB2S05pYWIxMEJLSktFa0VaUnBxM1ZxOUJEWWlZWVJYRHE3NHA3VmZhM0ZrRncxcWhtQkhYZkkvbEY2T01ZbWpaWC8xcWtQQXFhMDM1RXVCMFlCNXpnPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjEyMDAwZTkyNDEwY2UxMTQ2OGY2OTBlM2JlYTYzNWU0MTExZWIyM2VmNDI0OGI5Yzk4OWM3MzM0Yjc3NmU0ODUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjB2S05pYWIxMEJLSktFa0VaUnBxM1ZxOUJEWWlZWVJYRHE3NHA3VmZhM0ZrRncxcWhtQkhYZkkvbEY2T01ZbWpaWC8xcWtQQXFhMDM1RXVCMFlCNXpnPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjEyMDAwZTkyNDEwY2UxMTQ2OGY2OTBlM2JlYTYzNWU0MTExZWIyM2VmNDI0OGI5Yzk4OWM3MzM0Yjc3NmU0ODUifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjB2S05pYWIxMEJLSktFa0VaUnBxM1ZxOUJEWWlZWVJYRHE3NHA3VmZhM0ZrMXcvcEJLWmNXR2pMUkRtOUhGK1Z0aWJ6Z2tkaVZGWW1lN1hIUVp1Mnh3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImRhMWE5NjU5ZjAxZDY5NWVlYjUxMTdmNDMxMTgwNmZmMTYxZDFkYmM1MzRlOWYyOWY1OTNjY2M3MDNmZDM3NGEifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjB2S05pYWIxMEJLSktFa0VaUnBxM1ZxOUJEWWlZWVJYRHE3NHA3VmZhM0ZrRncxcWhtQkhYZkkvbEY2T01ZbWpaWC8xcWtQQXFhMDM1RXVCMFlCNXpnPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjEyMDAwZTkyNDEwY2UxMTQ2OGY2OTBlM2JlYTYzNWU0MTExZWIyM2VmNDI0OGI5Yzk4OWM3MzM0Yjc3NmU0ODUifQ=="
+        ],
+        "integerId": 5303013,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 4563",
+        "marketplaceEyeAppeal": null,
+        "slug": "2019-national-treasures-midnight-daniel-jones-rookie-patch-auto-20-162-bgs-95",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "BGS Population 1 of 1 - None Graded Higher",
+        "title": "2019 National Treasures Midnight Daniel Jones ROOKIE PATCH AUTO /20 #162 BGS 9.5"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 31,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 90000,
+          "currency": "USD"
+        },
+        "favoritedCount": 67,
+        "highestBidder": false,
+        "id": "ae914e94-8100-11f0-976f-0afcc285279b",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im1CSnRtVHdKNGxvNFh5eE9CSFZYTjQzV1FPQndOT25hcTVGTVF3UU4xM2pia1hUOGFMQTcxdXRFemhRZ0JCWWlVMEpqMnlidHg1WDdwa3VHajVTVW9RPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjExZjZmNzdlY2M0N2UyZGNiZDY2YjhmMmQyZDg0ODNkYzhiODE0NGUzZWVmYzQwNTM4YTBkZDNkZWFkNjhiZjAifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjM2RHBZMVNOcHQ5UU5zWkZxTnJDbU9LRlovTjBVWWxhejRiNHhTVkMvU3puSGY3LzhBNVpkVzhZQVRLcUVzcy9FUWZzSDA5VUkzZDlnZzNDWTkyeEdBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjBjZTkzMGVmNGZhZmYwNTAxMmQ4YzcyOTc1ODY5ZTA2NzBjNTM2ZDY5ZmRhOWIyNWY5OTU1Y2Q0ZjJkMzgwZDEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhabjJVZHpjRk5FSU1teTFTekJpaDNSaHJ4K0FjTlJ2b0YzMlNLbkdBSy9XRWZ0NFdyd3NSQ3pabmdnQ1pLbU95bDZhNW5jTUJSNGNxYXIrV0lhU3l3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjYzMTI4MzE4OTg1ZjJkMTUxMjRiMjhhODMxNGE1Yzc4OGIyYWU2MDE1NTQ5NjBmNWMyYjA2MGUyMzAxZmRmMGEifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im1CSnRtVHdKNGxvNFh5eE9CSFZYTjQzV1FPQndOT25hcTVGTVF3UU4xM2pia1hUOGFMQTcxdXRFemhRZ0JCWWkxdVdQVEhpdGl5c211Ky9vcHhlMC9nPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjVmZGIxN2FlNmQyMWE2OTRmYWQ1MzE3MDYyNjIwZGZhNGNjZjY3MjIxZmEwYzczZDk0M2YxMDdmNzJiZjJhODgifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjM2RHBZMVNOcHQ5UU5zWkZxTnJDbU9LRlovTjBVWWxhejRiNHhTVkMvU3puSGY3LzhBNVpkVzhZQVRLcUVzcy85NmF0Z25BN25rY1JSWGUyTm9DODFRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImM3NGJjZGQ0ZjNlNTQ0Yzc2MDc4MTNhM2Q2MGMzOTJjN2M3NjAzY2FlOTY0MTcxNzhmZDk0NjJlNzUzMjQ5N2UifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImhabjJVZHpjRk5FSU1teTFTekJpaDNSaHJ4K0FjTlJ2b0YzMlNLbkdBSy9XRWZ0NFdyd3NSQ3pabmdnQ1pLbU9kcFRKTkw0NERvMHRWQjZ2VVdRQnRnPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjQ3OTlmZjg3MDNmYTUzNzA0MDRkNjRiOTFkNjlhMGZiNTljOGZlMGU4YjRkMWE1ZWYwODJkYzY1OThjNWZhZWQifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im1CSnRtVHdKNGxvNFh5eE9CSFZYTjQzV1FPQndOT25hcTVGTVF3UU4xM2pia1hUOGFMQTcxdXRFemhRZ0JCWWlVMEpqMnlidHg1WDdwa3VHajVTVW9RPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjExZjZmNzdlY2M0N2UyZGNiZDY2YjhmMmQyZDg0ODNkYzhiODE0NGUzZWVmYzQwNTM4YTBkZDNkZWFkNjhiZjAifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im1CSnRtVHdKNGxvNFh5eE9CSFZYTjQzV1FPQndOT25hcTVGTVF3UU4xM2pia1hUOGFMQTcxdXRFemhRZ0JCWWkxdVdQVEhpdGl5c211Ky9vcHhlMC9nPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjVmZGIxN2FlNmQyMWE2OTRmYWQ1MzE3MDYyNjIwZGZhNGNjZjY3MjIxZmEwYzczZDk0M2YxMDdmNzJiZjJhODgifQ=="
+        ],
+        "integerId": 5308700,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 2983",
+        "marketplaceEyeAppeal": null,
+        "slug": "1997-metal-universe-precious-metal-gems-pmg-red-larry-johnson-100-88-sgc-6",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1997 Metal Universe Precious Metal Gems PMG Red Larry Johnson /100 #88 SGC 6"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 21,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 21000,
+          "currency": "USD"
+        },
+        "favoritedCount": 44,
+        "highestBidder": false,
+        "id": "5ab5252a-8362-11f0-a6f3-0afcc285279b",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IktncXJPdXFUK01MSllCL3VSbHpNdEhGQjRYcFNUUVJ6UTFRRHAvRDYwUVg0S3p0QzNRa292c2dhWlBIeEpJdzlMeTN3dDlGNXRaU2MwQWtLUHZFbDZBPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjgyNmIzOWNmMmVjOGVkZGIwMzRiZGI4ODNhMjg5Nzc1NjIyMzkzYjMxNDgxNjA3YjM4MjQ2NDM4ZTBlZTg5ODcifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IllmeXk3M1IwNmU2MEhWaEI1VHBiT0tqZzdnVDBUVHltRWpTNGFSQ3VtV0NJMkhRWVlQTnpoZEdXbzVSc0tjeDN1d3RzcHFKK0tabytJaE9EdXVZaklBPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjRlMjhkZjQzMzU3OWNmNDFiZDc2OTg3M2FmNGI2Mjc1OGU1YjgyYWFkYzFhYWY5ZWI3Nzg0NWZhYjQ0ZDY2M2UifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRHd1dubWlkMFNLbTlqb3duZGNOdFEzb0ZrUk1RWjJaRnhEZ0V1THd4VkplSm9xcVlHdFdxUk15ak9MWkNmb0o2WE91NjVRajk1L1hPWTZzUitESWJnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjBkNWM4ODQ5ZThlNTliNjhmYTcxYzhjZWQzZGM4Yzc0MDYxMmRkNTdjNTg3MmNjYWU1MzY3YWVjMTljMjc2ODYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IktncXJPdXFUK01MSllCL3VSbHpNdEhGQjRYcFNUUVJ6UTFRRHAvRDYwUVg0S3p0QzNRa292c2dhWlBIeEpJdzlrNnVuZlhlaVI1VzhwVmZSN2UvWGdnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjVlZmEzNTU0ZTFmZGYyODFmMjg2N2I4ZTMxYWUwODFlNjEyMzBjYTVhNTg3NDgzZTFiZmUyODc5ODE2MzE0ODEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IllmeXk3M1IwNmU2MEhWaEI1VHBiT0tqZzdnVDBUVHltRWpTNGFSQ3VtV0NJMkhRWVlQTnpoZEdXbzVSc0tjeDN2SVFncnBjTDhKOEZWc0JPZDRKYVB3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImViMzMzNTM5MDM5OWI1ZjlmYzkwODQ1MWI0YWIwMzc2NDQ3NGM2NDJmYzMyMzA4YTM2N2NiMWUwYTA1MjZkOGIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRHd1dubWlkMFNLbTlqb3duZGNOdFEzb0ZrUk1RWjJaRnhEZ0V1THd4VkplSm9xcVlHdFdxUk15ak9MWkNmb0oxMmNUaGpCbDkrUEZwMUtPWmhOQWRnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjM3M2MzODYyZjE0MGM3NGZhNzNiODlhZDJmYmI5OGMyNTcxZmM4OGQ2YmQ3NzdlYWI2ZjgyOGEzZmM4NmRlNGEifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IktncXJPdXFUK01MSllCL3VSbHpNdEhGQjRYcFNUUVJ6UTFRRHAvRDYwUVg0S3p0QzNRa292c2dhWlBIeEpJdzlMeTN3dDlGNXRaU2MwQWtLUHZFbDZBPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjgyNmIzOWNmMmVjOGVkZGIwMzRiZGI4ODNhMjg5Nzc1NjIyMzkzYjMxNDgxNjA3YjM4MjQ2NDM4ZTBlZTg5ODcifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IktncXJPdXFUK01MSllCL3VSbHpNdEhGQjRYcFNUUVJ6UTFRRHAvRDYwUVg0S3p0QzNRa292c2dhWlBIeEpJdzlrNnVuZlhlaVI1VzhwVmZSN2UvWGdnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjVlZmEzNTU0ZTFmZGYyODFmMjg2N2I4ZTMxYWUwODFlNjEyMzBjYTVhNTg3NDgzZTFiZmUyODc5ODE2MzE0ODEifQ=="
+        ],
+        "integerId": 5316556,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 2904",
+        "marketplaceEyeAppeal": null,
+        "slug": "1996-skybox-premium-larger-than-life-michael-jordan-b7-psa-1-pr",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1996 Skybox Premium Larger Than Life Michael Jordan #B7 PSA 1 PR"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 24,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 62500,
+          "currency": "USD"
+        },
+        "favoritedCount": 59,
+        "highestBidder": false,
+        "id": "7d420b3a-8123-11f0-b5e4-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImVoU3hZcGU1L0I4MFlWcWR0QVpSTTVhazh5VkVOTWxOeFlvZmRIb3VORThMSC9UVjBSTCtzYmc1WFZqQ2JuQWhpNWhXN0NMVjdKOVdKa2V1UVM0ZUlBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjhmZGM1ZmE2ZDA0Yjc1ZTIyYTY5OGMwZDg5ZmI4MzcwZjZjNjg5YmE5M2Y1ODg2NmZjZjJkZDYyYTI4ZDVmY2MifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Imd6dzluMEV2WGlhVjF2a0QyMi9GaFBDTXVNSTNkRnFQNGZBelRjRVJYR2F4bUxqaFdaTU9FOXhiNTBWbnZyeU0rY2src3JYdGNOdEw5NUc0MC9qWFR3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjMxNjc4YTIyY2EyYjFhZGYyOTAxNWRlYzUyNWRlZTE1ZWIxOGY3YzE0MjI0MDQ3NWIwNDg4NDdlY2Q0NDI2ZTkifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBRZTZNSVNWb1duTzNlVEN4QnZNcjBsb3g1YXN0TEhjaDdscUNQd2hsQW9WV0R1cDRMdkRGSGEraHpIMjh2Wnp6SXZGelNDWU9IR0xpUkRjeEoxV0FBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImFmMTU3YmY5N2NmZmExNDE4ZGI2ZTMwNzZmYjA4ZDY4MDMxOGM4NjYzOGU5YzJjZTM3MmM3OTAzZDI5MTlhNjIifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImVoU3hZcGU1L0I4MFlWcWR0QVpSTTVhazh5VkVOTWxOeFlvZmRIb3VORThRTnV1N1k1NzJoNnlHU1Z0YXZjaTdXUFN5OEIzMEliS0tmUzhNMkNnekR3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjkyMmQ1OGMxMjE2YWIyYzExNGNlOWM2MDc3OTg1ZGYxYmI2NGY5MWMzNzMwOWVhNjJiZWNiM2VkNmQ5ZmI2ZjQifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Imd6dzluMEV2WGlhVjF2a0QyMi9GaFBDTXVNSTNkRnFQNGZBelRjRVJYR1pyUHpkVzEyWFdjSVlSbU9RNWRMQUIxMGpSNmNFbFlHOGwxQk8yMnNFK053PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImY2M2YwNDYwNmRmNmM2NGZmMjE2MjExNGFjYjI4ZGE0NWRiMzViY2RjYmFmMmNiMzMxOTZlZGM0NzkxOTYwYzgifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBRZTZNSVNWb1duTzNlVEN4QnZNcjBsb3g1YXN0TEhjaDdscUNQd2hsQXJQYXpjaVVXeHcwMi85cmJpZUxreHFxaWI4K0FaNTYrclk4Q3ozK2VnM0t3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6Ijk2YTk3YjMyNmVjMGM1ZWJkZWU2OTA4NzM2YTE2OWMwNjllNTVkOWIzY2IyZmMwYTYyNWMyMGIwMThhY2QzYTYifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImVoU3hZcGU1L0I4MFlWcWR0QVpSTTVhazh5VkVOTWxOeFlvZmRIb3VORThMSC9UVjBSTCtzYmc1WFZqQ2JuQWhpNWhXN0NMVjdKOVdKa2V1UVM0ZUlBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjhmZGM1ZmE2ZDA0Yjc1ZTIyYTY5OGMwZDg5ZmI4MzcwZjZjNjg5YmE5M2Y1ODg2NmZjZjJkZDYyYTI4ZDVmY2MifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImVoU3hZcGU1L0I4MFlWcWR0QVpSTTVhazh5VkVOTWxOeFlvZmRIb3VORThRTnV1N1k1NzJoNnlHU1Z0YXZjaTdXUFN5OEIzMEliS0tmUzhNMkNnekR3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjkyMmQ1OGMxMjE2YWIyYzExNGNlOWM2MDc3OTg1ZGYxYmI2NGY5MWMzNzMwOWVhNjJiZWNiM2VkNmQ5ZmI2ZjQifQ=="
+        ],
+        "integerId": 5309015,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 7013",
+        "marketplaceEyeAppeal": null,
+        "slug": "2009-abril-gol-cards-neymar-jr-rookie-154-psa-75-nrmt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA Population 1 of 1 - Seven Graded Higher",
+        "title": "2009 Abril Gol Cards Neymar Jr. ROOKIE #154 PSA 7.5 NRMT+"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 33,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 230000,
+          "currency": "USD"
+        },
+        "favoritedCount": 42,
+        "highestBidder": false,
+        "id": "3e590cde-7f8e-11f0-9571-0a3ddb96fda9",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZjWUFTZTFRWFRaRy81UFM4RjdhZEQxbzZnenZ5d2ZmZFpCc3pQSk53NkVOZzlkTUt3Vzh3dElGbTNYVXViKzlmaUJ6Zk5uSnEyY05MZVNPbUJLRlpBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjE2OTcxZjNiMzJjM2E2ZmYwYTUwODJjYzQxMDQ2NmI5MzYxOTkxMWFjZThhMWNiZDUzZmUzNDFjMDdlYWNmMGYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkpmdVdvclJ0ZFFXbEdqamI1MzBnVU5yYWVzTUZINUNTUjk2MUFRRm1xM242VjAvSUhQTHpTanBNT3J4a2txdjNCSFVVcGx4eWx3VmVwbGlIQlgwN2JnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImY5MTc1ZGQ4MjQ3NmRkYzcwYjc5N2VjZWZiNjcxNWJjYTNmZTI4ZWY1OWJmZTgzZDVjMTYwYjMyY2Q4ZjhhYWUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5nTEJsMVlreExYa2U2enRmeER0MnM5cHJxNmx3THdMbjNsVDIxQWJ6Ti9jam1jVWFYZis4MWNGc043OUFGVzg4RmJ1c0ZJeEtYSXJJWEg1bXF2RWtBPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImM4ODU1N2Y5MjBiNWY1NjNmM2EyNjY2ZmNkYWM3N2RiMGI1ZmRiYjM4Yjg4MmE0YWMwZGI0YmUyNDQyZGM5NjcifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZjWUFTZTFRWFRaRy81UFM4RjdhZEQxbzZnenZ5d2ZmZFpCc3pQSk53NkVOZzlkTUt3Vzh3dElGbTNYVXViKzkvbVpNK3EzYVVjbnRpZGdiaXVMT0lBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6Ijk3MDE2N2ZjOTFmNDVhM2UwMzg5NmI5ZGM4ZGQzYTc1OWExMzkyNGNjN2RmNjE0YTJiN2U4Yjc4OWNhZjA2OGEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkpmdVdvclJ0ZFFXbEdqamI1MzBnVU5yYWVzTUZINUNTUjk2MUFRRm1xM242VjAvSUhQTHpTanBNT3J4a2txdjNDRlR4RDFrK05rTXQxSlVlengrZTdnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImFmN2QwZWJmZDg0ZmQyNjNlMWI0N2NiN2RiNDcwMWE5YTdhYWY0ZWZmMDZkYjE1YTk1Y2NmODgxNDBlODI4MGYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5nTEJsMVlreExYa2U2enRmeER0MnM5cHJxNmx3THdMbjNsVDIxQWJ6Ti9jam1jVWFYZis4MWNGc043OUFGVzhRM2tuSGtHWEU1c1ljaUtUNG9EOHR3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImY3ZDJlODk1NmM0YmJmZDlkYWQyZWZmNTY5NmFmYzM3OGE4NGY4N2VkOTg4YTBhZGIwOWE2ZGY0MTdiZWNmNmIifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZjWUFTZTFRWFRaRy81UFM4RjdhZEQxbzZnenZ5d2ZmZFpCc3pQSk53NkVOZzlkTUt3Vzh3dElGbTNYVXViKzlmaUJ6Zk5uSnEyY05MZVNPbUJLRlpBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjE2OTcxZjNiMzJjM2E2ZmYwYTUwODJjYzQxMDQ2NmI5MzYxOTkxMWFjZThhMWNiZDUzZmUzNDFjMDdlYWNmMGYifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZjWUFTZTFRWFRaRy81UFM4RjdhZEQxbzZnenZ5d2ZmZFpCc3pQSk53NkVOZzlkTUt3Vzh3dElGbTNYVXViKzkvbVpNK3EzYVVjbnRpZGdiaXVMT0lBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6Ijk3MDE2N2ZjOTFmNDVhM2UwMzg5NmI5ZGM4ZGQzYTc1OWExMzkyNGNjN2RmNjE0YTJiN2U4Yjc4OWNhZjA2OGEifQ=="
+        ],
+        "integerId": 5305850,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 3170",
+        "marketplaceEyeAppeal": null,
+        "slug": "2001-topps-chrome-black-refractor-pau-gasol-rookie-50-131-psa-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA Population 1 of 3",
+        "title": "2001 Topps Chrome Black Refractor Pau Gasol ROOKIE /50 #131 PSA 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 25,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 82500,
+          "currency": "USD"
+        },
+        "favoritedCount": 44,
+        "highestBidder": false,
+        "id": "9ad2df46-8469-11f0-a0fc-029f7f46cd2d",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlpWeFVZRzNVakdWcFI2YzYzdW95Wll1MnlFaSt4cHZwYmxmSFhYUk90K0FscjBqMXp3dTlPcFJuS0d1V0UvSkt5OHdCbC81NFE2WFFKeE1JSE56eUh3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjJmNGNhYWZhZWNiYTRkMDQwYThmYzk4ZGVjZTQ2YzMzZGMxMjhlNzFkMWFiZDM4MjMzNDU1NzRiZmI4NWJkM2UifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IitKb3dTZy84bUZ5ZUpGN1RUQnRuSkJFeFBPcXVqWUkvMXp6ZUJRaEtIZDA2dHlEMkpqS3VIZ2NXREMrNDBPZTl3K01BNHhqZ3gwUnJxb3gwYWk0M3h3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImU1NDkwMzUwNTcwNDk5ZWNiNWYyYThiMTU4NTJhYTQ3NzZkZDZjNmJhZjYyZDg1MTYwYjZjZjY5YjllMWMyZTcifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFnNkd3M0tLQTNURHJjNGJqYjlmcU9MTHdYb0t0WjM1R1hvUXA5UytEVjBBaHhiSGI1NndjblQ5UE42d3Y1OVRJRlF1WlhLTkJ2azk4MmxEMzBRcWl3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImY0YzJkYTU5OTdlMTViOTEwMzEzMTZhZThhYzRlMGUwNzc5Y2NkMTQ4ZjA3YmZmMTIwOTE3MTQ1YjZmYzIyZGYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlpWeFVZRzNVakdWcFI2YzYzdW95Wll1MnlFaSt4cHZwYmxmSFhYUk90K0JuZ2t1YVVzMytxcHNqbjdLRGJMWW56UEwrTlVUUSt1VnVFRzZJczliZXV3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImZmYjU0ODEzMGQ4NTMzMTUyZTAzNGY3NTFlZmVlZjU4YjVjMDhkMGYzODFlNmFlYmJhZDg2MjNkNmNmMmNiYmQifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IitKb3dTZy84bUZ5ZUpGN1RUQnRuSkJFeFBPcXVqWUkvMXp6ZUJRaEtIZDFzNUI5Sm1Ucm5wTDlVd2VqV0JuUGlWMFdEdUNqeEFwK3VDTHd5VTZXZWhRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImQyZjA2YTFlMWZhNmQ1MWIxOWM2NzI1YWVhZTlhNWYxNWFiNWIwYTcxNzJkYTBjYzAwNmRhYmU2ZDQ2MDMzMzQifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFnNkd3M0tLQTNURHJjNGJqYjlmcU9MTHdYb0t0WjM1R1hvUXA5UytEVjAyNHh3SFNqeVJhOUdXbFUyYzQ2YzJFS05SaFQ4RWIvMGFaZS9vNFlZWEN3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjMxYTRmNmFjNzEyMDQ4MmRmMDZjODg5NDYwNGUzZGQ0NDZlN2RkNGU1NjhjOTBiZGExODlkZGIzZmNiZWYwZDAifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlpWeFVZRzNVakdWcFI2YzYzdW95Wll1MnlFaSt4cHZwYmxmSFhYUk90K0FscjBqMXp3dTlPcFJuS0d1V0UvSkt5OHdCbC81NFE2WFFKeE1JSE56eUh3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjJmNGNhYWZhZWNiYTRkMDQwYThmYzk4ZGVjZTQ2YzMzZGMxMjhlNzFkMWFiZDM4MjMzNDU1NzRiZmI4NWJkM2UifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlpWeFVZRzNVakdWcFI2YzYzdW95Wll1MnlFaSt4cHZwYmxmSFhYUk90K0JuZ2t1YVVzMytxcHNqbjdLRGJMWW56UEwrTlVUUSt1VnVFRzZJczliZXV3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImZmYjU0ODEzMGQ4NTMzMTUyZTAzNGY3NTFlZmVlZjU4YjVjMDhkMGYzODFlNmFlYmJhZDg2MjNkNmNmMmNiYmQifQ=="
+        ],
+        "integerId": 5320218,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 5648F4",
+        "marketplaceEyeAppeal": null,
+        "slug": "2024-national-treasures-michael-penix-jr-rookie-patch-auto-99-157-bgs-8-nm-mt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "BGS Population 1 of 2 - Ten Graded Higher",
+        "title": "2024 National Treasures Michael Penix Jr. ROOKIE PATCH AUTO /99 #157 BGS 8 NM-MT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 30,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 37000,
+          "currency": "USD"
+        },
+        "favoritedCount": 84,
+        "highestBidder": false,
+        "id": "5f5d3446-807e-11f0-8827-0afcc285279b",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InlXclJUZTZFQzhCeks0VlVxWmF6YzRIVitFVEhrS3V3em1sVUJEOXpFT0ZtdTg3VU1qelFGTGMzUm9rMXVGT1E5cURURm1Cc0g2NWNJb0NvajdRd2l3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjQ4ZDk2NjI2MWE0NWQyZDM2OTNlMWMwNDlmZDUwNTZiMTg4MDA1MTVlNGU3YjdmYTI0ZmMyMDExYWNmMzMxNWUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IktXa0NFRldKRW9XZTV5ZE5aQ3lncC9HeHFva1VyK0ZIQUhiQ0k3OW53Y3h2bVc3Q3dIaEFtQU5tQmErTFB6U0RnWnpqU09JRnpaVFY2RFNRRzRyV2hRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjYyMDQ2OGM1ZjkzOTY0ZmIxMzllYWUzMWU3YmEzNDI0Njc3MWFmMjZmMjZmMjc0ODMwZTY0MTk2Y2Q4ZGVkNzYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IllybWFtcVlBQXhoaGVBK3ViYTB3UGdNRUFjYW5SOXJUS0l3YzJ5cmcwVCtaRm9jbWo4ZTdvaWl3UFFKR0RXeUtjVldlZlpMc3pzZ2E1Z3NyY2ZSZkVRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjQ3MjMzNGFmNmQ0N2ZkZmU3ZmJlOTU1OWJmMGE0NWQxYTQxNmExYjZmZWYzMmZkNzgyOTc0MDVjMGQ1N2U3MGQifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InlXclJUZTZFQzhCeks0VlVxWmF6YzRIVitFVEhrS3V3em1sVUJEOXpFT0ZtdTg3VU1qelFGTGMzUm9rMXVGT1FRRFNnU1Q4cDlPTE1tOVBzTkROdGtRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjE1YjQ1ODA2NTI4MWJkZmU3NmFiOThlMzE0YTBlYTUxYTZjMGYxZWVhYzcxODliZjg5YWNjZTA4ZTU4NWQxNzEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IktXa0NFRldKRW9XZTV5ZE5aQ3lncC9HeHFva1VyK0ZIQUhiQ0k3OW53Y3h2bVc3Q3dIaEFtQU5tQmErTFB6U0RNc2FUelFoNTFOT0N4M3lyQ2I0NURnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImQyYWRjNjJjNjgxYmU2MTBjN2ZiYTJkZWE2Mjg3ZTQxNTMzM2U3NDUxNmY3ZTI1YTViZDFlZWEzMjNlMzA0NjYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IllybWFtcVlBQXhoaGVBK3ViYTB3UGdNRUFjYW5SOXJUS0l3YzJ5cmcwVCtaRm9jbWo4ZTdvaWl3UFFKR0RXeUtlaThldkI0M1g0MjU2QVJSbXRNNmZnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjFmOTFlMmMyMjlhNzg0ZjZhZTFiMjk0NzdkMWQxMjA0ZmE1ZGFhMjk2ZmNhY2ZlMjE3MmI0NTBiYjUzMTQ3ZDgifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InlXclJUZTZFQzhCeks0VlVxWmF6YzRIVitFVEhrS3V3em1sVUJEOXpFT0ZtdTg3VU1qelFGTGMzUm9rMXVGT1E5cURURm1Cc0g2NWNJb0NvajdRd2l3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjQ4ZDk2NjI2MWE0NWQyZDM2OTNlMWMwNDlmZDUwNTZiMTg4MDA1MTVlNGU3YjdmYTI0ZmMyMDExYWNmMzMxNWUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InlXclJUZTZFQzhCeks0VlVxWmF6YzRIVitFVEhrS3V3em1sVUJEOXpFT0ZtdTg3VU1qelFGTGMzUm9rMXVGT1FRRFNnU1Q4cDlPTE1tOVBzTkROdGtRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjE1YjQ1ODA2NTI4MWJkZmU3NmFiOThlMzE0YTBlYTUxYTZjMGYxZWVhYzcxODliZjg5YWNjZTA4ZTU4NWQxNzEifQ=="
+        ],
+        "integerId": 5308274,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 6837",
+        "marketplaceEyeAppeal": "None",
+        "slug": "1978-crack-campeonato-mundial-diego-maradona-rookie-sgc-3-vg",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1978 Crack Campeonato Mundial Diego Maradona ROOKIE SGC 3 VG"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 29,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 60000,
+          "currency": "USD"
+        },
+        "favoritedCount": 44,
+        "highestBidder": false,
+        "id": "2daee6ea-7eaf-11f0-a6dc-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBNbUxYamUwMmx5aWxEMldZZndUSEtDSS91MDc0cGV4bW9wc1dqMmR1UUxtZXFINzBhK2NqY3pqZWo4Y0x3ZjJ2c010NjIyUXhlK3JvZ0tyMXYyZGtRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjJjYTJlMDI5NDVkZGQ1YzQyZDY5ODZhNjdmOGViNGM2MDViMjRjNmMzNmY2YTg1NzJkYzE2YzFhOWRkMmMwMWYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjJPL2k4WWdnZ2Zyc3hOak5XVDhwM25VaE84dmMzeEp2TnBvWmlsemZsSjhFMGcvQ2l5Q05FQzRvTCtPVWhIYkxUSkZjd1pCUGhJMmxZUUFwMG1RTUVBPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjJkZmZmMTg0OWU0MzU4Mjc4ZmQ1MWUyYzcyMTRjMzJhZmI5OThiMjc0ZmM2YmY4MGI5OWRjOTgwZjg4OWI0ZWYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InVSSVVaUkVHVGZEeWlNR1JpeHZsQ1BzVDJXNmZQcE54RU1sZFM1TzgxeGlDRHVkSkFvcU9MNWlwMTFTdU9pOG9tUnhwNEoxVEowRU9PNFVnRG81OGF3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjNkYTI5MDk0MjAyNDUwNTM3NDg3OTE0OTViMTc5YTFkZjRiMTgwNjdjYjliOTgwYjg2OGVkMjMxZjc4NTNjMjIifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBNbUxYamUwMmx5aWxEMldZZndUSEtDSS91MDc0cGV4bW9wc1dqMmR1UUxtZXFINzBhK2NqY3pqZWo4Y0x3ZjI3dDJQcThxZkZoekFzUVhFUkY0bHlRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImYxN2RiNzdmMmQzOWFhOGE4Mjc3NWUwYTZlMGQ1NDI2NzkzZmFlNTRkNjQ2N2RkMGU5NmI3NThjZmFiM2VmYWIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjJPL2k4WWdnZ2Zyc3hOak5XVDhwM25VaE84dmMzeEp2TnBvWmlsemZsSjhFMGcvQ2l5Q05FQzRvTCtPVWhIYkxXeFN5ZGVRQVdqb3pnUlFhWU1TOWhnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjMxMmNiNTFiNDE1MGE1ODQ1ZTUxZjcyNDNlMjIyYTBlOWNkMTk0MDk3ODQ1MGFiMmYxOTk1MmZjODQ0N2M4NzUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InVSSVVaUkVHVGZEeWlNR1JpeHZsQ1BzVDJXNmZQcE54RU1sZFM1TzgxeGlDRHVkSkFvcU9MNWlwMTFTdU9pOG9aSmF1aWRIbElIQnpyVGpSYlhndHJRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImViNGMwN2VhMGE0MGVjZjE0MjBkNmUxNjZlOWZmNTgwNTNmM2Q0ZDM4MTQzMjI2YTkxZjBiMWY1NjNkNzgyMGUifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBNbUxYamUwMmx5aWxEMldZZndUSEtDSS91MDc0cGV4bW9wc1dqMmR1UUxtZXFINzBhK2NqY3pqZWo4Y0x3ZjJ2c010NjIyUXhlK3JvZ0tyMXYyZGtRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjJjYTJlMDI5NDVkZGQ1YzQyZDY5ODZhNjdmOGViNGM2MDViMjRjNmMzNmY2YTg1NzJkYzE2YzFhOWRkMmMwMWYifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBNbUxYamUwMmx5aWxEMldZZndUSEtDSS91MDc0cGV4bW9wc1dqMmR1UUxtZXFINzBhK2NqY3pqZWo4Y0x3ZjI3dDJQcThxZkZoekFzUVhFUkY0bHlRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImYxN2RiNzdmMmQzOWFhOGE4Mjc3NWUwYTZlMGQ1NDI2NzkzZmFlNTRkNjQ2N2RkMGU5NmI3NThjZmFiM2VmYWIifQ=="
+        ],
+        "integerId": 5302214,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 4684",
+        "marketplaceEyeAppeal": null,
+        "slug": "2020-panini-flawless-white-box-ruby-justin-herbert-rookie-patch-auto-11-bgs-9",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "BGS Population 1 of 1 - None Graded Higher",
+        "title": "2020 Panini Flawless White Box Ruby Justin Herbert ROOKIE PATCH AUTO 1/1 BGS 9"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 36,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 37000,
+          "currency": "USD"
+        },
+        "favoritedCount": 57,
+        "highestBidder": false,
+        "id": "65837d2a-841c-11f0-a482-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Imd4alNWb2QwcmVOeWU2OG1Nc2RyMFk3ZVg0WVJFTEpQWGQ4V25XQzJTS1gyTjNMdmNVbXgwTC9XYXIzQU1qcmpRWnhQZWZhdlcvY3orTGdhd0FYcm53PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjVhM2IwNjFjYmQyMDk4MWRiYmEzMDFkZDVlOWI3ZDlmYTk4OGRlMWUwMDU2OGNlNmVkY2FiYTczOGM0MThkYWQifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik0wVVo0ZWRhT2NqVjdsRzdjZTBaOFIzZmhsdkxQUkNmekFzVG4vN3Rab09IcjNiN0hiZ2hNUEI3UXVUS080cWFpc3M0TkI3RnFzNjlhbVhHcExMcjFRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImYxMDE0YmI3YTFlMzg0ODIzMTI3NjJiYzJkOGU5OGFjYTNlMzQzYTMwM2MyMDBlYTFiMDRjNzZjYTBhY2I0MzYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImR0MWZVbzJGVmc3L0FHWStNU2pQUzI4amFJT2RjYTZ0aThvc2pLcGk5ZmlhdTNqUUxZNVVEWEo1NFRIUXlTNmZlbjdHYVZJb29YVm5NQU1QSm14bVBBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjAzOGYwNjVkYzNiZjI2NmJjYzc5OGUyZmE5M2E2MzEwZmFlOGI5YmVkZTMyZDY5MWEyZTQ3ZTVmNGI0YTlmMDgifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Imd4alNWb2QwcmVOeWU2OG1Nc2RyMFk3ZVg0WVJFTEpQWGQ4V25XQzJTS1d5TnJTUEVuQ1oxSzgxVFNvRHhpME4zbkMrUy9QYnhsUUlEZEhQcHdHMXdRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjY4ZWFhNDY5MjM1N2Q1NDUyMmYyM2M4YjI2YjY1ODI5YzA4N2VjMTQyOTE0NzZmZDRkYTA2NjBkMjBlM2UyMTUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik0wVVo0ZWRhT2NqVjdsRzdjZTBaOFIzZmhsdkxQUkNmekFzVG4vN3Rab05GZHA2VmNrRlAvbkFTTEF0OFMxVm9pckxDMVVqQXB3T1ppdnYwYkJoM0R3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjY1NGExMmYwZjNlZWMyNjFjMTQ2ZTVjNjAwMWJmOTQ2MDFjYTY4ZDcyMGJjNTcwOTVhOWU5ZjE3MDY3NjE3NGEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImR0MWZVbzJGVmc3L0FHWStNU2pQUzI4amFJT2RjYTZ0aThvc2pLcGk5ZmpnOGZDb2ZReHAzdHM1U2o5SGNIalRNUXFCNTB6VnRBV2R1Q1E5TW53WDBRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjQ1Njc1YzIzMjU0ODUxMDUwNzdkNWQ2NmY3ZGJjOGUxMzliZTlhZTMzOTFhZmJmMGJhNjYyMmY3OTE4YjRkYTAifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Imd4alNWb2QwcmVOeWU2OG1Nc2RyMFk3ZVg0WVJFTEpQWGQ4V25XQzJTS1gyTjNMdmNVbXgwTC9XYXIzQU1qcmpRWnhQZWZhdlcvY3orTGdhd0FYcm53PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjVhM2IwNjFjYmQyMDk4MWRiYmEzMDFkZDVlOWI3ZDlmYTk4OGRlMWUwMDU2OGNlNmVkY2FiYTczOGM0MThkYWQifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Imd4alNWb2QwcmVOeWU2OG1Nc2RyMFk3ZVg0WVJFTEpQWGQ4V25XQzJTS1d5TnJTUEVuQ1oxSzgxVFNvRHhpME4zbkMrUy9QYnhsUUlEZEhQcHdHMXdRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjY4ZWFhNDY5MjM1N2Q1NDUyMmYyM2M4YjI2YjY1ODI5YzA4N2VjMTQyOTE0NzZmZDRkYTA2NjBkMjBlM2UyMTUifQ=="
+        ],
+        "integerId": 5318865,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 2229F1",
+        "marketplaceEyeAppeal": null,
+        "slug": "2024-topps-chrome-silver-pack-superfractor-ronald-acuna-jr-auto-11-psa-7-nrmt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA Population 1 of 1 - None Graded Higher",
+        "title": "2024 Topps Chrome Silver Pack Superfractor Ronald Acuna Jr. AUTO 1/1 PSA 7 NRMT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 17,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 31000,
+          "currency": "USD"
+        },
+        "favoritedCount": 37,
+        "highestBidder": false,
+        "id": "4dd81d18-5d05-11f0-b13a-0aedcfadd377",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImMwMy9qSjJCMGRCVUlRMGhBT243Q2xWZDNpMkM2eFdhbVdZY0dNUU5abG5hYkdFNHl4YTk1V2RPZ3M4akFZbUNJYWtwdkNYRjIzVGVNM01yMmx2WERBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjRhNDAxNzBjZDU5ZDBhZjk1M2QzNzcxZjBlYWVjMTIxOGJjMzRkMTQ4ZGE4ZWQ4NGJiNzc5MDJiOTRlODFiMzEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlIrWC94YWJTNTFoRHd1ejgyTkpSaEpuMEFmT3I2ODVIK1RTY1hMZVRjTDVaRTVPRENhUERjb0txS1FzUUZzUVZRa1RXcGl1cmhmTElGQ255ZW1LejJBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjQyYTExNWU4NDMxYzQ2YjM4ZGUyMWFlMmY1OThiYjgwNWNhOTE0NDVhOTkzNTM3MWJmMmVhODc4ZTM1MzJhYmYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlIrWC94YWJTNTFoRHd1ejgyTkpSaEpuMEFmT3I2ODVIK1RTY1hMZVRjTDVaRTVPRENhUERjb0txS1FzUUZzUVZRa1RXcGl1cmhmTElGQ255ZW1LejJBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjQyYTExNWU4NDMxYzQ2YjM4ZGUyMWFlMmY1OThiYjgwNWNhOTE0NDVhOTkzNTM3MWJmMmVhODc4ZTM1MzJhYmYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImMwMy9qSjJCMGRCVUlRMGhBT243Q2xWZDNpMkM2eFdhbVdZY0dNUU5abG1vdmJ4aWdOelVZaG9YVDZzVDJNcFdFemFuT2crRHdkNHM5WjhiYkFuSWp3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6Ijc1ZjY3Y2U3NmFmMDUyNzkzYmYzZjFiMzJhMTk2Mjc4YjkwODNhMGZiNThkNDc2NWE4ZDUyNzI3MjM4YzQwZWYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlIrWC94YWJTNTFoRHd1ejgyTkpSaEpuMEFmT3I2ODVIK1RTY1hMZVRjTDdRYThUcTIyUWxSL1AwbHM3OTlvV2xWaE1mSi9QQjdyM0RGL09ZYkpDNklRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjBiNjUyMmY5M2NhZGI2MGFiNjY1YmVhMDBkYWE5MjI2NWU4YWY4NjBjZTJhZmViMTFhYWE4YzEwODhjOWRmYzMifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlIrWC94YWJTNTFoRHd1ejgyTkpSaEpuMEFmT3I2ODVIK1RTY1hMZVRjTDdRYThUcTIyUWxSL1AwbHM3OTlvV2xWaE1mSi9QQjdyM0RGL09ZYkpDNklRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjBiNjUyMmY5M2NhZGI2MGFiNjY1YmVhMDBkYWE5MjI2NWU4YWY4NjBjZTJhZmViMTFhYWE4YzEwODhjOWRmYzMifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImMwMy9qSjJCMGRCVUlRMGhBT243Q2xWZDNpMkM2eFdhbVdZY0dNUU5abG5hYkdFNHl4YTk1V2RPZ3M4akFZbUNJYWtwdkNYRjIzVGVNM01yMmx2WERBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjRhNDAxNzBjZDU5ZDBhZjk1M2QzNzcxZjBlYWVjMTIxOGJjMzRkMTQ4ZGE4ZWQ4NGJiNzc5MDJiOTRlODFiMzEifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImMwMy9qSjJCMGRCVUlRMGhBT243Q2xWZDNpMkM2eFdhbVdZY0dNUU5abG1vdmJ4aWdOelVZaG9YVDZzVDJNcFdFemFuT2crRHdkNHM5WjhiYkFuSWp3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6Ijc1ZjY3Y2U3NmFmMDUyNzkzYmYzZjFiMzJhMTk2Mjc4YjkwODNhMGZiNThkNDc2NWE4ZDUyNzI3MjM4YzQwZWYifQ=="
+        ],
+        "integerId": 5211110,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 1655",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-topps-heritage-chrome-gold-refractor-aaron-judge-5-121-psa-9-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA Population 1 of 1 - Just One Graded Higher",
+        "title": "2021 Topps Heritage Chrome Gold Refractor Aaron Judge /5 #121 PSA 9 MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 46,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 90000,
+          "currency": "USD"
+        },
+        "favoritedCount": 88,
+        "highestBidder": false,
+        "id": "d8d3f426-811f-11f0-8d9e-0afcc285279b",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InluTEMrbERyUjlhMld5dXNLY2tudXcraUhrOXNiMGNaUm9NZ1FuWHRCcll1QUlGTTJhU0ltemFEY3JVVXdqU2k1YVdnYVhnSmloRGZBTGVFYnRISmxRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImRhMGJmMGUyMzNlNmI2OGQ2NzU0ZDllZmUzMDRlOGI5MDk4MjNiNzY5ZWZlZGEyNmZjNjQxYTE2NjNkMTk1NTUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImlUZzcrcUtxL3JwWFdoR3JUdkk5emUyQkpJdW9HTkUySkZxbUlQdmlHaUg2NGlGNGFsK1A1ZHI0cmtLYWg0anBpbGM0aEx2SVFrd25aaVNTUlYrcWxBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6Ijc2ZjQ3MGI1MTAxZTc3OGQ0YTFjN2FlMTU2ZjE3NDRiMTYzZmJjOTkxZTQ0OWRiOWY3MjkxZTFmNDQ1MWU5MWYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IktXbHRTeVJPQ2k1dm5ZczVwMTh0by9jL05WREVZQnBIS3hDeTVnRVg3dzUyREFNdmwvR2xWcHJSNFNRblR4b1dxQUZZQlEyVG1KY0xYVVIySTZnOFJ3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjEzYmM0YzUzODYxNWViOGYyYTIyNWU3MzE4YmQxZmM3YzQ2MmU5MWRlMjlkOWQ0ODQ4ZTc0ZjlkNzg5ODlkZTcifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InluTEMrbERyUjlhMld5dXNLY2tudXcraUhrOXNiMGNaUm9NZ1FuWHRCcll1QUlGTTJhU0ltemFEY3JVVXdqU2k1OGVYN3dtaXpPSlkxVXJ6cHMxNytnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6Ijg2NWUzNmU5NWY5MTdkMjI3MTkwMmM3ODk3MTY4ZGY3MjdlZGJjNDYxNzdkYzU2MWI5NmRlMjZjZGRhMWQwZTMifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImlUZzcrcUtxL3JwWFdoR3JUdkk5emUyQkpJdW9HTkUySkZxbUlQdmlHaUg2NGlGNGFsK1A1ZHI0cmtLYWg0anA4cHZweXhhVGtocjlUeExRYWRHSXB3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjU1OGZkODJkYWIwM2JjMjRiYjllMWIzYzI2YWM4MTZjZjk4YWU2ZWZiNzcxMmM0NmNmYjQ1NjMzYzEyOGY5MDAifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IktXbHRTeVJPQ2k1dm5ZczVwMTh0by9jL05WREVZQnBIS3hDeTVnRVg3dzUyREFNdmwvR2xWcHJSNFNRblR4b1d4bWI5a0FtaTFrTlNHSWV4bWtWRjN3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImI0YzA3Y2Q1ZTdlODY3ZDM1YmY1ZDY1MDY1YWE4ZjIyYTY3MzFhZTY4M2E4ODIyNjBjYTMwYTA2YjU0ZmFhZDkifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InluTEMrbERyUjlhMld5dXNLY2tudXcraUhrOXNiMGNaUm9NZ1FuWHRCcll1QUlGTTJhU0ltemFEY3JVVXdqU2k1YVdnYVhnSmloRGZBTGVFYnRISmxRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImRhMGJmMGUyMzNlNmI2OGQ2NzU0ZDllZmUzMDRlOGI5MDk4MjNiNzY5ZWZlZGEyNmZjNjQxYTE2NjNkMTk1NTUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InluTEMrbERyUjlhMld5dXNLY2tudXcraUhrOXNiMGNaUm9NZ1FuWHRCcll1QUlGTTJhU0ltemFEY3JVVXdqU2k1OGVYN3dtaXpPSlkxVXJ6cHMxNytnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6Ijg2NWUzNmU5NWY5MTdkMjI3MTkwMmM3ODk3MTY4ZGY3MjdlZGJjNDYxNzdkYzU2MWI5NmRlMjZjZGRhMWQwZTMifQ=="
+        ],
+        "integerId": 5308958,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 4135",
+        "marketplaceEyeAppeal": "None",
+        "slug": "1995-finest-refractor-jerry-rice-auto-dna-10-180-psa-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA/DNA Population 1 of 1",
+        "title": "1995 Finest Refractor Jerry Rice AUTO DNA 10 #180 PSA 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 20,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 67500,
+          "currency": "USD"
+        },
+        "favoritedCount": 42,
+        "highestBidder": false,
+        "id": "6c95ba24-7e59-11f0-83cb-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilg3aFpFT1ZOUkNVM0tQc2ZaY3RNRXV1TXJVYjlnajdUTTZqNXVWci9IcWNFeGoweEN6Yk9ZSE90MERrZUlkRHZKanMvWDQ0Zis2cjJjd2lQNWlaM2J3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjFjOTBjMTMwYzkzZGE4NDM1ZTkwZmJmMjFiZjY1YzUwMjhjYWE5ZDg4NzUyN2QzNzVkOGFiMGFiMWNlMWMyYWEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImFoYmR6a1F2N3daVzc2THFjWjNpUVhPcDhESVlrOHdrdjFOOEVPUVgvQndwcDJydFdjRU9SaVFOY2hXTUkzaWMzY3NuMUN2ejVTcmZzYVVXaXRGQy93PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjEzMjVmN2I4M2I3ZDczMjdkZDIwNTc0NDliNGYwMTBjYmRjYzJkZDI1ZDA4ZWNiZWU2NWM4M2I5YjNkNThiMjAifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkJGNzRtMjgzYXVEZUxHemZLR0lWTTBYOHA2QS9Cclo2RVJLZzFtaTNRd1VJdzBUT21tME9CUkIvdjdIUHFkcFJRTXAwcWY3TmVrQllTcDloWmttN0tBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6Ijk0NTNkZjc1ZTM1MDA4OGM3Nzc3ZGZkNzIwMmZjMDc5NzkzNzFjYjU1NzZjNTllN2YwN2M3ZTVjMzI0OWNlOWQifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilg3aFpFT1ZOUkNVM0tQc2ZaY3RNRXV1TXJVYjlnajdUTTZqNXVWci9IcWNFeGoweEN6Yk9ZSE90MERrZUlkRHZGZWVHUzQ3WUZwdU9ET3p0MHM1dGR3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjEwYTQxMjlmZWMxNTY2MTcyZjA0Y2Y2NWMxYWI0ZDZiZmRkMDkyOTExYWY5N2I1ZTIyZGNhODU1ODlhNGE5MDgifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImFoYmR6a1F2N3daVzc2THFjWjNpUVhPcDhESVlrOHdrdjFOOEVPUVgvQndwcDJydFdjRU9SaVFOY2hXTUkzaWMvOTlnM1NLUWlvZTVXQXlIN0s5U1l3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImMyNzNlMDVhNTY4NmFmZmI2YjgyYjg4MDRkZDgwYzhkMjlkYzIxY2M3ZmI1N2VkODI4Y2EzYmZmZDkwOTk1MzcifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkJGNzRtMjgzYXVEZUxHemZLR0lWTTBYOHA2QS9Cclo2RVJLZzFtaTNRd1VJdzBUT21tME9CUkIvdjdIUHFkcFJKS3AydUphazM3U1NlbnkzYWQyaUR3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjQ0YTMyMWY3NjcxOTNjYTViYmY2ZjM1Y2Y2NzFjMzYyN2E2YzE0MDE5ZDU2ZGM0YzE0NGQ4MWNmOTQ2NTZiZmEifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilg3aFpFT1ZOUkNVM0tQc2ZaY3RNRXV1TXJVYjlnajdUTTZqNXVWci9IcWNFeGoweEN6Yk9ZSE90MERrZUlkRHZKanMvWDQ0Zis2cjJjd2lQNWlaM2J3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjFjOTBjMTMwYzkzZGE4NDM1ZTkwZmJmMjFiZjY1YzUwMjhjYWE5ZDg4NzUyN2QzNzVkOGFiMGFiMWNlMWMyYWEifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilg3aFpFT1ZOUkNVM0tQc2ZaY3RNRXV1TXJVYjlnajdUTTZqNXVWci9IcWNFeGoweEN6Yk9ZSE90MERrZUlkRHZGZWVHUzQ3WUZwdU9ET3p0MHM1dGR3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjEwYTQxMjlmZWMxNTY2MTcyZjA0Y2Y2NWMxYWI0ZDZiZmRkMDkyOTExYWY5N2I1ZTIyZGNhODU1ODlhNGE5MDgifQ=="
+        ],
+        "integerId": 5301501,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 3177",
+        "marketplaceEyeAppeal": null,
+        "slug": "2002-fleer-premium-triple-threats-ruby-michael-jordan-100-7-psa-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "PSA Population 1 of 6",
+        "title": "2002 Fleer Premium Triple Threats Ruby Michael Jordan /100 #7 PSA 10 GEM MINT"
+      }
+    ]
+  }
+}

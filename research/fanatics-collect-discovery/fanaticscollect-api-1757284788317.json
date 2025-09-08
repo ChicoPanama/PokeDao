@@ -1,0 +1,125 @@
+{
+  "data": {
+    "collectGlobalAuctions": [
+      {
+        "__typename": "CollectWeeklyAuction",
+        "auctionIntegerId": 220,
+        "collectListingTimer": {
+          "__typename": "CollectListingTimer",
+          "auctionEndsAt": "2025-08-18T02:00:00Z",
+          "auctionStartsAt": "2025-08-08T02:00:00Z",
+          "windowDurationSeconds": 60,
+          "windowEndsAt": "2025-09-07T22:40:00Z",
+          "windowOrdinal": 29987
+        },
+        "endsAt": "2025-08-18T02:00:00Z",
+        "id": "c537ff44-e542-11ef-98e4-02fc4fb1feaf",
+        "integerId": 364,
+        "name": "Weekly Auction #187",
+        "payoutDate": null,
+        "shortName": "WA187",
+        "startsAt": "2025-08-08T02:00:00Z",
+        "status": "CLOSED"
+      },
+      {
+        "__typename": "CollectWeeklyAuction",
+        "auctionIntegerId": 221,
+        "collectListingTimer": {
+          "__typename": "CollectListingTimer",
+          "auctionEndsAt": "2025-08-25T02:00:00Z",
+          "auctionStartsAt": "2025-08-15T02:00:00Z",
+          "windowDurationSeconds": 60,
+          "windowEndsAt": "2025-09-07T22:40:00Z",
+          "windowOrdinal": 19907
+        },
+        "endsAt": "2025-08-25T02:00:00Z",
+        "id": "ee23057c-eac2-11ef-b426-0a58a9feac02",
+        "integerId": 365,
+        "name": "Weekly Auction #188",
+        "payoutDate": null,
+        "shortName": "WA188",
+        "startsAt": "2025-08-15T02:00:00Z",
+        "status": "CLOSED"
+      },
+      {
+        "__typename": "CollectWeeklyAuction",
+        "auctionIntegerId": 223,
+        "collectListingTimer": {
+          "__typename": "CollectListingTimer",
+          "auctionEndsAt": "2025-09-01T02:00:00Z",
+          "auctionStartsAt": "2025-08-22T02:00:00Z",
+          "windowDurationSeconds": 60,
+          "windowEndsAt": "2025-09-07T22:40:00Z",
+          "windowOrdinal": 9827
+        },
+        "endsAt": "2025-09-01T02:00:00Z",
+        "id": "17e3c83a-f043-11ef-a7c7-0a58a9feac02",
+        "integerId": 367,
+        "name": "Weekly Auction #189",
+        "payoutDate": null,
+        "shortName": "WA189",
+        "startsAt": "2025-08-22T02:00:00Z",
+        "status": "CLOSED"
+      },
+      {
+        "__typename": "CollectWeeklyAuction",
+        "auctionIntegerId": 224,
+        "collectListingTimer": {
+          "__typename": "CollectListingTimer",
+          "auctionEndsAt": "2025-09-08T02:00:00Z",
+          "auctionStartsAt": "2025-08-29T02:00:00Z",
+          "windowDurationSeconds": null,
+          "windowEndsAt": null,
+          "windowOrdinal": null
+        },
+        "endsAt": "2025-09-08T02:00:00Z",
+        "id": "40487110-f5c3-11ef-9099-0a58a9feac02",
+        "integerId": 368,
+        "name": "Weekly Auction #190",
+        "payoutDate": null,
+        "shortName": "WA190",
+        "startsAt": "2025-08-29T02:00:00Z",
+        "status": "LIVE"
+      },
+      {
+        "__typename": "CollectWeeklyAuction",
+        "auctionIntegerId": 225,
+        "collectListingTimer": {
+          "__typename": "CollectListingTimer",
+          "auctionEndsAt": "2025-09-15T02:00:00Z",
+          "auctionStartsAt": "2025-09-05T02:00:00Z",
+          "windowDurationSeconds": null,
+          "windowEndsAt": null,
+          "windowOrdinal": null
+        },
+        "endsAt": "2025-09-15T02:00:00Z",
+        "id": "ea357714-f8e7-11ef-8d6f-061f9a54de6b",
+        "integerId": 369,
+        "name": "Weekly Auction #191",
+        "payoutDate": null,
+        "shortName": "WA191",
+        "startsAt": "2025-09-05T02:00:00Z",
+        "status": "LIVE"
+      },
+      {
+        "__typename": "CollectPremierAuction",
+        "collectListingTimer": {
+          "__typename": "CollectListingTimer",
+          "auctionEndsAt": "2025-09-26T02:00:00Z",
+          "auctionStartsAt": "2025-09-11T23:00:00Z",
+          "windowDurationSeconds": null,
+          "windowEndsAt": "2025-09-26T02:05:00Z",
+          "windowOrdinal": null
+        },
+        "endsAt": "2025-09-26T02:00:00Z",
+        "id": "6daf5fac-0a3f-11f0-b672-0a58a9feac02",
+        "integerId": 74,
+        "name": "September Premier Auction",
+        "payoutDate": "2025-10-08",
+        "shortName": "September",
+        "startsAt": "2025-09-11T23:00:00Z",
+        "status": "PREVIEW"
+      }
+    ]
+  }
+}

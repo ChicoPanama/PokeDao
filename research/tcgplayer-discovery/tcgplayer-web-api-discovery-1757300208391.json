@@ -1,0 +1,1589 @@
+{
+  "session": {
+    "startTime": "2025-09-08T02:56:36.698Z",
+    "totalRequests": 11,
+    "successfulRequests": 10,
+    "errors": [
+      {
+        "url": "https://search.tcgplayer.com/pokemon",
+        "error": "getaddrinfo ENOTFOUND search.tcgplayer.com",
+        "timestamp": "2025-09-08T02:56:46.029Z"
+      }
+    ],
+    "pokemonData": [],
+    "discoveredAPIs": [
+      {
+        "url": "https://homepage.marketplace.tcgplayer.com/sitealert.json",
+        "status": 200,
+        "contentType": "application/json",
+        "dataStructure": "object{}",
+        "hasPokemonData": false,
+        "data": {}
+      },
+      {
+        "url": "https://homepage.marketplace.tcgplayer.com/default.json",
+        "status": 200,
+        "contentType": "application/json",
+        "dataStructure": "object{hero, smallFeatures, largeFeatures, latestSets}",
+        "hasPokemonData": true,
+        "data": {
+          "hero": {
+            "altText": "Shop Fabled",
+            "buttonText": "Shop Now",
+            "buttonURL": "/search/lorcana-tcg/fabled?productLineName=lorcana-tcg&setName=fabled&wpnSeller=true&view=grid",
+            "imageURL": "https://mktg-assets.tcgplayer.com/web/release/2025-09/lor_fabled_hero_1920x300_v1%402x.jpg",
+            "subtitle": "Disney Lorcana",
+            "textAlignment": "center",
+            "textColor": "white",
+            "title": "Fabled",
+            "active": false,
+            "productLineAffinity": [
+              "Default"
+            ]
+          },
+          "smallFeatures": {
+            "productLineAffinity": [
+              "Default"
+            ],
+            "features": [
+              {
+                "altText": "The Bestselling MTG Cards of the Week",
+                "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-09/MTG-The-Bestselling-Magic-The-Gathering-Cards-This-Week-05-09-2025-Big-Content-Burger.jpg",
+                "destinationURL": "https://www.tcgplayer.com/content/article/Top-10-Bestselling-MTG-Cards-of-the-Week-09-05-2025/289adc3e-06c0-42b0-821a-3df332ce4998/"
+              },
+              {
+                "altText": "Best Decks From the World Championship",
+                "imageURL": "https://mktg-assets.tcgplayer.com/content/yugioh/2025-09/05/YGO-Best-Decks-World-Championship-2025-Large-Burger.jpg",
+                "destinationURL": "https://www.tcgplayer.com/content/article/The-Best-Yu-Gi-Oh-Decks-From-The-2025-World-Championship/72ec8ac7-a9d3-4e97-bdb2-792ed49fbddb"
+              },
+              {
+                "altText": "How To Beat Quinlan Tarkintown In Star Wars Unlimited",
+                "imageURL": "https://mktg-assets.tcgplayer.com/content/star-wars-unlimited/2025/09/SWU_How-To-Beat-Quinlan-Tarkintown-In-Star-Wars-Unlimited_0905_swu_large-hamburger.jpg",
+                "destinationURL": "https://www.tcgplayer.com/content/article/How-To-Beat-Quinlan-Tarkintown-In-Star-Wars-Unlimited/34ca6ab6-a974-4a1b-b84b-42debf8ba120/"
+              },
+              {
+                "altText": "The Biggest Price Spikes in Pokémon this Week",
+                "imageURL": "https://mktg-assets.tcgplayer.com/content/pokemon/_2025/SEP/03/PKMN-Spikes-Sep-4-2025-Big-Burger.jpg",
+                "destinationURL": "https://www.tcgplayer.com/content/article/The-Biggest-Price-Spikes-in-Pok%C3%A9mon-this-Week-09-04-2025/49e17a9a-75dc-4da8-8453-5fe1c34a931d/"
+              },
+              {
+                "altText": "The Biggest Price Spikes in Magic This Week",
+                "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-09/MTG-The-Biggest-Price-Spikes-in-Magic-The-Gathering-This-Week-09-04-2025-Big-Content-Burger.jpg",
+                "destinationURL": "https://www.tcgplayer.com/content/article/The-Biggest-Price-Spikes-in-Magic-The-Gathering-This-Week-09-04-2025/d6e3494b-e183-4d4d-b95c-03fe4a96afcc/"
+              },
+              {
+                "altText": "The Best Cards You Might Have Missed From Fabled",
+                "imageURL": "https://mktg-assets.tcgplayer.com/content/lorcana/2025-09/LOR_The-Best-Cards-You-Missed-From-Fabled_0903_lor_large-hamburger.jpg",
+                "destinationURL": "https://www.tcgplayer.com/content/article/The-Best-Cards-You-Might-Have-Missed-From-Fabled/4a5e62e1-7668-4973-9077-a8f597886e46/"
+              },
+              {
+                "altText": "Shop Edge of Eternities",
+                "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-08/borg/Button-MTG.jpg",
+                "destinationURL": "/search/magic/edge-of-eternities?productLineName=magic&setName=edge-of-eternities&page=1&view=list&wpnSeller=true"
+              },
+              {
+                "altText": "Shop Disney Lorcana: Fabled",
+                "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-08/borg/Button-LOR.jpg",
+                "destinationURL": "/search/lorcana-tcg/fabled?view=grid&productLineName=lorcana-tcg&setName=fabled"
+              },
+              {
+                "altText": "Shop Black Bolt & White Flare",
+                "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-08/borg/Button-PKM.jpg",
+                "destinationURL": "/search/pokemon/product?productLineName=pokemon&setName=sv-black-bolt|sv-white-flare&page=1&view=grid"
+              },
+              {
+                "altText": "Shop Justice Hunters",
+                "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-08/borg/Button-YGO.jpg",
+                "destinationURL": "/search/yugioh/justice-hunters?productLineName=yugioh&setName=justice-hunters&view=grid"
+              }
+            ]
+          },
+          "largeFeatures": {
+            "productLineAffinity": [
+              "Default"
+            ],
+            "features": [
+              {
+                "altText": "10 Digimon Cards That Desperately Need Reprints - September 2025",
+                "imageURL": "https://mktg-assets.tcgplayer.com/content/digimon/2025/2025%2009/DIG_10-Digimon-Cards-That-Desperately-Need-Reprints_0904_dgm_marketplace-featured_desktop.jpg",
+                "mobileImageURL": "https://mktg-assets.tcgplayer.com/content/digimon/2025/2025%2009/DIG_10-Digimon-Cards-That-Desperately-Need-Reprints_0904_dgm_marketplace-featured_mobile.jpg",
+                "destinationURL": "https://www.tcgplayer.com/content/article/10-Digimon-Cards-That-Desperately-Need-Reprints-September-2025/ebbfef9f-98c3-4ccb-93a8-89c82f85a9f4/"
+              }
+            ]
+          },
+          "latestSets": {
+            "title": "Default 07.21.25",
+            "productLineAffinity": [
+              "Default"
+            ],
+            "sets": [
+              {
+                "destinationURL": "https://www.tcgplayer.com/search/yugioh/justice-hunters",
+                "categoryName": "YuGiOh",
+                "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/JusticeHunters.png",
+                "setName": "Justice Hunters"
+              },
+              {
+                "destinationURL": "https://www.tcgplayer.com/search/digimon-card-game/cyber-eden",
+                "categoryName": "Digimon Card Game",
+                "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/CyberEden.png",
+                "setName": "Cyber Eden"
+              },
+              {
+                "destinationURL": "https://www.tcgplayer.com/search/shadowverse-evolve/bp10-gods-of-the-arcana",
+                "categoryName": "Shadowverse: Evolve",
+                "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/BP10GodsoftheArcana.png",
+                "setName": "BP10: Gods of the Arcana"
+              },
+              {
+                "destinationURL": "https://www.tcgplayer.com/search/grand-archive-tcg/distorted-reflections",
+                "categoryName": "Grand Archive TCG",
+                "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/DistortedReflections.png",
+                "setName": "Distorted Reflections"
+              },
+              {
+                "destinationURL": "https://www.tcgplayer.com/search/sorcery-contested-realm/dragonlord",
+                "categoryName": "Sorcery: Contested Realm",
+                "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/Dragonlord.png",
+                "setName": "Dragonlord"
+              },
+              {
+                "destinationURL": "https://www.tcgplayer.com/search/star-wars-unlimited/legends-of-the-force",
+                "categoryName": "Star Wars: Unlimited",
+                "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/LegendsoftheForce.png",
+                "setName": "Legends of the Force"
+              },
+              {
+                "destinationURL": "https://www.tcgplayer.com/search/hololive-official-card-game/blooming-radiance",
+                "categoryName": "hololive OFFICIAL CARD GAME",
+                "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/BloomingRadiance.png",
+                "setName": "Blooming Radiance"
+              },
+              {
+                "destinationURL": "https://www.tcgplayer.com/search/godzilla-card-game/booster-set-1-godzilla-vs-godzilla",
+                "categoryName": "Godzilla Card Game",
+                "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/BoosterSet1GodzillaVSGodzilla.png",
+                "setName": "Booster Set 1: Godzilla VS. Godzilla"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "url": "https://marketplace-navigation.tcgplayer.com/marketplace-navigation-search-feature.json",
+        "status": 200,
+        "contentType": "application/json",
+        "dataStructure": "object{categories, more, articles}",
+        "hasPokemonData": true,
+        "data": {
+          "categories": [
+            {
+              "order": 0,
+              "title": "Magic",
+              "full-title": "Magic: The Gathering",
+              "url": "/search/magic/product?productLineName=magic&page=1",
+              "shopAllUrl": "/search/magic/product?productLineName=magic&page=1",
+              "listosUrl": "https://shop.tcgplayer.com/magic/product/show?ListingType=ListingsWithPhotos",
+              "articlesUrl": "/content/magic-the-gathering/articles",
+              "decksUrl": "/content/magic-the-gathering/decks",
+              "advancedSearchUrl": "https://shop.tcgplayer.com/magic?newSearch=true",
+              "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/magic-the-gathering/price-guides",
+              "menus": [
+                {
+                  "order": 1,
+                  "title": "Latest Sets",
+                  "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/magic-the-gathering",
+                  "links": [
+                    {
+                      "title": "Duskmourn: House of Horror",
+                      "url": "https://www.tcgplayer.com/search/magic/duskmourn-house-of-horror"
+                    },
+                    {
+                      "title": "Mystery Booster 2",
+                      "url": "https://www.tcgplayer.com/search/magic/mystery-booster-2"
+                    },
+                    {
+                      "title": "Bloomburrow",
+                      "url": "https://www.tcgplayer.com/search/magic/bloomburrow"
+                    },
+                    {
+                      "title": "Universes Beyond: Assassin's Creed",
+                      "url": "https://www.tcgplayer.com/search/magic/universes-beyond-assassins-creed"
+                    },
+                    {
+                      "title": "Modern Horizons 3",
+                      "url": "https://www.tcgplayer.com/search/magic/modern-horizons-3"
+                    },
+                    {
+                      "title": "Outlaws of Thunder Junction",
+                      "url": "https://www.tcgplayer.com/search/magic/outlaws-of-thunder-junction"
+                    },
+                    {
+                      "title": "Universes Beyond: Fallout",
+                      "url": "https://www.tcgplayer.com/search/magic/universes-beyond-fallout"
+                    },
+                    {
+                      "title": "Murders at Karlov Manor",
+                      "url": "https://www.tcgplayer.com/search/magic/murders-at-karlov-manor"
+                    },
+                    {
+                      "title": "Ravnica Remastered",
+                      "url": "https://www.tcgplayer.com/search/magic/ravnica-remastered"
+                    }
+                  ]
+                },
+                {
+                  "order": 2,
+                  "title": "Articles",
+                  "url": "/content/magic-the-gathering",
+                  "links": [
+                    {
+                      "title": "All Articles",
+                      "url": "/content/magic-the-gathering/articles"
+                    },
+                    {
+                      "title": "ChannelFireball",
+                      "url": "/content/magic-the-gathering/channelfireball"
+                    },
+                    {
+                      "title": "Commander Bestiary",
+                      "url": "/content/magic-the-gathering/commander-bestiary"
+                    },
+                    {
+                      "title": "Standard",
+                      "url": "/content/magic-the-gathering/articles/format/standard"
+                    },
+                    {
+                      "title": "Modern",
+                      "url": "/content/magic-the-gathering/articles/format/modern"
+                    },
+                    {
+                      "title": "Commander",
+                      "url": "/content/magic-the-gathering/articles/format/commander"
+                    }
+                  ]
+                },
+                {
+                  "order": 3,
+                  "title": "Decks",
+                  "url": "/content/magic-the-gathering/decks",
+                  "links": [
+                    {
+                      "title": "Standard",
+                      "url": "/content/magic-the-gathering/decks/format/standard"
+                    },
+                    {
+                      "title": "Modern",
+                      "url": "/content/magic-the-gathering/decks/format/modern"
+                    },
+                    {
+                      "title": "Pioneer",
+                      "url": "/content/magic-the-gathering/decks/format/pioneer"
+                    },
+                    {
+                      "title": "Commander",
+                      "url": "/content/magic-the-gathering/decks/format/commander"
+                    },
+                    {
+                      "title": "Deck Search",
+                      "url": "/content/magic-the-gathering/decks/advanced-search"
+                    }
+                  ]
+                },
+                {
+                  "order": 4,
+                  "title": "More",
+                  "url": "",
+                  "links": [
+                    {
+                      "title": "Mass Entry",
+                      "url": "https://www.tcgplayer.com/massentry?productline=Magic"
+                    },
+                    {
+                      "title": "Gift Cards",
+                      "url": "https://shop.tcgplayer.com/giftcard"
+                    },
+                    {
+                      "title": "Help",
+                      "url": "https://help.tcgplayer.com/hc/en-us"
+                    }
+                  ]
+                }
+              ],
+              "feature": {
+                "title": "Duskmourn: House of Horror",
+                "subtitle": "",
+                "imageUrl": "",
+                "imageUrlSm": "web/release/2024-09/mtg_duskmourn_house_of_horror_search.jpg",
+                "ctaText": "Preorder Now",
+                "ctaUrl": "https://www.tcgplayer.com/search/magic/duskmourn-house-of-horror"
+              }
+            },
+            {
+              "order": 1,
+              "title": "Yu-Gi-Oh!",
+              "full-title": "Yu-Gi-Oh!",
+              "url": "/search/yugioh/product?productLineName=yugioh&page=1",
+              "shopAllUrl": "/search/yugioh/product?productLineName=yugioh&page=1",
+              "listosUrl": "https://shop.tcgplayer.com/yugioh/product/show?ListingType=ListingsWithPhoto",
+              "articlesUrl": "/content/yugioh/articles",
+              "decksUrl": "/content/yugioh/decks",
+              "advancedSearchUrl": "https://shop.tcgplayer.com/yugioh?newSearch=true",
+              "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/yugioh/price-guides",
+              "menus": [
+                {
+                  "order": 1,
+                  "title": "Latest Sets",
+                  "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/yugioh",
+                  "links": [
+                    {
+                      "title": "Quarter Century Bonanza",
+                      "url": "https://www.tcgplayer.com/search/yugioh/quarter-century-bonanza"
+                    },
+                    {
+                      "title": "Rage of the Abyss",
+                      "url": "https://www.tcgplayer.com/search/yugioh/rage-of-the-abyss"
+                    },
+                    {
+                      "title": "25th Anniversary Tins: Dueling Mirrors",
+                      "url": "https://www.tcgplayer.com/search/yugioh/25th-anniversary-tin-dueling-mirrors"
+                    },
+                    {
+                      "title": "Retro Pack (2020 Date Reprint)",
+                      "url": "https://www.tcgplayer.com/search/yugioh/retro-pack-2020-date-reprint"
+                    },
+                    {
+                      "title": "Light of Destruction (2020 Date Reprint)",
+                      "url": "https://www.tcgplayer.com/search/yugioh/light-of-destruction-2020-date-reprint"
+                    },
+                    {
+                      "title": "The Infinite Forbidden",
+                      "url": "https://www.tcgplayer.com/search/yugioh/the-infinite-forbidden"
+                    },
+                    {
+                      "title": "Battles of Legend: Terminal Revenge",
+                      "url": "https://www.tcgplayer.com/search/yugioh/battles-of-legend-terminal-revenge"
+                    },
+                    {
+                      "title": "25th Anniversary Rarity Collection II",
+                      "url": "https://www.tcgplayer.com/search/yugioh/25th-anniversary-rarity-collection-ii"
+                    },
+                    {
+                      "title": "Legacy of Destruction",
+                      "url": "https://www.tcgplayer.com/search/yugioh/legacy-of-destruction"
+                    },
+                    {
+                      "title": "Speed Duel GX: Midterm Destruction",
+                      "url": "https://www.tcgplayer.com/search/yugioh/speed-duel-gx-midterm-destruction"
+                    }
+                  ]
+                },
+                {
+                  "order": 2,
+                  "title": "Articles",
+                  "url": "/content/yugioh",
+                  "links": [
+                    {
+                      "title": "All Articles",
+                      "url": "/content/yugioh/articles"
+                    },
+                    {
+                      "title": "Advanced",
+                      "url": "/content/yugioh/articles/format/advanced"
+                    },
+                    {
+                      "title": "Speed Duel",
+                      "url": "/content/yugioh/articles/format/speed-duel"
+                    },
+                    {
+                      "title": "Edison",
+                      "url": "/content/yugioh/articles/format/edison-format"
+                    },
+                    {
+                      "title": "Goat",
+                      "url": "/content/yugioh/articles/format/goat-format"
+                    }
+                  ]
+                },
+                {
+                  "order": 3,
+                  "title": "Decks",
+                  "url": "/content/yugioh/decks",
+                  "links": [
+                    {
+                      "title": "Advanced",
+                      "url": "/content/yugioh/decks/format/advanced"
+                    },
+                    {
+                      "title": "Deck Search",
+                      "url": "/content/yugioh/decks/advanced-search"
+                    }
+                  ]
+                },
+                {
+                  "order": 4,
+                  "title": "More",
+                  "url": "",
+                  "links": [
+                    {
+                      "title": "Mass Entry",
+                      "url": "https://www.tcgplayer.com/massentry?productline=Yugioh"
+                    },
+                    {
+                      "title": "Gift Cards",
+                      "url": "https://shop.tcgplayer.com/giftcard"
+                    },
+                    {
+                      "title": "Help",
+                      "url": "https://help.tcgplayer.com/hc/en-us"
+                    }
+                  ]
+                }
+              ],
+              "feature": {
+                "title": "25th Anniversary Tins: Dueling Mirrors",
+                "subtitle": "",
+                "imageUrl": "",
+                "imageUrlSm": "web/release/2024-09/ygo_25th_anniversary_tin_dueling_mirrors_search_300x158.jpg",
+                "ctaText": "Order Now",
+                "ctaUrl": "https://www.tcgplayer.com/search/yugioh/25th-anniversary-tin-dueling-mirrors"
+              }
+            },
+            {
+              "order": 2,
+              "title": "Pokémon",
+              "full-title": "Pokémon",
+              "url": "/search/pokemon/product?productLineName=pokemon&page=1",
+              "shopAllUrl": "/search/pokemon/product?productLineName=pokemon&page=1",
+              "listosUrl": "https://shop.tcgplayer.com/pokemon/product/show?ListingType=ListingsWithPhotos",
+              "articlesUrl": "/content/pokemon/articles",
+              "decksUrl": "/content/pokemon/decks",
+              "advancedSearchUrl": "https://shop.tcgplayer.com/pokemon?newSearch=true",
+              "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/pokemon/price-guides",
+              "menus": [
+                {
+                  "order": 1,
+                  "title": "Latest Sets",
+                  "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/pokemon",
+                  "links": [
+                    {
+                      "title": "Stellar Crown",
+                      "url": "https://www.tcgplayer.com/search/pokemon/sv07-stellar-crown"
+                    },
+                    {
+                      "title": "Shrouded Fable",
+                      "url": "https://www.tcgplayer.com/search/pokemon/sv-shrouded-fable"
+                    },
+                    {
+                      "title": "Twilight Masquerade",
+                      "url": "https://www.tcgplayer.com/search/pokemon/sv06-twilight-masquerade"
+                    },
+                    {
+                      "title": "Temporal Forces",
+                      "url": "https://www.tcgplayer.com/search/pokemon/sv05-temporal-forces"
+                    },
+                    {
+                      "title": "SV: Paldean Fates",
+                      "url": "https://www.tcgplayer.com/search/pokemon/sv-paldean-fates"
+                    },
+                    {
+                      "title": "Paradox Rift",
+                      "url": "https://www.tcgplayer.com/search/pokemon/sv04-paradox-rift"
+                    },
+                    {
+                      "title": "SV: Scarlet & Violet 151",
+                      "url": "https://www.tcgplayer.com/search/pokemon/sv-scarlet-and-violet-151"
+                    },
+                    {
+                      "title": "McDonald's Promos 2023",
+                      "url": "https://www.tcgplayer.com/search/pokemon/mcdonalds-promos-2023"
+                    },
+                    {
+                      "title": "Obsidian Flames",
+                      "url": "https://www.tcgplayer.com/search/pokemon/sv03-obsidian-flames"
+                    },
+                    {
+                      "title": "Paldea Evolved",
+                      "url": "https://www.tcgplayer.com/search/pokemon/sv02-paldea-evolved"
+                    }
+                  ]
+                },
+                {
+                  "order": 2,
+                  "title": "More",
+                  "url": "",
+                  "links": [
+                    {
+                      "title": "Mass Entry",
+                      "url": "https://www.tcgplayer.com/massentry?productline=Pokemon"
+                    },
+                    {
+                      "title": "Gift Cards",
+                      "url": "https://shop.tcgplayer.com/giftcard"
+                    },
+                    {
+                      "title": "Help",
+                      "url": "https://help.tcgplayer.com/hc/en-us"
+                    }
+                  ]
+                },
+                {
+                  "order": 3,
+                  "title": "Articles",
+                  "url": "/content/pokemon",
+                  "links": [
+                    {
+                      "title": "All Articles",
+                      "url": "/content/pokemon/articles"
+                    }
+                  ]
+                }
+              ],
+              "feature": {
+                "title": "Stellar Crown",
+                "subtitle": "",
+                "imageUrl": "",
+                "imageUrlSm": "web/release/2024-09/pkm_stellar_crown_search.jpg",
+                "ctaText": "Order Now",
+                "ctaUrl": "https://www.tcgplayer.com/search/pokemon/sv07-stellar-crown"
+              }
+            },
+            {
+              "order": 3,
+              "title": "Disney Lorcana",
+              "full-title": "Disney Lorcana",
+              "url": "/search/lorcana-tcg/product?productLineName=lorcana-tcg&page=1",
+              "shopAllUrl": "/search/lorcana-tcg/product?productLineName=lorcana-tcg&page=1",
+              "listosUrl": "/search/lorcana-tcg/product?productLineName=lorcana-tcg&page=1",
+              "articlesUrl": "/content/disney-lorcana/articles",
+              "decksUrl": "/content/disney-lorcana/decks",
+              "advancedSearchUrl": "https://shop.tcgplayer.com/lorcana-tcg",
+              "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana/price-guides",
+              "menus": [
+                {
+                  "order": 1,
+                  "title": "Latest Sets",
+                  "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/disney-lorcana",
+                  "links": [
+                    {
+                      "title": "Azurite Sea",
+                      "url": "https://www.tcgplayer.com/search/lorcana-tcg/azurite-sea"
+                    },
+                    {
+                      "title": "Shimmering Skies",
+                      "url": "https://www.tcgplayer.com/search/lorcana-tcg/shimmering-skies"
+                    },
+                    {
+                      "title": "Ursula's Return",
+                      "url": "https://www.tcgplayer.com/search/lorcana-tcg/ursulas-return"
+                    },
+                    {
+                      "title": "Into the Inklands",
+                      "url": "https://www.tcgplayer.com/search/lorcana-tcg/into-the-inklands"
+                    },
+                    {
+                      "title": "Rise of the Floodborn",
+                      "url": "https://www.tcgplayer.com/search/lorcana-tcg/rise-of-the-floodborn"
+                    },
+                    {
+                      "title": "The First Chapter",
+                      "url": "https://www.tcgplayer.com/search/lorcana-tcg/the-first-chapter"
+                    },
+                    {
+                      "title": "D23 Promos",
+                      "url": "https://www.tcgplayer.com/search/lorcana-tcg/d23-promos"
+                    }
+                  ]
+                },
+                {
+                  "order": 2,
+                  "title": "Articles",
+                  "url": "/content/disney-lorcana",
+                  "links": [
+                    {
+                      "title": "All Articles",
+                      "url": "/content/disney-lorcana/articles"
+                    },
+                    {
+                      "title": "Constructed",
+                      "url": "/content/disney-lorcana/articles/format/constructed"
+                    },
+                    {
+                      "title": "Limited",
+                      "url": "/content/disney-lorcana/articles/format/limited"
+                    }
+                  ]
+                },
+                {
+                  "order": 3,
+                  "title": "Decks",
+                  "url": "/content/disney-lorcana/decks",
+                  "links": [
+                    {
+                      "title": "Constructed",
+                      "url": "/content/disney-lorcana/decks/format/constructed"
+                    }
+                  ]
+                },
+                {
+                  "order": 4,
+                  "title": "More",
+                  "url": "",
+                  "links": [
+                    {
+                      "title": "Mass Entry",
+                      "url": "https://www.tcgplayer.com/massentry?productline=Lorcana%20TCG"
+                    },
+                    {
+                      "title": "Gift Cards",
+                      "url": "https://shop.tcgplayer.com/giftcard"
+                    },
+                    {
+                      "title": "Help",
+                      "url": "https://help.tcgplayer.com/hc/en-us"
+                    }
+                  ]
+                }
+              ],
+              "feature": {
+                "title": "Shimmering Skies",
+                "subtitle": "",
+                "imageUrl": "",
+                "imageUrlSm": "web/release/2024-08/disney_lorcana_shimmering_skies_search.jpg",
+                "ctaText": "Order Now",
+                "ctaUrl": "https://www.tcgplayer.com/search/lorcana-tcg/shimmering-skies"
+              }
+            },
+            {
+              "order": 4,
+              "title": "One Piece",
+              "full-title": "One Piece Card Game",
+              "url": "/search/one-piece-card-game/product?productLineName=one-piece-card-game&page=1",
+              "shopAllUrl": "/search/one-piece-card-game/product?productLineName=one-piece-card-game&page=1",
+              "listosUrl": "https://shop.tcgplayer.com/one-piece-card-game/product/show?ListingType=ListingsWithPhotos",
+              "articlesUrl": "/content/more-games/one-piece",
+              "decksUrl": "",
+              "advancedSearchUrl": "https://shop.tcgplayer.com/one-piece-card-game?newSearch=true",
+              "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/one-piece-card-game/price-guides",
+              "menus": [
+                {
+                  "order": 1,
+                  "title": "Latest Sets",
+                  "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/one-piece-card-game",
+                  "links": [
+                    {
+                      "title": "Two Legends",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/two-legends"
+                    },
+                    {
+                      "title": "Starter Deck 14: 3D2Y",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/starter-deck-14-3d2y"
+                    },
+                    {
+                      "title": "500 Years in the Future",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/500-years-in-the-future"
+                    },
+                    {
+                      "title": "Extra Booster: Memorial Collection",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/extra-booster-memorial-collection"
+                    },
+                    {
+                      "title": "Ultra Deck: The Three Brothers",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/ultra-deck-the-three-brothers"
+                    },
+                    {
+                      "title": "Starter Deck 12: Zoro and Sanji",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/starter-deck-12-zoro-and-sanji"
+                    },
+                    {
+                      "title": "Wings of the Captain",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/wings-of-the-captain"
+                    },
+                    {
+                      "title": "Starter Deck 11: Uta",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/starter-deck-11-uta"
+                    },
+                    {
+                      "title": "Awakening of the New Era",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/awakening-of-the-new-era"
+                    },
+                    {
+                      "title": "Ultra Deck: The Three Captains",
+                      "url": "https://www.tcgplayer.com/search/one-piece-card-game/ultra-deck-the-three-captains"
+                    }
+                  ]
+                },
+                {
+                  "order": 2,
+                  "title": "More",
+                  "url": "",
+                  "links": [
+                    {
+                      "title": "Articles",
+                      "url": "/content/more-games/one-piece"
+                    },
+                    {
+                      "title": "Mass Entry",
+                      "url": "https://www.tcgplayer.com/massentry?productline=One%20Piece%20Card%20Game"
+                    },
+                    {
+                      "title": "Gift Cards",
+                      "url": "https://shop.tcgplayer.com/giftcard"
+                    },
+                    {
+                      "title": "Help",
+                      "url": "https://help.tcgplayer.com/hc/en-us"
+                    }
+                  ]
+                }
+              ],
+              "feature": {
+                "title": "Two Legends",
+                "subtitle": "",
+                "imageUrl": "",
+                "imageUrlSm": "web/release/2024-09/One_Piece_Two_Legends_search_300x158.jpg",
+                "ctaText": "Order Now",
+                "ctaUrl": "https://www.tcgplayer.com/search/one-piece-card-game/two-legends"
+              },
+              "viewAllUrl": "/all"
+            },
+            {
+              "order": 5,
+              "title": "Digimon",
+              "full-title": "Digimon Card Game",
+              "url": "/search/digimon-card-game/product?productLineName=digimon-card-game&page=1",
+              "shopAllUrl": "/search/digimon-card-game/product?productLineName=digimon-card-game&page=1",
+              "listosUrl": "https://shop.tcgplayer.com/digimon-card-game/product/show?ListingType=ListingsWithPhotos",
+              "articlesUrl": "/content/more-games/digimon-card-game",
+              "decksUrl": "",
+              "advancedSearchUrl": "https://shop.tcgplayer.com/digimon-card-game?newSearch=true",
+              "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/digimon-card-game/price-guides",
+              "menus": [
+                {
+                  "order": 1,
+                  "title": "Latest Sets",
+                  "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/digimon-card-game",
+                  "links": [
+                    {
+                      "title": "Digimon LIBERATOR",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/digimon-liberator"
+                    },
+                    {
+                      "title": "Secret Crisis",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/secret-crisis"
+                    },
+                    {
+                      "title": "Infernal Ascension",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/infernal-ascension"
+                    },
+                    {
+                      "title": "Beginning Observer",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/beginning-observer"
+                    },
+                    {
+                      "title": "Starter Deck 17: Double Typhoon Advanced Deck Set",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/starter-deck-17-double-typhoon-advanced-deck-set"
+                    },
+                    {
+                      "title": "Exceed Apocalypse",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/exceed-apocalypse"
+                    },
+                    {
+                      "title": "Animal Colosseum",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/animal-colosseum"
+                    },
+                    {
+                      "title": "Blast Ace Booster",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/blast-ace"
+                    },
+                    {
+                      "title": "Starter Deck 16: Wolf of Friendship",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/starter-deck-16-wolf-of-friendship"
+                    },
+                    {
+                      "title": "Starter Deck 15: Dragon of Courage",
+                      "url": "https://www.tcgplayer.com/search/digimon-card-game/starter-deck-15-dragon-of-courage"
+                    }
+                  ]
+                },
+                {
+                  "order": 2,
+                  "title": "More",
+                  "url": "",
+                  "links": [
+                    {
+                      "title": "Articles",
+                      "url": "/content/more-games/digimon-card-game"
+                    },
+                    {
+                      "title": "Mass Entry",
+                      "url": "https://www.tcgplayer.com/massentry?productline=Digimon%20Card%20Game"
+                    },
+                    {
+                      "title": "Gift Cards",
+                      "url": "https://shop.tcgplayer.com/giftcard"
+                    },
+                    {
+                      "title": "Help",
+                      "url": "https://help.tcgplayer.com/hc/en-us"
+                    }
+                  ]
+                }
+              ],
+              "feature": {
+                "title": "Digimon LIBERATOR",
+                "subtitle": "",
+                "imageUrl": "",
+                "imageUrlSm": "web/release/2024-09/dcg_liberator_search.jpg",
+                "ctaText": "Order Now",
+                "ctaUrl": "https://www.tcgplayer.com/search/digimon-card-game/digimon-liberator"
+              },
+              "viewAllUrl": "/all"
+            },
+            {
+              "order": 6,
+              "title": "Star Wars: Unlimited",
+              "full-title": "Star Wars: Unlimited",
+              "url": "/search/star-wars-unlimited/product?productLineName=star-wars-unlimited&page=1",
+              "shopAllUrl": "/search/star-wars-unlimited/product?productLineName=star-wars-unlimited&page=1",
+              "listosUrl": "https://shop.tcgplayer.com/star-wars-unlimited/product/show?ListingType=ListingsWithPhotos",
+              "articlesUrl": "/content/more-games/star-wars-unlimited",
+              "decksUrl": "",
+              "advancedSearchUrl": "https://shop.tcgplayer.com/star-wars-unlimited?newSearch=true",
+              "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/star-wars-unlimited/price-guides",
+              "menus": [
+                {
+                  "order": 1,
+                  "title": "Latest Sets",
+                  "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/star-wars-unlimited",
+                  "links": [
+                    {
+                      "title": "Twilight of the Republic",
+                      "url": "https://www.tcgplayer.com/search/star-wars-unlimited/twilight-of-the-republic"
+                    },
+                    {
+                      "title": "2024 Convention Exclusive",
+                      "url": "https://www.tcgplayer.com/search/star-wars-unlimited/2024-convention-exclusive"
+                    },
+                    {
+                      "title": "Shadows of the Galaxy",
+                      "url": "https://www.tcgplayer.com/search/star-wars-unlimited/shadows-of-the-galaxy"
+                    },
+                    {
+                      "title": "Shadows of the Galaxy: Weekly Play Promos",
+                      "url": "https://www.tcgplayer.com/search/star-wars-unlimited/shadows-of-the-galaxy-weekly-play-promos"
+                    },
+                    {
+                      "title": "Spark of Rebellion",
+                      "url": "https://www.tcgplayer.com/search/star-wars-unlimited/spark-of-rebellion"
+                    }
+                  ]
+                },
+                {
+                  "order": 2,
+                  "title": "Articles",
+                  "url": "",
+                  "links": [
+                    {
+                      "title": "All Articles",
+                      "url": "/content/more-games/star-wars-unlimited"
+                    }
+                  ]
+                },
+                {
+                  "order": 3,
+                  "title": "More",
+                  "url": "",
+                  "links": [
+                    {
+                      "title": "Mass Entry",
+                      "url": "https://www.tcgplayer.com/massentry?productline=Star%20Wars%20Unlimited"
+                    },
+                    {
+                      "title": "Gift Cards",
+                      "url": "https://shop.tcgplayer.com/giftcard"
+                    },
+                    {
+                      "title": "Sell With Us",
+                      "url": "https://seller.tcgplayer.com/"
+                    },
+                    {
+                      "title": "Help",
+                      "url": "https://help.tcgplayer.com/hc/en-us"
+                    },
+                    {
+                      "title": "Subscribe to TCGplayer",
+                      "url": "https://www.tcgplayer.com/subscription?itm_source=marketplace&itm_medium=navigation_bar&itm_campaign=subscribe_to_tcgplayer"
+                    }
+                  ]
+                }
+              ],
+              "feature": {
+                "title": "Twilight of the Republic",
+                "subtitle": "",
+                "imageUrl": "",
+                "imageUrlSm": "web/release/2024-11/swu_twilight_of_the_republic_set_image.jpg",
+                "ctaText": "Preorder Now",
+                "ctaUrl": "https://www.tcgplayer.com/search/star-wars-unlimited/twilight-of-the-republic"
+              },
+              "viewAllUrl": "/all"
+            },
+            {
+              "order": 7,
+              "title": "Flesh and Blood",
+              "full-title": "Flesh and Blood",
+              "url": "/search/flesh-and-blood-tcg/product?productLineName=flesh-and-blood-tcg&page=1",
+              "shopAllUrl": "/search/flesh-and-blood-tcg/product?productLineName=flesh-and-blood-tcg&page=1",
+              "listosUrl": "https://shop.tcgplayer.com/flesh-and-blood-tcg/product/show?ListingType=ListingsWithPhotos",
+              "articlesUrl": "/content/flesh-and-blood/articles",
+              "decksUrl": "",
+              "advancedSearchUrl": "https://shop.tcgplayer.com/flesh-and-blood-tcg?newSearch=true",
+              "priceGuideUrl": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/flesh-and-blood-tcg/price-guides",
+              "menus": [
+                {
+                  "order": 1,
+                  "title": "Latest Sets",
+                  "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/flesh-and-blood-tcg",
+                  "links": [
+                    {
+                      "title": "Rosetta",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/rosetta"
+                    },
+                    {
+                      "title": "1st Strike",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/1st-strike"
+                    },
+                    {
+                      "title": "Armory Deck: Azalea",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/armory-deck-azalea"
+                    },
+                    {
+                      "title": "Armory Deck: Boltyn",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/armory-deck-boltyn"
+                    },
+                    {
+                      "title": "Part the Mistveil",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/part-the-mistveil"
+                    },
+                    {
+                      "title": "Armory Deck: Kayo",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/armory-deck-kayo"
+                    },
+                    {
+                      "title": "Heavy Hitters",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/heavy-hitters"
+                    },
+                    {
+                      "title": "Bright Lights",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/bright-lights"
+                    },
+                    {
+                      "title": "Round the Table",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/round-the-table-tccxlss"
+                    },
+                    {
+                      "title": "Dusk till Dawn",
+                      "url": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/dusk-till-dawn"
+                    }
+                  ]
+                },
+                {
+                  "order": 2,
+                  "title": "Articles",
+                  "url": "/content/flesh-and-blood",
+                  "links": [
+                    {
+                      "title": "All Articles",
+                      "url": "/content/flesh-and-blood/articles"
+                    },
+                    {
+                      "title": "Blitz",
+                      "url": "/content/flesh-and-blood/articles/format/blitz"
+                    },
+                    {
+                      "title": "Classic Constructed",
+                      "url": "/content/flesh-and-blood/articles/format/classic-constructed"
+                    },
+                    {
+                      "title": "Commoner",
+                      "url": "/content/flesh-and-blood/articles/format/commoner"
+                    },
+                    {
+                      "title": "Limited",
+                      "url": "/content/flesh-and-blood/articles/format/limited"
+                    }
+                  ]
+                },
+                {
+                  "order": 3,
+                  "title": "More",
+                  "url": "",
+                  "links": [
+                    {
+                      "title": "Mass Entry",
+                      "url": "https://www.tcgplayer.com/massentry?productline=Flesh%20%26%20Blood%20TCG"
+                    },
+                    {
+                      "title": "Gift Cards",
+                      "url": "https://shop.tcgplayer.com/giftcard"
+                    },
+                    {
+                      "title": "Help",
+                      "url": "https://help.tcgplayer.com/hc/en-us"
+                    }
+                  ]
+                }
+              ],
+              "feature": {
+                "title": "Rosetta",
+                "subtitle": "",
+                "imageUrl": "",
+                "imageUrlSm": "web/release/2024-09/fab_rosetta_search.jpg",
+                "ctaText": "Preorder Now",
+                "ctaUrl": "https://www.tcgplayer.com/search/flesh-and-blood-tcg/rosetta"
+              },
+              "viewAllUrl": "/all"
+            }
+          ],
+          "more": {
+            "order": 999,
+            "title": "More",
+            "full-title": "More Products & Options",
+            "url": "/search/all/product",
+            "shopAllUrl": "",
+            "listosUrl": "",
+            "articlesUrl": "",
+            "decksUrl": "",
+            "advancedSearchUrl": "",
+            "priceGuideUrl": "",
+            "menus": [
+              {
+                "order": 1,
+                "title": "Popular Games",
+                "url": "",
+                "links": [
+                  {
+                    "title": "Cardfight!! Vanguard",
+                    "url": "https://www.tcgplayer.com/search/cardfight-vanguard/product?productLineName=cardfight-vanguard"
+                  },
+                  {
+                    "title": "Dragon Ball Super: Fusion World",
+                    "url": "https://www.tcgplayer.com/search/dragon-ball-super-fusion-world/product?productLineName=dragon-ball-super-fusion-world"
+                  },
+                  {
+                    "title": "Dragon Ball Super: Masters",
+                    "url": "https://www.tcgplayer.com/search/dragon-ball-super-ccg/product?productLineName=dragon-ball-super-ccg"
+                  },
+                  {
+                    "title": "Final Fantasy",
+                    "url": "https://www.tcgplayer.com/search/final-fantasy-tcg/product?productLineName=final-fantasy-tcg"
+                  },
+                  {
+                    "title": "Grand Archive TCG",
+                    "url": "https://www.tcgplayer.com/search/grand-archive/product?productLineName=grand-archive"
+                  },
+                  {
+                    "title": "Gundam Card Game",
+                    "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/gundam-card-game"
+                  },
+                  {
+                    "title": "Riftbound: League of Legends Trading Card Game",
+                    "url": "https://www.tcgplayer.com/search/riftbound-league-of-legends-trading-card-game/product?productLineName=riftbound-league-of-legends-trading-card-game&page=1&view=grid"
+                  },
+                  {
+                    "title": "Shadowverse: Evolve",
+                    "url": "https://www.tcgplayer.com/search/shadowverse-evolve/product?productLineName=shadowverse-evolve"
+                  },
+                  {
+                    "title": "Sorcery: Contested Realm",
+                    "url": "https://www.tcgplayer.com/search/sorcery-contested-realm/product?productLineName=sorcery-contested-realm"
+                  },
+                  {
+                    "title": "Union Arena",
+                    "url": "https://www.tcgplayer.com/search/union-arena/product?productLineName=union-arena"
+                  },
+                  {
+                    "title": "UniVersus",
+                    "url": "https://www.tcgplayer.com/search/universus/product?productLineName=universus&view=grid"
+                  },
+                  {
+                    "title": "Weiss Schwarz",
+                    "url": "https://www.tcgplayer.com/search/weiss-schwarz/product?productLineName=weiss-schwarz"
+                  }
+                ]
+              },
+              {
+                "order": 2,
+                "title": "All Other Games",
+                "url": "",
+                "links": [
+                  {
+                    "title": "Akora TCG",
+                    "url": "https://www.tcgplayer.com/search/akora/product?productLineName=akora&page=1"
+                  },
+                  {
+                    "title": "Alpha Clash",
+                    "url": "https://www.tcgplayer.com/search/alpha-clash/product?productLineName=alpha-clash&page=1"
+                  },
+                  {
+                    "title": "Argent Saga TCG",
+                    "url": "https://www.tcgplayer.com/search/argent-saga-tcg/product?productLineName=argent-saga-tcg&page=1"
+                  },
+                  {
+                    "title": "BAKUGAN TCG",
+                    "url": "https://www.tcgplayer.com/search/bakugan-tcg/product?productLineName=bakugan-tcg"
+                  },
+                  {
+                    "title": "Battle Spirits Saga",
+                    "url": "https://www.tcgplayer.com/search/battle-spirits-saga/product?productLineName=battle-spirits-saga&page=1&view=grid&inStock=true"
+                  },
+                  {
+                    "title": "Chrono Clash System",
+                    "url": "https://www.tcgplayer.com/search/chrono-clash-system/product?productLineName=chrono-clash-system"
+                  },
+                  {
+                    "title": "D & D Miniatures",
+                    "url": "https://www.tcgplayer.com/search/d-and-d-miniatures/product?productLineName=d-and-d-miniatures"
+                  },
+                  {
+                    "title": "Dice Masters",
+                    "url": "https://www.tcgplayer.com/search/dice-masters/product?productLineName=dice-masters"
+                  },
+                  {
+                    "title": "Dragoborne",
+                    "url": "https://www.tcgplayer.com/search/dragoborne/product?productLineName=dragoborne"
+                  },
+                  {
+                    "title": "Dragon Ball Z TCG",
+                    "url": "https://www.tcgplayer.com/search/dragon-ball-z-tcg/product?productLineName=dragon-ball-z-tcg"
+                  },
+                  {
+                    "title": "Elestrals",
+                    "url": "https://www.tcgplayer.com/search/elestrals/product?productLineName=elestrals"
+                  },
+                  {
+                    "title": "Exodus TCG",
+                    "url": "https://www.tcgplayer.com/search/exodus-tcg/product?productLineName=exodus-tcg"
+                  },
+                  {
+                    "title": "Force of Will",
+                    "url": "https://www.tcgplayer.com/search/force-of-will/product?productLineName=force-of-will"
+                  },
+                  {
+                    "title": "Funko Pop! Vinyl",
+                    "url": "https://www.tcgplayer.com/search/funko/product?productLineName=funko"
+                  },
+                  {
+                    "title": "Future Card Buddyfight",
+                    "url": "https://www.tcgplayer.com/search/future-card-buddyfight/product?productLineName=future-card-buddyfight"
+                  },
+                  {
+                    "title": "Gate Ruler",
+                    "url": "https://www.tcgplayer.com/search/gate-ruler/product?productLineName=gate-ruler"
+                  },
+                  {
+                    "title": "Godzilla Card Game",
+                    "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/godzilla-card-game"
+                  },
+                  {
+                    "title": "Gundam Card Game",
+                    "url": "https://www.tcgplayer.com/search/gundam-card-game/product?productLineName=gundam-card-game&view=grid"
+                  },
+                  {
+                    "title": "HeroClix",
+                    "url": "https://www.tcgplayer.com/search/heroclix/product?productLineName=heroclix"
+                  },
+                  {
+                    "title": "hololive OFFICIAL CARD GAME",
+                    "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/hololive-official-card-game"
+                  },
+                  {
+                    "title": "Keyforge",
+                    "url": "https://www.tcgplayer.com/search/keyforge/product?productLineName=keyforge"
+                  },
+                  {
+                    "title": "Kryptik",
+                    "url": "https://www.tcgplayer.com/search/kryptik-tcg/product?productLineName=kryptik-tcg"
+                  },
+                  {
+                    "title": "Lightseekers TCG",
+                    "url": "https://www.tcgplayer.com/search/lightseekers-tcg/product?productLineName=lightseekers-tcg"
+                  },
+                  {
+                    "title": "MetaX TCG",
+                    "url": "https://www.tcgplayer.com/search/metax-tcg/product?productLineName=metax-tcg"
+                  },
+                  {
+                    "title": "MetaZoo",
+                    "url": "https://www.tcgplayer.com/search/metazoo/product?productLineName=metazoo"
+                  },
+                  {
+                    "title": "Munchkin CCG",
+                    "url": "https://www.tcgplayer.com/search/munchkin-ccg/product?productLineName=munchkin-ccg"
+                  },
+                  {
+                    "title": "My Little Pony CCG",
+                    "url": "https://www.tcgplayer.com/search/my-little-pony-ccg/product?productLineName=my-little-pony-ccg"
+                  },
+                  {
+                    "title": "Osprey Books",
+                    "url": "/search/books/osprey-books?setName=osprey-books&productLineName=books&page=1"
+                  },
+                  {
+                    "title": "Star Wars: Destiny",
+                    "url": "https://www.tcgplayer.com/search/star-wars-destiny/product?productLineName=star-wars-destiny"
+                  },
+                  {
+                    "title": "The Caster Chronicles",
+                    "url": "https://www.tcgplayer.com/search/the-caster-chronicles/product?productLineName=the-caster-chronicles"
+                  },
+                  {
+                    "title": "Transformers TCG",
+                    "url": "https://www.tcgplayer.com/search/transformers-tcg/product?productLineName=transformers-tcg"
+                  },
+                  {
+                    "title": "Warhammer Age of Sigmar Champions",
+                    "url": "https://www.tcgplayer.com/search/warhammer-age-of-sigmar-champions-tcg/product?productLineName=warhammer-age-of-sigmar-champions-tcg"
+                  },
+                  {
+                    "title": "WIXOSS",
+                    "url": "https://www.tcgplayer.com/search/wixoss/product?productLineName=wixoss"
+                  },
+                  {
+                    "title": "World of Warcraft TCG",
+                    "url": "https://www.tcgplayer.com/search/wow/product?productLineName=wow"
+                  },
+                  {
+                    "title": "Zombie World Order TCG",
+                    "url": "https://www.tcgplayer.com/search/zombie-world-order-tcg/product?productLineName=zombie-world-order-tcg"
+                  }
+                ]
+              },
+              {
+                "order": 3,
+                "title": "Gift Cards & Supplies",
+                "url": "",
+                "links": [
+                  {
+                    "title": "Bulk Lots",
+                    "url": "https://www.tcgplayer.com/search/bulk-lots/product?productLineName=bulk-lots"
+                  },
+                  {
+                    "title": "Gift Cards",
+                    "url": "https://www.tcgplayer.com/giftcard"
+                  },
+                  {
+                    "title": "Playmats",
+                    "url": "https://www.tcgplayer.com/search/playmats/product?productLineName=playmats&q=play&view=grid&inStock=true&page=1"
+                  },
+                  {
+                    "title": "Card Sleeves",
+                    "url": "https://www.tcgplayer.com/search/card-sleeves/product"
+                  },
+                  {
+                    "title": "Deck Boxes",
+                    "url": "https://www.tcgplayer.com/search/deck-boxes/product"
+                  },
+                  {
+                    "title": "Life Counters",
+                    "url": "https://www.tcgplayer.com/search/life-counters/product?productLineName=life-counters&q=life+&view=grid&inStock=true&page=1"
+                  },
+                  {
+                    "title": "Storage Binders",
+                    "url": "https://www.tcgplayer.com/search/storage-albums/product"
+                  },
+                  {
+                    "title": "Protective Pages",
+                    "url": "https://www.tcgplayer.com/search/protective-pages/product?productLineName=protective-pages&view=grid&inStock=true&page=1"
+                  },
+                  {
+                    "title": "Dice",
+                    "url": "https://www.tcgplayer.com/search/collectible-storage/product?productLineName=collectible-storage&q=dice&view=grid&page=1"
+                  },
+                  {
+                    "title": "All Supplies",
+                    "url": "https://www.tcgplayer.com/search/all/product?ProductTypeName=Supplies&view=grid"
+                  }
+                ]
+              }
+            ],
+            "feature": {
+              "title": "TCGplayer Gift Cards",
+              "subtitle": "",
+              "imageUrl": "",
+              "imageUrlSm": "web/promo/2025-02/Set-Image-Gift-Cards%402x.jpg",
+              "ctaText": "Shop Gift Cards",
+              "ctaUrl": "https://www.tcgplayer.com/giftcard"
+            }
+          },
+          "articles": {
+            "order": 1000,
+            "title": "Articles",
+            "full-title": "TCGplayer Articles",
+            "url": "www.tcgplayer.com",
+            "shopAllUrl": "/content/",
+            "listosUrl": "",
+            "articlesUrl": "/content/",
+            "decksUrl": "",
+            "advancedSearchUrl": "",
+            "priceGuideUrl": "",
+            "menus": [
+              {
+                "order": 1,
+                "title": "Popular Game Content",
+                "url": "",
+                "links": [
+                  {
+                    "title": "Magic: The Gathering",
+                    "url": "/content/magic-the-gathering"
+                  },
+                  {
+                    "title": "Yu-Gi-Oh!",
+                    "url": "/content/yugioh"
+                  },
+                  {
+                    "title": "One Piece",
+                    "url": "/content/more-games/one-piece"
+                  },
+                  {
+                    "title": "Pokémon",
+                    "url": "/content/pokemon"
+                  },
+                  {
+                    "title": "Disney Lorcana",
+                    "url": "/content/disney-lorcana"
+                  },
+                  {
+                    "title": "Flesh and Blood",
+                    "url": "/content/flesh-and-blood"
+                  }
+                ]
+              },
+              {
+                "order": 2,
+                "title": "Content in More Games",
+                "url": "/content/more-games",
+                "links": [
+                  {
+                    "title": "Battle Spirits Saga",
+                    "url": "/content/more-games/battle-spirits-saga"
+                  },
+                  {
+                    "title": "Cardfight!! Vanguard",
+                    "url": "/content/more-games/cardfight-vanguard"
+                  },
+                  {
+                    "title": "Digimon Card Game",
+                    "url": "/content/more-games/digimon-card-game"
+                  },
+                  {
+                    "title": "Dragon Ball Super: Fusion World",
+                    "url": "/content/more-games/dragon-ball-super-fusion-world"
+                  },
+                  {
+                    "title": "Grand Archive TCG",
+                    "url": "/content/more-games/grand-archive-tcg"
+                  },
+                  {
+                    "title": "Gundam Card Game",
+                    "url": "/content/series/gundam-card-game"
+                  },
+                  {
+                    "title": "Shadowverse: Evolve",
+                    "url": "/content/more-games/shadowverse-evolve"
+                  },
+                  {
+                    "title": "Sorcery: Contested Realm",
+                    "url": "/content/more-games/sorcery-contested-realm"
+                  },
+                  {
+                    "title": "Star Wars: Unlimited",
+                    "url": "/content/more-games/star-wars-unlimited"
+                  },
+                  {
+                    "title": "Union Arena",
+                    "url": "/content/more-games/union-arena"
+                  },
+                  {
+                    "title": "Universus",
+                    "url": "/content/more-games/universus"
+                  },
+                  {
+                    "title": "Weiss Schwarz",
+                    "url": "/content/more-games/weiss-schwarz"
+                  }
+                ]
+              }
+            ],
+            "feature": {
+              "title": "TCGplayer Gift Cards",
+              "subtitle": "",
+              "imageUrl": "",
+              "imageUrlSm": "web/promo/2025-02/Set-Image-Gift-Cards%402x.jpg",
+              "ctaText": "Shop Gift Cards",
+              "ctaUrl": "https://www.tcgplayer.com/giftcard"
+            }
+          }
+        }
+      },
+      {
+        "url": "https://www.tcgplayer.com/js/modules/discovery/mf-discovery.json",
+        "status": 200,
+        "contentType": "binary/octet-stream",
+        "dataStructure": "object{id, name, metaData, shared, remotes, exposes}",
+        "hasPokemonData": false,
+        "data": {
+          "id": "discovery",
+          "name": "discovery",
+          "metaData": {
+            "name": "discovery",
+            "type": "app",
+            "buildInfo": {
+              "buildVersion": "1.0.0",
+              "buildName": "discovery"
+            },
+            "remoteEntry": {
+              "name": "assets/remoteEntry-BHb1nSuc.js",
+              "path": "",
+              "type": "module"
+            },
+            "ssrRemoteEntry": {
+              "name": "assets/remoteEntry-BHb1nSuc.js",
+              "path": "",
+              "type": "module"
+            },
+            "types": {
+              "path": "",
+              "name": ""
+            },
+            "globalName": "discovery",
+            "pluginVersion": "0.2.5",
+            "publicPath": "https://www.tcgplayer.com/js/modules/discovery/"
+          },
+          "shared": [
+            {
+              "id": "discovery:vue",
+              "name": "vue",
+              "version": "3.5.14",
+              "requiredVersion": "^3.5.14",
+              "assets": {
+                "js": {
+                  "async": [],
+                  "sync": [
+                    "assets/vue.runtime.esm-bundler-DdKoVJp3.js"
+                  ]
+                },
+                "css": {
+                  "async": [],
+                  "sync": []
+                }
+              }
+            }
+          ],
+          "remotes": [],
+          "exposes": [
+            {
+              "id": "discovery:UnifiedHeader",
+              "name": "UnifiedHeader",
+              "assets": {
+                "js": {
+                  "async": [],
+                  "sync": []
+                },
+                "css": {
+                  "sync": [],
+                  "async": []
+                }
+              },
+              "path": "./UnifiedHeader"
+            },
+            {
+              "id": "discovery:UnifiedFooter",
+              "name": "UnifiedFooter",
+              "assets": {
+                "js": {
+                  "async": [],
+                  "sync": []
+                },
+                "css": {
+                  "sync": [],
+                  "async": []
+                }
+              },
+              "path": "./UnifiedFooter"
+            },
+            {
+              "id": "discovery:useMobileMenuNav",
+              "name": "useMobileMenuNav",
+              "assets": {
+                "js": {
+                  "async": [],
+                  "sync": []
+                },
+                "css": {
+                  "sync": [],
+                  "async": []
+                }
+              },
+              "path": "./useMobileMenuNav"
+            }
+          ]
+        }
+      },
+      {
+        "url": "https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&page=1",
+        "status": 200,
+        "contentType": "text/html",
+        "dataStructure": "string",
+        "hasPokemonData": true,
+        "data": "<!DOCTYPE html><html lang=\"en\"><head>\n          <script type=\"module\" src=\"/js/hostInit-BQJIQhLu.js\" integrity=\"sha384-biZl/iSTLWYIJSrfiL1ZJ+T3xo6xcZt0WnlkLC5ziL4MTbvtZGgl28dRjWPO4fTj\"></script>\n        \n  <meta http-equiv=\"Content-Security-Policy\" content=\" default-src &#39;self&#39;; img-src &#39;self&#39; data: https://tcgplayer-marketing.s3.amazonaws.com https://www.facebook.com https://hexagon-analytics.com https://www.google.ae/ads/ga-audiences https://www.google.ca/ads/ga-audiences https://www.google.cl/ads/ga-audiences https://www.google.co.cr/ads/ga-audiences https://www.google.co.id/ads/ga-audiences https://www.google.co.il/ads/ga-audiences https://www.google.co.in/ads/ga-audiences https://www.google.co.jp/ads/ga-audiences https://www.google.co.kr/ads/ga-audiences https://www.google.co.nz/ads/ga-audiences https://www.google.co.uk/ads/ga-audiences https://www.google.co.za/ads/ga-audiences https://www.google.com.ar/ads/ga-audiences https://www.google.com.au/ads/ga-audiences https://www.google.com.br/ads/ga-audiences https://www.google.com.co/ads/ga-audiences https://www.google.com.do/ads/ga-audiences https://www.google.com.ec/ads/ga-audiences https://www.google.com.gt/ads/ga-audiences https://www.google.com.hk/ads/ga-audiences https://www.google.com.kw/ads/ga-audiences https://www.google.com.mx/ads/ga-audiences https://www.google.com.my/ads/ga-audiences https://www.google.com.pa/ads/ga-audiences https://www.google.com.pe/ads/ga-audiences https://www.google.com.ph/ads/ga-audiences https://www.google.com.pr/ads/ga-audiences https://www.google.com.sa/ads/ga-audiences https://www.google.com.sg/ads/ga-audiences https://www.google.com.sv/ads/ga-audiences https://www.google.com.tr/ads/ga-audiences https://www.google.com.tw/ads/ga-audiences https://www.google.com.uy/ads/ga-audiences https://www.google.com.vn/ads/ga-audiences https://www.google.de/ads/ga-audiences https://www.google.dk/ads/ga-audiences https://www.google.es/ads/ga-audiences https://www.google.gt/ads/ga-audiences https://www.google.hn/ads/ga-audiences https://www.google.hr/ads/ga-audiences https://www.google.ie/ads/ga-audiences https://www.google.it/ads/ga-audiences https://www.google.nl/ads/ga-audiences https://www.google.pl/ads/ga-audiences https://www.google.sv/ads/ga-audiences https://www.google.ae/pagead/1p-user-list https://www.google.ca/pagead/1p-user-list https://www.google.cl/pagead/1p-user-list https://www.google.co.cr/pagead/1p-user-list https://www.google.co.id/pagead/1p-user-list https://www.google.co.il/pagead/1p-user-list https://www.google.co.in/pagead/1p-user-list https://www.google.co.jp/pagead/1p-user-list https://www.google.co.kr/pagead/1p-user-list https://www.google.co.nz/pagead/1p-user-list https://www.google.co.uk/pagead/1p-user-list https://www.google.co.za/pagead/1p-user-list https://www.google.com.ar/pagead/1p-user-list https://www.google.com.au/pagead/1p-user-list https://www.google.com.br/pagead/1p-user-list https://www.google.com.co/pagead/1p-user-list https://www.google.com.do/pagead/1p-user-list https://www.google.com.ec/pagead/1p-user-list https://www.google.com.gt/pagead/1p-user-list https://www.google.com.hk/pagead/1p-user-list https://www.google.com.kw/pagead/1p-user-list https://www.google.com.mx/pagead/1p-user-list https://www.google.com.my/pagead/1p-user-list https://www.google.com.pa/pagead/1p-user-list https://www.google.com.pe/pagead/1p-user-list https://www.google.com.ph/pagead/1p-user-list https://www.google.com.pr/pagead/1p-user-list https://www.google.com.sa/pagead/1p-user-list https://www.google.com.sg/pagead/1p-user-list https://www.google.com.sv/pagead/1p-user-list https://www.google.com.tr/pagead/1p-user-list https://www.google.com.tw/pagead/1p-user-list https://www.google.com.uy/pagead/1p-user-list https://www.google.com.vn/pagead/1p-user-list https://www.google.de/pagead/1p-user-list https://www.google.dk/pagead/1p-user-list https://www.google.es/pagead/1p-user-list https://www.google.gt/pagead/1p-user-list https://www.google.hn/pagead/1p-user-list https://www.google.hr/pagead/1p-user-list https://www.google.ie/pagead/1p-user-list https://www.google.it/pagead/1p-user-list https://www.google.nl/pagead/1p-user-list https://www.google.pl/pagead/1p-user-list https://www.google.sv/pagead/1p-user-list https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://t.paypal.com https://www.paypalobjects.com https://fonts.gstatic.com/ https://www.google.com https://www.googleadservices.com https://www.googletagmanager.com https://siteintercept.qualtrics.com https://c1.scryfall.com/file/scryfall-cards https://cards.scryfall.io https://img.tcgplayer.com https://mp-assets.tcgplayer.com/ https://mktg-assets.tcgplayer.com/ https://tcgplayer-cdn.tcgplayer.com/ https://static.tcgplayer.com/ https://static-direct.tcgplayer.com/; script-src-elem &#39;self&#39; &#39;unsafe-inline&#39; http://127.0.0.1:7710 http://127.0.0.1:7711 https://static.ada.support https://d14jnfavjicsbe.cloudfront.net https://googleads.g.doubleclick.net https://api.getdrip.com https://tag.getdrip.com https://www.googleadservices.com https://www.googletagmanager.com https://js.hcaptcha.com https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://cdn.siftscience.com https://cdn.segment.tcgplayer.com https://sleeknotecustomerscripts.sleeknote.com https://sleeknotestaticcontent.sleeknote.com https://tcgplayer-cdn.tcgplayer.com/; style-src-elem &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.googletagmanager.com; font-src &#39;self&#39; data: https://fonts.gstatic.com; script-src &#39;self&#39; &#39;unsafe-eval&#39; &#39;unsafe-hashes&#39; &#39;unsafe-inline&#39; https://static.ada.support https://connect.facebook.net https://tag.getdrip.com https://www.googletagmanager.com https://js.hcaptcha.com/ https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://cdn.siftscience.com https://sleeknotestaticcontent.sleeknote.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://tcgplayer-cdn.tcgplayer.com/; style-src &#39;self&#39; &#39;unsafe-inline&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; connect-src &#39;self&#39; wss: https://rollout.ada.support https://static.ada.support https://tcgplayer.ada.support https://api.braintreegateway.com https://payments.braintree-api.com https://payments.sandbox.braintree-api.com https://origin-analytics-sand.sandbox.braintree-api.com https://client-analytics.braintreegateway.com https://api.sandbox.braintreegateway.com https://connect.facebook.net https://stats.g.doubleclick.net https://analytics.google.com https://google.com https://www.google.com https://www.google-analytics.com https://www.googleadservices.com https://region1.analytics.google.com https://vc.hotjar.io https://content.hotjar.io https://metrics.hotjar.io https://bam-cell.nr-data.net https://www.paypal.com https://www.sandbox.paypal.com https://siteintercept.qualtrics.com https://api.cdn.amplitude.tcgplayer.com https://flag.cdn.amplitude.tcgplayer.com https://cdn.segment.tcgplayer.com https://tcgplayer-cdn.tcgplayer.com https://newassets.hcaptcha.com https://data.tcgplayer.com https://mp-events-api.tcgplayer.com/ https://features.tcgplayer.com/ https://mpgateway.tcgplayer.com/ https://infinite-api.tcgplayer.com/ https://homepage.marketplace.tcgplayer.com/ https://marketplace-navigation.tcgplayer.com/ https://mpapi.tcgplayer.com/ https://mp-search-api.tcgplayer.com/ https://geo-ip-service.tcgplayer.com; frame-src &#39;self&#39; https://assets.braintreegateway.com https://bid.g.doubleclick.net https://newassets.hcaptcha.com https://td.doubleclick.net https://www.googletagmanager.com https://checkout.paypal.com https://www.paypal.com https://www.paypalobjects.com https://tcgplayer.qualtrics.com https://www.sandbox.paypal.com https://tcgplayer.ada.support; manifest-src &#39;self&#39;; media-src &#39;self&#39;; worker-src blob:;\">\n\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,viewport-fit=cover\">\n    <meta name=\"version-build\" content=\"4251\">\n    <meta name=\"version-hash\" content=\"6332b2cd884df3c1194651177f2f4962cfda80cb\">\n    <meta name=\"version-name\" content=\"origin/master\">\n    <meta name=\"facebook-domain-verification\" content=\"ujhbh9jn9ccwotzunt4vehh5l26w5i\">\n    <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\">\n    <link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\">\n    <link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">\n    <link rel=\"manifest\" href=\"/site.webmanifest\">\n\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" crossorigin=\"\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Barlow:wght@700&amp;family=Barlow+Semi+Condensed:wght@600;700&amp;display=swap\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\">\n    <title>\n      Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer\n    </title>\n    <meta name=\"description\" content=\"Buy Magic: The Gathering Cards, Yu-Gi-Oh! Cards, Pokémon Cards, One Piece CCG, Digimon TCG, Flesh and Blood, Lorcana, CCG Supplies, and more.\">\n    <meta property=\"fb:admins\" content=\"643675054,673820199,201100738,44203888,549856811,50701868,1195548639\">\n    <meta property=\"fb:app_id\" content=\"136270296395166\">\n    <!-- Make sure consent manager displays over everything -->\n    <style>\n      body > div[data-consent-manager-dialog] > div {\n        z-index: 2147483647;\n      }\n    </style>\n    <script type=\"module\" crossorigin=\"\" src=\"/js/index-D0ugDqHr.js\" integrity=\"sha384-sWXRjIl59XrhTSi2gSPzINz61/HLMJKQL80zTfyNho2Cj5ENRBbUIQICJP4uX/Wj\"></script>\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/marketplace__mf_v__runtimeInit__mf_v__-swBO5l19.js\" integrity=\"sha384-G9KxHwEfPxrK2A+UBwIRaC0bvys1Gf/JTTMyRICjYmVbKFwQSVwmpJ6Dyt6biLfO\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/preload-helper-BlTxHScW.js\" integrity=\"sha384-DKSIMrdno3gmtKOIIzikG7sMlsNmM7opyYpsdtnzARTuOs4mtETLkcOEWuGLjeu0\">\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/css/index-Bc7HAokv.css\" integrity=\"sha384-blZaa2iikNCpR2bsPjKRUE7H3qkZwLYRLuBYOZhD5+apr8rOiajT28VTphwGcy4V\">\n  </head>\n\n  <body>\n    <div id=\"consent-container\" style=\"display: none\"></div>\n    <noscript>\n      <strong>\n        We're sorry but TCGplayer doesn't work properly without JavaScript\n        enabled. Please enable it to continue.\n      </strong>\n    </noscript>\n    <div id=\"app\"></div>\n  \n\n</body></html>"
+      },
+      {
+        "url": "https://www.tcgplayer.com/search/pokemon/product?q=charizard",
+        "status": 200,
+        "contentType": "text/html",
+        "dataStructure": "string",
+        "hasPokemonData": true,
+        "data": "<!DOCTYPE html><html lang=\"en\"><head>\n          <script type=\"module\" src=\"/js/hostInit-BQJIQhLu.js\" integrity=\"sha384-biZl/iSTLWYIJSrfiL1ZJ+T3xo6xcZt0WnlkLC5ziL4MTbvtZGgl28dRjWPO4fTj\"></script>\n        \n  <meta http-equiv=\"Content-Security-Policy\" content=\" default-src &#39;self&#39;; img-src &#39;self&#39; data: https://tcgplayer-marketing.s3.amazonaws.com https://www.facebook.com https://hexagon-analytics.com https://www.google.ae/ads/ga-audiences https://www.google.ca/ads/ga-audiences https://www.google.cl/ads/ga-audiences https://www.google.co.cr/ads/ga-audiences https://www.google.co.id/ads/ga-audiences https://www.google.co.il/ads/ga-audiences https://www.google.co.in/ads/ga-audiences https://www.google.co.jp/ads/ga-audiences https://www.google.co.kr/ads/ga-audiences https://www.google.co.nz/ads/ga-audiences https://www.google.co.uk/ads/ga-audiences https://www.google.co.za/ads/ga-audiences https://www.google.com.ar/ads/ga-audiences https://www.google.com.au/ads/ga-audiences https://www.google.com.br/ads/ga-audiences https://www.google.com.co/ads/ga-audiences https://www.google.com.do/ads/ga-audiences https://www.google.com.ec/ads/ga-audiences https://www.google.com.gt/ads/ga-audiences https://www.google.com.hk/ads/ga-audiences https://www.google.com.kw/ads/ga-audiences https://www.google.com.mx/ads/ga-audiences https://www.google.com.my/ads/ga-audiences https://www.google.com.pa/ads/ga-audiences https://www.google.com.pe/ads/ga-audiences https://www.google.com.ph/ads/ga-audiences https://www.google.com.pr/ads/ga-audiences https://www.google.com.sa/ads/ga-audiences https://www.google.com.sg/ads/ga-audiences https://www.google.com.sv/ads/ga-audiences https://www.google.com.tr/ads/ga-audiences https://www.google.com.tw/ads/ga-audiences https://www.google.com.uy/ads/ga-audiences https://www.google.com.vn/ads/ga-audiences https://www.google.de/ads/ga-audiences https://www.google.dk/ads/ga-audiences https://www.google.es/ads/ga-audiences https://www.google.gt/ads/ga-audiences https://www.google.hn/ads/ga-audiences https://www.google.hr/ads/ga-audiences https://www.google.ie/ads/ga-audiences https://www.google.it/ads/ga-audiences https://www.google.nl/ads/ga-audiences https://www.google.pl/ads/ga-audiences https://www.google.sv/ads/ga-audiences https://www.google.ae/pagead/1p-user-list https://www.google.ca/pagead/1p-user-list https://www.google.cl/pagead/1p-user-list https://www.google.co.cr/pagead/1p-user-list https://www.google.co.id/pagead/1p-user-list https://www.google.co.il/pagead/1p-user-list https://www.google.co.in/pagead/1p-user-list https://www.google.co.jp/pagead/1p-user-list https://www.google.co.kr/pagead/1p-user-list https://www.google.co.nz/pagead/1p-user-list https://www.google.co.uk/pagead/1p-user-list https://www.google.co.za/pagead/1p-user-list https://www.google.com.ar/pagead/1p-user-list https://www.google.com.au/pagead/1p-user-list https://www.google.com.br/pagead/1p-user-list https://www.google.com.co/pagead/1p-user-list https://www.google.com.do/pagead/1p-user-list https://www.google.com.ec/pagead/1p-user-list https://www.google.com.gt/pagead/1p-user-list https://www.google.com.hk/pagead/1p-user-list https://www.google.com.kw/pagead/1p-user-list https://www.google.com.mx/pagead/1p-user-list https://www.google.com.my/pagead/1p-user-list https://www.google.com.pa/pagead/1p-user-list https://www.google.com.pe/pagead/1p-user-list https://www.google.com.ph/pagead/1p-user-list https://www.google.com.pr/pagead/1p-user-list https://www.google.com.sa/pagead/1p-user-list https://www.google.com.sg/pagead/1p-user-list https://www.google.com.sv/pagead/1p-user-list https://www.google.com.tr/pagead/1p-user-list https://www.google.com.tw/pagead/1p-user-list https://www.google.com.uy/pagead/1p-user-list https://www.google.com.vn/pagead/1p-user-list https://www.google.de/pagead/1p-user-list https://www.google.dk/pagead/1p-user-list https://www.google.es/pagead/1p-user-list https://www.google.gt/pagead/1p-user-list https://www.google.hn/pagead/1p-user-list https://www.google.hr/pagead/1p-user-list https://www.google.ie/pagead/1p-user-list https://www.google.it/pagead/1p-user-list https://www.google.nl/pagead/1p-user-list https://www.google.pl/pagead/1p-user-list https://www.google.sv/pagead/1p-user-list https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://t.paypal.com https://www.paypalobjects.com https://fonts.gstatic.com/ https://www.google.com https://www.googleadservices.com https://www.googletagmanager.com https://siteintercept.qualtrics.com https://c1.scryfall.com/file/scryfall-cards https://cards.scryfall.io https://img.tcgplayer.com https://mp-assets.tcgplayer.com/ https://mktg-assets.tcgplayer.com/ https://tcgplayer-cdn.tcgplayer.com/ https://static.tcgplayer.com/ https://static-direct.tcgplayer.com/; script-src-elem &#39;self&#39; &#39;unsafe-inline&#39; http://127.0.0.1:7710 http://127.0.0.1:7711 https://static.ada.support https://d14jnfavjicsbe.cloudfront.net https://googleads.g.doubleclick.net https://api.getdrip.com https://tag.getdrip.com https://www.googleadservices.com https://www.googletagmanager.com https://js.hcaptcha.com https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://cdn.siftscience.com https://cdn.segment.tcgplayer.com https://sleeknotecustomerscripts.sleeknote.com https://sleeknotestaticcontent.sleeknote.com https://tcgplayer-cdn.tcgplayer.com/; style-src-elem &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.googletagmanager.com; font-src &#39;self&#39; data: https://fonts.gstatic.com; script-src &#39;self&#39; &#39;unsafe-eval&#39; &#39;unsafe-hashes&#39; &#39;unsafe-inline&#39; https://static.ada.support https://connect.facebook.net https://tag.getdrip.com https://www.googletagmanager.com https://js.hcaptcha.com/ https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://cdn.siftscience.com https://sleeknotestaticcontent.sleeknote.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://tcgplayer-cdn.tcgplayer.com/; style-src &#39;self&#39; &#39;unsafe-inline&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; connect-src &#39;self&#39; wss: https://rollout.ada.support https://static.ada.support https://tcgplayer.ada.support https://api.braintreegateway.com https://payments.braintree-api.com https://payments.sandbox.braintree-api.com https://origin-analytics-sand.sandbox.braintree-api.com https://client-analytics.braintreegateway.com https://api.sandbox.braintreegateway.com https://connect.facebook.net https://stats.g.doubleclick.net https://analytics.google.com https://google.com https://www.google.com https://www.google-analytics.com https://www.googleadservices.com https://region1.analytics.google.com https://vc.hotjar.io https://content.hotjar.io https://metrics.hotjar.io https://bam-cell.nr-data.net https://www.paypal.com https://www.sandbox.paypal.com https://siteintercept.qualtrics.com https://api.cdn.amplitude.tcgplayer.com https://flag.cdn.amplitude.tcgplayer.com https://cdn.segment.tcgplayer.com https://tcgplayer-cdn.tcgplayer.com https://newassets.hcaptcha.com https://data.tcgplayer.com https://mp-events-api.tcgplayer.com/ https://features.tcgplayer.com/ https://mpgateway.tcgplayer.com/ https://infinite-api.tcgplayer.com/ https://homepage.marketplace.tcgplayer.com/ https://marketplace-navigation.tcgplayer.com/ https://mpapi.tcgplayer.com/ https://mp-search-api.tcgplayer.com/ https://geo-ip-service.tcgplayer.com; frame-src &#39;self&#39; https://assets.braintreegateway.com https://bid.g.doubleclick.net https://newassets.hcaptcha.com https://td.doubleclick.net https://www.googletagmanager.com https://checkout.paypal.com https://www.paypal.com https://www.paypalobjects.com https://tcgplayer.qualtrics.com https://www.sandbox.paypal.com https://tcgplayer.ada.support; manifest-src &#39;self&#39;; media-src &#39;self&#39;; worker-src blob:;\">\n\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,viewport-fit=cover\">\n    <meta name=\"version-build\" content=\"4251\">\n    <meta name=\"version-hash\" content=\"6332b2cd884df3c1194651177f2f4962cfda80cb\">\n    <meta name=\"version-name\" content=\"origin/master\">\n    <meta name=\"facebook-domain-verification\" content=\"ujhbh9jn9ccwotzunt4vehh5l26w5i\">\n    <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\">\n    <link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\">\n    <link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">\n    <link rel=\"manifest\" href=\"/site.webmanifest\">\n\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" crossorigin=\"\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Barlow:wght@700&amp;family=Barlow+Semi+Condensed:wght@600;700&amp;display=swap\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\">\n    <title>\n      Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer\n    </title>\n    <meta name=\"description\" content=\"Buy Magic: The Gathering Cards, Yu-Gi-Oh! Cards, Pokémon Cards, One Piece CCG, Digimon TCG, Flesh and Blood, Lorcana, CCG Supplies, and more.\">\n    <meta property=\"fb:admins\" content=\"643675054,673820199,201100738,44203888,549856811,50701868,1195548639\">\n    <meta property=\"fb:app_id\" content=\"136270296395166\">\n    <!-- Make sure consent manager displays over everything -->\n    <style>\n      body > div[data-consent-manager-dialog] > div {\n        z-index: 2147483647;\n      }\n    </style>\n    <script type=\"module\" crossorigin=\"\" src=\"/js/index-D0ugDqHr.js\" integrity=\"sha384-sWXRjIl59XrhTSi2gSPzINz61/HLMJKQL80zTfyNho2Cj5ENRBbUIQICJP4uX/Wj\"></script>\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/marketplace__mf_v__runtimeInit__mf_v__-swBO5l19.js\" integrity=\"sha384-G9KxHwEfPxrK2A+UBwIRaC0bvys1Gf/JTTMyRICjYmVbKFwQSVwmpJ6Dyt6biLfO\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/preload-helper-BlTxHScW.js\" integrity=\"sha384-DKSIMrdno3gmtKOIIzikG7sMlsNmM7opyYpsdtnzARTuOs4mtETLkcOEWuGLjeu0\">\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/css/index-Bc7HAokv.css\" integrity=\"sha384-blZaa2iikNCpR2bsPjKRUE7H3qkZwLYRLuBYOZhD5+apr8rOiajT28VTphwGcy4V\">\n  </head>\n\n  <body>\n    <div id=\"consent-container\" style=\"display: none\"></div>\n    <noscript>\n      <strong>\n        We're sorry but TCGplayer doesn't work properly without JavaScript\n        enabled. Please enable it to continue.\n      </strong>\n    </noscript>\n    <div id=\"app\"></div>\n  \n\n</body></html>"
+      },
+      {
+        "url": "https://www.tcgplayer.com/search/pokemon/product?q=pikachu",
+        "status": 200,
+        "contentType": "text/html",
+        "dataStructure": "string",
+        "hasPokemonData": true,
+        "data": "<!DOCTYPE html><html lang=\"en\"><head>\n          <script type=\"module\" src=\"/js/hostInit-BQJIQhLu.js\" integrity=\"sha384-biZl/iSTLWYIJSrfiL1ZJ+T3xo6xcZt0WnlkLC5ziL4MTbvtZGgl28dRjWPO4fTj\"></script>\n        \n  <meta http-equiv=\"Content-Security-Policy\" content=\" default-src &#39;self&#39;; img-src &#39;self&#39; data: https://tcgplayer-marketing.s3.amazonaws.com https://www.facebook.com https://hexagon-analytics.com https://www.google.ae/ads/ga-audiences https://www.google.ca/ads/ga-audiences https://www.google.cl/ads/ga-audiences https://www.google.co.cr/ads/ga-audiences https://www.google.co.id/ads/ga-audiences https://www.google.co.il/ads/ga-audiences https://www.google.co.in/ads/ga-audiences https://www.google.co.jp/ads/ga-audiences https://www.google.co.kr/ads/ga-audiences https://www.google.co.nz/ads/ga-audiences https://www.google.co.uk/ads/ga-audiences https://www.google.co.za/ads/ga-audiences https://www.google.com.ar/ads/ga-audiences https://www.google.com.au/ads/ga-audiences https://www.google.com.br/ads/ga-audiences https://www.google.com.co/ads/ga-audiences https://www.google.com.do/ads/ga-audiences https://www.google.com.ec/ads/ga-audiences https://www.google.com.gt/ads/ga-audiences https://www.google.com.hk/ads/ga-audiences https://www.google.com.kw/ads/ga-audiences https://www.google.com.mx/ads/ga-audiences https://www.google.com.my/ads/ga-audiences https://www.google.com.pa/ads/ga-audiences https://www.google.com.pe/ads/ga-audiences https://www.google.com.ph/ads/ga-audiences https://www.google.com.pr/ads/ga-audiences https://www.google.com.sa/ads/ga-audiences https://www.google.com.sg/ads/ga-audiences https://www.google.com.sv/ads/ga-audiences https://www.google.com.tr/ads/ga-audiences https://www.google.com.tw/ads/ga-audiences https://www.google.com.uy/ads/ga-audiences https://www.google.com.vn/ads/ga-audiences https://www.google.de/ads/ga-audiences https://www.google.dk/ads/ga-audiences https://www.google.es/ads/ga-audiences https://www.google.gt/ads/ga-audiences https://www.google.hn/ads/ga-audiences https://www.google.hr/ads/ga-audiences https://www.google.ie/ads/ga-audiences https://www.google.it/ads/ga-audiences https://www.google.nl/ads/ga-audiences https://www.google.pl/ads/ga-audiences https://www.google.sv/ads/ga-audiences https://www.google.ae/pagead/1p-user-list https://www.google.ca/pagead/1p-user-list https://www.google.cl/pagead/1p-user-list https://www.google.co.cr/pagead/1p-user-list https://www.google.co.id/pagead/1p-user-list https://www.google.co.il/pagead/1p-user-list https://www.google.co.in/pagead/1p-user-list https://www.google.co.jp/pagead/1p-user-list https://www.google.co.kr/pagead/1p-user-list https://www.google.co.nz/pagead/1p-user-list https://www.google.co.uk/pagead/1p-user-list https://www.google.co.za/pagead/1p-user-list https://www.google.com.ar/pagead/1p-user-list https://www.google.com.au/pagead/1p-user-list https://www.google.com.br/pagead/1p-user-list https://www.google.com.co/pagead/1p-user-list https://www.google.com.do/pagead/1p-user-list https://www.google.com.ec/pagead/1p-user-list https://www.google.com.gt/pagead/1p-user-list https://www.google.com.hk/pagead/1p-user-list https://www.google.com.kw/pagead/1p-user-list https://www.google.com.mx/pagead/1p-user-list https://www.google.com.my/pagead/1p-user-list https://www.google.com.pa/pagead/1p-user-list https://www.google.com.pe/pagead/1p-user-list https://www.google.com.ph/pagead/1p-user-list https://www.google.com.pr/pagead/1p-user-list https://www.google.com.sa/pagead/1p-user-list https://www.google.com.sg/pagead/1p-user-list https://www.google.com.sv/pagead/1p-user-list https://www.google.com.tr/pagead/1p-user-list https://www.google.com.tw/pagead/1p-user-list https://www.google.com.uy/pagead/1p-user-list https://www.google.com.vn/pagead/1p-user-list https://www.google.de/pagead/1p-user-list https://www.google.dk/pagead/1p-user-list https://www.google.es/pagead/1p-user-list https://www.google.gt/pagead/1p-user-list https://www.google.hn/pagead/1p-user-list https://www.google.hr/pagead/1p-user-list https://www.google.ie/pagead/1p-user-list https://www.google.it/pagead/1p-user-list https://www.google.nl/pagead/1p-user-list https://www.google.pl/pagead/1p-user-list https://www.google.sv/pagead/1p-user-list https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://t.paypal.com https://www.paypalobjects.com https://fonts.gstatic.com/ https://www.google.com https://www.googleadservices.com https://www.googletagmanager.com https://siteintercept.qualtrics.com https://c1.scryfall.com/file/scryfall-cards https://cards.scryfall.io https://img.tcgplayer.com https://mp-assets.tcgplayer.com/ https://mktg-assets.tcgplayer.com/ https://tcgplayer-cdn.tcgplayer.com/ https://static.tcgplayer.com/ https://static-direct.tcgplayer.com/; script-src-elem &#39;self&#39; &#39;unsafe-inline&#39; http://127.0.0.1:7710 http://127.0.0.1:7711 https://static.ada.support https://d14jnfavjicsbe.cloudfront.net https://googleads.g.doubleclick.net https://api.getdrip.com https://tag.getdrip.com https://www.googleadservices.com https://www.googletagmanager.com https://js.hcaptcha.com https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://cdn.siftscience.com https://cdn.segment.tcgplayer.com https://sleeknotecustomerscripts.sleeknote.com https://sleeknotestaticcontent.sleeknote.com https://tcgplayer-cdn.tcgplayer.com/; style-src-elem &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.googletagmanager.com; font-src &#39;self&#39; data: https://fonts.gstatic.com; script-src &#39;self&#39; &#39;unsafe-eval&#39; &#39;unsafe-hashes&#39; &#39;unsafe-inline&#39; https://static.ada.support https://connect.facebook.net https://tag.getdrip.com https://www.googletagmanager.com https://js.hcaptcha.com/ https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://cdn.siftscience.com https://sleeknotestaticcontent.sleeknote.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://tcgplayer-cdn.tcgplayer.com/; style-src &#39;self&#39; &#39;unsafe-inline&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; connect-src &#39;self&#39; wss: https://rollout.ada.support https://static.ada.support https://tcgplayer.ada.support https://api.braintreegateway.com https://payments.braintree-api.com https://payments.sandbox.braintree-api.com https://origin-analytics-sand.sandbox.braintree-api.com https://client-analytics.braintreegateway.com https://api.sandbox.braintreegateway.com https://connect.facebook.net https://stats.g.doubleclick.net https://analytics.google.com https://google.com https://www.google.com https://www.google-analytics.com https://www.googleadservices.com https://region1.analytics.google.com https://vc.hotjar.io https://content.hotjar.io https://metrics.hotjar.io https://bam-cell.nr-data.net https://www.paypal.com https://www.sandbox.paypal.com https://siteintercept.qualtrics.com https://api.cdn.amplitude.tcgplayer.com https://flag.cdn.amplitude.tcgplayer.com https://cdn.segment.tcgplayer.com https://tcgplayer-cdn.tcgplayer.com https://newassets.hcaptcha.com https://data.tcgplayer.com https://mp-events-api.tcgplayer.com/ https://features.tcgplayer.com/ https://mpgateway.tcgplayer.com/ https://infinite-api.tcgplayer.com/ https://homepage.marketplace.tcgplayer.com/ https://marketplace-navigation.tcgplayer.com/ https://mpapi.tcgplayer.com/ https://mp-search-api.tcgplayer.com/ https://geo-ip-service.tcgplayer.com; frame-src &#39;self&#39; https://assets.braintreegateway.com https://bid.g.doubleclick.net https://newassets.hcaptcha.com https://td.doubleclick.net https://www.googletagmanager.com https://checkout.paypal.com https://www.paypal.com https://www.paypalobjects.com https://tcgplayer.qualtrics.com https://www.sandbox.paypal.com https://tcgplayer.ada.support; manifest-src &#39;self&#39;; media-src &#39;self&#39;; worker-src blob:;\">\n\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,viewport-fit=cover\">\n    <meta name=\"version-build\" content=\"4251\">\n    <meta name=\"version-hash\" content=\"6332b2cd884df3c1194651177f2f4962cfda80cb\">\n    <meta name=\"version-name\" content=\"origin/master\">\n    <meta name=\"facebook-domain-verification\" content=\"ujhbh9jn9ccwotzunt4vehh5l26w5i\">\n    <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\">\n    <link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\">\n    <link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">\n    <link rel=\"manifest\" href=\"/site.webmanifest\">\n\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" crossorigin=\"\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Barlow:wght@700&amp;family=Barlow+Semi+Condensed:wght@600;700&amp;display=swap\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\">\n    <title>\n      Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer\n    </title>\n    <meta name=\"description\" content=\"Buy Magic: The Gathering Cards, Yu-Gi-Oh! Cards, Pokémon Cards, One Piece CCG, Digimon TCG, Flesh and Blood, Lorcana, CCG Supplies, and more.\">\n    <meta property=\"fb:admins\" content=\"643675054,673820199,201100738,44203888,549856811,50701868,1195548639\">\n    <meta property=\"fb:app_id\" content=\"136270296395166\">\n    <!-- Make sure consent manager displays over everything -->\n    <style>\n      body > div[data-consent-manager-dialog] > div {\n        z-index: 2147483647;\n      }\n    </style>\n    <script type=\"module\" crossorigin=\"\" src=\"/js/index-D0ugDqHr.js\" integrity=\"sha384-sWXRjIl59XrhTSi2gSPzINz61/HLMJKQL80zTfyNho2Cj5ENRBbUIQICJP4uX/Wj\"></script>\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/marketplace__mf_v__runtimeInit__mf_v__-swBO5l19.js\" integrity=\"sha384-G9KxHwEfPxrK2A+UBwIRaC0bvys1Gf/JTTMyRICjYmVbKFwQSVwmpJ6Dyt6biLfO\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/preload-helper-BlTxHScW.js\" integrity=\"sha384-DKSIMrdno3gmtKOIIzikG7sMlsNmM7opyYpsdtnzARTuOs4mtETLkcOEWuGLjeu0\">\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/css/index-Bc7HAokv.css\" integrity=\"sha384-blZaa2iikNCpR2bsPjKRUE7H3qkZwLYRLuBYOZhD5+apr8rOiajT28VTphwGcy4V\">\n  </head>\n\n  <body>\n    <div id=\"consent-container\" style=\"display: none\"></div>\n    <noscript>\n      <strong>\n        We're sorry but TCGplayer doesn't work properly without JavaScript\n        enabled. Please enable it to continue.\n      </strong>\n    </noscript>\n    <div id=\"app\"></div>\n  \n\n</body></html>"
+      },
+      {
+        "url": "https://www.tcgplayer.com/api/search/pokemon",
+        "status": 200,
+        "contentType": "text/html",
+        "dataStructure": "string",
+        "hasPokemonData": true,
+        "data": "<!DOCTYPE html><html lang=\"en\"><head>\n          <script type=\"module\" src=\"/js/hostInit-BQJIQhLu.js\" integrity=\"sha384-biZl/iSTLWYIJSrfiL1ZJ+T3xo6xcZt0WnlkLC5ziL4MTbvtZGgl28dRjWPO4fTj\"></script>\n        \n  <meta http-equiv=\"Content-Security-Policy\" content=\" default-src &#39;self&#39;; img-src &#39;self&#39; data: https://tcgplayer-marketing.s3.amazonaws.com https://www.facebook.com https://hexagon-analytics.com https://www.google.ae/ads/ga-audiences https://www.google.ca/ads/ga-audiences https://www.google.cl/ads/ga-audiences https://www.google.co.cr/ads/ga-audiences https://www.google.co.id/ads/ga-audiences https://www.google.co.il/ads/ga-audiences https://www.google.co.in/ads/ga-audiences https://www.google.co.jp/ads/ga-audiences https://www.google.co.kr/ads/ga-audiences https://www.google.co.nz/ads/ga-audiences https://www.google.co.uk/ads/ga-audiences https://www.google.co.za/ads/ga-audiences https://www.google.com.ar/ads/ga-audiences https://www.google.com.au/ads/ga-audiences https://www.google.com.br/ads/ga-audiences https://www.google.com.co/ads/ga-audiences https://www.google.com.do/ads/ga-audiences https://www.google.com.ec/ads/ga-audiences https://www.google.com.gt/ads/ga-audiences https://www.google.com.hk/ads/ga-audiences https://www.google.com.kw/ads/ga-audiences https://www.google.com.mx/ads/ga-audiences https://www.google.com.my/ads/ga-audiences https://www.google.com.pa/ads/ga-audiences https://www.google.com.pe/ads/ga-audiences https://www.google.com.ph/ads/ga-audiences https://www.google.com.pr/ads/ga-audiences https://www.google.com.sa/ads/ga-audiences https://www.google.com.sg/ads/ga-audiences https://www.google.com.sv/ads/ga-audiences https://www.google.com.tr/ads/ga-audiences https://www.google.com.tw/ads/ga-audiences https://www.google.com.uy/ads/ga-audiences https://www.google.com.vn/ads/ga-audiences https://www.google.de/ads/ga-audiences https://www.google.dk/ads/ga-audiences https://www.google.es/ads/ga-audiences https://www.google.gt/ads/ga-audiences https://www.google.hn/ads/ga-audiences https://www.google.hr/ads/ga-audiences https://www.google.ie/ads/ga-audiences https://www.google.it/ads/ga-audiences https://www.google.nl/ads/ga-audiences https://www.google.pl/ads/ga-audiences https://www.google.sv/ads/ga-audiences https://www.google.ae/pagead/1p-user-list https://www.google.ca/pagead/1p-user-list https://www.google.cl/pagead/1p-user-list https://www.google.co.cr/pagead/1p-user-list https://www.google.co.id/pagead/1p-user-list https://www.google.co.il/pagead/1p-user-list https://www.google.co.in/pagead/1p-user-list https://www.google.co.jp/pagead/1p-user-list https://www.google.co.kr/pagead/1p-user-list https://www.google.co.nz/pagead/1p-user-list https://www.google.co.uk/pagead/1p-user-list https://www.google.co.za/pagead/1p-user-list https://www.google.com.ar/pagead/1p-user-list https://www.google.com.au/pagead/1p-user-list https://www.google.com.br/pagead/1p-user-list https://www.google.com.co/pagead/1p-user-list https://www.google.com.do/pagead/1p-user-list https://www.google.com.ec/pagead/1p-user-list https://www.google.com.gt/pagead/1p-user-list https://www.google.com.hk/pagead/1p-user-list https://www.google.com.kw/pagead/1p-user-list https://www.google.com.mx/pagead/1p-user-list https://www.google.com.my/pagead/1p-user-list https://www.google.com.pa/pagead/1p-user-list https://www.google.com.pe/pagead/1p-user-list https://www.google.com.ph/pagead/1p-user-list https://www.google.com.pr/pagead/1p-user-list https://www.google.com.sa/pagead/1p-user-list https://www.google.com.sg/pagead/1p-user-list https://www.google.com.sv/pagead/1p-user-list https://www.google.com.tr/pagead/1p-user-list https://www.google.com.tw/pagead/1p-user-list https://www.google.com.uy/pagead/1p-user-list https://www.google.com.vn/pagead/1p-user-list https://www.google.de/pagead/1p-user-list https://www.google.dk/pagead/1p-user-list https://www.google.es/pagead/1p-user-list https://www.google.gt/pagead/1p-user-list https://www.google.hn/pagead/1p-user-list https://www.google.hr/pagead/1p-user-list https://www.google.ie/pagead/1p-user-list https://www.google.it/pagead/1p-user-list https://www.google.nl/pagead/1p-user-list https://www.google.pl/pagead/1p-user-list https://www.google.sv/pagead/1p-user-list https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://t.paypal.com https://www.paypalobjects.com https://fonts.gstatic.com/ https://www.google.com https://www.googleadservices.com https://www.googletagmanager.com https://siteintercept.qualtrics.com https://c1.scryfall.com/file/scryfall-cards https://cards.scryfall.io https://img.tcgplayer.com https://mp-assets.tcgplayer.com/ https://mktg-assets.tcgplayer.com/ https://tcgplayer-cdn.tcgplayer.com/ https://static.tcgplayer.com/ https://static-direct.tcgplayer.com/; script-src-elem &#39;self&#39; &#39;unsafe-inline&#39; http://127.0.0.1:7710 http://127.0.0.1:7711 https://static.ada.support https://d14jnfavjicsbe.cloudfront.net https://googleads.g.doubleclick.net https://api.getdrip.com https://tag.getdrip.com https://www.googleadservices.com https://www.googletagmanager.com https://js.hcaptcha.com https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://cdn.siftscience.com https://cdn.segment.tcgplayer.com https://sleeknotecustomerscripts.sleeknote.com https://sleeknotestaticcontent.sleeknote.com https://tcgplayer-cdn.tcgplayer.com/; style-src-elem &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.googletagmanager.com; font-src &#39;self&#39; data: https://fonts.gstatic.com; script-src &#39;self&#39; &#39;unsafe-eval&#39; &#39;unsafe-hashes&#39; &#39;unsafe-inline&#39; https://static.ada.support https://connect.facebook.net https://tag.getdrip.com https://www.googletagmanager.com https://js.hcaptcha.com/ https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://cdn.siftscience.com https://sleeknotestaticcontent.sleeknote.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://tcgplayer-cdn.tcgplayer.com/; style-src &#39;self&#39; &#39;unsafe-inline&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; connect-src &#39;self&#39; wss: https://rollout.ada.support https://static.ada.support https://tcgplayer.ada.support https://api.braintreegateway.com https://payments.braintree-api.com https://payments.sandbox.braintree-api.com https://origin-analytics-sand.sandbox.braintree-api.com https://client-analytics.braintreegateway.com https://api.sandbox.braintreegateway.com https://connect.facebook.net https://stats.g.doubleclick.net https://analytics.google.com https://google.com https://www.google.com https://www.google-analytics.com https://www.googleadservices.com https://region1.analytics.google.com https://vc.hotjar.io https://content.hotjar.io https://metrics.hotjar.io https://bam-cell.nr-data.net https://www.paypal.com https://www.sandbox.paypal.com https://siteintercept.qualtrics.com https://api.cdn.amplitude.tcgplayer.com https://flag.cdn.amplitude.tcgplayer.com https://cdn.segment.tcgplayer.com https://tcgplayer-cdn.tcgplayer.com https://newassets.hcaptcha.com https://data.tcgplayer.com https://mp-events-api.tcgplayer.com/ https://features.tcgplayer.com/ https://mpgateway.tcgplayer.com/ https://infinite-api.tcgplayer.com/ https://homepage.marketplace.tcgplayer.com/ https://marketplace-navigation.tcgplayer.com/ https://mpapi.tcgplayer.com/ https://mp-search-api.tcgplayer.com/ https://geo-ip-service.tcgplayer.com; frame-src &#39;self&#39; https://assets.braintreegateway.com https://bid.g.doubleclick.net https://newassets.hcaptcha.com https://td.doubleclick.net https://www.googletagmanager.com https://checkout.paypal.com https://www.paypal.com https://www.paypalobjects.com https://tcgplayer.qualtrics.com https://www.sandbox.paypal.com https://tcgplayer.ada.support; manifest-src &#39;self&#39;; media-src &#39;self&#39;; worker-src blob:;\">\n\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,viewport-fit=cover\">\n    <meta name=\"version-build\" content=\"4251\">\n    <meta name=\"version-hash\" content=\"6332b2cd884df3c1194651177f2f4962cfda80cb\">\n    <meta name=\"version-name\" content=\"origin/master\">\n    <meta name=\"facebook-domain-verification\" content=\"ujhbh9jn9ccwotzunt4vehh5l26w5i\">\n    <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\">\n    <link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\">\n    <link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">\n    <link rel=\"manifest\" href=\"/site.webmanifest\">\n\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" crossorigin=\"\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Barlow:wght@700&amp;family=Barlow+Semi+Condensed:wght@600;700&amp;display=swap\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\">\n    <title>\n      Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer\n    </title>\n    <meta name=\"description\" content=\"Buy Magic: The Gathering Cards, Yu-Gi-Oh! Cards, Pokémon Cards, One Piece CCG, Digimon TCG, Flesh and Blood, Lorcana, CCG Supplies, and more.\">\n    <meta property=\"fb:admins\" content=\"643675054,673820199,201100738,44203888,549856811,50701868,1195548639\">\n    <meta property=\"fb:app_id\" content=\"136270296395166\">\n    <!-- Make sure consent manager displays over everything -->\n    <style>\n      body > div[data-consent-manager-dialog] > div {\n        z-index: 2147483647;\n      }\n    </style>\n    <script type=\"module\" crossorigin=\"\" src=\"/js/index-D0ugDqHr.js\" integrity=\"sha384-sWXRjIl59XrhTSi2gSPzINz61/HLMJKQL80zTfyNho2Cj5ENRBbUIQICJP4uX/Wj\"></script>\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/marketplace__mf_v__runtimeInit__mf_v__-swBO5l19.js\" integrity=\"sha384-G9KxHwEfPxrK2A+UBwIRaC0bvys1Gf/JTTMyRICjYmVbKFwQSVwmpJ6Dyt6biLfO\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/preload-helper-BlTxHScW.js\" integrity=\"sha384-DKSIMrdno3gmtKOIIzikG7sMlsNmM7opyYpsdtnzARTuOs4mtETLkcOEWuGLjeu0\">\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/css/index-Bc7HAokv.css\" integrity=\"sha384-blZaa2iikNCpR2bsPjKRUE7H3qkZwLYRLuBYOZhD5+apr8rOiajT28VTphwGcy4V\">\n  </head>\n\n  <body>\n    <div id=\"consent-container\" style=\"display: none\"></div>\n    <noscript>\n      <strong>\n        We're sorry but TCGplayer doesn't work properly without JavaScript\n        enabled. Please enable it to continue.\n      </strong>\n    </noscript>\n    <div id=\"app\"></div>\n  \n\n</body></html>"
+      },
+      {
+        "url": "https://www.tcgplayer.com/api/catalog/pokemon",
+        "status": 200,
+        "contentType": "text/html",
+        "dataStructure": "string",
+        "hasPokemonData": true,
+        "data": "<!DOCTYPE html><html lang=\"en\"><head>\n          <script type=\"module\" src=\"/js/hostInit-BQJIQhLu.js\" integrity=\"sha384-biZl/iSTLWYIJSrfiL1ZJ+T3xo6xcZt0WnlkLC5ziL4MTbvtZGgl28dRjWPO4fTj\"></script>\n        \n  <meta http-equiv=\"Content-Security-Policy\" content=\" default-src &#39;self&#39;; img-src &#39;self&#39; data: https://tcgplayer-marketing.s3.amazonaws.com https://www.facebook.com https://hexagon-analytics.com https://www.google.ae/ads/ga-audiences https://www.google.ca/ads/ga-audiences https://www.google.cl/ads/ga-audiences https://www.google.co.cr/ads/ga-audiences https://www.google.co.id/ads/ga-audiences https://www.google.co.il/ads/ga-audiences https://www.google.co.in/ads/ga-audiences https://www.google.co.jp/ads/ga-audiences https://www.google.co.kr/ads/ga-audiences https://www.google.co.nz/ads/ga-audiences https://www.google.co.uk/ads/ga-audiences https://www.google.co.za/ads/ga-audiences https://www.google.com.ar/ads/ga-audiences https://www.google.com.au/ads/ga-audiences https://www.google.com.br/ads/ga-audiences https://www.google.com.co/ads/ga-audiences https://www.google.com.do/ads/ga-audiences https://www.google.com.ec/ads/ga-audiences https://www.google.com.gt/ads/ga-audiences https://www.google.com.hk/ads/ga-audiences https://www.google.com.kw/ads/ga-audiences https://www.google.com.mx/ads/ga-audiences https://www.google.com.my/ads/ga-audiences https://www.google.com.pa/ads/ga-audiences https://www.google.com.pe/ads/ga-audiences https://www.google.com.ph/ads/ga-audiences https://www.google.com.pr/ads/ga-audiences https://www.google.com.sa/ads/ga-audiences https://www.google.com.sg/ads/ga-audiences https://www.google.com.sv/ads/ga-audiences https://www.google.com.tr/ads/ga-audiences https://www.google.com.tw/ads/ga-audiences https://www.google.com.uy/ads/ga-audiences https://www.google.com.vn/ads/ga-audiences https://www.google.de/ads/ga-audiences https://www.google.dk/ads/ga-audiences https://www.google.es/ads/ga-audiences https://www.google.gt/ads/ga-audiences https://www.google.hn/ads/ga-audiences https://www.google.hr/ads/ga-audiences https://www.google.ie/ads/ga-audiences https://www.google.it/ads/ga-audiences https://www.google.nl/ads/ga-audiences https://www.google.pl/ads/ga-audiences https://www.google.sv/ads/ga-audiences https://www.google.ae/pagead/1p-user-list https://www.google.ca/pagead/1p-user-list https://www.google.cl/pagead/1p-user-list https://www.google.co.cr/pagead/1p-user-list https://www.google.co.id/pagead/1p-user-list https://www.google.co.il/pagead/1p-user-list https://www.google.co.in/pagead/1p-user-list https://www.google.co.jp/pagead/1p-user-list https://www.google.co.kr/pagead/1p-user-list https://www.google.co.nz/pagead/1p-user-list https://www.google.co.uk/pagead/1p-user-list https://www.google.co.za/pagead/1p-user-list https://www.google.com.ar/pagead/1p-user-list https://www.google.com.au/pagead/1p-user-list https://www.google.com.br/pagead/1p-user-list https://www.google.com.co/pagead/1p-user-list https://www.google.com.do/pagead/1p-user-list https://www.google.com.ec/pagead/1p-user-list https://www.google.com.gt/pagead/1p-user-list https://www.google.com.hk/pagead/1p-user-list https://www.google.com.kw/pagead/1p-user-list https://www.google.com.mx/pagead/1p-user-list https://www.google.com.my/pagead/1p-user-list https://www.google.com.pa/pagead/1p-user-list https://www.google.com.pe/pagead/1p-user-list https://www.google.com.ph/pagead/1p-user-list https://www.google.com.pr/pagead/1p-user-list https://www.google.com.sa/pagead/1p-user-list https://www.google.com.sg/pagead/1p-user-list https://www.google.com.sv/pagead/1p-user-list https://www.google.com.tr/pagead/1p-user-list https://www.google.com.tw/pagead/1p-user-list https://www.google.com.uy/pagead/1p-user-list https://www.google.com.vn/pagead/1p-user-list https://www.google.de/pagead/1p-user-list https://www.google.dk/pagead/1p-user-list https://www.google.es/pagead/1p-user-list https://www.google.gt/pagead/1p-user-list https://www.google.hn/pagead/1p-user-list https://www.google.hr/pagead/1p-user-list https://www.google.ie/pagead/1p-user-list https://www.google.it/pagead/1p-user-list https://www.google.nl/pagead/1p-user-list https://www.google.pl/pagead/1p-user-list https://www.google.sv/pagead/1p-user-list https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://t.paypal.com https://www.paypalobjects.com https://fonts.gstatic.com/ https://www.google.com https://www.googleadservices.com https://www.googletagmanager.com https://siteintercept.qualtrics.com https://c1.scryfall.com/file/scryfall-cards https://cards.scryfall.io https://img.tcgplayer.com https://mp-assets.tcgplayer.com/ https://mktg-assets.tcgplayer.com/ https://tcgplayer-cdn.tcgplayer.com/ https://static.tcgplayer.com/ https://static-direct.tcgplayer.com/; script-src-elem &#39;self&#39; &#39;unsafe-inline&#39; http://127.0.0.1:7710 http://127.0.0.1:7711 https://static.ada.support https://d14jnfavjicsbe.cloudfront.net https://googleads.g.doubleclick.net https://api.getdrip.com https://tag.getdrip.com https://www.googleadservices.com https://www.googletagmanager.com https://js.hcaptcha.com https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://cdn.siftscience.com https://cdn.segment.tcgplayer.com https://sleeknotecustomerscripts.sleeknote.com https://sleeknotestaticcontent.sleeknote.com https://tcgplayer-cdn.tcgplayer.com/; style-src-elem &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.googletagmanager.com; font-src &#39;self&#39; data: https://fonts.gstatic.com; script-src &#39;self&#39; &#39;unsafe-eval&#39; &#39;unsafe-hashes&#39; &#39;unsafe-inline&#39; https://static.ada.support https://connect.facebook.net https://tag.getdrip.com https://www.googletagmanager.com https://js.hcaptcha.com/ https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://cdn.siftscience.com https://sleeknotestaticcontent.sleeknote.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://tcgplayer-cdn.tcgplayer.com/; style-src &#39;self&#39; &#39;unsafe-inline&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; connect-src &#39;self&#39; wss: https://rollout.ada.support https://static.ada.support https://tcgplayer.ada.support https://api.braintreegateway.com https://payments.braintree-api.com https://payments.sandbox.braintree-api.com https://origin-analytics-sand.sandbox.braintree-api.com https://client-analytics.braintreegateway.com https://api.sandbox.braintreegateway.com https://connect.facebook.net https://stats.g.doubleclick.net https://analytics.google.com https://google.com https://www.google.com https://www.google-analytics.com https://www.googleadservices.com https://region1.analytics.google.com https://vc.hotjar.io https://content.hotjar.io https://metrics.hotjar.io https://bam-cell.nr-data.net https://www.paypal.com https://www.sandbox.paypal.com https://siteintercept.qualtrics.com https://api.cdn.amplitude.tcgplayer.com https://flag.cdn.amplitude.tcgplayer.com https://cdn.segment.tcgplayer.com https://tcgplayer-cdn.tcgplayer.com https://newassets.hcaptcha.com https://data.tcgplayer.com https://mp-events-api.tcgplayer.com/ https://features.tcgplayer.com/ https://mpgateway.tcgplayer.com/ https://infinite-api.tcgplayer.com/ https://homepage.marketplace.tcgplayer.com/ https://marketplace-navigation.tcgplayer.com/ https://mpapi.tcgplayer.com/ https://mp-search-api.tcgplayer.com/ https://geo-ip-service.tcgplayer.com; frame-src &#39;self&#39; https://assets.braintreegateway.com https://bid.g.doubleclick.net https://newassets.hcaptcha.com https://td.doubleclick.net https://www.googletagmanager.com https://checkout.paypal.com https://www.paypal.com https://www.paypalobjects.com https://tcgplayer.qualtrics.com https://www.sandbox.paypal.com https://tcgplayer.ada.support; manifest-src &#39;self&#39;; media-src &#39;self&#39;; worker-src blob:;\">\n\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,viewport-fit=cover\">\n    <meta name=\"version-build\" content=\"4251\">\n    <meta name=\"version-hash\" content=\"6332b2cd884df3c1194651177f2f4962cfda80cb\">\n    <meta name=\"version-name\" content=\"origin/master\">\n    <meta name=\"facebook-domain-verification\" content=\"ujhbh9jn9ccwotzunt4vehh5l26w5i\">\n    <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\">\n    <link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\">\n    <link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">\n    <link rel=\"manifest\" href=\"/site.webmanifest\">\n\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" crossorigin=\"\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Barlow:wght@700&amp;family=Barlow+Semi+Condensed:wght@600;700&amp;display=swap\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\">\n    <title>\n      Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer\n    </title>\n    <meta name=\"description\" content=\"Buy Magic: The Gathering Cards, Yu-Gi-Oh! Cards, Pokémon Cards, One Piece CCG, Digimon TCG, Flesh and Blood, Lorcana, CCG Supplies, and more.\">\n    <meta property=\"fb:admins\" content=\"643675054,673820199,201100738,44203888,549856811,50701868,1195548639\">\n    <meta property=\"fb:app_id\" content=\"136270296395166\">\n    <!-- Make sure consent manager displays over everything -->\n    <style>\n      body > div[data-consent-manager-dialog] > div {\n        z-index: 2147483647;\n      }\n    </style>\n    <script type=\"module\" crossorigin=\"\" src=\"/js/index-D0ugDqHr.js\" integrity=\"sha384-sWXRjIl59XrhTSi2gSPzINz61/HLMJKQL80zTfyNho2Cj5ENRBbUIQICJP4uX/Wj\"></script>\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/marketplace__mf_v__runtimeInit__mf_v__-swBO5l19.js\" integrity=\"sha384-G9KxHwEfPxrK2A+UBwIRaC0bvys1Gf/JTTMyRICjYmVbKFwQSVwmpJ6Dyt6biLfO\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/preload-helper-BlTxHScW.js\" integrity=\"sha384-DKSIMrdno3gmtKOIIzikG7sMlsNmM7opyYpsdtnzARTuOs4mtETLkcOEWuGLjeu0\">\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/css/index-Bc7HAokv.css\" integrity=\"sha384-blZaa2iikNCpR2bsPjKRUE7H3qkZwLYRLuBYOZhD5+apr8rOiajT28VTphwGcy4V\">\n  </head>\n\n  <body>\n    <div id=\"consent-container\" style=\"display: none\"></div>\n    <noscript>\n      <strong>\n        We're sorry but TCGplayer doesn't work properly without JavaScript\n        enabled. Please enable it to continue.\n      </strong>\n    </noscript>\n    <div id=\"app\"></div>\n  \n\n</body></html>"
+      },
+      {
+        "url": "https://www.tcgplayer.com/categories/trading-and-collectible-card-games/pokemon",
+        "status": 200,
+        "contentType": "text/html",
+        "dataStructure": "string",
+        "hasPokemonData": true,
+        "data": "<!DOCTYPE html><html lang=\"en\"><head>\n          <script type=\"module\" src=\"/js/hostInit-BQJIQhLu.js\" integrity=\"sha384-biZl/iSTLWYIJSrfiL1ZJ+T3xo6xcZt0WnlkLC5ziL4MTbvtZGgl28dRjWPO4fTj\"></script>\n        \n  <meta http-equiv=\"Content-Security-Policy\" content=\" default-src &#39;self&#39;; img-src &#39;self&#39; data: https://tcgplayer-marketing.s3.amazonaws.com https://www.facebook.com https://hexagon-analytics.com https://www.google.ae/ads/ga-audiences https://www.google.ca/ads/ga-audiences https://www.google.cl/ads/ga-audiences https://www.google.co.cr/ads/ga-audiences https://www.google.co.id/ads/ga-audiences https://www.google.co.il/ads/ga-audiences https://www.google.co.in/ads/ga-audiences https://www.google.co.jp/ads/ga-audiences https://www.google.co.kr/ads/ga-audiences https://www.google.co.nz/ads/ga-audiences https://www.google.co.uk/ads/ga-audiences https://www.google.co.za/ads/ga-audiences https://www.google.com.ar/ads/ga-audiences https://www.google.com.au/ads/ga-audiences https://www.google.com.br/ads/ga-audiences https://www.google.com.co/ads/ga-audiences https://www.google.com.do/ads/ga-audiences https://www.google.com.ec/ads/ga-audiences https://www.google.com.gt/ads/ga-audiences https://www.google.com.hk/ads/ga-audiences https://www.google.com.kw/ads/ga-audiences https://www.google.com.mx/ads/ga-audiences https://www.google.com.my/ads/ga-audiences https://www.google.com.pa/ads/ga-audiences https://www.google.com.pe/ads/ga-audiences https://www.google.com.ph/ads/ga-audiences https://www.google.com.pr/ads/ga-audiences https://www.google.com.sa/ads/ga-audiences https://www.google.com.sg/ads/ga-audiences https://www.google.com.sv/ads/ga-audiences https://www.google.com.tr/ads/ga-audiences https://www.google.com.tw/ads/ga-audiences https://www.google.com.uy/ads/ga-audiences https://www.google.com.vn/ads/ga-audiences https://www.google.de/ads/ga-audiences https://www.google.dk/ads/ga-audiences https://www.google.es/ads/ga-audiences https://www.google.gt/ads/ga-audiences https://www.google.hn/ads/ga-audiences https://www.google.hr/ads/ga-audiences https://www.google.ie/ads/ga-audiences https://www.google.it/ads/ga-audiences https://www.google.nl/ads/ga-audiences https://www.google.pl/ads/ga-audiences https://www.google.sv/ads/ga-audiences https://www.google.ae/pagead/1p-user-list https://www.google.ca/pagead/1p-user-list https://www.google.cl/pagead/1p-user-list https://www.google.co.cr/pagead/1p-user-list https://www.google.co.id/pagead/1p-user-list https://www.google.co.il/pagead/1p-user-list https://www.google.co.in/pagead/1p-user-list https://www.google.co.jp/pagead/1p-user-list https://www.google.co.kr/pagead/1p-user-list https://www.google.co.nz/pagead/1p-user-list https://www.google.co.uk/pagead/1p-user-list https://www.google.co.za/pagead/1p-user-list https://www.google.com.ar/pagead/1p-user-list https://www.google.com.au/pagead/1p-user-list https://www.google.com.br/pagead/1p-user-list https://www.google.com.co/pagead/1p-user-list https://www.google.com.do/pagead/1p-user-list https://www.google.com.ec/pagead/1p-user-list https://www.google.com.gt/pagead/1p-user-list https://www.google.com.hk/pagead/1p-user-list https://www.google.com.kw/pagead/1p-user-list https://www.google.com.mx/pagead/1p-user-list https://www.google.com.my/pagead/1p-user-list https://www.google.com.pa/pagead/1p-user-list https://www.google.com.pe/pagead/1p-user-list https://www.google.com.ph/pagead/1p-user-list https://www.google.com.pr/pagead/1p-user-list https://www.google.com.sa/pagead/1p-user-list https://www.google.com.sg/pagead/1p-user-list https://www.google.com.sv/pagead/1p-user-list https://www.google.com.tr/pagead/1p-user-list https://www.google.com.tw/pagead/1p-user-list https://www.google.com.uy/pagead/1p-user-list https://www.google.com.vn/pagead/1p-user-list https://www.google.de/pagead/1p-user-list https://www.google.dk/pagead/1p-user-list https://www.google.es/pagead/1p-user-list https://www.google.gt/pagead/1p-user-list https://www.google.hn/pagead/1p-user-list https://www.google.hr/pagead/1p-user-list https://www.google.ie/pagead/1p-user-list https://www.google.it/pagead/1p-user-list https://www.google.nl/pagead/1p-user-list https://www.google.pl/pagead/1p-user-list https://www.google.sv/pagead/1p-user-list https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://t.paypal.com https://www.paypalobjects.com https://fonts.gstatic.com/ https://www.google.com https://www.googleadservices.com https://www.googletagmanager.com https://siteintercept.qualtrics.com https://c1.scryfall.com/file/scryfall-cards https://cards.scryfall.io https://img.tcgplayer.com https://mp-assets.tcgplayer.com/ https://mktg-assets.tcgplayer.com/ https://tcgplayer-cdn.tcgplayer.com/ https://static.tcgplayer.com/ https://static-direct.tcgplayer.com/; script-src-elem &#39;self&#39; &#39;unsafe-inline&#39; http://127.0.0.1:7710 http://127.0.0.1:7711 https://static.ada.support https://d14jnfavjicsbe.cloudfront.net https://googleads.g.doubleclick.net https://api.getdrip.com https://tag.getdrip.com https://www.googleadservices.com https://www.googletagmanager.com https://js.hcaptcha.com https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://cdn.siftscience.com https://cdn.segment.tcgplayer.com https://sleeknotecustomerscripts.sleeknote.com https://sleeknotestaticcontent.sleeknote.com https://tcgplayer-cdn.tcgplayer.com/; style-src-elem &#39;self&#39; &#39;unsafe-inline&#39; https://fonts.googleapis.com https://www.googletagmanager.com; font-src &#39;self&#39; data: https://fonts.gstatic.com; script-src &#39;self&#39; &#39;unsafe-eval&#39; &#39;unsafe-hashes&#39; &#39;unsafe-inline&#39; https://static.ada.support https://connect.facebook.net https://tag.getdrip.com https://www.googletagmanager.com https://js.hcaptcha.com/ https://script.hotjar.com https://static.hotjar.com https://js-agent.newrelic.com https://www.paypal.com https://www.paypalobjects.com https://cdn.siftscience.com https://sleeknotestaticcontent.sleeknote.com https://siteintercept.qualtrics.com https://zn9mhdqubabxtedhq-tcgplayer.siteintercept.qualtrics.com https://tcgplayer-cdn.tcgplayer.com/; style-src &#39;self&#39; &#39;unsafe-inline&#39;; object-src &#39;none&#39;; base-uri &#39;self&#39;; connect-src &#39;self&#39; wss: https://rollout.ada.support https://static.ada.support https://tcgplayer.ada.support https://api.braintreegateway.com https://payments.braintree-api.com https://payments.sandbox.braintree-api.com https://origin-analytics-sand.sandbox.braintree-api.com https://client-analytics.braintreegateway.com https://api.sandbox.braintreegateway.com https://connect.facebook.net https://stats.g.doubleclick.net https://analytics.google.com https://google.com https://www.google.com https://www.google-analytics.com https://www.googleadservices.com https://region1.analytics.google.com https://vc.hotjar.io https://content.hotjar.io https://metrics.hotjar.io https://bam-cell.nr-data.net https://www.paypal.com https://www.sandbox.paypal.com https://siteintercept.qualtrics.com https://api.cdn.amplitude.tcgplayer.com https://flag.cdn.amplitude.tcgplayer.com https://cdn.segment.tcgplayer.com https://tcgplayer-cdn.tcgplayer.com https://newassets.hcaptcha.com https://data.tcgplayer.com https://mp-events-api.tcgplayer.com/ https://features.tcgplayer.com/ https://mpgateway.tcgplayer.com/ https://infinite-api.tcgplayer.com/ https://homepage.marketplace.tcgplayer.com/ https://marketplace-navigation.tcgplayer.com/ https://mpapi.tcgplayer.com/ https://mp-search-api.tcgplayer.com/ https://geo-ip-service.tcgplayer.com; frame-src &#39;self&#39; https://assets.braintreegateway.com https://bid.g.doubleclick.net https://newassets.hcaptcha.com https://td.doubleclick.net https://www.googletagmanager.com https://checkout.paypal.com https://www.paypal.com https://www.paypalobjects.com https://tcgplayer.qualtrics.com https://www.sandbox.paypal.com https://tcgplayer.ada.support; manifest-src &#39;self&#39;; media-src &#39;self&#39;; worker-src blob:;\">\n\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,viewport-fit=cover\">\n    <meta name=\"version-build\" content=\"4251\">\n    <meta name=\"version-hash\" content=\"6332b2cd884df3c1194651177f2f4962cfda80cb\">\n    <meta name=\"version-name\" content=\"origin/master\">\n    <meta name=\"facebook-domain-verification\" content=\"ujhbh9jn9ccwotzunt4vehh5l26w5i\">\n    <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\">\n    <link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\">\n    <link rel=\"apple-touch-icon\" href=\"/apple-touch-icon.png\">\n    <link rel=\"manifest\" href=\"/site.webmanifest\">\n\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" crossorigin=\"\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin=\"\">\n    <link rel=\"preload\" href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Barlow:wght@700&amp;family=Barlow+Semi+Condensed:wght@600;700&amp;display=swap\" as=\"style\" onload=\"this.onload=null;this.rel='stylesheet'\">\n    <title>\n      Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer\n    </title>\n    <meta name=\"description\" content=\"Buy Magic: The Gathering Cards, Yu-Gi-Oh! Cards, Pokémon Cards, One Piece CCG, Digimon TCG, Flesh and Blood, Lorcana, CCG Supplies, and more.\">\n    <meta property=\"fb:admins\" content=\"643675054,673820199,201100738,44203888,549856811,50701868,1195548639\">\n    <meta property=\"fb:app_id\" content=\"136270296395166\">\n    <!-- Make sure consent manager displays over everything -->\n    <style>\n      body > div[data-consent-manager-dialog] > div {\n        z-index: 2147483647;\n      }\n    </style>\n    <script type=\"module\" crossorigin=\"\" src=\"/js/index-D0ugDqHr.js\" integrity=\"sha384-sWXRjIl59XrhTSi2gSPzINz61/HLMJKQL80zTfyNho2Cj5ENRBbUIQICJP4uX/Wj\"></script>\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/marketplace__mf_v__runtimeInit__mf_v__-swBO5l19.js\" integrity=\"sha384-G9KxHwEfPxrK2A+UBwIRaC0bvys1Gf/JTTMyRICjYmVbKFwQSVwmpJ6Dyt6biLfO\">\n    <link rel=\"modulepreload\" crossorigin=\"\" href=\"/js/preload-helper-BlTxHScW.js\" integrity=\"sha384-DKSIMrdno3gmtKOIIzikG7sMlsNmM7opyYpsdtnzARTuOs4mtETLkcOEWuGLjeu0\">\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"/css/index-Bc7HAokv.css\" integrity=\"sha384-blZaa2iikNCpR2bsPjKRUE7H3qkZwLYRLuBYOZhD5+apr8rOiajT28VTphwGcy4V\">\n  </head>\n\n  <body>\n    <div id=\"consent-container\" style=\"display: none\"></div>\n    <noscript>\n      <strong>\n        We're sorry but TCGplayer doesn't work properly without JavaScript\n        enabled. Please enable it to continue.\n      </strong>\n    </noscript>\n    <div id=\"app\"></div>\n  \n\n</body></html>"
+      }
+    ]
+  },
+  "summary": {
+    "totalAPIs": 10,
+    "pokemonAPIs": 8,
+    "totalPokemonItems": 0,
+    "successRate": 0.9090909090909091
+  }
+}

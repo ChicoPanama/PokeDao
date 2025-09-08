@@ -1,0 +1,121 @@
+{
+  "sessionId": "tcgplayer_mega_harvest_1757305798202",
+  "timestamp": "2025-09-08T05:39:49.042Z",
+  "processedSets": 14,
+  "totalProducts": 4412,
+  "pokemonSets": [
+    {
+      "title": "Pokemon Complete Catalog (30,120+ cards)",
+      "url": "/search/pokemon/product?productLineName=pokemon&view=grid",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&view=grid",
+      "menuCategory": "Complete",
+      "type": "mega_catalog",
+      "priority": 1
+    },
+    {
+      "title": "Pokemon Search (All)",
+      "url": "/search/pokemon/product",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/product",
+      "menuCategory": "Search",
+      "type": "search",
+      "priority": 2
+    },
+    {
+      "title": "Pokemon Products (Paginated)",
+      "url": "/search/pokemon/product?productLineName=pokemon",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon",
+      "menuCategory": "Complete",
+      "type": "complete",
+      "priority": 3
+    },
+    {
+      "title": "Stellar Crown",
+      "url": "https://www.tcgplayer.com/search/pokemon/sv07-stellar-crown",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv07-stellar-crown",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "Shrouded Fable",
+      "url": "https://www.tcgplayer.com/search/pokemon/sv-shrouded-fable",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv-shrouded-fable",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "Twilight Masquerade",
+      "url": "https://www.tcgplayer.com/search/pokemon/sv06-twilight-masquerade",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv06-twilight-masquerade",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "Temporal Forces",
+      "url": "https://www.tcgplayer.com/search/pokemon/sv05-temporal-forces",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv05-temporal-forces",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "SV: Paldean Fates",
+      "url": "https://www.tcgplayer.com/search/pokemon/sv-paldean-fates",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv-paldean-fates",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "Paradox Rift",
+      "url": "https://www.tcgplayer.com/search/pokemon/sv04-paradox-rift",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv04-paradox-rift",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "SV: Scarlet & Violet 151",
+      "url": "https://www.tcgplayer.com/search/pokemon/sv-scarlet-and-violet-151",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv-scarlet-and-violet-151",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "McDonald's Promos 2023",
+      "url": "https://www.tcgplayer.com/search/pokemon/mcdonalds-promos-2023",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/mcdonalds-promos-2023",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "Obsidian Flames",
+      "url": "https://www.tcgplayer.com/search/pokemon/sv03-obsidian-flames",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv03-obsidian-flames",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "Paldea Evolved",
+      "url": "https://www.tcgplayer.com/search/pokemon/sv02-paldea-evolved",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/sv02-paldea-evolved",
+      "menuCategory": "Latest Sets",
+      "type": "set"
+    },
+    {
+      "title": "All Pokemon Products",
+      "url": "/search/pokemon/product?productLineName=pokemon&page=1",
+      "fullUrl": "https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&page=1",
+      "menuCategory": "Main",
+      "type": "main"
+    }
+  ],
+  "errors": [
+    {
+      "context": "Pokemon Complete Catalog (30,120+ cards)",
+      "message": "page.evaluate: Execution context was destroyed, most likely because of a navigation",
+      "timestamp": "2025-09-08T04:32:06.952Z"
+    },
+    {
+      "context": "All Pokemon Products",
+      "message": "page.evaluate: Target page, context or browser has been closed",
+      "timestamp": "2025-09-08T05:39:49.011Z"
+    }
+  ]
+}

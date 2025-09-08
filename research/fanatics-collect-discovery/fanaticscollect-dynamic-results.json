@@ -1,0 +1,278 @@
+[
+  {
+    "url": "https://app.fanaticscollect.com/graphql?webGlobalAuctionsQuery",
+    "method": "POST",
+    "resourceType": "fetch",
+    "headers": {
+      "x-platform": "WEB",
+      "authorization": "",
+      "x-platform-app": "collect",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-cache-key": "webGlobalAuctionsQuery-44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "x-session-id": "c45725a4-447d-4dfe-bbe6-45eb5ede3591"
+    },
+    "response": {
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "hasJsonData": true
+    }
+  },
+  {
+    "url": "https://app.fanaticscollect.com/graphql?webSearchKeyQuery",
+    "method": "POST",
+    "resourceType": "fetch",
+    "headers": {
+      "x-platform": "WEB",
+      "authorization": "",
+      "x-platform-app": "collect",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-cache-key": "webSearchKeyQuery-44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "x-session-id": "c45725a4-447d-4dfe-bbe6-45eb5ede3591"
+    },
+    "response": {
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "hasJsonData": true
+    }
+  },
+  {
+    "url": "https://www.fanaticscollect.com/api/nav/site-wide-message",
+    "method": "GET",
+    "resourceType": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "response": {
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "hasJsonData": false
+    }
+  },
+  {
+    "url": "https://www.fanaticscollect.com/api/scripts/segment",
+    "method": "GET",
+    "resourceType": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "response": {
+      "status": 200,
+      "contentType": "application/javascript",
+      "hasJsonData": false
+    }
+  },
+  {
+    "url": "https://www.fanaticscollect.com/api/nav/site-wide-message",
+    "method": "GET",
+    "resourceType": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/weekly-auction?category=Trading+Card+Games+%3E+Pok%C3%A9mon+(English),Trading+Card+Games+%3E+Pok%C3%A9mon+(Japanese),Trading+Card+Games+%3E+Pok%C3%A9mon+(Other+Languages)&type=WEEKLY",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://app.fanaticscollect.com/graphql?webGlobalAuctionsQuery",
+    "method": "POST",
+    "resourceType": "fetch",
+    "headers": {
+      "x-platform": "WEB",
+      "authorization": "",
+      "x-platform-app": "collect",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-cache-key": "webGlobalAuctionsQuery-44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "x-session-id": "60f98de1-4f23-4024-8be2-111c521f2ed4"
+    }
+  },
+  {
+    "url": "https://app.fanaticscollect.com/graphql?webSearchSettingQuery",
+    "method": "POST",
+    "resourceType": "fetch",
+    "headers": {
+      "x-platform": "WEB",
+      "authorization": "",
+      "x-platform-app": "collect",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-cache-key": "webSearchSettingQuery-a36877a584a316242b99248d4b04c694b688fa99346090af53dd3059861fedd4",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "x-session-id": "60f98de1-4f23-4024-8be2-111c521f2ed4"
+    },
+    "response": {
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "hasJsonData": true
+    }
+  },
+  {
+    "url": "https://www.fanaticscollect.com/api/scripts/segment",
+    "method": "GET",
+    "resourceType": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/weekly-auction?category=Trading+Card+Games+%3E+Pok%C3%A9mon+(English),Trading+Card+Games+%3E+Pok%C3%A9mon+(Japanese),Trading+Card+Games+%3E+Pok%C3%A9mon+(Other+Languages)&type=WEEKLY",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://app.fanaticscollect.com/graphql?webListingsQuery",
+    "method": "POST",
+    "resourceType": "fetch",
+    "headers": {
+      "x-platform": "WEB",
+      "authorization": "",
+      "x-platform-app": "collect",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-cache-key": "webListingsQuery-b152fda7cb33108ec6b31dcff70251d446c5f53d3cf40baf1ea60eb4f71d090c",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "x-session-id": "60f98de1-4f23-4024-8be2-111c521f2ed4"
+    },
+    "response": {
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "hasJsonData": true
+    }
+  },
+  {
+    "url": "https://www.fanaticscollect.com/api/nav/site-wide-message",
+    "method": "GET",
+    "resourceType": "xhr",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/weekly-auction?type=WEEKLY",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "application/json, text/plain, */*",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://app.fanaticscollect.com/graphql?webGlobalAuctionsQuery",
+    "method": "POST",
+    "resourceType": "fetch",
+    "headers": {
+      "x-platform": "WEB",
+      "authorization": "",
+      "x-platform-app": "collect",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-cache-key": "webGlobalAuctionsQuery-44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "x-session-id": "0a9a6864-e566-438b-9bd5-81d0c6826455"
+    }
+  },
+  {
+    "url": "https://app.fanaticscollect.com/graphql?webSearchSettingQuery",
+    "method": "POST",
+    "resourceType": "fetch",
+    "headers": {
+      "x-platform": "WEB",
+      "authorization": "",
+      "x-platform-app": "collect",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-cache-key": "webSearchSettingQuery-a36877a584a316242b99248d4b04c694b688fa99346090af53dd3059861fedd4",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "x-session-id": "0a9a6864-e566-438b-9bd5-81d0c6826455"
+    }
+  },
+  {
+    "url": "https://www.fanaticscollect.com/api/scripts/segment",
+    "method": "GET",
+    "resourceType": "script",
+    "headers": {
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/weekly-auction?type=WEEKLY",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://app.fanaticscollect.com/graphql?webListingsQuery",
+    "method": "POST",
+    "resourceType": "fetch",
+    "headers": {
+      "x-platform": "WEB",
+      "authorization": "",
+      "x-platform-app": "collect",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-cache-key": "webListingsQuery-714c7e7946ac185a7134492fd986630bfccaa98201cf4bd9b31a2b26bcf12d09",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "x-session-id": "0a9a6864-e566-438b-9bd5-81d0c6826455"
+    }
+  },
+  {
+    "url": "https://app.fanaticscollect.com/graphql?webListingsQuery",
+    "method": "POST",
+    "resourceType": "fetch",
+    "headers": {
+      "x-platform": "WEB",
+      "authorization": "",
+      "x-platform-app": "collect",
+      "sec-ch-ua-platform": "\"macOS\"",
+      "referer": "https://www.fanaticscollect.com/",
+      "sec-ch-ua": "\"Not=A?Brand\";v=\"24\", \"Chromium\";v=\"140\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-cache-key": "webListingsQuery-1e2ab1dccc033dd85754e96864119eaf337fce9fc8f2b92d984b7dd12e0c46ea",
+      "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "accept": "*/*",
+      "content-type": "application/json",
+      "x-session-id": "0a9a6864-e566-438b-9bd5-81d0c6826455"
+    }
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "hero": {
+    "altText": "Shop Fabled",
+    "buttonText": "Shop Now",
+    "buttonURL": "/search/lorcana-tcg/fabled?productLineName=lorcana-tcg&setName=fabled&wpnSeller=true&view=grid",
+    "imageURL": "https://mktg-assets.tcgplayer.com/web/release/2025-09/lor_fabled_hero_1920x300_v1%402x.jpg",
+    "subtitle": "Disney Lorcana",
+    "textAlignment": "center",
+    "textColor": "white",
+    "title": "Fabled",
+    "active": false,
+    "productLineAffinity": [
+      "Default"
+    ]
+  },
+  "smallFeatures": {
+    "productLineAffinity": [
+      "Default"
+    ],
+    "features": [
+      {
+        "altText": "The Bestselling MTG Cards of the Week",
+        "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-09/MTG-The-Bestselling-Magic-The-Gathering-Cards-This-Week-05-09-2025-Big-Content-Burger.jpg",
+        "destinationURL": "https://www.tcgplayer.com/content/article/Top-10-Bestselling-MTG-Cards-of-the-Week-09-05-2025/289adc3e-06c0-42b0-821a-3df332ce4998/"
+      },
+      {
+        "altText": "Best Decks From the World Championship",
+        "imageURL": "https://mktg-assets.tcgplayer.com/content/yugioh/2025-09/05/YGO-Best-Decks-World-Championship-2025-Large-Burger.jpg",
+        "destinationURL": "https://www.tcgplayer.com/content/article/The-Best-Yu-Gi-Oh-Decks-From-The-2025-World-Championship/72ec8ac7-a9d3-4e97-bdb2-792ed49fbddb"
+      },
+      {
+        "altText": "How To Beat Quinlan Tarkintown In Star Wars Unlimited",
+        "imageURL": "https://mktg-assets.tcgplayer.com/content/star-wars-unlimited/2025/09/SWU_How-To-Beat-Quinlan-Tarkintown-In-Star-Wars-Unlimited_0905_swu_large-hamburger.jpg",
+        "destinationURL": "https://www.tcgplayer.com/content/article/How-To-Beat-Quinlan-Tarkintown-In-Star-Wars-Unlimited/34ca6ab6-a974-4a1b-b84b-42debf8ba120/"
+      },
+      {
+        "altText": "The Biggest Price Spikes in Pokémon this Week",
+        "imageURL": "https://mktg-assets.tcgplayer.com/content/pokemon/_2025/SEP/03/PKMN-Spikes-Sep-4-2025-Big-Burger.jpg",
+        "destinationURL": "https://www.tcgplayer.com/content/article/The-Biggest-Price-Spikes-in-Pok%C3%A9mon-this-Week-09-04-2025/49e17a9a-75dc-4da8-8453-5fe1c34a931d/"
+      },
+      {
+        "altText": "The Biggest Price Spikes in Magic This Week",
+        "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-09/MTG-The-Biggest-Price-Spikes-in-Magic-The-Gathering-This-Week-09-04-2025-Big-Content-Burger.jpg",
+        "destinationURL": "https://www.tcgplayer.com/content/article/The-Biggest-Price-Spikes-in-Magic-The-Gathering-This-Week-09-04-2025/d6e3494b-e183-4d4d-b95c-03fe4a96afcc/"
+      },
+      {
+        "altText": "The Best Cards You Might Have Missed From Fabled",
+        "imageURL": "https://mktg-assets.tcgplayer.com/content/lorcana/2025-09/LOR_The-Best-Cards-You-Missed-From-Fabled_0903_lor_large-hamburger.jpg",
+        "destinationURL": "https://www.tcgplayer.com/content/article/The-Best-Cards-You-Might-Have-Missed-From-Fabled/4a5e62e1-7668-4973-9077-a8f597886e46/"
+      },
+      {
+        "altText": "Shop Edge of Eternities",
+        "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-08/borg/Button-MTG.jpg",
+        "destinationURL": "/search/magic/edge-of-eternities?productLineName=magic&setName=edge-of-eternities&page=1&view=list&wpnSeller=true"
+      },
+      {
+        "altText": "Shop Disney Lorcana: Fabled",
+        "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-08/borg/Button-LOR.jpg",
+        "destinationURL": "/search/lorcana-tcg/fabled?view=grid&productLineName=lorcana-tcg&setName=fabled"
+      },
+      {
+        "altText": "Shop Black Bolt & White Flare",
+        "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-08/borg/Button-PKM.jpg",
+        "destinationURL": "/search/pokemon/product?productLineName=pokemon&setName=sv-black-bolt|sv-white-flare&page=1&view=grid"
+      },
+      {
+        "altText": "Shop Justice Hunters",
+        "imageURL": "https://mktg-assets.tcgplayer.com/web/promo/2025-08/borg/Button-YGO.jpg",
+        "destinationURL": "/search/yugioh/justice-hunters?productLineName=yugioh&setName=justice-hunters&view=grid"
+      }
+    ]
+  },
+  "largeFeatures": {
+    "productLineAffinity": [
+      "Default"
+    ],
+    "features": [
+      {
+        "altText": "10 Digimon Cards That Desperately Need Reprints - September 2025",
+        "imageURL": "https://mktg-assets.tcgplayer.com/content/digimon/2025/2025%2009/DIG_10-Digimon-Cards-That-Desperately-Need-Reprints_0904_dgm_marketplace-featured_desktop.jpg",
+        "mobileImageURL": "https://mktg-assets.tcgplayer.com/content/digimon/2025/2025%2009/DIG_10-Digimon-Cards-That-Desperately-Need-Reprints_0904_dgm_marketplace-featured_mobile.jpg",
+        "destinationURL": "https://www.tcgplayer.com/content/article/10-Digimon-Cards-That-Desperately-Need-Reprints-September-2025/ebbfef9f-98c3-4ccb-93a8-89c82f85a9f4/"
+      }
+    ]
+  },
+  "latestSets": {
+    "title": "Default 07.21.25",
+    "productLineAffinity": [
+      "Default"
+    ],
+    "sets": [
+      {
+        "destinationURL": "https://www.tcgplayer.com/search/yugioh/justice-hunters",
+        "categoryName": "YuGiOh",
+        "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/JusticeHunters.png",
+        "setName": "Justice Hunters"
+      },
+      {
+        "destinationURL": "https://www.tcgplayer.com/search/digimon-card-game/cyber-eden",
+        "categoryName": "Digimon Card Game",
+        "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/CyberEden.png",
+        "setName": "Cyber Eden"
+      },
+      {
+        "destinationURL": "https://www.tcgplayer.com/search/shadowverse-evolve/bp10-gods-of-the-arcana",
+        "categoryName": "Shadowverse: Evolve",
+        "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/BP10GodsoftheArcana.png",
+        "setName": "BP10: Gods of the Arcana"
+      },
+      {
+        "destinationURL": "https://www.tcgplayer.com/search/grand-archive-tcg/distorted-reflections",
+        "categoryName": "Grand Archive TCG",
+        "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/DistortedReflections.png",
+        "setName": "Distorted Reflections"
+      },
+      {
+        "destinationURL": "https://www.tcgplayer.com/search/sorcery-contested-realm/dragonlord",
+        "categoryName": "Sorcery: Contested Realm",
+        "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/Dragonlord.png",
+        "setName": "Dragonlord"
+      },
+      {
+        "destinationURL": "https://www.tcgplayer.com/search/star-wars-unlimited/legends-of-the-force",
+        "categoryName": "Star Wars: Unlimited",
+        "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/LegendsoftheForce.png",
+        "setName": "Legends of the Force"
+      },
+      {
+        "destinationURL": "https://www.tcgplayer.com/search/hololive-official-card-game/blooming-radiance",
+        "categoryName": "hololive OFFICIAL CARD GAME",
+        "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/BloomingRadiance.png",
+        "setName": "Blooming Radiance"
+      },
+      {
+        "destinationURL": "https://www.tcgplayer.com/search/godzilla-card-game/booster-set-1-godzilla-vs-godzilla",
+        "categoryName": "Godzilla Card Game",
+        "imageURL": "https://tcgplayer-cdn.tcgplayer.com/set_icon/BoosterSet1GodzillaVSGodzilla.png",
+        "setName": "Booster Set 1: Godzilla VS. Godzilla"
+      }
+    ]
+  }
+}

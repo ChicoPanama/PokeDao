@@ -1,0 +1,1566 @@
+{
+  "data": {
+    "collectListings": [
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 21,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 82500,
+          "currency": "USD"
+        },
+        "favoritedCount": 25,
+        "highestBidder": false,
+        "id": "87d92354-7f79-11f0-b9e8-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWdIWisrRW9tQ1dGaXpsNmoxNE1SdkUzd3hqYm8wSzhQMlYzVUZmajdXMzBiS1Q3V29tMVVDc0poYjFsQzZ3eVJ3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjhmMzIwMmI1NWU4YTRkMWEyMTEyMTljYjhhNzk1ODc3MGM4ZGRlNDUwMDE0ZDRjMmNiZDE5Nzc4ZDkxZTQwOWUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkxXWXpmbjVvdDVhWkNXZTRURWRkZUJUbjFKa0hackF1ZXpaSmpsaSt4SFFPT1F5UGJsZ1JqZndadW43ZVpmaXZuMTVlS21UTVk4RXBaZHl4UWlWNmJBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImUzMTMyNjBjMzNlODRkNDMyMDIyMzE2YTY1MWU0OWMyNjliMGFlY2Y5NjUxMDQzOGFiMDEwYTNmODY2YTkzZGQifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkxXWXpmbjVvdDVhWkNXZTRURWRkZUJUbjFKa0hackF1ZXpaSmpsaSt4SFFPT1F5UGJsZ1JqZndadW43ZVpmaXZuMTVlS21UTVk4RXBaZHl4UWlWNmJBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImUzMTMyNjBjMzNlODRkNDMyMDIyMzE2YTY1MWU0OWMyNjliMGFlY2Y5NjUxMDQzOGFiMDEwYTNmODY2YTkzZGQifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWdIWisrRW9tQ1dGaXpsNmoxNE1Sdkhwa3lHTG9RbXg2dmsxU1VOQXVDbDdhWEhEMFNBMHVzUlVpcUdrbWgzNi9BPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImFhNDIzYTQzYWVkZTdjYzllNjIxZjhlNzUyZWZhZDI3OWY5MGE4Y2I3MzlmZDY1NTY3MjYwZDRmZWE0MzIzNTAifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkxXWXpmbjVvdDVhWkNXZTRURWRkZUJUbjFKa0hackF1ZXpaSmpsaSt4SFFoNXlvUHFPbUV3bXRDV2pVRm8zaVc3K0o5RC9FYjgrdWN6anA2SnU0dHFRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjFjYTYyMTBhMDNlODI4MGI0MWJjYzUzNjNjNjUzZGU4MWNmMzk3ZjZkMGUwZjdkZjI3MTlhYTViYjJkYzFiZjMifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkxXWXpmbjVvdDVhWkNXZTRURWRkZUJUbjFKa0hackF1ZXpaSmpsaSt4SFFoNXlvUHFPbUV3bXRDV2pVRm8zaVc3K0o5RC9FYjgrdWN6anA2SnU0dHFRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjFjYTYyMTBhMDNlODI4MGI0MWJjYzUzNjNjNjUzZGU4MWNmMzk3ZjZkMGUwZjdkZjI3MTlhYTViYjJkYzFiZjMifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWdIWisrRW9tQ1dGaXpsNmoxNE1SdkUzd3hqYm8wSzhQMlYzVUZmajdXMzBiS1Q3V29tMVVDc0poYjFsQzZ3eVJ3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjhmMzIwMmI1NWU4YTRkMWEyMTEyMTljYjhhNzk1ODc3MGM4ZGRlNDUwMDE0ZDRjMmNiZDE5Nzc4ZDkxZTQwOWUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWdIWisrRW9tQ1dGaXpsNmoxNE1Sdkhwa3lHTG9RbXg2dmsxU1VOQXVDbDdhWEhEMFNBMHVzUlVpcUdrbWgzNi9BPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImFhNDIzYTQzYWVkZTdjYzllNjIxZjhlNzUyZWZhZDI3OWY5MGE4Y2I3MzlmZDY1NTY3MjYwZDRmZWE0MzIzNTAifQ=="
+        ],
+        "integerId": 5304946,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 10770",
+        "marketplaceEyeAppeal": null,
+        "slug": "2016-pokemon-xy-evolutions-prerelease-staff-holo-charizard-11-cgc-85-nm-mt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "CGC Population 1 of 6 - None Graded Higher",
+        "title": "2016 Pokemon XY Evolutions Prerelease Staff Holo Charizard #11 CGC 8.5 NM-MT+"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 36,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 33000,
+          "currency": "USD"
+        },
+        "favoritedCount": 46,
+        "highestBidder": false,
+        "id": "a4c23ace-7f73-11f0-b7fd-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ii8rY1dmTTNSQ0QvNEhNZEMrd3hBSHJYK2ZLeFR0alJYd1EyWTg4UGlRTDI2U3RwcXhmZGpxNnRRMTJxanh0aU9OVTZBSkVXSWFmZFhYN3FpblhrQVBRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjExYzg1NjQ3YWMwOTA1OTVjZDZjM2UxZDA1ZTIyODA5OTMwMGE5OGI1MzkwMjUwZjI1N2I3MTkwODE2OGU0MDkifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlNrWC9vNi9iMTA1aVk4OVdUd0FhLzUzOC9PdkYwR3ZsWkN0ZEp1UzFpNXphMzcyajl0cUlEK25tMjFMdzV4aE11bXBBbTlGYjJHVnFmWnZvR1pMRmpRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImVjMjNjMzIyZmY3OGQ4MDVhNzI1ZWY4OGZlYTg1NzNlMzdmMGJlZTViOGQ3MjE2ZGRmNmIxYzc1ZTA5ODBkNmUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlNrWC9vNi9iMTA1aVk4OVdUd0FhLzUzOC9PdkYwR3ZsWkN0ZEp1UzFpNXphMzcyajl0cUlEK25tMjFMdzV4aE11bXBBbTlGYjJHVnFmWnZvR1pMRmpRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImVjMjNjMzIyZmY3OGQ4MDVhNzI1ZWY4OGZlYTg1NzNlMzdmMGJlZTViOGQ3MjE2ZGRmNmIxYzc1ZTA5ODBkNmUifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ii8rY1dmTTNSQ0QvNEhNZEMrd3hBSHJYK2ZLeFR0alJYd1EyWTg4UGlRTDNWSjRoUThVMmtwYm1BS2d6Wjc4SUdCSXZXSiszcnRCaDYvNUU5OVRFbEh3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImFmYzU4YzRjMjBmODQ4N2NiZGVjYjExMWYyNDM0Y2Q5ZmYwMzE4MjdhMmYzM2FkYTVmMWQ0ODdiNTNhZTU1MzgifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlNrWC9vNi9iMTA1aVk4OVdUd0FhLzUzOC9PdkYwR3ZsWkN0ZEp1UzFpNXkyZXZvdUFiNGdQdzlVVkgzbjNPdEVlUkJJV3FyWXRDTWRJTHBNcGVWUlBnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjI0MjU5M2M5YmYxYjczNzJkYzJiY2VlYWQyNDE0ZmQ0MjRkM2Q3NDkzN2ViNWZmMGQ5ZTM3MzMzNjFiMGI5YjUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlNrWC9vNi9iMTA1aVk4OVdUd0FhLzUzOC9PdkYwR3ZsWkN0ZEp1UzFpNXkyZXZvdUFiNGdQdzlVVkgzbjNPdEVlUkJJV3FyWXRDTWRJTHBNcGVWUlBnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjI0MjU5M2M5YmYxYjczNzJkYzJiY2VlYWQyNDE0ZmQ0MjRkM2Q3NDkzN2ViNWZmMGQ5ZTM3MzMzNjFiMGI5YjUifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ii8rY1dmTTNSQ0QvNEhNZEMrd3hBSHJYK2ZLeFR0alJYd1EyWTg4UGlRTDI2U3RwcXhmZGpxNnRRMTJxanh0aU9OVTZBSkVXSWFmZFhYN3FpblhrQVBRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjExYzg1NjQ3YWMwOTA1OTVjZDZjM2UxZDA1ZTIyODA5OTMwMGE5OGI1MzkwMjUwZjI1N2I3MTkwODE2OGU0MDkifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ii8rY1dmTTNSQ0QvNEhNZEMrd3hBSHJYK2ZLeFR0alJYd1EyWTg4UGlRTDNWSjRoUThVMmtwYm1BS2d6Wjc4SUdCSXZXSiszcnRCaDYvNUU5OVRFbEh3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImFmYzU4YzRjMjBmODQ4N2NiZGVjYjExMWYyNDM0Y2Q5ZmYwMzE4MjdhMmYzM2FkYTVmMWQ0ODdiNTNhZTU1MzgifQ=="
+        ],
+        "integerId": 5304388,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 10268",
+        "marketplaceEyeAppeal": null,
+        "slug": "2004-pokemon-japanese-promo-meiji-chocolate-charizard-54-psa-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2004 Pokemon Japanese Promo Meiji Chocolate Charizard #54 PSA 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 20,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 45000,
+          "currency": "USD"
+        },
+        "favoritedCount": 35,
+        "highestBidder": false,
+        "id": "a6a780b4-76e6-11f0-b90d-0267d1dc09b9",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhRaGtCY0VSSkVPcXhxNm5VZkNZNTBWM0RkdkdUUmQ2bE9sWFArcGdpeml6d0s0ancycjFxbityM09VVnFsUnVWdHJCcUZyeW0vOFdSSDg3RmlkMEV3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImMyNTU1MGM1NTgyYTQ2ODk2NWQ2NmM0OGUxNGVmODZiMWVhZDViZDM0MDJiMDE0MzYwNDllYjc2MWFjZjJkY2IifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRhQ0tiWkdMOXE3anFvYjJjbFVjWWNPMk5lWXM1T1NIRUdFMVY1SE5RbzB6UC8wWG1vYzlqeEdyNU9UUnYyb3RvREdKbzZHeWRuaXpzRHl1ZGt3b2NnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImZhNTk0NjRlMjYzYzQwNzI4M2QxODZkNGU4ZmI3NzNlZDI0NzlmNDVlZjczMTdlZDM4YTYzNmQ1ODRjZGJjMGEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InBMOWE4UFRQOGM5b25tSC9vOExwSGpGa05tOVlzMUhVUERObkJsd1Roc1pyWGJOeXhzcEFUZUhieTBqL0Y1MC9lRE93dU5sWUgzeTU3bHExcmtnR2xBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6Ijc5YWZkZDkxYjJhYTMwNTY3OTViNDBmYTBjZTFmMWQyYmFlNWY3MWU0NzJiNGM3MmQ4NzlmMjA2ODhjZTk3NWQifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhRaGtCY0VSSkVPcXhxNm5VZkNZNTBWM0RkdkdUUmQ2bE9sWFArcGdpempOZWtLb29CWEVYQXdZenB0NnFoN1FCRm9XZlQ0NVdKUEI0OURBeXI3K0hnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImU1NjQ2NzQ1OWMyOTVlMTg5ZWUyODEzMzUxMDAzZGEzMWQ0ODEyMzljOWZjODJlYzM0YTc1MmViNzNiN2EyOTMifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRhQ0tiWkdMOXE3anFvYjJjbFVjWWNPMk5lWXM1T1NIRUdFMVY1SE5RbzJITk4wK1REQ2VSSTFoa2J6L2x2QmZxL3BSdUhqY3NBWnhzV1NEWVVNbFNRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjkyZmQ5MGVjNWZlYTFhYzI5NzQ3ZjFmNzExZWMzNTU0NDUxMTRkNTQ3MDRhNTcxOGI4NjFkNmZlZDQzYzdhMDcifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InBMOWE4UFRQOGM5b25tSC9vOExwSGpGa05tOVlzMUhVUERObkJsd1Roc1ovTWs3QTZBbHdwZnI1MlBoM00rckN0L3BEbkdYQXh2V3JvMjI5VWFSYnNnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImU3MjRmZTU0NDAyOTJiYjFkZmIxNzI5MTVmMDM4MmE2Yjg0ZjMwMDA0MWZhYWZmYzI4NzExZGU4MzAyMDRiYmYifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhRaGtCY0VSSkVPcXhxNm5VZkNZNTBWM0RkdkdUUmQ2bE9sWFArcGdpeml6d0s0ancycjFxbityM09VVnFsUnVWdHJCcUZyeW0vOFdSSDg3RmlkMEV3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImMyNTU1MGM1NTgyYTQ2ODk2NWQ2NmM0OGUxNGVmODZiMWVhZDViZDM0MDJiMDE0MzYwNDllYjc2MWFjZjJkY2IifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlhRaGtCY0VSSkVPcXhxNm5VZkNZNTBWM0RkdkdUUmQ2bE9sWFArcGdpempOZWtLb29CWEVYQXdZenB0NnFoN1FCRm9XZlQ0NVdKUEI0OURBeXI3K0hnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImU1NjQ2NzQ1OWMyOTVlMTg5ZWUyODEzMzUxMDAzZGEzMWQ0ODEyMzljOWZjODJlYzM0YTc1MmViNzNiN2EyOTMifQ=="
+        ],
+        "integerId": 5278659,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 9608",
+        "marketplaceEyeAppeal": null,
+        "slug": "2000-topps-chrome-pokemon-series-1-charizard-6-psa-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2000 Topps Chrome Pokemon Series 1 Charizard #6 PSA 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 29,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 260000,
+          "currency": "USD"
+        },
+        "favoritedCount": 29,
+        "highestBidder": false,
+        "id": "55339306-843f-11f0-b4a4-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ino3S1ZHem9lZHZkSlV0SHRucmkwWUlad0tVWXNpNDVhMjhxUTVMZVlTQ0hhNXdqQjBOblJDM3MwaWtJUVU3bEgvbzNLMWl0eE1pTmZkZHhXQWdZRFRnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjZhMmNkZjMzZWQ5NmE5Zjg2MzViOWIwNWY5YTAzZjkyMzYwYjQ0OWE4MTAwYzlmZDBlY2VmNzE0OTliZjA5M2MifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InQ5T3lPaWEybTJwMkYvYmExaTUzWTExaUw1VHpLaVJLUUY0MlVYM09hWWpiUDl2Z2JzdFZSS1Jxd01ZSUppV3owZEhROHNKQUZOditLeFNMNEpBZ0RBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImQ0NDdmZTYwNGEyNGUwMDM5MzE3ODM1Yjg0NWU5NzI3N2EyYmRmNjE1ODI5ZGVjYTYzZTYwODlhY2I5OTJmZDIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InowZU1uUFZVdFV1VFIrUjYzc1pSUmNnd2kwdHhWTlRYVStUMXNVQ3BnRlpPYlh3TGRzZjZqZWNtSXNhcVFjSEUrT0hvMnIzOC9SM1Fvb2k0MGZRVTdBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjNhMjNiMWVmNGIwNzEzOWE2YzgzZmRiNGVlMDE4YjQzZTY3NmFmNWJhN2U1YjA0N2E0NjAyNDgyNDY5MThlMGYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ino3S1ZHem9lZHZkSlV0SHRucmkwWUlad0tVWXNpNDVhMjhxUTVMZVlTQ0hhNXdqQjBOblJDM3MwaWtJUVU3bEh3V0VvUE9UUGcxcU1oNDBVaW5iVXNBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImFiZmM3OTg5NTJlNjkwMTBjMGJjODgzMzY3NTQ3NDVjMWY1NzYyOTg0OWVjZmU5NjA4MzNiMGQ5YWY0NTVhZTEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InQ5T3lPaWEybTJwMkYvYmExaTUzWTExaUw1VHpLaVJLUUY0MlVYM09hWWpiUDl2Z2JzdFZSS1Jxd01ZSUppV3o4UGI1bG96QU1JVlJzK0FaM3ZLWG53PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImM1YjZkNDA1YzAyYjE1ZDZlNTk4NGRmODg5ZDhlODRmOTU2NTFhZjBiODBiMTZkNDgxN2NkZDE4ZjQxOGQ1MWQifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InowZU1uUFZVdFV1VFIrUjYzc1pSUmNnd2kwdHhWTlRYVStUMXNVQ3BnRlpPYlh3TGRzZjZqZWNtSXNhcVFjSEVCb3JydDZnVjhLcUlJeGF4enE0eURBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjFkMDA3OWJmYjIyNTE1MWE1YWI3MjlmODNmZjNlMzQ0Nzk5N2ZkMDQ3ZmJhNWU3ZjFlMTM5NTdiNDg2MzBmNDAifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ino3S1ZHem9lZHZkSlV0SHRucmkwWUlad0tVWXNpNDVhMjhxUTVMZVlTQ0hhNXdqQjBOblJDM3MwaWtJUVU3bEgvbzNLMWl0eE1pTmZkZHhXQWdZRFRnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjZhMmNkZjMzZWQ5NmE5Zjg2MzViOWIwNWY5YTAzZjkyMzYwYjQ0OWE4MTAwYzlmZDBlY2VmNzE0OTliZjA5M2MifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ino3S1ZHem9lZHZkSlV0SHRucmkwWUlad0tVWXNpNDVhMjhxUTVMZVlTQ0hhNXdqQjBOblJDM3MwaWtJUVU3bEh3V0VvUE9UUGcxcU1oNDBVaW5iVXNBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImFiZmM3OTg5NTJlNjkwMTBjMGJjODgzMzY3NTQ3NDVjMWY1NzYyOTg0OWVjZmU5NjA4MzNiMGQ5YWY0NTVhZTEifQ=="
+        ],
+        "integerId": 5319096,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 8438F1",
+        "marketplaceEyeAppeal": null,
+        "slug": "1999-pokemon-base-set-holo-charizard-4-cgc-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1999 Pokemon Base Set Holo Charizard #4 CGC 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 21,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 157500,
+          "currency": "USD"
+        },
+        "favoritedCount": 48,
+        "highestBidder": false,
+        "id": "4c6f0238-8132-11f0-ba0f-0afcc285279b",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRkWS9uK3RzR0E5MVNCSEw1RDBQOTQ0ZXllQ3hpV1RTL3ZjTU9zbVRtVm9kdnJFeXF1TEhJR2JKSHVmdk5ycWoxdkMrTVRjZUFyaEprR1MwT21VTmJnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImI2YjYyZmJmM2U4MmRjYzlmZWZiNzllZDExMzA0MjVkZDljMWY2OGE2MzNlNjgzOTMwMTc1NmJjNzVjZDAzNmEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjYvTXpaKzZIdjZ2TVFMclA3UTIrOXNNZ3BHQXJScnJTSDRXRWo4dnV1cU15Q2t2c3hMRVBjVDUyTld5V1ViVkgrZzVTaG1JWXM3TFBuRnVXSGQvTkVnPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjQ4MzAwMDEwMTA1ODFhN2ZmNTI5YTFlZWYyMGVmYjQzMmQzYWQ4ZThlN2JjNDBmZmMxY2M5YzNkYWE3ZDNkOTEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InBGUUlOeTVsVnNJSzV3ZnE5RmtqSHpPOVVqQWhNU1VuTXdLRmd5QXdUeXJ6ZWlCZUFpUGRhU0pJeGNBSHhnN2p2ZkY1bjdRVUo2SGtHL1BmNnIvQXh3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjVmNWNlMmM4NTU5ZDkyOWFkN2RhN2FjMTJmNTE3M2EzZDc0MGFjY2RjOTVjNWE2OGJkYjA5ZDhhMWY3NTc2NDkifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRkWS9uK3RzR0E5MVNCSEw1RDBQOTQ0ZXllQ3hpV1RTL3ZjTU9zbVRtVm9kdnJFeXF1TEhJR2JKSHVmdk5ycWpreUlnQlBMMzBTanpDakUyeXZhcVZ3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImU5NWI3OGQyYTJmNmNmYzA2NWUxMjNkMTliMDc3OWUzZjYzMzQxNDcxNzRlYzBlZjhhMjU3ZGQ5YWNjMzQyMGYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjYvTXpaKzZIdjZ2TVFMclA3UTIrOXNNZ3BHQXJScnJTSDRXRWo4dnV1cU15Q2t2c3hMRVBjVDUyTld5V1ViVkh1R0tGUjR0UU5TZGdrUG5RWHZ3MStBPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImQ5YTY3NjRjNmZmYjlhYWYwMDRiMjFhOWMzNzc3MGI1NTA4MjY4YjdlMjVlY2U5YTVmMDkxNzRjNzBlNzNlM2EifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InBGUUlOeTVsVnNJSzV3ZnE5RmtqSHpPOVVqQWhNU1VuTXdLRmd5QXdUeXJ6ZWlCZUFpUGRhU0pJeGNBSHhnN2pVVCtPRVBGTHk4QlVoaFhkd3NvSml3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjJmOTk3MTUzNzQ2ZWFmOWNjN2JlNjg2OWNmNzg3N2M1MmQ2ODgzNjBhNDU3OTc1NjNkOTUzYTc1ZWQ4Yjc2ZjYifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRkWS9uK3RzR0E5MVNCSEw1RDBQOTQ0ZXllQ3hpV1RTL3ZjTU9zbVRtVm9kdnJFeXF1TEhJR2JKSHVmdk5ycWoxdkMrTVRjZUFyaEprR1MwT21VTmJnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImI2YjYyZmJmM2U4MmRjYzlmZWZiNzllZDExMzA0MjVkZDljMWY2OGE2MzNlNjgzOTMwMTc1NmJjNzVjZDAzNmEifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRkWS9uK3RzR0E5MVNCSEw1RDBQOTQ0ZXllQ3hpV1RTL3ZjTU9zbVRtVm9kdnJFeXF1TEhJR2JKSHVmdk5ycWpreUlnQlBMMzBTanpDakUyeXZhcVZ3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImU5NWI3OGQyYTJmNmNmYzA2NWUxMjNkMTliMDc3OWUzZjYzMzQxNDcxNzRlYzBlZjhhMjU3ZGQ5YWNjMzQyMGYifQ=="
+        ],
+        "integerId": 5309121,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 10258",
+        "marketplaceEyeAppeal": null,
+        "slug": "2004-pokemon-japanese-promo-battle-road-spring-charizard-2-psa-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2004 Pokemon Japanese Promo Battle Road Spring Charizard #2 PSA 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 11,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 8400,
+          "currency": "USD"
+        },
+        "favoritedCount": 15,
+        "highestBidder": false,
+        "id": "63fb15a2-7f9a-11f0-8c90-0a3ddb96fda9",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWx2aWZVZy82Y0N2TXZ6T1FZYVdrUFdEU2hjcWc5REEzclVPSkhLWHVIUUY3cHZpcXBuanZtTk5FMERoNGszcUNnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjllZGFhNjc4ZTk1YTljOGRiNzFhMGRkZjFlZWYwYTliNGU2MTc2OGZjZjkwMzllMzc1ODIwNjJkYTQ0ZThjZDkifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlByTVExb2IyYlkrZEo5Um1DV1l0ODZUcjVOdUc2WUVJVm9VbDIyOEIweWpxVDBycjlWQVlIaFZGTURCTzBlQWlHeEhiY0cwSlQ0SXEzR2ZLQnhEL1NRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjFlNjU0MzU2OGE2OWIzNGZhMWNjYWU2MTUzZjQzNmJkZmQ3MjFlYzNmYTBlOWU2YjhjNDM3MTY3MmIzMDliYjMifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5ESVNRaFZTN1RUYWU4dlg0dnhUNk1QRHNZOXBqSWJuSDlGL2VLeisxVUMwOU1hdW5QVDhDNCtJb3BrczRIYm5CYk5BeWxKYWRDZUh1cDdtMlNBSzh3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImY0ZTMwYzQ3NTg1MTM3YzAwMmQwMDI4NDUwNzFmOWNlMDU2YzA2ZjE3NzFhZTU1YjM2YTg4ZWQwZmQ0MzBiNjIifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWx2aWZVZy82Y0N2TXZ6T1FZYVdrUFU3N1hWQUxRdlhybk9qSjd6ZUNHenI0YjlDUkdROU5aZ3lucWpGN25GZEhRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImJlYWE3NzVmY2YyYWVmMTEwZDY5MDczMjRjMjYxZTY1Y2VhZTFkZjY3M2Q3NzRkMDExODJmOTY1NGY0MjlhODEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlByTVExb2IyYlkrZEo5Um1DV1l0ODZUcjVOdUc2WUVJVm9VbDIyOEIweWlXRGNtRlJXakE1K2orMnV3UHFQQ1NKN2x5TnZWZW1ZZWlHUU1HcWVPNmlnPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjY2MzljYTY2YWIyMDExMDNlODhlNzI3YjAyYTc5OTE5Zjk2MWQ1YjFjZTAyM2MwMjM2MzExNjdkYTdkYzZkZmEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5ESVNRaFZTN1RUYWU4dlg0dnhUNk1QRHNZOXBqSWJuSDlGL2VLeisxVUNmRTVneWl2Q1RsQUlrQy8rOFg5MFR0SDFMNUJDb1lFbUt3SlF5VFlHK1pnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjQ0NmEwNWIwM2E0MTBmYTE0MzMxZTA2MWQwNjM3ZTE4ZTA2ZWNiMjUxZjg3OTQ2MzczYjE0MWZkOGMyNjA2ZDMifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWx2aWZVZy82Y0N2TXZ6T1FZYVdrUFdEU2hjcWc5REEzclVPSkhLWHVIUUY3cHZpcXBuanZtTk5FMERoNGszcUNnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjllZGFhNjc4ZTk1YTljOGRiNzFhMGRkZjFlZWYwYTliNGU2MTc2OGZjZjkwMzllMzc1ODIwNjJkYTQ0ZThjZDkifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWx2aWZVZy82Y0N2TXZ6T1FZYVdrUFU3N1hWQUxRdlhybk9qSjd6ZUNHenI0YjlDUkdROU5aZ3lucWpGN25GZEhRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImJlYWE3NzVmY2YyYWVmMTEwZDY5MDczMjRjMjYxZTY1Y2VhZTFkZjY3M2Q3NzRkMDExODJmOTY1NGY0MjlhODEifQ=="
+        ],
+        "integerId": 5306038,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 8229",
+        "marketplaceEyeAppeal": null,
+        "slug": "1998-pokemon-japanese-topsun-prism-holo-charizard-vs-cloyster-6-cgc-85-nm-mt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "CGC Population 1 of 2 - Four Graded Higher",
+        "title": "1998 Pokemon Japanese Topsun Prism Holo Charizard Vs Cloyster #6 CGC 8.5 NM-MT+"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 20,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 52500,
+          "currency": "USD"
+        },
+        "favoritedCount": 19,
+        "highestBidder": false,
+        "id": "2e5f0e3c-82bd-11f0-84e3-02c6bcfbd167",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InpaeWF5K1BSQUx5djdRUFpLZ3hRU3A4ZkRzL1NBalhNcXBBRExPWlJod3BYTm1uQTNGVnZhUnJBb0lmaDFpSmJMeFlUcGFFN1B4dER1WTV3OCtrZjJnPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImVjMjA4MzBlMDIwNTdhMWFjZTY0YjU3YzYzOWM2MDU4MWIxOThkNzkzM2NlMDI1MmEzYWY2OGZlZjBjOWE2ODEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkNqditwNGpRdVROekhVRHoyNis5ZGpCV1lnVElWTW9VUEg3eStBamp3THVwTzgxUFhIa0Vtbi95WnB2bm1HVHovMGJxRzBZSjMrSkthb1JsRDY3aEJnPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjAxYjgzNDIzYWJkN2I0NjQ1ZDllNjRlY2E2ZGU5YjJmNzI0Nzg4NDc0ZTg5OWQwNTgxNDBmMjgwODlmNDMxNDcifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImNBcGxjV2NYSCtpUC9Vc2F3L3lORXg0TUZyZk0reWcrV1UveE5FY3FuOVlGZzdqUDEyT2RqWlQ4a01TMGpzaWJQdUJKWFEyQlppdWdXbVJSeTdtb01RPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjEwOWU2ZGIwODFhNjcwYWJkNjUxMDk5ZDI2NGFhMzI4MDk4MTAwMjgwOGIwNWU4ODc0ZDU2ZTRlY2E1Mzk0N2QifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InpaeWF5K1BSQUx5djdRUFpLZ3hRU3A4ZkRzL1NBalhNcXBBRExPWlJod3BYTm1uQTNGVnZhUnJBb0lmaDFpSmJRR1ZIZmgrSmVnZXI0UU5WVCtKc0VRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjA4NmJkMWQyYjFlNzZlZjBkZjhiZmM2YjM4ZWQ0MWQ3ZjBiN2UzZjg1MDI1M2RmMjI3MmNkNmZhZGZhZjVhZjcifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkNqditwNGpRdVROekhVRHoyNis5ZGpCV1lnVElWTW9VUEg3eStBamp3THVwTzgxUFhIa0Vtbi95WnB2bm1HVHozeXkyaC8rS1p4MHpNeXNwR2tGdkN3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImViODM1ZDE2ODhmMTUxNmNlMjcwODE5OWY0YmJhMDY5MDI4Zjg4OWU2YTUxNGUyOGEwMzkxMjY1YjlmMGI0NDIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImNBcGxjV2NYSCtpUC9Vc2F3L3lORXg0TUZyZk0reWcrV1UveE5FY3FuOVlGZzdqUDEyT2RqWlQ4a01TMGpzaWJhL243YW9QeU9iV253ZnB6OHNNNDNBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjNiMTVjOTQ2MTRhNmNlZjk4YWVmYWFkMjhhODYxNjg1MTJkOGU2ZTNjMGYzNjY3ZWQzNmNlN2JjY2JjOTIwOGEifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InpaeWF5K1BSQUx5djdRUFpLZ3hRU3A4ZkRzL1NBalhNcXBBRExPWlJod3BYTm1uQTNGVnZhUnJBb0lmaDFpSmJMeFlUcGFFN1B4dER1WTV3OCtrZjJnPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImVjMjA4MzBlMDIwNTdhMWFjZTY0YjU3YzYzOWM2MDU4MWIxOThkNzkzM2NlMDI1MmEzYWY2OGZlZjBjOWE2ODEifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InpaeWF5K1BSQUx5djdRUFpLZ3hRU3A4ZkRzL1NBalhNcXBBRExPWlJod3BYTm1uQTNGVnZhUnJBb0lmaDFpSmJRR1ZIZmgrSmVnZXI0UU5WVCtKc0VRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjA4NmJkMWQyYjFlNzZlZjBkZjhiZmM2YjM4ZWQ0MWQ3ZjBiN2UzZjg1MDI1M2RmMjI3MmNkNmZhZGZhZjVhZjcifQ=="
+        ],
+        "integerId": 5313831,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 8437",
+        "marketplaceEyeAppeal": null,
+        "slug": "1999-pokemon-base-set-holo-charizard-4-cgc-85-nm-mt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1999 Pokemon Base Set Holo Charizard #4 CGC 8.5 NM-MT+"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 17,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 30000,
+          "currency": "USD"
+        },
+        "favoritedCount": 21,
+        "highestBidder": false,
+        "id": "c209c0b6-8518-11f0-9338-0669fcd9f885",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjdhN0tyQld3WnhIb2dUamV6ZFE3eHZSMyt5U21NdW0zWDUxM0cyQ094NHR2dVl1MStsK0d4WWFHRnZXWmFLcktoOG9VdWw4Rk53YWxKTmRXdmEwakZ3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjQ5OGI2MjJmYjYxZGU2ODVkZDU1OGVlNjZiZGFiNmIzYWYyMTcwM2Q1MjM0ZDk0YzhkYjk5NjIyMDI0MTZiMmUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkVlaEJ2bkM5SnJXT1NWeEFtRUhLaWNqdHlTZ1NwVTMyamtqd1NoU24wbHhGaTBpT2kwLzRRYVlnMThaaDNSSGgzT1E4WlRXWjNVRVJkLzVhVzYvamtRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjcyMmVlNWJkYTM5ZGExNjVmOWEwODY0M2FiZTY4ODRhZDBhNWUyNTgzOWQ5MWRjOTc5MjZkY2E0YzFjN2I2NDUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkVlaEJ2bkM5SnJXT1NWeEFtRUhLaWNqdHlTZ1NwVTMyamtqd1NoU24wbHhGaTBpT2kwLzRRYVlnMThaaDNSSGgzT1E4WlRXWjNVRVJkLzVhVzYvamtRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjcyMmVlNWJkYTM5ZGExNjVmOWEwODY0M2FiZTY4ODRhZDBhNWUyNTgzOWQ5MWRjOTc5MjZkY2E0YzFjN2I2NDUifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjdhN0tyQld3WnhIb2dUamV6ZFE3eHZSMyt5U21NdW0zWDUxM0cyQ094NHZZS2I5RDN2MGpEeExzS2JzWFgxSjQ5QmFQczh5VmZ1TEpGVXdoL3RLN1hBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjU4Y2E4ODNiYTQ0ZjQ0MjQ2NzBkZmRlMTk5ZmUwMmU5Mzg3NjgwZjExZTQ5MDQ5Mjc5ZWZhZjc3ZjViOGM0NzYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkVlaEJ2bkM5SnJXT1NWeEFtRUhLaWNqdHlTZ1NwVTMyamtqd1NoU24wbHdCd3BVSU03bTZMTXRvUm9nUUJEUzhrcnlqaGQ0YXl4RmloYnkvdHkrZG93PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjUzZjlkNmIwNDJkZjM0YzlhMzE5M2I0MjJiZTU5Mzg0ZDIxZDNiNTlmYWQ5NjgwMWQxMjNmYTU4ODg5YzdiY2MifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkVlaEJ2bkM5SnJXT1NWeEFtRUhLaWNqdHlTZ1NwVTMyamtqd1NoU24wbHdCd3BVSU03bTZMTXRvUm9nUUJEUzhrcnlqaGQ0YXl4RmloYnkvdHkrZG93PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjUzZjlkNmIwNDJkZjM0YzlhMzE5M2I0MjJiZTU5Mzg0ZDIxZDNiNTlmYWQ5NjgwMWQxMjNmYTU4ODg5YzdiY2MifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjdhN0tyQld3WnhIb2dUamV6ZFE3eHZSMyt5U21NdW0zWDUxM0cyQ094NHR2dVl1MStsK0d4WWFHRnZXWmFLcktoOG9VdWw4Rk53YWxKTmRXdmEwakZ3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjQ5OGI2MjJmYjYxZGU2ODVkZDU1OGVlNjZiZGFiNmIzYWYyMTcwM2Q1MjM0ZDk0YzhkYjk5NjIyMDI0MTZiMmUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjdhN0tyQld3WnhIb2dUamV6ZFE3eHZSMyt5U21NdW0zWDUxM0cyQ094NHZZS2I5RDN2MGpEeExzS2JzWFgxSjQ5QmFQczh5VmZ1TEpGVXdoL3RLN1hBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjU4Y2E4ODNiYTQ0ZjQ0MjQ2NzBkZmRlMTk5ZmUwMmU5Mzg3NjgwZjExZTQ5MDQ5Mjc5ZWZhZjc3ZjViOGM0NzYifQ=="
+        ],
+        "integerId": 5321623,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 12385F1",
+        "marketplaceEyeAppeal": null,
+        "slug": "2023-pokemon-tcg-classic-collection-holo-charizard-3-psa-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2023 Pokemon TCG Classic Collection Holo Charizard #3 PSA 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 12,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 15500,
+          "currency": "USD"
+        },
+        "favoritedCount": 17,
+        "highestBidder": false,
+        "id": "cba71774-7f99-11f0-9cca-0a8107500efb",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5nYnYxc3IySUhWaWpxbG0reFpTV1pvZGhBTnFjWGlweFFOcUJBd2psQ1QybkN2RHBoSCtRbUh0VURwNnE1RytpcDR2VnNlY003MmVkQVVFejh1c2ZRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6Ijg4YjdmN2Y5ZmQxZjMwMzQyZGNiZWJkNjM5NzNhNTc5MWJhM2JkZjNmM2UwNDM0NjQwZDU2YjVjMGNhOWUzY2EifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ijl4NnpZb0ppU21EYjJxbTRuZElZTFRqUFB4YzRhODhSbEUzUVhkMk0xTWdqQkU4NFUzV0dkdkZ1V3c5bmJyNVQwUyt1eWhvN09UdUx2eXlQMHVjc1d3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjMxYmYyNmE0MDViNzhlMWI1NmJkZjY4MjA2NmRlMTVlNmM0ZWRmOGFiMTY0NTJlYWZmZWExOWJmYWM2NmM5MzEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ijl4NnpZb0ppU21EYjJxbTRuZElZTFRqUFB4YzRhODhSbEUzUVhkMk0xTWdqQkU4NFUzV0dkdkZ1V3c5bmJyNVQwUyt1eWhvN09UdUx2eXlQMHVjc1d3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjMxYmYyNmE0MDViNzhlMWI1NmJkZjY4MjA2NmRlMTVlNmM0ZWRmOGFiMTY0NTJlYWZmZWExOWJmYWM2NmM5MzEifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5nYnYxc3IySUhWaWpxbG0reFpTV1pvZGhBTnFjWGlweFFOcUJBd2psQ1MyZVpweEUwQnFPUHppbHhtdlpXWTF3enRhbjhGYmhRN2xMUk1Rck9SWlFnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjljNjNhZWE5YTkzMTgyYzg4OWMwODNmNTIxODE1OTQ0ZmQ4N2IwZmI3MTQ3MTIwYTZlYmY2NmJlOGNiMjJkMTIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ijl4NnpZb0ppU21EYjJxbTRuZElZTFRqUFB4YzRhODhSbEUzUVhkMk0xTWcxT3Zmc0l4cTdLM0ROejFVRXorWVkyK0xjUGp2bFFKMEU5VDhxZUZDMnFBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6Ijc5MDkwODM3NzkxYmU1Zjk0Njk0ZDdhZWFkZWYxYTAwY2FmYmM2MTNhNGExZjQ3MTBkODYzZDQ3NmUyM2IzZWQifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ijl4NnpZb0ppU21EYjJxbTRuZElZTFRqUFB4YzRhODhSbEUzUVhkMk0xTWcxT3Zmc0l4cTdLM0ROejFVRXorWVkyK0xjUGp2bFFKMEU5VDhxZUZDMnFBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6Ijc5MDkwODM3NzkxYmU1Zjk0Njk0ZDdhZWFkZWYxYTAwY2FmYmM2MTNhNGExZjQ3MTBkODYzZDQ3NmUyM2IzZWQifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5nYnYxc3IySUhWaWpxbG0reFpTV1pvZGhBTnFjWGlweFFOcUJBd2psQ1QybkN2RHBoSCtRbUh0VURwNnE1RytpcDR2VnNlY003MmVkQVVFejh1c2ZRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6Ijg4YjdmN2Y5ZmQxZjMwMzQyZGNiZWJkNjM5NzNhNTc5MWJhM2JkZjNmM2UwNDM0NjQwZDU2YjVjMGNhOWUzY2EifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5nYnYxc3IySUhWaWpxbG0reFpTV1pvZGhBTnFjWGlweFFOcUJBd2psQ1MyZVpweEUwQnFPUHppbHhtdlpXWTF3enRhbjhGYmhRN2xMUk1Rck9SWlFnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjljNjNhZWE5YTkzMTgyYzg4OWMwODNmNTIxODE1OTQ0ZmQ4N2IwZmI3MTQ3MTIwYTZlYmY2NmJlOGNiMjJkMTIifQ=="
+        ],
+        "integerId": 5305987,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 11622",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-pokemon-japanese-swsh-25th-anniversary-promo-holo-charizard-cgc-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2021 Pokemon Japanese SWSH 25th Anniversary Promo Holo Charizard CGC 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 8,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 8400,
+          "currency": "USD"
+        },
+        "favoritedCount": 24,
+        "highestBidder": false,
+        "id": "63fbde2e-7f9a-11f0-97ef-0a3ddb96fda9",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWx2aWZVZy82Y0N2TXZ6T1FZYVdrUFVCS25UcDF6U2ZJVjhSNlZzS3JlVDUyQ2tpcWQrQWtoNWN5SVl2Q0hLb0dnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImNkMTk1NzE4OWU3ZjJkMDdlZGRlMzY1MTJiMjM5NTcxYjE3MjRhYTlmNzEwMGNjMTVmOTY3ZTdmOTFiZjQ5YzMifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik5YemIxWU9IbC92djJkUlQvQmM0QUNURlFtNWFQNm12ZlNKWXNzRWswSm8wTVFKOU1OckxrT1BReFhwZWRaVXFTNzhha2ZUaFFDQVZ0MHZhRDhMaDVnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImQ4MjQyOTI1ZjhiOTMwZDA2NjFjYzFjMjMwYTJkYzk1NmI5MGRiYjkwNzhiNGFlMDViMDAyNmJjZDhhMDcwYmQifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5ESVNRaFZTN1RUYWU4dlg0dnhUNk1QRHNZOXBqSWJuSDlGL2VLeisxVUNQSWFNOTNoVU9JaDNQN0xWKzFNcnlDbFhhWTRaQk1mdTZETUZZZTNGZVdRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjZlNjU1OGJjZjJmYzRiMjMzNTc4ZTQ2YmFiMWU5MmIwMDAyYjA0N2UwMzhiOTFkNjg2YTI3OGFlYzcyNDQ3MzcifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWx2aWZVZy82Y0N2TXZ6T1FZYVdrUFVRVnVkUkk2UE5RQy80WGhLdjI1S0h4UFpxUzV3UkcwQlZ2R1RJVUVpRXhBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImFhOGZkNmU4NzJkMTAwMDczODNiN2ZjNDQ0ZDFhNGE4MjU0YmU3MmIxMmNkZDllNzc0NDA0ZjcyNDYwOTg4YTAifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik5YemIxWU9IbC92djJkUlQvQmM0QUNURlFtNWFQNm12ZlNKWXNzRWswSnA0ZElIRmhlWmdsR2JHSFMveFNvWVkvQUtTNHplMzZMUjU1MEVTVkRoUm53PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjU4YTgyMjBkZmRmMjRlZTNlMTgwNjQwYjkyMjViMmViMDljMTQwOGZjNzAyYTZkNGNmZDJiNzU2Zjk4ZjE1YzgifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im5ESVNRaFZTN1RUYWU4dlg0dnhUNk1QRHNZOXBqSWJuSDlGL2VLeisxVUJUZjZ1VWl2VUE0bkIvVVF4Q3dRWUN1Z0FlZDRUOVBITkVHWllMV0xGeldBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6Ijc2ZTFmZWJjYmZlMThmM2ZlODE2YjdhNmQzZDU3MGRkNmZhM2I5ZTMzZDYwOTIzYzY2Njc4MTBiNjRiMWFiMzUifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWx2aWZVZy82Y0N2TXZ6T1FZYVdrUFVCS25UcDF6U2ZJVjhSNlZzS3JlVDUyQ2tpcWQrQWtoNWN5SVl2Q0hLb0dnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImNkMTk1NzE4OWU3ZjJkMDdlZGRlMzY1MTJiMjM5NTcxYjE3MjRhYTlmNzEwMGNjMTVmOTY3ZTdmOTFiZjQ5YzMifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ilp2OFZKNHBNVUVwWTNxRWIwL1FBaWx2aWZVZy82Y0N2TXZ6T1FZYVdrUFVRVnVkUkk2UE5RQy80WGhLdjI1S0h4UFpxUzV3UkcwQlZ2R1RJVUVpRXhBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImFhOGZkNmU4NzJkMTAwMDczODNiN2ZjNDQ0ZDFhNGE4MjU0YmU3MmIxMmNkZDllNzc0NDA0ZjcyNDYwOTg4YTAifQ=="
+        ],
+        "integerId": 5306040,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 8223",
+        "marketplaceEyeAppeal": null,
+        "slug": "1997-pokemon-japanese-topsun-block-prism-holo-charizard-6-cgc-6-exmt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": "CGC Population 1 of 2 - Eight Graded Higher",
+        "title": "1997 Pokemon Japanese Topsun Block Prism Holo Charizard #6 CGC 6 EXMT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 23,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 20000,
+          "currency": "USD"
+        },
+        "favoritedCount": 28,
+        "highestBidder": false,
+        "id": "9ca25d62-829b-11f0-8a02-0afcc285279b",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InZxcFd3Nys4aVN6cXBUcHc5LzYwa1Q4WnAxVGlwZm1KQWJLNVZyNlZyemJKN3RBbk4rZVNxSW45YlJkYXNNN2NpMjUvd1l1Uy9vbGVVZmE5MWVRMXBBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjM4YWRjZjA4YzFhMGUwOWIyNWVlNDEzYzZiOGIyZTAzNWU1ZDQ2Y2RiZTgwMWI5OGM4ZTdjNTc3N2MxZTc0ZWYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjNac0VFRVU5aDE5Wlk5c0tONnBaN1RSYy9OdFNsV0o2U21Ndnd3RDZqSENYWk5sNWlSU3BmeFo0Tzh5QnZDQVVMcDg5dGdPUDdYeC9mcDNlTG9KaEZBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjYyZGNiNTJhZmI0OGUxOWRiN2NjYmFjOWRlZTk4Mjg3N2ZmMGVlYjg4ZTRkZjFmNzc0ZjgyNTAwNTcwNzI0MWMifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjNac0VFRVU5aDE5Wlk5c0tONnBaN1RSYy9OdFNsV0o2U21Ndnd3RDZqSENYWk5sNWlSU3BmeFo0Tzh5QnZDQVVMcDg5dGdPUDdYeC9mcDNlTG9KaEZBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjYyZGNiNTJhZmI0OGUxOWRiN2NjYmFjOWRlZTk4Mjg3N2ZmMGVlYjg4ZTRkZjFmNzc0ZjgyNTAwNTcwNzI0MWMifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InZxcFd3Nys4aVN6cXBUcHc5LzYwa1Q4WnAxVGlwZm1KQWJLNVZyNlZyemI1dFNJRDhXaEVpUm4yQTNzdTBXUHVadmFyQ0o0S3QwWnY0R1VPTXhoR3RRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImIyNjlkNWQwMTE4OTdiNmIxMzg3ZTkzOWNkNjcyMWE5N2E0M2E3YTYyMTNjOGJkYjEyZDBmMDQxNzk1MGU2N2EifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjNac0VFRVU5aDE5Wlk5c0tONnBaN1RSYy9OdFNsV0o2U21Ndnd3RDZqSEFOUndLQ3dZajZlaEQwMzhPK1VISHlmalVHbDJnYXZpK1I4SWNWbDVNc2pnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImFjNjliZjdhMmYwZjQwMmJiMWM1MjM5MjUwYTlkMmNkYzVlNjkxNDQyNDMyMTJhZDNjMzA3YzFlMzc5OWU1YTcifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjNac0VFRVU5aDE5Wlk5c0tONnBaN1RSYy9OdFNsV0o2U21Ndnd3RDZqSEFOUndLQ3dZajZlaEQwMzhPK1VISHlmalVHbDJnYXZpK1I4SWNWbDVNc2pnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImFjNjliZjdhMmYwZjQwMmJiMWM1MjM5MjUwYTlkMmNkYzVlNjkxNDQyNDMyMTJhZDNjMzA3YzFlMzc5OWU1YTcifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InZxcFd3Nys4aVN6cXBUcHc5LzYwa1Q4WnAxVGlwZm1KQWJLNVZyNlZyemJKN3RBbk4rZVNxSW45YlJkYXNNN2NpMjUvd1l1Uy9vbGVVZmE5MWVRMXBBPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjM4YWRjZjA4YzFhMGUwOWIyNWVlNDEzYzZiOGIyZTAzNWU1ZDQ2Y2RiZTgwMWI5OGM4ZTdjNTc3N2MxZTc0ZWYifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InZxcFd3Nys4aVN6cXBUcHc5LzYwa1Q4WnAxVGlwZm1KQWJLNVZyNlZyemI1dFNJRDhXaEVpUm4yQTNzdTBXUHVadmFyQ0o0S3QwWnY0R1VPTXhoR3RRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImIyNjlkNWQwMTE4OTdiNmIxMzg3ZTkzOWNkNjcyMWE5N2E0M2E3YTYyMTNjOGJkYjEyZDBmMDQxNzk1MGU2N2EifQ=="
+        ],
+        "integerId": 5313156,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 8436",
+        "marketplaceEyeAppeal": null,
+        "slug": "1999-pokemon-base-set-holo-charizard-4-cgc-55-ex",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1999 Pokemon Base Set Holo Charizard #4 CGC 5.5 EX+"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 13,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 11500,
+          "currency": "USD"
+        },
+        "favoritedCount": 17,
+        "highestBidder": false,
+        "id": "94d4885e-7fb6-11f0-847a-062b2d6d10fb",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImZnVUxNNG1PVnlpVEoxS29wMW5VYUhXak9FSjAxcHkyRWxaQWltY1VTVEtUaUJyQUFDOXo5ejlGTk5nTGd3d1h3QjBCTXVjMk9JWmxtU21pOEIrRk1RPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjEwNjNmNzFhMzdmOTMxYTEzN2U4ZjdmMjM3MzlmNDA0YTUzN2QxM2Y1ZjMzMGYxNDNlNWNjMDhjNTM2YjVkNWIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImRYbjVIbFBncEJMUStWaGJHb2djWERSUk1sejc5bWM3MWszN1ZCd1M1VU9GbG45bW5MWUMvcllNU0U4TkdtL3AwZXNIN0ZwMjllM3RZV2gycUVHeUNBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImZmNzFkZTkzYTRlY2U5MWM5NTBmYWI0ZWIyYzIyNWRjYzg2NzAzN2VmM2VlMDFlODNiYzBkZjg4ZmM1ZTAzODMifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InlQOHphbnJRZ3lSWUtRVEwxMzNUbkpNRzliNTh2YmpqQzExZWlubS8yc1lIZ1hPS0szcENxVWRDb1VVeXltbEttNSthaVcrNUVDaC80QmRQVy9DMktBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImYyYjNjMzkxNTgxOGEzZmMxNmVkYmI4ODhlZDY5ZDk5NWNlNDJlYzU5OWNmOWE1MjFkYWM2ZjBlNTk3ZTIwYzgifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImZnVUxNNG1PVnlpVEoxS29wMW5VYUhXak9FSjAxcHkyRWxaQWltY1VTVEx4cjJ2dzZ6akdCSmc4a1luVUQzak0yVENkaFBpcjluMmRtODdUdkJtZFFRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjgzMjNlMTQ0YjIwNWVjMjk0NmY2NmQ1ZWYwNjE5ZmQwNjA0NDk4ZDFkYjZhNjRlYzEwZjRjODkwMGI1MjY0Y2UifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImRYbjVIbFBncEJMUStWaGJHb2djWERSUk1sejc5bWM3MWszN1ZCd1M1VU5lUGttdktPSlQ0K1VCelFEUXNtR1RVUVQ2WU5STHc2aHlJTjQweXc2YVFBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6Ijc3YmU5MTA0NDg0YzUwNDNlN2E0NDYzMzExYjlmN2U3NjBhMWEzZDI5ZWRmZjdlM2QxNmRlZTQ4YjI4NDNkYTEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InlQOHphbnJRZ3lSWUtRVEwxMzNUbkpNRzliNTh2YmpqQzExZWlubS8yc1lnRS9KWmdXcXhJN2VPSG9UUEZUKzA1MTlHQTlUQlJ3RnlkZ1JmV29vaEtnPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6Ijg3ZTkyZDI0Nzk4ZWU1YmQyOTdlMzcxNThmZDU1NDY0MTQ2NTQxYTUzYzYyY2I0MjdjNjAzN2QxZmFkMDIwMDgifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImZnVUxNNG1PVnlpVEoxS29wMW5VYUhXak9FSjAxcHkyRWxaQWltY1VTVEtUaUJyQUFDOXo5ejlGTk5nTGd3d1h3QjBCTXVjMk9JWmxtU21pOEIrRk1RPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjEwNjNmNzFhMzdmOTMxYTEzN2U4ZjdmMjM3MzlmNDA0YTUzN2QxM2Y1ZjMzMGYxNDNlNWNjMDhjNTM2YjVkNWIifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImZnVUxNNG1PVnlpVEoxS29wMW5VYUhXak9FSjAxcHkyRWxaQWltY1VTVEx4cjJ2dzZ6akdCSmc4a1luVUQzak0yVENkaFBpcjluMmRtODdUdkJtZFFRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjgzMjNlMTQ0YjIwNWVjMjk0NmY2NmQ1ZWYwNjE5ZmQwNjA0NDk4ZDFkYjZhNjRlYzEwZjRjODkwMGI1MjY0Y2UifQ=="
+        ],
+        "integerId": 5307025,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 8174",
+        "marketplaceEyeAppeal": null,
+        "slug": "1997-pokemon-japanese-topsun-blue-back-charizard-6-psa-5-ex",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1997 Pokemon Japanese Topsun Blue Back Charizard #6 PSA 5 EX"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 13,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 5800,
+          "currency": "USD"
+        },
+        "favoritedCount": 27,
+        "highestBidder": false,
+        "id": "73c237c0-839d-11f0-90cb-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImU0VTZDYnhqQWx0WGZHN2kyNGZ3Wm5NQW1rM1JvYkpFZHRXYVFLYkgzbGk2SmMreUZrc2d3bEQvVmMzM3JJVlhJK1BjT2tTbmZhZGhPWmcvN2xTcDdBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6Ijk1ZjBlZjVmOWMyODkwYjgwYTBiZWFjOTZhZTIzOTQ1ZjJlYTYwZDZiMzkzNmUzYTBlZmIxMjU5YjJlN2RmMzgifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdXTE4zTGFDdWpWNm05Rkg1TDM3SmJFQUxvQlpkdis2ek82VHJ5RmRIT0NqTzI3N2EyYWlIeUs2aUozMEgwa2xCQkR1cjFrekYvWUh1YXcxc3VETFV3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImUyYWU2NTM4ZWRlYTcyZDU3YmRiYTI5NjE5YjVmMWZhMWE1YTEyYTgyNmE5MmQ2MDhmMzBlZWMyMDcwZjNmNTIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdXTE4zTGFDdWpWNm05Rkg1TDM3SmJFQUxvQlpkdis2ek82VHJ5RmRIT0NqTzI3N2EyYWlIeUs2aUozMEgwa2xCQkR1cjFrekYvWUh1YXcxc3VETFV3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImUyYWU2NTM4ZWRlYTcyZDU3YmRiYTI5NjE5YjVmMWZhMWE1YTEyYTgyNmE5MmQ2MDhmMzBlZWMyMDcwZjNmNTIifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImU0VTZDYnhqQWx0WGZHN2kyNGZ3Wm5NQW1rM1JvYkpFZHRXYVFLYkgzbGhiRmEzM3BrT1lHQk0ydjRIN0lXeHZlNEp6eFpYcGhTenNCaXVXYUdlWVZRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImIyYzJiMTNlNzhiZmM3MDJiNWJiNGZjZTliMzAyNzM5MmZlNzM3MzBiM2M5ZWIyYWQ2ZjU0NGVlMTYxYTYyNDQifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdXTE4zTGFDdWpWNm05Rkg1TDM3SmJFQUxvQlpkdis2ek82VHJ5RmRIT0FveEdMdzBPUVVxVlJiT2piTmJzMzZHYmF5eEJXVUU1VHBLdHhZVTJDeGtBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImUwNzViZjliNjk3NmUzYjcwMWE2ZjMyZGY4ZmVhZDEzOTM3NmNjMDVhMzBkMDgwZjM2NTEwZWY3MGZmZWI4MmUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdXTE4zTGFDdWpWNm05Rkg1TDM3SmJFQUxvQlpkdis2ek82VHJ5RmRIT0FveEdMdzBPUVVxVlJiT2piTmJzMzZHYmF5eEJXVUU1VHBLdHhZVTJDeGtBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImUwNzViZjliNjk3NmUzYjcwMWE2ZjMyZGY4ZmVhZDEzOTM3NmNjMDVhMzBkMDgwZjM2NTEwZWY3MGZmZWI4MmUifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImU0VTZDYnhqQWx0WGZHN2kyNGZ3Wm5NQW1rM1JvYkpFZHRXYVFLYkgzbGk2SmMreUZrc2d3bEQvVmMzM3JJVlhJK1BjT2tTbmZhZGhPWmcvN2xTcDdBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6Ijk1ZjBlZjVmOWMyODkwYjgwYTBiZWFjOTZhZTIzOTQ1ZjJlYTYwZDZiMzkzNmUzYTBlZmIxMjU5YjJlN2RmMzgifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImU0VTZDYnhqQWx0WGZHN2kyNGZ3Wm5NQW1rM1JvYkpFZHRXYVFLYkgzbGhiRmEzM3BrT1lHQk0ydjRIN0lXeHZlNEp6eFpYcGhTenNCaXVXYUdlWVZRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImIyYzJiMTNlNzhiZmM3MDJiNWJiNGZjZTliMzAyNzM5MmZlNzM3MzBiM2M5ZWIyYWQ2ZjU0NGVlMTYxYTYyNDQifQ=="
+        ],
+        "integerId": 5317664,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 10282",
+        "marketplaceEyeAppeal": null,
+        "slug": "2004-topps-pokemon-advanced-challenge-foil-charizard-16-psa-9-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2004 Topps Pokemon Advanced Challenge Foil Charizard #16 PSA 9 MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 16,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 30000,
+          "currency": "USD"
+        },
+        "favoritedCount": 15,
+        "highestBidder": false,
+        "id": "cbab429a-7f99-11f0-926d-0a8107500efb",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InVSa1FCLzRyYTQ2MEttbGhGczk2QzFwUzcwbnl3eENaa3NCK1o3ek9RYU15a1h4OFdQQ0xoM1FzdHpralRUdlNwbVpHWVBLMkNCMnZBUVMvbmRtTDN3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImZiNzcxYWNkOGEzODE4ODY1YzBhNmE1N2NmNThkYTBhYjk2YWE0YjBjNjE4ZWEyMzk4MzNjNGMwOWQ2ZWRmMTIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImRqcU8xblBSYnI3bnU1SmZnTWU2UDY4SnF0blNpVEJac0p1UC9OWTRmVk15aDZxVHpodzk1d2ZzRGxTa0Z4WS9jVnJwVHYrb0ZPVTJnQXpXSjlUWWh3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImM3MDIxM2JiYjkyNDRhNzUwZDA5YjU4NjkxMzM4ZWUzYTM1YjRiZTQzOTQzYTY3MzQ5YmIyZGYzOTc5MjVjMWIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImRqcU8xblBSYnI3bnU1SmZnTWU2UDY4SnF0blNpVEJac0p1UC9OWTRmVk15aDZxVHpodzk1d2ZzRGxTa0Z4WS9jVnJwVHYrb0ZPVTJnQXpXSjlUWWh3PT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6ImM3MDIxM2JiYjkyNDRhNzUwZDA5YjU4NjkxMzM4ZWUzYTM1YjRiZTQzOTQzYTY3MzQ5YmIyZGYzOTc5MjVjMWIifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InVSa1FCLzRyYTQ2MEttbGhGczk2QzFwUzcwbnl3eENaa3NCK1o3ek9RYU9LTWVPdzJOS3RVVjRSRktCdmNQMkdIWnJiWGRoNWI2Z1Z3MVN2M3AyZ0JBPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImU5NTU0ZGI2ZTdmZjZhNTExMDdmZTY4M2E0NjBlMWMxZmRiMzNlODk5MzgzZDFiYzU1ZTM5MDg5YTA3MDQ2NzEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImRqcU8xblBSYnI3bnU1SmZnTWU2UDY4SnF0blNpVEJac0p1UC9OWTRmVk9tNVJ6Mi85V3I1Z1JRd2NCNXVNY1pTTTFaYndEWkNtWExEV1BKQ2E2MzBBPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjM0MjNjY2ZjZDcxNTczNDBlYzQxMzkyNDFkYTI2YzAxODlhMGU0YzczM2YyNWE5ZWE4Y2JmNTAxOTkxNjgxYjgifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImRqcU8xblBSYnI3bnU1SmZnTWU2UDY4SnF0blNpVEJac0p1UC9OWTRmVk9tNVJ6Mi85V3I1Z1JRd2NCNXVNY1pTTTFaYndEWkNtWExEV1BKQ2E2MzBBPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjM0MjNjY2ZjZDcxNTczNDBlYzQxMzkyNDFkYTI2YzAxODlhMGU0YzczM2YyNWE5ZWE4Y2JmNTAxOTkxNjgxYjgifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InVSa1FCLzRyYTQ2MEttbGhGczk2QzFwUzcwbnl3eENaa3NCK1o3ek9RYU15a1h4OFdQQ0xoM1FzdHpralRUdlNwbVpHWVBLMkNCMnZBUVMvbmRtTDN3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImZiNzcxYWNkOGEzODE4ODY1YzBhNmE1N2NmNThkYTBhYjk2YWE0YjBjNjE4ZWEyMzk4MzNjNGMwOWQ2ZWRmMTIifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InVSa1FCLzRyYTQ2MEttbGhGczk2QzFwUzcwbnl3eENaa3NCK1o3ek9RYU9LTWVPdzJOS3RVVjRSRktCdmNQMkdIWnJiWGRoNWI2Z1Z3MVN2M3AyZ0JBPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImU5NTU0ZGI2ZTdmZjZhNTExMDdmZTY4M2E0NjBlMWMxZmRiMzNlODk5MzgzZDFiYzU1ZTM5MDg5YTA3MDQ2NzEifQ=="
+        ],
+        "integerId": 5305988,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 11623",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-pokemon-japanese-swsh-25th-anniversary-promo-holo-charizard-cgc-10-pristine",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2021 Pokemon Japanese SWSH 25th Anniversary Promo Holo Charizard CGC 10 PRISTINE"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 8,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 7400,
+          "currency": "USD"
+        },
+        "favoritedCount": 16,
+        "highestBidder": false,
+        "id": "fb72f130-8417-11f0-9a3e-0afcc285279b",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IldrK1lxUkxGZlVzSkY5b3ozQmU1UFFySS9rWkdhbDNPZXRCQ0oxVlJ5SW50MlQ2YW1oMWg4SGJzY2VjK1JoaERjS05veUk2cmxwQVJpZXF0MUhUN3hRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjBkMTg1ZWEyZTM1MmNhOTY1NGE3ZTExYWViN2ZjOWQxMjlhYjZkNGQzNmMyYzFmMTRlNDdiOTZlNGExNjk0OTkifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdmOGF0THZyb0Zpb3dOMW1POVl1L3dqUDRPTWNzeDg2NE1ndnVVRlE2ai9zR2pRd0UxRkQzbGxLNFYrdmh0TTlwTE1mY3JyRlpUa0ZRTlJRRHJMaHB3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjBkZWE4YzE1MjlkY2QyYmM1MDU3MDg2NzAzYWRkNDYxYjdkOTE2OTJmMTNiYTdhZWIzZDE2YTM2MDhlOTE1ZGYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdmOGF0THZyb0Zpb3dOMW1POVl1L3dqUDRPTWNzeDg2NE1ndnVVRlE2ai9zR2pRd0UxRkQzbGxLNFYrdmh0TTlwTE1mY3JyRlpUa0ZRTlJRRHJMaHB3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjBkZWE4YzE1MjlkY2QyYmM1MDU3MDg2NzAzYWRkNDYxYjdkOTE2OTJmMTNiYTdhZWIzZDE2YTM2MDhlOTE1ZGYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IldrK1lxUkxGZlVzSkY5b3ozQmU1UFFySS9rWkdhbDNPZXRCQ0oxVlJ5SW00WXQwenpJcnJYOG9lOHZPN1lvQjVyWkJmOXF3WW50QXhXV1JFUlpObUJ3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImJlOGIyN2JjNTE3NzY4MTU4YTNiNTg2ZWY2M2Q3ZDFiNWZhN2U2OTM5MjUyNDc4YzU1MTE3YWFhOTAxY2IyY2EifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdmOGF0THZyb0Zpb3dOMW1POVl1L3dqUDRPTWNzeDg2NE1ndnVVRlE2ajlUcXBYVU1hMHNUbGU5Q1U5ZTZnMERaN1QvUE5CVEdiNmhxZ0FtcG9QcWdnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImI5MTNlOGY1OTRmNGZkZjVlODhkNmQyZmU2NmUxMDYyOWU0Yzc3Y2JkNTkxMTZhMGNmN2U4NWI5ZDU0ZjM3YjYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkdmOGF0THZyb0Zpb3dOMW1POVl1L3dqUDRPTWNzeDg2NE1ndnVVRlE2ajlUcXBYVU1hMHNUbGU5Q1U5ZTZnMERaN1QvUE5CVEdiNmhxZ0FtcG9QcWdnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImI5MTNlOGY1OTRmNGZkZjVlODhkNmQyZmU2NmUxMDYyOWU0Yzc3Y2JkNTkxMTZhMGNmN2U4NWI5ZDU0ZjM3YjYifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IldrK1lxUkxGZlVzSkY5b3ozQmU1UFFySS9rWkdhbDNPZXRCQ0oxVlJ5SW50MlQ2YW1oMWg4SGJzY2VjK1JoaERjS05veUk2cmxwQVJpZXF0MUhUN3hRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjBkMTg1ZWEyZTM1MmNhOTY1NGE3ZTExYWViN2ZjOWQxMjlhYjZkNGQzNmMyYzFmMTRlNDdiOTZlNGExNjk0OTkifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IldrK1lxUkxGZlVzSkY5b3ozQmU1UFFySS9rWkdhbDNPZXRCQ0oxVlJ5SW00WXQwenpJcnJYOG9lOHZPN1lvQjVyWkJmOXF3WW50QXhXV1JFUlpObUJ3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImJlOGIyN2JjNTE3NzY4MTU4YTNiNTg2ZWY2M2Q3ZDFiNWZhN2U2OTM5MjUyNDc4YzU1MTE3YWFhOTAxY2IyY2EifQ=="
+        ],
+        "integerId": 5318835,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 10472F2",
+        "marketplaceEyeAppeal": null,
+        "slug": "2007-pokemon-ex-power-keepers-holo-charizard-6-cgc-8-nm-mt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2007 Pokemon EX Power Keepers Holo Charizard #6 CGC 8 NM-MT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 17,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 16000,
+          "currency": "USD"
+        },
+        "favoritedCount": 19,
+        "highestBidder": false,
+        "id": "e2dc2e94-7c64-11f0-8d2b-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZjemFzSjRNT3lKMUpQL3Qwa0RhSnJUektsMUFPYlEzeWw1MGhJSlNvVWtlWWVMNFBQc01CVURzUGJqanJveG9YYmpITzNETURkcWIwbVNoZ2JObWJRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjM2MDA0MjA2OGNkNWYwNGUzMDIzOTZmZDg0NTllODU5MzY0ZjU1NjIxNTZhZTY3Zjc4ZjFmM2U3ZWMzYjk3NmUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im1sRHIrREZDclpuKzFZeVpHOUkzb0JPODEvdVZ2Tm9yaVhmTkxtS05RSnJ2REpnMm9SYzRubUN0VzRZVVdBZm80REdjRGlXMzE3V2JnMFdUcGNncGRBPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6ImUwYTU4MzNkN2JmNTQwNzcxZjE2MDIxZDk2MmEzNmU0ODgwZGY3YTUyNzYxOGU0YWM4ZTM1OGYwZTU2OTNjY2QifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImQ1Z2lhOSt0Wi9JSGJhd1drNkE0Z1NxWUFObUVySHdWS3B4U0xEOUtwUEUvNkVqTjRxRjRpS0M1VzdoN3BlRUdPQWJ5ckdqaVFTUUo5cFdXTlpuRkhBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjY1MGUwYTM0NGUzNzViMjc1MTllYWYzMWUzMzkxY2IzNDk3NzMzYTdhYTEwMDViNzY2MzdiN2FhNmU2NjQwYzEifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZjemFzSjRNT3lKMUpQL3Qwa0RhSnJUektsMUFPYlEzeWw1MGhJSlNvVWtlWWVMNFBQc01CVURzUGJqanJveG9haFZVRlc1MStYZm51WEp1SjVQbTR3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjI2MjU0N2Q4NmI2NjJlYTJkMzJjM2I0NGQ2ODJmYTc3MjRjZDU4MjE0ZjJkNGE4ZDVhZGY4ZGY5ZGU4MGI0MGUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Im1sRHIrREZDclpuKzFZeVpHOUkzb0JPODEvdVZ2Tm9yaVhmTkxtS05RSnJ2REpnMm9SYzRubUN0VzRZVVdBZm9CTUVzc1doTmlBN2hPYzBzbERISjBRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjMzYmY4ZGExMGY0Yjc1ODBlNzlmMWMyMjA5NzE4YzhiZmJkMjUzNGM2ZTE2ZTE3ZGM4ZTc4MTU1NmExZGZkNDYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImQ1Z2lhOSt0Wi9JSGJhd1drNkE0Z1NxWUFObUVySHdWS3B4U0xEOUtwUEUvNkVqTjRxRjRpS0M1VzdoN3BlRUc0NVVyUDAxeWx5ZjBXTVc5NjgzNGh3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjUxNTcyOWJjZGM5YTUyZjZlYTAxN2RjODhlZDg1NjFhNDRhZjVjY2E5NzJlY2VhODYxMTNiYmVjZWI4OTk4ZWIifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZjemFzSjRNT3lKMUpQL3Qwa0RhSnJUektsMUFPYlEzeWw1MGhJSlNvVWtlWWVMNFBQc01CVURzUGJqanJveG9YYmpITzNETURkcWIwbVNoZ2JObWJRPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjM2MDA0MjA2OGNkNWYwNGUzMDIzOTZmZDg0NTllODU5MzY0ZjU1NjIxNTZhZTY3Zjc4ZjFmM2U3ZWMzYjk3NmUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjZjemFzSjRNT3lKMUpQL3Qwa0RhSnJUektsMUFPYlEzeWw1MGhJSlNvVWtlWWVMNFBQc01CVURzUGJqanJveG9haFZVRlc1MStYZm51WEp1SjVQbTR3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjI2MjU0N2Q4NmI2NjJlYTJkMzJjM2I0NGQ2ODJmYTc3MjRjZDU4MjE0ZjJkNGE4ZDVhZGY4ZGY5ZGU4MGI0MGUifQ=="
+        ],
+        "integerId": 5296445,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 8067",
+        "marketplaceEyeAppeal": null,
+        "slug": "1996-pokemon-japanese-base-set-holo-charizard-6-cgc-altered-auth",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "1996 Pokemon Japanese Base Set Holo Charizard #6 CGC ALTERED AUTH"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 23,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 19500,
+          "currency": "USD"
+        },
+        "favoritedCount": 19,
+        "highestBidder": false,
+        "id": "16c79eee-82ed-11f0-957e-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImEzb1hOUU81cWpjdE0zT1prUlpidjM4andjNW05WlRpQzBmZ1loM2hwaXJrWkQ4QWVkNG5jdElIQ2lpblJ1TW56TlVOeko1N1hFaDNTSXUxVFdSL1BRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjQxOGFlMDcyODU1YTZkNDk0ZGUzYWU4M2U2YTBlOGVmMWRlYWFkZjVkOTBlZDUyNmM3MzE4Y2M4NDQwYWE2NDgifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkR2VUFmL1NKamxaVG1NcWFoVStlYTNHNHF6RFFmZDUyT0tMUDdacGJtbXkrYjd4V3duclFoUE1KU3pHTEcwaWRhdloyRVFGNjdmRW8veTVoN04xeDN3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjYzZDI3Nzg5NTQ2OTQwYjc5YTY5ZDQ5NTYxZjg0MjliYjJhYzE0OTBiZDFiNmNlMTg2ZGUxZmZiMmZmZmU1OWQifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkR2VUFmL1NKamxaVG1NcWFoVStlYTNHNHF6RFFmZDUyT0tMUDdacGJtbXkrYjd4V3duclFoUE1KU3pHTEcwaWRhdloyRVFGNjdmRW8veTVoN04xeDN3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjYzZDI3Nzg5NTQ2OTQwYjc5YTY5ZDQ5NTYxZjg0MjliYjJhYzE0OTBiZDFiNmNlMTg2ZGUxZmZiMmZmZmU1OWQifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImEzb1hOUU81cWpjdE0zT1prUlpidjM4andjNW05WlRpQzBmZ1loM2hwaXBjUUgyNmwvRTU3TE4zLzFuM2xsbzZ0d1RTYWhpVmJGU2hHVWZtTnlqbndRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjBjNTUzODJmYzZjMmMxNDI3OWU5MDcyNjE5ZmE2NzkyMjA3OWQ3N2EwMzJlOWIxMDYwNWVkODk4MGVkMTA5MjMifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkR2VUFmL1NKamxaVG1NcWFoVStlYTNHNHF6RFFmZDUyT0tMUDdacGJtbXlBalpicGl4VmdHWUgvWGQ5QXlsSzRlVlNtUE9mNjVZaWc2TlZuOFJOckJ3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjgzOTBhY2YwYmM5ZjMwZjc2MzZmY2RjOGVkMzM5MWZmOTY4MGEyOGQ4ZDNlZmJlOWUyODUwMDI2ODg0ZmI5MDkifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IkR2VUFmL1NKamxaVG1NcWFoVStlYTNHNHF6RFFmZDUyT0tMUDdacGJtbXlBalpicGl4VmdHWUgvWGQ5QXlsSzRlVlNtUE9mNjVZaWc2TlZuOFJOckJ3PT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjgzOTBhY2YwYmM5ZjMwZjc2MzZmY2RjOGVkMzM5MWZmOTY4MGEyOGQ4ZDNlZmJlOWUyODUwMDI2ODg0ZmI5MDkifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImEzb1hOUU81cWpjdE0zT1prUlpidjM4andjNW05WlRpQzBmZ1loM2hwaXJrWkQ4QWVkNG5jdElIQ2lpblJ1TW56TlVOeko1N1hFaDNTSXUxVFdSL1BRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjQxOGFlMDcyODU1YTZkNDk0ZGUzYWU4M2U2YTBlOGVmMWRlYWFkZjVkOTBlZDUyNmM3MzE4Y2M4NDQwYWE2NDgifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImEzb1hOUU81cWpjdE0zT1prUlpidjM4andjNW05WlRpQzBmZ1loM2hwaXBjUUgyNmwvRTU3TE4zLzFuM2xsbzZ0d1RTYWhpVmJGU2hHVWZtTnlqbndRPT0iLCJpdiI6IlNPUHF4c0ZYZzN6K043dUtzb3hub3c9PSIsIm1hYyI6IjBjNTUzODJmYzZjMmMxNDI3OWU5MDcyNjE5ZmE2NzkyMjA3OWQ3N2EwMzJlOWIxMDYwNWVkODk4MGVkMTA5MjMifQ=="
+        ],
+        "integerId": 5315250,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 11696",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-pokemon-swsh-celebrations-classic-holo-charizard-4-cgc-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2021 Pokemon SWSH Celebrations Classic Holo Charizard #4 CGC 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 7,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 8000,
+          "currency": "USD"
+        },
+        "favoritedCount": 14,
+        "highestBidder": false,
+        "id": "99f80c96-7fb8-11f0-a72c-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjAvRzZGcjF0emlZTTBZK2t6T3Y3cGtya3ZaT0wyVExTanMzK1pGeGdvR0x6QkhLSytRaWdlaDRRRnFvc3VLOWlrbUltaThFcHdWQUNuVUplZGNrSWJRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjQ3NGNmYTdjZTkxMDkyMGVlZTY1M2I2MjgyNzE3NzdkNGIzZTBhODZjNzE0NjA2NmEyYWZjMDExZGFlNjFkZmUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjE0OXY3TXJBSDBYdmNucVM5VGRPRy94d2YvNzBnVEhMQ3F6TVdEN1pFek5MbFJ6Z1NnamxXOWtiYjgrNEZVeXNRbDhTOVprZHF4UFFQa1FpWjc1QTV3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjdmYWJlZWNkNjQwYjNmYmYzYjMxY2I3OWNjOTk0OGM0ZDRlY2ZiMjc1Y2JhMmJkYjhmN2UwNjhjYjNkMDk4OGYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ii9peUIycHpQUG4zY3V4QkgrM3VRV1hSUFAwQjNHK2Q3ZDZRTk5vNWJQejFKSExiWk9EdHJxWm9obGx3R2VFeUEvQzNhelN6VWE2UHpJbnJVQ0hRQUR3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImNhYjI1NGY5ZmQxZTgyYmFkNjlhMjI3N2EwZWFjNDVhMDI4ZmM0ZjNiMWZiY2NiOGQxNGNmMGRlNTY4MTljZjcifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjAvRzZGcjF0emlZTTBZK2t6T3Y3cGtya3ZaT0wyVExTanMzK1pGeGdvR0x6QkhLSytRaWdlaDRRRnFvc3VLOWlxSzI3ajhPN1BJWWt5ZGs4THI0RVB3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjAxMTlhZmYyNzNiYTRkMmZjZTllMjQ0NzQ1MDQ4Mzk1ZDRmOGFhNTBkY2E4YThjM2Y0ODlhNzY0YTYwMzMwNDEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjE0OXY3TXJBSDBYdmNucVM5VGRPRy94d2YvNzBnVEhMQ3F6TVdEN1pFek5MbFJ6Z1NnamxXOWtiYjgrNEZVeXM0eVJWRVlpRHUvNVVHM01icENwTjNRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImZlNmRkODBkOGUyZmM0M2U5ZWE0MzcxNTAwNmVjMzczZGE1MTcyMTgwZTEzM2FmODFmNDU2ODQ4NzRjMzk4NTUifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ii9peUIycHpQUG4zY3V4QkgrM3VRV1hSUFAwQjNHK2Q3ZDZRTk5vNWJQejFKSExiWk9EdHJxWm9obGx3R2VFeUFHdDZrQXdRbEZNeERlK01GMjJaTnJRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImM1ZmQ1Y2RjMDhiYzUyNTBmMzlmMTA4NmZlOGNkZGY5OTRmZjYwNzE1NDMxNzgyNDEzYjNkNDkzNGM0NjAyMTEifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjAvRzZGcjF0emlZTTBZK2t6T3Y3cGtya3ZaT0wyVExTanMzK1pGeGdvR0x6QkhLSytRaWdlaDRRRnFvc3VLOWlrbUltaThFcHdWQUNuVUplZGNrSWJRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjQ3NGNmYTdjZTkxMDkyMGVlZTY1M2I2MjgyNzE3NzdkNGIzZTBhODZjNzE0NjA2NmEyYWZjMDExZGFlNjFkZmUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjAvRzZGcjF0emlZTTBZK2t6T3Y3cGtya3ZaT0wyVExTanMzK1pGeGdvR0x6QkhLSytRaWdlaDRRRnFvc3VLOWlxSzI3ajhPN1BJWWt5ZGs4THI0RVB3PT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjAxMTlhZmYyNzNiYTRkMmZjZTllMjQ0NzQ1MDQ4Mzk1ZDRmOGFhNTBkY2E4YThjM2Y0ODlhNzY0YTYwMzMwNDEifQ=="
+        ],
+        "integerId": 5307060,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 9531",
+        "marketplaceEyeAppeal": null,
+        "slug": "2000-pokemon-japanese-neo-premium-file-2-reverse-holo-charizard-6-cgc-95-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2000 Pokemon Japanese Neo Premium File 2 Reverse Holo Charizard #6 CGC 9.5 MINT+"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 13,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 4300,
+          "currency": "USD"
+        },
+        "favoritedCount": 15,
+        "highestBidder": false,
+        "id": "682fbc8a-82e8-11f0-87fc-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImJPOVB4ZWtPcHlJQUJqNzhVMk0ra0J5eDdaZlVLV3dUYUdGQWxBOHF1UUw2Q0Yya21hMENkN3dHV1dmZTRua2tLUUdlZm5ZWEFEbno5aXgzbHdMRTlBPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjIyZDJiYTJkMmE4ZTBmYWE1MzMwNzVhYjk3YWE1YTJkMGFkNGFiNDI4MGM3YWE2MDNmN2RkODBmNWQwZDdhNTgifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFvSlo1YlFoWTRCZlk1OGdzZzFjVlUyajNSb3J4b3kyQ2htTDhVS0l1eXdSeW8ybUVxKzRmWHVJOG1ZT1k0emVmUlRWd05QOUc5V0xrc1dFWnVNNk9nPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImMxYzMxYjMxNmFmOTg0Njg4MTdkMmYwMDYzYmRhYWIxZjBlYjM0ZDE1YWMxOWZjMGFjNjViNTM3YWNiODY0ZDIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImtDenlBYlFOeTh5RjdXNVJKYkJvYmtETk83N3I2NklCSkt2VXdJSGJxMGpHcnB1TlkrdGlORHNPZ1lhZlZoL29KTWRUcW5lTFpSNHdvVGJMMXZlcUVBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImYyNmRkZTgzODE3NThlNWYxMjQ4NDM4OTYzMTA3NjczZDRlMmVlMGU5MTcyNjdjNTM5OTg1OTNmZmEwM2Q5ZmMifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImJPOVB4ZWtPcHlJQUJqNzhVMk0ra0J5eDdaZlVLV3dUYUdGQWxBOHF1UUw2Q0Yya21hMENkN3dHV1dmZTRua2tDcnk1RXI3aE9la1VRYzVQYk1NQytRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjQ0NGRkMmE3ZmQzZWRhYjg2YmUxMGQ2NjVhMTJiOTVkODFkMjI2ZTAxM2YzOTZjMzFiMTg3NGI5NmI4YTBlOWIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFvSlo1YlFoWTRCZlk1OGdzZzFjVlUyajNSb3J4b3kyQ2htTDhVS0l1eXdSeW8ybUVxKzRmWHVJOG1ZT1k0emVuWXdOYnJIZDJsR296ZVVtbVRmaldnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6ImNhN2YyNWQ0ZDUyMjU4MjNhYWM1MmQ5YjNmYjRmZmM2OGY1ZmIwNWM2NDUzNWRhY2JiOGEyYjM5Y2RjNjI1MjAifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImtDenlBYlFOeTh5RjdXNVJKYkJvYmtETk83N3I2NklCSkt2VXdJSGJxMGpHcnB1TlkrdGlORHNPZ1lhZlZoL29tUlFkQ3pzNUI0ODJxaWRsYmN3R3h3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjRiZmQ3N2Y4MDU1NjUzNWQ3OTQyMjI2NDg0NDY0NDJkZjYwOWZjOWMwYzNkMmM0NThlMDUzYTcwN2I4YTU0NDUifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImJPOVB4ZWtPcHlJQUJqNzhVMk0ra0J5eDdaZlVLV3dUYUdGQWxBOHF1UUw2Q0Yya21hMENkN3dHV1dmZTRua2tLUUdlZm5ZWEFEbno5aXgzbHdMRTlBPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjIyZDJiYTJkMmE4ZTBmYWE1MzMwNzVhYjk3YWE1YTJkMGFkNGFiNDI4MGM3YWE2MDNmN2RkODBmNWQwZDdhNTgifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImJPOVB4ZWtPcHlJQUJqNzhVMk0ra0J5eDdaZlVLV3dUYUdGQWxBOHF1UUw2Q0Yya21hMENkN3dHV1dmZTRua2tDcnk1RXI3aE9la1VRYzVQYk1NQytRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjQ0NGRkMmE3ZmQzZWRhYjg2YmUxMGQ2NjVhMTJiOTVkODFkMjI2ZTAxM2YzOTZjMzFiMTg3NGI5NmI4YTBlOWIifQ=="
+        ],
+        "integerId": 5314748,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 11691",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-pokemon-swsh-celebrations-classic-holo-charizard-4-cgc-8-nm-mt",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2021 Pokemon SWSH Celebrations Classic Holo Charizard #4 CGC 8 NM-MT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 18,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 6200,
+          "currency": "USD"
+        },
+        "favoritedCount": 20,
+        "highestBidder": false,
+        "id": "aff06eaa-82ea-11f0-a879-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRGYTYyZ1p3V0JwZVhvSWRVTWZJSG9oVFMydWljT0dlVXFIaU9QZFBmb2lnb1MxNlJtMzhGQ0FpeWF5bUVNaEVFZVRQMTBtMTVsMVd4cVNzNzRwRm13PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjIwMTkyMWFhY2Q4MmI4MzQzYTNjMGQ5M2QxZTIwOTU0M2M5MDE1ZTkwMTE3OTIyYzhjODNlZmFjNTMwOGI2NjUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImptZGlIQW9lMk5rcTU1RmVuSjdYSElzUCs1UG82T3lveWNkeUx2WDBJdGhWNWpiVGdWeGNNM3VqUmpyazdaQkxseXRkNzE1ZU95eWVUS0QweEhpc3B3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjkyM2E1ZmU2Yjk4YTQxMGU1MDQyYjE4NzY5Mjg5NzFjZGFkZjIxODQwNThjNTUzZGQ0NzgyMmIxMzg5Yzc3MzIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InBPUHJZUnpkVHNVVGQ5NVpyYlh0enExNk1uYllvRVZ2aVkybXBpWnAyNW9VaUhWR0l0TVF5L3haQ2RPNWZJampVY2kvbi9UM056OElDOGdJeVAwM1h3PT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjdjMDQwYTVlYWYzMmRkMmE3MzkzOGFiN2UyMDQ3MGU2NDc2OTU1Y2I5Nzc0MjA1NTA2M2Q0YzIyNzJmYzczNmUifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRGYTYyZ1p3V0JwZVhvSWRVTWZJSG9oVFMydWljT0dlVXFIaU9QZFBmb2lnb1MxNlJtMzhGQ0FpeWF5bUVNaEVlZkx2MEZJSENtdmcyVTVjbjRYNWtRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjVmOTc2ODlhZWJkNzRiYjk1ZDIxNzM3NTYwOTFiYWMzNDI4NWYwZDE4MzRkNzU0YmI2OGE0OTdjOTMxYTU4NzIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImptZGlIQW9lMk5rcTU1RmVuSjdYSElzUCs1UG82T3lveWNkeUx2WDBJdGhWNWpiVGdWeGNNM3VqUmpyazdaQkx2RUhGLzluUUtoRS9LQWpqdmJ0UURnPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjU4MDIwYjFiNWQzZDM5MzA5MWFiYWI5YWY3OGU0ZDVlM2JiNTRkODQzMDEzZGM4MDZlZmYwNTMyNDlhOGE0ZTMifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InBPUHJZUnpkVHNVVGQ5NVpyYlh0enExNk1uYllvRVZ2aVkybXBpWnAyNW9VaUhWR0l0TVF5L3haQ2RPNWZJamo2WkNCcmM3WFR6ay91aGpITm5FdmNBPT0iLCJpdiI6Ik9SR29xeVY5SExpbVQ2OEdmQnFWdXc9PSIsIm1hYyI6IjU3MzYyMTU2YzgyYzQyMWQwMDA1ZjZjY2ExODYxZTg3NWYwOTRkYWRmMzY3N2U5M2U2MjBhYjU4MjNiMWI5NjYifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRGYTYyZ1p3V0JwZVhvSWRVTWZJSG9oVFMydWljT0dlVXFIaU9QZFBmb2lnb1MxNlJtMzhGQ0FpeWF5bUVNaEVFZVRQMTBtMTVsMVd4cVNzNzRwRm13PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjIwMTkyMWFhY2Q4MmI4MzQzYTNjMGQ5M2QxZTIwOTU0M2M5MDE1ZTkwMTE3OTIyYzhjODNlZmFjNTMwOGI2NjUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6InRGYTYyZ1p3V0JwZVhvSWRVTWZJSG9oVFMydWljT0dlVXFIaU9QZFBmb2lnb1MxNlJtMzhGQ0FpeWF5bUVNaEVlZkx2MEZJSENtdmcyVTVjbjRYNWtRPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjVmOTc2ODlhZWJkNzRiYjk1ZDIxNzM3NTYwOTFiYWMzNDI4NWYwZDE4MzRkNzU0YmI2OGE0OTdjOTMxYTU4NzIifQ=="
+        ],
+        "integerId": 5315096,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 11693",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-pokemon-sword-shield-celebrations-classic-holo-charizard-4-cgc-95-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2021 Pokemon Sword & Shield Celebrations Classic Holo Charizard #4 CGC 9.5 MINT+"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 21,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 9400,
+          "currency": "USD"
+        },
+        "favoritedCount": 18,
+        "highestBidder": false,
+        "id": "9a924812-860a-11f0-8716-0a14a950081f",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImpwaVRjVE9lTy93TlBGbFNINGNFU0Y5K3padDBLclhmcFY0VG5aMzZZNDhmWnVvanVtb2tONnFwQXF3M3c5alAxS3kzMFhrM1hzRXFEeVdqczBXL2ZRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImE0ZWExY2FiM2YxZjkwYzcyNzU3MTlkMzA0OTMyMjI1NDMzODBhYzcwZjEyNzQzOTI4OTVkOTIyYzUzMzVhZTYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBCWFE3bFB0eU5XTENQSWcvTDkvZUlBcDJUa2dtam9FSXNJTDVRbkNMRjlxWUh5NWEwSkJBRzBIenc3azc5VWg0bVV3QkpCbzZUL0tuSnJ1S3VIQTl3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImNmNzVlZjJkM2NlMTQwODAzZjY2MTAyMmQ1OTM0NzA2ODNlYTQxM2JhOGFlNzI4MTA3ZTE1MDgwNGU3MWU5MDAifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBCWFE3bFB0eU5XTENQSWcvTDkvZUlBcDJUa2dtam9FSXNJTDVRbkNMRjlxWUh5NWEwSkJBRzBIenc3azc5VWg0bVV3QkpCbzZUL0tuSnJ1S3VIQTl3PT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImNmNzVlZjJkM2NlMTQwODAzZjY2MTAyMmQ1OTM0NzA2ODNlYTQxM2JhOGFlNzI4MTA3ZTE1MDgwNGU3MWU5MDAifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImpwaVRjVE9lTy93TlBGbFNINGNFU0Y5K3padDBLclhmcFY0VG5aMzZZNDhqQUVENlBmcWpuQXk0K1RxMHVDSG9obXlJSmlHdUFxVThxQ1doeC8waXBRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImU4ZmJlNzNlZDM3Yjk4Y2RmYTk1Y2RiMTBlMmZlZjVmM2ZjNWVkNTI4OTRkMTY2N2MxMDk3ZmE5MDZjM2JlNDAifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBCWFE3bFB0eU5XTENQSWcvTDkvZUlBcDJUa2dtam9FSXNJTDVRbkNMRjhaM0lkZFczQnU0T2tzWDNMR1dXcUw4RXl4MjRYc1RqME9mRURWRVM4cTRBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImM1ZjBiOTMxYmQzNzU4MmJiNjdkZGZiM2I1YzZjNmU4OTU4MGMwOTFiZDY3ZTBkZWE3N2Y5NzQ1ZDJiMDIxNTcifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBCWFE3bFB0eU5XTENQSWcvTDkvZUlBcDJUa2dtam9FSXNJTDVRbkNMRjhaM0lkZFczQnU0T2tzWDNMR1dXcUw4RXl4MjRYc1RqME9mRURWRVM4cTRBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImM1ZjBiOTMxYmQzNzU4MmJiNjdkZGZiM2I1YzZjNmU4OTU4MGMwOTFiZDY3ZTBkZWE3N2Y5NzQ1ZDJiMDIxNTcifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImpwaVRjVE9lTy93TlBGbFNINGNFU0Y5K3padDBLclhmcFY0VG5aMzZZNDhmWnVvanVtb2tONnFwQXF3M3c5alAxS3kzMFhrM1hzRXFEeVdqczBXL2ZRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImE0ZWExY2FiM2YxZjkwYzcyNzU3MTlkMzA0OTMyMjI1NDMzODBhYzcwZjEyNzQzOTI4OTVkOTIyYzUzMzVhZTYifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImpwaVRjVE9lTy93TlBGbFNINGNFU0Y5K3padDBLclhmcFY0VG5aMzZZNDhqQUVENlBmcWpuQXk0K1RxMHVDSG9obXlJSmlHdUFxVThxQ1doeC8waXBRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImU4ZmJlNzNlZDM3Yjk4Y2RmYTk1Y2RiMTBlMmZlZjVmM2ZjNWVkNTI4OTRkMTY2N2MxMDk3ZmE5MDZjM2JlNDAifQ=="
+        ],
+        "integerId": 5322974,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 11697F1",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-pokemon-swsh-celebrations-ultra-premium-collection-charizard-4-cgc-85",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2021 Pokemon SWSH Celebrations Ultra Premium Collection Charizard #4 CGC 8.5"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 13,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 5600,
+          "currency": "USD"
+        },
+        "favoritedCount": 10,
+        "highestBidder": false,
+        "id": "af0b43da-8118-11f0-808a-0afcc285279b",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlBMNEw5QTg1Q0IyNG9ucnNBd09uV05ZdmJpSHdidk1OUm1DNXlTVFVveTlEQlpBYkM1cU82RkRZK1FKdlQ5LzM3Uk9ndUJiaE1laTMvREdXUm5IWjlBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjYxNTMwZGUyMjU4ZDMwYTQ2Y2I0YWYyZTdhY2I5NTYxMTdmMDIyZDg3NzI5Y2NlYzQ4MWQ2MDdiYjc0YzNlZWYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImJPeSt2NFpkaFNEclRISnFVSHRSVk54TGlUU0V0dXVNMGtnNUFybU9mMVNubW5zVW5NZ0hqNksvd1FsWS9iVnBwSFdYNjB2VSs1Yi9lNDRtSER1R1NBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImM5YmFmYTFmYjkyODVkNjNhMDY0NTc4Nzc4ZWRmNWI0MDlkNWYxNzkyMGExNmFiMmY2YzhjYzBkMjk5NzA0ZDYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjhlTnNNMVVrcXJNZGtFb2RwZmRjWHZKaXBOTVo1TlBXZG9ReEs1SVlKdkd5UmVCbXlBaUJrVzlBemNEU3AzUGJaQlpvVldSZk84UVNTVUJCV2ZobE5RPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjZmY2Y4ZjM3MzllOTAwYzEyNTIwYjUxOGMyMDcyNjFjYzcxZDAyMTgxZDczMDY4M2VmNDZhYmUzZmM4NTZjZGMifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlBMNEw5QTg1Q0IyNG9ucnNBd09uV05ZdmJpSHdidk1OUm1DNXlTVFVveTlEQlpBYkM1cU82RkRZK1FKdlQ5LzNCa2szZXRDTk01akxZM2lNa3JYNTFnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjUyYjdhNWFkMjQyMTA0YzcxNjc3NjFjOTM4MDE1YjA5OGI5YzUzMjhhODQ3Y2FkY2IzMWFjMjhlYzdkNWM0OWEifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImJPeSt2NFpkaFNEclRISnFVSHRSVk54TGlUU0V0dXVNMGtnNUFybU9mMVNubW5zVW5NZ0hqNksvd1FsWS9iVnBTNVZOVFVZamlaZFlEKyszWmdLU1FnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjNkNmMwMjViYTg0NDMwMzZmMjkxMzhmNWJhMTc3MWY1MWRkNGVhNDJkM2FlNTFmMzFlNWQwMTQ4YTYxMmQ3MTgifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjhlTnNNMVVrcXJNZGtFb2RwZmRjWHZKaXBOTVo1TlBXZG9ReEs1SVlKdkd5UmVCbXlBaUJrVzlBemNEU3AzUGJCVjFXQ25lM0txMzVKeG9WYnlrY2ZnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImNlMGMzOGM1ZDQ0Y2VmN2MyMzJkNWMxMDk3NjlmYzBhNjNkZDQ2ZWUxYjZhOWRkODg2YmQ3ZTIwOTM5YzA1NDUifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlBMNEw5QTg1Q0IyNG9ucnNBd09uV05ZdmJpSHdidk1OUm1DNXlTVFVveTlEQlpBYkM1cU82RkRZK1FKdlQ5LzM3Uk9ndUJiaE1laTMvREdXUm5IWjlBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjYxNTMwZGUyMjU4ZDMwYTQ2Y2I0YWYyZTdhY2I5NTYxMTdmMDIyZDg3NzI5Y2NlYzQ4MWQ2MDdiYjc0YzNlZWYifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IlBMNEw5QTg1Q0IyNG9ucnNBd09uV05ZdmJpSHdidk1OUm1DNXlTVFVveTlEQlpBYkM1cU82RkRZK1FKdlQ5LzNCa2szZXRDTk01akxZM2lNa3JYNTFnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjUyYjdhNWFkMjQyMTA0YzcxNjc3NjFjOTM4MDE1YjA5OGI5YzUzMjhhODQ3Y2FkY2IzMWFjMjhlYzdkNWM0OWEifQ=="
+        ],
+        "integerId": 5308936,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 11032",
+        "marketplaceEyeAppeal": null,
+        "slug": "2018-pokemon-japanese-my151-campaign-stickers-charizard-006-psa-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2018 Pokemon Japanese My151 Campaign Stickers Charizard #006 PSA 10 GEM MINT"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 11,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 37000,
+          "currency": "USD"
+        },
+        "favoritedCount": 20,
+        "highestBidder": false,
+        "id": "6833ec4c-82e8-11f0-a7ca-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFEa3R5cG4rTGd1dXoyZ0toVjYrWUtVU0VReUVQb0ZoN3pEcXltenR5eTJlc3h0TnI2VVdOVUp1L09zNkduTzJnRUlYYjZpNXpFcXN1VFV4Z3ZVamhRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImUwOWRmZWNlZDg3ZGQ1ZWNlMjIzMDk3NmE3ZmZlNTJlZTUzMzBiYjIwZWUxYTVmYzk5Y2VhM2MwOWNiMzFlZGUifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImdVOU0vNUFNQmw5Z3U0Yi9LQVF4R1NtcjZ0V0lCZStlTkc4MWlrNWZEaFM1ckxhVWVFVUNwM29Ib3VMR1ZkS20yZ2plQkNKcnF6dDBad2FralNUdExRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImZhNGFhYWUyZDUwNTQ5Y2IwZDk0MWUzODgzYzYxOTc1MzFiM2NkNjRkNTk5NWViYzFjMmM3MTZmMjU0MDEzMDIifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ikl5NUJGVno3Y2dEZkdvVE1mTFhaSC9EdE9RL2I4L212YlNQZytpUFJSWlBGSkxMYTY5L2ZjVDhQMDFhb2RRZGhXU0xOMnVGa0FsQlVlVHV6T2NGaFBnPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImUzMTE1NmQ1ZDIxM2EyMWZhMmIwNjg5ZjdhMDcyNWRiMjA3Y2IyNjgyZmRmMzk3ZjU4NDFjZDc5NWMwMzQ0MDYifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFEa3R5cG4rTGd1dXoyZ0toVjYrWUtVU0VReUVQb0ZoN3pEcXltenR5eTJlc3h0TnI2VVdOVUp1L09zNkduTzJrSHJkMTNkdS9odEZ3QkZqY25Yb0ZBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImJhZTE4OTc3YmM5YTU0NDg1NTA1NTBjYWU5MWE1M2VlMDA5ZmQ5ODQyYjgxMzNiZmRjODRjYTJkYjM3ZWY0MWYifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6ImdVOU0vNUFNQmw5Z3U0Yi9LQVF4R1NtcjZ0V0lCZStlTkc4MWlrNWZEaFMvbUkwL29TSnJpRE5QN0JPb1FZWEdPZTBDWDJ4cTZodFNzNEpMUU9uOG1nPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6IjNhNDI2NTVjZjk0ODUyYWU5YjRjZjljZjI5YzA0ZjdlZWFmNGY4YTMyZTRiYjVjMjU5MWM5MGE5ZmJiY2MwNWEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ikl5NUJGVno3Y2dEZkdvVE1mTFhaSC9EdE9RL2I4L212YlNQZytpUFJSWlBGSkxMYTY5L2ZjVDhQMDFhb2RRZGg4ZzVHVDhEUkpQVWVEa2Uwd0x6NHBRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6IjgxNjcxY2QzOWI1OTRlZGYwYzZiMmQyOWNmYjdkODQ3NjM3ODM3Mzk1NDc2NDAyNGFjNTY2ZGZhOWYxOGQxMDgifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFEa3R5cG4rTGd1dXoyZ0toVjYrWUtVU0VReUVQb0ZoN3pEcXltenR5eTJlc3h0TnI2VVdOVUp1L09zNkduTzJnRUlYYjZpNXpFcXN1VFV4Z3ZVamhRPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImUwOWRmZWNlZDg3ZGQ1ZWNlMjIzMDk3NmE3ZmZlNTJlZTUzMzBiYjIwZWUxYTVmYzk5Y2VhM2MwOWNiMzFlZGUifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjFEa3R5cG4rTGd1dXoyZ0toVjYrWUtVU0VReUVQb0ZoN3pEcXltenR5eTJlc3h0TnI2VVdOVUp1L09zNkduTzJrSHJkMTNkdS9odEZ3QkZqY25Yb0ZBPT0iLCJpdiI6InFNWW9ZUTZSaWQrYzkvUktDcW1nYlE9PSIsIm1hYyI6ImJhZTE4OTc3YmM5YTU0NDg1NTA1NTBjYWU5MWE1M2VlMDA5ZmQ5ODQyYjgxMzNiZmRjODRjYTJkYjM3ZWY0MWYifQ=="
+        ],
+        "integerId": 5314749,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 11697",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-pokemon-swsh-celebrations-classic-holo-charizard-4-cgc-10-pristine",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2021 Pokemon SWSH Celebrations Classic Holo Charizard #4 CGC 10 PRISTINE"
+      },
+      {
+        "__typename": "CollectListing",
+        "auction": {
+          "__typename": "CollectWeeklyAuction",
+          "id": "40487110-f5c3-11ef-9099-0a58a9feac02"
+        },
+        "bidCount": 19,
+        "certifiedSeller": "Fanatics Collect",
+        "collectSales": [],
+        "currentBid": {
+          "__typename": "Money",
+          "amountInCents": 11500,
+          "currency": "USD"
+        },
+        "favoritedCount": 12,
+        "highestBidder": false,
+        "id": "682b8098-82e8-11f0-be74-0a58a9feac02",
+        "imageSets": [
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBsSDkxbEVkQkRMeHlJSWFoc3ppNFZMc1N5MjlHWjFLOFpWZlNZb3k5SGU3cHBNTEx2dXpkQnFualo0S0Ztd2s2NUhCN253cFJXLzJBNXZiSGFzaEhRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImJjMzM5NWFiMTU3YzJjNWZiYjljNzI5ZTk0MDFkYTRlNzU3YTkzOTMyMzU2MWViNjBmMzMzZDNjZTg5OGFjZjIifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IitFS1A2djk5QXlLNXVWQVFOdy9pemYxMjZYOHhiWTd3S05DL21oRFdpb0xmVVB1clZDT0hDcUJKWVEwL2pRcXl2dlo3bjN4dStOcVFUOVIyOGVMei9BPT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjgzMzNiOGYwYzczY2Y1ZTkzZDgyZWE2NDcxNmM5NjRlMDJhMTgzZGI3MzE1YWI5OThiZDg3YTBjN2MzOWQyMGYifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik1Zbmg3SVJnVDRSNkRwNUV5eGl3ZXNMbW84NDVpVGFGZHpUWXN5ZGFyR3BJVjloYXNQUnE1OGFqdGJsL1RGNUhwMDdYOWlpQWplaEhEQ2E4QVIwcFVRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6ImI3NjAyYjJhMWRlMDc2ODg5YjFjYjRkNmRkMjQ2M2VhZTljMjA2MmRkNjM0ZWMyMWI5MDE2ZTQwZjc1OTI4YWMifQ=="
+          },
+          {
+            "__typename": "CollectImageSet",
+            "medium": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBsSDkxbEVkQkRMeHlJSWFoc3ppNFZMc1N5MjlHWjFLOFpWZlNZb3k5SGU3cHBNTEx2dXpkQnFualo0S0Ztd2trRTVoamI1bnBKUWEwNmRobnpTSzRBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImIxN2JlYjM2NDkzY2RjMGY1M2VlNWMyYjgyYWYwOWUyOTBmMjIyZGY1ZDJkYTllNjZlNzk4MTcyOGZlMGMwNjAifQ==",
+            "small": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IitFS1A2djk5QXlLNXVWQVFOdy9pemYxMjZYOHhiWTd3S05DL21oRFdpb0oxaEJWMld3Z1psQmFhYjcycFF4blg2d3E4aUZVVTlXcndaOXZNOWhTOWl3PT0iLCJpdiI6Ik1ueEVBbXFoUktuQUFjRHVHL0dxQ0E9PSIsIm1hYyI6IjE3MmIwNjgzYmE1M2I3MmYxOGZiMDVmMmYwODRkNGYwZmIzNWViMmRkOTUxNGQ2NDZkMWMzMjA3MTY1M2QyNTEifQ==",
+            "thumbnail": "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6Ik1Zbmg3SVJnVDRSNkRwNUV5eGl3ZXNMbW84NDVpVGFGZHpUWXN5ZGFyR3BJVjloYXNQUnE1OGFqdGJsL1RGNUgzMGlhTWpMbVlveHVZTXlPZVB5UGtRPT0iLCJpdiI6IkdMa2tqQzJDRERDTFh4c1NOcEVIVEE9PSIsIm1hYyI6IjUzODdjYmE3MDY4ZDZhMTkyYzU1ZTA3ZDE5ODk0NWMwZTI1YTE5MGZmZTJjZjhmMzYxOWYyMDMxMzNlYjEyYzgifQ=="
+          }
+        ],
+        "images": [
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBsSDkxbEVkQkRMeHlJSWFoc3ppNFZMc1N5MjlHWjFLOFpWZlNZb3k5SGU3cHBNTEx2dXpkQnFualo0S0Ztd2s2NUhCN253cFJXLzJBNXZiSGFzaEhRPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImJjMzM5NWFiMTU3YzJjNWZiYjljNzI5ZTk0MDFkYTRlNzU3YTkzOTMyMzU2MWViNjBmMzMzZDNjZTg5OGFjZjIifQ==",
+          "https://dilxwvfkfup17.cloudfront.net/eyJ0YWciOiIiLCJ2YWx1ZSI6IjBsSDkxbEVkQkRMeHlJSWFoc3ppNFZMc1N5MjlHWjFLOFpWZlNZb3k5SGU3cHBNTEx2dXpkQnFualo0S0Ztd2trRTVoamI1bnBKUWEwNmRobnpTSzRBPT0iLCJpdiI6InY0V0J1Yk1TTnpCdjNxdy95T29WRXc9PSIsIm1hYyI6ImIxN2JlYjM2NDkzY2RjMGY1M2VlNWMyYjgyYWYwOWUyOTBmMjIyZGY1ZDJkYTllNjZlNzk4MTcyOGZlMGMwNjAifQ=="
+        ],
+        "integerId": 5314747,
+        "isOwner": false,
+        "listingType": "WEEKLY",
+        "lotString": "WA190 Lot: 11695",
+        "marketplaceEyeAppeal": null,
+        "slug": "2021-pokemon-swsh-celebrations-classic-holo-charizard-4-cgc-10-gem-mint",
+        "startingPrice": {
+          "__typename": "Money",
+          "amountInCents": 500,
+          "currency": "USD"
+        },
+        "states": {
+          "__typename": "CollectListingStates",
+          "isClosed": false,
+          "isFanaticsAuthentic": false,
+          "isGreatPrice": false,
+          "isWatching": false,
+          "lastWindowWhenBidWasReceived": null,
+          "userBidStatus": "NO_BIDS",
+          "userCanBuy": false,
+          "userMaxBid": {
+            "__typename": "Money",
+            "amountInCents": 0,
+            "currency": "USD"
+          }
+        },
+        "status": "WEEKLY_STATUS_LISTED",
+        "subtitle": null,
+        "title": "2021 Pokemon SWSH Celebrations Classic Holo Charizard #4 CGC 10 GEM MINT"
+      }
+    ]
+  }
+}

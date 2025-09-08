@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "sessionId": "tcgplayer_targeted_1757302804137",
+    "collectionType": "targeted_collector_crypt_match",
+    "targetCards": [
+      "Pikachu",
+      "Charizard",
+      "Mewtwo",
+      "Blastoise",
+      "Venusaur",
+      "Eevee",
+      "Charmander",
+      "Umbreon",
+      "Mew",
+      "Bulbasaur",
+      "Magikarp",
+      "Squirtle",
+      "Articuno",
+      "Leafeon",
+      "Ditto",
+      "Lugia",
+      "Espeon",
+      "Sylveon",
+      "Vaporeon",
+      "Flareon"
+    ],
+    "totalProducts": 1,
+    "duplicatesPrevented": 0,
+    "sortedBy": "rarityWeight DESC, marketPrice DESC, name ASC",
+    "createdAt": "2025-09-08T03:42:15.133Z"
+  },
+  "products": [
+    {
+      "name": "Detective Pikachu",
+      "cleanedName": "Detective Pikachu",
+      "externalId": "197563",
+      "setName": "Unknown Set",
+      "rarity": "Unknown",
+      "cardNumber": "",
+      "category": "Pokemon",
+      "productUrl": "https://www.tcgplayer.com/product/197563/pokemon-detective-pikachu-detective-pikachu-on-the-case-figure-collection?page=1",
+      "imageUrl": "https://tcgplayer-cdn.tcgplayer.com/product/197563_in_200x200.jpg",
+      "tcgplayerUrl": "https://www.tcgplayer.com/product/197563/pokemon-detective-pikachu-detective-pikachu-on-the-case-figure-collection?page=1",
+      "fullProductText": "Detective PikachuDetective Pikachu On the Case Figure Collection2 listings from $114.95Market Price:$74.52",
+      "searchTerm": "Pikachu",
+      "extractedAt": "2025-09-08T03:40:09.042Z",
+      "harvestSessionId": "tcgplayer_targeted_1757302804137",
+      "elementIndex": 2,
+      "currentPrice": 114.95,
+      "marketPrice": 74.52,
+      "lowPrice": null,
+      "highPrice": null,
+      "listingCount": 2,
+      "priceText": "Detective PikachuDetective Pikachu On the Case Figure Collection2 listings from $114.95Market Price:$74.52",
+      "rarityWeight": 0
+    }
+  ]
+}

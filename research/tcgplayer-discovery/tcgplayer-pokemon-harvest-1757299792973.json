@@ -1,0 +1,26 @@
+{
+  "harvestSession": {
+    "startTime": "2025-09-08T02:49:42.246Z",
+    "totalCards": 0,
+    "totalPages": 1,
+    "pagesProcessed": 1,
+    "errors": [],
+    "metadata": {
+      "paginationInfo": {
+        "paginationLinks": [],
+        "cardsOnPage": 0,
+        "url": "https://www.tcgplayer.com/search/pokemon/product?productLineName=pokemon&page=1",
+        "title": "Your Trusted Marketplace for Collectible Trading Card Games - TCGplayer"
+      }
+    }
+  },
+  "cards": [],
+  "summary": {
+    "totalCards": 0,
+    "totalPages": 1,
+    "pagesProcessed": 1,
+    "successRate": 1,
+    "avgCardsPerPage": 0,
+    "errors": 0
+  }
+}

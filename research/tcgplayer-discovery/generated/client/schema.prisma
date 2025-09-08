@@ -1,0 +1,166 @@
+// This is your Prisma schema file for TCGplayer Pokemon data
+// Learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./tcgplayer.db"
+}
+
+model TCGPlayerCard {
+  id         String @id @default(cuid())
+  externalId String @unique // TCGplayer product ID
+  source     String @default("tcgplayer")
+
+  // Basic Card Information
+  name         String
+  cleanedName  String?
+  setName      String
+  setUrl       String?
+  rarity       String?
+  rarityWeight Int? // For sorting (higher = rarer)
+  cardType     String?
+  cardNumber   String?
+  category     String  @default("Pokemon")
+  menuCategory String? // Latest Sets, Promos, etc.
+
+  // URLs and Images
+  productUrl   String?
+  imageUrl     String?
+  tcgplayerUrl String?
+
+  // Pricing Information (extracted from product data)
+  currentPrice Float?
+  marketPrice  Float?
+  lowPrice     Float?
+  midPrice     Float?
+  highPrice    Float?
+  priceRange   String? // e.g., "from $3.00"
+  listingCount Int? // number of listings
+  priceText    String? // raw price text for parsing
+
+  // Market Data
+  inStock       Boolean @default(false)
+  sellable      Boolean @default(true)
+  totalListings Int?
+
+  // Metadata
+  page             Int?
+  extractedAt      DateTime @default(now())
+  lastUpdated      DateTime @updatedAt
+  harvestSessionId String?
+
+  // Raw data for debugging
+  rawProductData String? // JSON string of original data
+
+  @@index([setName])
+  @@index([extractedAt])
+  @@index([marketPrice])
+  @@index([harvestSessionId])
+  @@map("tcgplayer_cards")
+}
+
+model TCGPlayerSet {
+  id           String  @id @default(cuid())
+  title        String  @unique
+  fullTitle    String?
+  url          String
+  fullUrl      String
+  menuCategory String // Latest Sets, Main, Search, etc.
+
+  // Set Statistics
+  totalProducts  Int @default(0)
+  totalPages     Int @default(0)
+  pagesProcessed Int @default(0)
+
+  // Harvest Information
+  lastHarvestedAt DateTime?
+  harvestStatus   String    @default("pending") // pending, processing, completed, failed
+  harvestErrors   String? // JSON array of errors
+
+  // Metadata
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([menuCategory])
+  @@index([lastHarvestedAt])
+  @@map("tcgplayer_sets")
+}
+
+model TCGPlayerHarvestSession {
+  id        String @id @default(cuid())
+  sessionId String @unique
+
+  // Session Information
+  startTime DateTime  @default(now())
+  endTime   DateTime?
+  status    String    @default("running") // running, completed, failed, cancelled
+
+  // Progress Tracking
+  totalSets      Int @default(0)
+  processedSets  Int @default(0)
+  totalProducts  Int @default(0)
+  successfulSets Int @default(0)
+  failedSets     Int @default(0)
+
+  // Configuration
+  maxPagesPerSet Int    @default(10)
+  maxSets        Int?
+  harvestType    String @default("full") // full, sample, specific_sets
+
+  // Results
+  errors  String? // JSON array of errors
+  summary String? // JSON summary object
+
+  // Metadata
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([sessionId])
+  @@index([status])
+  @@index([startTime])
+  @@map("tcgplayer_harvest_sessions")
+}
+
+model TCGPlayerPriceHistory {
+  id         String @id @default(cuid())
+  cardId     String // Reference to TCGPlayerCard
+  externalId String // TCGplayer product ID
+
+  // Price Data
+  marketPrice  Float?
+  lowPrice     Float?
+  midPrice     Float?
+  highPrice    Float?
+  listingCount Int?
+
+  // Price Source
+  priceSource String   @default("product_page") // product_page, api, bulk_import
+  priceDate   DateTime @default(now())
+
+  // Metadata
+  createdAt DateTime @default(now())
+
+  @@index([cardId])
+  @@index([externalId])
+  @@index([priceDate])
+  @@index([marketPrice])
+  @@map("tcgplayer_price_history")
+}
+
+model TCGPlayerConfiguration {
+  id          String  @id @default(cuid())
+  key         String  @unique
+  value       String
+  description String?
+
+  // Metadata
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("tcgplayer_configuration")
+}

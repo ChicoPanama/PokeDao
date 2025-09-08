@@ -1,0 +1,1464 @@
+{
+  "global": {
+    "updatedAt": "2025-09-02 16:33:27.439Z",
+    "enabled": true,
+    "customcode": true,
+    "customStyles": true
+  },
+  "servers": {
+    "bigData": {
+      "host": "analytics.foresee.com"
+    },
+    "efmSurvey": {
+      "host": "www.fanatics.verintefm.com"
+    },
+    "efmInvite": {
+      "host": "www.fanatics.verintefm.com"
+    },
+    "dbaHoover": {
+      "host": "hoover.foresee.com"
+    }
+  },
+  "visitor": {
+    "autoPagenames": "variableText",
+    "autoPagenamesVariable": "pageTypeCode",
+    "pagenames": [],
+    "properties": [
+      {
+        "name": "LeagueOrTeamPurchased",
+        "type": "extractVariable",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": null,
+        "conditions": [],
+        "variable": "ProductID"
+      },
+      {
+        "name": "ProductID",
+        "type": "extractVariable",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": null,
+        "conditions": [],
+        "id": "g1ew3pz9",
+        "variable": "productId"
+      },
+      {
+        "name": "OrderValue",
+        "type": "extractVariable",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": null,
+        "conditions": [],
+        "variable": "Order.SubTotal2"
+      },
+      {
+        "name": "pageType (updated)",
+        "type": "extractVariable",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": null,
+        "conditions": [],
+        "id": "8td8goxv",
+        "variable": "pageTypeCode"
+      },
+      {
+        "name": "newVisitor (updated)",
+        "type": "extractVariable",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": null,
+        "conditions": [],
+        "id": "bv939mft",
+        "variable": "newVisitor"
+      },
+      {
+        "name": "NumberItemsinCart",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "1w7s9b22",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar20"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      },
+      {
+        "name": "CartValue",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "f9e51ld7",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar35"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      },
+      {
+        "name": "ErrorMessage",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "svqr2rvg",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar82"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      },
+      {
+        "name": "League",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "fixhut6w",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar7"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      },
+      {
+        "name": "isLoggedIn (updated)",
+        "type": "extractVariable",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "n/a",
+        "conditions": [],
+        "id": "cz88tzpa",
+        "variable": "isLoggedIn"
+      },
+      {
+        "name": "PageReferrer",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "zt7c61b7",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar51"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      },
+      {
+        "name": "PageURL",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "1m1zgvl3",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar50"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      },
+      {
+        "name": "PaymentMethod",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "wuqe4u3s",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar12"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      },
+      {
+        "name": "sessionId (updated)",
+        "type": "extractVariable",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "kmaunbgp",
+        "variable": "sessionId"
+      },
+      {
+        "name": "ShippingCountry",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "k9d08zov",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar15"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      },
+      {
+        "name": "ShippingMethod",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "d41gqrq5",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar14"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      },
+      {
+        "name": "Team",
+        "type": "multiple",
+        "session": false,
+        "changePage": false,
+        "matchAll": false,
+        "defaultValue": "N",
+        "conditions": [],
+        "id": "y2rmpji2",
+        "values": [
+          {
+            "conditions": [
+              {
+                "type": "variable",
+                "comparator": "regexp",
+                "value": ".*",
+                "name": "evar8"
+              }
+            ],
+            "value": "Y"
+          }
+        ]
+      }
+    ]
+  },
+  "rulesEngine": {
+    "enabled": true,
+    "surveyRecording": true,
+    "stories": [
+      {
+        "name": "fanatics_desktop_browseSurvey",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "fanatics.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "Fanatics",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "surveyShown",
+            "comparator": "none",
+            "timeframe": "14d"
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 30,
+            "tablet": 0,
+            "phone": 0,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "mode": "modal",
+            "exclusive": false,
+            "customTexts": true,
+            "positionX": "center",
+            "positionY": "center",
+            "width": 550,
+            "showBackdrop": true,
+            "showLogo": true,
+            "mobileAutoFullScreen": false,
+            "customClass": "fanatics",
+            "headingText": "<p>We Value Your Feedback!</p>",
+            "descriptionText": "<p>Your insights help us improve the experience for all fans.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "buttonDeclineText": "No, thanks",
+            "tagline": "Powered by Verint",
+            "logoUrl": "Fanatics_Primary_Black.png"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C53D3927EB",
+            "logoUrl": "Fanatics_Primary_Black.png",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": false,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false
+          }
+        ],
+        "id": "x0b84z6v"
+      },
+      {
+        "name": "fanatics_mobile_browseSurvey",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "fanatics.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "Fanatics",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "surveyShown",
+            "comparator": "none",
+            "timeframe": "14d"
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 0,
+            "tablet": 0,
+            "phone": 30,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "mode": "notification",
+            "exclusive": false,
+            "customTexts": true,
+            "positionX": "center",
+            "positionY": "end",
+            "mobileAutoFullScreen": false,
+            "customClass": "fanatics",
+            "headingText": "<p>We Value Your Feedback!</p>",
+            "descriptionText": "<p>Your insights help us improve the experience for all fans.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "hideBackground": true,
+            "buttonDeclineText": "No, thanks"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C53D3927EB",
+            "logoUrl": "Fanatics_Primary_Black.png",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": true,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false
+          }
+        ],
+        "id": "cv6kqyq2",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "nfl_desktop",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "nflshop.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "NFL Shop",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 10,
+            "tablet": 0,
+            "phone": 0,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "center",
+            "exclusive": false,
+            "mode": "modal",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "buttonDeclineText": "No, thanks",
+            "width": 450,
+            "showBackdrop": false,
+            "showLogo": true,
+            "logoUrl": "nfl_logo.png",
+            "tagline": "Powered by Verint"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C522BC6D70",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": false,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "nfl_logo.png"
+          }
+        ],
+        "id": "fdsb4y6u",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "nfl_mobile",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "nflshop.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "NFL Shop",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 0,
+            "tablet": 0,
+            "phone": 10,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "end",
+            "exclusive": false,
+            "mode": "notification",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "hideBackground": true,
+            "buttonDeclineText": "No, thanks",
+            "customClass": "fanatics"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C522BC6D70",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": true,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "nfl_logo.png"
+          }
+        ],
+        "id": "w2i4n2h3",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "mlb_desktop",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "mlbshop.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "MLBShop",
+            "changePage": false,
+            "dataType": "string",
+            "session": true,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 10,
+            "tablet": 0,
+            "phone": 0,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "center",
+            "exclusive": true,
+            "mode": "modal",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "buttonDeclineText": "No, thanks",
+            "width": 450,
+            "showBackdrop": true,
+            "showLogo": true,
+            "logoUrl": "mlb_logo.png",
+            "tagline": "Powered by Verint"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C5048B3374",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": false,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "mlb_logo.png"
+          }
+        ],
+        "id": "h2wzjfdw",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "mlb_mobile",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "mlbshop.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "MLB Shop",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 0,
+            "tablet": 0,
+            "phone": 10,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "end",
+            "exclusive": false,
+            "mode": "notification",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "hideBackground": true,
+            "buttonDeclineText": "No, thanks",
+            "customClass": "fanatics"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C5048B3374",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": true,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "mlb_logo.png"
+          }
+        ],
+        "id": "jwdrk2cx",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "lids_desktop",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "lids.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "Lids",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 20,
+            "tablet": 0,
+            "phone": 0,
+            "legacy": false,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "center",
+            "exclusive": false,
+            "mode": "modal",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "showBackdrop": true,
+            "mobileAutoFullScreen": false,
+            "width": 500,
+            "showLogo": true,
+            "logoUrl": "lids_logo_primary_cmyk.png",
+            "buttonDeclineText": "No, thanks"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C56C2C86FA",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": false,
+            "hideBackground": false,
+            "customClass": "lids",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "lids_logo_primary_cmyk.png"
+          }
+        ],
+        "id": "6v3tqdaq",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "lids_mobile",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "lids.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "Lids",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 0,
+            "tablet": 0,
+            "phone": 20,
+            "legacy": false,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "end",
+            "exclusive": true,
+            "mode": "notification",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "hideBackground": true,
+            "buttonDeclineText": "No, thanks",
+            "customClass": "fanatics"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C56C2C86FA",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": true,
+            "hideBackground": false,
+            "customClass": "lids",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "lids_logo_primary_cmyk.png"
+          }
+        ],
+        "id": "dvzjwfd4",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "nhl_desktop",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "shop.nhl.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "NHL Shop",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 20,
+            "tablet": 0,
+            "phone": 0,
+            "legacy": false,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "center",
+            "exclusive": false,
+            "mode": "modal",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "showBackdrop": true,
+            "mobileAutoFullScreen": false,
+            "width": 500,
+            "showLogo": true,
+            "logoUrl": "nhl_logo.png",
+            "buttonDeclineText": "No, thanks"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C522C1E7AA",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": false,
+            "hideBackground": false,
+            "customClass": "nhl",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "nhl_logo.png"
+          }
+        ],
+        "id": "jp8jvx93",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "nhl_mobile",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "shop.nhl.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "NHL Shop",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 0,
+            "tablet": 0,
+            "phone": 20,
+            "legacy": false,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "end",
+            "exclusive": false,
+            "mode": "notification",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "mobileAutoFullScreen": true,
+            "hideBackground": true,
+            "buttonDeclineText": "No, thanks",
+            "customClass": "fanatics"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C522C1E7AA",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": true,
+            "hideBackground": false,
+            "customClass": "nhl",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "nhl_logo.png"
+          }
+        ],
+        "id": "u3hiaj8r",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "nba_desktop",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "store.nba.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "NBA Store",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 20,
+            "tablet": 0,
+            "phone": 0,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "center",
+            "exclusive": false,
+            "mode": "modal",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "buttonDeclineText": "No, thanks",
+            "width": 450,
+            "showBackdrop": true,
+            "showLogo": true,
+            "logoUrl": "nba_logo.png",
+            "tagline": "Powered by Verint"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C50217763E",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": false,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "nba_logo.png"
+          }
+        ],
+        "id": "3z8zq6wa",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "nba_mobile",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "store.nba.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "NBA Store",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 0,
+            "tablet": 0,
+            "phone": 20,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "end",
+            "exclusive": false,
+            "mode": "notification",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "hideBackground": true,
+            "buttonDeclineText": "No, thanks",
+            "customClass": "fanatics"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C50217763E",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": true,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "nba_logo.png"
+          }
+        ],
+        "id": "migq7l2z",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "fansedge_desktop",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "fansedge.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "Fansedge",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 20,
+            "tablet": 0,
+            "phone": 0,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "center",
+            "exclusive": false,
+            "mode": "modal",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "buttonDeclineText": "No, thanks",
+            "width": 450,
+            "showBackdrop": true,
+            "showLogo": true,
+            "logoUrl": "fansedge_l.png",
+            "tagline": "Powered by Verint"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C5711C629A",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": false,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "fansedge_l.png"
+          }
+        ],
+        "id": "na25xwh2",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "name": "fansedge_mobile",
+        "enabled": true,
+        "persistent": false,
+        "repeatAfter": "30d",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "fansedge.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "Fansedge",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "checkPageViews",
+            "comparator": "greaterEqual",
+            "value": 6
+          },
+          {
+            "stepName": "samplingRate",
+            "desktop": 0,
+            "tablet": 0,
+            "phone": 20,
+            "namespace": "global"
+          },
+          {
+            "stepName": "showInvite",
+            "positionX": "center",
+            "positionY": "end",
+            "exclusive": false,
+            "mode": "notification",
+            "customTexts": true,
+            "headingText": "<p>We Welcome Your Feedback!</p>",
+            "descriptionText": "<p>Take this quick survey to help improve your experience.</p>",
+            "buttonAcceptText": "Yes, I'll give feedback",
+            "hideBackground": true,
+            "buttonDeclineText": "No, thanks",
+            "customClass": "fanatics"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C5711C629A",
+            "closeButton": true,
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": true,
+            "hideBackground": false,
+            "customClass": "",
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "fansedge_l.png"
+          }
+        ],
+        "id": "wawgm2mk",
+        "owner": 16,
+        "editors": null
+      },
+      {
+        "id": "s2pn86bp",
+        "name": "lids_feedbackBadge",
+        "enabled": false,
+        "persistent": false,
+        "repeatAfter": "instant",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "lids.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "Lids",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "surveyShown",
+            "comparator": "any",
+            "timeframe": "30d"
+          },
+          {
+            "stepName": "showBadge",
+            "side": "right",
+            "alignment": "center",
+            "customTexts": false,
+            "showIcon": false,
+            "iconPosition": "before"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C54DEE825F",
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": true,
+            "hideBackground": false,
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false,
+            "logoUrl": "lids_logo_primary_cmyk.png"
+          }
+        ],
+        "owner": 114,
+        "editors": []
+      },
+      {
+        "id": "imf44v9c",
+        "name": "mitchellAndNess_feedbackBadge",
+        "enabled": true,
+        "persistent": true,
+        "repeatAfter": "instant",
+        "steps": [
+          {
+            "stepName": "checkUrl",
+            "comparator": "contains",
+            "value": "mitchellandness.com"
+          },
+          {
+            "stepName": "setProperty",
+            "propertyName": "siteName",
+            "propertyValue": "Mitchell and Ness",
+            "changePage": false,
+            "dataType": "string",
+            "session": false,
+            "onlyCurrentPi": false
+          },
+          {
+            "stepName": "showBadge",
+            "side": "right",
+            "alignment": "center",
+            "customTexts": false,
+            "showIcon": false,
+            "iconPosition": "before"
+          },
+          {
+            "stepName": "showModalSurvey",
+            "surveyId": "2CD424C51BE43D22",
+            "positionX": "center",
+            "positionY": "center",
+            "maxWidth": "550px",
+            "mobileAutoFullScreen": true,
+            "hideBackground": false,
+            "cancelClosedSurvey": false,
+            "buttonless": false,
+            "endPageCloseButton": false,
+            "autoClose": false
+          }
+        ],
+        "owner": 114,
+        "editors": []
+      }
+    ]
+  },
+  "recordingEngine": {
+    "enabled": false,
+    "idsite": null,
+    "maskFullPage": true,
+    "maskingRules": [],
+    "unmaskingRules": [],
+    "blacklist": [],
+    "whitelist": []
+  },
+  "surveyEngine": {
+    "enabled": true,
+    "defaultPhoneCode": "1",
+    "phoneCodes": [
+      {
+        "code": "1",
+        "label": "US & Canada"
+      }
+    ]
+  },
+  "analyticsEngine": {
+    "enabled": true,
+    "customerId": "82r6oSiYEqXw93Vsy5rhtg=="
+  },
+  "scoringEngine": {
+    "enabled": true,
+    "groups": {
+      "struggle": {
+        "enabled": true,
+        "severityLevel": {},
+        "indicators": {}
+      }
+    },
+    "indicators": {}
+  },
+  "integrations": {
+    "fullstory": {
+      "enabled": false
+    },
+    "quantumMetric": {
+      "enabled": false
+    }
+  },
+  "i18n": {
+    "defaultLocale": "en-US",
+    "locales": {
+      "en-US": {}
+    }
+  },
+  "styles": {
+    "default": {}
+  }
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "endpoint": "https://www.fanatics.com/api/products",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/search",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/catalog",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/inventory",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/cards",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/pokemon",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/collectibles",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/v1/products",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/v2/products",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/v1/search",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/v2/search",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/graphql",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/gql",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/_api/products",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/_next/api/products",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/rest/products",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/services/products",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/data/products.json",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/products.json",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/listings",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  },
+  {
+    "endpoint": "https://www.fanatics.com/api/marketplace",
+    "method": "GET",
+    "status": 403,
+    "responseType": "text/html",
+    "hasData": false,
+    "description": "403 Forbidden (HTML)"
+  }
+]

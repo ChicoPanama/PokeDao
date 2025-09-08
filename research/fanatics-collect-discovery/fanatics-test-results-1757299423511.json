@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "sessionId": "test_1757299367066",
+    "testType": "graphql-optimization-test",
+    "timestamp": "2025-09-08T02:43:43.511Z",
+    "configUsed": {
+      "testPages": [
+        1,
+        2,
+        3,
+        25,
+        50
+      ],
+      "maxTestPages": 5,
+      "useGraphQL": true,
+      "htmlFallback": true,
+      "saveToDatabase": true,
+      "cardSelector": "[class*=\"card\"]",
+      "delayBetweenPages": 2000,
+      "pageTimeout": 25000
+    },
+    "pagesTestedL": [
+      1,
+      2,
+      3,
+      25,
+      50
+    ]
+  },
+  "results": {
+    "htmlCards": [],
+    "graphqlCards": [],
+    "performance": {
+      "html": [
+        {
+          "page": 1,
+          "loadTime": 5537,
+          "cardCount": 0,
+          "method": "html"
+        },
+        {
+          "page": 2,
+          "loadTime": 3493,
+          "cardCount": 0,
+          "method": "html"
+        },
+        {
+          "page": 3,
+          "loadTime": 2819,
+          "cardCount": 0,
+          "method": "html"
+        },
+        {
+          "page": 25,
+          "loadTime": 2569,
+          "cardCount": 0,
+          "method": "html"
+        },
+        {
+          "page": 50,
+          "loadTime": 2568,
+          "cardCount": 0,
+          "method": "html"
+        }
+      ],
+      "graphql": []
+    },
+    "errors": [
+      "GraphQL: page.goto: Timeout 25000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://www.fanaticscollect.com/weekly-auction?category=Trading+Card+Games+%3E+Pok%C3%A9mon+(English),Trading+Card+Games+%3E+Pok%C3%A9mon+(Japanese),Trading+Card+Games+%3E+Pok%C3%A9mon+(Other+Languages)&type=WEEKLY&itemsPerPage=48&page=1\", waiting until \"networkidle\"\u001b[22m\n"
+    ],
+    "sessionId": "test_1757299367066",
+    "qualityMetrics": {
+      "totalCards": 0,
+      "cardsWithPrice": 0,
+      "cardsWithImage": 0,
+      "cardsWithLotUrl": 0,
+      "avgPrice": null,
+      "priceRange": {
+        "min": null,
+        "max": null
+      }
+    },
+    "recommendations": []
+  },
+  "summary": {
+    "htmlCards": 0,
+    "graphqlCards": 0,
+    "totalCards": 0,
+    "errors": 1,
+    "qualityScore": null
+  }
+}

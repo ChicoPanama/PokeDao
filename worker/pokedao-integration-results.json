@@ -1,0 +1,1457 @@
+{
+  "listings": [
+    {
+      "id": "collector_crypt_GracEG3x4wKeM7wsPVEvkNEp4TiwcbaXLQSAbo9hpJRd",
+      "title": "2001 #042 Dark Charizard-Holo PSA 10 Japanese Web Pokemon",
+      "price": 2000,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/GracEG3x4wKeM7wsPVEvkNEp4TiwcbaXLQSAbo9hpJRd",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "GracEG3x4wKeM7wsPVEvkNEp4TiwcbaXLQSAbo9hpJRd",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_76mPDtwbtSFgcDPniAwCfLkrWLW6cgPqt8K2bMCfvUjE",
+      "title": "2022 #267 Arceus V BGS 9 Japanese S Promo Pokemon",
+      "price": 9000,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/76mPDtwbtSFgcDPniAwCfLkrWLW6cgPqt8K2bMCfvUjE",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "76mPDtwbtSFgcDPniAwCfLkrWLW6cgPqt8K2bMCfvUjE",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_8pghShcjWYaLvmxZR3NyBQcL6LdjgBVaKeQ4uM6V1Kxw",
+      "title": "2006 #15 Mew Gold Star ARS 10 Pokemon Ex Dragon Frontiers Japanese 1st Edition",
+      "price": 23500,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/8pghShcjWYaLvmxZR3NyBQcL6LdjgBVaKeQ4uM6V1Kxw",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "8pghShcjWYaLvmxZR3NyBQcL6LdjgBVaKeQ4uM6V1Kxw",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_9sqYniFCW7hRbRzGpLqD3VSNd4mJ6UuQwUEWfxXsVs9n",
+      "title": "2000 #9 Lugia-Holo CGC 8.5 Neo Genesis Pokemon",
+      "price": 700,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/9sqYniFCW7hRbRzGpLqD3VSNd4mJ6UuQwUEWfxXsVs9n",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "9sqYniFCW7hRbRzGpLqD3VSNd4mJ6UuQwUEWfxXsVs9n",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_DdmTTJhSKVFoCZUTYN41MaZdQaMHsNu9K5MBmDKTxZL9",
+      "title": "2000 #20 Sabrina PSA 10 Gym Challenge Pokemon",
+      "price": 1200,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/DdmTTJhSKVFoCZUTYN41MaZdQaMHsNu9K5MBmDKTxZL9",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "DdmTTJhSKVFoCZUTYN41MaZdQaMHsNu9K5MBmDKTxZL9",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_6p4DZB3N7Q6xudf99EhbgdDZ9KdH4JkeYakyYb5RjNNV",
+      "title": "2000 #14 Rocket's Mewtwo Holo-1st Edition PSA 9 Gym Challenge Pokemon",
+      "price": 900,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/6p4DZB3N7Q6xudf99EhbgdDZ9KdH4JkeYakyYb5RjNNV",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "6p4DZB3N7Q6xudf99EhbgdDZ9KdH4JkeYakyYb5RjNNV",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_F6o7jzNiWcotUrv8ExMemDt26KTb4zwJ2FjQWCRLorgv",
+      "title": "2022 #073 Full Art/Pikachu CGC 10 Pristine Japanese Sword & Shield Dark Phantasma Pokemon",
+      "price": 70,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/F6o7jzNiWcotUrv8ExMemDt26KTb4zwJ2FjQWCRLorgv",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "F6o7jzNiWcotUrv8ExMemDt26KTb4zwJ2FjQWCRLorgv",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_BWtsyK9m3cEcYuaNYf83oQvzXgLEHhF1wGHXgi1ijC64",
+      "title": "2000 #14 Slowking-Holo PSA 9 Neo Genesis Pokemon",
+      "price": 400,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/BWtsyK9m3cEcYuaNYf83oQvzXgLEHhF1wGHXgi1ijC64",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "BWtsyK9m3cEcYuaNYf83oQvzXgLEHhF1wGHXgi1ijC64",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_8uFxmGugeWcFkRFjBb1kAQqmrfvKkBVjNacwj8H3zdtH",
+      "title": "2023 #284 Galarian Moltres PSA 10 Swsh Black Star Promo Pokemon",
+      "price": 300,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/8uFxmGugeWcFkRFjBb1kAQqmrfvKkBVjNacwj8H3zdtH",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "8uFxmGugeWcFkRFjBb1kAQqmrfvKkBVjNacwj8H3zdtH",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_GMFvHXCkpcngrbdsDNmjYEDf6zKTXMXXvoGc2vHLPtXn",
+      "title": "2023 #051 SNORLAX PSA 9 POKEMON SVP EN-SV BLACK STAR PROMO | 151 ELITE TRAINER BOX",
+      "price": 0.3,
+      "currency": "SOL",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/GMFvHXCkpcngrbdsDNmjYEDf6zKTXMXXvoGc2vHLPtXn",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "GMFvHXCkpcngrbdsDNmjYEDf6zKTXMXXvoGc2vHLPtXn",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_341Y8WFC5c3zHDrwD5fRwMPzdmAAZJktwFvTyAZ9c2GA",
+      "title": "2019 #102 Moltres & Zapdos & Articuno GX CGC 10 Pristine Japanese Sun & Moon Tag Team GX All Stars Pokemon",
+      "price": 82,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/341Y8WFC5c3zHDrwD5fRwMPzdmAAZJktwFvTyAZ9c2GA",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "341Y8WFC5c3zHDrwD5fRwMPzdmAAZJktwFvTyAZ9c2GA",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3kB33UCXjVQnfYi2tYiHWLvP2AXyaSdn7CkBZCpLLX9a",
+      "title": "2025 #132 Amarys PSA 10 Pre EN-Prismatic Evolutions Pokemon",
+      "price": 34,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3kB33UCXjVQnfYi2tYiHWLvP2AXyaSdn7CkBZCpLLX9a",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3kB33UCXjVQnfYi2tYiHWLvP2AXyaSdn7CkBZCpLLX9a",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_5H5ZTEcwiA675qf9ReEDzY2DGgXJpBRaBQuPpfxHLYjT",
+      "title": "2025 #232 Iono's Wattrel PSA 10 Japanese SV-P Promo Pokemon",
+      "price": 43,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/5H5ZTEcwiA675qf9ReEDzY2DGgXJpBRaBQuPpfxHLYjT",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "5H5ZTEcwiA675qf9ReEDzY2DGgXJpBRaBQuPpfxHLYjT",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_5bMFaJt3JRpngWrBU6K9wRFP7RszwxQn58YQk5hPbBdZ",
+      "title": "2024 #205 Vaporeon EX CGC 9.5 Japanese Sv8a-Terastal Fest EX Pokemon",
+      "price": 53,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/5bMFaJt3JRpngWrBU6K9wRFP7RszwxQn58YQk5hPbBdZ",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "5bMFaJt3JRpngWrBU6K9wRFP7RszwxQn58YQk5hPbBdZ",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_21eN9JoZSaj5S5dr6rvxpmewwRuj3ZxRJZLQ2gugUvru",
+      "title": "2024 #159 MAGNETON PSA 10 POKEMON SVP EN-SV BLACK STAR PROMO | SURGING SPARKS POKEMON CENTER ELITE TRAINER BOX",
+      "price": 400,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/21eN9JoZSaj5S5dr6rvxpmewwRuj3ZxRJZLQ2gugUvru",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "21eN9JoZSaj5S5dr6rvxpmewwRuj3ZxRJZLQ2gugUvru",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_F6TBNxifqYcnjBk8BwTtxxGaUAWSGaR9Jqz8tzSL3DbC",
+      "title": "1999 #67 Voltorb 1st Edition CGC 10 Game Pokemon",
+      "price": 150,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/F6TBNxifqYcnjBk8BwTtxxGaUAWSGaR9Jqz8tzSL3DbC",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "F6TBNxifqYcnjBk8BwTtxxGaUAWSGaR9Jqz8tzSL3DbC",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_55vKmRkhm1Cpb1qRyCbcKSMASF2oQNDaZvwFHmGudT8b",
+      "title": "2006 #39 BLACK STAR PROMO HOLO RAYQUAZA EX PSA 7 POKEMON",
+      "price": 299,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/55vKmRkhm1Cpb1qRyCbcKSMASF2oQNDaZvwFHmGudT8b",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "55vKmRkhm1Cpb1qRyCbcKSMASF2oQNDaZvwFHmGudT8b",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_93uJDi2Jw85pR8kaWvUSHcZRD1J5WHXtKBj9BSUhm4yA",
+      "title": "1999 #61 Rattata 1st Edition PSA 8 Game Pokemon",
+      "price": 50,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/93uJDi2Jw85pR8kaWvUSHcZRD1J5WHXtKBj9BSUhm4yA",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "93uJDi2Jw85pR8kaWvUSHcZRD1J5WHXtKBj9BSUhm4yA",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3z3hpPZxjx3N2634AszeAD7uTgQRD1hzQPRQxHvrSYKM",
+      "title": "2016 #042 UMBREON EX PSA 10 POKEMON JAPANESE XY AWAKENING PSYCHIC KING | 1ST EDITION",
+      "price": 350,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3z3hpPZxjx3N2634AszeAD7uTgQRD1hzQPRQxHvrSYKM",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3z3hpPZxjx3N2634AszeAD7uTgQRD1hzQPRQxHvrSYKM",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_2P5JjFKCLqZ3UEuGWRqEW8A3WEbMPu8qMPCmEWyi6kkm",
+      "title": "1996 #64 JAPANESE BASE SET KADABRA BGS 10 BLACK LABEL POKEMON",
+      "price": 1450,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/2P5JjFKCLqZ3UEuGWRqEW8A3WEbMPu8qMPCmEWyi6kkm",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "2P5JjFKCLqZ3UEuGWRqEW8A3WEbMPu8qMPCmEWyi6kkm",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_GPM1Aj7DThzcsfqmVie71xMYbu8nYyESX3F4zSQBVYSN",
+      "title": "2022 #192 Full Art/Lance PSA 10 Sword & Shield Silver Tempest Pokemon",
+      "price": 44.75,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/GPM1Aj7DThzcsfqmVie71xMYbu8nYyESX3F4zSQBVYSN",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "GPM1Aj7DThzcsfqmVie71xMYbu8nYyESX3F4zSQBVYSN",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_6QdT7AbVRgYmp9GMEkbWsngnvDqtGzJdzcbTLnrVMJNW",
+      "title": "2025 #173 Eevee PSA 10 Svp EN-SV Black Star Promo Pokemon",
+      "price": 65,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/6QdT7AbVRgYmp9GMEkbWsngnvDqtGzJdzcbTLnrVMJNW",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "6QdT7AbVRgYmp9GMEkbWsngnvDqtGzJdzcbTLnrVMJNW",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_4AeMPtngwZ9XepDRqeWD5BRdJSDunYi2huC1HdPiFeJp",
+      "title": "2023 #003 Charizard PSA 8 Japanese Cll-Trading Card Game Classic Charizard & HO-Oh EX Deck Pokemon",
+      "price": 72,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/4AeMPtngwZ9XepDRqeWD5BRdJSDunYi2huC1HdPiFeJp",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "4AeMPtngwZ9XepDRqeWD5BRdJSDunYi2huC1HdPiFeJp",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_FssBW5mono4mJ68DjpBA4R7FvMnVVJNwV1kTgFBkwM8n",
+      "title": "2009 #1 JAPANESE GARCHOMP HALF DECK 1ST EDITION MILOTIC C PSA 10 POKEMON",
+      "price": 42,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/FssBW5mono4mJ68DjpBA4R7FvMnVVJNwV1kTgFBkwM8n",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "FssBW5mono4mJ68DjpBA4R7FvMnVVJNwV1kTgFBkwM8n",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_5gzx5etrk1f97h1wiQhzqqNL5feSMT6hEQ7CquPa6GPP",
+      "title": "2000 #17 Blaine-Holo 1st Edition CGC 10 Gym Challenge Pokemon",
+      "price": 500,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/5gzx5etrk1f97h1wiQhzqqNL5feSMT6hEQ7CquPa6GPP",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "5gzx5etrk1f97h1wiQhzqqNL5feSMT6hEQ7CquPa6GPP",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_xrxvtSLTXNHRSXVC4b2ou2oTqKBYyC66JFUSqB9HZeC",
+      "title": "2019 #054 Mewtwo-Holo PSA 10 Japanese Sun & Moon Tag Team GX All Stars Pokemon",
+      "price": 51,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/xrxvtSLTXNHRSXVC4b2ou2oTqKBYyC66JFUSqB9HZeC",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "xrxvtSLTXNHRSXVC4b2ou2oTqKBYyC66JFUSqB9HZeC",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_DhLppSD4hVNyBgPgxQfNiQdbHkZckhq1hGtec6LLQYMA",
+      "title": "2023 #174 NIDOKING PSA 10 POKEMON JAPANESE SV2a-POKEMON 151 | ART RARE",
+      "price": 90,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/DhLppSD4hVNyBgPgxQfNiQdbHkZckhq1hGtec6LLQYMA",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "DhLppSD4hVNyBgPgxQfNiQdbHkZckhq1hGtec6LLQYMA",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_EJYPAW3tPcnFLRqGVFm3Vhb92xr74jmRkVGDhzmRDDMd",
+      "title": "2023 #1 TCG CLASSIC COLLECTION HOLO SQUIRTLE CGC 10 PRISTINE POKEMON",
+      "price": 80,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/EJYPAW3tPcnFLRqGVFm3Vhb92xr74jmRkVGDhzmRDDMd",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "EJYPAW3tPcnFLRqGVFm3Vhb92xr74jmRkVGDhzmRDDMd",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_4ZhgLWgHg8Qx28ZqZeZ4b7qk3NQuZDLdgnkHUorjtomZ",
+      "title": "2023 #133 Eevee PSA 10 Japanese Sv2a- 151 Pokemon",
+      "price": 90,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/4ZhgLWgHg8Qx28ZqZeZ4b7qk3NQuZDLdgnkHUorjtomZ",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "4ZhgLWgHg8Qx28ZqZeZ4b7qk3NQuZDLdgnkHUorjtomZ",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_7vsAiRA1rRbTeUsFJS1MqCoNEChrkRpQbBfGNDAD37mw",
+      "title": "2001 #046 Clair's Blastoise 1st Edition PSA 9 Japanese VS Pokemon",
+      "price": 90,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/7vsAiRA1rRbTeUsFJS1MqCoNEChrkRpQbBfGNDAD37mw",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "7vsAiRA1rRbTeUsFJS1MqCoNEChrkRpQbBfGNDAD37mw",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_ENW1j6dii9JbDfNJizka3zax4NtrZzm58hgAk1VLxU3s",
+      "title": "2025 #096 Team Rocket's Tyranitar PSA 10 Dri EN-Destined Rivals Pokemon",
+      "price": 330,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/ENW1j6dii9JbDfNJizka3zax4NtrZzm58hgAk1VLxU3s",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "ENW1j6dii9JbDfNJizka3zax4NtrZzm58hgAk1VLxU3s",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_8kWpSZxUAFnT5s8HGbf9jB3X2mHRtdvAL8X4MRk2RDtg",
+      "title": "2000 #39 TEAM ROCKET 1ST EDITION DARK KADABRA PSA 9 POKEMON",
+      "price": 35,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/8kWpSZxUAFnT5s8HGbf9jB3X2mHRtdvAL8X4MRk2RDtg",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "8kWpSZxUAFnT5s8HGbf9jB3X2mHRtdvAL8X4MRk2RDtg",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_F2YYtQmgDoxUmpahE2cy8H8QkMJ3ZE6wH6qbjBihQYw1",
+      "title": "2025 #173 Eevee CGC 10 Svp EN-SV Black Star Promo Pokemon",
+      "price": 65,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/F2YYtQmgDoxUmpahE2cy8H8QkMJ3ZE6wH6qbjBihQYw1",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "F2YYtQmgDoxUmpahE2cy8H8QkMJ3ZE6wH6qbjBihQYw1",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_8bqvwAzB3Vge9LKNcJUCxtrqs7pBNeAF9x7cdE9JTeio",
+      "title": "2024 #091 Lisia's Appeal CGC  Japanese Sv7a-Paradise Dragona Pokemon",
+      "price": 140,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/8bqvwAzB3Vge9LKNcJUCxtrqs7pBNeAF9x7cdE9JTeio",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "8bqvwAzB3Vge9LKNcJUCxtrqs7pBNeAF9x7cdE9JTeio",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_5nixp69JywUTurdkWKsWP8ZvyhQy67eVSg9ueLer82fD",
+      "title": "2023 #258 Skeledirge EX CGC 10 Pristine Pal EN-Paldea Evolved Pokemon",
+      "price": 115,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/5nixp69JywUTurdkWKsWP8ZvyhQy67eVSg9ueLer82fD",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "5nixp69JywUTurdkWKsWP8ZvyhQy67eVSg9ueLer82fD",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_4rF2VTVhFsPV5YqR2oBRrPdPLGZq9dF1KAsrNM1uZ8TZ",
+      "title": "2000 #229 Houndoom-Holo CGC 8.5 Japanese Neo 3 Pokemon",
+      "price": 95,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/4rF2VTVhFsPV5YqR2oBRrPdPLGZq9dF1KAsrNM1uZ8TZ",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "4rF2VTVhFsPV5YqR2oBRrPdPLGZq9dF1KAsrNM1uZ8TZ",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_GdRxsFeiFKRkujCmWL2unJmmPu3Y7LmBGfttaR985Ukq",
+      "title": "2024 #218 Roaring Moon EX CGC 10 Pristine Japanese Sv8a-Terastal Fest EX Pokemon",
+      "price": 100,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/GdRxsFeiFKRkujCmWL2unJmmPu3Y7LmBGfttaR985Ukq",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "GdRxsFeiFKRkujCmWL2unJmmPu3Y7LmBGfttaR985Ukq",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_2nzH1ZUUcmG4F4icwmjYRmSGFnQVV1he1Np6jpb2FqKQ",
+      "title": "2012 #48 Espeon CGC 9 Dark Explorers - English Pokemon",
+      "price": 110,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/2nzH1ZUUcmG4F4icwmjYRmSGFnQVV1he1Np6jpb2FqKQ",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "2nzH1ZUUcmG4F4icwmjYRmSGFnQVV1he1Np6jpb2FqKQ",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_B4H2Ndqs1ueS9Y9pqoqeFsRzvdRP6bZJ3eqGNL1bMbfr",
+      "title": "2024 #094 Walking Wake EX PSA 10 Japanese Sv5k-Wild Force Pokemon",
+      "price": 65,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/B4H2Ndqs1ueS9Y9pqoqeFsRzvdRP6bZJ3eqGNL1bMbfr",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "B4H2Ndqs1ueS9Y9pqoqeFsRzvdRP6bZJ3eqGNL1bMbfr",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_Eq2YudZyrtimbGGgyPWqQvLU45Z7EXGbPBQqfir1pREi",
+      "title": "2016 #XY106 Gyarados EX PSA 9 XY Black Star Promo Pokemon",
+      "price": 70,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/Eq2YudZyrtimbGGgyPWqQvLU45Z7EXGbPBQqfir1pREi",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "Eq2YudZyrtimbGGgyPWqQvLU45Z7EXGbPBQqfir1pREi",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3NAHEE4nXegccU27QfExsMAv2cbpkhS33Assqhrm4Vyi",
+      "title": "2004 #61 Koffing-Reverse Foil CGC 10 EX Team Rocket Returns Pokemon",
+      "price": 110,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3NAHEE4nXegccU27QfExsMAv2cbpkhS33Assqhrm4Vyi",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3NAHEE4nXegccU27QfExsMAv2cbpkhS33Assqhrm4Vyi",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_DXDL7rCVckf4zqEdsDwyaToMcdnSZY4T2m6MzfNg1Bky",
+      "title": "2006 #97 Rayquaza ex CGC 6 EX Dragon Frontiers - English Pokemon",
+      "price": 500,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/DXDL7rCVckf4zqEdsDwyaToMcdnSZY4T2m6MzfNg1Bky",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "DXDL7rCVckf4zqEdsDwyaToMcdnSZY4T2m6MzfNg1Bky",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_HQtnQ9S1TR71NtPgNEqFxBDBTfhsdEfex8oyoNv5NkWs",
+      "title": "2021 #006 Here Comes Team Rocket!-Holo PSA 10 Japanese Promo Card Pack 25th Anniversary Edition Pokemon",
+      "price": 100,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/HQtnQ9S1TR71NtPgNEqFxBDBTfhsdEfex8oyoNv5NkWs",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "HQtnQ9S1TR71NtPgNEqFxBDBTfhsdEfex8oyoNv5NkWs",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_HqizLWiz3ft5r5G21cgpps3ca74VFzYLwLuvSBSdGBpA",
+      "title": "2025 #144 Leafeon EX CGC 9.5 Pre EN-Prismatic Evolutions Pokemon",
+      "price": 500,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/HqizLWiz3ft5r5G21cgpps3ca74VFzYLwLuvSBSdGBpA",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "HqizLWiz3ft5r5G21cgpps3ca74VFzYLwLuvSBSdGBpA",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_C2JXVErFUmhmXZZPrtZgQQ55qx1otaSyGvAA7dcYKoJH",
+      "title": "2024 #205 SV TEMPORAL FORCES SIR WALKING WAKE EX PSA 10 POKEMON",
+      "price": 160,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/C2JXVErFUmhmXZZPrtZgQQ55qx1otaSyGvAA7dcYKoJH",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "C2JXVErFUmhmXZZPrtZgQQ55qx1otaSyGvAA7dcYKoJH",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3FhsLsMeQqmpC8iBqXvjPeUathbghx7Zpu2QkUxZrq5F",
+      "title": "2024 #150 Giratina V CGC 10 Pristine Shadow in Azure Sea S. CHINESE POKEMON",
+      "price": 495,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3FhsLsMeQqmpC8iBqXvjPeUathbghx7Zpu2QkUxZrq5F",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3FhsLsMeQqmpC8iBqXvjPeUathbghx7Zpu2QkUxZrq5F",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_EZCsQU7AWmwHEMtKQmMfyW1Vb6qSjkCXEeWuMEu1b2JC",
+      "title": "2025 #146 Escavalier PSA 10 Japanese Sv11b-Black Bolt Pokemon",
+      "price": 45,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/EZCsQU7AWmwHEMtKQmMfyW1Vb6qSjkCXEeWuMEu1b2JC",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "EZCsQU7AWmwHEMtKQmMfyW1Vb6qSjkCXEeWuMEu1b2JC",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_5eoe7rTZ7xYFPatsD4itDe33iTtBztSR4qqvmcHN6W36",
+      "title": "2023 #199 Charizard EX PSA  Mew EN-151 Pokemon",
+      "price": 325,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/5eoe7rTZ7xYFPatsD4itDe33iTtBztSR4qqvmcHN6W36",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "5eoe7rTZ7xYFPatsD4itDe33iTtBztSR4qqvmcHN6W36",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_H77eC8VTPUmCf9ys6hCX9rLZAfa5zEqZAmrpeLArEYaJ",
+      "title": "2017 #71 Full Art/Entei GX PSA 10 Sun & Moon Shining Legends Pokemon",
+      "price": 300,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/H77eC8VTPUmCf9ys6hCX9rLZAfa5zEqZAmrpeLArEYaJ",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "H77eC8VTPUmCf9ys6hCX9rLZAfa5zEqZAmrpeLArEYaJ",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_FGJhuFGZmAWJwfrcp97awpADgPE7C7Phm5jUSjjseDXf",
+      "title": "2007 #NA Garchomp LV.X-Holo 1st Edition PSA 9 Japanese Diamond & Pearl Moonlit Pursuit Pokemon",
+      "price": 88,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/FGJhuFGZmAWJwfrcp97awpADgPE7C7Phm5jUSjjseDXf",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "FGJhuFGZmAWJwfrcp97awpADgPE7C7Phm5jUSjjseDXf",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_4bVcAKvLTYTkFWwYyMPBZUQw8hAQN5uay17bAzGfSe61",
+      "title": "2022 #261 Full Art/Charizard Vmax CGC 9 Swsh Black Star Promo Pokemon",
+      "price": 55,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/4bVcAKvLTYTkFWwYyMPBZUQw8hAQN5uay17bAzGfSe61",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "4bVcAKvLTYTkFWwYyMPBZUQw8hAQN5uay17bAzGfSe61",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_26pPXHEyafp9K5hzvjts1LGzhCrUs3xqV3SLv7qvEHAY",
+      "title": "2001 #29 Scizor 1st Edition PSA 9 Neo Discovery Pokemon",
+      "price": 69,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/26pPXHEyafp9K5hzvjts1LGzhCrUs3xqV3SLv7qvEHAY",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "26pPXHEyafp9K5hzvjts1LGzhCrUs3xqV3SLv7qvEHAY",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_8g6LP3TuFSyvj1CjhorBL9h8ff2w1ZfXM8Qc8PUFsySo",
+      "title": "1997 #146 Moltres-Holo PSA 7 Japanese Fossil Pokemon",
+      "price": 35,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/8g6LP3TuFSyvj1CjhorBL9h8ff2w1ZfXM8Qc8PUFsySo",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "8g6LP3TuFSyvj1CjhorBL9h8ff2w1ZfXM8Qc8PUFsySo",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_5jU8dVsPNrhUAA3ZYfCkcQegbpezWyPE45SRmr5AvoXm",
+      "title": "2019 #83 Lucario & Melmetal GX CGC 10 Pristine Japanese Sun & Moon Tag Team GX All Stars Pokemon",
+      "price": 50,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/5jU8dVsPNrhUAA3ZYfCkcQegbpezWyPE45SRmr5AvoXm",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "5jU8dVsPNrhUAA3ZYfCkcQegbpezWyPE45SRmr5AvoXm",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3pxZ2Dk35qet648E5VuZWt4Nz9wMF6E9rfR3T6xbh99N",
+      "title": "1998 #123 Rocket's Scyther-Holo PSA 8 Japanese Gym Pokemon",
+      "price": 42,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3pxZ2Dk35qet648E5VuZWt4Nz9wMF6E9rfR3T6xbh99N",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3pxZ2Dk35qet648E5VuZWt4Nz9wMF6E9rfR3T6xbh99N",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_HCggsoU82Fyvp5qUKXKNYSvrkowL8HjEf96djd2qDkyT",
+      "title": "2001 #1 Ampharos-Holo PSA 6 Neo Revelation Pokemon",
+      "price": 33,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/HCggsoU82Fyvp5qUKXKNYSvrkowL8HjEf96djd2qDkyT",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "HCggsoU82Fyvp5qUKXKNYSvrkowL8HjEf96djd2qDkyT",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_CysDDsPfPp5h1KjYH6oWpexxnWkppSNGYzZW4Ved4XCQ",
+      "title": "2009 #021 Lapras 1st Edition CGC 10 Pristine HeartGold Collection - L1 (Red) - Japanese Pokemon",
+      "price": 38,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/CysDDsPfPp5h1KjYH6oWpexxnWkppSNGYzZW4Ved4XCQ",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "CysDDsPfPp5h1KjYH6oWpexxnWkppSNGYzZW4Ved4XCQ",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_Cmg8HseMmqmjVDLKQi19BM9LCnzJZr6hQ376Mhyi8g9F",
+      "title": "2025 #168 SV PROMO PRISMATIC EVOLUTIONS POSTER VAPOREON CGC 10 PRISTINE POKEMON",
+      "price": 40,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/Cmg8HseMmqmjVDLKQi19BM9LCnzJZr6hQ376Mhyi8g9F",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "Cmg8HseMmqmjVDLKQi19BM9LCnzJZr6hQ376Mhyi8g9F",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_84hkPw4ahyTq1H79HdWGmfXaUKtV5rEemgcaydA3oxEb",
+      "title": "2008 #54 Slowbro Reverse Holo CGC 10 Great Encounters - English Pokemon",
+      "price": 140,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/84hkPw4ahyTq1H79HdWGmfXaUKtV5rEemgcaydA3oxEb",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "84hkPw4ahyTq1H79HdWGmfXaUKtV5rEemgcaydA3oxEb",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3d3R31a3quYNF8qBGC7AHpTsGW6ouVsEJafv3v9yjywH",
+      "title": "2000 #55 Sabrina's Haunter 1st Edition PSA 9 Gym Challenge Pokemon",
+      "price": 65,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3d3R31a3quYNF8qBGC7AHpTsGW6ouVsEJafv3v9yjywH",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3d3R31a3quYNF8qBGC7AHpTsGW6ouVsEJafv3v9yjywH",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3hFMkFaP7JM9WNejTaXMWECuo9MAHw2fs1f9hhhdmE48",
+      "title": "1998 #125 JAPANESE GYM 1 HOLO LT. SURGE'S ELECTABUZZ PSA 9 POKEMON",
+      "price": 37,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3hFMkFaP7JM9WNejTaXMWECuo9MAHw2fs1f9hhhdmE48",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3hFMkFaP7JM9WNejTaXMWECuo9MAHw2fs1f9hhhdmE48",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_HxzS61bdSiW5vczKLHrESce7yiiiUtiQjRycwvby5XzT",
+      "title": "2025 #136 Scraggy PSA 10 Japanese Sv11w-White Flare Pokemon",
+      "price": 40,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/HxzS61bdSiW5vczKLHrESce7yiiiUtiQjRycwvby5XzT",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "HxzS61bdSiW5vczKLHrESce7yiiiUtiQjRycwvby5XzT",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3rhvYpyBXZW7PQjLyvZvVzoWjdYQy5Lmh9d5eYxDUPAA",
+      "title": "2001 #19 Gastly 1st Edition CGC 10 Pristine Japanese Expedition Pokemon",
+      "price": 100,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3rhvYpyBXZW7PQjLyvZvVzoWjdYQy5Lmh9d5eYxDUPAA",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3rhvYpyBXZW7PQjLyvZvVzoWjdYQy5Lmh9d5eYxDUPAA",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_Hvk3xsEg2GPvELgq3ZH2xxy6hUA8fVbD8gGPZPWM2Qvv",
+      "title": "2003 #46 Aggron EX-Holo 1st Edition PSA 9 Japanese Miracle of the Desert Pokemon",
+      "price": 75,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/Hvk3xsEg2GPvELgq3ZH2xxy6hUA8fVbD8gGPZPWM2Qvv",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "Hvk3xsEg2GPvELgq3ZH2xxy6hUA8fVbD8gGPZPWM2Qvv",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_Fnmg5iDFvkKqgMix8Jncrhy8UnDjtcTP7BKkkvQC4waK",
+      "title": "2007 #298 Tyranitar-Holo 1st Edition PSA 9 Japanese Diamond & Pearl Secret of the Lakes Pokemon",
+      "price": 45,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/Fnmg5iDFvkKqgMix8Jncrhy8UnDjtcTP7BKkkvQC4waK",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "Fnmg5iDFvkKqgMix8Jncrhy8UnDjtcTP7BKkkvQC4waK",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_HMbfNCso9pwKQcfyVQTUN7mVdgsgitXcSU6EpCikpiET",
+      "title": "2024 #009 Jolteon VMAX CGC 10 Eevee Advanced Gift Box - csHC - Simplified Chinese Pokemon",
+      "price": 45,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/HMbfNCso9pwKQcfyVQTUN7mVdgsgitXcSU6EpCikpiET",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "HMbfNCso9pwKQcfyVQTUN7mVdgsgitXcSU6EpCikpiET",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_5ZEDo6Lbn879Qopqg6g4xNsjbuNakXN25AwTTHMiTJY",
+      "title": "2006 #92 Exploud EX-Holo PSA 7 EX Crystal Guardians Pokemon",
+      "price": 45,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/5ZEDo6Lbn879Qopqg6g4xNsjbuNakXN25AwTTHMiTJY",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "5ZEDo6Lbn879Qopqg6g4xNsjbuNakXN25AwTTHMiTJY",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_HCns36yR8ryq2Z9zvsCZsSEJfsc3SLRG3pAVwb9cEjNC",
+      "title": "2025 #169 Genesect EX PSA 9 Blk EN-Black Bolt Pokemon",
+      "price": 50,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/HCns36yR8ryq2Z9zvsCZsSEJfsc3SLRG3pAVwb9cEjNC",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "HCns36yR8ryq2Z9zvsCZsSEJfsc3SLRG3pAVwb9cEjNC",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_GfJWGwm5WQ6KaEwKVaixFrpnoyemezVEyRghDGxsteQw",
+      "title": "2007 #NA Alto Mare's Latias-Holo CGC 10 Japanese 10th Movie Commemoration Promo Pokemon",
+      "price": 75,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/GfJWGwm5WQ6KaEwKVaixFrpnoyemezVEyRghDGxsteQw",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "GfJWGwm5WQ6KaEwKVaixFrpnoyemezVEyRghDGxsteQw",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_GUGw4Zf4tfu2ZuMzHx69fGWRU3h1sb2YH2bfoRrnv2QK",
+      "title": "2000 #76 Stantler PSA 10 Neo Genesis 1st Edition Pokemon",
+      "price": 100,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/GUGw4Zf4tfu2ZuMzHx69fGWRU3h1sb2YH2bfoRrnv2QK",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "GUGw4Zf4tfu2ZuMzHx69fGWRU3h1sb2YH2bfoRrnv2QK",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_FGEebvyLpDvWyTSeBW6QYp9F76AsMUDBLStve1AQUWm9",
+      "title": "2013 #55 Crobat-Holo PSA 9 Black & White Plasma Storm Pokemon",
+      "price": 52,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/FGEebvyLpDvWyTSeBW6QYp9F76AsMUDBLStve1AQUWm9",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "FGEebvyLpDvWyTSeBW6QYp9F76AsMUDBLStve1AQUWm9",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_APRw93tRZYhEHRwmbpGsjFHciMJoAZmc5xK4RVyoCssf",
+      "title": "2020 #066 Pikachu & Zekrom GX PSA 10 Thai Sun & Moon Double Burst Pokemon",
+      "price": 35,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/APRw93tRZYhEHRwmbpGsjFHciMJoAZmc5xK4RVyoCssf",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "APRw93tRZYhEHRwmbpGsjFHciMJoAZmc5xK4RVyoCssf",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_DxAXBz91qZhggcGJudLC5VbdxH4S6zJNQNmjsGyGTcr1",
+      "title": "2000 #77 Sudowoodo PSA 10 Neo Genesis 1st Edition Pokemon",
+      "price": 70,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/DxAXBz91qZhggcGJudLC5VbdxH4S6zJNQNmjsGyGTcr1",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "DxAXBz91qZhggcGJudLC5VbdxH4S6zJNQNmjsGyGTcr1",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_5kDXej3MCEqjmZqWuwTd4YbCqUQSu6jNqXponbA8V1HW",
+      "title": "2006 #523 Palkia CGC 10 Pristine Space-Time Creation - DP1 - Japanese Pokemon",
+      "price": 52,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/5kDXej3MCEqjmZqWuwTd4YbCqUQSu6jNqXponbA8V1HW",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "5kDXej3MCEqjmZqWuwTd4YbCqUQSu6jNqXponbA8V1HW",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_2TDjCc4GYMuCq9ECVKxVCU4N5SzcgXL8YqomMafViUXq",
+      "title": "2019 #SM210 Full Art/Moltres & Zapdos & Articuno GX CGC 10 SM Black Star Promo Pokemon",
+      "price": 199,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/2TDjCc4GYMuCq9ECVKxVCU4N5SzcgXL8YqomMafViUXq",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "2TDjCc4GYMuCq9ECVKxVCU4N5SzcgXL8YqomMafViUXq",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_5WGAH4u5gdbRqnKAmi9dGf4c4KpWqVGbxG3kHEYrmBjr",
+      "title": "2022 #190 Full Art/Galarian Moltres PSA 10 Japanese Sword & Shield Vstar Universe Pokemon",
+      "price": 55,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/5WGAH4u5gdbRqnKAmi9dGf4c4KpWqVGbxG3kHEYrmBjr",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "5WGAH4u5gdbRqnKAmi9dGf4c4KpWqVGbxG3kHEYrmBjr",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_68sXLddbXpPbnbjiP51CAC9rrR6kfwZJMva2fMwgF3b",
+      "title": "1999 #75 Lass PSA 10 Game Pokemon",
+      "price": 50,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/68sXLddbXpPbnbjiP51CAC9rrR6kfwZJMva2fMwgF3b",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "68sXLddbXpPbnbjiP51CAC9rrR6kfwZJMva2fMwgF3b",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3KMqn5ZEg7FL6ZTbnKpgopJGscwkSnwQikemh4HZHpoC",
+      "title": "2009 #024 Feraligatr 1st Edition CGC 10 Pristine HeartGold Collection - L1 (Red) - Japanese Pokemon",
+      "price": 120,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3KMqn5ZEg7FL6ZTbnKpgopJGscwkSnwQikemh4HZHpoC",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3KMqn5ZEg7FL6ZTbnKpgopJGscwkSnwQikemh4HZHpoC",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_54uAe7vSSqgH9CMLTdXkc7cV7tJRfCt7AnsV7JkXBnAK",
+      "title": "2002 #24 Golem-Reverse Foil PSA 7 Legendary Collection Pokemon",
+      "price": 72,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/54uAe7vSSqgH9CMLTdXkc7cV7tJRfCt7AnsV7JkXBnAK",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "54uAe7vSSqgH9CMLTdXkc7cV7tJRfCt7AnsV7JkXBnAK",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_aUNyTS2pugxTjUoB7KPAwyhfcCBrJfLasSaD163puiH",
+      "title": "2002 #83 Nidoran-Reverse Foil PSA 7 Legendary Collection Pokemon",
+      "price": 75,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/aUNyTS2pugxTjUoB7KPAwyhfcCBrJfLasSaD163puiH",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "aUNyTS2pugxTjUoB7KPAwyhfcCBrJfLasSaD163puiH",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_DuNaFQu8jNHxNQmFSfj7KpStELdkdwKiC6mdPytQ4VU3",
+      "title": "1998 #144 Articuno CGC 9 ANA Promo - Japanese Pokemon",
+      "price": 110,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/DuNaFQu8jNHxNQmFSfj7KpStELdkdwKiC6mdPytQ4VU3",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "DuNaFQu8jNHxNQmFSfj7KpStELdkdwKiC6mdPytQ4VU3",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_CdkGfeJji7o6V3ELT8izgcQm3rPtdEGxSQVGzzCXSFy9",
+      "title": "2022 #272 Pikachu-Holo PSA 10 Japanese S Promo Pokemon",
+      "price": 95,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/CdkGfeJji7o6V3ELT8izgcQm3rPtdEGxSQVGzzCXSFy9",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "CdkGfeJji7o6V3ELT8izgcQm3rPtdEGxSQVGzzCXSFy9",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_7pgCKd3fVpTVB2MzeBPTbvK77vCqVUNucA538LyeCx3W",
+      "title": "2008 #180 Dragonite-Holo PSA 9 Japanese Diamond & Pearl Cry From the Mysterious Pokemon",
+      "price": 110,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/7pgCKd3fVpTVB2MzeBPTbvK77vCqVUNucA538LyeCx3W",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "7pgCKd3fVpTVB2MzeBPTbvK77vCqVUNucA538LyeCx3W",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_E88ZhSvmU3fhGg1117mpBKCpqF86amF5LXQkYrFdiQuX",
+      "title": "2000 #83 Dark Raichu-Holo PSA 8 Rocket Pokemon",
+      "price": 110,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/E88ZhSvmU3fhGg1117mpBKCpqF86amF5LXQkYrFdiQuX",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "E88ZhSvmU3fhGg1117mpBKCpqF86amF5LXQkYrFdiQuX",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3sUBELTDkkhCRV2qtkJWV8PGTvyQVYVKTaea9zxm8wCE",
+      "title": "2016 #116 Full Art/Gardevoir EX PSA 8 XY Steam Siege Pokemon",
+      "price": 120,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3sUBELTDkkhCRV2qtkJWV8PGTvyQVYVKTaea9zxm8wCE",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3sUBELTDkkhCRV2qtkJWV8PGTvyQVYVKTaea9zxm8wCE",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_FpomxZZAneRUrUxZTjmrdBrAcSNfVrR1NUhRSKcGijw4",
+      "title": "2002 POKEMON LEGENDARY COLLECTION REVERSE HOLO BEEDRILL #20 BGS 9 MINT",
+      "price": 300,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/FpomxZZAneRUrUxZTjmrdBrAcSNfVrR1NUhRSKcGijw4",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "FpomxZZAneRUrUxZTjmrdBrAcSNfVrR1NUhRSKcGijw4",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_FTNieStvgxkUyWu6ZSpdJzSHADiAtE5hPzvXnc26fWSE",
+      "title": "2025 #126 TEAM ROCKET'S NIDOKING EX 2025 PSA 10 JAPANESE SV10-GLORY OF TEAM ROCKET POKEMON",
+      "price": 170,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/FTNieStvgxkUyWu6ZSpdJzSHADiAtE5hPzvXnc26fWSE",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "FTNieStvgxkUyWu6ZSpdJzSHADiAtE5hPzvXnc26fWSE",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_4vK4UrxhHBobEs5EYPptiGaVgqkAjw8mt7HX9GXZBaoc",
+      "title": "2018 #199 Pikachu PSA 8 Japanese SM Promo Pokemon",
+      "price": 250,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/4vK4UrxhHBobEs5EYPptiGaVgqkAjw8mt7HX9GXZBaoc",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "4vK4UrxhHBobEs5EYPptiGaVgqkAjw8mt7HX9GXZBaoc",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_4WbaQrrQ4RpAm8fmEZCboFD656QNVRmjbnRMy1dZe8GA",
+      "title": "2002 #47 Feraligatr-Reverse Foil CGC 10 Expedition Pokemon",
+      "price": 250,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/4WbaQrrQ4RpAm8fmEZCboFD656QNVRmjbnRMy1dZe8GA",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "4WbaQrrQ4RpAm8fmEZCboFD656QNVRmjbnRMy1dZe8GA",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_7Gtp7FPzoWTkCF4P2jtDFDPXGuvgfnWLfDtQqDFFMtBd",
+      "title": "1999 #8 MACHAMP-HOLO PSA 9 POKEMON GAME | 1ST EDITION",
+      "price": 190,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/7Gtp7FPzoWTkCF4P2jtDFDPXGuvgfnWLfDtQqDFFMtBd",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "7Gtp7FPzoWTkCF4P2jtDFDPXGuvgfnWLfDtQqDFFMtBd",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_2g1Qv4NQkKaVXbHEJwifHqTp4Y5NnzW2SxJx4ndToCQr",
+      "title": "1996 #NA  Dragonite CGC 9 Unnumbered Promo - Japanese Pokemon",
+      "price": 350,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/2g1Qv4NQkKaVXbHEJwifHqTp4Y5NnzW2SxJx4ndToCQr",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "2g1Qv4NQkKaVXbHEJwifHqTp4Y5NnzW2SxJx4ndToCQr",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_BUuKUdsw3N832xpDULQpyPtnCkjHbXrXZRTYCEuJAvMp",
+      "title": "2019 #71 Mewtwo & Mew GX CGC 10 Sun & Moon Unified Minds Pokemon",
+      "price": 300,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/BUuKUdsw3N832xpDULQpyPtnCkjHbXrXZRTYCEuJAvMp",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "BUuKUdsw3N832xpDULQpyPtnCkjHbXrXZRTYCEuJAvMp",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_4gAQDpHAHCpjqc3R1J3tyJYhUJJmzRSQh2LceG2yQ7u7",
+      "title": "1999 #23 Arcanine 1st Edition PSA 9 Game Pokemon",
+      "price": 230,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/4gAQDpHAHCpjqc3R1J3tyJYhUJJmzRSQh2LceG2yQ7u7",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "4gAQDpHAHCpjqc3R1J3tyJYhUJJmzRSQh2LceG2yQ7u7",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_3YHTNwunLVNeB6Ly54vZq9ZqwAP6FjRR334ZFbEmL7WB",
+      "title": "2024 #165 Rayquaza Vmax PSA 10 Simplified Chinese Cs4b C-Polychromatic Gathering Pokemon",
+      "price": 450,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/3YHTNwunLVNeB6Ly54vZq9ZqwAP6FjRR334ZFbEmL7WB",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "3YHTNwunLVNeB6Ly54vZq9ZqwAP6FjRR334ZFbEmL7WB",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_EaGd4YPjzUtkLTsZ2MTGb7SDFcYdzy33oVRCRBHGDGJ4",
+      "title": "2024 #097 Flutter Mane PSA 10 Svp EN-SV Black Star Promo Pokemon",
+      "price": 1050,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/EaGd4YPjzUtkLTsZ2MTGb7SDFcYdzy33oVRCRBHGDGJ4",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "EaGd4YPjzUtkLTsZ2MTGb7SDFcYdzy33oVRCRBHGDGJ4",
+        "blockchain": "solana"
+      }
+    },
+    {
+      "id": "collector_crypt_2ZEeQwrFiAMzb877U8C6JLZ8gqRENp6ZGRB9gMSsEPhK",
+      "title": "2024 #150 Giratina V CGC 10 Pristine Shadow in Azure Sea S. CHINESE POKEMON",
+      "price": 500,
+      "currency": "USDC",
+      "source": "collector_crypt",
+      "url": "https://collectorcrypt.com/assets/solana/2ZEeQwrFiAMzb877U8C6JLZ8gqRENp6ZGRB9gMSsEPhK",
+      "seller": "Collector Crypt",
+      "isActive": true,
+      "scrapedAt": "2025-09-07T22:53:40.750Z",
+      "metadata": {
+        "nftAddress": "2ZEeQwrFiAMzb877U8C6JLZ8gqRENp6ZGRB9gMSsEPhK",
+        "blockchain": "solana"
+      }
+    }
+  ],
+  "summary": {
+    "totalListings": 96,
+    "sourceBreakdown": {
+      "collector_crypt": 96
+    },
+    "priceRanges": {
+      "collector_crypt": {
+        "min": 0.3,
+        "max": 23500,
+        "avg": 545.8130208333333
+      }
+    }
+  }
+}

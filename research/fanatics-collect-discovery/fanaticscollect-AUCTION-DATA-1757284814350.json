@@ -1,0 +1,90 @@
+{
+  "data": {
+    "collectSearchSetting": {
+      "__typename": "CollectSearchSettings",
+      "defaultFilter": {
+        "__typename": "CollectSearchDefaultFilter",
+        "indexName": "LISTING_BEST_VALUE_DESC"
+      },
+      "indexes": [
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Featured",
+          "indexName": "LISTING",
+          "indexValue": "prod_item_state_v1",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Recently Added",
+          "indexName": "LISTING_RECENTLY_ADDED",
+          "indexValue": "prod_item_state_v1_recent_desc",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Best Deals",
+          "indexName": "LISTING_BEST_DEALS",
+          "indexValue": "prod_item_state_v1_great_price_asc",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Lot Number",
+          "indexName": "LISTING_FEATURED",
+          "indexValue": "prod_item_state_v1_featured_asc",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Lowest Price",
+          "indexName": "LISTING_LOWEST_PRICE",
+          "indexValue": "prod_item_state_v1_price_asc",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Highest Price",
+          "indexName": "LISTING_HIGHEST_PRICE",
+          "indexValue": "prod_item_state_v1_price_desc",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Best Value",
+          "indexName": "LISTING_BEST_VALUE_DESC",
+          "indexValue": "prod_item_state_v1_best_value_desc",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Earliest Year",
+          "indexName": "LISTING_YEAR_ASC",
+          "indexValue": "prod_item_state_v1_year_asc",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Latest Year",
+          "indexName": "LISTING_YEAR_DESC",
+          "indexValue": "prod_item_state_v1_year_desc",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Earliest Sale Date",
+          "indexName": "LISTING_SOLD_ASC",
+          "indexValue": "prod_item_state_v1_sold_asc",
+          "type": "LISTING"
+        },
+        {
+          "__typename": "CollectSearchIndex",
+          "displayName": "Latest Sale Date",
+          "indexName": "LISTING_SOLD_DESC",
+          "indexValue": "prod_item_state_v1_sold_desc",
+          "type": "LISTING"
+        }
+      ]
+    }
+  }
+}
