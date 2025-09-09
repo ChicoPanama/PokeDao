@@ -1,0 +1,56 @@
+{
+  "discoveryTimestamp": "2025-09-09T05:39:27.268Z",
+  "platform": "Phygitals.com",
+  "success": true,
+  "summary": {
+    "apiEndpointsFound": 16,
+    "pokemonDataSources": 6,
+    "hasLivePricing": true,
+    "hasEbayIntegration": true,
+    "hasGradingData": true,
+    "hasUserCollections": true
+  },
+  "apiEndpoints": [
+    "https://api.phygitals.com/api/marketplace/leaderboard",
+    "https://api.phygitals.com/api/marketplace/leaderboard/weekly",
+    "https://api.phygitals.com/api/marketplace/sales",
+    "https://api.phygitals.com/api/marketplace/filters",
+    "https://api.phygitals.com/api/marketplace/marketplace-listings",
+    "https://api.phygitals.com/api/store/filters",
+    "https://api.phygitals.com/api/sweepstakes/recent",
+    "https://api.phygitals.com/api/vm/recent",
+    "https://api.phygitals.com/api/vm/available",
+    "https://api.phygitals.com/api/users/p/{userId}",
+    "https://www.phygitals.com/_next/data/{buildId}/card/{cardId}.json",
+    "https://www.phygitals.com/_next/data/{buildId}/store/{storeId}.json",
+    "https://www.phygitals.com/_next/data/{buildId}/u/{username}.json",
+    "https://www.phygitals.com/_next/data/{buildId}/pokemon/generation/{id}.json",
+    "https://www.phygitals.com/_next/data/{buildId}/series.json",
+    "https://www.phygitals.com/_next/data/{buildId}/claw/{packType}.json"
+  ],
+  "pokemonDataSources": {
+    "marketplace": "Live marketplace listings with prices and card details",
+    "userCollections": "User profile data with total volume and card counts",
+    "cardDetails": "Individual card data with images, grades, and valuations",
+    "storeListings": "eBay integration with Pokemon card store data",
+    "vmBoxes": "Virtual machine box contents with Pokemon card prizes",
+    "filters": "Available Pokemon sets, graders, grades, and metadata"
+  },
+  "keyFindings": [
+    "Active Pokemon card marketplace with live listings",
+    "eBay integration for additional Pokemon card data",
+    "Comprehensive grading data (PSA, BGS, CGC)",
+    "User collection metrics and transaction volumes",
+    "Historical sales data and pricing trends",
+    "Advanced filtering by sets, graders, grades, and rarity",
+    "Virtual machine boxes containing Pokemon card prizes"
+  ],
+  "nextSteps": [
+    "Implement API client for data extraction",
+    "Build comprehensive Pokemon card scraper",
+    "Integrate pricing data into PokeDAO system",
+    "Cross-reference with existing eBay and Pokemon TCG data",
+    "Develop real-time price monitoring capabilities"
+  ],
+  "integrationPotential": "HIGH - Excellent source for Pokemon card pricing and market data"
+}

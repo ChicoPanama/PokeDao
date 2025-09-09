@@ -1,0 +1,104 @@
+{
+  "integrationSummary": {
+    "duration": "4 seconds",
+    "totalCards": 22937,
+    "cardsProcessed": 790,
+    "cardsMatched": 768,
+    "priceUpdates": 768,
+    "phygitalsIntegrated": 165,
+    "integrationRate": "0.7%"
+  },
+  "priceAnalysis": {
+    "averageUltimatePrice": 1431.02,
+    "averagePhygitalsPrice": 196.94,
+    "averageEbayPrice": 2752.19
+  },
+  "investmentOpportunities": [
+    {
+      "name": "1999 Pokemon Base Set Shadowless 1st Edition Holo Charizard #4 PSA 9 MINT",
+      "ultimatePrice": 16471.88,
+      "phygitalsPrice": 1400,
+      "ebayPrice": 32351.94626947675,
+      "potentialSavings": 15071.88,
+      "percentageDeal": "91.5%"
+    },
+    {
+      "name": "2002 #3 Charizard-Reverse Foil PSA 10 Legendary Collection Pokemon",
+      "ultimatePrice": 14170.7,
+      "phygitalsPrice": 21,
+      "ebayPrice": 28318.987379462036,
+      "potentialSavings": 14149.7,
+      "percentageDeal": "99.85%"
+    },
+    {
+      "name": "1999 #94 Gengar-Holo PSA 10 Japanese Vending Pokemon",
+      "ultimatePrice": 15686.53,
+      "phygitalsPrice": 1610,
+      "ebayPrice": 30728.69011030746,
+      "potentialSavings": 14076.53,
+      "percentageDeal": "89.74%"
+    },
+    {
+      "name": "2003 #146 Charizard-Holo PSA 10 Skyridge Pokemon",
+      "ultimatePrice": 13897.51,
+      "phygitalsPrice": 420,
+      "ebayPrice": 27612.998644834206,
+      "potentialSavings": 13477.51,
+      "percentageDeal": "96.98%"
+    },
+    {
+      "name": "2003 #149 Lugia-Holo PSA 10 Aquapolis Pokemon",
+      "ultimatePrice": 11406.03,
+      "phygitalsPrice": 44.8,
+      "ebayPrice": 22793.887487923173,
+      "potentialSavings": 11361.23,
+      "percentageDeal": "99.61%"
+    },
+    {
+      "name": "2006 #15 Mew Gold Star ARS 10 Pokemon Ex Dragon Frontiers Japanese 1st Edition",
+      "ultimatePrice": 10258.28,
+      "phygitalsPrice": 84,
+      "ebayPrice": 20457.516912275813,
+      "potentialSavings": 10174.28,
+      "percentageDeal": "99.18%"
+    },
+    {
+      "name": "2005 #107 Rayquaza-Holo PSA 8 EX Deoxys Pokemon",
+      "ultimatePrice": 8785.57,
+      "phygitalsPrice": 700,
+      "ebayPrice": 17290.669738190256,
+      "potentialSavings": 8085.57,
+      "percentageDeal": "92.03%"
+    },
+    {
+      "name": "2025 #003 Mew EX PSA 10 Simplified Chinese SV-P Promo Pokemon",
+      "ultimatePrice": 8391.98,
+      "phygitalsPrice": 322,
+      "ebayPrice": 16629.706414854732,
+      "potentialSavings": 8069.98,
+      "percentageDeal": "96.16%"
+    },
+    {
+      "name": "2006 #052 CHARIZARD-HOLO PSA 10 POKEMON JAPANESE DRAGON FRONTIERS | GOLD STAR",
+      "ultimatePrice": 7778.03,
+      "phygitalsPrice": 32.9,
+      "ebayPrice": 15528.882178480717,
+      "potentialSavings": 7745.13,
+      "percentageDeal": "99.58%"
+    },
+    {
+      "name": "2002 #107 SHINING CHARIZARD PSA 10 POKEMON NEO DESTINY | 1ST EDITION",
+      "ultimatePrice": 7187.69,
+      "phygitalsPrice": 126,
+      "ebayPrice": 14324.511289060096,
+      "potentialSavings": 7061.69,
+      "percentageDeal": "98.25%"
+    }
+  ],
+  "dataQuality": "HIGH - Phygitals provides complementary pricing data from blockchain marketplace",
+  "nextSteps": [
+    "Monitor Phygitals for real-time price updates",
+    "Implement automated arbitrage opportunity detection",
+    "Cross-reference with additional data sources for validation"
+  ]
+}

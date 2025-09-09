@@ -17,3 +17,16 @@ venv/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Large database files (>50MB)
+*.db
+research/**/*.db
+research/**/collector_crypt_*.db
+research/**/pokemon_*.db
+research/**/tcgplayer_*.db
+research/**/ebay_*.db
+research/**/phygitals_*.db
+
+# Keep smaller essential files
+!research/**/*_sample.db
+!research/**/*_schema.db

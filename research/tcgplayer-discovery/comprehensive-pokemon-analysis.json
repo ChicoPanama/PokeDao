@@ -1,0 +1,3704 @@
+{
+  "analysisDate": "2025-09-09T20:13:04.401Z",
+  "summary": {
+    "totalCards": 694229,
+    "totalPricedCards": 25097,
+    "databasesAnalyzed": 20,
+    "highestValueCard": {
+      "price": 34200,
+      "database": "collector_crypt_v2",
+      "source": "USD"
+    },
+    "largestDatabase": {
+      "records": 505338,
+      "name": "collector_crypt_ebay_complete",
+      "size": "142.02 MB"
+    }
+  },
+  "databases": {
+    "collector_crypt_all_cards_fixed": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/collector_crypt_all_cards_fixed.db",
+      "size": "12.02 MB",
+      "tables": {
+        "collector_crypt_comprehensive_pricing": {
+          "recordCount": 22937,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_title",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_asking_price",
+              "type": "REAL"
+            },
+            {
+              "name": "cc_category",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "is_graded",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "detected_grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "detected_grade",
+              "type": "REAL"
+            },
+            {
+              "name": "grading_multiplier",
+              "type": "REAL"
+            },
+            {
+              "name": "card_category",
+              "type": "TEXT"
+            },
+            {
+              "name": "is_high_value",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "ptcg_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ptcg_valid",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "ptcg_validation_reason",
+              "type": "TEXT"
+            },
+            {
+              "name": "tcgp_price",
+              "type": "REAL"
+            },
+            {
+              "name": "tcgp_valid",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "tcgp_validation_reason",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_sold_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ebay_current_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ebay_valid",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "ebay_validation_reason",
+              "type": "TEXT"
+            },
+            {
+              "name": "raw_market_value",
+              "type": "REAL"
+            },
+            {
+              "name": "adjusted_market_value",
+              "type": "REAL"
+            },
+            {
+              "name": "market_source",
+              "type": "TEXT"
+            },
+            {
+              "name": "market_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "market_explanation",
+              "type": "TEXT"
+            },
+            {
+              "name": "validation_log",
+              "type": "TEXT"
+            },
+            {
+              "name": "asking_vs_market_ratio",
+              "type": "REAL"
+            },
+            {
+              "name": "price_opportunity",
+              "type": "TEXT"
+            },
+            {
+              "name": "opportunity_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "opportunity_explanation",
+              "type": "TEXT"
+            },
+            {
+              "name": "potential_profit",
+              "type": "REAL"
+            },
+            {
+              "name": "sources_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "validation_passed",
+              "type": "INTEGER"
+            },
+            {
+              "name": "validation_failed",
+              "type": "INTEGER"
+            },
+            {
+              "name": "last_updated",
+              "type": "TEXT"
+            },
+            {
+              "name": "enhanced_tcgp_price",
+              "type": "REAL"
+            },
+            {
+              "name": "enhanced_tcgp_quality",
+              "type": "INTEGER"
+            }
+          ]
+        }
+      },
+      "totalRecords": 22937,
+      "keyMetrics": {}
+    },
+    "collector_crypt_complete": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/collector_crypt_complete.db",
+      "size": "60 KB",
+      "tables": {
+        "collector_crypt_cards": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "title",
+              "type": "TEXT"
+            },
+            {
+              "name": "category",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_num",
+              "type": "DECIMAL(3,1)"
+            },
+            {
+              "name": "grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "grading_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "currency",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller",
+              "type": "TEXT"
+            },
+            {
+              "name": "url",
+              "type": "TEXT"
+            },
+            {
+              "name": "front_image",
+              "type": "TEXT"
+            },
+            {
+              "name": "back_image",
+              "type": "TEXT"
+            },
+            {
+              "name": "blockchain",
+              "type": "TEXT"
+            },
+            {
+              "name": "vault",
+              "type": "TEXT"
+            },
+            {
+              "name": "authenticated",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "is_active",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "scraped_at",
+              "type": "DATETIME"
+            },
+            {
+              "name": "created_at",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "cc_card_pricing": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "cc_card_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "source",
+              "type": "TEXT"
+            },
+            {
+              "name": "source_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "match_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "price_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "condition",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "last_updated",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "sqlite_sequence": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "name",
+              "type": ""
+            },
+            {
+              "name": "seq",
+              "type": ""
+            }
+          ]
+        },
+        "cc_final_pricing": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "cc_card_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "recommended_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "confidence_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "price_sources_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "market_data",
+              "type": "TEXT"
+            },
+            {
+              "name": "graded_premium",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "condition_factor",
+              "type": "DECIMAL(3,2)"
+            },
+            {
+              "name": "market_trend",
+              "type": "TEXT"
+            },
+            {
+              "name": "last_analysis",
+              "type": "DATETIME"
+            }
+          ]
+        }
+      },
+      "totalRecords": 0,
+      "keyMetrics": {
+        "pricing": {
+          "totalRecords": 0,
+          "withPrices": 0,
+          "minPrice": null,
+          "maxPrice": null,
+          "avgPrice": null,
+          "currency": "USD",
+          "priceColumn": "price"
+        }
+      }
+    },
+    "collector_crypt_ebay_complete": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/collector_crypt_ebay_complete.db",
+      "size": "142.02 MB",
+      "tables": {
+        "ebay_current_listings": {
+          "recordCount": 198045,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "collector_crypt_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_item_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "title",
+              "type": "TEXT"
+            },
+            {
+              "name": "current_price",
+              "type": "REAL"
+            },
+            {
+              "name": "buy_it_now_price",
+              "type": "REAL"
+            },
+            {
+              "name": "auction_end_time",
+              "type": "TEXT"
+            },
+            {
+              "name": "condition_description",
+              "type": "TEXT"
+            },
+            {
+              "name": "grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_number",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_feedback",
+              "type": "INTEGER"
+            },
+            {
+              "name": "shipping_cost",
+              "type": "REAL"
+            },
+            {
+              "name": "location",
+              "type": "TEXT"
+            },
+            {
+              "name": "watchers_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "bid_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "listing_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "image_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "pokemon_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_number",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "listing_duration",
+              "type": "INTEGER"
+            },
+            {
+              "name": "time_left",
+              "type": "TEXT"
+            },
+            {
+              "name": "created_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "last_updated",
+              "type": "TEXT"
+            }
+          ]
+        },
+        "sqlite_sequence": {
+          "recordCount": 3,
+          "columns": [
+            {
+              "name": "name",
+              "type": ""
+            },
+            {
+              "name": "seq",
+              "type": ""
+            }
+          ]
+        },
+        "ebay_sold_listings": {
+          "recordCount": 284253,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "collector_crypt_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_item_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "title",
+              "type": "TEXT"
+            },
+            {
+              "name": "sold_price",
+              "type": "REAL"
+            },
+            {
+              "name": "sold_date",
+              "type": "TEXT"
+            },
+            {
+              "name": "shipping_cost",
+              "type": "REAL"
+            },
+            {
+              "name": "total_cost",
+              "type": "REAL"
+            },
+            {
+              "name": "condition_description",
+              "type": "TEXT"
+            },
+            {
+              "name": "grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_number",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_feedback",
+              "type": "INTEGER"
+            },
+            {
+              "name": "buyer_feedback",
+              "type": "INTEGER"
+            },
+            {
+              "name": "listing_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "days_to_sell",
+              "type": "INTEGER"
+            },
+            {
+              "name": "bid_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "watchers_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "pokemon_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_number",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "image_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "created_at",
+              "type": "TEXT"
+            }
+          ]
+        },
+        "ebay_price_analytics": {
+          "recordCount": 23037,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "collector_crypt_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "analysis_date",
+              "type": "TEXT"
+            },
+            {
+              "name": "current_listings_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "avg_asking_price",
+              "type": "REAL"
+            },
+            {
+              "name": "min_asking_price",
+              "type": "REAL"
+            },
+            {
+              "name": "max_asking_price",
+              "type": "REAL"
+            },
+            {
+              "name": "median_asking_price",
+              "type": "REAL"
+            },
+            {
+              "name": "sold_listings_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "avg_sold_price",
+              "type": "REAL"
+            },
+            {
+              "name": "min_sold_price",
+              "type": "REAL"
+            },
+            {
+              "name": "max_sold_price",
+              "type": "REAL"
+            },
+            {
+              "name": "median_sold_price",
+              "type": "REAL"
+            },
+            {
+              "name": "asking_vs_sold_ratio",
+              "type": "REAL"
+            },
+            {
+              "name": "market_velocity",
+              "type": "INTEGER"
+            },
+            {
+              "name": "demand_indicator",
+              "type": "TEXT"
+            },
+            {
+              "name": "price_trend",
+              "type": "TEXT"
+            },
+            {
+              "name": "graded_premium",
+              "type": "REAL"
+            },
+            {
+              "name": "condition_impact",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_distribution",
+              "type": "TEXT"
+            },
+            {
+              "name": "confidence_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "last_updated",
+              "type": "TEXT"
+            }
+          ]
+        }
+      },
+      "totalRecords": 505338,
+      "keyMetrics": {}
+    },
+    "collector_crypt_pricing_complete": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/collector_crypt_pricing_complete.db",
+      "size": "11.13 MB",
+      "tables": {
+        "collector_crypt_pricing": {
+          "recordCount": 22937,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_title",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_asking_price",
+              "type": "REAL"
+            },
+            {
+              "name": "cc_category",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "ptcg_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "ptcg_set",
+              "type": "TEXT"
+            },
+            {
+              "name": "ptcg_market_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ptcg_low_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ptcg_high_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ptcg_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "tcgp_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "tcgp_market_price",
+              "type": "REAL"
+            },
+            {
+              "name": "tcgp_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "ebay_title",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_sold_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ebay_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "true_market_value",
+              "type": "REAL"
+            },
+            {
+              "name": "asking_vs_market_ratio",
+              "type": "REAL"
+            },
+            {
+              "name": "price_opportunity",
+              "type": "TEXT"
+            },
+            {
+              "name": "potential_profit",
+              "type": "REAL"
+            },
+            {
+              "name": "confidence_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "price_sources",
+              "type": "TEXT"
+            },
+            {
+              "name": "last_updated",
+              "type": "TEXT"
+            }
+          ]
+        }
+      },
+      "totalRecords": 22937,
+      "keyMetrics": {}
+    },
+    "collector_crypt_pricing_fixed": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/collector_crypt_pricing_fixed.db",
+      "size": "11.69 MB",
+      "tables": {
+        "collector_crypt_pricing": {
+          "recordCount": 22937,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_title",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_asking_price",
+              "type": "REAL"
+            },
+            {
+              "name": "cc_category",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "ptcg_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "ptcg_set",
+              "type": "TEXT"
+            },
+            {
+              "name": "ptcg_market_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ptcg_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "tcgp_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "tcgp_market_price",
+              "type": "REAL"
+            },
+            {
+              "name": "tcgp_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "ebay_title",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_sold_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ebay_current_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ebay_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "true_market_value",
+              "type": "REAL"
+            },
+            {
+              "name": "market_source",
+              "type": "TEXT"
+            },
+            {
+              "name": "market_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "market_explanation",
+              "type": "TEXT"
+            },
+            {
+              "name": "asking_vs_market_ratio",
+              "type": "REAL"
+            },
+            {
+              "name": "price_opportunity",
+              "type": "TEXT"
+            },
+            {
+              "name": "potential_profit",
+              "type": "REAL"
+            },
+            {
+              "name": "grading_premium",
+              "type": "REAL"
+            },
+            {
+              "name": "is_graded",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "confidence_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "price_sources",
+              "type": "TEXT"
+            },
+            {
+              "name": "last_updated",
+              "type": "TEXT"
+            }
+          ]
+        }
+      },
+      "totalRecords": 22937,
+      "keyMetrics": {}
+    },
+    "collector_crypt_ultimate_pricing": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/collector_crypt_ultimate_pricing.db",
+      "size": "9.83 MB",
+      "tables": {
+        "collector_crypt_ultimate_pricing": {
+          "recordCount": 22937,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_title",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_asking_price",
+              "type": "REAL"
+            },
+            {
+              "name": "cc_category",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "cc_grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "is_graded",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "detected_grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "detected_grade",
+              "type": "REAL"
+            },
+            {
+              "name": "grading_multiplier",
+              "type": "REAL"
+            },
+            {
+              "name": "card_category",
+              "type": "TEXT"
+            },
+            {
+              "name": "is_high_value",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "enhanced_pokemon_price",
+              "type": "REAL"
+            },
+            {
+              "name": "enhanced_pokemon_variant",
+              "type": "TEXT"
+            },
+            {
+              "name": "enhanced_pokemon_quality",
+              "type": "INTEGER"
+            },
+            {
+              "name": "enhanced_pokemon_updated",
+              "type": "TEXT"
+            },
+            {
+              "name": "fallback_pokemon_price",
+              "type": "REAL"
+            },
+            {
+              "name": "fallback_pokemon_source",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_sold_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ebay_current_price",
+              "type": "REAL"
+            },
+            {
+              "name": "ebay_data_quality",
+              "type": "TEXT"
+            },
+            {
+              "name": "final_market_value",
+              "type": "REAL"
+            },
+            {
+              "name": "final_source",
+              "type": "TEXT"
+            },
+            {
+              "name": "final_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "final_explanation",
+              "type": "TEXT"
+            },
+            {
+              "name": "asking_vs_market_ratio",
+              "type": "REAL"
+            },
+            {
+              "name": "investment_opportunity",
+              "type": "TEXT"
+            },
+            {
+              "name": "opportunity_confidence",
+              "type": "INTEGER"
+            },
+            {
+              "name": "potential_profit",
+              "type": "REAL"
+            },
+            {
+              "name": "total_sources",
+              "type": "INTEGER"
+            },
+            {
+              "name": "data_freshness_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "reliability_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "last_updated",
+              "type": "TEXT"
+            },
+            {
+              "name": "phygitals_price",
+              "type": "REAL"
+            },
+            {
+              "name": "phygitals_source",
+              "type": "TEXT"
+            }
+          ]
+        }
+      },
+      "totalRecords": 22937,
+      "keyMetrics": {}
+    },
+    "collector_crypt_v2": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/collector_crypt_v2.db",
+      "size": "97.14 MB",
+      "tables": {
+        "collector_crypt_cards": {
+          "recordCount": 24307,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "title",
+              "type": "TEXT"
+            },
+            {
+              "name": "category",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_num",
+              "type": "REAL"
+            },
+            {
+              "name": "grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "grading_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "price",
+              "type": "REAL"
+            },
+            {
+              "name": "currency",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller",
+              "type": "TEXT"
+            },
+            {
+              "name": "url",
+              "type": "TEXT"
+            },
+            {
+              "name": "front_image",
+              "type": "TEXT"
+            },
+            {
+              "name": "back_image",
+              "type": "TEXT"
+            },
+            {
+              "name": "blockchain",
+              "type": "TEXT"
+            },
+            {
+              "name": "vault",
+              "type": "TEXT"
+            },
+            {
+              "name": "authenticated",
+              "type": "INTEGER"
+            },
+            {
+              "name": "is_active",
+              "type": "INTEGER"
+            },
+            {
+              "name": "scraped_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "year",
+              "type": "INTEGER"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "serial",
+              "type": "TEXT"
+            },
+            {
+              "name": "nft_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "status",
+              "type": "TEXT"
+            },
+            {
+              "name": "raw_data",
+              "type": "TEXT"
+            }
+          ]
+        }
+      },
+      "totalRecords": 24307,
+      "keyMetrics": {
+        "pricing": {
+          "totalRecords": 24307,
+          "withPrices": 24307,
+          "minPrice": 1,
+          "maxPrice": 34200,
+          "avgPrice": 337.8017274859094,
+          "currency": "USD",
+          "priceColumn": "price"
+        },
+        "tcg": {
+          "column": "grade",
+          "stats": [
+            {
+              "grade": "GEM-MT 10",
+              "count": 10661
+            },
+            {
+              "grade": "MINT 9",
+              "count": 4674
+            },
+            {
+              "grade": "NM-MT 8",
+              "count": 1404
+            },
+            {
+              "grade": "GEM MINT 10",
+              "count": 1251
+            },
+            {
+              "grade": "PRISTINE 10",
+              "count": 1219
+            }
+          ]
+        }
+      }
+    },
+    "complete_pokemon_tcg_sdk_style": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/complete_pokemon_tcg_sdk_style.db",
+      "size": "8.07 MB",
+      "tables": {
+        "pokemon_cards": {
+          "recordCount": 5000,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "supertype",
+              "type": "TEXT"
+            },
+            {
+              "name": "subtypes",
+              "type": "TEXT"
+            },
+            {
+              "name": "hp",
+              "type": "TEXT"
+            },
+            {
+              "name": "types",
+              "type": "TEXT"
+            },
+            {
+              "name": "evolvesFrom",
+              "type": "TEXT"
+            },
+            {
+              "name": "evolvesTo",
+              "type": "TEXT"
+            },
+            {
+              "name": "rules",
+              "type": "TEXT"
+            },
+            {
+              "name": "abilities",
+              "type": "TEXT"
+            },
+            {
+              "name": "attacks",
+              "type": "TEXT"
+            },
+            {
+              "name": "weaknesses",
+              "type": "TEXT"
+            },
+            {
+              "name": "resistances",
+              "type": "TEXT"
+            },
+            {
+              "name": "retreatCost",
+              "type": "TEXT"
+            },
+            {
+              "name": "convertedRetreatCost",
+              "type": "INTEGER"
+            },
+            {
+              "name": "set_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_series",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_total",
+              "type": "INTEGER"
+            },
+            {
+              "name": "set_releaseDate",
+              "type": "TEXT"
+            },
+            {
+              "name": "number",
+              "type": "TEXT"
+            },
+            {
+              "name": "artist",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "flavorText",
+              "type": "TEXT"
+            },
+            {
+              "name": "nationalPokedexNumbers",
+              "type": "TEXT"
+            },
+            {
+              "name": "legalities",
+              "type": "TEXT"
+            },
+            {
+              "name": "images",
+              "type": "TEXT"
+            },
+            {
+              "name": "tcgplayer_prices",
+              "type": "TEXT"
+            },
+            {
+              "name": "cardmarket_prices",
+              "type": "TEXT"
+            },
+            {
+              "name": "tcgplayer_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "cardmarket_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "extractedAt",
+              "type": "DATETIME"
+            }
+          ]
+        }
+      },
+      "totalRecords": 5000,
+      "keyMetrics": {
+        "pokemon": {
+          "nameColumn": "name",
+          "popularPokemon": [
+            {
+              "pokemon": "Other",
+              "count": 4822
+            },
+            {
+              "pokemon": "Pikachu",
+              "count": 39
+            },
+            {
+              "pokemon": "Charizard",
+              "count": 37
+            },
+            {
+              "pokemon": "Mew",
+              "count": 33
+            },
+            {
+              "pokemon": "Blastoise",
+              "count": 26
+            },
+            {
+              "pokemon": "Venusaur",
+              "count": 23
+            },
+            {
+              "pokemon": "Rayquaza",
+              "count": 13
+            },
+            {
+              "pokemon": "Lugia",
+              "count": 7
+            }
+          ]
+        }
+      }
+    },
+    "ebay_pricing_complete": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/ebay_pricing_complete.db",
+      "size": "36 KB",
+      "tables": {
+        "ebay_sold_listings": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "pokemon_tcg_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_item_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "title",
+              "type": "TEXT"
+            },
+            {
+              "name": "sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "sold_date",
+              "type": "DATETIME"
+            },
+            {
+              "name": "shipping_cost",
+              "type": "DECIMAL(8,2)"
+            },
+            {
+              "name": "total_cost",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "condition_grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_number",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_feedback",
+              "type": "INTEGER"
+            },
+            {
+              "name": "buy_it_now",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "auction_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "listing_duration",
+              "type": "INTEGER"
+            },
+            {
+              "name": "watchers_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "bid_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "currency_code",
+              "type": "TEXT"
+            },
+            {
+              "name": "country",
+              "type": "TEXT"
+            },
+            {
+              "name": "image_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "category_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "search_query",
+              "type": "TEXT"
+            },
+            {
+              "name": "confidence_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "data_source",
+              "type": "TEXT"
+            },
+            {
+              "name": "created_at",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "sqlite_sequence": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "name",
+              "type": ""
+            },
+            {
+              "name": "seq",
+              "type": ""
+            }
+          ]
+        },
+        "ebay_price_trends": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "pokemon_tcg_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "analysis_date",
+              "type": "DATE"
+            },
+            {
+              "name": "sample_size",
+              "type": "INTEGER"
+            },
+            {
+              "name": "average_sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "median_sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "min_sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "max_sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "price_volatility",
+              "type": "DECIMAL(5,2)"
+            },
+            {
+              "name": "graded_premium",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "condition_factors",
+              "type": "TEXT"
+            },
+            {
+              "name": "seasonal_trends",
+              "type": "TEXT"
+            },
+            {
+              "name": "market_velocity",
+              "type": "INTEGER"
+            },
+            {
+              "name": "confidence_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "last_updated",
+              "type": "DATETIME"
+            }
+          ]
+        }
+      },
+      "totalRecords": 0,
+      "keyMetrics": {}
+    },
+    "ebay_pricing_demo": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/ebay_pricing_demo.db",
+      "size": "52 KB",
+      "tables": {
+        "ebay_sold_listings": {
+          "recordCount": 78,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "pokemon_tcg_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_item_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "title",
+              "type": "TEXT"
+            },
+            {
+              "name": "sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "sold_date",
+              "type": "DATETIME"
+            },
+            {
+              "name": "shipping_cost",
+              "type": "DECIMAL(8,2)"
+            },
+            {
+              "name": "total_cost",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "condition_grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "grading_company",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_number",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_feedback",
+              "type": "INTEGER"
+            },
+            {
+              "name": "buy_it_now",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "auction_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "bid_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "watchers_count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "currency_code",
+              "type": "TEXT"
+            },
+            {
+              "name": "country",
+              "type": "TEXT"
+            },
+            {
+              "name": "image_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "ebay_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "category_id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "search_query",
+              "type": "TEXT"
+            },
+            {
+              "name": "confidence_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "data_source",
+              "type": "TEXT"
+            },
+            {
+              "name": "created_at",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "sqlite_sequence": {
+          "recordCount": 2,
+          "columns": [
+            {
+              "name": "name",
+              "type": ""
+            },
+            {
+              "name": "seq",
+              "type": ""
+            }
+          ]
+        },
+        "ebay_market_analysis": {
+          "recordCount": 10,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "pokemon_tcg_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "analysis_date",
+              "type": "DATE"
+            },
+            {
+              "name": "sample_size",
+              "type": "INTEGER"
+            },
+            {
+              "name": "average_sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "median_sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "min_sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "max_sold_price",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "graded_average",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "raw_average",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "graded_premium",
+              "type": "DECIMAL(10,2)"
+            },
+            {
+              "name": "market_velocity_days",
+              "type": "DECIMAL(5,2)"
+            },
+            {
+              "name": "price_volatility",
+              "type": "DECIMAL(5,2)"
+            },
+            {
+              "name": "confidence_score",
+              "type": "INTEGER"
+            },
+            {
+              "name": "last_updated",
+              "type": "DATETIME"
+            }
+          ]
+        }
+      },
+      "totalRecords": 90,
+      "keyMetrics": {}
+    },
+    "phygitals_complete_all": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/phygitals_complete_all.db",
+      "size": "24 KB",
+      "tables": {
+        "phygitals_complete": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "description",
+              "type": "TEXT"
+            },
+            {
+              "name": "price",
+              "type": "REAL"
+            },
+            {
+              "name": "price_lamports",
+              "type": "BIGINT"
+            },
+            {
+              "name": "usd_price",
+              "type": "REAL"
+            },
+            {
+              "name": "fmv",
+              "type": "REAL"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "grader",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "language",
+              "type": "TEXT"
+            },
+            {
+              "name": "category",
+              "type": "TEXT"
+            },
+            {
+              "name": "owner_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "owner_username",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_username",
+              "type": "TEXT"
+            },
+            {
+              "name": "listing_status",
+              "type": "TEXT"
+            },
+            {
+              "name": "image_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "source_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "source_page",
+              "type": "INTEGER"
+            },
+            {
+              "name": "metadata_json",
+              "type": "TEXT"
+            },
+            {
+              "name": "harvest_timestamp",
+              "type": "TEXT"
+            },
+            {
+              "name": "pokemon_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "is_graded",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "is_vintage",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "is_high_value",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "created_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "updated_at",
+              "type": "TEXT"
+            }
+          ]
+        }
+      },
+      "totalRecords": 0,
+      "keyMetrics": {
+        "pricing": {
+          "totalRecords": 0,
+          "withPrices": 0,
+          "minPrice": null,
+          "maxPrice": null,
+          "avgPrice": null,
+          "currency": "USD",
+          "priceColumn": "price"
+        }
+      }
+    },
+    "phygitals_mega_harvest": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/phygitals_mega_harvest.db",
+      "size": "28 KB",
+      "tables": {
+        "phygitals_mega": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "description",
+              "type": "TEXT"
+            },
+            {
+              "name": "price",
+              "type": "REAL"
+            },
+            {
+              "name": "price_lamports",
+              "type": "BIGINT"
+            },
+            {
+              "name": "usd_price",
+              "type": "REAL"
+            },
+            {
+              "name": "fmv",
+              "type": "REAL"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "grader",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "language",
+              "type": "TEXT"
+            },
+            {
+              "name": "owner_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "owner_username",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_username",
+              "type": "TEXT"
+            },
+            {
+              "name": "listing_status",
+              "type": "TEXT"
+            },
+            {
+              "name": "image_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "source_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "source_endpoint",
+              "type": "TEXT"
+            },
+            {
+              "name": "source_page",
+              "type": "INTEGER"
+            },
+            {
+              "name": "metadata_json",
+              "type": "TEXT"
+            },
+            {
+              "name": "harvest_timestamp",
+              "type": "TEXT"
+            },
+            {
+              "name": "pokemon_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "is_graded",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "is_vintage",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "is_high_value",
+              "type": "BOOLEAN"
+            }
+          ]
+        }
+      },
+      "totalRecords": 0,
+      "keyMetrics": {
+        "pricing": {
+          "totalRecords": 0,
+          "withPrices": 0,
+          "minPrice": null,
+          "maxPrice": null,
+          "avgPrice": null,
+          "currency": "USD",
+          "priceColumn": "price"
+        }
+      }
+    },
+    "phygitals_pokemon_complete": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/phygitals_pokemon_complete.db",
+      "size": "17.23 MB",
+      "tables": {
+        "phygitals_cards": {
+          "recordCount": 1195,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "image_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "price",
+              "type": "REAL"
+            },
+            {
+              "name": "fmv",
+              "type": "REAL"
+            },
+            {
+              "name": "grader",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "language",
+              "type": "TEXT"
+            },
+            {
+              "name": "category",
+              "type": "TEXT"
+            },
+            {
+              "name": "owner_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "owner_username",
+              "type": "TEXT"
+            },
+            {
+              "name": "listing_status",
+              "type": "TEXT"
+            },
+            {
+              "name": "created_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "updated_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "metadata_json",
+              "type": "TEXT"
+            },
+            {
+              "name": "source_url",
+              "type": "TEXT"
+            }
+          ]
+        },
+        "phygitals_sales": {
+          "recordCount": 988,
+          "columns": [
+            {
+              "name": "txid",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "from_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "to_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "amount",
+              "type": "REAL"
+            },
+            {
+              "name": "sale_time",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_metadata",
+              "type": "TEXT"
+            }
+          ]
+        },
+        "phygitals_users": {
+          "recordCount": 100,
+          "columns": [
+            {
+              "name": "wallet_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "username",
+              "type": "TEXT"
+            },
+            {
+              "name": "total_volume",
+              "type": "REAL"
+            },
+            {
+              "name": "total_cards",
+              "type": "INTEGER"
+            },
+            {
+              "name": "referral_code",
+              "type": "TEXT"
+            },
+            {
+              "name": "referral_rank",
+              "type": "TEXT"
+            },
+            {
+              "name": "created_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "profile_picture",
+              "type": "TEXT"
+            }
+          ]
+        },
+        "phygitals_sets": {
+          "recordCount": 675,
+          "columns": [
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "count",
+              "type": "INTEGER"
+            },
+            {
+              "name": "category",
+              "type": "TEXT"
+            }
+          ]
+        }
+      },
+      "totalRecords": 2958,
+      "keyMetrics": {
+        "pricing": {
+          "totalRecords": 790,
+          "withPrices": 790,
+          "minPrice": 1.29,
+          "maxPrice": 14000,
+          "avgPrice": 69.46,
+          "currency": "USD (converted from lamports)",
+          "priceColumn": "price"
+        }
+      }
+    },
+    "phygitals_pokemon_complete_v2": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/phygitals_pokemon_complete_v2.db",
+      "size": "56 KB",
+      "tables": {
+        "phygitals_cards_v2": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "description",
+              "type": "TEXT"
+            },
+            {
+              "name": "category",
+              "type": "TEXT"
+            },
+            {
+              "name": "subcategory",
+              "type": "TEXT"
+            },
+            {
+              "name": "collection_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "price",
+              "type": "REAL"
+            },
+            {
+              "name": "original_price_lamports",
+              "type": "BIGINT"
+            },
+            {
+              "name": "usd_price",
+              "type": "REAL"
+            },
+            {
+              "name": "price_currency",
+              "type": "TEXT"
+            },
+            {
+              "name": "fmv",
+              "type": "REAL"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_number",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "language",
+              "type": "TEXT"
+            },
+            {
+              "name": "condition_grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "grader",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade",
+              "type": "TEXT"
+            },
+            {
+              "name": "grade_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "certification",
+              "type": "TEXT"
+            },
+            {
+              "name": "listing_status",
+              "type": "TEXT"
+            },
+            {
+              "name": "availability",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_username",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "owner_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "owner_username",
+              "type": "TEXT"
+            },
+            {
+              "name": "image_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "thumbnail_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "external_links",
+              "type": "TEXT"
+            },
+            {
+              "name": "tags",
+              "type": "TEXT"
+            },
+            {
+              "name": "attributes_json",
+              "type": "TEXT"
+            },
+            {
+              "name": "metadata_json",
+              "type": "TEXT"
+            },
+            {
+              "name": "created_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "updated_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "listed_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "last_sale_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "source_url",
+              "type": "TEXT"
+            },
+            {
+              "name": "source_page",
+              "type": "INTEGER"
+            },
+            {
+              "name": "source_endpoint",
+              "type": "TEXT"
+            },
+            {
+              "name": "harvest_session",
+              "type": "TEXT"
+            },
+            {
+              "name": "harvest_timestamp",
+              "type": "TEXT"
+            },
+            {
+              "name": "search_terms",
+              "type": "TEXT"
+            },
+            {
+              "name": "pokemon_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_year",
+              "type": "INTEGER"
+            },
+            {
+              "name": "is_vintage",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "is_graded",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "is_first_edition",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "is_shadowless",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "is_holographic",
+              "type": "BOOLEAN"
+            }
+          ]
+        },
+        "phygitals_sales_v2": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "card_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "sale_price",
+              "type": "REAL"
+            },
+            {
+              "name": "sale_price_lamports",
+              "type": "BIGINT"
+            },
+            {
+              "name": "usd_sale_price",
+              "type": "REAL"
+            },
+            {
+              "name": "buyer_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "seller_address",
+              "type": "TEXT"
+            },
+            {
+              "name": "transaction_hash",
+              "type": "TEXT"
+            },
+            {
+              "name": "sale_date",
+              "type": "TEXT"
+            },
+            {
+              "name": "marketplace_fees",
+              "type": "REAL"
+            },
+            {
+              "name": "harvest_session",
+              "type": "TEXT"
+            },
+            {
+              "name": "harvest_timestamp",
+              "type": "TEXT"
+            }
+          ]
+        },
+        "phygitals_endpoints_v2": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "endpoint",
+              "type": "TEXT"
+            },
+            {
+              "name": "endpoint_type",
+              "type": "TEXT"
+            },
+            {
+              "name": "total_results",
+              "type": "INTEGER"
+            },
+            {
+              "name": "pages_processed",
+              "type": "INTEGER"
+            },
+            {
+              "name": "last_processed",
+              "type": "TEXT"
+            },
+            {
+              "name": "status",
+              "type": "TEXT"
+            },
+            {
+              "name": "harvest_session",
+              "type": "TEXT"
+            }
+          ]
+        }
+      },
+      "totalRecords": 0,
+      "keyMetrics": {
+        "pricing": {
+          "totalRecords": 0,
+          "withPrices": 0,
+          "minPrice": null,
+          "maxPrice": null,
+          "avgPrice": null,
+          "currency": "USD",
+          "priceColumn": "price"
+        }
+      }
+    },
+    "pokemon_tcg_complete": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/pokemon_tcg_complete.db",
+      "size": "55.74 MB",
+      "tables": {
+        "pokemon_cards": {
+          "recordCount": 19500,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "supertype",
+              "type": "TEXT"
+            },
+            {
+              "name": "subtypes",
+              "type": "TEXT"
+            },
+            {
+              "name": "hp",
+              "type": "TEXT"
+            },
+            {
+              "name": "types",
+              "type": "TEXT"
+            },
+            {
+              "name": "evolvesFrom",
+              "type": "TEXT"
+            },
+            {
+              "name": "evolvesTo",
+              "type": "TEXT"
+            },
+            {
+              "name": "rules",
+              "type": "TEXT"
+            },
+            {
+              "name": "ancientTrait",
+              "type": "TEXT"
+            },
+            {
+              "name": "abilities",
+              "type": "TEXT"
+            },
+            {
+              "name": "attacks",
+              "type": "TEXT"
+            },
+            {
+              "name": "weaknesses",
+              "type": "TEXT"
+            },
+            {
+              "name": "resistances",
+              "type": "TEXT"
+            },
+            {
+              "name": "retreatCost",
+              "type": "TEXT"
+            },
+            {
+              "name": "convertedRetreatCost",
+              "type": "INTEGER"
+            },
+            {
+              "name": "set_id",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_series",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_printedTotal",
+              "type": "INTEGER"
+            },
+            {
+              "name": "set_total",
+              "type": "INTEGER"
+            },
+            {
+              "name": "set_releaseDate",
+              "type": "TEXT"
+            },
+            {
+              "name": "number",
+              "type": "TEXT"
+            },
+            {
+              "name": "artist",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "flavorText",
+              "type": "TEXT"
+            },
+            {
+              "name": "nationalPokedexNumbers",
+              "type": "TEXT"
+            },
+            {
+              "name": "legalities",
+              "type": "TEXT"
+            },
+            {
+              "name": "images",
+              "type": "TEXT"
+            },
+            {
+              "name": "tcgplayer",
+              "type": "TEXT"
+            },
+            {
+              "name": "cardmarket",
+              "type": "TEXT"
+            },
+            {
+              "name": "markets",
+              "type": "TEXT"
+            },
+            {
+              "name": "extractedAt",
+              "type": "DATETIME"
+            }
+          ]
+        }
+      },
+      "totalRecords": 19500,
+      "keyMetrics": {
+        "pokemon": {
+          "nameColumn": "name",
+          "popularPokemon": [
+            {
+              "pokemon": "Other",
+              "count": 18904
+            },
+            {
+              "pokemon": "Pikachu",
+              "count": 173
+            },
+            {
+              "pokemon": "Mew",
+              "count": 133
+            },
+            {
+              "pokemon": "Charizard",
+              "count": 102
+            },
+            {
+              "pokemon": "Rayquaza",
+              "count": 59
+            },
+            {
+              "pokemon": "Venusaur",
+              "count": 46
+            },
+            {
+              "pokemon": "Blastoise",
+              "count": 46
+            },
+            {
+              "pokemon": "Lugia",
+              "count": 37
+            }
+          ]
+        }
+      }
+    },
+    "tcgplayer-backup-2025-09-08T06-34-06-320Z": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/tcgplayer-backup-2025-09-08T06-34-06-320Z.db",
+      "size": "14.13 MB",
+      "tables": {
+        "tcgplayer_cards": {
+          "recordCount": 5513,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "externalId",
+              "type": "TEXT"
+            },
+            {
+              "name": "source",
+              "type": "TEXT"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "cleanedName",
+              "type": "TEXT"
+            },
+            {
+              "name": "setName",
+              "type": "TEXT"
+            },
+            {
+              "name": "setUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "cardType",
+              "type": "TEXT"
+            },
+            {
+              "name": "cardNumber",
+              "type": "TEXT"
+            },
+            {
+              "name": "category",
+              "type": "TEXT"
+            },
+            {
+              "name": "menuCategory",
+              "type": "TEXT"
+            },
+            {
+              "name": "productUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "imageUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "tcgplayerUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "currentPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "marketPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "lowPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "midPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "highPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "priceRange",
+              "type": "TEXT"
+            },
+            {
+              "name": "listingCount",
+              "type": "INTEGER"
+            },
+            {
+              "name": "priceText",
+              "type": "TEXT"
+            },
+            {
+              "name": "inStock",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "sellable",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "totalListings",
+              "type": "INTEGER"
+            },
+            {
+              "name": "page",
+              "type": "INTEGER"
+            },
+            {
+              "name": "extractedAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "lastUpdated",
+              "type": "DATETIME"
+            },
+            {
+              "name": "harvestSessionId",
+              "type": "TEXT"
+            },
+            {
+              "name": "rawProductData",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarityWeight",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "tcgplayer_sets": {
+          "recordCount": 14,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "title",
+              "type": "TEXT"
+            },
+            {
+              "name": "fullTitle",
+              "type": "TEXT"
+            },
+            {
+              "name": "url",
+              "type": "TEXT"
+            },
+            {
+              "name": "fullUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "menuCategory",
+              "type": "TEXT"
+            },
+            {
+              "name": "totalProducts",
+              "type": "INTEGER"
+            },
+            {
+              "name": "totalPages",
+              "type": "INTEGER"
+            },
+            {
+              "name": "pagesProcessed",
+              "type": "INTEGER"
+            },
+            {
+              "name": "lastHarvestedAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "harvestStatus",
+              "type": "TEXT"
+            },
+            {
+              "name": "harvestErrors",
+              "type": "TEXT"
+            },
+            {
+              "name": "createdAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "updatedAt",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "tcgplayer_harvest_sessions": {
+          "recordCount": 7,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "sessionId",
+              "type": "TEXT"
+            },
+            {
+              "name": "startTime",
+              "type": "DATETIME"
+            },
+            {
+              "name": "endTime",
+              "type": "DATETIME"
+            },
+            {
+              "name": "status",
+              "type": "TEXT"
+            },
+            {
+              "name": "totalSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "processedSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "totalProducts",
+              "type": "INTEGER"
+            },
+            {
+              "name": "successfulSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "failedSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "maxPagesPerSet",
+              "type": "INTEGER"
+            },
+            {
+              "name": "maxSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "harvestType",
+              "type": "TEXT"
+            },
+            {
+              "name": "errors",
+              "type": "TEXT"
+            },
+            {
+              "name": "summary",
+              "type": "TEXT"
+            },
+            {
+              "name": "createdAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "updatedAt",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "tcgplayer_price_history": {
+          "recordCount": 9508,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "cardId",
+              "type": "TEXT"
+            },
+            {
+              "name": "externalId",
+              "type": "TEXT"
+            },
+            {
+              "name": "marketPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "lowPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "midPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "highPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "listingCount",
+              "type": "INTEGER"
+            },
+            {
+              "name": "priceSource",
+              "type": "TEXT"
+            },
+            {
+              "name": "priceDate",
+              "type": "DATETIME"
+            },
+            {
+              "name": "createdAt",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "tcgplayer_configuration": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "key",
+              "type": "TEXT"
+            },
+            {
+              "name": "value",
+              "type": "TEXT"
+            },
+            {
+              "name": "description",
+              "type": "TEXT"
+            },
+            {
+              "name": "createdAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "updatedAt",
+              "type": "DATETIME"
+            }
+          ]
+        }
+      },
+      "totalRecords": 15042,
+      "keyMetrics": {}
+    },
+    "tcgplayer": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/tcgplayer.db",
+      "size": "14.13 MB",
+      "tables": {
+        "tcgplayer_cards": {
+          "recordCount": 5513,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "externalId",
+              "type": "TEXT"
+            },
+            {
+              "name": "source",
+              "type": "TEXT"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "cleanedName",
+              "type": "TEXT"
+            },
+            {
+              "name": "setName",
+              "type": "TEXT"
+            },
+            {
+              "name": "setUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "cardType",
+              "type": "TEXT"
+            },
+            {
+              "name": "cardNumber",
+              "type": "TEXT"
+            },
+            {
+              "name": "category",
+              "type": "TEXT"
+            },
+            {
+              "name": "menuCategory",
+              "type": "TEXT"
+            },
+            {
+              "name": "productUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "imageUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "tcgplayerUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "currentPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "marketPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "lowPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "midPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "highPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "priceRange",
+              "type": "TEXT"
+            },
+            {
+              "name": "listingCount",
+              "type": "INTEGER"
+            },
+            {
+              "name": "priceText",
+              "type": "TEXT"
+            },
+            {
+              "name": "inStock",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "sellable",
+              "type": "BOOLEAN"
+            },
+            {
+              "name": "totalListings",
+              "type": "INTEGER"
+            },
+            {
+              "name": "page",
+              "type": "INTEGER"
+            },
+            {
+              "name": "extractedAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "lastUpdated",
+              "type": "DATETIME"
+            },
+            {
+              "name": "harvestSessionId",
+              "type": "TEXT"
+            },
+            {
+              "name": "rawProductData",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarityWeight",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "tcgplayer_sets": {
+          "recordCount": 14,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "title",
+              "type": "TEXT"
+            },
+            {
+              "name": "fullTitle",
+              "type": "TEXT"
+            },
+            {
+              "name": "url",
+              "type": "TEXT"
+            },
+            {
+              "name": "fullUrl",
+              "type": "TEXT"
+            },
+            {
+              "name": "menuCategory",
+              "type": "TEXT"
+            },
+            {
+              "name": "totalProducts",
+              "type": "INTEGER"
+            },
+            {
+              "name": "totalPages",
+              "type": "INTEGER"
+            },
+            {
+              "name": "pagesProcessed",
+              "type": "INTEGER"
+            },
+            {
+              "name": "lastHarvestedAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "harvestStatus",
+              "type": "TEXT"
+            },
+            {
+              "name": "harvestErrors",
+              "type": "TEXT"
+            },
+            {
+              "name": "createdAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "updatedAt",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "tcgplayer_harvest_sessions": {
+          "recordCount": 9,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "sessionId",
+              "type": "TEXT"
+            },
+            {
+              "name": "startTime",
+              "type": "DATETIME"
+            },
+            {
+              "name": "endTime",
+              "type": "DATETIME"
+            },
+            {
+              "name": "status",
+              "type": "TEXT"
+            },
+            {
+              "name": "totalSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "processedSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "totalProducts",
+              "type": "INTEGER"
+            },
+            {
+              "name": "successfulSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "failedSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "maxPagesPerSet",
+              "type": "INTEGER"
+            },
+            {
+              "name": "maxSets",
+              "type": "INTEGER"
+            },
+            {
+              "name": "harvestType",
+              "type": "TEXT"
+            },
+            {
+              "name": "errors",
+              "type": "TEXT"
+            },
+            {
+              "name": "summary",
+              "type": "TEXT"
+            },
+            {
+              "name": "createdAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "updatedAt",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "tcgplayer_price_history": {
+          "recordCount": 9508,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "cardId",
+              "type": "TEXT"
+            },
+            {
+              "name": "externalId",
+              "type": "TEXT"
+            },
+            {
+              "name": "marketPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "lowPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "midPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "highPrice",
+              "type": "REAL"
+            },
+            {
+              "name": "listingCount",
+              "type": "INTEGER"
+            },
+            {
+              "name": "priceSource",
+              "type": "TEXT"
+            },
+            {
+              "name": "priceDate",
+              "type": "DATETIME"
+            },
+            {
+              "name": "createdAt",
+              "type": "DATETIME"
+            }
+          ]
+        },
+        "tcgplayer_configuration": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "TEXT"
+            },
+            {
+              "name": "key",
+              "type": "TEXT"
+            },
+            {
+              "name": "value",
+              "type": "TEXT"
+            },
+            {
+              "name": "description",
+              "type": "TEXT"
+            },
+            {
+              "name": "createdAt",
+              "type": "DATETIME"
+            },
+            {
+              "name": "updatedAt",
+              "type": "DATETIME"
+            }
+          ]
+        }
+      },
+      "totalRecords": 15044,
+      "keyMetrics": {}
+    },
+    "tcgplayer_cards": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/tcgplayer_cards.db",
+      "size": "0 B",
+      "tables": {},
+      "totalRecords": 0,
+      "keyMetrics": {}
+    },
+    "tcgplayer_enhanced": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/tcgplayer_enhanced.db",
+      "size": "2.26 MB",
+      "tables": {
+        "tcgplayer_cards_enhanced": {
+          "recordCount": 15201,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "market_price",
+              "type": "REAL"
+            },
+            {
+              "name": "holofoil_price",
+              "type": "REAL"
+            },
+            {
+              "name": "normal_price",
+              "type": "REAL"
+            },
+            {
+              "name": "reverse_price",
+              "type": "REAL"
+            },
+            {
+              "name": "first_ed_price",
+              "type": "REAL"
+            },
+            {
+              "name": "unlimited_price",
+              "type": "REAL"
+            },
+            {
+              "name": "best_price",
+              "type": "REAL"
+            },
+            {
+              "name": "price_variant",
+              "type": "TEXT"
+            },
+            {
+              "name": "updated_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "data_source",
+              "type": "TEXT"
+            },
+            {
+              "name": "quality_score",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "sqlite_sequence": {
+          "recordCount": 1,
+          "columns": [
+            {
+              "name": "name",
+              "type": ""
+            },
+            {
+              "name": "seq",
+              "type": ""
+            }
+          ]
+        }
+      },
+      "totalRecords": 15202,
+      "keyMetrics": {}
+    },
+    "tcgplayer_fixed": {
+      "path": "/Users/arcadio/dev/pokedao/research/tcgplayer-discovery/tcgplayer_fixed.db",
+      "size": "24 KB",
+      "tables": {
+        "tcgplayer_cards_fixed": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "id",
+              "type": "INTEGER"
+            },
+            {
+              "name": "name",
+              "type": "TEXT"
+            },
+            {
+              "name": "set_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "rarity",
+              "type": "TEXT"
+            },
+            {
+              "name": "market_price",
+              "type": "REAL"
+            },
+            {
+              "name": "low_price",
+              "type": "REAL"
+            },
+            {
+              "name": "mid_price",
+              "type": "REAL"
+            },
+            {
+              "name": "high_price",
+              "type": "REAL"
+            },
+            {
+              "name": "direct_low",
+              "type": "REAL"
+            },
+            {
+              "name": "subtype_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "condition_name",
+              "type": "TEXT"
+            },
+            {
+              "name": "url",
+              "type": "TEXT"
+            },
+            {
+              "name": "scraped_at",
+              "type": "TEXT"
+            },
+            {
+              "name": "validation_status",
+              "type": "TEXT"
+            },
+            {
+              "name": "data_quality_score",
+              "type": "INTEGER"
+            }
+          ]
+        },
+        "sqlite_sequence": {
+          "recordCount": 0,
+          "columns": [
+            {
+              "name": "name",
+              "type": ""
+            },
+            {
+              "name": "seq",
+              "type": ""
+            }
+          ]
+        }
+      },
+      "totalRecords": 0,
+      "keyMetrics": {}
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "timestamp": "2025-09-09T20:21:16.281Z",
+  "maxTotalListings": 0,
+  "marketplaceStats": {
+    "/api/marketplace/leaderboard": {
+      "leaderboard": [
+        {
+          "address": "A5bEw9XKjF7eczrAsBQmDxn1ycDgCrpUfSWE4W2v9srf",
+          "cards": 23,
+          "totalListed": 0,
+          "volume": 1258470140452,
+          "packs": 2810,
+          "points": "125848309"
+        },
+        {
+          "address": "33ekYFio1oPYXRXnWvpfuy9YriRPh6qSHinzNUSFgAnz",
+          "cards": 35,
+          "totalListed": 0,
+          "volume": 841821839815,
+          "packs": 1880,
+          "points": "84182988"
+        },
+        {
+          "address": "B7AvpMxixD1nRQTzXxAA9q5sJPd82XbnuvnrnAUevpAe",
+          "cards": 20,
+          "totalListed": 0,
+          "volume": 566093466015,
+          "packs": 1263,
+          "points": "56634921"
+        },
+        {
+          "address": "5rByRKYa6YKy6iyacByhsH7y3GnRJBhtPM35aM6VJMTz",
+          "cards": 43,
+          "totalListed": 0,
+          "volume": 527109440220,
+          "packs": 1602,
+          "points": "51340947"
+        },
+        {
+          "address": "BevsBoBrAyst5Wxbbsy4sMSTuSbjg3e5hVPZW4zMHwLU",
+          "cards": 133,
+          "totalListed": 0,
+          "volume": 342764413624,
+          "packs": 1952,
+          "points": "34294840"
+        },
+        {
+          "address": "FJ2USAoZ9JyQBW2EUCVg3nXXBkiFwer13M4DFeNRUztK",
+          "cards": 0,
+          "totalListed": 0,
+          "volume": 311840454599,
+          "packs": 1187,
+          "points": "31184538"
+        },
+        {
+          "address": "AhyarzgEgr3XJoaJWbMwDeMLjYAhJ42pvFGePKLiRVrj",
+          "cards": 1814,
+          "totalListed": 0,
+          "volume": 366625366305,
+          "packs": 5496,
+          "points": "31154102"
+        },
+        {
+          "address": "GGVGfqFKzoNMqdfqsaoKZ64srWmW1fH9Mb7uHMBDJfKY",
+          "cards": 1,
+          "totalListed": 0,
+          "volume": 306046609322,
+          "packs": 661,
+          "points": "30604926"
+        },
+        {
+          "address": "FZyQDGDKCfJsV39Hn6UmDz6vgjgU5aj5R8gj3HMMU673",
+          "cards": 10,
+          "totalListed": 0,
+          "volume": 287349481208,
+          "packs": 408,
+          "points": "28765133"
+        },
+        {
+          "address": "9sf4XUqAsrSgDZQPYP6X7SHWu3MwPjmmzmh65ZgTez3X",
+          "cards": 105,
+          "totalListed": 0,
+          "volume": 260717430717,
+          "packs": 712,
+          "points": "26088982"
+        }
+      ],
+      "pagination": {
+        "total": 6913,
+        "page": 0,
+        "pageSize": 10,
+        "totalPages": 692
+      }
+    }
+  },
+  "summary": "Investigation into Phygitals marketplace size to locate 50,000 listings"
+}

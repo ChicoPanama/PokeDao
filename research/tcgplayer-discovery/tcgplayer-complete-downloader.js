@@ -105,43 +105,23 @@ class TCGPlayerCompletePokemonDownloader {
     }
 
     /**
-     * Load existing cards from database to prevent duplicates
+     * Load existing cards from database - SPEED MODE: DISABLED
      */
     async loadExistingCards() {
-        try {
-            const existingCards = await this.prisma.tCGPlayerCard.findMany({
-                select: {
-                    externalId: true,
-                    name: true,
-                    setName: true,
-                    productUrl: true
-                }
-            });
-
-            for (const card of existingCards) {
-                // Add multiple keys for duplicate detection
-                if (card.externalId) this.session.seenCards.add(card.externalId);
-                if (card.productUrl) this.session.seenCards.add(card.productUrl);
-                this.session.seenCards.add(`${card.name}_${card.setName}`);
-            }
-
-            console.log(`🔍 Loaded ${this.session.seenCards.size} existing card identifiers`);
-        } catch (error) {
-            console.error('Error loading existing cards:', error);
-        }
+        // SPEED OPTIMIZATION: Skip loading existing cards
+        // This saves significant startup time and memory
+        console.log('� SPEED MODE: Skipping existing card lookup for maximum performance');
+        console.log('📊 Will collect ALL cards, deduplicate later');
+        return;
     }
 
     /**
-     * Check if card is duplicate
+     * Check if card is duplicate - SPEED MODE: ALWAYS RETURN FALSE
      */
     isDuplicate(card) {
-        const keys = [
-            card.externalId,
-            card.productUrl,
-            `${card.name}_${card.setName}`
-        ].filter(Boolean);
-
-        return keys.some(key => this.session.seenCards.has(key));
+        // SPEED OPTIMIZATION: Skip all duplicate checking
+        // Collect everything, sort later
+        return false;
     }
 
     /**
@@ -392,8 +372,8 @@ class TCGPlayerCompletePokemonDownloader {
         
         try {
             await page.setExtraHTTPHeaders(this.headers);
-            await page.goto(source.fullUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
-            await page.waitForTimeout(3000);
+            await page.goto(source.fullUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
+            await page.waitForTimeout(1000); // SPEED: Reduced from 3000ms
             
             const sourceCards = [];
             let currentPage = 1;
@@ -640,7 +620,7 @@ class TCGPlayerCompletePokemonDownloader {
                 }, currentPage);
                 
                 if (hasNextPage) {
-                    await page.waitForTimeout(2000); // Wait for page load
+                    await page.waitForTimeout(1000); // SPEED: Reduced from 2000ms
                     currentPage++;
                 } else {
                     console.log(`📄 No more pages found for ${source.title} after ${currentPage} pages`);
@@ -743,7 +723,7 @@ class TCGPlayerCompletePokemonDownloader {
                     this.session.processedSources++;
                     
                     // Rate limiting between sources
-                    await this.sleep(3000);
+                    await this.sleep(1500); // SPEED: Reduced from 3000ms
                     
                 } catch (error) {
                     console.error(`💥 Failed to process source ${source.title}:`, error.message);

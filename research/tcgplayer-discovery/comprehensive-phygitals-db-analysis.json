@@ -1,0 +1,182 @@
+{
+  "timestamp": "2025-09-09T20:24:46.488Z",
+  "summary": {
+    "totalRecords": 5916,
+    "potentialSources": [],
+    "databases": [
+      {
+        "path": "./phygitals_complete_all.db",
+        "sizeMB": 0.02,
+        "totalRecords": 0,
+        "tables": {
+          "phygitals_complete": {
+            "records": 0,
+            "sampleRecord": null
+          }
+        }
+      },
+      {
+        "path": "./phygitals_pokemon_complete.db",
+        "sizeMB": 17.23,
+        "totalRecords": 2958,
+        "tables": {
+          "phygitals_cards": {
+            "records": 1195,
+            "sampleRecord": {
+              "id": "H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25",
+              "name": "2002 Pokemon Japanese Split Eart",
+              "set_name": "Japanese Split Eart",
+              "image_url": "https://gateway.irys.xyz/H8Fzof1JSQ7xjA9tbCsmSYF51EaH5WzSxT2CykoB5mjq",
+              "price": 9200000,
+              "fmv": 0,
+              "grader": null,
+              "grade": null,
+              "grade_type": null,
+              "rarity": null,
+              "card_type": null,
+              "language": "Japanese",
+              "category": null,
+              "owner_address": "GoPna8rmcoUfcVbP8zpaYeqVQgeApUxKQANCkfjcFAXm",
+              "owner_username": null,
+              "listing_status": "active",
+              "created_at": "2025-09-09T05:41:06.999Z",
+              "updated_at": "2025-09-09T05:41:07.000Z",
+              "metadata_json": "{\"address\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"slug\":null,\"owner\":\"GoPna8rmcoUfcVbP8zpaYeqVQgeApUxKQANCkfjcFAXm\",\"name\":\"2002 Pokemon Japanese Split Eart\",\"image\":\"https://gateway.irys.xyz/H8Fzof1JSQ7xjA9tbCsmSYF51EaH5WzSxT2CykoB5mjq\",\"price\":\"9200000\",\"time\":0,\"lastSale\":\"5000000\",\"listed\":true,\"burned\":false,\"properties\":{\"files\":[{\"uri\":\"https://gateway.irys.xyz/H8Fzof1JSQ7xjA9tbCsmSYF51EaH5WzSxT2CykoB5mjq\",\"type\":\"image/png\"},{\"uri\":\"https://gateway.irys.xyz/u8FnK8FCkkDiQzgBvG4ywBc4ZmFCePRkLrAbNb5GaTZ\",\"type\":\"image/png\"}],\"category\":\"image\",\"creators\":[{\"share\":0,\"address\":\"4E2yUkRfFPgL2SKn257CjWbMVLRZAKRQ4zerFanoSf65\",\"verified\":false},{\"share\":100,\"address\":\"2CEe9G68EqWmer21DhRhxJ3coUvRspDxT9NJuc2PJYo5\",\"verified\":false}]},\"computedHash\":\"8c8c9046b12c16257a943eece9e8b9e89b29ad86\",\"inventoryId\":null,\"altFmv\":\"11.70621909612107\",\"altFmvSource\":\"https://app.alt.xyz/research/2acc3540-8ec7-4474-8cfb-91e1c5685c9e\",\"createdAt\":\"2025-09-07T20:03:28.854Z\",\"updatedAt\":\"2025-09-09T05:32:24.754Z\",\"metadata\":[{\"id\":\"d27ca57b-3220-4cb3-b1ee-e0ac32e7a09a\",\"key\":\"Grade\",\"value\":\"CGC 9\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"},{\"id\":\"6ffb59b7-e616-45f4-8a57-1409a80c7813\",\"key\":\"Grader\",\"value\":\"CGC\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"},{\"id\":\"4c7607c6-289f-4f5e-9f85-2292378c589c\",\"key\":\"Cert Number\",\"value\":\"6017993041\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"},{\"id\":\"59019c6b-1d98-48d9-a607-1f13f8e37e09\",\"key\":\"Title\",\"value\":\"2002 Pokemon Japanese Split Earth 1st Edition Poliwag #21 CGC 9 MINT\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"},{\"id\":\"339c4d52-af0f-4c81-b807-282261a2501b\",\"key\":\"Category\",\"value\":\"Pokemon\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"}],\"offers\":[],\"mostRecentListActivity\":{\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"time\":\"2025-09-08T20:13:14.000Z\"},\"transferTimestamp\":{\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"time\":\"2025-09-08T20:15:22.018Z\"},\"mintTimestamp\":null}",
+              "source_url": "https://www.phygitals.com/card/H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25"
+            }
+          },
+          "phygitals_sales": {
+            "records": 988,
+            "sampleRecord": {
+              "txid": "4okTVb3GZzjYBZj3jBZM3eKLwvWmVrw43cfBGgvrgYAWjnALtRavBHN6J5hvwF17xhUNCTMZtUZNBSZSS12vTtiD:2",
+              "card_address": "7ej7UPoKRT3PuoLrWJhZKHDuXEZziWRkz7quVK37RcX4",
+              "from_address": "5mvj3tu8TVwFiJaWSsomLJqB4KmGEhfVN9D2rCXZxb1v",
+              "to_address": "62Q9eeDY3eM8A5CnprBGYMPShdBjAzdpBdr71QHsS8dS",
+              "amount": 46194718,
+              "sale_time": "2025-09-09T05:43:35.295Z",
+              "card_name": null,
+              "card_metadata": "{\"txid\":\"4okTVb3GZzjYBZj3jBZM3eKLwvWmVrw43cfBGgvrgYAWjnALtRavBHN6J5hvwF17xhUNCTMZtUZNBSZSS12vTtiD:2\",\"time\":\"2025-09-09T05:43:35.295Z\",\"amount\":\"46194718\",\"type\":\"BUY\",\"from\":\"5mvj3tu8TVwFiJaWSsomLJqB4KmGEhfVN9D2rCXZxb1v\",\"to\":\"62Q9eeDY3eM8A5CnprBGYMPShdBjAzdpBdr71QHsS8dS\",\"universalNFTDataAddress\":\"7ej7UPoKRT3PuoLrWJhZKHDuXEZziWRkz7quVK37RcX4\",\"ebayListingId\":null,\"nft\":{\"address\":\"7ej7UPoKRT3PuoLrWJhZKHDuXEZziWRkz7quVK37RcX4\",\"slug\":\"2002-pokemon-expedition-holo-mag-o2w90\",\"owner\":\"62Q9eeDY3eM8A5CnprBGYMPShdBjAzdpBdr71QHsS8dS\",\"name\":\"2002 Pokemon Expedition Holo Mag\",\"image\":\"https://gateway.irys.xyz/3UoByf62hWQjkrvH7bEz6nmM7HjDdB6BUwGC2TaGRgRD\",\"price\":null,\"time\":0,\"lastSale\":\"46194718\",\"listed\":false,\"burned\":false,\"properties\":{\"files\":[{\"uri\":\"https://gateway.irys.xyz/3UoByf62hWQjkrvH7bEz6nmM7HjDdB6BUwGC2TaGRgRD\",\"type\":\"image/png\"},{\"uri\":\"https://gateway.irys.xyz/3AnGkHodTFVafRB6Ah9Ve9kEXm6A78LxSYY7Pi6jU2Uj\",\"type\":\"image/png\"}],\"category\":\"image\",\"creators\":[{\"share\":0,\"address\":\"4E2yUkRfFPgL2SKn257CjWbMVLRZAKRQ4zerFanoSf65\",\"verified\":false},{\"share\":100,\"address\":\"2CEe9G68EqWmer21DhRhxJ3coUvRspDxT9NJuc2PJYo5\",\"verified\":false}]},\"computedHash\":\"f0e70cdaa060da241b603f0c2e76cf95866b9b8c\",\"inventoryId\":null,\"altFmv\":\"54.34672706479972\",\"altFmvSource\":\"https://app.alt.xyz/research/73741ccf-f938-4e69-999a-67e9e0095660\",\"altData\":{\"id\":\"73741ccf-f938-4e69-999a-67e9e0095660\",\"name\":\"2002 Expedition English Holo Magby #17\",\"year\":2002,\"brand\":\"Expedition\",\"images\":[],\"subject\":\"Magby\",\"variety\":\"English Holo\",\"cardPops\":[{\"count\":5,\"__typename\":\"CardPop\",\"gradeNumber\":\"5.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"2.5\",\"gradingCompany\":\"CGC\"},{\"count\":12,\"__typename\":\"CardPop\",\"gradeNumber\":\"7.0\",\"gradingCompany\":\"CGC\"},{\"count\":2,\"__typename\":\"CardPop\",\"gradeNumber\":\"10.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"2.0\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"3.0\",\"gradingCompany\":\"CGC\"},{\"count\":7,\"__typename\":\"CardPop\",\"gradeNumber\":\"9.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"4.5\",\"gradingCompany\":\"CGC\"},{\"count\":10,\"__typename\":\"CardPop\",\"gradeNumber\":\"6.5\",\"gradingCompany\":\"CGC\"},{\"count\":10,\"__typename\":\"CardPop\",\"gradeNumber\":\"10.0\",\"gradingCompany\":\"CGC\"},{\"count\":36,\"__typename\":\"CardPop\",\"gradeNumber\":\"8.0\",\"gradingCompany\":\"CGC\"},{\"count\":21,\"__typename\":\"CardPop\",\"gradeNumber\":\"9.0\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"3.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"1.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"4.0\",\"gradingCompany\":\"CGC\"},{\"count\":14,\"__typename\":\"CardPop\",\"gradeNumber\":\"7.5\",\"gradingCompany\":\"CGC\"},{\"count\":9,\"__typename\":\"CardPop\",\"gradeNumber\":\"6.0\",\"gradingCompany\":\"CGC\"},{\"count\":37,\"__typename\":\"CardPop\",\"gradeNumber\":\"8.5\",\"gradingCompany\":\"CGC\"},{\"count\":1,\"__typename\":\"CardPop\",\"gradeNumber\":\"5.0\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"1.0\",\"gradingCompany\":\"CGC\"}],\"category\":\"POKEMON_CARDS\",\"__typename\":\"Asset\",\"attributes\":{\"printRun\":null,\"__typename\":\"AssetAttributes\",\"cardNumber\":\"17\"},\"altValueInfo\":{\"__typename\":\"AltValueInfo\",\"confidenceData\":{\"__typename\":\"AltValueConfidenceData\",\"currentErrorLowerBound\":41.99125191055369,\"currentErrorUpperBound\":70.33766816353258,\"currentConfidenceMetric\":50},\"currentAltValue\":54.34672706479967},\"predictedPrice\":54.34672706479972},\"createdAt\":\"2025-09-07T20:00:56.757Z\",\"updatedAt\":\"2025-09-09T05:43:40.597Z\"},\"ebayListing\":null}"
+            }
+          },
+          "phygitals_users": {
+            "records": 100,
+            "sampleRecord": {
+              "wallet_address": "A5bEw9XKjF7eczrAsBQmDxn1ycDgCrpUfSWE4W2v9srf",
+              "username": null,
+              "total_volume": 1258470140452,
+              "total_cards": 23,
+              "referral_code": null,
+              "referral_rank": null,
+              "created_at": "2025-09-09T05:44:37.618Z",
+              "profile_picture": null
+            }
+          },
+          "phygitals_sets": {
+            "records": 675,
+            "sampleRecord": {
+              "set_name": "10th Anniversary Yellow Deck",
+              "count": 1,
+              "category": "Pokemon"
+            }
+          }
+        }
+      },
+      {
+        "path": "./phygitals_pokemon_complete_v2.db",
+        "sizeMB": 0.05,
+        "totalRecords": 0,
+        "tables": {
+          "phygitals_cards_v2": {
+            "records": 0,
+            "sampleRecord": null
+          },
+          "phygitals_sales_v2": {
+            "records": 0,
+            "sampleRecord": null
+          },
+          "phygitals_endpoints_v2": {
+            "records": 0,
+            "sampleRecord": null
+          }
+        }
+      },
+      {
+        "path": "./phygitals_mega_harvest.db",
+        "sizeMB": 0.03,
+        "totalRecords": 0,
+        "tables": {
+          "phygitals_mega": {
+            "records": 0,
+            "sampleRecord": null
+          }
+        }
+      },
+      {
+        "path": "../fanatics-collect-discovery/phygitals_pokemon_complete.db",
+        "sizeMB": 17.23,
+        "totalRecords": 2958,
+        "tables": {
+          "phygitals_cards": {
+            "records": 1195,
+            "sampleRecord": {
+              "id": "H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25",
+              "name": "2002 Pokemon Japanese Split Eart",
+              "set_name": "Japanese Split Eart",
+              "image_url": "https://gateway.irys.xyz/H8Fzof1JSQ7xjA9tbCsmSYF51EaH5WzSxT2CykoB5mjq",
+              "price": 9200000,
+              "fmv": 0,
+              "grader": null,
+              "grade": null,
+              "grade_type": null,
+              "rarity": null,
+              "card_type": null,
+              "language": "Japanese",
+              "category": null,
+              "owner_address": "GoPna8rmcoUfcVbP8zpaYeqVQgeApUxKQANCkfjcFAXm",
+              "owner_username": null,
+              "listing_status": "active",
+              "created_at": "2025-09-09T05:41:06.999Z",
+              "updated_at": "2025-09-09T05:41:07.000Z",
+              "metadata_json": "{\"address\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"slug\":null,\"owner\":\"GoPna8rmcoUfcVbP8zpaYeqVQgeApUxKQANCkfjcFAXm\",\"name\":\"2002 Pokemon Japanese Split Eart\",\"image\":\"https://gateway.irys.xyz/H8Fzof1JSQ7xjA9tbCsmSYF51EaH5WzSxT2CykoB5mjq\",\"price\":\"9200000\",\"time\":0,\"lastSale\":\"5000000\",\"listed\":true,\"burned\":false,\"properties\":{\"files\":[{\"uri\":\"https://gateway.irys.xyz/H8Fzof1JSQ7xjA9tbCsmSYF51EaH5WzSxT2CykoB5mjq\",\"type\":\"image/png\"},{\"uri\":\"https://gateway.irys.xyz/u8FnK8FCkkDiQzgBvG4ywBc4ZmFCePRkLrAbNb5GaTZ\",\"type\":\"image/png\"}],\"category\":\"image\",\"creators\":[{\"share\":0,\"address\":\"4E2yUkRfFPgL2SKn257CjWbMVLRZAKRQ4zerFanoSf65\",\"verified\":false},{\"share\":100,\"address\":\"2CEe9G68EqWmer21DhRhxJ3coUvRspDxT9NJuc2PJYo5\",\"verified\":false}]},\"computedHash\":\"8c8c9046b12c16257a943eece9e8b9e89b29ad86\",\"inventoryId\":null,\"altFmv\":\"11.70621909612107\",\"altFmvSource\":\"https://app.alt.xyz/research/2acc3540-8ec7-4474-8cfb-91e1c5685c9e\",\"createdAt\":\"2025-09-07T20:03:28.854Z\",\"updatedAt\":\"2025-09-09T05:32:24.754Z\",\"metadata\":[{\"id\":\"d27ca57b-3220-4cb3-b1ee-e0ac32e7a09a\",\"key\":\"Grade\",\"value\":\"CGC 9\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"},{\"id\":\"6ffb59b7-e616-45f4-8a57-1409a80c7813\",\"key\":\"Grader\",\"value\":\"CGC\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"},{\"id\":\"4c7607c6-289f-4f5e-9f85-2292378c589c\",\"key\":\"Cert Number\",\"value\":\"6017993041\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"},{\"id\":\"59019c6b-1d98-48d9-a607-1f13f8e37e09\",\"key\":\"Title\",\"value\":\"2002 Pokemon Japanese Split Earth 1st Edition Poliwag #21 CGC 9 MINT\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"},{\"id\":\"339c4d52-af0f-4c81-b807-282261a2501b\",\"key\":\"Category\",\"value\":\"Pokemon\",\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"universalNFTDataWithEbayListingAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\"}],\"offers\":[],\"mostRecentListActivity\":{\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"time\":\"2025-09-08T20:13:14.000Z\"},\"transferTimestamp\":{\"universalNFTDataAddress\":\"H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25\",\"time\":\"2025-09-08T20:15:22.018Z\"},\"mintTimestamp\":null}",
+              "source_url": "https://www.phygitals.com/card/H6rkK7PHGc2zKt6xKngY22Zi7wzrEy2ZKAQD3MSEBi25"
+            }
+          },
+          "phygitals_sales": {
+            "records": 988,
+            "sampleRecord": {
+              "txid": "4okTVb3GZzjYBZj3jBZM3eKLwvWmVrw43cfBGgvrgYAWjnALtRavBHN6J5hvwF17xhUNCTMZtUZNBSZSS12vTtiD:2",
+              "card_address": "7ej7UPoKRT3PuoLrWJhZKHDuXEZziWRkz7quVK37RcX4",
+              "from_address": "5mvj3tu8TVwFiJaWSsomLJqB4KmGEhfVN9D2rCXZxb1v",
+              "to_address": "62Q9eeDY3eM8A5CnprBGYMPShdBjAzdpBdr71QHsS8dS",
+              "amount": 46194718,
+              "sale_time": "2025-09-09T05:43:35.295Z",
+              "card_name": null,
+              "card_metadata": "{\"txid\":\"4okTVb3GZzjYBZj3jBZM3eKLwvWmVrw43cfBGgvrgYAWjnALtRavBHN6J5hvwF17xhUNCTMZtUZNBSZSS12vTtiD:2\",\"time\":\"2025-09-09T05:43:35.295Z\",\"amount\":\"46194718\",\"type\":\"BUY\",\"from\":\"5mvj3tu8TVwFiJaWSsomLJqB4KmGEhfVN9D2rCXZxb1v\",\"to\":\"62Q9eeDY3eM8A5CnprBGYMPShdBjAzdpBdr71QHsS8dS\",\"universalNFTDataAddress\":\"7ej7UPoKRT3PuoLrWJhZKHDuXEZziWRkz7quVK37RcX4\",\"ebayListingId\":null,\"nft\":{\"address\":\"7ej7UPoKRT3PuoLrWJhZKHDuXEZziWRkz7quVK37RcX4\",\"slug\":\"2002-pokemon-expedition-holo-mag-o2w90\",\"owner\":\"62Q9eeDY3eM8A5CnprBGYMPShdBjAzdpBdr71QHsS8dS\",\"name\":\"2002 Pokemon Expedition Holo Mag\",\"image\":\"https://gateway.irys.xyz/3UoByf62hWQjkrvH7bEz6nmM7HjDdB6BUwGC2TaGRgRD\",\"price\":null,\"time\":0,\"lastSale\":\"46194718\",\"listed\":false,\"burned\":false,\"properties\":{\"files\":[{\"uri\":\"https://gateway.irys.xyz/3UoByf62hWQjkrvH7bEz6nmM7HjDdB6BUwGC2TaGRgRD\",\"type\":\"image/png\"},{\"uri\":\"https://gateway.irys.xyz/3AnGkHodTFVafRB6Ah9Ve9kEXm6A78LxSYY7Pi6jU2Uj\",\"type\":\"image/png\"}],\"category\":\"image\",\"creators\":[{\"share\":0,\"address\":\"4E2yUkRfFPgL2SKn257CjWbMVLRZAKRQ4zerFanoSf65\",\"verified\":false},{\"share\":100,\"address\":\"2CEe9G68EqWmer21DhRhxJ3coUvRspDxT9NJuc2PJYo5\",\"verified\":false}]},\"computedHash\":\"f0e70cdaa060da241b603f0c2e76cf95866b9b8c\",\"inventoryId\":null,\"altFmv\":\"54.34672706479972\",\"altFmvSource\":\"https://app.alt.xyz/research/73741ccf-f938-4e69-999a-67e9e0095660\",\"altData\":{\"id\":\"73741ccf-f938-4e69-999a-67e9e0095660\",\"name\":\"2002 Expedition English Holo Magby #17\",\"year\":2002,\"brand\":\"Expedition\",\"images\":[],\"subject\":\"Magby\",\"variety\":\"English Holo\",\"cardPops\":[{\"count\":5,\"__typename\":\"CardPop\",\"gradeNumber\":\"5.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"2.5\",\"gradingCompany\":\"CGC\"},{\"count\":12,\"__typename\":\"CardPop\",\"gradeNumber\":\"7.0\",\"gradingCompany\":\"CGC\"},{\"count\":2,\"__typename\":\"CardPop\",\"gradeNumber\":\"10.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"2.0\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"3.0\",\"gradingCompany\":\"CGC\"},{\"count\":7,\"__typename\":\"CardPop\",\"gradeNumber\":\"9.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"4.5\",\"gradingCompany\":\"CGC\"},{\"count\":10,\"__typename\":\"CardPop\",\"gradeNumber\":\"6.5\",\"gradingCompany\":\"CGC\"},{\"count\":10,\"__typename\":\"CardPop\",\"gradeNumber\":\"10.0\",\"gradingCompany\":\"CGC\"},{\"count\":36,\"__typename\":\"CardPop\",\"gradeNumber\":\"8.0\",\"gradingCompany\":\"CGC\"},{\"count\":21,\"__typename\":\"CardPop\",\"gradeNumber\":\"9.0\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"3.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"1.5\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"4.0\",\"gradingCompany\":\"CGC\"},{\"count\":14,\"__typename\":\"CardPop\",\"gradeNumber\":\"7.5\",\"gradingCompany\":\"CGC\"},{\"count\":9,\"__typename\":\"CardPop\",\"gradeNumber\":\"6.0\",\"gradingCompany\":\"CGC\"},{\"count\":37,\"__typename\":\"CardPop\",\"gradeNumber\":\"8.5\",\"gradingCompany\":\"CGC\"},{\"count\":1,\"__typename\":\"CardPop\",\"gradeNumber\":\"5.0\",\"gradingCompany\":\"CGC\"},{\"count\":0,\"__typename\":\"CardPop\",\"gradeNumber\":\"1.0\",\"gradingCompany\":\"CGC\"}],\"category\":\"POKEMON_CARDS\",\"__typename\":\"Asset\",\"attributes\":{\"printRun\":null,\"__typename\":\"AssetAttributes\",\"cardNumber\":\"17\"},\"altValueInfo\":{\"__typename\":\"AltValueInfo\",\"confidenceData\":{\"__typename\":\"AltValueConfidenceData\",\"currentErrorLowerBound\":41.99125191055369,\"currentErrorUpperBound\":70.33766816353258,\"currentConfidenceMetric\":50},\"currentAltValue\":54.34672706479967},\"predictedPrice\":54.34672706479972},\"createdAt\":\"2025-09-07T20:00:56.757Z\",\"updatedAt\":\"2025-09-09T05:43:40.597Z\"},\"ebayListing\":null}"
+            }
+          },
+          "phygitals_users": {
+            "records": 100,
+            "sampleRecord": {
+              "wallet_address": "A5bEw9XKjF7eczrAsBQmDxn1ycDgCrpUfSWE4W2v9srf",
+              "username": null,
+              "total_volume": 1258470140452,
+              "total_cards": 23,
+              "referral_code": null,
+              "referral_rank": null,
+              "created_at": "2025-09-09T05:44:37.618Z",
+              "profile_picture": null
+            }
+          },
+          "phygitals_sets": {
+            "records": 675,
+            "sampleRecord": {
+              "set_name": "10th Anniversary Yellow Deck",
+              "count": 1,
+              "category": "Pokemon"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

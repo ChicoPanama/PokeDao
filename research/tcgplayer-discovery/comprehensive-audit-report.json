@@ -1,0 +1,1095 @@
+{
+  "timestamp": "2025-09-09T05:00:31.320Z",
+  "databases_audited": 6,
+  "total_issues": 1,
+  "results": {
+    "databases": {
+      "collector_crypt_v2.db": {
+        "path": "collector_crypt_v2.db",
+        "tables": {
+          "collector_crypt_cards": {
+            "name": "collector_crypt_cards",
+            "count": 24307,
+            "columns": [
+              "id",
+              "title",
+              "category",
+              "grade",
+              "grade_num",
+              "grading_company",
+              "grading_id",
+              "price",
+              "currency",
+              "seller",
+              "url",
+              "front_image",
+              "back_image",
+              "blockchain",
+              "vault",
+              "authenticated",
+              "is_active",
+              "scraped_at",
+              "year",
+              "set_name",
+              "serial",
+              "nft_address",
+              "status",
+              "raw_data"
+            ],
+            "priceColumns": [
+              "price"
+            ],
+            "priceStats": {
+              "price": {
+                "total": 24307,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 24307,
+                "min_price": 1,
+                "max_price": 34200,
+                "avg_price": 337.8017274859094,
+                "suspicious_low": 0
+              }
+            },
+            "issues": []
+          }
+        },
+        "totalRecords": 24307,
+        "issues": []
+      },
+      "pokemon_tcg_complete.db": {
+        "path": "pokemon_tcg_complete.db",
+        "tables": {
+          "pokemon_cards": {
+            "name": "pokemon_cards",
+            "count": 19500,
+            "columns": [
+              "id",
+              "name",
+              "supertype",
+              "subtypes",
+              "hp",
+              "types",
+              "evolvesFrom",
+              "evolvesTo",
+              "rules",
+              "ancientTrait",
+              "abilities",
+              "attacks",
+              "weaknesses",
+              "resistances",
+              "retreatCost",
+              "convertedRetreatCost",
+              "set_id",
+              "set_name",
+              "set_series",
+              "set_printedTotal",
+              "set_total",
+              "set_releaseDate",
+              "number",
+              "artist",
+              "rarity",
+              "flavorText",
+              "nationalPokedexNumbers",
+              "legalities",
+              "images",
+              "tcgplayer",
+              "cardmarket",
+              "markets",
+              "extractedAt"
+            ],
+            "priceColumns": [
+              "cardmarket",
+              "markets"
+            ],
+            "priceStats": {
+              "cardmarket": {
+                "total": 19500,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 19500,
+                "min_price": "{\"url\":\"https://prices.pokemontcg.io/cardmarket/base1-1\",\"updatedAt\":\"2025/09/08\",\"prices\":{\"averageSellPrice\":101.64,\"lowPrice\":32.5,\"trendPrice\":98.85,\"germanProLow\":0,\"suggestedPrice\":0,\"reverseHoloSell\":0,\"reverseHoloLow\":0,\"reverseHoloTrend\":0,\"lowPriceExPlus\":65,\"avg1\":84.99,\"avg7\":99.62,\"avg30\":165.94,\"reverseHoloAvg1\":0,\"reverseHoloAvg7\":0,\"reverseHoloAvg30\":0}}",
+                "max_price": "{}",
+                "avg_price": 0,
+                "suspicious_low": 0
+              },
+              "markets": {
+                "total": 19500,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 19500,
+                "min_price": "{\"cardmarket\":{\"url\":\"https://prices.pokemontcg.io/cardmarket/col1-SL1\",\"updatedAt\":\"2025/09/08\",\"prices\":{\"averageSellPrice\":50,\"lowPrice\":17.95,\"trendPrice\":87.53,\"germanProLow\":0,\"suggestedPrice\":0,\"reverseHoloSell\":0,\"reverseHoloLow\":0,\"reverseHoloTrend\":30.38,\"lowPriceExPlus\":78.99,\"avg1\":50,\"avg7\":100.09,\"avg30\":85.96,\"reverseHoloAvg1\":40,\"reverseHoloAvg7\":40.28,\"reverseHoloAvg30\":24.68}}}",
+                "max_price": "{}",
+                "avg_price": 0,
+                "suspicious_low": 0
+              }
+            },
+            "issues": []
+          }
+        },
+        "totalRecords": 19500,
+        "issues": []
+      },
+      "tcgplayer.db": {
+        "path": "tcgplayer.db",
+        "tables": {
+          "tcgplayer_cards": {
+            "name": "tcgplayer_cards",
+            "count": 5513,
+            "columns": [
+              "id",
+              "externalId",
+              "source",
+              "name",
+              "cleanedName",
+              "setName",
+              "setUrl",
+              "rarity",
+              "cardType",
+              "cardNumber",
+              "category",
+              "menuCategory",
+              "productUrl",
+              "imageUrl",
+              "tcgplayerUrl",
+              "currentPrice",
+              "marketPrice",
+              "lowPrice",
+              "midPrice",
+              "highPrice",
+              "priceRange",
+              "listingCount",
+              "priceText",
+              "inStock",
+              "sellable",
+              "totalListings",
+              "page",
+              "extractedAt",
+              "lastUpdated",
+              "harvestSessionId",
+              "rawProductData",
+              "rarityWeight"
+            ],
+            "priceColumns": [
+              "currentPrice",
+              "marketPrice",
+              "lowPrice",
+              "midPrice",
+              "highPrice",
+              "priceRange",
+              "priceText"
+            ],
+            "priceStats": {
+              "currentPrice": {
+                "total": 5513,
+                "nulls": 14,
+                "zeros": 0,
+                "positive": 5499,
+                "min_price": 0.01,
+                "max_price": 50000,
+                "avg_price": 27.492840516457537,
+                "suspicious_low": 2183
+              },
+              "marketPrice": {
+                "total": 5513,
+                "nulls": 12,
+                "zeros": 0,
+                "positive": 5501,
+                "min_price": 0.01,
+                "max_price": 6067.33,
+                "avg_price": 16.32578076713325,
+                "suspicious_low": 1596
+              },
+              "lowPrice": {
+                "total": 5513,
+                "nulls": 17,
+                "zeros": 0,
+                "positive": 5496,
+                "min_price": 0.01,
+                "max_price": 50000,
+                "avg_price": 27.557241630276565,
+                "suspicious_low": 2183
+              },
+              "midPrice": {
+                "total": 5513,
+                "nulls": 5513,
+                "zeros": 0,
+                "positive": 0,
+                "min_price": null,
+                "max_price": null,
+                "avg_price": null,
+                "suspicious_low": 0
+              },
+              "highPrice": {
+                "total": 5513,
+                "nulls": 5511,
+                "zeros": 0,
+                "positive": 2,
+                "min_price": 138,
+                "max_price": 290,
+                "avg_price": 214,
+                "suspicious_low": 0
+              },
+              "priceRange": {
+                "total": 5513,
+                "nulls": 5513,
+                "zeros": 0,
+                "positive": 0,
+                "min_price": null,
+                "max_price": null,
+                "avg_price": null,
+                "suspicious_low": 0
+              },
+              "priceText": {
+                "total": 5513,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 5513,
+                "min_price": "Alternate Art PromosPromo, #079a/236Jirachi GX - 79a/23627 listings from $5.00Market Price:$9.17",
+                "max_price": "XY PromosPromo, #XY189Victini - XY1892 listings from $1.87Market Price:$1.87",
+                "avg_price": 0,
+                "suspicious_low": 0
+              }
+            },
+            "issues": [
+              "tcgplayer_cards.currentPrice: 2183 suspicious low prices (>549.9 threshold)",
+              "tcgplayer_cards.marketPrice: 1596 suspicious low prices (>550.1 threshold)",
+              "tcgplayer_cards.lowPrice: 2183 suspicious low prices (>549.6 threshold)",
+              "tcgplayer_cards.midPrice: 100.0% null values",
+              "tcgplayer_cards.highPrice: 100.0% null values",
+              "tcgplayer_cards.priceRange: 100.0% null values",
+              "tcgplayer_cards: 2478 duplicate records (>275.65000000000003 threshold)"
+            ]
+          },
+          "tcgplayer_sets": {
+            "name": "tcgplayer_sets",
+            "count": 14,
+            "columns": [
+              "id",
+              "title",
+              "fullTitle",
+              "url",
+              "fullUrl",
+              "menuCategory",
+              "totalProducts",
+              "totalPages",
+              "pagesProcessed",
+              "lastHarvestedAt",
+              "harvestStatus",
+              "harvestErrors",
+              "createdAt",
+              "updatedAt"
+            ],
+            "priceColumns": [],
+            "priceStats": {},
+            "issues": []
+          },
+          "tcgplayer_harvest_sessions": {
+            "name": "tcgplayer_harvest_sessions",
+            "count": 9,
+            "columns": [
+              "id",
+              "sessionId",
+              "startTime",
+              "endTime",
+              "status",
+              "totalSets",
+              "processedSets",
+              "totalProducts",
+              "successfulSets",
+              "failedSets",
+              "maxPagesPerSet",
+              "maxSets",
+              "harvestType",
+              "errors",
+              "summary",
+              "createdAt",
+              "updatedAt"
+            ],
+            "priceColumns": [],
+            "priceStats": {},
+            "issues": []
+          },
+          "tcgplayer_price_history": {
+            "name": "tcgplayer_price_history",
+            "count": 9508,
+            "columns": [
+              "id",
+              "cardId",
+              "externalId",
+              "marketPrice",
+              "lowPrice",
+              "midPrice",
+              "highPrice",
+              "listingCount",
+              "priceSource",
+              "priceDate",
+              "createdAt"
+            ],
+            "priceColumns": [
+              "marketPrice",
+              "lowPrice",
+              "midPrice",
+              "highPrice",
+              "priceSource",
+              "priceDate"
+            ],
+            "priceStats": {
+              "marketPrice": {
+                "total": 9508,
+                "nulls": 13,
+                "zeros": 0,
+                "positive": 9495,
+                "min_price": 0.01,
+                "max_price": 6067.33,
+                "avg_price": 13.843187993680885,
+                "suspicious_low": 2657
+              },
+              "lowPrice": {
+                "total": 9508,
+                "nulls": 15,
+                "zeros": 0,
+                "positive": 9493,
+                "min_price": 0.01,
+                "max_price": 50000,
+                "avg_price": 20.03529548088065,
+                "suspicious_low": 3718
+              },
+              "midPrice": {
+                "total": 9508,
+                "nulls": 9508,
+                "zeros": 0,
+                "positive": 0,
+                "min_price": null,
+                "max_price": null,
+                "avg_price": null,
+                "suspicious_low": 0
+              },
+              "highPrice": {
+                "total": 9508,
+                "nulls": 9505,
+                "zeros": 0,
+                "positive": 3,
+                "min_price": 138,
+                "max_price": 290,
+                "avg_price": 239.33333333333334,
+                "suspicious_low": 0
+              },
+              "priceSource": {
+                "total": 9508,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 9508,
+                "min_price": "mega_harvest",
+                "max_price": "product_page",
+                "avg_price": 0,
+                "suspicious_low": 0
+              },
+              "priceDate": {
+                "total": 9508,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 9508,
+                "min_price": 1757300792250,
+                "max_price": 1757308512444,
+                "avg_price": 1757306540829.2507,
+                "suspicious_low": 0
+              }
+            },
+            "issues": [
+              "tcgplayer_price_history.marketPrice: 2657 suspicious low prices (>949.5 threshold)",
+              "tcgplayer_price_history.lowPrice: 3718 suspicious low prices (>949.3000000000001 threshold)",
+              "tcgplayer_price_history.midPrice: 100.0% null values",
+              "tcgplayer_price_history.highPrice: 100.0% null values"
+            ]
+          },
+          "tcgplayer_configuration": {
+            "name": "tcgplayer_configuration",
+            "count": 0,
+            "columns": [
+              "id",
+              "key",
+              "value",
+              "description",
+              "createdAt",
+              "updatedAt"
+            ],
+            "priceColumns": [
+              "value"
+            ],
+            "priceStats": {
+              "value": {
+                "total": 0,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 0,
+                "min_price": null,
+                "max_price": null,
+                "avg_price": null,
+                "suspicious_low": 0
+              }
+            },
+            "issues": []
+          }
+        },
+        "totalRecords": 15044,
+        "issues": [
+          "tcgplayer_cards.currentPrice: 2183 suspicious low prices (>549.9 threshold)",
+          "tcgplayer_cards.marketPrice: 1596 suspicious low prices (>550.1 threshold)",
+          "tcgplayer_cards.lowPrice: 2183 suspicious low prices (>549.6 threshold)",
+          "tcgplayer_cards.midPrice: 100.0% null values",
+          "tcgplayer_cards.highPrice: 100.0% null values",
+          "tcgplayer_cards.priceRange: 100.0% null values",
+          "tcgplayer_cards: 2478 duplicate records (>275.65000000000003 threshold)",
+          "tcgplayer_price_history.marketPrice: 2657 suspicious low prices (>949.5 threshold)",
+          "tcgplayer_price_history.lowPrice: 3718 suspicious low prices (>949.3000000000001 threshold)",
+          "tcgplayer_price_history.midPrice: 100.0% null values",
+          "tcgplayer_price_history.highPrice: 100.0% null values"
+        ]
+      },
+      "collector_crypt_ebay_complete.db": {
+        "path": "collector_crypt_ebay_complete.db",
+        "tables": {
+          "ebay_current_listings": {
+            "name": "ebay_current_listings",
+            "count": 198045,
+            "columns": [
+              "id",
+              "collector_crypt_id",
+              "ebay_item_id",
+              "title",
+              "current_price",
+              "buy_it_now_price",
+              "auction_end_time",
+              "condition_description",
+              "grading_company",
+              "grade_number",
+              "seller_name",
+              "seller_feedback",
+              "shipping_cost",
+              "location",
+              "watchers_count",
+              "bid_count",
+              "listing_type",
+              "image_url",
+              "ebay_url",
+              "pokemon_name",
+              "set_name",
+              "card_number",
+              "rarity",
+              "listing_duration",
+              "time_left",
+              "created_at",
+              "last_updated"
+            ],
+            "priceColumns": [
+              "current_price",
+              "buy_it_now_price"
+            ],
+            "priceStats": {
+              "current_price": {
+                "total": 198045,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 198045,
+                "min_price": 0.8067252408076799,
+                "max_price": 47741.35967833236,
+                "avg_price": 474.5719940087758,
+                "suspicious_low": 0
+              },
+              "buy_it_now_price": {
+                "total": 198045,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 198045,
+                "min_price": 1.1138953376576963,
+                "max_price": 47760.78549429796,
+                "avg_price": 538.8282910204601,
+                "suspicious_low": 0
+              }
+            },
+            "issues": []
+          },
+          "ebay_sold_listings": {
+            "name": "ebay_sold_listings",
+            "count": 284253,
+            "columns": [
+              "id",
+              "collector_crypt_id",
+              "ebay_item_id",
+              "title",
+              "sold_price",
+              "sold_date",
+              "shipping_cost",
+              "total_cost",
+              "condition_description",
+              "grading_company",
+              "grade_number",
+              "seller_name",
+              "seller_feedback",
+              "buyer_feedback",
+              "listing_type",
+              "days_to_sell",
+              "bid_count",
+              "watchers_count",
+              "pokemon_name",
+              "set_name",
+              "card_number",
+              "rarity",
+              "image_url",
+              "ebay_url",
+              "created_at"
+            ],
+            "priceColumns": [
+              "sold_price",
+              "sold_date"
+            ],
+            "priceStats": {
+              "sold_price": {
+                "total": 284253,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 284253,
+                "min_price": 0.7020897778029155,
+                "max_price": 39831.0362228803,
+                "avg_price": 412.5803063509231,
+                "suspicious_low": 0
+              },
+              "sold_date": {
+                "total": 284253,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 284253,
+                "min_price": "2025-06-10",
+                "max_price": "2025-09-09",
+                "avg_price": 2025,
+                "suspicious_low": 0
+              }
+            },
+            "issues": []
+          },
+          "ebay_price_analytics": {
+            "name": "ebay_price_analytics",
+            "count": 23037,
+            "columns": [
+              "id",
+              "collector_crypt_id",
+              "card_name",
+              "analysis_date",
+              "current_listings_count",
+              "avg_asking_price",
+              "min_asking_price",
+              "max_asking_price",
+              "median_asking_price",
+              "sold_listings_count",
+              "avg_sold_price",
+              "min_sold_price",
+              "max_sold_price",
+              "median_sold_price",
+              "asking_vs_sold_ratio",
+              "market_velocity",
+              "demand_indicator",
+              "price_trend",
+              "graded_premium",
+              "condition_impact",
+              "grade_distribution",
+              "confidence_score",
+              "last_updated"
+            ],
+            "priceColumns": [
+              "current_listings_count",
+              "avg_asking_price",
+              "min_asking_price",
+              "max_asking_price",
+              "median_asking_price",
+              "sold_listings_count",
+              "avg_sold_price",
+              "min_sold_price",
+              "max_sold_price",
+              "median_sold_price",
+              "asking_vs_sold_ratio",
+              "market_velocity",
+              "price_trend"
+            ],
+            "priceStats": {
+              "current_listings_count": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 5,
+                "max_price": 36,
+                "avg_price": 8.669661848330946,
+                "suspicious_low": 0
+              },
+              "avg_asking_price": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 0.9502794555790404,
+                "max_price": 39718.78194939155,
+                "avg_price": 425.85721560995194,
+                "suspicious_low": 0
+              },
+              "min_asking_price": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 0.8067252408076799,
+                "max_price": 29488.084516822648,
+                "avg_price": 331.3107686354206,
+                "suspicious_low": 0
+              },
+              "max_asking_price": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 1.133416839240882,
+                "max_price": 47741.35967833236,
+                "avg_price": 519.498949484706,
+                "suspicious_low": 0
+              },
+              "median_asking_price": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 23037,
+                "positive": 0,
+                "min_price": 0,
+                "max_price": 0,
+                "avg_price": 0,
+                "suspicious_low": 0
+              },
+              "sold_listings_count": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 8,
+                "max_price": 49,
+                "avg_price": 12.446021617398099,
+                "suspicious_low": 0
+              },
+              "avg_sold_price": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 0.8930202329109737,
+                "max_price": 32351.94626947675,
+                "avg_price": 366.96313427600415,
+                "suspicious_low": 0
+              },
+              "min_sold_price": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 0.7020897778029155,
+                "max_price": 23957.85012116312,
+                "avg_price": 283.21167158831736,
+                "suspicious_low": 0
+              },
+              "max_sold_price": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 1.1278369102631123,
+                "max_price": 39831.0362228803,
+                "avg_price": 450.88926588798995,
+                "suspicious_low": 0
+              },
+              "median_sold_price": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 23037,
+                "positive": 0,
+                "min_price": 0,
+                "max_price": 0,
+                "avg_price": 0,
+                "suspicious_low": 0
+              },
+              "asking_vs_sold_ratio": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 0.8299128841214092,
+                "max_price": 1.4912270683962467,
+                "avg_price": 1.1597257774516117,
+                "suspicious_low": 0
+              },
+              "market_velocity": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": 3,
+                "max_price": 13,
+                "avg_price": 7.536137517905978,
+                "suspicious_low": 0
+              },
+              "price_trend": {
+                "total": 23037,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 23037,
+                "min_price": "STABLE",
+                "max_price": "STABLE",
+                "avg_price": 0,
+                "suspicious_low": 0
+              }
+            },
+            "issues": []
+          }
+        },
+        "totalRecords": 505335,
+        "issues": []
+      },
+      "collector_crypt_pricing_complete.db": {
+        "path": "collector_crypt_pricing_complete.db",
+        "tables": {
+          "collector_crypt_pricing": {
+            "name": "collector_crypt_pricing",
+            "count": 22937,
+            "columns": [
+              "id",
+              "cc_title",
+              "cc_asking_price",
+              "cc_category",
+              "cc_grading_company",
+              "cc_grade",
+              "ptcg_name",
+              "ptcg_set",
+              "ptcg_market_price",
+              "ptcg_low_price",
+              "ptcg_high_price",
+              "ptcg_confidence",
+              "tcgp_name",
+              "tcgp_market_price",
+              "tcgp_confidence",
+              "ebay_title",
+              "ebay_sold_price",
+              "ebay_confidence",
+              "true_market_value",
+              "asking_vs_market_ratio",
+              "price_opportunity",
+              "potential_profit",
+              "confidence_score",
+              "price_sources",
+              "last_updated"
+            ],
+            "priceColumns": [
+              "cc_asking_price",
+              "ptcg_market_price",
+              "ptcg_low_price",
+              "ptcg_high_price",
+              "tcgp_market_price",
+              "ebay_sold_price",
+              "true_market_value",
+              "asking_vs_market_ratio",
+              "price_opportunity",
+              "price_sources"
+            ],
+            "priceStats": {
+              "cc_asking_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": 1,
+                "max_price": 34200,
+                "avg_price": 339.11085102672536,
+                "suspicious_low": 0
+              },
+              "ptcg_market_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 4040,
+                "positive": 18897,
+                "min_price": 0,
+                "max_price": 154.73,
+                "avg_price": 28.439928499803813,
+                "suspicious_low": 0
+              },
+              "ptcg_low_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 4040,
+                "positive": 18897,
+                "min_price": 0,
+                "max_price": 159.75,
+                "avg_price": 20.434507564197585,
+                "suspicious_low": 234
+              },
+              "ptcg_high_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 4040,
+                "positive": 18897,
+                "min_price": 0,
+                "max_price": 297.98,
+                "avg_price": 52.071726468151894,
+                "suspicious_low": 0
+              },
+              "tcgp_market_price": {
+                "total": 22937,
+                "nulls": 22906,
+                "zeros": 0,
+                "positive": 31,
+                "min_price": 1.85,
+                "max_price": 9.17,
+                "avg_price": 6.057741935483871,
+                "suspicious_low": 0
+              },
+              "ebay_sold_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": 0.8930202329109737,
+                "max_price": 32006.346376916685,
+                "avg_price": 321.87077286631694,
+                "suspicious_low": 0
+              },
+              "true_market_value": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": 0.51,
+                "max_price": 20677.831322525817,
+                "avg_price": 110.2125112215404,
+                "suspicious_low": 0
+              },
+              "asking_vs_market_ratio": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": 0.9157470315323335,
+                "max_price": 1584.4080846968238,
+                "avg_price": 10.205503869557667,
+                "suspicious_low": 0
+              },
+              "price_opportunity": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": "FAIR_MARKET",
+                "max_price": "OVERPRICED",
+                "avg_price": 0,
+                "suspicious_low": 0
+              },
+              "price_sources": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": "Pokemon TCG API, TCGPlayer, eBay",
+                "max_price": "Pokemon TCG API, eBay",
+                "avg_price": 0,
+                "suspicious_low": 0
+              }
+            },
+            "issues": [
+              "collector_crypt_pricing.tcgp_market_price: 99.9% null values"
+            ]
+          }
+        },
+        "totalRecords": 22937,
+        "issues": [
+          "collector_crypt_pricing.tcgp_market_price: 99.9% null values"
+        ]
+      },
+      "collector_crypt_pricing_fixed.db": {
+        "path": "collector_crypt_pricing_fixed.db",
+        "tables": {
+          "collector_crypt_pricing": {
+            "name": "collector_crypt_pricing",
+            "count": 22937,
+            "columns": [
+              "id",
+              "cc_title",
+              "cc_asking_price",
+              "cc_category",
+              "cc_grading_company",
+              "cc_grade",
+              "ptcg_name",
+              "ptcg_set",
+              "ptcg_market_price",
+              "ptcg_confidence",
+              "tcgp_name",
+              "tcgp_market_price",
+              "tcgp_confidence",
+              "ebay_title",
+              "ebay_sold_price",
+              "ebay_current_price",
+              "ebay_confidence",
+              "true_market_value",
+              "market_source",
+              "market_confidence",
+              "market_explanation",
+              "asking_vs_market_ratio",
+              "price_opportunity",
+              "potential_profit",
+              "grading_premium",
+              "is_graded",
+              "confidence_score",
+              "price_sources",
+              "last_updated"
+            ],
+            "priceColumns": [
+              "cc_asking_price",
+              "ptcg_market_price",
+              "tcgp_market_price",
+              "ebay_sold_price",
+              "ebay_current_price",
+              "true_market_value",
+              "market_source",
+              "market_confidence",
+              "market_explanation",
+              "asking_vs_market_ratio",
+              "price_opportunity",
+              "price_sources"
+            ],
+            "priceStats": {
+              "cc_asking_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": 1,
+                "max_price": 34200,
+                "avg_price": 339.11085102672536,
+                "suspicious_low": 0
+              },
+              "ptcg_market_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 2154,
+                "positive": 20783,
+                "min_price": 0,
+                "max_price": 317,
+                "avg_price": 41.24503814797053,
+                "suspicious_low": 0
+              },
+              "tcgp_market_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 139,
+                "positive": 22798,
+                "min_price": 0,
+                "max_price": 16.09,
+                "avg_price": 1.2135784976239263,
+                "suspicious_low": 0
+              },
+              "ebay_sold_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": 0.8930202329109737,
+                "max_price": 32351.94626947675,
+                "avg_price": 321.9542520279191,
+                "suspicious_low": 0
+              },
+              "ebay_current_price": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": 0.9502794555790404,
+                "max_price": 38736.199880975895,
+                "avg_price": 373.37800093659,
+                "suspicious_low": 0
+              },
+              "true_market_value": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 1,
+                "positive": 22936,
+                "min_price": 0,
+                "max_price": 92186.07033092238,
+                "avg_price": 812.510589170534,
+                "suspicious_low": 0
+              },
+              "market_source": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": "NO_DATA",
+                "max_price": "eBay Sold",
+                "avg_price": 0,
+                "suspicious_low": 0
+              },
+              "market_confidence": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 1,
+                "positive": 22936,
+                "min_price": 0,
+                "max_price": 95,
+                "avg_price": 94.8535117931726,
+                "suspicious_low": 0
+              },
+              "market_explanation": {
+                "total": 22937,
+                "nulls": 1,
+                "zeros": 0,
+                "positive": 22936,
+                "min_price": "Actual sold transactions for graded cards",
+                "max_price": "TCGPlayer market data",
+                "avg_price": 0,
+                "suspicious_low": 0
+              },
+              "asking_vs_market_ratio": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 1,
+                "positive": 22936,
+                "min_price": 0,
+                "max_price": 9,
+                "avg_price": 0.49441122763297013,
+                "suspicious_low": 0
+              },
+              "price_opportunity": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": "FAIR_MARKET",
+                "max_price": "UNDERPRICED",
+                "avg_price": 0,
+                "suspicious_low": 0
+              },
+              "price_sources": {
+                "total": 22937,
+                "nulls": 0,
+                "zeros": 0,
+                "positive": 22937,
+                "min_price": "[\"Pokemon TCG API\",\"TCGPlayer\",\"eBay\"]",
+                "max_price": "[\"eBay\"]",
+                "avg_price": 0,
+                "suspicious_low": 0
+              }
+            },
+            "issues": []
+          }
+        },
+        "totalRecords": 22937,
+        "issues": []
+      }
+    },
+    "crossChecks": {},
+    "issues": [
+      "Found 1 cards with extreme price ratios"
+    ],
+    "recommendations": []
+  }
+}
