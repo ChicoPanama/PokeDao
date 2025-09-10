@@ -269,6 +269,5 @@ This platform provides the **foundation** for numerous Pokemon card market appli
 - 🎮 **Deploy as SaaS platform** for collectors and investors
 - 📈 **Build trading algorithms** using arbitrage detection
 - 🌐 **Create web dashboard** for market intelligence
-- 📱 **Develop mobile app** for price checking
 
 **Built with ❤️ for the Pokemon card community**
