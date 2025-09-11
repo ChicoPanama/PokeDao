@@ -2,6 +2,10 @@
 /**
  * Phase 1 CRUD Test - Basic create/read operations
  */
+
+// Change working directory to api for proper Prisma client access
+process.chdir(require('path').join(__dirname, '..', 'api'));
+
 const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();

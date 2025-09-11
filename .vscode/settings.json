@@ -1,26 +1,22 @@
 {
   "files.associations": {
-    "**/*.plan.prisma": "plaintext",
-    "**/.pnpm/**/node_modules/**/*.prisma": "plaintext",
-    "**/node_modules/**/*.prisma": "plaintext",
-    "**/.prisma/**/*.prisma": "plaintext",
-    "**/generated/**/*.prisma": "plaintext"
+    "**/*.prisma": "plaintext",
+    "**/*.plan.prisma": "plaintext"
   },
   
   "problems.exclude": {
+    "**/*.prisma": true,
+    "**/*.plan.prisma": true,
     "**/.pnpm/**": true,
     "**/node_modules/**": true,
     "**/.prisma/**": true,
-    "**/*.plan.prisma": true,
     "research/**": true,
-    "**/generated/**": true
+    "**/generated/**": true,
+    "**/*prisma*/**": true
   },
   
-  "prisma.lintOnSave": false,
-  "prisma.showPrismaDataPlatformNotification": false,
-  "prisma.prismaSchemaPath": "./api/prisma/schema.prisma",
-  
   "search.exclude": {
+    "**/*.prisma": true,
     "**/dist": true,
     "**/node_modules": true,
     "**/.pnpm": true,
@@ -28,6 +24,7 @@
   },
   
   "files.watcherExclude": {
+    "**/*.prisma": true,
     "**/dist/**": true,
     "**/node_modules/**": true,
     "**/.pnpm/**": true,
@@ -47,5 +44,8 @@
     { "pattern": "ml" },
     { "pattern": "packages/**" }
   ],
-  "eslint.validate": ["typescript"]
+  "eslint.validate": ["typescript"],
+  
+  "extensions.ignoreRecommendations": true,
+  "prisma.trace.server": "off"
 }

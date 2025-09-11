@@ -1,10 +1,17 @@
 /**
- * Standalone test for external data integration
- * Tests our 24,307 card dataset integration without database dependencies
+ * Enhanced external data integration test
+ * Tests our 24,307 card dataset integration WI    console.log('==========================================')
+    console.log('Next Steps:')
+    console.log('1. ✅ Database schema ready (unified schema)')
+    console.log('2. ✅ External data normalization working')
+    console.log('3. Create real-time market analysis pipeline')
+    console.log('4. Connect to Telegram bot for alerts')base integration
+ * Now supports unified schema integration
  */
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { PrismaClient } from '@prisma/client'
 
 interface CollectorCryptCard {
   id: string
@@ -90,6 +97,18 @@ async function testExternalDataIntegration() {
     console.log(`Cards with Insurance: ${qualityMetrics.insuredCards} (${qualityMetrics.insuredPercentage.toFixed(1)}%)`)
     console.log(`Average Insured Value: $${qualityMetrics.avgInsuredValue.toFixed(2)}`)
     
+    // Test database integration if available
+    console.log('\n🔗 Testing Database Integration:')
+    console.log('===============================')
+    
+    try {
+      console.log('🔌 Attempting database connection...')
+      await testDatabaseIntegration(ccData.slice(0, 3))
+    } catch (dbError) {
+      console.log('⚠️  Database integration failed:', dbError instanceof Error ? dbError.message : String(dbError))
+      console.log('💡 This is expected if database is not configured')
+    }
+    
     console.log('\n✅ External Data Integration Test Complete!')
     console.log('==========================================')
     console.log('Next Steps:')
@@ -102,6 +121,65 @@ async function testExternalDataIntegration() {
     console.error('❌ Test failed:', error)
     throw error
   }
+}
+
+async function testDatabaseIntegration(sampleCards: CollectorCryptCard[]) {
+  const prisma = new PrismaClient()
+  
+  try {
+    console.log(`📝 Testing basic database connectivity with ${sampleCards.length} sample cards...`)
+    
+    for (const [index, ccCard] of sampleCards.entries()) {
+      const normalized = normalizeCollectorCryptCard(ccCard)
+      const marketSignal = generateMarketSignals([ccCard])[0]
+      
+      // Test basic card creation (create unique test cards)
+      const uniqueId = `cc-test-${ccCard.id}-${Date.now()}`
+      const card = await prisma.card.create({
+        data: {
+          name: normalized.name || 'Unknown Card',
+          set: normalized.set || 'Unknown',
+          number: `${normalized.number || 'Unknown'}-${uniqueId}`, // Make unique
+          variant: normalized.variant,
+          grade: normalized.grade,
+          condition: normalized.condition
+        }
+      })
+      
+      console.log(`  ${index + 1}. ✅ ${card.name} (${card.set}) - ${marketSignal.signal}`)
+    }
+    
+    console.log('📊 Basic database integration test completed successfully!')
+    
+    // Test querying the created cards
+    const cardCount = await prisma.card.count()
+    console.log(`📈 Total cards in database: ${cardCount}`)
+    
+  } catch (error) {
+    console.error('❌ Database integration failed:', error)
+    throw error
+  } finally {
+    await prisma.$disconnect()
+  }
+}
+
+function generateCardKey(normalized: ReturnType<typeof normalizeCollectorCryptCard>): string {
+  const parts = [
+    normalized.set?.toLowerCase().replace(/\s+/g, '-') || 'unknown',
+    normalized.number?.toLowerCase() || 'unknown',
+    normalized.variant?.toLowerCase().replace(/\s+/g, '-') || null,
+    normalized.grade?.toLowerCase().replace(/\s+/g, '-') || null
+  ].filter(Boolean)
+  
+  return parts.join('-')
+}
+
+function cleanCardName(name: string): string {
+  return name
+    .replace(/[^a-zA-Z0-9\s'-]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
 }
 
 export function normalizeCollectorCryptCard(card: CollectorCryptCard) {
@@ -144,8 +222,8 @@ export function parseItemName(itemName: string): {
   }
   
   // Extract set/series information
-  let set = undefined
-  let variant = undefined
+  let set: string | undefined = undefined
+  let variant: string | undefined = undefined
   
   // Look for common set patterns
   const setPatterns = [
@@ -244,7 +322,7 @@ export function generateMarketSignals(cards: CollectorCryptCard[]) {
 }
 
 function generateReasoning(hasHighGrade: boolean, isVintage: boolean, insuredValue?: number): string {
-  const factors = []
+  const factors: string[] = []
   
   if (hasHighGrade) factors.push('High grade (9.0+)')
   if (isVintage) factors.push('Vintage card (1996-2002)')

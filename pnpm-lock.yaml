@@ -43,7 +43,7 @@ importers:
         specifier: workspace:*
         version: link:../worker
       '@prisma/client':
-        specifier: ^6.15.0
+        specifier: 6.15.0
         version: 6.15.0(prisma@6.15.0(typescript@5.9.2))(typescript@5.9.2)
       bullmq:
         specifier: ^4.15.4
@@ -74,7 +74,7 @@ importers:
         specifier: ^13.1.1
         version: 13.1.1
       prisma:
-        specifier: ^6.15.0
+        specifier: 6.15.0
         version: 6.15.0(typescript@5.9.2)
       tsx:
         specifier: ^4.20.5

@@ -7,7 +7,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// === CORE TRADING CARD MODEL ===
+// === UNIFIED TRADING CARD MODEL ===
+// Incorporates: Current schema + Fanatics + TCGPlayer + Phase1 approaches
 model Card {
   id             String   @id @default(cuid())
   name           String
@@ -17,28 +18,45 @@ model Card {
   grade          String?
   condition      String?
   language       String   @default("English")
+  
+  // Enhanced normalization (from Phase1 + TCGPlayer)
   normalizedName String?
+  cleanedName    String?  // TCGPlayer approach
   setCode        String?
   rarity         String?
+  rarityWeight   Int?     // TCGPlayer: For sorting (higher = rarer)
   variantKey     String?
+  cardKey        String?  // Phase1: Normalized grouping key
+  cardType       String?  // TCGPlayer: Pokemon, Trainer, Energy
+  cardNumber     String?  // Alternative to number for flexibility
+  category       String   @default("Pokemon")
+  
+  // Metadata
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
-  // Relations
-  listings       Listing[]
-  compSales      CompSale[]
-  priceHistory   PriceSnapshot[]
-  marketData     MarketData?
-  evaluations    Evaluation[]
-  watchlistItems WatchlistItem[]
-  qualityReports DataQuality[]
+  // Relations - Unified from all schemas
+  listings         Listing[]
+  compSales        CompSale[]
+  priceHistory     PriceSnapshot[]
+  marketData       MarketData?
+  evaluations      Evaluation[]
+  watchlistItems   WatchlistItem[]
+  qualityReports   DataQuality[]
+  catalogItems     SourceCatalogItem[]  // Phase1: Multi-source catalog
+  priceCache       PriceCache[]         // Phase1: Price snapshots
+  modelInsights    ModelInsight[]       // Phase1: AI insights
 
   @@unique([set, number, variant, grade])
   @@index([normalizedName, setCode])
   @@index([variantKey])
+  @@index([cardKey])           // Phase1 addition
+  @@index([cleanedName])       // TCGPlayer addition
+  @@index([rarity, rarityWeight]) // TCGPlayer sorting
 }
 
-// === MARKET LISTINGS ===
+// === ENHANCED MARKETPLACE LISTING MODEL ===
+// Incorporates: Current + Fanatics + TCGPlayer marketplace features
 model Listing {
   id              String   @id @default(cuid())
   cardId          String
@@ -53,6 +71,23 @@ model Listing {
   condition       String?
   grade           String?
   marketplace     String?
+  
+  // Enhanced from Fanatics/TCGPlayer
+  externalId     String?  // TCGPlayer: Original listing ID
+  marketPrice    Float?   // TCGPlayer: Market price reference
+  lowPrice       Float?   // TCGPlayer: Low price for comparison
+  midPrice       Float?   // TCGPlayer: Mid price for comparison
+  highPrice      Float?   // TCGPlayer: High price for comparison
+  directLowPrice Float?   // TCGPlayer: Direct low price
+  shippingPrice  Float?   // Fanatics: Shipping costs
+  totalPrice     Float?   // Fanatics: Including shipping
+  listingType    String?  // Fanatics: "auction", "buy_it_now", etc.
+  endTime        DateTime? // Fanatics: For auctions
+  bidCount       Int?     // Fanatics: Number of bids
+  watchers       Int?     // Fanatics: Number watching
+  stock          Int      @default(1) // TCGPlayer: Available quantity
+  imageUrl       String?  // Common: Listing image
+  description    String?  // Common: Listing description
 
   // Relations
   card           Card          @relation(fields: [cardId], references: [id])
@@ -63,6 +98,8 @@ model Listing {
   @@index([source])
   @@index([normalizedPrice])
   @@index([condition])
+  @@index([externalId, source])  // TCGPlayer addition
+  @@index([listingType, endTime]) // Fanatics auction indexing
 }
 
 // === USER SYSTEM ===
@@ -317,6 +354,67 @@ model AuditLog {
   @@index([action, timestamp])
   @@index([sourceId, timestamp])
   @@index([userId])
+}
+
+// === PHASE 1 INTEGRATION MODELS ===
+// Source catalog for multi-source data mapping
+model SourceCatalogItem {
+  id              String   @id @default(cuid())
+  cardId          String   // Links to canonical Card
+  sourceType      String   // "tcgplayer", "fanatics", "ebay", etc.
+  externalId      String   // Original ID in source system
+  cardKey         String   // Normalized grouping key
+  sourceName      String   // Name in source system
+  sourceSet       String   // Set in source system  
+  sourceNumber    String   // Number in source system
+  confidence      Float    @default(0.0) // Matching confidence
+  isVerified      Boolean  @default(false)
+  notes           String?  // Manual verification notes
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Relations
+  card            Card     @relation(fields: [cardId], references: [id])
+  
+  @@unique([sourceType, externalId])
+  @@index([cardKey])
+  @@index([sourceType, isVerified])
+}
+
+// Price snapshots for historical tracking
+model PriceCache {
+  id              String   @id @default(cuid())
+  cardId          String
+  sourceType      String
+  priceType       String   // "market", "low", "mid", "high", "last_sale"
+  price           Float
+  currency        String   @default("USD")
+  confidence      Float    @default(0.0)
+  sampleSize      Int      @default(0)
+  timestamp       DateTime @default(now())
+  
+  // Relations
+  card            Card     @relation(fields: [cardId], references: [id])
+  
+  @@index([cardId, sourceType, priceType])
+  @@index([timestamp])
+}
+
+// AI model insights and predictions
+model ModelInsight {
+  id              String   @id @default(cuid())
+  cardId          String
+  modelType       String   // "price_prediction", "trend_analysis", "market_sentiment"
+  insight         Json     // Structured insight data
+  confidence      Float    @default(0.0)
+  validUntil      DateTime?
+  createdAt       DateTime @default(now())
+  
+  // Relations
+  card            Card     @relation(fields: [cardId], references: [id])
+  
+  @@index([cardId, modelType])
+  @@index([modelType, confidence])
 }
 
 // === LEGACY COMPATIBILITY ===
