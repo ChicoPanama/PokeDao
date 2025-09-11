@@ -1,0 +1,50 @@
+{
+  "timestamp": "2025-09-10T06:25:54.362Z",
+  "totalKnownSDKs": 6,
+  "availableSDKs": 2,
+  "workingSDKs": 0,
+  "availableSDKsList": [
+    {
+      "name": "cardmarket-wrapper",
+      "language": "JavaScript",
+      "npm": "cardmarket-wrapper",
+      "description": "Simple CardMarket API wrapper",
+      "status": "Unknown",
+      "priority": "Medium",
+      "npmInfo": {
+        "version": "1.0.6",
+        "description": "This is an unofficial wrapper for Cardmarket.",
+        "keywords": [
+          "Cardmarket",
+          "MKM",
+          "mkm api",
+          "cardmarket wrapper"
+        ],
+        "lastUpdate": "2023-03-29T20:03:59.249Z",
+        "weeklyDownloads": null
+      },
+      "installCommand": "npm install cardmarket-wrapper"
+    },
+    {
+      "name": "mkm-api",
+      "language": "JavaScript",
+      "npm": "mkm-api",
+      "description": "MagicCardMarket API client",
+      "status": "Unknown",
+      "priority": "Medium",
+      "npmInfo": {
+        "version": "2.1.0",
+        "description": "This is a simple node JS client for MKM API.",
+        "keywords": [],
+        "lastUpdate": "2019-05-27T13:43:49.073Z",
+        "weeklyDownloads": null
+      },
+      "installCommand": "npm install mkm-api"
+    }
+  ],
+  "workingSDKsList": [],
+  "recommendations": [
+    "⚠️ MANUAL SETUP: cardmarket-wrapper available but needs manual configuration",
+    "📥 Install: npm install cardmarket-wrapper"
+  ]
+}

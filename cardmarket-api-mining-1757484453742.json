@@ -1,0 +1,384 @@
+{
+  "timestamp": "2025-09-10T06:06:51.641Z",
+  "discoveredEndpoints": {
+    "https://api.cardmarket.com/ws/documentation": {
+      "accessible": true,
+      "statusCode": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "size": 7300,
+      "isJson": false,
+      "hasData": true
+    },
+    "https://api.cardmarket.com/ws/public": {
+      "accessible": false,
+      "statusCode": 404,
+      "contentType": "application/xml; charset=utf-8;",
+      "size": 136,
+      "isJson": false,
+      "hasData": false
+    },
+    "https://api.cardmarket.com/public": {
+      "accessible": false,
+      "statusCode": 404,
+      "contentType": "text/html",
+      "size": 341,
+      "isJson": false,
+      "hasData": false
+    },
+    "https://api.cardmarket.com/api/public": {
+      "accessible": false,
+      "statusCode": 404,
+      "contentType": "application/json",
+      "size": 165,
+      "isJson": true,
+      "hasData": false
+    },
+    "https://api.cardmarket.com/open": {
+      "accessible": false,
+      "statusCode": 404,
+      "contentType": "text/html",
+      "size": 341,
+      "isJson": false,
+      "hasData": false
+    },
+    "https://api.cardmarket.com/free": {
+      "accessible": false,
+      "statusCode": 404,
+      "contentType": "text/html",
+      "size": 341,
+      "isJson": false,
+      "hasData": false
+    },
+    "https://www.cardmarket.com/api": {
+      "accessible": false,
+      "statusCode": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "size": 4394,
+      "isJson": false,
+      "hasData": true
+    },
+    "https://www.cardmarket.com/public/api": {
+      "accessible": false,
+      "statusCode": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "size": 4406,
+      "isJson": false,
+      "hasData": true
+    },
+    "https://www.cardmarket.com/mobile/api": {
+      "accessible": false,
+      "statusCode": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "size": 4418,
+      "isJson": false,
+      "hasData": true
+    },
+    "https://www.cardmarket.com/app/api": {
+      "accessible": false,
+      "statusCode": 403,
+      "contentType": "text/html; charset=UTF-8",
+      "size": 4429,
+      "isJson": false,
+      "hasData": true
+    }
+  },
+  "bypassMethods": {
+    "Remove Authorization": {
+      "successful": false,
+      "statusCode": 403,
+      "hasData": false,
+      "method": {
+        "name": "Remove Authorization",
+        "headers": {
+          "Authorization": ""
+        }
+      }
+    },
+    "Public Token": {
+      "successful": false,
+      "statusCode": 403,
+      "hasData": false,
+      "method": {
+        "name": "Public Token",
+        "headers": {
+          "Authorization": "Bearer public"
+        }
+      }
+    },
+    "Guest Token": {
+      "successful": false,
+      "statusCode": 403,
+      "hasData": false,
+      "method": {
+        "name": "Guest Token",
+        "headers": {
+          "Authorization": "Bearer guest"
+        }
+      }
+    },
+    "Anonymous": {
+      "successful": false,
+      "statusCode": 403,
+      "hasData": false,
+      "method": {
+        "name": "Anonymous",
+        "headers": {
+          "X-User-Type": "anonymous"
+        }
+      }
+    },
+    "Internal Referrer": {
+      "successful": false,
+      "statusCode": 403,
+      "hasData": false,
+      "method": {
+        "name": "Internal Referrer",
+        "headers": {
+          "Referer": "https://www.cardmarket.com/en/Pokemon"
+        }
+      }
+    },
+    "Admin Referrer": {
+      "successful": false,
+      "statusCode": 403,
+      "hasData": false,
+      "method": {
+        "name": "Admin Referrer",
+        "headers": {
+          "Referer": "https://admin.cardmarket.com"
+        }
+      }
+    },
+    "API v1.0": {
+      "successful": false,
+      "statusCode": 410,
+      "hasData": false,
+      "method": {
+        "name": "API v1.0",
+        "url": "/ws/v1.0/games"
+      }
+    },
+    "API v0.9": {
+      "successful": false,
+      "statusCode": 404,
+      "hasData": true,
+      "method": {
+        "name": "API v0.9",
+        "url": "/ws/v0.9/games"
+      }
+    },
+    "API beta": {
+      "successful": false,
+      "statusCode": 404,
+      "hasData": true,
+      "method": {
+        "name": "API beta",
+        "url": "/ws/beta/games"
+      }
+    },
+    "XML Format": {
+      "successful": false,
+      "statusCode": 403,
+      "hasData": false,
+      "method": {
+        "name": "XML Format",
+        "url": "/ws/v2.0/output.xml/games"
+      }
+    },
+    "Plain Format": {
+      "successful": false,
+      "statusCode": 404,
+      "hasData": true,
+      "method": {
+        "name": "Plain Format",
+        "url": "/ws/v2.0/games.json"
+      }
+    },
+    "RSS Format": {
+      "successful": false,
+      "statusCode": 404,
+      "hasData": true,
+      "method": {
+        "name": "RSS Format",
+        "url": "/ws/v2.0/games.rss"
+      }
+    }
+  },
+  "publicApis": {},
+  "mobileApis": {
+    "https://www.cardmarket.com/m/api/games": {
+      "accessible": false,
+      "statusCode": 403,
+      "bypassesAuth": false,
+      "hasGameData": false
+    },
+    "https://www.cardmarket.com/mobile/games": {
+      "accessible": false,
+      "statusCode": 403,
+      "bypassesAuth": false,
+      "hasGameData": false
+    },
+    "https://www.cardmarket.com/app/games": {
+      "accessible": false,
+      "statusCode": 403,
+      "bypassesAuth": false,
+      "hasGameData": false
+    },
+    "https://www.cardmarket.com/api/m/games": {
+      "accessible": false,
+      "statusCode": 403,
+      "bypassesAuth": false,
+      "hasGameData": false
+    },
+    "https://api.cardmarket.com/mobile/games": {
+      "accessible": false,
+      "statusCode": 403,
+      "bypassesAuth": false,
+      "hasGameData": false
+    },
+    "https://www.cardmarket.com/m/pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "bypassesAuth": false,
+      "hasGameData": false
+    },
+    "https://www.cardmarket.com/mobile/pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "bypassesAuth": false,
+      "hasGameData": false
+    },
+    "https://www.cardmarket.com/app/pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "bypassesAuth": false,
+      "hasGameData": false
+    }
+  },
+  "graphqlEndpoints": {
+    "https://www.cardmarket.com/graphql": {
+      "getAccessible": false,
+      "postAccessible": false,
+      "hasIntrospection": false,
+      "schemas": []
+    },
+    "https://www.cardmarket.com/api/graphql": {
+      "getAccessible": false,
+      "postAccessible": false,
+      "hasIntrospection": false,
+      "schemas": []
+    },
+    "https://www.cardmarket.com/gql": {
+      "getAccessible": false,
+      "postAccessible": false,
+      "hasIntrospection": false,
+      "schemas": []
+    },
+    "https://api.cardmarket.com/graphql": {
+      "getAccessible": false,
+      "postAccessible": false,
+      "hasIntrospection": false,
+      "schemas": []
+    },
+    "https://api.cardmarket.com/api/graphql": {
+      "getAccessible": false,
+      "postAccessible": false,
+      "hasIntrospection": false,
+      "schemas": []
+    }
+  },
+  "pokemonData": {
+    "https://www.cardmarket.com/en/Pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/en/Pokemon/Cards": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/en/Pokemon/Products": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/cards/pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/api/pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/api/games/pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/api/search/pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/api/products/pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/search?q=pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/api/search?game=pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    },
+    "https://www.cardmarket.com/autocomplete?q=pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "hasPokemonContent": false,
+      "hasProductData": false,
+      "isPokemonApi": false
+    }
+  },
+  "recommendations": [],
+  "summary": {
+    "totalEndpointsTested": 10,
+    "successfulEndpoints": 1,
+    "workingBypassMethods": 0,
+    "pokemonEndpointsFound": 0,
+    "recommendedApproach": "PUBLIC_ENDPOINT"
+  }
+}

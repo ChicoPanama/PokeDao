@@ -7,90 +7,204 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// === CORE TRADING CARD MODEL ===
 model Card {
-  id          String   @id @default(cuid())
-  name        String
-  set         String
-  number      String
-  variant     String?
-  grade       String?
-  condition   String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  
-  listings    Listing[]
-  evaluations Evaluation[]
+  id             String   @id @default(cuid())
+  name           String
+  set            String
+  number         String
+  variant        String?
+  grade          String?
+  condition      String?
+  language       String   @default("English")
+  normalizedName String?
+  setCode        String?
+  rarity         String?
+  variantKey     String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Relations
+  listings       Listing[]
+  compSales      CompSale[]
+  priceHistory   PriceSnapshot[]
+  marketData     MarketData?
+  evaluations    Evaluation[]
   watchlistItems WatchlistItem[]
-  
+  qualityReports DataQuality[]
+
   @@unique([set, number, variant, grade])
+  @@index([normalizedName, setCode])
+  @@index([variantKey])
 }
 
+// === MARKET LISTINGS ===
 model Listing {
-  id          String   @id @default(cuid())
-  cardId      String
-  source      String
-  price       Float
-  currency    String   @default("USD")
-  url         String
-  seller      String?
-  isActive    Boolean  @default(true)
-  scrapedAt   DateTime @default(now())
-  
-  card        Card     @relation(fields: [cardId], references: [id])
-  evaluations Evaluation[]
-}
-
-model User {
-  id          String   @id @default(cuid())
-  telegramId  String   @unique
-  username    String?
-  firstName   String?
-  lastName    String?
-  referralCode String  @unique
-  referredBy  String?
-  createdAt   DateTime @default(now())
-  
-  purchases   Purchase[]
-  referrals   User[]     @relation("UserReferrals")
-  referrer    User?      @relation("UserReferrals", fields: [referredBy], references: [referralCode])
-  referralEvents ReferralEvent[]
-  watchlistItems WatchlistItem[]
-}
-
-model Evaluation {
   id              String   @id @default(cuid())
   cardId          String
-  listingId       String
-  fairValue       Float
-  discount        Float
+  source          String
+  price           Float
+  currency        String   @default("USD")
+  url             String
+  seller          String?
+  isActive        Boolean  @default(true)
+  scrapedAt       DateTime @default(now())
+  normalizedPrice Float?
+  condition       String?
+  grade           String?
+  marketplace     String?
+
+  // Relations
+  card           Card          @relation(fields: [cardId], references: [id])
+  evaluations    Evaluation[]
+  qualityReports DataQuality[]
+  purchases      Purchase[] // FIXED: Added missing reverse relation
+
+  @@index([source])
+  @@index([normalizedPrice])
+  @@index([condition])
+}
+
+// === USER SYSTEM ===
+model User {
+  id           String   @id @default(cuid())
+  telegramId   String   @unique
+  username     String?
+  firstName    String?
+  lastName     String?
+  referralCode String   @unique
+  referredBy   String?
+  createdAt    DateTime @default(now())
+
+  // Relations
+  purchases      Purchase[]
+  referralEvents ReferralEvent[]
+  watchlistItems WatchlistItem[]
+  referrer       User?           @relation("UserReferrals", fields: [referredBy], references: [referralCode])
+  referrals      User[]          @relation("UserReferrals")
+}
+
+// === EVALUATION & ANALYTICS ===
+model Evaluation {
+  id               String   @id @default(cuid())
+  cardId           String
+  listingId        String
+  fairValue        Float
+  discount         Float
   investmentThesis String
-  riskLevel       String
-  projectedReturn Float?
-  confidence      Float
-  createdAt       DateTime @default(now())
-  
-  card            Card     @relation(fields: [cardId], references: [id])
-  listing         Listing  @relation(fields: [listingId], references: [id])
+  riskLevel        String
+  projectedReturn  Float?
+  confidence       Float
+  createdAt        DateTime @default(now())
+
+  // Relations
+  card    Card    @relation(fields: [cardId], references: [id])
+  listing Listing @relation(fields: [listingId], references: [id])
 }
 
+model CompSale {
+  id              String   @id @default(cuid())
+  cardId          String
+  salePrice       Float
+  currency        String   @default("USD")
+  normalizedPrice Float
+  condition       String
+  grade           String?
+  saleDate        DateTime
+  source          String
+  marketplace     String
+  seller          String?
+  buyer           String?
+  verified        Boolean  @default(false)
+  outlier         Boolean  @default(false)
+  weight          Float    @default(1.0)
+
+  // Relations
+  card Card @relation(fields: [cardId], references: [id])
+
+  @@index([cardId, saleDate])
+  @@index([normalizedPrice])
+  @@index([condition])
+  @@index([verified])
+}
+
+model MarketData {
+  id            String   @id @default(cuid())
+  cardId        String   @unique
+  marketValue   Float?
+  lowPrice      Float?
+  highPrice     Float?
+  avgPrice      Float?
+  medianPrice   Float?
+  volatility    Float?
+  trend         String?
+  trendStrength Float?
+  liquidity     String?
+  totalListings Int      @default(0)
+  activeSales   Int      @default(0)
+  avgTimeToSell Int?
+  lastUpdated   DateTime @default(now())
+  dataQuality   Float    @default(0)
+  sourceCount   Int      @default(0)
+
+  // Relations
+  card Card @relation(fields: [cardId], references: [id])
+
+  @@index([marketValue])
+  @@index([trend])
+  @@index([lastUpdated])
+}
+
+model PriceSnapshot {
+  id           String   @id @default(cuid())
+  cardId       String
+  timestamp    DateTime @default(now())
+  marketValue  Float?
+  lowPrice     Float?
+  highPrice    Float?
+  avgPrice     Float?
+  medianPrice  Float?
+  listingCount Int      @default(0)
+  saleCount    Int      @default(0)
+  volatility   Float?
+  trend        String?
+
+  // Relations
+  card Card @relation(fields: [cardId], references: [id])
+
+  @@index([cardId, timestamp])
+  @@index([marketValue])
+}
+
+// === COMMERCE & TRANSACTIONS ===
 model Purchase {
-  id          String   @id @default(cuid())
-  userId      String
-  listingId   String
-  amount      Float
-  fee         Float
-  status      String
-  txHash      String?
-  createdAt   DateTime @default(now())
-  
-  user        User     @relation(fields: [userId], references: [id])
+  id        String   @id @default(cuid())
+  userId    String
+  listingId String
+  amount    Float
+  fee       Float
+  status    String
+  txHash    String?
+  createdAt DateTime @default(now())
+
+  // Relations - FIXED: Added missing Listing relation
+  user    User    @relation(fields: [userId], references: [id])
+  listing Listing @relation(fields: [listingId], references: [id])
 }
 
-model Comp {
+model WatchlistItem {
   id        String   @id @default(cuid())
-  name      String
+  userId    String
+  cardId    String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+  // Relations
+  card Card @relation(fields: [cardId], references: [id])
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([userId, cardId])
+  @@index([userId])
+  @@index([cardId])
 }
 
 model ReferralEvent {
@@ -100,15 +214,115 @@ model ReferralEvent {
   path      String
   createdAt DateTime @default(now())
 
-  user      User     @relation(fields: [userId], references: [id])
+  // Relations
+  user User @relation(fields: [userId], references: [id])
 }
 
-model WatchlistItem {
-  id        String   @id @default(cuid())
-  userId    String
-  cardId    String
-  createdAt DateTime @default(now())
+// === DATA INFRASTRUCTURE ===
+model DataSource {
+  id                String    @id @default(cuid())
+  name              String    @unique
+  url               String
+  isActive          Boolean   @default(true)
+  lastScrapedAt     DateTime?
+  totalRecords      Int       @default(0)
+  successRate       Float     @default(0.0)
+  avgResponseTime   Int?
+  lastErrorAt       DateTime?
+  lastErrorMsg      String?
+  consecutiveErrors Int       @default(0)
+  rateLimit         Int       @default(1000)
+  timeout           Int       @default(30)
 
-  user      User     @relation(fields: [userId], references: [id])
-  card      Card     @relation(fields: [cardId], references: [id])
+  // Relations
+  processingJobs ProcessingJob[]
+  auditLogs      AuditLog[]
+
+  @@index([isActive])
+  @@index([lastScrapedAt])
+  @@index([successRate])
+}
+
+model ProcessingJob {
+  id               String    @id @default(cuid())
+  sourceId         String
+  jobType          String
+  status           String
+  priority         Int       @default(0)
+  batchSize        Int?
+  recordsProcessed Int       @default(0)
+  recordsTotal     Int?
+  startedAt        DateTime?
+  completedAt      DateTime?
+  attempts         Int       @default(0)
+  maxAttempts      Int       @default(3)
+  lastErrorAt      DateTime?
+  errorMessage     String?
+  inputData        Json?
+  outputData       Json?
+
+  // Relations
+  source DataSource @relation(fields: [sourceId], references: [id])
+
+  @@index([status, priority])
+  @@index([jobType, status])
+  @@index([startedAt])
+  @@index([sourceId, status])
+}
+
+model DataQuality {
+  id           String    @id @default(cuid())
+  cardId       String?
+  listingId    String?
+  completeness Float
+  accuracy     Float
+  consistency  Float
+  freshness    Float
+  issues       Json?
+  severity     String
+  resolved     Boolean   @default(false)
+  resolvedAt   DateTime?
+  resolvedBy   String?
+  createdAt    DateTime  @default(now())
+
+  // Relations
+  card    Card?    @relation(fields: [cardId], references: [id])
+  listing Listing? @relation(fields: [listingId], references: [id])
+
+  @@index([severity, resolved])
+  @@index([completeness])
+  @@index([cardId])
+  @@index([createdAt])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  sourceId   String?
+  entityType String
+  entityId   String
+  action     String
+  oldValues  Json?
+  newValues  Json?
+  changes    Json?
+  userId     String?
+  jobId      String?
+  ipAddress  String?
+  userAgent  String?
+  timestamp  DateTime @default(now())
+
+  // Relations
+  source DataSource? @relation(fields: [sourceId], references: [id])
+
+  @@index([entityType, entityId])
+  @@index([action, timestamp])
+  @@index([sourceId, timestamp])
+  @@index([userId])
+}
+
+// === LEGACY COMPATIBILITY ===
+model Comp {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

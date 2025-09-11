@@ -1,0 +1,35 @@
+{
+  "source_url": "https://www.cardladder.com/search?q=pokemon",
+  "extraction_timestamp": "2025-09-10T05-19-37-033Z",
+  "cards_count": 2,
+  "cards": [
+    {
+      "id": "cardladder-fallback-0-1757481576986-0",
+      "name": "pokemon\"  \n    Load more\n     © Card Ladder, 2025 | \n          About\n         \n          Help\n         \n          Merch\n         \n          Gift",
+      "price": "$,",
+      "current_value": "$,",
+      "source_url": "https://www.cardladder.com/search?q=pokemon",
+      "source_identifier": "https://www.cardladder.com/search?q=pokemon",
+      "extracted_at": "2025-09-10T05:19:36.986Z",
+      "extraction_method": "fallback_pattern_v1",
+      "platform": "cardladder",
+      "data_type": "pattern_matched",
+      "raw_text": "pokemon\"  \n    Load more\n     © Card Ladder, 2025 | \n          About\n         \n          Help\n         \n          Merch\n         \n          Gift\n         \n          Privacy\n         \n          Terms\n            window.__NUXT__=(function(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F"
+    },
+    {
+      "id": "cardladder-fallback-1-1757481576988-0",
+      "name": "$,aa,ab,ac,ad,ae,af,ag,ah,ai,aj,ak,al,am,an,ao,ap,aq,ar,as,at,au,av,aw,ax,ay,az,aA,aB,aC,aD,aE){return {layout:\"app\",data:[{items:[{category:e,label:\"",
+      "price": "$,",
+      "current_value": "$,",
+      "source_url": "https://www.cardladder.com/search?q=pokemon",
+      "source_identifier": "https://www.cardladder.com/search?q=pokemon",
+      "extracted_at": "2025-09-10T05:19:36.988Z",
+      "extraction_method": "fallback_pattern_v1",
+      "platform": "cardladder",
+      "data_type": "pattern_matched",
+      "raw_text": "$,aa,ab,ac,ad,ae,af,ag,ah,ai,aj,ak,al,am,an,ao,ap,aq,ar,as,at,au,av,aw,ax,ay,az,aA,aB,aC,aD,aE){return {layout:\"app\",data:[{items:[{category:e,label:\"2021 Pokemon Sword & Shield: Shining Fates Charizard VMAX Shiny Vault: Full Art #SV107 PSA 10\",image:\"https:\\u002F\\u002Ffirebasestorage.googleapis.com",
+      "grading_service": "PSA",
+      "grade": 10
+    }
+  ]
+}

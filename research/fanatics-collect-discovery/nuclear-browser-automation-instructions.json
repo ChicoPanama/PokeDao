@@ -1,0 +1,37 @@
+{
+  "title": "BROWSER AUTOMATION INSTRUCTIONS FOR FANATICS COLLECT",
+  "description": "Manual steps to extract Pokemon data using browser automation",
+  "setup": [
+    "1. Install Chrome/Firefox with developer tools",
+    "2. Install browser automation extension (Selenium IDE or similar)",
+    "3. Navigate to www.fanaticscollect.com"
+  ],
+  "extraction_steps": [
+    "1. Open Developer Tools (F12)",
+    "2. Go to Network tab",
+    "3. Navigate to /marketplace?category=pokemonenglish",
+    "4. Record all API calls in Network tab",
+    "5. Look for XHR/Fetch requests containing Pokemon data",
+    "6. Copy request headers and URLs",
+    "7. Use recorded requests to build automated scraper"
+  ],
+  "javascript_injection": [
+    "// Inject this in browser console:",
+    "const extractAllCards = () => {",
+    "  const cards = [];",
+    "  document.querySelectorAll('[data-card-id]').forEach(card => {",
+    "    cards.push({",
+    "      id: card.dataset.cardId,",
+    "      name: card.querySelector('.card-name')?.textContent,",
+    "      price: card.querySelector('.price')?.textContent",
+    "    });",
+    "  });",
+    "  console.log('Extracted cards:', cards);",
+    "  return cards;",
+    "};",
+    "extractAllCards();"
+  ],
+  "automation_script": "\n// Puppeteer automation script\nconst puppeteer = require('puppeteer');\n\n(async () => {\n  const browser = await puppeteer.launch({ headless: false });\n  const page = await browser.newPage();\n  \n  // Set real user agent\n  await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36');\n  \n  // Navigate to Pokemon marketplace\n  await page.goto('https://www.fanaticscollect.com/marketplace?category=pokemonenglish');\n  \n  // Wait for cards to load\n  await page.waitForSelector('[data-card-id]', { timeout: 10000 });\n  \n  // Extract all Pokemon cards\n  const cards = await page.evaluate(() => {\n    const cardElements = document.querySelectorAll('[data-card-id]');\n    return Array.from(cardElements).map(card => ({\n      id: card.dataset.cardId,\n      name: card.querySelector('.card-name')?.textContent?.trim(),\n      price: card.querySelector('.price')?.textContent?.trim(),\n      image: card.querySelector('img')?.src,\n      url: card.querySelector('a')?.href\n    }));\n  });\n  \n  console.log('Extracted Pokemon cards:', cards);\n  \n  // Save to file\n  require('fs').writeFileSync('fanatics-pokemon-cards.json', JSON.stringify(cards, null, 2));\n  \n  await browser.close();\n})();\n            ",
+  "detected_endpoints": [],
+  "auth_tokens": {}
+}

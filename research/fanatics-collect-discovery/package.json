@@ -19,6 +19,9 @@
     "better-sqlite3": "^12.2.0",
     "node-fetch": "^3.3.2",
     "playwright": "^1.40.0",
+    "puppeteer": "^24.19.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "tsx": "^4.0.0"
   }
 }

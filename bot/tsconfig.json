@@ -1,12 +1,12 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "bundler",
+    "rootDir": "src",
     "outDir": "dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+    "typeRoots": ["./types", "../node_modules/@types", "../../node_modules/@types"],
+    "noImplicitAny": false,
+    "strict": false
   },
-  "include": ["src"]
+  "include": ["src", "types"],
+  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
 }

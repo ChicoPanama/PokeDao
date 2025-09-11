@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-09-10T02:51:55.892Z",
+  "extraction_method": "Perfect Puppeteer Automation v2",
+  "reconnaissance_based": true,
+  "total_pokemon_items": 0,
+  "unique_items": 0,
+  "urls_processed": 3,
+  "success": false,
+  "items_by_source": {},
+  "extraction_statistics": {
+    "items_with_prices": 0,
+    "items_with_images": 0,
+    "items_with_condition": 0,
+    "auction_items": 0
+  },
+  "sample_items": []
+}

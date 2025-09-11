@@ -1,41 +1,24 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "lib": ["ES2020"],
-    "declaration": true,
-    "outDir": "./dist",
     "rootDir": "./",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "exactOptionalPropertyTypes": false,
+    "outDir": "dist",
+    "typeRoots": ["./types", "../node_modules/@types", "../../node_modules/@types"],
+    "noImplicitAny": false,
+    "strict": false,
+    "declaration": true,
+    "lib": ["ES2020"],
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": false,
     "noImplicitOverride": true,
-    "types": ["node", "vitest/globals"],
+    "types": ["node"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["../*"],
       "@/utils/*": ["./*"]
     }
   },
-  "include": [
-    "./**/*.ts",
-    "./**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.test.ts"
-  ]
+  "include": ["types", "./**/*.ts", "./**/*.tsx"],
+  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
 }

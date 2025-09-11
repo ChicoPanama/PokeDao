@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-09-10T01:13:35.937Z",
+  "capture_method": "Phone API Traffic Interception",
+  "capture_duration": "90 seconds",
+  "total_fanatics_activity": 0,
+  "fanatics_ips_discovered": [
+    "172.64.151.178",
+    "104.18.36.78"
+  ],
+  "network_connections": 0,
+  "dns_activity": 0,
+  "captured_data": [],
+  "analysis": {
+    "app_network_activity": false,
+    "dns_resolution_active": false,
+    "https_connections_detected": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-09-10T05:23:37.373Z",
+  "platform": "cardladder",
+  "extraction_method": "aggressive_api_extraction",
+  "total_pokemon_cards": 0,
+  "api_endpoints_discovered": 0,
+  "extraction_sources": [],
+  "cards_with_prices": 0,
+  "cards_with_images": 0,
+  "cards_with_urls": 0,
+  "cards_with_grades": 0,
+  "price_analysis": {
+    "count": 0
+  },
+  "extraction_methods": {},
+  "sample_high_value": [],
+  "sample_recent": [],
+  "discovered_endpoints": []
+}

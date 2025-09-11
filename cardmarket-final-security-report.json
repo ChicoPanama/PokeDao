@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-09-10T06:30:20.043Z",
+  "packages": [
+    "cardmarket-wrapper",
+    "mkm-api"
+  ],
+  "checksPerformed": [
+    {
+      "script": "cardmarket-security-scanner.js",
+      "success": true,
+      "timestamp": "2025-09-10T06:30:23.257Z"
+    },
+    {
+      "script": "cardmarket-malicious-detector.js",
+      "success": true,
+      "timestamp": "2025-09-10T06:30:28.610Z"
+    }
+  ],
+  "overallSafety": {
+    "cardmarket-wrapper": {
+      "vulnerabilities": {
+        "safe": true,
+        "score": 88,
+        "criticalVulns": 0,
+        "highVulns": 0,
+        "trustScore": 75
+      },
+      "malicious": {
+        "riskLevel": "LOW",
+        "maliciousPatterns": 0,
+        "typosquatting": false,
+        "maintainerSuspicious": false
+      },
+      "overallSafe": true,
+      "riskLevel": "LOW"
+    },
+    "mkm-api": {
+      "vulnerabilities": {
+        "safe": true,
+        "score": 88,
+        "criticalVulns": 0,
+        "highVulns": 0,
+        "trustScore": 75
+      },
+      "malicious": {
+        "riskLevel": "LOW",
+        "maliciousPatterns": 0,
+        "typosquatting": false,
+        "maintainerSuspicious": false
+      },
+      "overallSafe": true,
+      "riskLevel": "LOW"
+    }
+  },
+  "recommendations": [
+    "✅ RECOMMENDED: cardmarket-wrapper",
+    "   🏆 Security Score: 88/100",
+    "   🛡️ Risk Level: LOW",
+    "   📦 Safe to install: npm install cardmarket-wrapper"
+  ],
+  "installationAdvice": "PROCEED: Install cardmarket-wrapper - All security checks passed",
+  "summary": {
+    "totalPackagesScanned": 2,
+    "securityChecksRun": 2,
+    "failedChecks": 0,
+    "safePackages": 2,
+    "unsafePackages": 0
+  }
+}

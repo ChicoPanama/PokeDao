@@ -1,0 +1,34 @@
+{
+  "round": 40,
+  "total_items": 728,
+  "timestamp": "2025-09-10T04:15:26.676Z",
+  "latest_items": [
+    {
+      "id": "fanatics-mega-1757477717160-9952",
+      "name": "2024 pokemon japanese sv promo gym participation pikachu #197 cgc 10 gem mint w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$18",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2024 pokemon japanese sv promo gym participation pikachu #197 cgc 10 gem mint $18w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477717160-9965",
+      "name": "2025 pokemon japanese sv glory rocket gang holo team rocket's moltres ex cgc 10 w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$8",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2025 pokemon japanese sv glory rocket gang holo team rocket's moltres ex cgc 10 $8w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477717160-9978",
+      "name": "2024 pokemon japanese sv super electric breaker ar vivillon #107 cgc 10 gem mint w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$11",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2024 pokemon japanese sv super electric breaker ar vivillon #107 cgc 10 gem mint $11w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    }
+  ]
+}

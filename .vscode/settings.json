@@ -1,0 +1,51 @@
+{
+  "files.associations": {
+    "**/*.plan.prisma": "plaintext",
+    "**/.pnpm/**/node_modules/**/*.prisma": "plaintext",
+    "**/node_modules/**/*.prisma": "plaintext",
+    "**/.prisma/**/*.prisma": "plaintext",
+    "**/generated/**/*.prisma": "plaintext"
+  },
+  
+  "problems.exclude": {
+    "**/.pnpm/**": true,
+    "**/node_modules/**": true,
+    "**/.prisma/**": true,
+    "**/*.plan.prisma": true,
+    "research/**": true,
+    "**/generated/**": true
+  },
+  
+  "prisma.lintOnSave": false,
+  "prisma.showPrismaDataPlatformNotification": false,
+  "prisma.prismaSchemaPath": "./api/prisma/schema.prisma",
+  
+  "search.exclude": {
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/.pnpm": true,
+    "**/.prisma": true
+  },
+  
+  "files.watcherExclude": {
+    "**/dist/**": true,
+    "**/node_modules/**": true,
+    "**/.pnpm/**": true,
+    "**/.prisma/**": true
+  },
+  
+  "typescript.preferences.exclude": [
+    "**/node_modules/**",
+    "**/.pnpm/**",
+    "**/.prisma/**"
+  ],
+  
+  "eslint.workingDirectories": [
+    { "pattern": "api" },
+    { "pattern": "bot" },
+    { "pattern": "worker" },
+    { "pattern": "ml" },
+    { "pattern": "packages/**" }
+  ],
+  "eslint.validate": ["typescript"]
+}

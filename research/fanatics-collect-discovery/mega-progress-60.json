@@ -1,0 +1,34 @@
+{
+  "round": 60,
+  "total_items": 881,
+  "timestamp": "2025-09-10T04:33:19.158Z",
+  "latest_items": [
+    {
+      "id": "fanatics-mega-1757478645215-12539",
+      "name": "2018 pokemon japanese sun & moon forbidden light full art zygarde gx #096 psa 10psa population 1 of 11 w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$36",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2018 pokemon japanese sun & moon forbidden light full art zygarde gx #096 psa 10psa population 1 of 11 $36w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757478645215-12552",
+      "name": "2018 pokemon japanese sun & moon ultra shiny full art zygarde gx #225 psa 10 gem w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$49",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2018 pokemon japanese sun & moon ultra shiny full art zygarde gx #225 psa 10 gem $49w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757478645215-12565",
+      "name": "2001 pokemon japanese vs 1st edition holo bugsy's scizor #13 psa 10 gem mint w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$1,230",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2001 pokemon japanese vs 1st edition holo bugsy's scizor #13 psa 10 gem mint $1,230w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    }
+  ]
+}

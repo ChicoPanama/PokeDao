@@ -1,0 +1,34 @@
+{
+  "round": 10,
+  "total_items": 192,
+  "timestamp": "2025-09-10T03:46:52.315Z",
+  "latest_items": [
+    {
+      "id": "fanatics-mega-1757476002947-2587",
+      "name": "2023 pokemon scarlet & violet 151 reverse holo gengar #94 cgc 9 mint sold on sep 09, 2025",
+      "sold_price": "$36",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon scarlet & violet 151 reverse holo gengar #94 cgc 9 mint $36sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476002947-2599",
+      "name": "2020 pokemon sword & shield futsal eevee on the ball #2 psa 10 gem mint sold on sep 09, 2025",
+      "sold_price": "$225",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2020 pokemon sword & shield futsal eevee on the ball #2 psa 10 gem mint $225sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476002947-2611",
+      "name": "2001 pokemon japanese vs 1st edition pryce's tm 02 #116 cgc 10 pristine sold on sep 09, 2025",
+      "sold_price": "$70",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2001 pokemon japanese vs 1st edition pryce's tm 02 #116 cgc 10 pristine $70sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "round": 5,
+  "total_items": 97,
+  "timestamp": "2025-09-10T03:44:43.319Z",
+  "latest_items": [
+    {
+      "id": "fanatics-mega-1757475873685-1387",
+      "name": "2023 pokemon japanese scarlet & violet 151 sar venusaur ex #200 cgc 10 pristine sold on sep 09, 2025",
+      "sold_price": "$160",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon japanese scarlet & violet 151 sar venusaur ex #200 cgc 10 pristine $160sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475873685-1399",
+      "name": "2022 pokemon japanese swsh vstar universe full art charizard v #211 psa 10 gem sold on sep 09, 2025",
+      "sold_price": "$77",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2022 pokemon japanese swsh vstar universe full art charizard v #211 psa 10 gem $77sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475873685-1411",
+      "name": "2025 pokemon sv destined rivals full art cynthia's garchomp ex #215 cgc 10cgc population 1 of 2 sold on sep 09, 2025",
+      "sold_price": "$150",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2025 pokemon sv destined rivals full art cynthia's garchomp ex #215 cgc 10cgc population 1 of 2 $150sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    }
+  ]
+}

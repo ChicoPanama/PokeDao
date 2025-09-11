@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-09-10T06:09:04.292Z",
+  "webEndpoints": {},
+  "ajaxEndpoints": {},
+  "hiddenApis": {},
+  "pokemonUrls": {
+    "https://www.cardmarket.com/en/Pokemon": {
+      "accessible": false,
+      "statusCode": 403,
+      "size": 7358
+    },
+    "https://www.cardmarket.com/en/Pokemon/Cards": {
+      "accessible": false,
+      "statusCode": 403,
+      "size": 7421
+    },
+    "https://www.cardmarket.com/en/Pokemon/Products": {
+      "accessible": false,
+      "statusCode": 403,
+      "size": 7409
+    },
+    "https://www.cardmarket.com/en/Pokemon/Singles": {
+      "accessible": false,
+      "statusCode": 403,
+      "size": 7427
+    },
+    "https://www.cardmarket.com/en/Pokemon/Base-Set": {
+      "accessible": false,
+      "statusCode": 403,
+      "size": 7430
+    },
+    "https://www.cardmarket.com/en/Pokemon/Charizard": {
+      "accessible": false,
+      "statusCode": 403,
+      "size": 7412
+    }
+  },
+  "dataFiles": {},
+  "workingEndpoints": [],
+  "summary": {
+    "totalWorkingEndpoints": 0,
+    "jsonApisFound": 0,
+    "pokemonApisFound": 0,
+    "dataFilesFound": 0,
+    "extractionPossible": false,
+    "recommendedEndpoint": null
+  }
+}

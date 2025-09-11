@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-09-09T21:13:02.868Z",
+  "summary": {
+    "totalCards": 48,
+    "activeListings": 0,
+    "soldListings": 0,
+    "totalValue": 15,
+    "categories": {
+      "english": 0,
+      "japanese": 0,
+      "other": 0
+    },
+    "priceRanges": {
+      "under50": 48,
+      "under200": 0,
+      "under1000": 0,
+      "under5000": 0,
+      "over5000": 0
+    },
+    "sets": {},
+    "rarities": {
+      "holo": 1
+    },
+    "conditions": {
+      "mint": 19
+    }
+  },
+  "databaseAnalytics": {
+    "totalRecords": 48,
+    "soldRecords": 0,
+    "avgSoldPrice": "0.00",
+    "maxSoldPrice": "0.00",
+    "certifiedCards": 46
+  },
+  "apiResponses": 130,
+  "integration": {
+    "status": "Ready for PokeDAO integration",
+    "nextSteps": [
+      "Cross-reference with eBay sold prices",
+      "Compare with TCGPlayer market values",
+      "Identify arbitrage opportunities",
+      "Build comprehensive pricing model"
+    ]
+  }
+}

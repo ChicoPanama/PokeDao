@@ -1,0 +1,86 @@
+{
+  "timestamp": "2025-09-10T06:30:23.238Z",
+  "scannedPackages": 2,
+  "safePackages": 2,
+  "vulnerablePackages": 0,
+  "results": {
+    "cardmarket-wrapper": {
+      "packageName": "cardmarket-wrapper",
+      "version": "1.0.6",
+      "publishDate": "2023-03-29T20:03:59.249Z",
+      "author": "Joel Robles",
+      "description": "This is an unofficial wrapper for Cardmarket.",
+      "vulnerabilities": {
+        "total": 0,
+        "critical": 0,
+        "high": 0,
+        "moderate": 0,
+        "low": 0,
+        "info": 0,
+        "manual": true,
+        "details": []
+      },
+      "dependencies": {
+        "total": 6,
+        "production": 1,
+        "development": 5,
+        "suspicious": [],
+        "outdated": [],
+        "risky": []
+      },
+      "reputation": {
+        "downloadStats": null,
+        "maintainerCount": 1,
+        "hasRepository": false,
+        "hasLicense": true,
+        "hasHomepage": false,
+        "age": 895,
+        "lastUpdate": "2023-03-29T20:03:59.249Z",
+        "trustScore": 75
+      },
+      "securityScore": 88,
+      "safe": true
+    },
+    "mkm-api": {
+      "packageName": "mkm-api",
+      "version": "2.1.0",
+      "publishDate": "2019-05-27T13:43:49.073Z",
+      "author": "jsmrcaga",
+      "description": "This is a simple node JS client for MKM API.",
+      "vulnerabilities": {
+        "total": 0,
+        "critical": 0,
+        "high": 0,
+        "moderate": 0,
+        "low": 0,
+        "info": 0,
+        "manual": true,
+        "details": []
+      },
+      "dependencies": {
+        "total": 5,
+        "production": 3,
+        "development": 2,
+        "suspicious": [],
+        "outdated": [],
+        "risky": []
+      },
+      "reputation": {
+        "downloadStats": null,
+        "maintainerCount": 1,
+        "hasRepository": false,
+        "hasLicense": true,
+        "hasHomepage": false,
+        "age": 2297,
+        "lastUpdate": "2019-05-27T13:43:49.073Z",
+        "trustScore": 75
+      },
+      "securityScore": 88,
+      "safe": true
+    }
+  },
+  "recommendations": [
+    "✅ RECOMMENDED: cardmarket-wrapper (Security Score: 88/100)",
+    "📦 Install: npm install cardmarket-wrapper"
+  ]
+}

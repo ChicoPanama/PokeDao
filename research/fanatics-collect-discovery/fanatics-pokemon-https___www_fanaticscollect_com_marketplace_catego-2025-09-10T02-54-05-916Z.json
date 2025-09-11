@@ -1,0 +1,29 @@
+[
+  {
+    "id": "fanatics-1757472829880-2",
+    "name": "trading cards",
+    "raw_content": "trading cards",
+    "source_url": "https://www.fanaticscollect.com/marketplace?category=pokemon",
+    "extracted_at": "2025-09-10T02:53:49.881Z",
+    "extraction_method": "perfect_puppeteer_v2",
+    "selector_used": "[data-testid*=\"card\"]"
+  },
+  {
+    "id": "fanatics-1757472833914-2",
+    "name": "trading cards",
+    "raw_content": "trading cards",
+    "source_url": "https://www.fanaticscollect.com/marketplace?category=pokemon?page=2",
+    "extracted_at": "2025-09-10T02:53:53.914Z",
+    "extraction_method": "perfect_puppeteer_v2",
+    "selector_used": "[data-testid*=\"card\"]"
+  },
+  {
+    "id": "fanatics-1757472842026-2",
+    "name": "trading cards",
+    "raw_content": "trading cards",
+    "source_url": "https://www.fanaticscollect.com/marketplace?category=pokemon?page=3",
+    "extracted_at": "2025-09-10T02:54:02.026Z",
+    "extraction_method": "perfect_puppeteer_v2",
+    "selector_used": "[data-testid*=\"card\"]"
+  }
+]

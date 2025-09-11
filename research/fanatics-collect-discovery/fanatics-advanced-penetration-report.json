@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-09-10T02:35:14.036Z",
+  "method": "Advanced Fanatics Penetration",
+  "total_pokemon_cards_extracted": 0,
+  "unique_cards": 0,
+  "session_tokens_captured": 1,
+  "success": false,
+  "files_created": [
+    "fanatics-pokemon-extraction-2025-09-10T02-25-24-810Z.json"
+  ],
+  "card_breakdown": null,
+  "next_steps": "Escalate to browser automation or authenticated access"
+}

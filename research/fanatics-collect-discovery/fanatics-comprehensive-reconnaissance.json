@@ -1,0 +1,137 @@
+{
+  "timestamp": "2025-09-10T02:46:15.457Z",
+  "total_pages_analyzed": 4,
+  "pokemon_pages_found": 3,
+  "selectors_identified": 4,
+  "protection_systems": {
+    "cloudflare": false,
+    "javascript_required": true,
+    "bot_detection": true
+  },
+  "best_pokemon_urls": [
+    {
+      "url": "/marketplace?category=pokemonenglish",
+      "accessible": true,
+      "size": 100305,
+      "pokemon_density": 2,
+      "card_indicators": [
+        "class=\"sticky top-0 z-[1050] flex h-6 w-full items-center bg-white text-xs-bold text-black mobOnlyCards:h-8\""
+      ],
+      "price_indicators": [
+        "$1",
+        "$20"
+      ]
+    },
+    {
+      "url": "/marketplace?category=pokemonjapanese",
+      "accessible": true,
+      "size": 100307,
+      "pokemon_density": 2,
+      "card_indicators": [
+        "class=\"sticky top-0 z-[1050] flex h-6 w-full items-center bg-white text-xs-bold text-black mobOnlyCards:h-8\""
+      ],
+      "price_indicators": [
+        "$1",
+        "$20"
+      ]
+    },
+    {
+      "url": "/search?q=pokemon",
+      "accessible": true,
+      "size": 18632,
+      "pokemon_density": 0,
+      "card_indicators": [],
+      "price_indicators": []
+    }
+  ],
+  "full_reconnaissance": {
+    "page_structure": {
+      "/": {
+        "status": "accessible",
+        "size": 1361684,
+        "has_pokemon": true,
+        "pokemon_mentions": 287,
+        "has_javascript": true,
+        "title": "Fanatics Collect"
+      },
+      "/marketplace": {
+        "status": "accessible",
+        "size": 100239,
+        "has_pokemon": false,
+        "pokemon_mentions": 0,
+        "has_javascript": true,
+        "title": "Weekly Auction at Fanatics Collect | Explore Trading Cards &amp; Collectibles"
+      },
+      "/weekly-auction": {
+        "status": "accessible",
+        "size": 23493,
+        "has_pokemon": false,
+        "pokemon_mentions": 0,
+        "has_javascript": true,
+        "title": "Weekly Auction at Fanatics Collect | Explore Trading Cards &amp; Collectibles"
+      },
+      "/vault-marketplace": {
+        "status": "accessible",
+        "size": 23513,
+        "has_pokemon": false,
+        "pokemon_mentions": 0,
+        "has_javascript": true,
+        "title": "Weekly Auction at Fanatics Collect | Explore Trading Cards &amp; Collectibles"
+      }
+    },
+    "pokemon_urls": [
+      {
+        "url": "/marketplace?category=pokemonenglish",
+        "accessible": true,
+        "size": 100305,
+        "pokemon_density": 2,
+        "card_indicators": [
+          "class=\"sticky top-0 z-[1050] flex h-6 w-full items-center bg-white text-xs-bold text-black mobOnlyCards:h-8\""
+        ],
+        "price_indicators": [
+          "$1",
+          "$20"
+        ]
+      },
+      {
+        "url": "/marketplace?category=pokemonjapanese",
+        "accessible": true,
+        "size": 100307,
+        "pokemon_density": 2,
+        "card_indicators": [
+          "class=\"sticky top-0 z-[1050] flex h-6 w-full items-center bg-white text-xs-bold text-black mobOnlyCards:h-8\""
+        ],
+        "price_indicators": [
+          "$1",
+          "$20"
+        ]
+      },
+      {
+        "url": "/search?q=pokemon",
+        "accessible": true,
+        "size": 18632,
+        "pokemon_density": 0,
+        "card_indicators": [],
+        "price_indicators": []
+      }
+    ],
+    "selectors": {
+      "card_containers": [
+        ".cursor-pointer",
+        "#footer-link-privacy-policy",
+        "#footer-link-terms-of-use"
+      ],
+      "card_names": [
+        "#image0_222_11067"
+      ],
+      "prices": [],
+      "images": []
+    },
+    "protection_systems": {
+      "cloudflare": false,
+      "javascript_required": true,
+      "bot_detection": true
+    },
+    "javascript_patterns": {}
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "timestamp": "2025-09-10T06:30:28.599Z",
+  "totalPackages": 2,
+  "safePackages": 2,
+  "suspiciousPackages": 0,
+  "criticalPackages": 0,
+  "results": {
+    "cardmarket-wrapper": {
+      "packageName": "cardmarket-wrapper",
+      "suspicious": false,
+      "maliciousPatterns": [],
+      "typosquatting": false,
+      "typoTargets": [],
+      "maintainerSuspicious": false,
+      "maintainerFlags": [],
+      "downloadSuspicious": false,
+      "overallRisk": "LOW"
+    },
+    "mkm-api": {
+      "packageName": "mkm-api",
+      "suspicious": false,
+      "maliciousPatterns": [],
+      "typosquatting": false,
+      "typoTargets": [],
+      "maintainerSuspicious": false,
+      "maintainerFlags": [],
+      "downloadSuspicious": false,
+      "overallRisk": "LOW"
+    }
+  },
+  "recommendations": [
+    "✅ SAFE: cardmarket-wrapper - Low risk",
+    "✅ SAFE: mkm-api - Low risk"
+  ]
+}

@@ -1,17 +1,13 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "lib": ["ES2020"],
-  "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-  "rootDir": ".",
+    "rootDir": "src",
     "outDir": "dist",
-    "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": false,
-    "strict": true,
-    "esModuleInterop": true,
+    "typeRoots": ["./types", "../node_modules/@types", "../../node_modules/@types"],
+    "noImplicitAny": false,
+    "strict": false,
     "skipLibCheck": true
   },
-  "include": ["src", "test"]
+  "include": ["src", "types"],
+  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
 }

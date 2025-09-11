@@ -1,0 +1,152 @@
+{
+  "step": 3,
+  "description": "Page Content Analysis",
+  "summary": {
+    "total_urls": 36,
+    "api_endpoints": 1,
+    "pokemon_keywords": 13,
+    "js_files": 52
+  },
+  "discoveries": {
+    "internal_urls": [
+      "/_next/static/media/9f0a0d2681cd4007-s.p.otf",
+      "/_next/static/media/bb03d2f3fe10b5db-s.p.otf",
+      "/_next/static/media/cadae67ce6a522ed-s.p.otf",
+      "/_next/static/media/e33622a8a1ba331f-s.p.woff2",
+      "/_next/static/media/e6b66babfe4e892a-s.p.woff",
+      "/_next/static/media/fe73f53bc351f498-s.p.woff2",
+      "/favicon.ico",
+      "/",
+      "/weekly-auction?type=WEEKLY&amp;auction=WEEKLY:ea357714-f8e7-11ef-8d6f-061f9a54de6b&amp;page=1&amp;featured=filter-Football+is+Back!!!",
+      "/weekly-auction?type=WEEKLY&amp;auction=WEEKLY:ea357714-f8e7-11ef-8d6f-061f9a54de6b&amp;page=1&amp;q=michael+jordan",
+      "/weekly-auction?type=WEEKLY&amp;auction=WEEKLY:ea357714-f8e7-11ef-8d6f-061f9a54de6b&amp;page=1&amp;category=Sports+Cards+&gt;+Baseball",
+      "/vault-marketplace?type=FIXED&amp;sortBy=prod_item_state_v1&amp;page=1",
+      "/vault-marketplace?type=FIXED&amp;sortBy=prod_item_state_v1_recent_desc&amp;page=1",
+      "/vault-marketplace?type=FIXED&amp;q=Charizard&amp;page=1&amp;sortBy=prod_item_state_v1",
+      "/vault-marketplace?type=FIXED&amp;q=Michael+Jordan+Auto&amp;page=1&amp;sortBy=prod_item_state_v1",
+      "/vault-marketplace?type=FIXED&amp;q=One+Piece&amp;page=1&amp;categoryGroup=Trading+Card+Games&amp;sortBy=prod_item_state_v1",
+      "/vault-marketplace?type=FIXED&amp;category=Trading+Card+Games+&gt;+Pokémon+(English),Trading+Card+Games+&gt;+Pokémon+(Japanese),Trading+Card+Games+&gt;+Pokémon+(Other+Languages)&amp;page=1&amp;greatPrice=true&amp;sortBy=prod_item_state_v1",
+      "/marketplace?type=FIXED&amp;q=Kobe+Bryant&amp;page=1&amp;greatPrice=true&amp;sortBy=prod_item_state_v1",
+      "/vault-marketplace?type=FIXED&amp;q=LeBron+Auto&amp;page=1&amp;sortBy=prod_item_state_v1",
+      "/weekly-auction?category=Trading+Card+Games+&gt;+Pokémon+%28English%29%2CTrading+Card+Games+&gt;+Pokémon+%28Japanese%29%2CTrading+Card+Games+&gt;+Pokémon+%28Other+Languages%29&amp;type=WEEKLY"
+    ],
+    "api_endpoints": [
+      "/api/scripts/segment\\"
+    ],
+    "pokemon_mentions": [
+      {
+        "keyword": "psa",
+        "count": 590
+      },
+      {
+        "keyword": "pokemon",
+        "count": 294
+      },
+      {
+        "keyword": "bgs",
+        "count": 289
+      },
+      {
+        "keyword": "cgc",
+        "count": 205
+      },
+      {
+        "keyword": "charizard",
+        "count": 146
+      },
+      {
+        "keyword": "mew",
+        "count": 59
+      },
+      {
+        "keyword": "pikachu",
+        "count": 35
+      },
+      {
+        "keyword": "1st edition",
+        "count": 15
+      },
+      {
+        "keyword": "mewtwo",
+        "count": 14
+      },
+      {
+        "keyword": "trading card",
+        "count": 7
+      },
+      {
+        "keyword": "base set",
+        "count": 5
+      },
+      {
+        "keyword": "tcg",
+        "count": 4
+      },
+      {
+        "keyword": "graded",
+        "count": 2
+      }
+    ],
+    "javascript_files": [
+      "/_next/static/chunks/fd9d1056-0b76c300ca70144f.js",
+      "/_next/static/chunks/2117-059bd95312bc1f5c.js",
+      "/_next/static/chunks/main-app-5294d1645fe5526e.js",
+      "/_next/static/chunks/2f895df5-9385a595e70672b3.js",
+      "/_next/static/chunks/4b1a69f1-1f97d1ca576a06b0.js",
+      "/_next/static/chunks/79d656d9-f53840b66fee6620.js",
+      "/_next/static/chunks/695-c2a049761cb8b446.js",
+      "/_next/static/chunks/2264-8224ba6fdbc985b4.js",
+      "/_next/static/chunks/2972-fecbad6405e2035f.js",
+      "/_next/static/chunks/5878-a1923201a5609d1e.js"
+    ]
+  },
+  "pokemon_analysis": {
+    "content_detected": true,
+    "top_keywords": [
+      {
+        "keyword": "psa",
+        "count": 590
+      },
+      {
+        "keyword": "pokemon",
+        "count": 294
+      },
+      {
+        "keyword": "bgs",
+        "count": 289
+      },
+      {
+        "keyword": "cgc",
+        "count": 205
+      },
+      {
+        "keyword": "charizard",
+        "count": 146
+      }
+    ],
+    "pokemon_urls": [
+      "/weekly-auction?type=WEEKLY&amp;auction=WEEKLY:ea357714-f8e7-11ef-8d6f-061f9a54de6b&amp;page=1&amp;featured=filter-Football+is+Back!!!",
+      "/weekly-auction?type=WEEKLY&amp;auction=WEEKLY:ea357714-f8e7-11ef-8d6f-061f9a54de6b&amp;page=1&amp;q=michael+jordan",
+      "/weekly-auction?type=WEEKLY&amp;auction=WEEKLY:ea357714-f8e7-11ef-8d6f-061f9a54de6b&amp;page=1&amp;category=Sports+Cards+&gt;+Baseball",
+      "/vault-marketplace?type=FIXED&amp;q=One+Piece&amp;page=1&amp;categoryGroup=Trading+Card+Games&amp;sortBy=prod_item_state_v1",
+      "/vault-marketplace?type=FIXED&amp;category=Trading+Card+Games+&gt;+Pokémon+(English),Trading+Card+Games+&gt;+Pokémon+(Japanese),Trading+Card+Games+&gt;+Pokémon+(Other+Languages)&amp;page=1&amp;greatPrice=true&amp;sortBy=prod_item_state_v1",
+      "/weekly-auction?category=Trading+Card+Games+&gt;+Pokémon+%28English%29%2CTrading+Card+Games+&gt;+Pokémon+%28Japanese%29%2CTrading+Card+Games+&gt;+Pokémon+%28Other+Languages%29&amp;type=WEEKLY",
+      "/weekly-auction?category=Sports+Cards+&gt;+Baseball&amp;type=WEEKLY",
+      "/weekly-auction?type=WEEKLY&amp;category=Sports+Cards+%3E+Basketball&amp;page=1",
+      "/weekly-auction?category=Sports+Cards+&gt;+Football&amp;type=WEEKLY",
+      "/weekly-auction?category=Sports+Cards+&gt;+Soccer&amp;type=WEEKLY",
+      "/weekly-auction?category=Sports+Cards+&gt;+Hockey&amp;type=WEEKLY",
+      "/weekly-auction?category=Other+&gt;+Wax&amp;type=WEEKLY",
+      "/weekly-auction?category=Sports+Cards+&gt;+Racing&amp;type=WEEKLY",
+      "/weekly-auction?category=Trading+Card+Games+&gt;+Yu-gi-oh%21&amp;type=WEEKLY",
+      "/weekly-auction?category=Trading+Card+Games+&gt;+Magic+The+Gathering&amp;type=WEEKLY",
+      "/weekly-auction?category=Sports+Cards+&gt;+Golf&amp;type=WEEKLY"
+    ]
+  },
+  "next_steps": [
+    "Test discovered API endpoints for Pokemon data",
+    "Analyze JavaScript files for hidden API calls",
+    "Explore Pokemon-related URLs for data",
+    "Pokemon content exists - focus on data extraction"
+  ]
+}

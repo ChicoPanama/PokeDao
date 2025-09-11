@@ -1,0 +1,34 @@
+{
+  "round": 35,
+  "total_items": 639,
+  "timestamp": "2025-09-10T04:08:49.436Z",
+  "latest_items": [
+    {
+      "id": "fanatics-mega-1757477319985-8652",
+      "name": "2000 pokemon base set 2 holo charizard #4 psa 5 ex w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$192",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2000 pokemon base set 2 holo charizard #4 psa 5 ex $192w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477319985-8665",
+      "name": "2000 pokemon gym heroes 1st edition erika's tangela #79 cgc 7.5 nrmt+ w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$11",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2000 pokemon gym heroes 1st edition erika's tangela #79 cgc 7.5 nrmt+ $11w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477319985-8678",
+      "name": "2022 pokemon sword & shield pokemon go full art mewtwo v #72 psa 8 nm-mt w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$36",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2022 pokemon sword & shield pokemon go full art mewtwo v #72 psa 8 nm-mt $36w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    }
+  ]
+}

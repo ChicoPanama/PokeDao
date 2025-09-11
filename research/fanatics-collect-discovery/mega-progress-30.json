@@ -1,0 +1,34 @@
+{
+  "round": 30,
+  "total_items": 567,
+  "timestamp": "2025-09-10T04:02:57.288Z",
+  "latest_items": [
+    {
+      "id": "fanatics-mega-1757476967850-7387",
+      "name": "1999 pokemon japanese promo southern island holo marill psa 9 mint sold on sep 07, 2025",
+      "sold_price": "$49",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "1999 pokemon japanese promo southern island holo marill psa 9 mint $49sold on sep 07, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476967850-7399",
+      "name": "1999 pokemon japanese promo southern islands jigglypuff #39 psa 9 mint sold on sep 07, 2025",
+      "sold_price": "$25",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "1999 pokemon japanese promo southern islands jigglypuff #39 psa 9 mint $25sold on sep 07, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476967850-7411",
+      "name": "2003 pokemon ex dragon holo dragonite ex #90 cgc 9 mint sold on sep 07, 2025",
+      "sold_price": "$600",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2003 pokemon ex dragon holo dragonite ex #90 cgc 9 mint $600sold on sep 07, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    }
+  ]
+}

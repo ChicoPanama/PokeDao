@@ -1,0 +1,34 @@
+{
+  "round": 15,
+  "total_items": 284,
+  "timestamp": "2025-09-10T03:49:47.444Z",
+  "latest_items": [
+    {
+      "id": "fanatics-mega-1757476178065-3775",
+      "name": "2000 pokemon neo genesis holo meganium #11 cgc 8 nm-mt sold on sep 08, 2025",
+      "sold_price": "$50",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2000 pokemon neo genesis holo meganium #11 cgc 8 nm-mt $50sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476178066-3787",
+      "name": "1998 pokemon japanese game boy promo holo dragonite #149 psa 9 mint sold on sep 08, 2025",
+      "sold_price": "$315",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "1998 pokemon japanese game boy promo holo dragonite #149 psa 9 mint $315sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476178066-3811",
+      "name": "2022 pokemon japanese swsh pokemon go holo blastoise #17 psa 10 gem mint sold on sep 08, 2025",
+      "sold_price": "$39",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2022 pokemon japanese swsh pokemon go holo blastoise #17 psa 10 gem mint $39sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    }
+  ]
+}

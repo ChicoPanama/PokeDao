@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-09-10T02:37:34.789Z",
+  "method": "Nuclear Fanatics Extraction",
+  "status": "REQUIRES_MANUAL_INTERVENTION",
+  "results": {
+    "pokemon_cards_extracted": 0,
+    "endpoints_discovered": 0,
+    "auth_tokens_captured": 0,
+    "files_created": [
+      "nuclear-browser-automation-instructions.json",
+      "nuclear-fanatics-extractor.js"
+    ]
+  },
+  "next_steps": [
+    "Use browser automation instructions",
+    "Manual extraction with browser tools",
+    "Consider authenticated account approach",
+    "Focus on existing 694K+ card database"
+  ],
+  "recommendation": "Use browser automation or focus on existing comprehensive database"
+}

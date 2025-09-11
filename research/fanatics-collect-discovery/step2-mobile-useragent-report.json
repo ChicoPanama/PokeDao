@@ -1,0 +1,700 @@
+{
+  "step": 2,
+  "description": "Mobile User-Agent Testing",
+  "summary": {
+    "total_tests": 25,
+    "successful_requests": 5,
+    "pokemon_content_found": 0,
+    "success_rate": "20%"
+  },
+  "user_agent_analysis": {
+    "iPhone Safari": {
+      "total": 5,
+      "successful": 1,
+      "pokemon": 0
+    },
+    "Android Chrome": {
+      "total": 5,
+      "successful": 1,
+      "pokemon": 0
+    },
+    "Fanatics iOS App": {
+      "total": 5,
+      "successful": 1,
+      "pokemon": 0
+    },
+    "Fanatics Android App": {
+      "total": 5,
+      "successful": 1,
+      "pokemon": 0
+    },
+    "Desktop (Control)": {
+      "total": 5,
+      "successful": 1,
+      "pokemon": 0
+    }
+  },
+  "best_user_agents": [
+    {
+      "name": "iPhone Safari",
+      "success_rate": "20%",
+      "pokemon_content": false
+    },
+    {
+      "name": "Android Chrome",
+      "success_rate": "20%",
+      "pokemon_content": false
+    },
+    {
+      "name": "Fanatics iOS App",
+      "success_rate": "20%",
+      "pokemon_content": false
+    },
+    {
+      "name": "Fanatics Android App",
+      "success_rate": "20%",
+      "pokemon_content": false
+    },
+    {
+      "name": "Desktop (Control)",
+      "success_rate": "20%",
+      "pokemon_content": false
+    }
+  ],
+  "recommendations": [
+    "Use iPhone Safari user-agent for best success rate",
+    "No Pokemon content detected - try alternative URLs or deeper page analysis"
+  ],
+  "detailed_results": [
+    {
+      "userAgent": "iPhone Safari",
+      "userAgentString": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1",
+      "url": "/",
+      "statusCode": 200,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:08:49 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "link": "</_next/static/media/241dfdee4e97a4de-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/24cdfb7d2a41e297-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/416c1d8fcfcdf503-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/90890788cd378a0d-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/99de02d46ce378b3-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+        "x-powered-by": "Next.js",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=_ACqSEeYh2EZyYb8gPP2j1zSuIVExHlWUhpi5Jri.14-1757455729-1.0.1.1-MqerDF3klgCGG3NUdf0jK_.boIOt08p5VaspKbh7T7zSXZHj8DBxDGZxUzjf4kkcrDtjvuxylYtpSODVJ3E6kzEKHUajCGnwZkg.6nKpAZQ; path=/; expires=Tue, 09-Sep-25 22:38:49 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01a0b86627dd-SAN"
+      },
+      "contentLength": 190777,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003Խ]s㸖-�Wj�y\\\u0005��,���\t���h\u00034I|\bx� \tZ\u0014\b�JYiQ��\u0013P�;\u0011w�vLw�#�Ke�3MJ ����k��o�G�?S�\u0016�֟G��������\u000f��~�\u000e������������G����k��ol��o�>�\u000f��\u001f������o}W����;׿�}}���_��<�?,��\u001f?>�c���_��r�8����8������/{}����׾�\u001en����?����>|������\"v\u0018~;u��ߏ��~�����S�����߇n:��y����ϱ�����\u001d�@��\u0012��\u0007�����\u001f\u001f����?������>��������\u000f���o������t��zǦ\u0001�F��{\u0007A\u0013����m��n��v�:@����w�<o�P��aS{\u001e|��������s�������h\u0016��n�;�[�����������ݣ�\u001exM�\u0005��\u000f���o�~?ֻ�~��|>~��?��{;]�އ��G��Gk?~������ǡ;��]3 E������s�����6�ͨ�vξء�`��Vi��!\u0019�vu�tub��i��m�*�Mr�J\nWo�AN�>��_�q\u0002�U?�A�l�q7�ϒ��NwAk�G�|T\u000e\u0000�m��\u000e��\u001b\u0005�3\u001c�����\u0005|���\u001a�\u001f\\�\u0014\u000b8����\rߪ��f���n\u0016\u001b�=\"$Ă]�a�\u001a��\u001c\u0019\"Q<�y�\u0014��\u00143A\u0012�(\u000e�ȍ��DPi��F�\u0018�Y^��}�\u0012K\f\u001f�h�/���\u0016��j=��)ܲ!�!A��`/Ŷ�՚+<0�⑟\u0005̪W�_hr�����f/$��n\u0004^.�K��\bkQ�v\u001e��P'=l������Ꙣ�@�YJK�_^�1�aW)��B\u0006��E�'��Uc\u0001�H\"<�<i\u0012�h\u000b1m\u0011\u0016xΩ�0�\u0001e\u0006\u001f��\"�pZZIٕ��7.��>d}������p�J\u000f�\u000b\u001b�)���m&�=���\\)0\u0015��S��ς���2�#^\u0010��2��\u001a@Y�`�$Gʠ��8���!p\u0013�uvV�~h����\u0012�Y�**\u0010\u0016ɀ\r�s��q����wz��36���|$\u0002C2o\u00106�GP2�Q�\u0016�'3���\u000e\u0012)�M��;;I��D\u000f٢�ګ�7�j���/\u000eI@\u000f\fq�\u0015m\u001apj���b�[>�Q\u000b\n��Q��,Gb<O�P*p\\pP�\u0005�\u0016�v�(Mf�&�\u001b����k��w���JQ\u000e8z�qT\u0000E{#i\u000b�챐�J\u0019Pf5`\u0011{R`\u000f\u001b�˟���r��xf��\u0005 3�\u0013���Q�T~�b\u001f>�^�m�N\u0007�?�\u0005�j�\u0013N���C�y�R&��xB\n�E\u0015\u0007�Y�I�N*\u0016s#���e*l2w\u0011',\u000e�R��>$\n� �s\"���8?��@�z8߱��JPiI4@l������s��3��\u0014_�H,\u0011ʨ����@B�\u0000\u0011���Ғq㓑\f\u0018�\u0017i�Y����;\u0017{\u001c\u0002\tۯ\u0006��J�s=d$�Å\u0002Y��z.y&����'�+���u+�����\u0003Y�[��\u0011�\u001b�4q��:�A\r��9�XT�b��T�\u0019x)�\u0011����0B�xVF\u0019=�)�ɸAdt�[�x�\u0003v��\u0016�D�+6�LR<�T^�(��>�$%�\u001c��4�/Q6H���ŶZVB�s��Y\u001a�²�N\u0014A\ry�Z}���\u000b�\u0000\u0003����\u0015\u000bҷi�˭:�8��\u0010�\u0017�G��e�7H�rO�qO\u000f\u0012��_u�\"ŘQ�ڌT笊�_�٦\r����, �\u001f0m'9�@E�����l|I�^�'O�dPi��i=i\u0018ʩ�b6 w�^${�J��69\u001d�s���\u0018���zԬ��N\u001b���6�:F�� �\u0006S��d�\u0007\u0018w\"�ڨ���]1�\u0005��M1?�����<�aXb1����\u000e4�D��/\ru��|�S\u0001����b��UEdti�\u0012����*E\u0001��m\u001eI�#��\u0002�8ʌ�ÔS��7��\ṛ\r�\b_0R�D;�i|!�~\u0010*�\u0001U� �2T%|�B.[p�6��8(c���\u0002Ή$��.)�9�rr�I�\u000b��gv Y\u001eo&F[�my��yUny�\u00132��~�q\u0018+�\u001d\u0018㿾�#�*z�0\u001d\u0000F, ib1� �\u0018�\b\u0003w\u0018\u0012\u0014�\u001c\u001b**���\u00001Ņ�턅Dؔ�[�g�ţ\u001a��\"��1۪�ǐ��(_���\"ے}H�U\u001bu\r�W�xy\u0005\u0013j���\u0018;)\u0011Ox����T��T�������\u001a�����\u0005ꊍ�b�\u0014{}*\"~�#\\1o�R xG\u0018��\u00189K��x\u001e|i6\u0001Arv�FN7�D\u001b_�rODf�\u0006\u0012%\u0003\u0011\u0012`��)|By/�\u001d���)CJ�\u0001\u0016��<��|��g�u��}��~~��B_k�@@�z�������m����twh��~w��_�x��\u001a��G\u0007�t\b,��\u0017\u000f�G�\u000eQ�-A�/��?��\u001a�K�.\u0016\bA�\u0005��eY�m\u001b�\u0016\u0006��y_6�?���{���",
+      "timestamp": "2025-09-09T22:08:49.235Z"
+    },
+    {
+      "userAgent": "iPhone Safari",
+      "userAgentString": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1",
+      "url": "/search?q=pokemon",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:08:50 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=3KNcPkA_fHyXbZ62Rxj1HdWS3oha4PR0KEcarvkL6xU-1757455730-1.0.1.1-psuEmz4wWWc1UtQPXkt4rA_jctf6rTp0UOchR86sOFs.soHaU8zXI1JOyrU4qw4pgktkiOGfgajSjma_I2rEt5ewULhV3cRgBM1PxLz.sA4; path=/; expires=Tue, 09-Sep-25 22:38:50 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01aa8b9d27dd-SAN"
+      },
+      "contentLength": 4223,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��妽i�\u000f\b\f%�|���(���\u001e�!ɶ��I���\u001e���\b�\u0003�!\u0001\f1��������!�da��bW}��FcW�HS\r@�ދ\u0017\b톐Q�&4����4��-;&Y�`�8\u00153W�\u001d_\f�~\u001c&4\u0013^\u0000\u001abq�A�����\u0005>\u0006-���\n戆�j3\u0001�$N�5������0\u0013\fp~�D\"\u0012��\u0001��\u0006���\u0018�0~�\u0018�Bg�őD\u0018�\u001a\u0010�\rDt�R\b\\�&I\u00008��l�\u0015����\f��t�|�\u001d��I\n����\u0012��h�U\"�\u0004\u0016B�E\u0002�&B:��\"����'�X������\u0004��'ݾ'0o}H`H#�̖\\UC냌��\u001c�D�d�ԧ����\"�8�^K���MA���?:�Gyg%jͧ\u0005�a�\u0000�\u001c<L�\u0004g\"�\u0015\u0015�Јf�I�\u001f\u0007\u0001��AI��L�\u0011V-O��&\u0010\u0002·���\u000f?����\u000e\u0012�Fq$\u0018\r*$T��~�=��[~��\u0015J[,\u000e�\u0012h�&\u001aj��^�\u001e\u0003�����\n��!\u00147�n\u000e��]S�\u00174J)\u0017�\u0018�Ӕ�&:�0N�'\u0002Aя4Lv�q��n���2;I�\u0004�l�j�\u0002j��\u0002O�\fʁn��\u000b\u0017m;��5L�`M���]�Jf�\u0000�ZT.\"�'�\u0003�FqB��\u0016}D�\u000f\"T\u000f\u0014\u001ae7h�]\u0010�ؕ,\u0015IV��\\D<��8��\u0011]@�\\��Z��l\u0002QV\u0006�yF3���\n�E\u0018O�v�~G�ծdUR�L�_[�A�g\u0010�8m}�?\u000b�v{&�\u0000��\u0011���6�:\u0001\u001bLϣ��\u0018h{�5����i��\u0000�)��f�d�IS4y\u0013\u001aײ�\u0002*�\t\r�'��j?-v&-��4s���`�\u000eh\u0006ʊI\u000b\"�\nw)�\u0016�����B\u0012P\u0006�3\u0018\u000f?%�\u001a���ӢѬ�\u001a7JR���޻�/_޽o��G�Ɏ�l$B��Y}M��7v\n��4\bn�L]f\u0005�˔��F��N��l\u001aB���/�\u0000�G��r}�Y[:�ִ\b!�\u0017\b]�ޜ���۷�+����)�4v^l�q\u001c�\u0003��L��3�[^\u0014~[\u0013����0[�=o�l\u0006MѸ���]�\u001e���\u0002mg���L�~���j�,,<X�ʃ�Fk\\�[o4��0�(�\u0017\u001c\u001fd�lW�\u0017�f4E>r\u0011W�%���bD���u�xGޯ�!�!�e)�\fJ�l�S�\u0000�(@?�h�\r�gT�1pk�'\u0014�>��*�\u001f�{\u0016�Hyd�*S�V��C\u001a�1��#\n��\u000f�l�~B<������\u0010e'1���$��K��\u0014�\u001f�~���\u000b��х��j�Z�Zs݊&��::�#��_vw�v;|�\u001eFO{\u0002��k�8L�Haߎ�̣i[D\u001c>U�\u0005�P��\r������\f�n\u0001X\u0016\u0001�u\u001c�\u001es�5йz�U+�b2�n�bR�uO��\\��e��\u0018�\u000e��R��>7�\u0018]��.5m��#󧪜\u0000dk��ۏX\u0015l\u001f�~\u001c�b�^k�M�O\u0003���5���\u0006��t���}\u0007�X���\u000e�}Ll��ю�����\u0016��\n��\t����\u0000W�\u0002\r����5�|U�l?�F�.��?���5���Q��z�h}� F\u0007�\u001e&�H��\t�\u0013�I�O��� �\u001b(�\r�2��Tj}-N@�D�m�\u0012�?�>����y>VL�A��/��\u000e�����sJ�a�\u001de���-��W�R�{�,1��g��s�\u000f\u001d�ऌ\u0019�\u0018\u001c�\u000e�oz��cl<���o���?�q���)�[a�\u0012�\r0ۜ�\u001d�2L��8}�=�k`B;\u000e��@\u00191��|�B( ���9$\u0019�\u001e��>�c0����y\u0004f\u0016�\"\u001ac\u0019�ˈV��F�9��\u001c:\u0006&&/���\u0013L�\u0007T׉�u��ǖ����ֱ�<��K|m\t�\u0006��i���\fLz6)8\u001d�t\u001e��'Cm=\u0002����\u0000�N0�|\u0007Po\t�\u0006�;]%�gc��^u+3�7C�y\bj\u0005��-Ժ�\u001d@�%`\u001b����c�=���Qr:~���mw�n�1���v��Ǡ�m\ru�;�zK�6@\r�Cx�g��j��\u0016��\t�\r��'LO%��V@\u001b��4=Q\u001bt�%�u��K�t0��c\u0019�A\u0018�\u001b���G���m�˰����\u0012�\rP3\u0000��-\u001b\u001b��KJ:\u001dL\fݧ\u0014\u001c�k��\u000e��\bԛ�f\u0013������\u0004���m���u��{\u0014\u001b��I�\u0011�7OO�G�6��P��\u0003��\u0004l\u0013�\u000e'��\u0019ؠ�\u001a�꺍\t�\r��]f��o�ڨ@�\u0000���}\u001f��P���\u0000�v�m��!=�4\u001d\u0003wt�[>z����M=��\u0006�Z�����x���S���\u0015�\u0006y\u001a�\u000f�O�\u000f\u0016�\u001e�6s�ɜp�+��\u0003`O��ȳ\u001f��l��g}��܀�gyƚ͔��+m�/\u001aMi���d\u001b\u0013\u001d\u0013g\u000b�sJ��F��7�0��<\u0006)�\u0018*\u001a\u0016O�,\u0015 ��\u000bR�_kSI\u000f���o��g�8�+%B�9S�I\u001a�\"X\n\b�q<�.���\u000br-�\u0013іl?\u0007ZS�|ے\\k",
+      "timestamp": "2025-09-09T22:08:50.586Z"
+    },
+    {
+      "userAgent": "iPhone Safari",
+      "userAgentString": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1",
+      "url": "/auctions",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:08:51 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=OCQwO2auflhNSjSq2ji7BFCYL.ngLXMeWiej2eNSdJ8-1757455731-1.0.1.1-o1wpuRuMM7lxQ7sDWpueRSMAVYIaLUZeX.mAINK4rpJSRP6FvmN6IuQ5er1F__N7tnQ9WwtbyuFDaiNVtKJVgGB91E.q5BVdN4i9TFTVBCs; path=/; expires=Tue, 09-Sep-25 22:38:51 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01b2ed2927dd-SAN"
+      },
+      "contentLength": 4222,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��䦽i�\u000f\b\f%�|���(���\u001e�!˶��I���\u001e���\b�\u0003�!\u0000\u000e1���������!�fa��bW}��F\u0013W�HS\r@�ދ\u0017\b톐QĦ4����,���:�Y�`�8\u0013sW�\u001d�\u000f�~\u001c&4\u0013^\u0000\u001abq�A�����\u0005>\u0001-���\n戆�js\u0001�$N�5������0\u0017\fp~�D\"\u0012��\u0001��\u0006���\u0018�0~�\u0018�B�őD\u0018�\u001a\u0010�\rDt�R\b\\�&I\u00008�gl�\u0015����\f��t�|�\u001d��i\n����\u0012��h�U\"�\u0004\u0016B�e\u0002�&B:��\"����'�X������\u0004��'ݾ'0o}H`H#��V\\UC냌��\u001c�D�d�ԧ����\"�8�^K�'�MA���?:�Gy�FԚO\u000b\u001c��\u0013\u0001�\u0005x�&\t�Dv+*~�\u0011�\u0004�h?\u000e\u0002`ك�\u0004���#�Z�ʟM!\u0004�\u000fy��\u001f~�W\u0005�\u001d$\u0018��H0\u001aTH�(��v{�X��R++��X\u001c�錩\u0001J\r�K�/n�����Y|\t�� ��a7�e�1�\u000b\u001a���h��i�e\u0013\u001dC\u0018��\u0013���G\u001a&;�8Na�]�1<I�\u0004�l�j�Bj��\u0002O�\fʁn��\u000b'm;��5��`M�\u0013��q�̖\u0001쵨\\F\fO\u0005\u0007t��2�-���\u001fD�&\u0015\u001ae�h�]\u0010�ؕ,\u0015IV��BD<^�8��\u0011]B�\\��J��l\nQV\u0006�(�\u0019h}M��2�gR�~��\fkW�*�H���� �s�x��>ȟ\u0005w�=�u�p���{]�Q��\r��Qj{\f��������,ʑ�Ӧl.�Q�5�M��Mh\\�\u0016\u000b��'4���\u001a���ܙ�dF����3�\u0005:�\u0019(+�-��+ܕ�[����V\nI@\u0019��`2���k���O�F�Vk\\+Iu�.z��|y���R\u001eq�;\u0012��\b!�e�5\u001d���)TG� �n2u�\u0015t.S�\u001b��;M\u001e�Y\bQ֪�\f\u0003P\u001f�ڍ�k��ʉ��E\bi�@���t�O޾5^Y\u0007�~��ັ�b\u001b�M�x\u0012@�d\"\u0014�!w���ۚ�\u0007]�����E�7e3h��U\u0015����?\u0014h;kͭd&����bV�da��Z\u001fU\u001e�7Z�\u0002�z��\"�9DY��� ke����6�)򑋸b.��/�c:Q~���;��F\u001aB\u001frZ�\u0002͠$���:\u0005\u000f��\u0002��܀~F�\u001f\u0003��~B\u0001�Z�����g���GnZe��j�ݐ�IH#:�4wDa��-�O�\u0007�\u0014���\u0014��$��\u0012��4{\t~�B�C�/\u0011�~��*�P\u0015UMT+<Wk�[�D�_��xl��ew�k��gm2z�\f�\u0000���0�#�};�s��m\u0011q�TM\u000b̡��\u001bN��w)3\u0019p�\u0002�,\u0002��8l=�n�A#5�U��bA�n\u0001cR��O��\\��e��\u0018�\u000e��R��>7�\u0018]��.5m�X'�YUN\u0001�����)V\u0005�\u0007�\u001fG���W�dS�\u0000���+Mp��\u00015;ݮna߁.�u��m\u001f\u0013[�{�cq�=���4��,�����\u0016�2X�A�6hM-�\u0019��G���U7���ӵ���=�Q\u0013���\fbt0�ab��^��>!�t��hM\r\"��R�@)3�ͤ���\u0004�H���/�����C���^�c����s��{;\u001c�>���\u0019!�]v�m�a\u000e�D*�=J����u���#�eS��>t���2f`bp`:����ߎ��\bƺ�-Ɔ�\b�I\n�i��\n�`m�������aBM��\u0013��]\u0003\u0013�qh�\u0007ʈq\u000f��\u0014B\u0001�}�G�d\u0010z���$��lo\u0007s�\u0011�Y\u001c�h�e\u001c�\"Z��\u001b�洣s�\u0018���4�rN0�\u001eP]'����\u001e[�cF;[ǖ�4��-�%`\u001b�&�is�30�٤�tL�y<��\f��\bԛ�f\u0003�:���\u001d@�%`\u001b��t�����O{խ���\fu�!�\u0015�ƶP��w\u0000���m���{�e�(�;F����.&��u�]�$F�ۡ�\u001f���5Խ�\u0000�-\u0001�\u00005X\u000e�=�a�ê\u0005�[�+\u0017�7,���<�@�[\u0001m���Dm�Y�\u0000��*.\r���\u001a�e�\u0006a�o�^v\u001f1Z���.��\u000e�kK�6@�\u0000tK�ll�*.)�t01t�Rp��a~;��#Po��MP�gW�\t�-\u0001�\u0000���r��(6:��(#�o^�z�@m����}\u0007Po\t�&�\u001dN��3�A�=\u0004�u\u001b\u0013�\u001b\\7���;�\n�Q��\u0001j\u001d\u0013�>������\u0001��\u0000�\u0000�Cz�i:\u0006��z��z����M=��\u0006�Z�헧�x��ǧ\u0012i{+�\r�4�\u001f\\�\u001c\u001f,F=�m�T�9��W.�\u0007��f��g?��ٸ���-6s\u0003���\u0019k6S������h4��r;�mLtL�-L�)\r�\u001bM~����#�\u0018��\u0013�hX<��T���/H���$=�Z_�nj�!� /�\be�\\u'i�`% �'�,;��6.ȵ�OD[��\u001chM�\u0002nKr��yT�",
+      "timestamp": "2025-09-09T22:08:51.852Z"
+    },
+    {
+      "userAgent": "iPhone Safari",
+      "userAgentString": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1",
+      "url": "/cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:08:53 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=MXiuuVq.0YK8h4KyYQNmugIP0RhL6p2_G3FgpbGK07E-1757455733-1.0.1.1-jfmcmMlDXl1zS3Lxx36BRyRKIspJK2RL41W6yZiuv8FCevt0v_4ycZ6AU.pXxXJKV_2Co7tToN1lcN9kF3KRyC1VHL7CpN9Zw.TsStw3TCo; path=/; expires=Tue, 09-Sep-25 22:38:53 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01bacdd527dd-SAN"
+      },
+      "contentLength": 4232,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��妽i�\u000f\b\f%�|���(���\u001e�!ɶ��I���\u001e���\b�\u0003�!\u0001\f1��������!�da��bW}��FcW�HS\r@�ދ\u0017\b톐Q�&4����4��-;&Y�`�8\u00153W�\u001d_\f�~\u001c&4\u0013^\u0000\u001abq�A�����\u0005>\u0006-���\n戆�j3\u0001�$N�5������0\u0013\fp~�D\"\u0012��\u0001��\u0006���\u0018�0~�\u0018�Bg�őD\u0018�\u001a\u0010�\rDt�R\b\\�&I\u00008��l�\u0015����\f��t�|�\u001d��I\n����\u0012��h�U\"�\u0004\u0016B�E\u0002�&B:��\"����'�X������\u0004��'ݾ'0o}H`H#�̖\\UC냌��\u001c�D�d�ԧ����\"�8�^K���MA���?:�Gyg%jͧ\u0005�a�\u0000�\u001c<L�\u0004g\"�\u0015\u0015�Јf�I�\u001f\u0007\u0001��AI��L�\u0011V-O��&\u0010\u0002·���\u000f?����\u000e\u0012�Fq$\u0018\r*$T��~�=��[~��\u0015J[,\u000eی�\\j�]�{q{\bL�>��+��FP�\u000b�9&{w-A_�(�\\Dc��D7�1�qJ=\u0011\b�~�a����\u0014v�\u0005����I\u001a'�f\u000bW��}\u0015O�\u0015xRdP\u000et\u0013�_xh�q=�a�\u0006k���Q2[\u0004�עr\u00111<\u0011\u001c�5�\u0013�D��#�~\u0010�z��(�A���Ůd�H�*B�\"���iF��\u0002R�w�\u001a�f\u0013��2��3����T0,�x*���;ʪv%���d��ژ\u000f�=���i��Yp��3Y\u0007\b\u0007�x�׵\u0019�\t�`z\u001e���@ۻ�I���O#�\u0006X�M�\\4�&kN��ɛи�-\u0016P)Oh\b?�5T�i�3iɌ����g\u0004st@3PVLZ\u0010qW�Ka�xݵ�\u0014��2���x�)���ϵ�\u0016�f�ָQ���]��U�|���}��<�Nv$d#\u0011B<��k:D��S���Ap�d�2+�\\���4�w�<f�\u0010��U}\u0019\u0006�>����k��҉��E\bi�@���t�O޾5^Y\u0007�~�Nᦱ�b\u001bύ�x\u001c@�d\"\u0014�!w���ۚ�\u0007]�����y�7e3h��u\u0015����?\u0014h;kͭd*'���4V\u001bga��Z\u001fU\u001e�7Z�\u0002�z��$�\u0019DY��� ke����6�)򑋸b.��/\u0017#:V~���;�~%\r�\u000f9-K�fP��ec��\u0007�E\u0001��Ekn@?�ڏ�[C?�\u0000�Q�V��Pܳ�E�#�V����}7dt\u001c҈�!�\u001dQإ|�d\u000b�\u0013�A%�o%4�(;�9�D$!�^�\u001f�P���K\u0004n^ ��.TEU\u0013�\n�՚�V4Q���1\u001e\u0019���������0z�\u0013`\u000e^��a\u0012G\n�vDg\u001eM�\"��z,0�z�n8��ߥ�d�u\u000b��\b�����[����c�Z�\u0014SٖS��j��b2��t\u0019u<ƹ�,�Զ��M F\u0017��KM[+f���*'\u0000�ښ��#V\u0005�\u0007�\u001fG�\u0018�ךd\u0013��\u0000���kMp��\u00015;ݮna߁.�u��m\u001f\u0013[�{�cq�=���4��,\u0002i}�-�U�@�i~giM-_\u0013,�ϧ\u0011��n�\u000f��kM-�{�m�\u001e4Z_3������5�{}B��`��\u0013�55��\u0006J}\u0003��h6�Z_�\u0013P#QS[������\u000f!�g{��\u0015�b�?狾����?��\u0012b�eG��\u001f�`K��u������4K�=�Y6�\u001c�C�/8)c\u0006&\u0006\u0007��雞��\u0018\u001b�`���bl�`����\t�V��\u0004k\u0003�6�~ǧ\f\u0013j*N�`��\u001a�ЎC{>PF�{0��\u0010\nH��|\u000eI\u0006�\u0007)�O�\u0018��v0w\u001e��š��X��2��<��hN;:�����K�)�\u0004\u0013�\u0001�u�x\u001d���e>f��ul9O3��\u0012_[\u0002�\u0001jb�6�=\u0003��M\nN�4�����P[�@�)j6@�\u0013L:�\u0001�[\u0002�\u0001�NW��٘��W�ʌ��Pw\u001e�Z\u0001hl\u000b�n|\u0007Po\t�\u0006����Xf�b�c�����bb�]��uLbt�\u001dj�1�{[C��\u000e��\u0012�\rP��\u0010��\u00196:����E�r�zò�\t�S\t��\u0015І�7MO�\u0006�u\t`�.�� \u001dL��X�m\u0010����e�\u0011�u{��2�� ��\u0004l\u0003�\f@�t��\u0006�⒒N\u0007\u0013C�)\u0005��\u001a�C�<\u0002����\u0004�~����/A�%`\u001b��{]n�\u001e�F�r\u0012e����S�\u0011�M�5Խ�\u0000�-\u0001�\u0004��\t�z\u00066h����ncBu��f��~�[�6*P6@�cb�\u0007p3Ժ�=@�\u001d`\u001b�vH�0M��\u001d]���`bS�3���Vw���$�=i�T\"mo��A�����ŨG�͜j2'���)�\u0000��l6���66\u001b��Y�b37��Y��f3e:�J���FS�.�3��D������0����M-�=\"�AJ:�����(K\u0005��������T�C������\u0019\"\u000e�J�Pv�Tw�ƾ\b�\u0002�x\u001cO��mo�\\��D�%�ρ�T�޶$ך�G%ܥ�L)�\f�9ДM^n",
+      "timestamp": "2025-09-09T22:08:53.113Z"
+    },
+    {
+      "userAgent": "iPhone Safari",
+      "userAgentString": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Mobile/15E148 Safari/604.1",
+      "url": "/categories/trading-cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:08:54 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=vjlhFftSZa4GsIdH8VdskktMQdS0Lh.rfEqDRfdwQNY-1757455734-1.0.1.1-ihtoskMT193MW3Z3sCxcHygGj.imFdafO0XAGFpLYLhzvtny8xRKNCvrWl.ClXxuVNVmvZp78XROFnhrShVp322jFkSqRIFIBALp6zqqSDM; path=/; expires=Tue, 09-Sep-25 22:38:54 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01c2be1a27dd-SAN"
+      },
+      "contentLength": 4241,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w�Ȓ�?��G��\u0000;4��\u0010\u0002[�Clf��xm<���\u001c�Vw\t:\u0016��n ��w��z\u0000��\u0007's�f��g& u=�~U�G���\u001f\u000e��\u000f�8\u001d����{/v�\u0007\ni4�\f�\f}\u0003(�{�\u0002��\t(�ؘ�\u0012�gLU�]co�0V*��q*f��;����x�P%�\u0010\f��HA�<�p�\u0001\u001f��I�9sD'�\u00193\u0001�$N�\u001a�\\p5�8�\u0004\u0003�]ԑ��\u00124Ē�\u0010<3���\u000f\u0018�_�L�8�\b�B\u0003B����P\n�g�$\t\u0001�x��X\u0013\u001aH�� =�t�'�%\u0006\u001a�\u0010xF�.a#�FF)rM`.D-\u0012�\f1�#hj�Rj��Բ�2��s8��u\u0002M���\u0013��}H��F\"\u0000��\\��\u0007\u0019G�9�U�N�\"i@S�\u0013\u0011E���~C�F�Ma�z�?ھOy{%jͧ9���\u0017!�9��&\tVB݊�_hD�`\u0012��a\bL=(I0�D\u001ca}��j\f\u0013�Y��X�\u0011de\u0010�A��(�\u0004�a���r�k6��y#(��\\i�œ&�\nFq*@6UJ��F�єK\u00035\u000b\r/n���4�*��h�S�㱛��w�8�\u0005\rs�h_���c��)�E((��N�\u001dt\u001c�����_��H�8�T-<#\u001e�t��?i�K����&��pڶ�zX�4\r��#�+wJ�\ba�A�\"bx,8�k\u0014'�\t��!�~\u0010\u0013=��Hݠ�fN�bW�T$�����x<op��\u0011]@�<��ڠS5�H\u0015Ay��\u0002�g�YL�4n��hC���R*�)�k�>��\f\"\u001e��\u000f�g��N���@8���ݎèI����S��\f����t���4b��UZ��E=����.�\u000e�k�`!��N�'��*?-v�\r�h�<�?#��\u0003�@[1n@�=�-����־7RHBʠz\u0006����ZA?W~Z��J�FK��w�{O���˻�����7ޑ��b\u0002�TU�t�jm'W\u001dM�������<���Ԫ�w�<f�\tD�Q~\u0019��?ꕕ�+��҉��M\b��@���t�O޾�^�\u0007��J�pS�y���Fq<\n!N���ϐ9ny��mM�.��li����\u001e�E����w�{�e\u001f\u001a���ۍd*����dW\u0019�I��J\u000f�\u001e��\u001a�\u001c�j��$�\u0019D��s|��⾶<�6�)\n���f.��/\u0017C:�~���;�~%\r�\u000f\u0019-K�*(ȫ��N�C�\u0010��57��Q��Ы��P�z�R)�ȟY�!��]��{��nPt4�\u0011\u001dA�9\"�K�@�\u0016�'��RJ�Hh\n�:�94D$!U/!�S�~�\u0007\u0005\u00027/\u0010ZF\u0017*���*��*�u+����\u0018\u000f��9�����Y\u001b��6\u0002��o�x�đƾ\u0019љOӦ�8|*�\u0005�R�6-��\t:��\u0018p�\u0006�m\u0002��l=�V�s=̕��|��r��R��\u001aLf��\u000e���8w�\r�:\u000e\u000fx\u000b�Ձ\u000e�Жc��h6��1�Z[��\u001ebu�}��q\u0014��wmH6\u0006>\r�轻6\u00047z\u0006�V��1m\u001c����\t\u0001v�\u0013`�A��m\u000e�oԍ\tM�@e#��3�\u0002\\�\u000bԟfO�Q7������4�tٌ�avM�ndO�~l�@c�\f�XmL���C��#�G\b&�\u001e!F݀�o�47PJE�T\u001a=#N@�D�v�\u0002�?�>����y�WL�N��-\r�\u000e\u0006����sJ��\u0014\rŽ�h��D*[]J����M���'��P��\u0001����2fabq`&���o~;��#\u0018��\u0018[�#\u0018')��Ŀ\u0015�-��\u0000��i�\u000e(Ä�4g@��t,Lhۥ�\u0000(#�=�OS�\bH��|\u000e���\u000f)�O�\u0018��v0�\u001f���\u0013��q��h=Oo4�Ӷɡma��єs�\t���&q�6���j=f��ul�O3��\u0012_[\u0002�\u0001j�j9��-L�\u000e�9�V�}<��\f��\bԛ�f\u0003�&���\u001d@�%`\u001b�nw����I@�����\fu�!�5�ֶP��w\u0000���m��\u0013����Rl����\r�\u001dL\u001c��v:n�X�o��y\f���Pw�\u0003��\u0004l\u0003�`��w\u0003��6+'(n�����0\u0015?az*�v�\u0002�j�M�\u0013u�d\u001d\u0002ؤ˸�H\u001b\u0013j���X��ay�y�h��6�,�;��-\u0001�\u00005\u00030m�v�Eʸ�����2\u0003J�u;V�ۡv\u001f�zS�l�ڼ=���KPo\t�\u0006��n�[�K��.�D\u0019a���}\u0004�\u0016�\u001a��w\u0000���m����]\u000b[�\\CP�t0����V�9A�[��JP6@mb��\u0007p3Ԧ�=@�\u001d`\u001b�vI�j�\\\u000b�M�S\f=\u001d��ġ�oq�u�����I<{���@��\ni�<\r�\u0007�'7\u0000�Q�`���dN���S�\u0001���leُml�nﳾ�fnAǷ}k�f�L��6�\u0017��4]lg��������\u0019�e}�����$�<\u0006)�\bJ\u001a\u0016O#��rd�\u0017�ѻ6��\u001er�g�ԍ�\u0010q�WZ��s���4\u000eD�\u0014\u0010ƣx�.�}�sr#�\u0013іl?",
+      "timestamp": "2025-09-09T22:08:54.399Z"
+    },
+    {
+      "userAgent": "Android Chrome",
+      "userAgentString": "Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36",
+      "url": "/",
+      "statusCode": 200,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:08:55 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "link": "</_next/static/media/241dfdee4e97a4de-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/24cdfb7d2a41e297-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/416c1d8fcfcdf503-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/90890788cd378a0d-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/99de02d46ce378b3-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+        "x-powered-by": "Next.js",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=OeDOLZJ1I60HAwgBv0Xpl8DXFYoYuy51H_K7nZDGI4s-1757455735-1.0.1.1-OZQonQkQW31Jj.M_praphnHJFZbuyWkep2xLITfGnBtfzGSuPSV9WBP0Mi.ehni0DTRewk1LxkY9_XSFSiNXC1e_A6vkeFf37WCcGw1Fc_o; path=/; expires=Tue, 09-Sep-25 22:38:55 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01cabe7a27dd-SAN"
+      },
+      "contentLength": 189875,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003Խ]s㸖-�Wj�y\\\u0005��,���\t���h\u00034I|\bx� \tZ\u0014\b�JYiQ��\u0013P�;\u0011w�vLw�#�Ke�3MJ ����k��o�G�?S�\u0016�֟G��������\u000f��~�\u000e������������G����k��ol��o�>�\u000f��\u001f������o}W����;׿�}}���_��<�?,��\u001f?>�c���_��r�8����8������/{}����׾�\u001en����?����>|������\"v\u0018~;u��ߏ��~�����S�����߇n:��y����ϱ�����\u001d�@��\u0012��\u0007�����\u001f\u001f����?������>��������\u000f���o������t��zǦ\u0001�F��{\u0007A\u0013����m��n��v�:@����w�<o�P��aS{\u001e|��������s�������h\u0016��n�;�[�����������ݣ�\u001exM�\u0005��\u000f���o�~?ֻ�~��|>~��?��{;]�އ��G��Gk?~������ǡ;��]3 E������s�����6�ͨ�vξء�`��Vi��!\u0019�vu�tub��i��m�*�Mr�J\nWo�AN�>��_�q\u0002�U?�A�l�q7�ϒ��NwAk�G�|T\u000e\u0000�m��\u000e��\u001b\u0005�3\u001c�����\u0005|���\u001a�\u001f\\�\u0014\u000b8����\rߪ��f���n\u0016\u001b�=\"$Ă]�a�\u001a��\u001c\u0019\"Q<�y�\u0014��\u00143A\u0012�(\u000e�ȍ��DPi��F�\u0018�Y^��}�\u0012K\f\u001f�h�/���\u0016��j=��)ܲ!�!A��`/Ŷ�՚+<0�⑟\u0005̪W�_hr�����f/$��n\u0004^.�K��\bkQ�v\u001e��P'=l������Ꙣ�@�YJK�_^�1�aW)��B\u0006��E�'��Uc\u0001�H\"<�<i\u0012�h\u000b1m\u0011\u0016xΩ�0�\u0001e\u0006\u001f��\"�pZZIٕ��7.��>d}������p�J\u000f�\u000b\u001b�)���m&�=���\\)0\u0015��S��ς���2�#^\u0010��2��\u001a@Y�`�$Gʠ��8���!p\u0013�uvV�~h����\u0012�Y�**\u0010\u0016ɀ\r�s��q����wz��36���|$\u0002C2o\u00106�GP2�Q�\u0016�'3���\u000e\u0012)�M��;;I��D\u000f٢�ګ�7�j���/\u000eI@\u000f\fq�\u0015m\u001apj���b�[>�Q\u000b\n��Q��,Gb<O�P*p\\pP�\u0005�\u0016�v�(Mf�&�\u001b����k��w���JQ\u000e8z�qT\u0000E{#i\u000b�챐�J\u0019Pf5`\u0011{R`\u000f\u001b�˟���r��xf��\u0005 3�\u0013���Q�T~�b\u001f>�^�m�N\u0007�?�\u0005�j�\u0013N���C�y�R&��xB\n�E\u0015\u0007�Y�I�N*\u0016s#���e*l2w\u0011',\u000e�R��>$\n� �s\"���8?��@�z8߱��JPiI4@l������s��3��\u0014_�H,\u0011ʨ����@B�\u0000\u0011���Ғq㓑\f\u0018�\u0017i�Y����;\u0017{\u001c\u0002\tۯ\u0006��J�s=d$�Å\u0002Y��z.y&����'�+���u+�����\u0003Y�[��\u0011�\u001b�4q��:�A\r��9�XT�b��T�\u0019x)�\u0011����0B�xVF\u0019=�)�ɸAdt�[�x�\u0003v��\u0016�D�+6�LR<�T^�(��>�$%�\u001c��4�/Q6H���ŶZVB�s��Y\u001a�²�N\u0014A\ry�Z}���\u000b�\u0000\u0003����\u0015\u000bҷi�˭:�8��\u0010�\u0017�G��e�7H�rO�qO\u000f\u0012��_u�\"ŘQ�ڌT笊�_�٦\r����, �\u001f0m'9�@E�����l|I�^�'O�dPi��i=i\u0018ʩ�b6 w�^${�J��69\u001d�s���\u0018���zԬ��N\u001b���6�:F�� �\u0006S��d�\u0007\u0018w\"�ڨ���]1�\u0005��M1?�����<�aXb1����\u000e4�D��/\ru��|�S\u0001����b��UEdti�\u0012����*E\u0001��m\u001eI�#��\u0002�8ʌ�ÔS��7��\ṛ\r�\b_0R�D;�i|!�~\u0010*�\u0001U� �2T%|�B.[p�6��8(c���\u0002Ή$��.)�9�rr�I�\u000b��gv Y\u001eo&F[�my��yUny�\u00132��~�q\u0018+�\u001d\u0018㿾�#�*z�0\u001d\u0000F, ib1� �\u0018�\b\u0003w\u0018\u0012\u0014�\u001c\u001b**���\u00001Ņ�턅Dؔ�[�g�ţ\u001a��\"��1۪�ǐ��(_���\"ے}H�U\u001bu\r�W�xy\u0005\u0013j���\u0018;)\u0011Ox����T��T�������\u001a�����\u0005ꊍ�b�\u0014{}*\"~�#\\1o�R xG\u0018��\u00189K��x\u001e|i6\u0001Arv�FN7�D\u001b_�rODf�\u0006\u0012%\u0003\u0011\u0012`��)|By/�\u001d���)CJ�\u0001\u0016��<��|��g�u��}��~~��B_k�@@�z�������m����twh��~w��_�x��\u001a��G\u0007�t\b,��\u0017\u000f�G�\u000eQ�-A�/��?��\u001a�K�.\u0016\bA�\u0005��eY�m\u001b�\u0016\u0006��y_6�?���{���",
+      "timestamp": "2025-09-09T22:08:55.891Z"
+    },
+    {
+      "userAgent": "Android Chrome",
+      "userAgentString": "Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36",
+      "url": "/search?q=pokemon",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:08:57 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=.2Zofas7_DofX51v0UCcjnV.mbPJoX9ya5MSXIbBJcw-1757455737-1.0.1.1-T139r3K7CEAoUX1FPoyEOhufp70S23OssBqXQ3RGV.K1Ut0Rvdrj6LAq45Sb0eyu_9hYbKydNlUx.QBHLs3qIC7w6kqIFlh4sdhmSPu6LnM; path=/; expires=Tue, 09-Sep-25 22:38:57 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01d418a327dd-SAN"
+      },
+      "contentLength": 4222,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��妽i�\u000f\b\f%�|���(���\u001e�!ɶ��I���\u001e���\b�\u0003�!\u0001\f1��������!�da��bW}��FcW�HS\r@�ދ\u0017\b톐Q�&4����4��-;&Y�`�8\u00153W�\u001d_\f�~\u001c&4\u0013^\u0000\u001abq�A�����\u0005>\u0006-���\n戆�j3\u0001�$N�5������0\u0013\fp~�D\"\u0012��\u0001��\u0006���\u0018�0~�\u0018�Bg�őD\u0018�\u001a\u0010�\rDt�R\b\\�&I\u00008��l�\u0015����\f��t�|�\u001d��I\n����\u0012��h�U\"�\u0004\u0016B�E\u0002�&B:��\"����'�X������\u0004��'ݾ'0o}H`H#�̖\\UC냌��\u001c�D�d�ԧ����\"�8�^K���MA���?:�Gyg%jͧ\u0005�a�\u0000�\u001c<L�\u0004g\"�\u0015\u0015�Јf�I�\u001f\u0007\u0001��AI��L�\u0011V-O��&\u0010\u0002·���\u000f?����\u000e\u0012�Fq$\u0018\r*$T��~�=��[~��\u0015J[,\u000e�\u0012h�&\u001aj��^�\u001e\u0003�����\n��!\u00147�n\u000e��]S�\u00174J)\u0017�\u0018�Ӕ�&:�0N�'\u0002Aя4Lv�q��n���2;I�\u0004�l�j�\u0002j��\u0002O�\fʁn��\u000b\u0017m;��5L�`M���]�Jf�\u0000�ZT.\"�'�\u0003�FqB��\u0016}D�\u000f\"T\u000f\u0014\u001ae7h�]\u0010�ؕ,\u0015IV��\\D<��8��\u0011]@�\\��Z��l\u0002QV\u0006�yF3���\n�E\u0018O�v�~G�ծdUR�L�_[�A�g\u0010�8m}�?\u000b�v{&�\u0000��\u0011���6�:\u0001\u001bLϣ��\u0018h{�5����i��\u0000�)��f�d�IS4y\u0013\u001aײ�\u0002*�\t\r�'��j?-v&-��4s���`�\u000eh\u0006ʊI\u000b\"�\nw)�\u0016�����B\u0012P\u0006�3\u0018\u000f?%�\u001a���ӢѬ�\u001a7JR���޻�/_޽o��G�Ɏ�l$B��Y}M��7v\n��4\bn�L]f\u0005�˔��F��N��l\u001aB���/�\u0000�G��r}�Y[:�ִ\b!�\u0017\b]�ޜ���۷�+����)�4v^l�q\u001c�\u0003��L��3�[^\u0014~[\u0013����0[�=o�l\u0006MѸ���]�\u001e���\u0002mg���L�~���j�,,<X�ʃ�Fk\\�[o4��0�(�\u0017\u001c\u001fd�lW�\u0017�f4E>r\u0011W�%���bD���u�xGޯ�!�!�e)�\fJ�l�S�\u0000�(@?�h�\r�gT�1pk�'\u0014�>��*�\u001f�{\u0016�Hyd�*S�V��C\u001a�1��#\n��\u000f�l�~B<������\u0010e'1���$��K��\u0014�\u001f�~���\u000b��х��j�Z�Zs݊&��::�#��_vw�v;|�\u001eFO{\u0002��k�8L�Haߎ�̣i[D\u001c>U�\u0005�P��\r������\f�n\u0001X\u0016\u0001�u\u001c�\u001es�5йz�U+�b2�n�bR�uO��\\��e��\u0018�\u000e��R��>7�\u0018]��.5m��#󧪜\u0000dk��ۏX\u0015l\u001f�~\u001c�b�^k�M�O\u0003���5���\u0006��t���}\u0007�X���\u000e�}Ll��ю�����\u0016��\n��\t����\u0000W�\u0002\r����5�|U�l?�F�.��?���5���Q��z�h}� F\u0007�\u001e&�H��\t�\u0013�I�O��� �\u001b(�\r�2��Tj}-N@�D�m�\u0012�?�>����y>VL�A��/��\u000e�����sJ�a�\u001de���-��W�R�{�,1��g��s�\u000f\u001d�ऌ\u0019�\u0018\u001c�\u000e�oz��cl<���o���?�q���)�[a�\u0012�\r0ۜ�\u001d�2L��8}�=�k`B;\u000e��@\u00191��|�B( ���9$\u0019�\u001e��>�c0����y\u0004f\u0016�\"\u001ac\u0019�ˈV��F�9��\u001c:\u0006&&/���\u0013L�\u0007T׉�u��ǖ����ֱ�<��K|m\t�\u0006��i���\fLz6)8\u001d�t\u001e��'Cm=\u0002����\u0000�N0�|\u0007Po\t�\u0006�;]%�gc��^u+3�7C�y\bj\u0005��-Ժ�\u001d@�%`\u001b����c�=���Qr:~���mw�n�1���v��Ǡ�m\ru�;�zK�6@\r�Cx�g��j��\u0016��\t�\r��'LO%��V@\u001b��4=Q\u001bt�%�u��K�t0��c\u0019�A\u0018�\u001b���G���m�˰����\u0012�\rP3\u0000��-\u001b\u001b��KJ:\u001dL\fݧ\u0014\u001c�k��\u000e��\bԛ�f\u0013������\u0004���m���u��{\u0014\u001b��I�\u0011�7OO�G�6��P��\u0003��\u0004l\u0013�\u000e'��\u0019ؠ�\u001a�꺍\t�\r��]f��o�ڨ@�\u0000���}\u001f��P���\u0000�v�m��!=�4\u001d\u0003wt�[>z����M=��\u0006�Z�����x���S���\u0015�\u0006y\u001a�\u000f�O�\u000f\u0016�\u001e�6s�ɜp�+��\u0003`O��ȳ\u001f��l��g}��܀�gyƚ͔��+m�/\u001aMi���d\u001b\u0013\u001d\u0013g\u000b�sJ��F��7�0��<\u0006)�\u0018*\u001a\u0016O�,\u0015 ��\u000bR�_kSI\u000f���o��g�8�+%B�9S�I\u001a�\"X\n\b�q<�.���\u000br-�\u0013іl?\u0007ZS�|ے\\k",
+      "timestamp": "2025-09-09T22:08:57.181Z"
+    },
+    {
+      "userAgent": "Android Chrome",
+      "userAgentString": "Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36",
+      "url": "/auctions",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:08:58 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=lfwbi3tUbrbe3W6H1RD_lw96Oykcu2l6VjVaa9HIfys-1757455738-1.0.1.1-RSHJJshfNMWN97uFVCWKGhQYh.sIPIPacNFzN5CgVTnyPlwPR0.ElJMuc2A.KK05BU3jejK_KDjSek_jg1LSu4Fei1uVHT1e8d5dKqWTXzI; path=/; expires=Tue, 09-Sep-25 22:38:58 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01dc2af727dd-SAN"
+      },
+      "contentLength": 4263,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��妽i�\u000f\b\f%�\u0014�\u0010�\u0014��w�\u0003>$ږ]9�=��c�6\u0012�y`~3\u0004�!F�?\u001c��\u001f�q:D�t\u001a��U\u001f(���� �T\u0003P���\u0005B�SH)b\u0013�HH]m�����V\u001d�4�1|������/\u0006x?��4\u0015^\u0000\u001abQ�B�����\u0005>\u0006-���r�N���\u0002\u0016q��\u0015������0\u0017\fpv�D\"\u0014��\u0001��\u0006���\u0018�0~�\u0018�B�E�D\u0018�\u0015\u001a\u0010�\rDx�\u0012\b\\��q\u00008�fl�\u0015����\f��t�|�\u001d��I\u0002����\u0012��p��\"+\u0002s!�2\u0006W\u0013S:��\",���'�X�������\u0004��'ݾ'0k}H����\u0007���ʆ�\u0007\u0019��9�U�N�\"�O\u0013�c\u0011��qJ�������(q�t<���ZTŧ9���\u0013\u0001�\u0005x��1NEz+*~�!M\u0005�h?\n\u0002`郒\u0004���B�Z�ʟN`\n8\u001br��\u001f~�W\u0006�\u001d$\u0018\r�P0\u001a�H�(��v{�X��B+˕�X4m�\u0019S\u0003�\u001aj\u0017\u0012_�\u001e\u0005�����\n�� ��a7�e�1�\u000b\u001a%��p��i�e\u0013\u001d�4J�'\u0002Aяt\u001a��(��v��bmx�D1$��բq_�T��\u0002O�\u0014��n��\u000b'm;��5̒�\"��Ю�%�e\u0000{-*�!�\u0013�\u0001]�(�L��>\"�\u00071U�\n\r�\u001b��Ή_�J��8-�d!B\u001e-Z���.!A.zw��Y:�0-��<�)h}M��r\u001aͤv�~G\u0019�.e�R�L�_��A��\u0010�(i}�?\u000b�v{&�\u0000��\u0011���6�:\u0001\u001bLϣ��\u0018h{�5����Y�!S�M�\\6�&kN��ɛи�-\u0016P)O�\u0014~rk���rgҒ)MRW��\u0010\u0016耦���� �pW�n��\u0004�2���x�)���ϵ���f�ָQ���]��U�|���}��<�Nv$�#1�h��+:D����\u000egAp�d�2��\\���4�w�<b�)�i��2\f@}4kk�ך��\u0013kM�\u0010�|��u���\b��}k��\u000ej�4��Mc��6�\u001bG�8�(N�T|��q���o\u0015�\u000f�(\u000b��ً&o�f�\u0014��2��\u0005}(�v*ͭx&'���bV\u001b��܃�>*=Xo��9��FsE\ns\b�~��A֊vey�mN\u0013�#\u0017q�\\�)_.Gt��\\��w��Z\u001aB\u001f2Z�\u0000M� ��F��\u0007�E\u0001��E\u00157��Q������P���V+���Y�\"�u�LT[��\u001bR:�Ґ�!�\u001c�ۥ|�d\u000b�\u0013�A)�o�4�0=�8�D(!I_�\u001f%P���\u000b\u0004n^ ��.TFU\u0013�r�՚U+�����\u0018���������LFO�\u0001\u0016�Y4��Pa�\u000e�ܣI[�\u001c>��\u0002s�g����]�L\u0006\\�\u0000,�\u0000�:\u000e���z\u001ft���r\u0017�/h�-`LJ��i1�iw��:\u001e��a\u0016Pj���&\u0010�\u000b]ڥ����d6��\t@Z��ݞbU�}��Q英{�I6\u0001>\u000b@뿻�\u0004��\u001aP����\u0016�\u001d�b]\u0007\u001f;��1�u�G;\u0016\u0007�Ӛڔ&W�f3����\u0002\\\u0005K4��\u0006��e;�U��,�tՍ���t��ew��m�D��5�\u0018\u001dLz�X#��'�O\b&�>!ZS��o��7Pʔ�3���(\u00065\u0012���\u000b��l��\u0010��\u0017�Xq����m��\u000e�����sF�a\u0017\u001dE���-��v�R�{�,0��g��s�\u000f\u001d?礌\u0019�\u0018\u001c�\u000e�oz��cl<���o���?�q��zZ��¼%X\u001b`�9�;>e�PSq�\u0004{v���v\u001c��2b܃�4����>��\u0010�0� A�I\u001e���\u000e��#0�h*�1�Q��h�No4�ӎΡc`b��h�9��z@u�8^�{l��\u0019�l\u001d[�ӌ���ז�m�����m���g���1M���z2��#Po��\rP�\u0004��w\u0000���m���U�z6&>핷2�3ԝ��V\u0000\u001a�B�\u001b�\u0001�[\u0002�\u0001��9�٣X�\u0018\u0005��w���v��v\u001d�\u0018�o��~\f���P��\u0003��\u0004l\u0003�`9��|��\u000e+\u0017(n��\\�ް4z��T\u0000mo\u0005�a�M�\u0013�Ag]\u0002X���4H\u0007\u0013j8�a\u001b��a{�}�h��6�\f�;��-\u0001�\u00005\u0003�-ݲ�Aʸ������}J�q����P;�@�)j6A�ߞ]��%��\u0004l\u0003�~��\rޣ��N����yy�=\u0002�I����\u001d@�%`��v8�^��\u0006-�\u0010T�mL�np��2��|+�F\t�\u0006�uL��\u0000n�Z��\u0007��\u0003l\u0003�\u000e�\u0019��\u0018����b��\u001a\u000e&6�<�\u001b�ku�_�N���\u001e�\n����6�Ӑ~p}r|�\u0018�\b��S.�[_�$\u001f\u0000{��F����f��sַ��\r�z�gTl�Lg_i��pF��v&ۘ�8[��Q\u001a�7����M3��c�����a�,L\u0013\u00012{� ���6���k}���}����R\"��s�\u001d'�/��� \u001aG��b��8'�2>\u0011n��s�",
+      "timestamp": "2025-09-09T22:08:58.458Z"
+    },
+    {
+      "userAgent": "Android Chrome",
+      "userAgentString": "Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36",
+      "url": "/cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:08:59 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=FkXPt0ghmwFAt1.KjHzTf2KuV63VI4CceWL4xq28m.E-1757455739-1.0.1.1-K4RQzmoH3w8oAAoeGT6W41db1vGBuDTMR1TfC8LTI14PBq.A9JVfy.KJpx2Te3Jwtb9L3bOQ055Toxe4QxUe6OaKtbEdLcgc7o8DnGRUJfI; path=/; expires=Tue, 09-Sep-25 22:38:59 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01e41ba527dd-SAN"
+      },
+      "contentLength": 4235,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��䦽i�\u000f\b\f%�\u0014�\u0010�\u0014��w�\u0003>dږ]9�=��c�6\u0012�y`~3$�!F�?\u001c��\u001f�q:D�t\u0016��U\u001f(���� �T\u0003P���\u0005B�3H)bS�HH]m������\u001d�4�1|�������\u0007x?��4\u0015^\u0000\u001abQ�B�����\u0005>\u0001-���r����\u0016\u0002�q��\u0015������\u0010\fpv�D\"\u0014��\u0001��\u0006���\u0018�0~�\u0018�B\u0017�E�D\u0018�\u0015\u001a\u0010�\rDx�\u0012\b\\��q\u00008��l�\u0015����\f��t�|�\u001d��i\u0002����\u0012��p��\"+\u0002s!�*\u0006W\u00133:��\",���'�X�������\u0004��'ݾ'0k}H����\u0007���ʆ�\u0007\u0019��9�e�N�\"�O\u0013�c\u0011��qJ��\\L���(q�t<��΍��Os\u001cg�'\u0002�K�0�c���VT�BC�\n&�~\u0014\u0004��\u0007%\tFS\u0011�X�<�?��\fp6�\n�?��\f�;H0\u001aF�`4(�PQ.���r�l��V�+m�h�f4�RC�B܋�C`2�q\u001a]BX\u0019A~/�f��ݵ\u0004}A�r\u0011Nо\u0012�D�0�\u0012�@P�#��;�8J`��󿸱:N�\u0018�t�jѤ��z[�'E\n�@7�����\u001d��\u001a�IP��\u0014\\o\u001c%�U\u0000{-*W!�S�\u0001]�(�L��>\"�\u00071S�\u0013\u001a��h��\u0013�ؕ,\u0011qZF�R�<Z�8M�\u0011]A�\\��J��t\naZ��(�)h}M\u0005�j\u0016ͥv�~GY�.e�R�L�_\u001b�A�\u0017\u0010�(i}�?\u000b�v{&�\u0000��\u0011���6�:\u0001\u001bLϣ��\u0018h{�5����y��\u0000�)��f�d�iS4y\u0013\u001aW��\u0002*�\t��On\r�~Z�L[2�I���\u0019�\u0012\u001d�\u0014�\u0015�\u0016��\u0015�Z�-^��@\u001cP\u0006�3�\f?��\u001a���ӪѬ�\u001a�JR��\u000b߻�/_޽o��G�鎄t,f\u0010��zE��7vr��<\b��L]�9�˔��F=�N�Gl>�0m�_�\u0001��f����fm��Z�\"�4_ tU{s:�'o�\u001a���Z?M�p��y���&Q4\t �S1\u0013�!s��\"�[E�.��lm��ɛ�\u00194E㪌�w�{�f\u001f\n��Js+��i�j=��&�,�`��J\u000f�\u001b�I�o��\\��\u0002´�s|���]Y�[�\u0004��E\\1\u0017`ʗ�1�(?�e�\u001dy#\r�\u000f\u0019-K��P��e�J�\u0003�\u0000�ࢊ\u001b�Ϩ�c���O(@}T���?��,r���M�LT[��\u001bR:�ѐN �\u001c�ۥ|�d\u000b�\u0013�A)�o�4�0=�8�D(!I_�\u001f%P���\u000b\u0004�_ ��.TFU\u0013�r�՚U+�����\u0018��ѿ��~�v�T\u001eFO{\u0002,�k�h\u0016G�¾\u001d҅G��\b9|*\u001f\u000b̡��\u001bN��w)3\u0019p�\u0002�,\u0002��8�\u001as7+��z̕�|*�r�R�zZLfڝ.���8w�\u0005��6��\t��B�v�ik�\f�=U�\u0014 ���n?bU�}��Q苉{�I6\u0005>\u000f@뿻�\u0004��\u001aP����\u0016�\u001d�b]\u0007\u001f;��1�u�G;\u0016\u0007�Ӛڌ&��fO ���\u0005�\fVh0��,��ek�u�h\u001er��F��{��Բ�G�6�A��5�\u0018\u001dLz�Xc��'�O\b&�>!ZS��o��7Pʔ�s���(\u00065\u00125��\u000b��l��\u0010����X1�\u0007�s��{;\u001c�>���9!�]t\u0014m�a\u000e�D*[7J����u���#�eS��>t���2f`bp`:����ߎ��\bƺ�-Ɔ�\b�q\u0002j��o�yK�6�ls�w|�0����\t�쮁\t�8��\u0003eĸ\u0007�i\u00023\u0001�}�G\u0010�0� A�I\u001e���\u000e��#0�h&�\t�Q��h5Oo4�ӎΡc`b��h�9��z@u�8^�{l��\u0019�l\u001d[�ӌ���ז�m�����m���g���1M���z2��#Po��\rP�\u0004��w\u0000���m���U�z6&>핷2�3ԝ��V\u0000\u001a�B�\u001b�\u0001�[\u0002�\u0001��9�٣X�\u0018\u0005��w���v��v\u001d�\u0018�o��~\f���P��\u0003��\u0004l\u0003�`9��|��\u000e+'(n����ް4z��T\u0000mo\u0005�a�M�\u0013�Ag]\u0002X��4H\u0007\u0013j8�a\u001b��ay�}�h��6�\f�;��-\u0001�\u00005\u0003�-ݲ�Aʸ������}J�q����P;�@�)j6A��~�:�KPo\t�\u0006��^�\u001b�G��)�D\u0019a���{\u0004j�l\ru�;�zK�6A�p½��\rZ�!��ۘP���e���V��\u0012�\rP���\u0001�\f�n\u000fPo\u0007�\u0006�\u001d�3L�1pG׻ţ�k8����\fn����~z:�\u0016O�>\u0015H�[!m��!�����`1�\u0011l3���\t��rJ>\u0000�4��,������}ַ��\r�z�gTl�Lg_i��pN��v&ۘ�8[��Q\u001a�7�����2��c��N��a�<L\u0013\u00012{� ���6���k}���}����T\"��\u000b�\u001d'�/��� �D��|��8'�2>\u0011n��s�5ի�",
+      "timestamp": "2025-09-09T22:08:59.736Z"
+    },
+    {
+      "userAgent": "Android Chrome",
+      "userAgentString": "Mozilla/5.0 (Linux; Android 12; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Mobile Safari/537.36",
+      "url": "/categories/trading-cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:01 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=fJhLxSonEKx797oEqa.QpNom19PYqnyfXiGRVG3NSXA-1757455741-1.0.1.1-MbfZyjwPWAxADN1OUhVYvAAw9DzxVI5YFIJI5584Jwb8lTPzR81J1p25MTPhyZar6U6p7jGTcV_d7hbqY.gd4DVID7l7s.HwN3p3uB2NBrY; path=/; expires=Tue, 09-Sep-25 22:39:01 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01ec1dba27dd-SAN"
+      },
+      "contentLength": 4230,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\ms۶���_���Vҩ �\u0014EQ��b��ol�ǒ���\u0019\u000f\b,%�\u0014�\u0010�\u0014���\u0003�Ȳ-�r�37��=m$\u0002��}vI\u0000K�v�;x�?��t�&j\u001a���\u001f(���3 2t\u0003P���\u0005B�SP\u0014�\tM%(Ϙ�\u0000��ުc�T���L�=�7|����4�J�!\u0018�ő�Hy���\u0003>\u0006#���r�N�3�\u0002\u0016I��5���j�q�\u000b\u00068��#\u0011\t%h�%�!xf6\u0006=��0F?ӹ`q$\u0011�{�\u0006�vC\u0011]�\u0014BϠI\u0012\u0002V�M�&4�\u0014��\f�%�L�\u0018h�B�\u0019ͻ��$\u001a\u001b��5��\u0010�L�3Ĕ���\tK�-�S�Z�\f�����\u0004��'ӹ'0k}H��F\"\u0000�V\\eCヌ��\u001c�@�`�4�����\"�XQ�!�c��0N=����S޾\u0011���\u001c�i�\u0010�\u0002|L�\u0004+�nE��4�J0���0\u0004�\u001e�$\u0018U\"��ny*���\u0014p6�5���\f�;H0\u001aő`4,��Q.{��b�h\u0004�V�+m�x�dT�8N\u0005ȦJ)\u0017�\u00183�ri�f����Q1�\u0006Xŗ\u0010�\r*�=v3���\u001a�>�Q.\u001a�k�ut\f�8��\b\u0005E?�i����\u0014v�9��\u001b �4N UKψ�=\u001db�w\u001a�R((\u0006���/����\u001e�0K�5�_\t��;�Z��נr\u00191<\u0011\u001c�\u0015�\u0013ʄZ�\u0010A߉�~��H]��fN�bW�T$�����x�hp��\u0011]B�<��ʠ35�H\u0015A9TT��3t�,��L\u001a��w���RV)\u0015ɔ��}\u001fds\u000e\u0011���\u0007���^��bm \u001c|��n�a�$�@��)u|\u0006��}Mz��`\u00161=�*����\u001e�Y}R\u0017u^�ڕl��JyB��WA�\u001f�;��T4U���\b\u0016�*�VL\u001a\u0010qOx+a�x���\u0014��2���x�)�V�O�\u001f��z�R�֒��]����|���}��=�Mv$���B<S�5\u001d�Z��UG�0��3}�r:�iq׵j�:��l\n�j�_\u0006!�z����ze��J�&��_ tUys:�'o�Z��JO�3������s�8\u001e�\u0010'JLş�9nu��mM�.��le����\u001e�E����w�{�e\u001f\u001a����F2����j����4�`��J\u000fVk�q�o�V_��\u001c\"��9>�JѮ-Ͽ�i�\u0002�!��\u000b0��刎����������Ї���@\u0015\u0014�UY[��!�P���К\u001b�O��C�UЏ(D=T���?��,���M�Lu[�\u001b\u0014\u001dOiDǐf����>в\u0005�\u0011�\u00124\u0012�B�Nb\u000e\r\u0011IH�K\b�\u0014�\u001f�A���\u000b�Vхʨ��J�J}݊:��2:�#k�o��_�\u001d>k\u000f��=\u0001\u0016�7Y<M�Hcߌ�ܧiSD\u001c>��\u0005�R�6-��\t:��\u0018p�\u0006�m\u0002��l=�n�IC��+WI����\u0004'�^\u001b5�̴�\u001dF]�q�2\u001b(u\u001c\u001e�\u0016\u0010�\u0003\u001dڡ-�����*'\u0000jm�w�\u0011���܏�@��+C�\t�Y\bF�ݕ!��3��ڝ�i���\u000e6M\b�˝\u0000\u0013�\f��msp|�nLiz\t*{\u0002\u0019=�-�e�D�Yvg\u0019u#[9�ڇ���U7���F���\u001e}��\u0007��3,b�1�bb��n��\u001e!�tz�\u0018u\u0003\"����@)\u0015U3i�8\u0001=\u0012=��\n��h��\u0010�4\u0017�X1�\u0007�S�4|;\u0018�>���\u0019!�St\u0014m���o�T���F����z��O|ۡ��\u0003h\u00079'e�����Lh\u0005-��z��G06�m1��G0NRл��(�[��\u0001f�Ӡ\u001dP�\tmi΀`��X�жK�\u0001PF�{0��0\u0015���y\b���\u000f)�O�\u0018��v0�\u001f���S��q��h=Oo4�Ӷɡma��єs�\t���&q�6���j=f��ul�O3�?\u0012_[\u0002�\u0001j�j9��-L�\u000e�9�V�}<��\f��\bԛ�f\u0003�&���\r@�%`\u001b�nw����I@�����\fu�!�5�ֶP��7\u0000���m��\u0013����Rl����\r�\u001dL\u001c��v:n�X����y\f���Pw�\u0001��\u0004l\u0003�`��w\u0003��6+'(n�/���0\u0015?az*�v�\u0002�j�M�\u0013u�d\u001d\u0002ؤ���H\u001b\u0013j���X��ay�y�h��6�,�\u001b��-\u0001�\u00005\u00030m�v�Eʸ�����2\u0003J�u;V��v\u001f�zS�l�ڼ�tu����\u0012�\rP\u0007�\u000e�x�b�]:�2�����\b�-�5��o\u0000�-\u0001�\u0004��\t��\u0016�h�����`BM���\u000es���Bm��l���Ĺ\u000f�f�M�[�z;�6@풮�j�\u0016n�f�x�t,\u0017\u0013����-ֱ;�OO'��Iۧ\u0002ig+�-�4�\u001f���\u0000lF}�\u001d斓9��\u0017N�\u0007��f��e?��ٺ���\u001a��\u0005\u001d���5�)3�\u0017���4��t���\u000e&&&�\u0016&g����&��\u001b��#�\u0018��c(iX<��~ˑ�_�F�ʘIzȍ�y]7������\"��sݝ�q �0\u001e�3u��m��\u001b\u0019���d�)4��\u0005ݖ�F�",
+      "timestamp": "2025-09-09T22:09:01.016Z"
+    },
+    {
+      "userAgent": "Fanatics iOS App",
+      "userAgentString": "FanaticsCollect/3.2.1 (iPhone; iOS 16.0; Scale/3.00)",
+      "url": "/",
+      "statusCode": 200,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:02 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "link": "</_next/static/media/241dfdee4e97a4de-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/24cdfb7d2a41e297-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/416c1d8fcfcdf503-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/90890788cd378a0d-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/99de02d46ce378b3-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+        "x-powered-by": "Next.js",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=8mIfoc1oKxxrx4P929wF8NybQJ.reRn6z81eBZMWQIk-1757455742-1.0.1.1-5TZG3vm9gYcXaxGm9laajQRS2IikarqOh7.NPL_jRijC9mtFNj0y0phZIt6M_tWHvVtWTOBdhIBpRj93o9Pdt8K6ancylMfd.KY5xy6I7Gw; path=/; expires=Tue, 09-Sep-25 22:39:02 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01f41e2927dd-SAN"
+      },
+      "contentLength": 189991,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003Խ[s㸖.�Wj�y�\u000b\u0000IY���\t˼H�\u0001�$.\u0002^&H�\u0012\u0005��RVZ\u0014�\u0004T�LD�9\u001d�;��#�C�#]iR\u0006����wY��D�3�o�o�e���o���������o��?>���|<��۟\u001f\u000f���Cc�����~���������������ocw�k��\\u�?�y�=,����>�c���zz?_~��}?^����߯\u0007}������\u001e��?;\u001c\u000f�Cm\u001f>��vBw\u0011{8\u000e��;���sg�k��o������\u001f�ϱ�.|\\�ˡ�c����#܁\u001ah�X�V�\u0000<>|����������?߽\u001f�\u00078�|��\u000f�������r;u��?�?�G��4��h��:\b�@7����ֺ�\u0016�m��\u0003�:������-\u0010��5ljσ��\u001d��\u001d�����\u000f�u�,\u0016M��:�[������߿�?|�]���\u0002�i�\u0000��p���M��\u001f�z���\u000f�_.����?��N��ݰ�y��k��O�;�\u001f/;v�?�[\u0006�h\u000f�asx}ΐ\u0014\u0013T�f�\u0019U���';�W\f��*�q5$�خN���\f�5���MVE��INUI��:ʩ:�Q\u001d�k9N���G3���0��E�\u0016��>h�z����\u0001@�M\u000e�qu|��}��>��|�����XC��\u000b�b\u0001\u0007<�U=��[��،����bc�G��X��4�Wcv�#C$�g9o<�b��b&H\u0002\u0012�\u0001\u0019��3�\b*�4�(\u0013C<˫\u0012��Rb��C\u001em\u000e���?�i����#\u0007��-\u001b�\u001f\u0012��\u000f�Zl[X���\u0003\u0003/\u001e�Y��z\u0005��&')\u0019�,l�B�)�F��\"�6����\u0016�l��\u000eu��v^\u0019\fz�ݮ�):\rT\\������\u001e�\u001e\u001bv��[,d��[�x�HY5\u0016 �$��ޓ&1��\u0010�\u0016a���\t�=Pf�qʮ*b\b������\u0018�b\u001b��c�Wh\tJ:�\rW���>�ᛂo��fR�ӛ�˕\u0002SA�<�H�,h{m,C:�\u0005�-C<�\u0001�5\u000bVMr�\fʹ��C�>\u0019\u00027�^g\u0017\u0005�F�\u000b;[\u00029�QE\u0005�\"\u0019�as.�\u0003N7W\u0012�h;c��J�G\"0$�\u0006a3x\u0004%C\u001e�n�}2c?�� �2ش߹���ZN��-\u001a��\t�zc�\u0016j(��\u0004��\u0010\u0007YѦ\u0001��ϩ(&��\u0013\u001e���(\u001ce��r$���\n��\u0002�\u0005\u0007e]�i�n\u0007��dVkb��yj^�Vi����Y)�\u0001GO>�\n�ho$m�\u001c�\u0003\u0016�W)\u0003ʬ\u0006,bO\n�a�v�\u0013t;^��\u0019�lV�\u0000d�\u0007b��<j}��o\\��;�k�m��(\u000f��\u0000Y�x�\t�Wr�5�^�$\u001b\u0018OH!���7�2i�I�bn��|��L�M�.��aZ�~��Da\u0010�rND�\u0016\u001e�'�\u001c�E\u000f�/,6�\u0011TZ\u0012\r\u0010\u001b>������\u001d䌯*�72\u0012K�2*b~.6��'@\u0004����d��d$\u0003F�U�vV)78���\u001e�@���\u0001!�R�\\\u000f\u0019��p�@�h��K�I9��j���튿�d�\n%ꭦ�H\u0016�/x��?M�&��dP���e�'\u0016��\u0018-$U�h\u0006^J~��8�~=��\u0003��QF\u000fyJz2n\u0010\u0019]�3���]��\u0005$���M;�\u0014O*�W,�)�O3I����,M�K�\r��q����З\\�g�\u0006���\u0013EPC^�V_q��3�\u0000��tsÂ�m\u001a�r�.*\u000e'6��\u0005�%eY�\r\u0012�<P~:УDd�WݠH1fT�6#�%����w�i\u0003\"b�(\u000b��\u0007L�I�8P\u001118�#6\u001b_Ҥ���S4\u0019TZ iZO\u001a�r겘\r�]�\u0017�A�\u0012)�MN��\\l~+��*�\u001e5�_*��\u0006�}�M���O-Ȭ���$\u0019�\u0001ƝH�6�fkWLdAgzS�O�z{�*�x\u0018�X\f�[��\u0003M2Ѧ�SC�u1����\\@���b���tS\u0011\u0019]\u001a�Df帹IQ@ez�G\u0012�H���>�2#�0����\r h\u0003�h\u00030�W��!�\u001eb\u001a_����\u001f��o@�2��\fU\t_���\u0016\\��w:�(\u000e�X3<��s\"\t�K�gΦ�\u001c�j\u0012�B��\u001dI�Ǜ��\u0016r[�*tY�[��L9�\u001fu\u001c��fG���/�H���<L\u0007�\u0011\u000bH�XL1�#\u00061��\u001d�\u0004�.ǆ��\u001b�{@Lq%s;a!\u00116���\u0019m�\u00069�H}k̶��1$%;�\u0017p*�ȶ�\u0010\u0012j�F����;]_��Zp):��J�\u0013\u001e,)�>\u0017l:�ib$�y.�\u0006,��,y��b��\u0018,�^�����\bW�[�\u0014\b~!�HH��%MF<\u000f�4�� 9�L#�\u001b@��/Ey \"3xV\u0003���\b\t�Y��\u0014>���Ԏ����!%�\u0000��U��q�������tm?>�@��5x\\ �a�\\���\u001f\u001f�ۜ�]����v��~�\u001f�x��\u001a���k�t\b,��\u0017\u000f�G�\u000eQ�-A�/��?��\u001a�K�.\u0016\bA�\u0005��eY�m\u001b�",
+      "timestamp": "2025-09-09T22:09:02.621Z"
+    },
+    {
+      "userAgent": "Fanatics iOS App",
+      "userAgentString": "FanaticsCollect/3.2.1 (iPhone; iOS 16.0; Scale/3.00)",
+      "url": "/search?q=pokemon",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:03 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=FohqUwWpq_KbEXKcZBtvfBexPqmGHr37TT3uPpqYGwA-1757455743-1.0.1.1-QY9RJ_hqlKyxInqdlOclrIyHtyZZ9zoLkZe1Tq7WxTUNB_7ZT4HmhdpfOpY.vkc4c0gXUxiwz_Nt1cuwtGQctBZadz17Cd1v1mYBV23IeGU; path=/; expires=Tue, 09-Sep-25 22:39:03 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca01fe29e127dd-SAN"
+      },
+      "contentLength": 4231,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��妽i�\u000f\b\f%�|�������\u001e�!Ӷ��M���\u001e���\b�\u0003�!\u0001\f1��������1�ea��jW}��FSW�HS\r@�ޫW\b톐Q�f4����<���;fY�`�m.\u0016��3�\u0018��8Lh&�\u00004��(�(s�ñ\u000b|\nZ.Q�\u0015�\u0011\r��\u0016\u0002�I�f5������\u0010\fp~�F\"\u0012��\u0001��\u0006���\u0018�0��\u0018�@\u0017�őD\u0018�\u001a\u0010�\rDt�R\b\\�&I\u00008��l�\u0015����\u001d���\u000e��;DC�\u0014|W��'�$�T�D�\u0004\u0016B�U\u0002�&B:��\"����g�X������\t��Ϻ�@`�����F�\u0007������'\u0019G�9�U�N�\"�OS�\u0013\u0011E�qF��\\L���8u��<��ޭ��O\u000b\u001c��\u0013\u0001�%x�&\t�Dv'*~�\u0011�\u0004�h?\u000e\u0002`٣�\u0004���#�Z�˟� \u0004�\u000f���\u000f?����\u001e\u0012�Fq$\u0018\r*$T��a��\\.;~��\u0015J;,\u000e�\u0012h�f\u001a��^�\u001d\u0003�����\n��\u0010��a7\u0007e�)�\u000b����h��i�e\u001b\u001dC\u0018��\u0013���[\u001a&;�8Na�[�5;I�\u0004�l�j�t�\u0002�~_�'E\u0006�@7�����\u001d��\u001a�iP��,`o]%�U\u0000{\u001d*W\u0011�3�\u0001]�8�Ld�!\"�\u001b\u0011�\u0007\n��\u001b��-�_�J��$�bd)\"\u001e/;�f� E.�p��y6�(+\u0003�<�\u0019hCM��*��R������V�*�H�쏭�$�\u000b�x�v>��\u0005w�\u0003���p���\u0007}�Q��\r��Qj{\f��������<bj�Mږ�U;j���-ڼ\r�k�a\u0001����@��V;���h���F�D\u00074\u0003eŬ\u0003\u0011w��\u0016v�׭}蘿\u0004�A�\f���I���o|�j�\u001b�֍�Ԥ\u001f�����˗\u000f\u001f[\u001d�\u0011w�#!��\u0010�y֬�\u0010��N�:�\u0007�M��ˬ�s�\u0012w�j\u0016�i��C��N�e\u001c��h7n]�h7�Nl�-BH�\u0015B׍w�\u0013|�����:h\f�t\u000e7��W�xn\u001a��\u0000�$\u0013��\u001drǭ/\n��D?�<��f/ۼ-�A[�����\u0010|Dn��@۩5w���5��\u0013Yc���\u0007\u001bCTy���L\u000b|����\u0014\u0016\u0010eÂ�l�����ۂ��G.⊹\u0004S�^M�T��)[\u001f��[i\b}�iY\n4���)[u\n\u001e \u0017\u0005�\u001b\u0017�܀�G�o\u0003���C\u0001\u001a�F�����g���Gn[e��\u001a\u000fݐ�iH#:�4wDa��-�w�\u0007�\u0014���\u0014��$��\u0011��4{\r~�B�S�/\u0011�y��:�P\u0015Um�(<�h׭h�Ə�c<1��e��\u001bwç�0z�\u0013`\t^��a\u0012G\n�nD\u0017\u001eM�\"��z,0�z�n8��ߧ�d�u\u000b��\b���z�ݮ���c�Z\u0001\u0015��v�\u0017�R�{:L�ڝ>���8w�\u0005��6��\t��C���ik�\u001c�?U�\f ����>bU�}��q䋩{�I6\u0003>\u000f@\u001b~��\u0004׆\u001aP����\u0016�\u001d�c]\u0007\u001f;��1�u@{\u0016\u0007���ZH�+��'�6��\u0003\\\u0005+4��w����U���|\u001eq��F��\u0007����G�6�A�\r5�\u0018=L\u0006�X\u0013}0$dH\b&�!!Z[��o��7Pʌfs�\r�8\u00015\u00125�\rK����\u0018�v��X1-\u0006�}��{?\u001e�=���9!�]v�m�a��D*_9Jm���M���#�eS��>����2f`bp`:����_���\u0004ƺ�-Ɔ�\u0004�I\nj��o�yK�6�ls��|�0����\t�쾁\t�9t�\u0003e�x\u0000�i\n���!��d\u0010z���$O�lo\u0007s�\t�Y\u001c�h�e\u001c�#Z��\u001b�洧s�\u0019���4�rN0�\u001eP]'���_\u001f[�SF;[ǖ�<��-�%`\u001b�&�is�30\u0019ؤ�tL�y:��\r��\u0004ԛ�f\u0003�:���7�zK�6@��+y\u0003\u001b\u0013�\u000e�[�ѿ\u0018��cP+\u0000�m�֍�\u0001�[\u0002�\u0001��9�9�X�\u0019%������v���\u001d�\u0018����~\n���P\u000f�\u0006Po\t�\u0006��r\b\u001f�\f\u001b=VMP�\"r�zǲ�\u0019�S\t��\u0015І�\u0017MO�\u0006��\t`���� =L��X�m\u0010����e�\t�u{��2�Atm\t�\u0006�\u0019�n閍\rR�%%�\u001e&��S\n��7̯��y\u0002�MQ�\tj�����_�zK�6@�\u000f���\u0003��^�$�\b�����\u0013P�dk�\u0007\u0003��\u0004l\u0013�\u000e'�\u001b\u0018ؠ�\u001a�꺍\t�\r��}f����ڨ@�\u0000����\u0010��P���\u0001��\u0000�\u0000�C\u0006�i:\u0006��z�|��\r\u0007\u0013�z��\rַ��OO'��Yۧ\u0012i{+�\r�<�\u001f��\u001c\u001f,F=�m�T�9�֟��\u000f�=�f#�~lc�qw��56s\u0003���\u00195�)�ٟ���h4��j;�mLtL�-L�)\r�+M�����#�\u0018��S�hX<��T���/Hmx��%=��P�ik�C�A^)\u0011�΅�N��\u0017�Z@\u0010O�yv��m\\�k9���d�>����ۖ�Z[��ԛ",
+      "timestamp": "2025-09-09T22:09:03.878Z"
+    },
+    {
+      "userAgent": "Fanatics iOS App",
+      "userAgentString": "FanaticsCollect/3.2.1 (iPhone; iOS 16.0; Scale/3.00)",
+      "url": "/auctions",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:05 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=bdqVTR9y7tJn5NnXWSayoYB99FP_f2mdisFYplDo.QU-1757455745-1.0.1.1-2Lo1vil9AeENo4wtbYWj_jvqCFrATNepwYUp_ePdaOhiLmI_n2gSPxR0fDrzByFYgEcuqG.TGz4bU6DDuY5isYun4EE0_gtuGXwEoHYGuOY; path=/; expires=Tue, 09-Sep-25 22:39:05 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca0205fac927dd-SAN"
+      },
+      "contentLength": 4238,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{s۶��?�\u0002eϭ�SA\u0002\u001f�(�tG���7��c�M{Ҍ\u0007\u0004�\u0012b�BPRT���\u000e��e[v�gn�\u001d{�H\u0004����\u0012\u0000�X�~w�f���\u0010M�0�{��>P@���A��\u0006�|��\u000b�vC�(bS�J�\\m�����V\u001d�,K0|�������\u0007x?\u000e\u0013�\t/\u0000\r�8� �\\�p�\u0002���KT\u0005sDCp���E\u0012��\u001a�B�l�r�\u000b\u00068�h\"\u0011�L�\u0000KF\u0003p�|\fj\u0018�a�~�s��H\"��J\r\b�\u0006\"�D)\u0004�F�$\u0000��36ŊPCR�\t��t�|�\u001d��i\n����\u0012��h�U\"�\u0004\u0016B�e\u0002�&B:��\"����'�X������\u0004��'ݾ'0o}H`H#��V\\UC냌��\u001c�D�d�ԧ����\"�8�^K�'�MA����\u001dϣ�s#jͧ\u0005�a�\u0000�\u0002<L�\u0004g\"�\u0015\u0015?ӈf�I�\u001f\u0007\u0001��AI��L�\u0011V-O�Ϧ\u0010\u0002·������UAt\u0007\tF�8\u0012�\u0006\u0015\u0012*�e��^,\u0016-���\n�-\u0016�m:cj�RC�R�ۣ`2�q\u0016_B�6��v��aٻk\f���)�\"��}�r�D�\u0010�)�D (����\u000e:�S�m\u0017�/n\fO�8�4[�Z<髐Z����\"�r�����Iێ�a\r�4X��Dho�%�e\u0000{-*�\u0011�S�\u0001]�8�Ld�>\"�;\u0011�I�F�5�m\u0017�/v%KE�Uq�\u0010\u0011�\u0017-N3zD��\"\u0017����,�B��A7�h\u0006Z_S!�\f�Ԯ��(�ڕ�J*�)�k{>��\u001c\"\u001e��\u000f�'��n�d\u001d \u001c<��^�fT'`��y��\u001e\u0003m�&5��?�rd�)��f�d�iS4y\u0013\u001aW��\u0002*�\t\r�G��j?.w�-��4s�F�@\u00074\u0003eŴ\u0005\u0011w��\u0012v��]��J!\t(��\u0019L���z\r�T�q�h�j�k%�N�E�]������7Z�#�tGB6\u0016!ĳ���C�\u001b;��h\u0016\u0004�M�.���eJ�u�^x��c6\u000b!�Z՗a\u0000�Y�q}�Y[9�ִ\b!�\u0017\b]�ޜ���۷�+����\u0019\\7v^l�I\u001cO\u0002��L��O�\u001d��(��&�A\u0017�a�2{��M�\f��qU�߻�=r�\u000f\u0005��Zs+��i�j���&YXx��G�\u0007�֤���h�Ha\u000eQ�/8>�Zٮ,/��i�|�\"��K0���N���񎼿��Ї���@3(�벱N�\u0003�\u0000}�57��P����\u001fQ���V��(�Y�\"呛V����}7dt\u0012҈N �\u001dQإ|�d\u000b�#�A%�o%4�(;�9�D$!�^�\u001f�P���K\u0004�_ ��.TEU\u0013�\n�՚�V4Q��1\u001e\u001b�������Y���6\u0003,�k�8L�Haߎ�ܣi[D\u001c>U�\u0002s�g����]�L\u0006\\�\u0000,�\u0000�:\u000e[���}�HMs�.�Xж[���j��b2��t\u0019u<ƹ�,�Զ��M F\u0017��KM[+��|V�S�lmgw{�U��A�Ǒ/&�&�\u0014�,\u0000���J\u0013\\�k@�N��[�w��u\u001d|�p�����\u001e�X\u001clOkj!M/!�g ���\u0005�\f�hP�\rZS�w\u0006���,�tՍ��{����G�6j����A�\u000e&=L����\u0013�'\u0004�n�\u0010��A�7P�\u001b(eF����Z��\u001a�Z��%���x\b�?ڋ|��\\�~ʷ~o���G��1#İˎ������H�G��߽�n�\u0018{ĳl�9؇�_pR�\fL\f\u000eL\u0007�7=��16\u001e�X׷���\u001f�8IA=-�Ga�\u0012�\r0ۜ�\u001d�2L��8}�=�k`B;\u000e��@\u00191��|�B( ���\b�\fB\u000fRt��1���`�<\u00023�C\u0011M���UD�uz�ќvt\u000e\u001d\u0003\u0013��FS�\t&�\u0003����:��c�|�hg��r�f�$��\u0004l\u0003��4mn{\u0006&=�\u0014��i:��ד��\u001e�zS�l�Z'�t�\u0001��\u0004l\u0003ԝ��׳1�i���\u0019����<\u0004�\u0002��\u0016j��\u0006��\u0012�\rPw}ϱ�\u001e�z�(9\u001d���Ķ�N����~=��cP�����\r@�%`\u001b�\u0006�!��3ltX�@q�|�\u0002��e�\u0013��\u0012h{+�\r�oZ��\r:�\u0012�:]ťA:�Pñ\f� ��\r���#F����e��@tm\t�\u0006�\u0019�n閍\rR�%%�\u000e&��S\n��5̯��y\u0004�MQ�\tj�����/A�%`\u001b��{]n�\u001e�F�r\u0012e����S�\u0011�M�5Խo\u0000�-\u0001�\u0004��\t�z\u00066h����ncBu��f��~�k�6*P6@�cb�\u0007p3Ժ�-@�\u001d`\u001b�vH�0M��\u001d]�SO�p0���\u0019�`]����t\u0012ϟ��T\"mo��A�����ŨG�͜j1'���%�\u0000��l6���66\u001b�����fn@׳<c�f�t��6�7�f4]ng��������9�a|���Z�{D\u001e��t\u0002\u0015\r�gQ�\n���\u0005�������\\���M�O�8�K%B�9W�I\u001a�\"X\t\b�I<�η��\u000br-�\u0013іl?\u0005ZS��ے\\kj\u001e�p�z3",
+      "timestamp": "2025-09-09T22:09:05.134Z"
+    },
+    {
+      "userAgent": "Fanatics iOS App",
+      "userAgentString": "FanaticsCollect/3.2.1 (iPhone; iOS 16.0; Scale/3.00)",
+      "url": "/cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:06 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=uT6P5rPn2gaeGIeA4rF1iDuQc6uLZloHr_mKEKu_pnM-1757455746-1.0.1.1-8Kh._s36zQcVjTpzhrHe0ksu_a.vXbdfbDMW78PmDwDacgDuxnUrg9uu9wMsyecQ5zuEitOJ7VljM4NtPJFPQRMm_LIppIUzV_q02LVeaa8; path=/; expires=Tue, 09-Sep-25 22:39:06 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca020ddba027dd-SAN"
+      },
+      "contentLength": 4230,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��妽i�\u000f\b\f%�|�������\u001e�!Ӷ��M���\u001e���\b�\u0003�!\u0001\f1��������1�ea��jW}��FSW�HS\r@�ޫW\b톐Q�f4����<���;fY�`�m.\u0016��3�\u0018��8Lh&�\u00004��(�(s�ñ\u000b|\nZ.Q�\u0015�\u0011\r��\u0016\u0002�I�f5������\u0010\fp~�F\"\u0012��\u0001��\u0006���\u0018�0��\u0018�@\u0017�őD\u0018�\u001a\u0010�\rDt�R\b\\�&I\u00008��l�\u0015����\u001d���\u000e��;DC�\u0014|W��'�$�T�D�\u0004\u0016B�U\u0002�&B:��\"����g�X������\t��Ϻ�@`�����F�\u0007������'\u0019G�9�U�N�\"�OS�\u0013\u0011E�qF��\\L���8u��<��ޭ��O\u000b\u001c��\u0013\u0001�%x�&\t�Dv'*~�\u0011�\u0004�h?\u000e\u0002`٣�\u0004���#�Z�˟� \u0004�\u000f���\u000f?����\u001e\u0012�Fq$\u0018\r*$T��a��\\.;~��\u0015J;,\u000e���\\j�[�{uw\bL�>��+�j#(��\u001c�����/h�R.�)�W���\u0018�8��\b\u0004E��0�A�q\n�݂�խ�I\u001a'�f+W��C\u0015O��\n<)2(\u0007���\u000f<���\u001e�0O�����z�(��\u0002��P��\u0018�\t\u000e�\u001a�\te\"[\r\u0011A߈P=Nh�ݠ�nA�jW�T$Y\u0015!K\u0011�x��4�Gt\u0005)rчk�γ\u0019DY\u0019n�\u0019�@\u001bj*\u0018Va<����\u001deU��UIE2el�'�]@���I~/��\u001f��\u0007��G<>�ی�\u0004l0=�R�c��=Ԥ����\u0011S\u0003lҶl��Q��gm��mh]�\u000e\u000b��'4���\u0006j|�ڙudF����3�%:�\u0019(+f\u001d��+ܵ�;�n�{'�$�\f�g0\u001dN�\r�}�U��h�n��&�\u0010}t�?_�|���(���\u001d\t�D�\u0010ϳfM�h�v\n��<\bn�L]f\u0005�˔��V��N��l\u001eB�u�/�\u0000�G�q��F��vb�m\u0011Bگ\u0010�n�;�����7�Ac��s�i����s�8�\u0006\u0010'�\b��;n}Q��&�Q\u0017�a�6{��m�\u000eڢu]�߇�#r�\u000f\u0005�N�����y���\u001a�,,<�\u0018�ʃ�VgZ��l�פ��(\u001b\u0016\u001c�d�lW�\u0017�\u00164E>r\u0011W�%���jB���M��@>�JC�SN�R�\u0019��M٪S�\u0000�(@߸��\u0006�=j|\u001b�\r�\u001d\n�\u00105\u001a��O�=�\\�<r�*S��x膌NC\u001a�)��#\n��\u000f�l��C<������\u0010e'1���$��k��\u0014���~���+��х��j�F�F�nE\u001b5~�\u001c�q�/��߸\u001b>����\u0000K�,\u000e�8R�w#��h�\u0015\u0011���c�9Գt����>e&\u0003�[\u0000�E��\u001d��c�v\u0005t�\u001es����ʶ���T��\u000e��v�Ϩ�1�\u001df\u0001���}n\u00021�Ч}j�Z1C�OU9\u0003�jk���X\u0015l��~\u001c�b�^k�̀�\u0003І\u001f�5���\u0006������}\u0007�X���\u000e�}Ll�\u001fО�����\u0016��\n��\t�\r��\u0000W�\n�������|M�n?�G����?􁮵���Q��z�hC� F\u000f�\u0001&�D\u001f\f\t\u0019\u0012�IH��� �\u001b(�\r�2��\\jC-N@�DMm�\u0012�_��>����e>VL�A~�/�ޏ�o�~�uN�a�\u001de���-��׍R\u001b~�x�.1��g��s�\u000f=�ऌ\u0019�\u0018\u001c�\u000e�oz��cl<���o���?�q���'�[a�\u0012�\r0ۜ�=�2L��8}�=�o`B{\u000e\u001d�@\u00191\u001e�|�B( }��9$\u0019�\u001e��!�S0����{\u0002f\u0016�\"�b\u0019��V��F�9��\u001cz\u0006&&/���\u0013L�\u0007T׉����ǖ����ֱ�<��K|m\t�\u0006��i���\fL\u00066)8\u001d�t���gCm=\u0001����\u0000�N0��\r��\u0012�\rP��J���ħ��Vf�/���\u0018�\n@c[�u�o\u0000���m���{�e\u000e(�{F����>&��w�}�$F�롶��z�5ԃ�\u0001�[\u0002�\u0001j�\u001c�\u0007>�F�U\u0013\u0014�ȟ��ޱ,~��T\u0002mo\u0005�a�E�\u0013�Ag}\u0002X��4H\u000f\u0013j8�a\u001b��`y��h��6�\f�o\u0010][\u0002�\u0001j\u0006�[�ec�TqII���������\r��v��zS�l�Z��tu����\u0012�\rP��>7��b�W9�2����i�\u0004�&�\u001a���\u0000�-\u0001�\u0004��\t�\u0006\u00066h����ncBu��f��~�k�6*P6@�cb?\u0004p3Ժ�w�z;�6@퐁a���{��/\u001f=}��Ħ�gp�������I�x���D��\ni�<\u000f�G�'�\u0007�Q�`�9�dN��'��\u0003`ϳ�ȳ\u001f��l��g}��܀�gyF�f�t�'m�/\u001a�i���d\u001b\u0013\u001d\u0013g\u000b�sJ��J�?��0��<\u0006)�\u0014*\u001a\u0016ϣ,\u0015 ��\u000bR\u001b^ksI\u000f�6�o���\u0010q�WJ��s���4�E�\u0016\u0010��x�]l{\u001b\u0017�Z�'�-پ\u000f��z",
+      "timestamp": "2025-09-09T22:09:06.371Z"
+    },
+    {
+      "userAgent": "Fanatics iOS App",
+      "userAgentString": "FanaticsCollect/3.2.1 (iPhone; iOS 16.0; Scale/3.00)",
+      "url": "/categories/trading-cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:07 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=P7d9yO9pj5CMnf9O7xUUI0L1QQRUWoMRQ6lAlCz0gks-1757455747-1.0.1.1-Oa4IE8mR_ejN8UGn3cZMdPYVOUCIaJhGxVS3tYCLQMrhXOX8pegJdmnfzfwdUouox36RwP8m40wX7vUBDc_JDqcqiwiFKKfZHv5xiKpwiOg; path=/; expires=Tue, 09-Sep-25 22:39:07 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca02159b3327dd-SAN"
+      },
+      "contentLength": 4219,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��妽i�\u000f\b\f%�\u0014�\u0012�\u0014��w�\u0003>dٖ]��=��c�6\u0012�y`~3$�!F��\u001c��\u001f�r:D\u00135��^��\u000f\u0014�x�\u001b\u0010\u001b�\u0001(�{�\n��)(�؄f\u0012�o�T�=co�1Q*���L�}�g|1���4�J\u0004\u0011\u0018�%��X����\u0007>\u0006#���\n�N�7�\u0002\u0016i��5���j�s�\u000b\u00068�h\"\u0011\u000b%h�%�\u0011�f>\u0006=�o0F?й`I,\u0011�{�\u0006�v#\u0011_�\f\"ߠi\u001a\u0001VɌM�&4�\u0014���\r�#�M�\u0018h�A�\u001b����4\u001e\u001b��5��\u0010�L�7Ĕ���\t+���ٶV2�bp8o�s\u0002M���>\u0010��>&pJc\u0011�T+����I&�f\u000eyU�S�H\u001a�L�T�1p�hВ�vS�d��N\u0010P޹\u0015���\u0002�i\u0012�\b�\u0002\u0002L�\u0014+��D�\u000f4�J0���(\u0002�\u001e�$\u0018U\"��ny.���\u0014p>�5���_\u0015D��`4Nb�hT!��\\����b�\nK��P�bɴͨ�q�\t�m�Q.�1f4��@�Rë��b2\u000b�J� ^\u001bTq{��0��7\u000e}A�B4�ע��\u0018�IF\u0003\u0011\t����t\u0007\u001d'\u0019�\u000b�W�@�Y�B������:���4\b�PP\u000et\u0013�\u001f8m�q=�a�Ek�\u0012�[wJ��`�E�2fx\"8�k���\t��#��\u0011S�С��A���ծd�HU\u0015G\u000b\u0011�d��T�#��\f��õAgj\u0002�*��\\Q\u0005F��!��&3i�|�ц�+Y�T$3���}��9�<�Z�����ݞ�:@8\u0004$཮˨I�\u0005;\b(u\u0003\u0006��CMz��p\u00163=�:m��\u00197Ys�\u0014MބƵl��JyB��_C��;��T4S���1,�\u0001U���� ��W����k�[\u0019�\u0011eP?���sZ���k�-\u001b�Z�q�%�����������FK{ğ�HP#1�d��k:D��S��gQt�d�R\u0015t>��n\u001a��;M���\u0014bժ�\f#�\u001f�ڭ�k��ʉ��C\bi�B���t�O޿��8\u0007���fp��y����I2� I����!w���ۚ�G]�����E�7e3j��u\u0015\u001f����?4h;kͭt&'���dW\u001b�i��Z\u001fU\u001e�7Z�\u0002�z��\"�9Ī_p|���][^|��\f��G\\3�`���\u0011\u001dk?�e�\u0003�x+\r�O9-ˀ*(�벱N�#�\b}�57��Q��ȯ��P���V��*�Y�#��V���C7(:�Ҙ�!�\u001dQإ}�e\u000b�\u001d�Q%%l�4�X�$\u001cZ\"����\u0010&\u0019�?5�\u0012��W\b��\u000bUQ�D��s��\u0015MT�qt�G�����~�n��=���\u0004X@�f�4Mb�};��fm\u0011s�\\=\u0016�G\u0003Ǵ�N7�Rf3�\u0003�8\u0004H���z�ݮ���c�Z%\u0015\u0013ޖ\u0013��zm�b2��u\u0019�\u0002ƹ�\u001c��uy�m V\u0017��Km�(����*'\u0000jm�w�\u0011����O�P��kC�\t�Y\u0004F�õ!��7�ڝn�tp�A\u0017�&���n��k�=�q8���4�4�\u0002�?����\u001e�*Z��,������\u001cV�糘�U7���3����=���\u000f\u001a�oX��`���\u0019��>!}B0��\t1�\u0006�|\u0003���R*�f��\u001bI\nz$z��x����1�m/�bZ\f��|i�~8|{�˯3B,��(���\u001el�T���F��Ǜf�q@\u0002ǥ��C�\u0005'e�����L�C;0�\u001ec�\t�Ms[�-�\t��\f�n��\n�`m���4섔aBm�\u0019\u0012\u001c�]\u000b\u0013��h/\u0004ʈ�\u0000��\f�\u0002��8�C�`\u001a@�\u001e�<\u0005��\u001d̝'`f�T��d��\"Z��\u001b��cr�X�ؼ4�rN0�\u0001P�$^��_\u001f[�SF{[ǖ�<��-�%`\u001b�&��r7�0鹤��l�{:��\r��\u0004ԛ�f\u0003�&���7�zK�6@��jy=\u0017����[�ѿ\u0018��cPk\u0000�m�6��\u0001�[\u0002�\u0001�n\u0018x�ݣ��X%�\u0017v���n��v=�Xݯ��}\n���P��\u0006Po\t�\u0006���\b�\f[\u001dVMP�!r�z�T��\u0004��\nh����'�ɺ\u0004�IWqi�\u000e&��\u001c˵\b�����Ѧ�mtY�� ��\u0004l\u0003�\f�tL��\u0016�⒒N\u0007\u0013�\f)\u0005��Z��C�=\u0001����\u0004�y����/A�%`\u001b�\u000e{]n�\u001e�V�r\u0012e����S�\t�m�5Խ�\u0001�[\u0002�\tj�\u0013\u001e�,l�j\rAM�ń�\u00167�.s���BmU�l����}\b�f�M��\u0000�v�m��#=˶=\u000bwL�[>z����K���\u0016�:�����d���S���\u0015�\u0016y\u001eҏ�O^\b\u000e�\u0001�.�ɜp�ON�\u0007��g��g?��ٺ���\u001a��\u0005��\t�5�)3ٟ���h<��r;�]LLL�-L�)-�+M��4��G�1HI�PѰd\u0016+��#� ���1���\u001b}�i�\u000e1\u0007y�Eh;�;͒PD+\u0001Q2Nf�b�۸ 7r>\u0011o��}d4�\u000b�-ɍ�\u0011P\t��7SJ",
+      "timestamp": "2025-09-09T22:09:07.641Z"
+    },
+    {
+      "userAgent": "Fanatics Android App",
+      "userAgentString": "FanaticsCollect/3.2.1 (Android 12; Samsung SM-G991B)",
+      "url": "/",
+      "statusCode": 200,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:09 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "link": "</_next/static/media/241dfdee4e97a4de-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/24cdfb7d2a41e297-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/416c1d8fcfcdf503-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/90890788cd378a0d-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/99de02d46ce378b3-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+        "x-powered-by": "Next.js",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=Fji93KSBTDc2KwgNnT_0Fl3_aVmB8JiD.LRtCdKTUJM-1757455749-1.0.1.1-qiDjEO1r.J0n.3x239qY2VF5cd1.K4LZN29cKHb64w0dHSUciqdcI0Qy70lotFITGYyRqcWoAXiZUMpUIwPIuzqXAMbqqfIA4okaPEbnAkE; path=/; expires=Tue, 09-Sep-25 22:39:09 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca021d8c9127dd-SAN"
+      },
+      "contentLength": 190307,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003Խ]s㸖-�Wj�y\\\u0005��,���\t���h\u00034I|\bx� \tZ\u0014\b�JYiQ��\u0013P�;\u0011w�vLw�#�Ke�3MJ ����k��o�G�?S�\u0016�֟G��������\u000f��~�\u000e������������G����k��ol��o�>�\u000f��\u001f������o}W����;׿�}}���_��<�?,��\u001f?>�c���_��r�8����8������/{}����׾�\u001en����?����>|������\"v\u0018~;u��ߏ��~�����S�����߇n:��y����ϱ�����\u001d�@��\u0012��\u0007�����\u001f\u001f����?������>��������\u000f���o������t��zǦ\u0001�F��{\u0007A\u0013����m��n��v�:@����w�<o�P��aS{\u001e|��������s�������h\u0016��n�;�[�����������ݣ�\u001exM�\u0005��\u000f���o�~?ֻ�~��|>~��?��{;]�އ��G��Gk?~������ǡ;��]3 E������s�����6�ͨ�vξء�`��Vi��!\u0019�vu�tub��i��m�*�Mr�J\nWo�AN�>��_�q\u0002�U?�A�l�q7�ϒ��NwAk�G�|T\u000e\u0000�m��\u000e��\u001b\u0005�3\u001c�����\u0005|���\u001a�\u001f\\�\u0014\u000b8����\rߪ��f���n\u0016\u001b�=\"$Ă]�a�\u001a��\u001c\u0019\"Q<�y�\u0014��\u00143A\u0012�(\u000e�ȍ��DPi��F�\u0018�Y^��}�\u0012K\f\u001f�h�/���\u0016��j=��)ܲ!�!A��`/Ŷ�՚+<0�⑟\u0005̪W�_hr�����f/$��n\u0004^.�K��\bkQ�v\u001e��P'=l������Ꙣ�@�YJK�_^�1�aW)��B\u0006��E�'��Uc\u0001�H\"<�<i\u0012�h\u000b1m\u0011\u0016xΩ�0�\u0001e\u0006\u001f��\"�pZZIٕ��7.��>d}������p�J\u000f�\u000b\u001b�)���m&�=���\\)0\u0015��S��ς���2�#^\u0010��2��\u001a@Y�`�$Gʠ��8���!p\u0013�uvV�~h����\u0012�Y�**\u0010\u0016ɀ\r�s��q����wz��36���|$\u0002C2o\u00106�GP2�Q�\u0016�'3���\u000e\u0012)�M��;;I��D\u000f٢�ګ�7�j���/\u000eI@\u000f\fq�\u0015m\u001apj���b�[>�Q\u000b\n��Q��,Gb<O�P*p\\pP�\u0005�\u0016�v�(Mf�&�\u001b����k��w���JQ\u000e8z�qT\u0000E{#i\u000b�챐�J\u0019Pf5`\u0011{R`\u000f\u001b�˟���r��xf��\u0005 3�\u0013���Q�T~�b\u001f>�^�m�N\u0007�?�\u0005�j�\u0013N���C�y�R&��xB\n�E\u0015\u0007�Y�I�N*\u0016s#���e*l2w\u0011',\u000e�R��>$\n� �s\"���8?��@�z8߱��JPiI4@l������s��3��\u0014_�H,\u0011ʨ����@B�\u0000\u0011���Ғq㓑\f\u0018�\u0017i�Y����;\u0017{\u001c\u0002\tۯ\u0006��J�s=d$�Å\u0002Y��z.y&����'�+���u+�����\u0003Y�[��\u0011�\u001b�4q��:�A\r��9�XT�b��T�\u0019x)�\u0011����0B�xVF\u0019=�)�ɸAdt�[�x�\u0003v��\u0016�D�+6�LR<�T^�(��>�$%�\u001c��4�/Q6H���ŶZVB�s��Y\u001a�²�N\u0014A\ry�Z}���\u000b�\u0000\u0003����\u0015\u000bҷi�˭:�8��\u0010�\u0017�G��e�7H�rO�qO\u000f\u0012��_u�\"ŘQ�ڌT笊�_�٦\r����, �\u001f0m'9�@E�����l|I�^�'O�dPi��i=i\u0018ʩ�b6 w�^${�J��69\u001d�s���\u0018���zԬ��N\u001b���6�:F�� �\u0006S��d�\u0007\u0018w\"�ڨ���]1�\u0005��M1?�����<�aXb1����\u000e4�D��/\ru��|�S\u0001����b��UEdti�\u0012����*E\u0001��m\u001eI�#��\u0002�8ʌ�ÔS��7��\ṛ\r�\b_0R�D;�i|!�~\u0010*�\u0001U� �2T%|�B.[p�6��8(c���\u0002Ή$��.)�9�rr�I�\u000b��gv Y\u001eo&F[�my��yUny�\u00132��~�q\u0018+�\u001d\u0018㿾�#�*z�0\u001d\u0000F, ib1� �\u0018�\b\u0003w\u0018\u0012\u0014�\u001c\u001b**���\u00001Ņ�턅Dؔ�[�g�ţ\u001a��\"��1۪�ǐ��(_���\"ے}H�U\u001bu\r�W�xy\u0005\u0013j���\u0018;)\u0011Ox����T��T�������\u001a�����\u0005ꊍ�b�\u0014{}*\"~�#\\1o�R xG\u0018��\u00189K��x\u001e|i6\u0001Arv�FN7�D\u001b_�rODf�\u0006\u0012%\u0003\u0011\u0012`��)|By/�\u001d���)CJ�\u0001\u0016��<��|��g�u��}��~~��B_k�@@�z�������m����twh��~w��_�x��\u001a��G\u0007�t\b,��\u0017\u000f�G�\u000eQ�-A�/��?��\u001a�K�.\u0016\bA�\u0005��eY�m\u001b�\u0016\u0006��y_6�?���{���",
+      "timestamp": "2025-09-09T22:09:09.075Z"
+    },
+    {
+      "userAgent": "Fanatics Android App",
+      "userAgentString": "FanaticsCollect/3.2.1 (Android 12; Samsung SM-G991B)",
+      "url": "/search?q=pokemon",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:10 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=4kkPhPnLNHi.RWKaKf.jQUpyzpQ8J3tUNvYbO0A.ZMI-1757455750-1.0.1.1-XkZILUzwtC3XcMmPJQVcfmO0VmaZqfcPkx5WdCUuxc2coRtxKHPgk1Sq9oq2Zm1N6P2CqrtRQXgo2IRliabvVZUKJtbn5.0v_5iSaHTmhFc; path=/; expires=Tue, 09-Sep-25 22:39:10 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca02267d5e27dd-SAN"
+      },
+      "contentLength": 4239,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f\")�t�b��7��妽i�\u000f\b\f%�|�������\u001e�!˶��M���\u001e���\b�\u0003�!\u0001\f1���������\u0011��Q��jW}���\u0013O�XS\r@�ޫW\b�F�SĦ4��{�,\u000f����:�y�b�m&��3�\u0018��$Ji.�\u00104Ē8�8��Ñ\u0007|\u0002Z!Q���1����\u0002\u0016i��k�\u000b���a.\u0018�⢍D,rAC,\u0019\r�Ӌ1�a|�1���\u0005Kb�0ޫ4 �\u001b��\ne\u0010z\u001aM�\u0010p���\u0014+B\rI�;HO�]�Yw���\u0019\u0004�ֽO�I�V�\\\u0013X\nɗ)x���\u0004����j\u001a�Mc%3(\u0007���?'P�?��\u0003�E�c\u0002#\u001a�\u0000d��\u001b:�d\u0012o�W\u0015:\u0015��\u0001�\u0004NE\u001c\u0003�9�;r>Qn\n������}�{���|Z�\u0018%�\b\u0001/��4Mq.�;Q�\u0003�i.�D�I\u0018\u0002�\u001f�$\u0018�E\u0012c��\\�|\n\u0011�b�k��\b��:��!�h�ĂѰFBE�\u001ct��Ţ\u0013TZY��Ò�+�fl��n%���10�\u00058O� ^\u001bBy3�\u0016���7\u0005}A�r\u0011O�>͸l�c����\"\u0014\u0014}K�t\u0007\u001d'\u0019�vK�W�f�Y�B�/=-�\fT@��W�K�C5�M��m����Y\u0016��\u0016�����2��\u000e�˘����Q�R&��\u0000\u0011��\u0003���\r��įv%�D��1�\u00101O\u0016\u001dNszD��!\u000f}���,�B�W\u0001w��\u001c����a\u0019%3��|�QfukY�T$3���|��9�<�:����{N�d= \u001c|��c3�\u0013���}Jm����P�\u001a3��L\r�I۲�l�m֞�E���u-;,�R��\b��\u001a���rgڑ9�rO��\u0018\u0016�栬�v ��V���zk�;\u0019�!e�<���s�l��\u001b�-[�F�u�$5����������VGyě�H��\"�d�7�t�fk�T\u001d�����e^�yL��i5K�y�f\u0011�y��2\nA}�\u001b��o�\u001b+'6�\u0016!��\n��ƻ�1>y��xc\u001d4\u0006y6���Ϋm<7I�I\bI��H�\u000e��V\u0017���D?�\"�Vf/ڼ-�a[�����\u0010~D^�@�Yk�39m^�&��$�J\u000f6\u0006��`�ՙ��6[�\u0015)�!�\u0007%�'٨ڕ��9�P�<�\u0015s\u0005�|�\u001cӉ�sS�>����\u0010�Tв\fh\u000e\u0015yS��)x�<\u0014�o<��\u0006�=j|\u001bz\r�\u001d\n�\u00005\u001a��O�=�<�<r�*3��x膜N\"\u001a�\td�#J��\u000f�l��C<��\u0004��f\u0010�'\t���%d�k\b�\f���A���+�Vх�j�F�F{݊6j�8>�c��_��߸\u001b>k\u000f��=\u0001\u0016�wY\u0012�I����t�Ӭ+b\u000e���\u0002s�o��s\u0002�2�\u0001�-\u0000�\"@\u001c�e�1w�\u0006:W��z\u0005TNf�M^LJ���0Yhw\u001dF]�q�2\u000b(�m\u001ep\u0013��C\u001dj�Z9G\u0016OU9\u0005��Vuw\u001f�*�>��$\u000e�Ļ�$�\u0002���\r>\\k�k\u0003\r��s\u001c�\u000b\u000e�u\b���\u0000\u0013[\u000f��gq�}��E4���x\u0002i\u0003�=�U�D�Yqgim�X\u0015���g1��n�\u000f��km��{�m�\u001e4�@3��ä��5��\u0003B\u0006�`�\f\b��\u001a�|\u0003���R�4�Im�%)����mP��k���\u0010���(Ɗi9��e������/��\b1쪣j�\u000fs�%R��Qj�\u000f\u001fo�\u0015�>�-��.\u000e�\u0017���1\u0003\u0013�\u0003��\fL_�z��'0��m16�'0N3P;�+�[��\u0001f�Ӡ\u0017P�\t5\u0015g@�o;\u0006&���~\u0000�\u0011�\u0001̧\u0019D\u0002��8�C�C�C�\u001e�<\u0005��\u001d̽'`fI$�\t�I��h5Oo4�ӞΡg`b��h�9���@u��~�}l�O\u0019�n\u001d[�����ז�m�����m���o���5M���z6��\u0013Po��\rP�\u0004���\u0000�-\u0001�\u0000u�Q��6&\u0001�׷2�1ԽǠV\u0000\u001a�B�\u001b\u0003��\u0004l\u0003�N໖٧X�\u0019\u0015�\u001b�\u001cLl�q\u001d�5��|=��SP�����7�zK�6@\r�Kx?`��z��\u0016��\u0013�;�'Ϙ�*����6̿hz�6��!�u��K��0��k\u0019�A\u0018�\u000b���\u0013F����e����\u0012�\rP3\u0000��-\u001b\u001b��KJz=L\f=�\u0014\\�1̯��}\u0002�MQ�\tj�����_�zK�6@\u001d�\u001dn�>�F�v\u0012e����S�\t�M�5���\u0001�[\u0002�\tj�\u0013��\rl�z\rAu�Ƅ�\u0006�M��A�k�6jP6@�cb?\u0004p3Ժ�w�z;�6@풾a���{��T�\u001e�p1���\u001b�`��l?=�$�gm�*����6��~t~r\u0003�\u0018�\t��[O�[rJ>\u0000�<��\"������}����\rp|�7�l�Lg�����f��L�1�1q�0��4��4�c[�\n��c��N��a�,�3\u0001�x� ���6���k\u0003����\u000e1\u0007y�D(;�;͒@�+\u0001a2If�Ŷ�qI�\u0015|\"ޒ��Pk��o[�kmͧ\u0012�So",
+      "timestamp": "2025-09-09T22:09:10.359Z"
+    },
+    {
+      "userAgent": "Fanatics Android App",
+      "userAgentString": "FanaticsCollect/3.2.1 (Android 12; Samsung SM-G991B)",
+      "url": "/auctions",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:11 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=SrgYkwhg61RxE7y3Q9LKAL2HHd3tSb2m89KBPhJhIng-1757455751-1.0.1.1-cLTvw835NuZoPZB3Kk6b7eICilbkZENV_Yg6lnyzrizh5wwHRWEoxQlPlKUUYzcsxpLjljqYETgozI6V7MdIGze9K1RZQ7Ao.CrhaP7n7HE; path=/; expires=Tue, 09-Sep-25 22:39:11 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca022e7e1627dd-SAN"
+      },
+      "contentLength": 4233,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{s۶��?�\u0002eϭ�SA\u0002)��d�\u001d�V\u001b�؎�%7�I3\u001e\u0010XJ��\nAIQ\u001d�;�C�mٕ����w�i#\u0011�\u0007��K\u0000\\b��������#4K\u0003�Ů�@>\r��\u0006��\u001a��\u0017/\u0010�\r ���h\"!u�y�a[�[w��4��q.\u0016��\u001b>\u001f��(�i*\\\u001f4Ģ0�0u�Ñ\u0003|\nZ&Q���!\r��\u0016\u0002�q��\u0015������\u0010\fpv�D\"\u0014��>������\u0018�0��\u0018�L\u0017�E�D\u0018�\u0015\u001a\u0010��Ex�\u0012�\u001d�Ʊ\u000f8��l�\u0015����\u0013���6���DC�\u0004<Gk�%l��T+EV\u0004�B�U\f�&\u0002:��\",�v�O\u001dc-��\u0007���/\u0013�[�t����!�\u0001\r�\u00072]s�\r�\u000f2\n7s��\u0002��ER�&\u0002�\"\f�㔺-��*7�Q�h�w]���Os\u001c��\u0015>�%���1NEz+*~�!M\u0005�h?�}`郒\u0004���B�Z�ʟ� \u0000�\r�������At\u0007\tF�(\u0014��%\u0012*���^.�-���r�-\u0016\u0005m:gj�RC�B�ۣ`2�p\u001a]BX\u0019D~;�f���5\u0006}F��r\u0011N�>M�l�c\b����\u0017\u0014�@�x\u0007\u001dG\t�s�\u00177��I\u0014C��\u001c-�\u000eTHU�,p�H�\u0018�&��pҶ�zX�<�+�\b퍻d��a�E�*dx&8�+\u0014Ŕ�t5@\u0004}'\u00025��0�F���Ůd���2N�\"�Ѳ�iJ��\n\u0012�wW\u001a��3\b�\"��)MA\u001bh*$VA4����\u001deX��UJE2am�\u0007�^@ȣ��A�$���wX\u0017\b\u0007���߳\u0018�\tX�q]J-���w_�\u001aݛ�\u00192uڔ�U3l��)��\t�+�b>��\u0006�SC�\u001fW;��Li�:�?CX�\u0003���bւ�;�Y\u000b���T��\u0012�}ʠ~\u0006�ѧ�^C?�~\\5��Z�ZI��w�{G��������3ۑ�ND\u0000�<�Wt�zc'W\u001d�}����e��9L��n�s�4y��\u0001�i��2�A}4k7��5kk'֚&!��\u0002��ڛ�\t>y��xe\u001e�\u0006i2���΋m<7���\u000fQ��@�\t���\u0017��*�\u001ftQ\u0016fk��MޔM�)\u001aWe����#'�P��T�[�\\��W�Ŭ6M�܃�\u0001*=Xo��9��FsM\n\u000b\b�A��A֊vey�mA\u0013�!\u0007q�\\�)_�&t��\\��w���4�>d�,\u0001�BA^��*\u0005���|���*n@?��\u000f�SC?\"\u001f\rP�V���߳�A�#7�2Qm��nH�4�!�B�9\"�K�@�\u0016�G��R�׊i\u0002az\u0012qh�PB��\u0004/J����\u0015\b\\�@h\u001d]���&�垫5�V4Q��1�\u0018�[�����LFO�\u0001��Y\u0014�Q��o�t�Ҥ-B\u000e��i���5u����\u001ee\u001d\u0006\\7\u0001L�\u0000��6����>h���r\u0017�/h�-`LJ��i1�i�{��.��f&PjY��\u001d F\u000fz�G;����٬*g\u0000iegw{�U��A�G�'�Ε&�\f��\u0007m��J\u0013\\\u001bh@;�^O7�gC\u000f�:x�文��{}�59X���\u0002�\\B��@�@{\u000bp��0_\u001b����\f���y��\u001b}��u��ew��m�D�\r4�\u0018]L���\u0013�? d@\b&�\u0001!ZS��o��7Pʔ�s�\r�(\u00065\u0012��\r\n��h��\u0010����Xq����m�ގF��~�cN�a\u0015\u001dE�u�[\"��\u001e�6x���Y`�\u0012״�kc\u000f�^�I\u001930180\u001d:^�տ\u001ec�\u0011�u}[�\r�\u0011��\u0004���\u0014�-��\u0000�ũ��(Äv\u0014�G�k�\fLhצ}\u000f(#�=�O\u0013\b\u0004$�q\u001eC�B�B��<\u0006��\u001d��G`fQ �)�Q��h�No4�ӮΡk`��єs�\tu��:��.����<f��ul�O3�?\u0012_[\u0002�\u0001j��X�r\rL�\u0016�9�N�~<��\f��\bԛ�f\u0003�:���\r@�%`\u001b��������G�����\fu�!�\u0015�ƶP��7\u0000���m��繶��S�w�����=L,�g�zv�\u0018����z\f���P��\u0001��\u0004l\u0003�`ڄ�=��.+\u0017(n�/\\�ް4z��T\u0000mm\u0005�����'j��z\u0004�N�qi�.&԰M�2\b������Ѻ�mt\u0019�7\u0010][\u0002�\u0001j\u0006���ia��qII����{��m����Cm?\u0002����\u0004�~{v�����\u0012�\rP{�\u001e7x�b�[:�2�����\b�\u001d�5��o\u0000�-\u0001�\u0004��\tw�\u00066h����naBu��\u001e����Bm��l�Z�ĺ\u000f�f�u�[�z;�6@m�����\u0006��z��zz���E]��\u0006뙽헧�h�ǧ\u0002ik+�\r�4�\u001f\\�l\u000fLF]�-f��9��\u0017.�\u0007��f��e?��ٸ���56s\u0003z��\u001a\u0015�)��\u0017���4��d���\u0016&:&�\u0016&g���&�ojA�\u0011y\fR�)�4,��i\"@f�\u0017�6���\u001erm�_7�?!� /�\be�Bu�I�\t-����<=��6�ɵ�O�[���kM�\u0002nKr��",
+      "timestamp": "2025-09-09T22:09:11.634Z"
+    },
+    {
+      "userAgent": "Fanatics Android App",
+      "userAgentString": "FanaticsCollect/3.2.1 (Android 12; Samsung SM-G991B)",
+      "url": "/cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:13 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=IUxNMHRUGNgIq39.fZ15W1xsyqj9O2pqWkKJy51wKR0-1757455753-1.0.1.1-_o7OCdYYmAaXK1rjXDte8EehIwXuNEFBepBfSqFAEB6evaTp4gkFo9TRhmX2nIlNlkyBO7KSFmVhQe.i8Iu6FY545gqUyTGxb2zmU3sMa2s; path=/; expires=Tue, 09-Sep-25 22:39:13 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca023678b427dd-SAN"
+      },
+      "contentLength": 4215,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f\")�t�b��7��妽i�\u000f\b\f%�|�������\u001e�!˶��M���\u001e���\b�\u0003�!\u0001\f1���������\u0011��Q��jW}���\u0013O�XS\r@�ޫW\b�F�SĦ4��{�,\u000f����:�y�b�m&��3�\u0018��$Ji.�\u00104Ē8�8��Ñ\u0007|\u0002Z!Q���1����\u0002\u0016i��k�\u000b���a.\u0018�⢍D,rAC,\u0019\r�Ӌ1�a|�1���\u0005Kb�0ޫ4 �\u001b��\ne\u0010z\u001aM�\u0010p���\u0014+B\rI�;HO�]�Yw���\u0019\u0004�ֽO�I�V�\\\u0013X\nɗ)x���\u0004����j\u001a�Mc%3(\u0007���?'P�?��\u0003�E�c\u0002#\u001a�\u0000d��\u001b:�d\u0012o�W\u0015:\u0015��\u0001�\u0004NE\u001c\u0003�9�;r>Qn\n������}�{���|Z�\u0018%�\b\u0001/��4Mq.�;Q�\u0003�i.�D�I\u0018\u0002�\u001f�$\u0018�E\u0012c��\\�|\n\u0011�b�k��\b��:��!�h�ĂѰFBE�\u001ct��Ţ\u0013TZY��Ò��hƥ����Ww��d\u0016�<��xm\u0004彰[`�w�\u0012�\u0005�3�E<A�Jt\u001b\u001dC�d�\u0017���[\u001a�;�8�`�[򿺵:͒\u0014�|�i�d��i��\u0002_�\u001c��n��\u0003\u000fm;��5̲pM�sp�u�̗!�u�\\�\fO\u0005\u0007t���2�/\u0007��oD�\u001e'4�o�n�$~�+Y&Ҽ����y��p��#��\fy�õFg�\u0014�\n���\r4\u0015\f�(�I��㎲�[˪�\"��?6���!�I��$�\u0017�s�&�\u0001��\u0013��\u001d�Q��\r��Sj�\f��������,fj�Mږ�e;n���-ڼ\r�k�a!��F��@��;ӎ�i�{�ư@\u00074\u0007eŴ\u00031���\u0012v��[��� \r)��\u0019LF��f\u0003}��n�j7\u001a�\u001b%�I?�\u001f=�ϗ/\u001f>�:�#�tGB>\u0016\u0011$����C4[;��x\u0016�7m�.��cJ�M�Yz��\u00136� �;��Q\b�ݸu}��X9�Ѷ\b!�W\b]7ޝ������\u001b�1ȳ\u0019ܴv^m�I�LBH�\\D�w(\u001c��(��&�Q\u0017\u0015a�2{��m�\u000eۢu]�߇�#�\u000f\u0005��Zs'��i�z5�5&yTz�1@�\u0007��Τķ�j�Ha\u000eq>(9>�Fծ,/��i�\u0002�!��+0���N������|���Ч��e@s�ț��N�C�\u0010}�57��Q���k��P�\u0006�Ѩ�*�Y�!��V����C7�t\u0012јN +\u001cQڥ|�d\u000b�\u001d�a-%�4�8?I8tD,!�_C�d���\u000e*\u0004n^!��.TGU\u001b5J�5��V�Q���1\u001e\u001b��������Y{\u0018=�\t�\u0000�˒(Mb�}7�s�f]\u0011s�\\?\u0016�K}K7ܞ\u00138��\f�n\u0001X\u0016\u0001�.[���\u0015йz���r*�r�R�z:L\u0016�]�Q�g���\u0002Jm�\u0007�\u0004b8�P���Vΐ�SUN\u0001�5��G�\n�Or?�\u00031�5ɦ�g!h�\u000fך��@\u0003j�\u001cG�p���u\u001d\u0002�r;��փ>�Y\u001cl_kk\u0011ͮ /�@�@{\u000fp\u0015.�pV�YZ[+�\u0004���Y��\u001b�C��Z[+�\u001euۨ\u0007�6�\fb�0�cb�����\u0001!�8\u0003B��\u00061�@�o��9�gR\u001bhI\nj$jj\u001bTx����1��.��bZ\u000e��b��~4z{�˯3B\f�����\u001cn�T�n����Ǜv��O|˦��\u0003�\u0005%'e�����t0\u0003�׿\u001ec�\t�u}[�\r�\t��\f�>��\n�`m���4�\u0005�aBM�\u0019\u0010�ێ�\t���\u001f\u0000e�x\u0000�i\u0006���!���\u0010����$O�lo\u0007s�\t�Y\u0012�x�e��\"Z��\u001b�洧s�\u0019���2�rN0�>P]'���_\u001f[�SF�[ǖ�<��-�%`\u001b�&�is�70�ۤ�tM�}:��\r��\u0004ԛ�f\u0003�:���7�zK�6@�s����I@�����_\fu�1�\u0015�ƶP���\u0000�-\u0001�\u0000�\u0013��e�)�{F��\u0006=\u0007\u0013�v\\�qMb8_\u000f��\u0014������\r��\u0012�\rP��\u0012�\u000f\u00186z����E��\u0004����3��\nh{+�\r�/���\r:s\b`���� =L��Z�m\u0010�����Ѻ�mt\u0019�� ��\u0004l\u0003�\f@�t��\u0006�㒒^\u000f\u0013C\u000f(\u0005�u\f��v��zS�l�Z��tu����\u0012�\rP\u0007}�\u001b�O�ѫ�D\u0019a���\u0002j�l\ru�o\u0000���m����}\u0003\u001b�^CP]�1���u�av��Z��\u001a�\rP��\u000f\u0001�\f�n�\u001d��\u000e�\rP��o��k���;գ�1\\Ll��\u00067�c9�OO'��Yۧ\ni{+�\r�<�\u001f���\u0000,F}�m�֓9�֟��\u000f�=�f��~lc�qw��56s\u0003\u001c��5�)�ٟ���h<��r;�mLtL�-L.(\r�+M��֢�#�\u0018��\u0013�iX2��L�,�/Hmp��$=��@�ik�C�A^)\u0011�ι�N�$\u0010�J@�L�Y~��m\\�k\u0005���d�>����ۖ�Z[��ԛ)%�\u0003?\u0007����\rLE7�E���\u0011}�]�",
+      "timestamp": "2025-09-09T22:09:13.009Z"
+    },
+    {
+      "userAgent": "Fanatics Android App",
+      "userAgentString": "FanaticsCollect/3.2.1 (Android 12; Samsung SM-G991B)",
+      "url": "/categories/trading-cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:14 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=HD.KcrDzAVWn5u1ZOWqYMl0RkUlHyvdCpqvxOlUiog0-1757455754-1.0.1.1-uP8MPymDX91jVfSPlMLErvRuCZQWrmDxTuwNVmlDHrG.WoPs7JOg7sZ0o7fD0tG.AdLRbvwodVQfYohAgloEQG_uCwl.msfLBUQPdCLtXZg; path=/; expires=Tue, 09-Sep-25 22:39:14 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca023f1b5c27dd-SAN"
+      },
+      "contentLength": 4221,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��妽i�\u000f\b\f%�\u0014�\u0012�\u0014��w�\u0003>dٖ]��=��c�6\u0012�y`~3$�!F��\u001c��\u001f�r:D\u00135��^��\u000f\u0014�x�\u001b\u0010\u001b�\u0001(�{�\n��)(�؄f\u0012�o�T�=co�1Q*���L�}�g|1���4�J\u0004\u0011\u0018�%��X����\u0007>\u0006#���\n�N�7�\u0002\u0016i��5���j�s�\u000b\u00068�h\"\u0011\u000b%h�%�\u0011�f>\u0006=�o0F?й`I,\u0011�{�\u0006�v#\u0011_�\f\"ߠi\u001a\u0001VɌM�&4�\u0014���\r�#�M�\u0018h�A�\u001b����4\u001e\u001b��5��\u0010�L�7Ĕ���\t+���ٶV2�bp8o�s\u0002M���>\u0010��>&pJc\u0011�T+����I&�f\u000eyU�S�H\u001a�L�T�1p�hВ�vS�d��N\u0010P޹\u0015���\u0002�i\u0012�\b�\u0002\u0002L�\u0014+��D�\u000f4�J0���(\u0002�\u001e�$\u0018U\"��ny.���\u0014p>�5���_\u0015D��`4Nb�hT!��\\����b�\nK��P�bɴͨ�q�\t�m�Q.�1f4��@�Rë��b2\u000b�J� ^\u001bTq{��0��7\u000e}A�B4�ע��\u0018�IF\u0003\u0011\t����t\u0007\u001d'\u0019�\u000b�W�@�Y�B������:���4\b�PP\u000et\u0013�\u001f8m�q=�a�Ek�\u0012�[wJ��`�E�2fx\"8�k���\t��#��\u0011S�С��A���ծd�HU\u0015G\u000b\u0011�d��T�#��\f��õAgj\u0002�*��\\Q\u0005F��!��&3i�|�ц�+Y�T$3���}��9�<�Z�����ݞ�:@8\u0004$཮˨I�\u0005;\b(u\u0003\u0006��CMz��p\u00163=�:m��\u00197Ys�\u0014MބƵl��JyB��_C��;��T4S���1,�\u0001U���� ��W����k�[\u0019�\u0011eP?���sZ���k�-\u001b�Z�q�%�����������FK{ğ�HP#1�d��k:D��S��gQt�d�R\u0015t>��n\u001a��;M���\u0014bժ�\f#�\u001f�ڭ�k��ʉ��C\bi�B���t�O޿��8\u0007���fp��y����I2� I����!w���ۚ�G]�����E�7e3j��u\u0015\u001f����?4h;kͭt&'���dW\u001b�i��Z\u001fU\u001e�7Z�\u0002�z��\"�9Ī_p|���][^|��\f��G\\3�`���\u0011\u001dk?�e�\u0003�x+\r�O9-ˀ*(�벱N�#�\b}�57��Q��ȯ��P���V��*�Y�#��V���C7(:�Ҙ�!�\u001dQإ}�e\u000b�\u001d�Q%%l�4�X�$\u001cZ\"����\u0010&\u0019�?5�\u0012��W\b��\u000bUQ�D��s��\u0015MT�qt�G�����~�n��=���\u0004X@�f�4Mb�};��fm\u0011s�\\=\u0016�G\u0003Ǵ�N7�Rf3�\u0003�8\u0004H���z�ݮ���c�Z%\u0015\u0013ޖ\u0013��zm�b2��u\u0019�\u0002ƹ�\u001c��uy�m V\u0017��Km�(����*'\u0000jm�w�\u0011����O�P��kC�\t�Y\u0004F�õ!��7�ڝn�tp�A\u0017�&���n��k�=�q8���4�4�\u0002�?����\u001e�*Z��,������\u001cV�糘�U7���3����=���\u000f\u001a�oX��`���\u0019��>!}B0��\t1�\u0006�|\u0003���R*�f��\u001bI\nz$z��x����1�m/�bZ\f��|i�~8|{�˯3B,��(���\u001el�T���F��Ǜf�q@\u0002ǥ��C�\u0005'e�����L�C;0�\u001ec�\t�Ms[�-�\t��\f�n��\n�`m���4섔aBm�\u0019\u0012\u001c�]\u000b\u0013��h/\u0004ʈ�\u0000��\f�\u0002��8�C�`\u001a@�\u001e�<\u0005��\u001d̝'`f�T��d��\"Z��\u001b��cr�X�ؼ4�rN0�\u0001P�$^��_\u001f[�SF{[ǖ�<��-�%`\u001b�&��r7�0鹤��l�{:��\r��\u0004ԛ�f\u0003�&���7�zK�6@��jy=\u0017����[�ѿ\u0018��cPk\u0000�m�6��\u0001�[\u0002�\u0001�n\u0018x�ݣ��X%�\u0017v���n��v=�Xݯ��}\n���P��\u0006Po\t�\u0006���\b�\f[\u001dVMP�!r�z�T��\u0004��\nh����'�ɺ\u0004�IWqi�\u000e&��\u001c˵\b�����Ѧ�mtY�� ��\u0004l\u0003�\f�tL��\u0016�⒒N\u0007\u0013�\f)\u0005��Z��C�=\u0001����\u0004�y����/A�%`\u001b�\u000e{]n�\u001e�V�r\u0012e����S�\t�m�5Խ�\u0001�[\u0002�\tj�\u0013\u001e�,l�j\rAM�ń�\u00167�.s���BmU�l����}\b�f�M��\u0000�v�m��#=˶=\u000bwL�[>z����K���\u0016�:�����d���S���\u0015�\u0016y\u001eҏ�O^\b\u000e�\u0001�.�ɜp�ON�\u0007��g��g?��ٺ���\u001a��\u0005��\t�5�)3ٟ���h<��r;�]LLL�-L�)-�+M��4��G�1HI�PѰd\u0016+��#� ���1���\u001b}�i�\u000e1\u0007y�Eh;�;͒PD+\u0001Q2Nf�b�۸ 7r>\u0011o��}d4�\u000b�-ɍ�\u0011P\t��7SJ",
+      "timestamp": "2025-09-09T22:09:14.291Z"
+    },
+    {
+      "userAgent": "Desktop (Control)",
+      "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "url": "/",
+      "statusCode": 200,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:15 GMT",
+        "content-type": "text/html; charset=utf-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Accept-Encoding",
+        "link": "</_next/static/media/241dfdee4e97a4de-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/24cdfb7d2a41e297-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/416c1d8fcfcdf503-s.p.woff>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff\", </_next/static/media/90890788cd378a0d-s.p.otf>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/otf\", </_next/static/media/99de02d46ce378b3-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\"",
+        "x-powered-by": "Next.js",
+        "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=K4ypFGXzNbS8ma9SLcqhf.1FKbfnyDm2F5aLyKJrTx4-1757455755-1.0.1.1-X4a5FwFsxJLgnuHb0gUljtD8D85vCVkvqp5sCpvlfis1.xa9gjN331oGmhEJ4AFQT4OCCH_kJIQfNIxxB2lsifxcG_JduOoFH29oHlDcD9w; path=/; expires=Tue, 09-Sep-25 22:39:15 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca02471c5627dd-SAN"
+      },
+      "contentLength": 190692,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003Խ]s㸖-�Wj�y|\n\u0000IY���\t���h\u0003L��\u0010�2A\u0012�(\u0010���R���'�:w\"n��1}�ӎ8/�QN')����k�����\u001fQ�L����<��7���l}���{w�����\u001f\u001f�n>\u001e���_\u001f\u000f��Ǿ�����\\?��\u001f������o}W����;׿�}}����:�=,���?>�c���}w=��ο�־\u001f������׽>���o��������\u000f��\u000f\u001fmm�?����\u001f��N����㩳�����Խ���\u001f�ϡ��|����c����#|\u00035�h����\u0001x|����o����?������>���������\u000f���o�۱���p���ޱi��ћ��A�\u0004���c[�[<�ݢ\u000e\u0010���\u001d;�[ T/k�Ԟ\u0007��w�������=������f�h���e����������|�\u001e���kZ/�o~��g~S���c����\u0007��������\u001fzo���mx�u��k��/�vz?��v��t�\fH����f���!)&���b3����\u000b;�W\fw�*�q5$�خ���N\f�5���MVE��INUI��Gu�S�\u000f�:��r�@c��fP1\u001ba�\r糤-��]�\u001a�^3\u001f�\u0003�b������\u0002�\u0019�z���qi\u0001\u001f)����'\u0017:�\u0002\u000ex�zl�\u001f��c3�^�6���\u001e\u0011\u0012b���0_��^�\f�(���T�}b�� \tH\u0014\u0007d�F�l\"�4�h�L\f�,�JľJ�%�\u000fy�ٿ\u0015��M�]^Z��u\n�l\bJ\u0010*>�k�ma��\n\u000f\f�x�W\u0001��\u0015�\u0017�\u001c�d�R���Sԍ��Erm�݅�\u0016�l��\u000eu��v^\u0019\fz�ݮ�):\u000eT������b�I�\r�I�-\u00162P�-r<I��\u001a\u000b�G\u0012�y�I�\u0018E[�i���sN��\u000e(3�8eW\u00151���J�nd��q�\rW�!�+�\u0004%\u001d憫WzP\u0017l����\u0013�����C��J���F�J�~\u0015��6�!\u001d��Ֆ!��\u0000ʚ\u0005�&9R\u0006�\\���^\u001f\r��@���\u0002�]#���-��ը�\u0002a�\fذ9\u0017�\u001e��+�z���h;c��J�G\"0$�\u0006a3x\u0004%C\u001e�n�}2c?�� �2ش߹���ZN��-\u001a��\t���R-�P��!\t�!\u000e��M\u0003NM�SQL|�'<jA\u0001Q8�6��H���\u0015�\u000f\u0005�\u000b\u000eʺ`Ӣ�\u000e\u001e�ɬ��t\u0003�Լz���\u000b;;�R�\u0003��|\u001c\u0015@��H�B9&{,��R\u0006�Y\rXĞ\u0014�����'�v�\u001c73�٬h\u0001����<�y��$�߸؇w��zۦ�A��q\u0001�Z�\u0013`���_k���I60��BpQ�\u0001o�eҬ����\b����L�M�.��aZ�~҇Da\u0010�rND�\u0016\u001e�G�\u001c�Y\u000f�/,6�\u0011TZ\u0012\r\u0010\u001b>�������匯*�72\u0012K�2*b~.6��'@\u0004����d��d$\u0003F�U�vV)78���\u001e�@��Ҁ\u0010T)����q�P K4S�%Ϥ�W}�^��v�_P�n�\u0012�VSu �r�\u0017<bsß&n\u0013SG2�A��2�\u0013�J[�\u0016�*\\4\u0003/%?�\\\u001cW�\u000f#d�ge��C����\u001bDF\u0017��g=`\u0017*h\u0001I��a��$œJ�\u0015�b���LR���a:KS�\u0012e���o\\l�e%�9\u0017ꙥ\u0001-,�t�\bj����+Nt]p\u0006\u0018���nnX��M�\\n�Y��ĆP�@=��,k�A��{ʏ{z��\f��\u001b\u0014)ƌ��f�:gU�}~g�6 \"\u0006����~����\u0003\u0015\u0011�#>b��%MzI�<E�A�\u0005����a(�.�ـ��z��U*����t����b\u0018���Q����:m�Η�d�\u0018�hAf\r�\\%�P\u000f0�DR�Q?5[�b\"\u000b:ӛb~:��cUy�ð�b8ߺ�\u001dh��6�\u0017\ru��|�S\u0001����v1��\"2�4N���qs�����6�$đ�s�}\u001ceF�aʩ��\u001b@�\u0006��\u0006`��\u0018)C�\u001d�4���[S?\b\u0015߀*e\u0010{\u0019�\u0012�h!�-8o\u001b�x�Q\u001c��fxl\u0001�D\u0012�e��ϜM99p�$���3;�,�7\u0013�-䶼U�*�<�\t�rf?�8���\u000e���/�H���<L\u0007�\u0011\u000bH�XL1�#\u00061��\u001d�\u0004�.ǆ��\u001b�;@Lq%s;a!\u00116����\u0019m�\u00069�H}k̶��1$%;�\u0017p,�ȶd\u001f\u0012j�F����;^_��Zp.:�NJ�\u0013\u001e,)�>\u0015l:�ib$�y.�\u0006,��,y��b��R\f�b�OE�Ox�+�^\n\u0004�\u0010F$$FΒ&#�\u0007_�M@��]���\r �Ɨ��\u0013�\u0019<��D�@�\u0004جzb\n�P�KjG�bzʐ\u0012q���.��8�l��w��_��\u001f\u001f���\u001a<.\u0010а^.��ڏ���6�S�v�;�ݟ����_�iu����\u0003V:\u0004��ԋ��W�(얠�\u0017��zq�¥n\u0017\u000b��ׂ�,¶\ru\u000b\u0003�ּ-��z����c\u0007t�v�%���\u000f�\u0011",
+      "timestamp": "2025-09-09T22:09:15.741Z"
+    },
+    {
+      "userAgent": "Desktop (Control)",
+      "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "url": "/search?q=pokemon",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:17 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=h1pfaGTiKzTXTZvA9oz37jJy.3BX9wvNtpSF8gYz.Y0-1757455757-1.0.1.1-Vhrsr.z_L.DV9iiWWG3MQArcQfRuL3zuWspSyFi0Wvqn4jG2y.EQru15b6glE.hOmv2rfC.1OenTVFjVHOKpacKVwDMEr9alIiYPMy_ZOJM; path=/; expires=Tue, 09-Sep-25 22:39:17 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca02502e0d27dd-SAN"
+      },
+      "contentLength": 4232,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f�(�t�b��7��妽i�\u000f\b\f%�|�������\u001e�!Ӷ��M���\u001e���\b�\u0003�!\u0001\f1��������1�ea��jW}��FSW�HS\r@�ޫW\b톐Q�f4����<���;fY�`�m.\u0016��3�\u0018��8Lh&�\u00004��(�(s�ñ\u000b|\nZ.Q�\u0015�\u0011\r��\u0016\u0002�I�f5������\u0010\fp~�F\"\u0012��\u0001��\u0006���\u0018�0��\u0018�@\u0017�őD\u0018�\u001a\u0010�\rDt�R\b\\�&I\u00008��l�\u0015����\u001d���\u000e��;DC�\u0014|W��'�$�T�D�\u0004\u0016B�U\u0002�&B:��\"����g�X������\t��Ϻ�@`�����F�\u0007������'\u0019G�9�U�N�\"�OS�\u0013\u0011E�qF��\\L���8u��<��ޭ��O\u000b\u001c��\u0013\u0001�%x�&\t�Dv'*~�\u0011�\u0004�h?\u000e\u0002`٣�\u0004���#�Z�˟� \u0004�\u000f���\u000f?����\u001e\u0012�Fq$\u0018\r*$T��a��\\.;~��\u0015J;,\u000e�\u0012h�f\u001a��^�\u001d\u0003�����\n��\u0010��a7\u0007e�)�\u000b����h��i�e\u001b\u001dC\u0018��\u0013���[\u001a&;�8Na�[�5;I�\u0004�l�j�t�\u0002�~_�'E\u0006�@7�����\u001d��\u001a�iP��,`o]%�U\u0000{\u001d*W\u0011�3�\u0001]�8�Ld�!\"�\u001b\u0011�\u0007\n��\u001b��-�_�J��$�bd)\"\u001e/;�f� E.�p��y6�(+\u0003�<�\u0019hCM��*��R������V�*�H�쏭�$�\u000b�x�v>��\u0005w�\u0003���p���\u0007}�Q��\r��Qj{\f��������<bj�Mږ�U;j���-ڼ\r�k�a\u0001����@��V;���h���F�D\u00074\u0003eŬ\u0003\u0011w��\u0016v�׭}蘿\u0004�A�\f���I���o|�j�\u001b�֍�Ԥ\u001f�����˗\u000f\u001f[\u001d�\u0011w�#!��\u0010�y֬�\u0010��N�:�\u0007�M��ˬ�s�\u0012w�j\u0016�i��C��N�e\u001c��h7n]�h7�Nl�-BH�\u0015B׍w�\u0013|�����:h\f�t\u000e7��W�xn\u001a��\u0000�$\u0013��\u001drǭ/\n��D?�<��f/ۼ-�A[�����\u0010|Dn��@۩5w���5��\u0013Yc���\u0007\u001bCTy���L\u000b|����\u0014\u0016\u0010eÂ�l�����ۂ��G.⊹\u0004S�^M�T��)[\u001f��[i\b}�iY\n4���)[u\n\u001e \u0017\u0005�\u001b\u0017�܀�G�o\u0003���C\u0001\u001a�F�����g���Gn[e��\u001a\u000fݐ�iH#:�4wDa��-�w�\u0007�\u0014���\u0014��$��\u0011��4{\r~�B�S�/\u0011�y��:�P\u0015Um�(<�h׭h�Ə�c<1��e��\u001bwç�0z�\u0013`\t^��a\u0012G\n�nD\u0017\u001eM�\"��z,0�z�n8��ߧ�d�u\u000b��\b���z�ݮ���c�Z\u0001\u0015��v�\u0017�R�{:L�ڝ>���8w�\u0005��6��\t��C���ik�\u001c�?U�\f ����>bU�}��q䋩{�I6\u0003>\u000f@\u001b~��\u0004׆\u001aP����\u0016�\u001d�c]\u0007\u001f;��1�u@{\u0016\u0007���ZH�+��'�6��\u0003\\\u0005+4��w����U���|\u001eq��F��\u0007����G�6�A�\r5�\u0018=L\u0006�X\u0013}0$dH\b&�!!Z[��o��7Pʌfs�\r�8\u00015\u00125�\rK����\u0018�v��X1-\u0006�}��{?\u001e�=���9!�]v�m�a��D*_9Jm���M���#�eS��>����2f`bp`:����_���\u0004ƺ�-Ɔ�\u0004�I\nj��o�yK�6�ls��|�0����\t�쾁\t�9t�\u0003e�x\u0000�i\n���!��d\u0010z���$O�lo\u0007s�\t�Y\u001c�h�e\u001c�#Z��\u001b�洧s�\u0019���4�rN0�\u001eP]'���_\u001f[�SF;[ǖ�<��-�%`\u001b�&�is�30\u0019ؤ�tL�y:��\r��\u0004ԛ�f\u0003�:���7�zK�6@��+y\u0003\u001b\u0013�\u000e�[�ѿ\u0018��cP+\u0000�m�֍�\u0001�[\u0002�\u0001��9�9�X�\u0019%������v���\u001d�\u0018����~\n���P\u000f�\u0006Po\t�\u0006��r\b\u001f�\f\u001b=VMP�\"r�zǲ�\u0019�S\t��\u0015І�\u0017MO�\u0006��\t`���� =L��X�m\u0010����e�\t�u{��2�Atm\t�\u0006�\u0019�n閍\rR�%%�\u001e&��S\n��7̯��y\u0002�MQ�\tj�����_�zK�6@�\u000f���\u0003��^�$�\b�����\u0013P�dk�\u0007\u0003��\u0004l\u0013�\u000e'�\u001b\u0018ؠ�\u001a�꺍\t�\r��}f����ڨ@�\u0000����\u0010��P���\u0001��\u0000�\u0000�C\u0006�i:\u0006��z�|��\r\u0007\u0013�z��\rַ��OO'��Yۧ\u0012i{+�\r�<�\u001f��\u001c\u001f,F=�m�T�9�֟��\u000f�=�f#�~lc�qw��56s\u0003���\u00195�)�ٟ���h4��j;�mLtL�-L�)\r�+M�����#�\u0018��S�hX<��T���/Hmx��%=��P�ik�C�A^)\u0011�΅�N��\u0017�Z@\u0010O�yv��m\\�k9���d�>����ۖ�Z[��ԛ",
+      "timestamp": "2025-09-09T22:09:16.998Z"
+    },
+    {
+      "userAgent": "Desktop (Control)",
+      "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "url": "/auctions",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:18 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=GahrD7mQEDYhOGOvrYN.NR7OpYZF06HOVSz7WxByJMA-1757455758-1.0.1.1-5xVqrFvK.mChnJNAV026Q9hVQbhdmghtV0TXqeAzok1Un53PNbCC9zyUJsntp9cfi_IaUPhdMJP_PABuOq9a7cgeuTQggUDFHINl0HkQDL8; path=/; expires=Tue, 09-Sep-25 22:39:18 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca0257ff1827dd-SAN"
+      },
+      "contentLength": 4220,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002\u001f\")�t�b��7��妽i�\u000f\b\f%�|�������\u001e�!˶��M���\u001e���\b�\u0003�!\u0000\u000e1���������\u0011��Q��jW}���\u0013O�XS\r@�ޫW\b�F�SĦ4��{�,\u000f����:�y�b�m&��3�\u0018��$Ji.�\u00104Ē8�8��Ñ\u0007|\u0002Z!Q���1����\u0002\u0016i��k�\u000b���a.\u0018�⢍D,rAC,\u0019\r�Ӌ1�a|�1���\u0005Kb�0ޫ4 �\u001b��\ne\u0010z\u001aM�\u0010p���\u0014+B\rI�;HO�]�Yw���\u0019\u0004�ֽO�I�V�\\\u0013X\nɗ)x���\u0004����j\u001a�Mc%3(\u0007���?'P�?��\u0003�E�c\u0002#\u001a�\u0000d��\u001b:�d\u0012o�W\u0015:\u0015��\u0001�\u0004NE\u001c\u0003�9�;r>Qn\n������}�{���|Z�\u0018%�\b\u0001/��4Mq.�;Q�\u0003�i.�D�I\u0018\u0002�\u001f�$\u0018�E\u0012c��\\�|\n\u0011�b�k��\b��:��!�h�ĂѰFBE�\u001ct��Ţ\u0013TZY��Ò�KgL\rPj�[I|uw\u0014Lf\u0001Γ+��\u0006Q�\u000e�\u0005,{��A_�8�\\�\u0013�O3.��\u0018�$��\b\u0005E��(�A�I\u0006�ݒ�խ�i����KOK&\u0003\u0015R�w\u0016�R�P\rt\u0013�\u001f8i�q=�a��k�\t���d�\fa�C�2fx*8�k����|9@\u0004}#\"5��8�A�ݒ�ծd�H�:N\u0016\"�ɢ�iN��\u00122�\u000f�\u001a��S��*��s��6�TH,�d&���;ʰn-���d��؞O�;��'Y��^p�雬\u0007��O|�wlFu\u00026��O��3��\u001ejR�o\u0006��@�I۲�l�m֞�E���u-;,�R��\b��\u001a���rgڑ9�rO��\u0018\u0016�栬�v ��V���zk�;\u0019�!e�<���s�l��\u001b�-[�F�u�$5����������VGyě�H��\"�d�7�t�fk�T\u001d�����e^�yL��i5K�y�f\u0011�y��2\nA}�\u001b��o�\u001b+'6�\u0016!��\n��ƻ�1>y��xc\u001d4\u0006y6���Ϋm<7I�I\bI��H�\u000e��V\u0017���D?�\"�Vf/ڼ-�a[�����\u0010~D^�@�Yk�39m^�\u0016��$�J\u000f6\u0006��`�ՙ��6[�\u0015)�!�\u0007%�'٨ڕ��9�P�<�\u0015s\u0005�|�\u001cӉ�sS�>����\u0010�Tв\fh\u000e\u0015yS��)x�<\u0014�o<��\u0006�=j|\u001bz\r�\u001d\n�\u00005\u001a��O�=�<�<r�*3��x膜N\"\u001a�\td�#J��\u000f�l��C<��\u0004��f\u0010�'\t���%d�k\b�\f���A���+�Vх�j�F�F{݊6j�8>�c��_��߸\u001b>k���f�\u0005�]�Di\u0012+�1��4늘��zZ`.�-�p{N�Pf2�\u0005`Y\u0004��l=�n�A�j��wA傶�\u0002ƤT{�\u000e��v�a��\u0019�.��R��\u00017�\u0018\u000e8ԡ����d1��)@����;Ū`�$��8\u0010\u0013�Z�l\n|\u0016�6�p�\t�\r4�f�qt\u000b\u0007.8X�!�.�\u0003Ll=�Ӟ�����\u0016��\n�b\u0006�\u0006�{��p���ڠ��bg�j?�Ŝ���?�������Q���h��f\u0010��I\u001f\u0013k��\u0007�\f\b��\u0019\u0010��5��\u0006J}\u0003��i>��@KRP#Q�۠���!�kwQ�\u0015W�������h���_g�\u0018v�Q���9�\u0012�b�(����7�\nc���M}\u0017\u0007�\u000bJNʘ�����`\u0006��=��\u0013\u0018���\u0018\u001b�\u0013\u0018�\u0019���+�[��\u0001f�Ӡ\u0017P�\t5\u0015g@�o;\u0006&���~\u0000�\u0011�\u0001̧\u0019D\u0002��8�C�C�C�\u001e�<\u0005��\u001d̽'`fI$�\t�I��h�No4�ӞΡg`b��h�9���@u��~�}l�O\u0019�n\u001d[�����ז�m�����m���o���5M���z6��\u0013Po��\rP�\u0004���\u0000�-\u0001�\u0000u�Q��6&\u0001�׷2�1ԽǠV\u0000\u001a�B�\u001b\u0003��\u0004l\u0003�N໖٧X�\u0019\u0015�\u001b�\u001cLl�q\u001d�5��|=��SP�����7�zK�6@\r�Kx?`��z��\u0016��\u000b�;�'�X�*����6̿hy�6��!�u��K��0��k\u0019�A\u0018�\u000b���\u0013F����e����\u0012�\rP3\u0000��-\u001b\u001b��KJz=L\f=�\u0014\\�1̯��}\u0002�MQ�\tj�����/A�%`\u001b�\u000e�\u000e7x�b�W;�2�����\u0004�&�\u001a���\u0000�-\u0001�\u0004��\t��\u00066h����ncBu������P\u001b5(\u001b��1�\u001f\u0002�\u0019j��;@�\u001d`\u001b�vI�0M��=]w���1\\Ll��\u00067�c9�/O'��Y�O\u0015��VH\u001b�yH?�>�\u0001X��\u0004�̭\u0017s­?�$\u001f\u0000{��F����f��s����\rp|�7�l�Lg�����f��L�1�1q�0��4��4�c[�\n��c��N��a�,�3\u0001�x� ���6���k\u0003����\u000e1\u0007y�D(;�;͒@�+\u0001a2If�Ŷ�qI�\u0015|\"ޒ��Pk�\u0017p[�kmͧ\u0012�So��t\u000e�\u001chƦ�70",
+      "timestamp": "2025-09-09T22:09:18.286Z"
+    },
+    {
+      "userAgent": "Desktop (Control)",
+      "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "url": "/cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:19 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=2.TkvUj1xYSRzimEAUkqzEjvFt6WSlAhAuEHCkQVMpk-1757455759-1.0.1.1-wlF2gfugoiUylsYVVKPTH1hOPr6OLtwomHJiwxdd3tVqsJwYioiGkXzL70rrbZfeDZOdoWcE1sG2TwNYpv_D34teDDCnyV0.Plf6uOa1fN4; path=/; expires=Tue, 09-Sep-25 22:39:19 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca0260082327dd-SAN"
+      },
+      "contentLength": 4233,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{s۶��?�\u0002eϭ�SA\u0002\u001f�(�tG���7��c�M{Ҍ\u0007\u0004�\u0012b�BPRT���\u000e��e[v�gn�\u001d{�H\u0004����\u0000�X�~w�f���\u0010M�0�{��>P@���A��\u0006�|��\u000b�vC�(bS�J�\\m�����V\u001d�,K0|�������\u0007x?\u000e\u0013�\t/\u0000\r�8� �\\�p�\u0002���KT\u0005sDCp���E\u0012��\u001a�B�l�r�\u000b\u00068�h\"\u0011�L�\u0000KF\u0003p�|\fj\u0018�a�~�s��H\"��J\r\b�\u0006\"�D)\u0004�F�$\u0000��36ŊPCR�\t��t�|�\u001d��i\n����\u0012��h�U\"�\u0004\u0016B�e\u0002�&B:��\"����'�X������\u0004��'ݾ'0o}H`H#��V\\UC냌��\u001c�D�d�ԧ����\"�8�^K�'�MA����\u001dϣ�s#jͧ\u0005�a�\u0000�\u0002<L�\u0004g\"�\u0015\u0015?ӈf�I�\u001f\u0007\u0001��AI��L�\u0011V-O�Ϧ\u0010\u0002·������UAt\u0007\tF�8\u0012�\u0006\u0015\u0012*�e��^,\u0016-���\n�-\u0016�mFS.5�.Ž�=\u0004&S\u001fg�%Dk#(��\u001c������h�R.�\t�W���\u0018�8��\b\u0004E?�0�A�q\n���ō�I\u001a'�fKW�'}\u0015O�\u0015xRdP\u000et\u0013�_xh�q=�a�\u0006k�덣d�\f`�E�2bx*8�+\u0014'��l�G\u0004}'B�8�Qv�v�\u0005�]�R�dU�,D��E�ӌ\u001e�%��E�4:˦\u0010ee��2����T0,�x&���;ʪv%���d��ژ\u000f�=���i��Ip��3Y\u0007\b\u0007�x�׵\u0019�\t�`z\u001e���@ۻ�I����\"�\u0006X�M�\\6�&kN��ɛи�-\u0016P)Oh\b?�5T�q�3mɌ����3�\u0005:�\u0019(+�-��+ܕ�[����V\nI@\u0019��`2���k�ڏ�F�Vk\\+Iu�.z�>~���R\u001eq�;\u0012��\b!�e�5\u001d���)TG� �n2u�\u0015t.S�\u001b��;M\u001e�Y\bQ֪�\f\u0003P\u001f�ڍ�k��ʉ��E\bi�@���t�O޾5^Y\u0007�~��ັ�b\u001b�M�x\u0012@�d\"\u0014B��E�5�\u000f�(\u000f��ً&o�f�\u0014��*��\u0005(�v֚[�LN�W�i�6���>�<Xo�&\u0005��FsE\ns��~��A��vey�mNS�#\u0017q�\\�)_.�t��\\��w���4�>�,\u0005�AI^��u\n\u001e \u0017\u0005�;\u0017��\u0001��j?\u0004n\r��\u0002�G�Z��Cq�\"\u0017)�ܴ�T���!���Ft\u0002i��.�\u0003%[�\u001f\u0011\u000f*)~+�)D�I̡%\"\ti�\u0012�8����_\"p�\u0002�Ut�*���Vx��\\���j�����\u0018�����n�����iO�\u0005xm\u0016�I\u001c)��\u0011�{4m��ç��\u001c�Y��t�~�2�\u0001�-\u0000�\"@����c�f\u00054R��j�SLe[N]R�UO��\\��e��\u0018�\u000e��R��>7�\u0018]��.5m��!󧪜\u0002dkk�ۏX\u0015l\u001f�~\u001c�b�^i�M��\u0002���4���\u0006��t���}\u0007�X���\u000e�}Ll��ю�����\u0016��\u0012��\t����\u0000��\u0012\rf���5�|M�j\u001f�\"NW��{��kM-�{�m�\u001e4Z_3������5�{}B��`��\u0013�55��\u0006J}\u0003��h6�Z_�\u0013P#QS[�����\u001f\u000f!�G{��\u0015�b�?勾�������\u0011b�eG��_�`K��u�����_7K�=�Y6�\u001c�C�/8)c\u0006&\u0006\u0007��雞��\u0018\u001b�`���bl�`����\t�Q��\u0004k\u0003�6�~ǧ\f\u0013j*N�`��\u001a�ЎC{>PF�{0��\u0010\nH��<�$�Ѓ\u0014�'y\ff{;�;����PD\u0013,�x\u0015�j��h4�\u001d�C����єs�\t���:q�\u000e���2\u001f3��:���\u0019�\u001f��-\u0001�\u000051M�۞�I�&\u0005�c�����d��G��\u00145\u001b��\t&�o\u0000�-\u0001�\u0000u����lL|ګneF�f�;\u000fA�\u00004��Z7�\u0001��\u0004l\u0003�]�s,�G��1JN��t1�����:&1�_\u000f��\u0018Խ���}\u0003Po\t�\u0006��r\b��\f\u001b\u001dVMP�\"_8A�aY���\u0004��\nh����'j�κ\u0004�NWqi�\u000e&�p,�6\b�����Ѻ�mt\u0019�7\u0010][\u0002�\u0001j\u0006�[�ec�TqII��������t\r��v\u001e�zS�l�Z��tu����\u0012�\rP��.7x�b�S9�2�����\b�&�\u001a��7\u0000���m���{=\u0003\u001b�ZCP]�1���u��l��P\u001b\u0015(\u001b��1��\u0003�\u0019j��\u0016��\u000e�\rP;�g��c���w�GO�p0���\u0019�`]����t\u0012ϟ�}*���B� OC������b�#�fN5�\u0013n}�|\u0000�i6\u001by�c\u001b��������\u001b��,�X��2�}���M�\u0019M�ۙlc�c�larNi\u0018_i���\u0016�\u001e�� %�@E��Y��\u0002d�~Aj�+m&�!���uS�\u0013\"\u000e�R�Pv�Uw�ƾ\bV\u0002�x\u0012ϲ�mo�\\��D�%�O��T�޶$ך�G%ܥ",
+      "timestamp": "2025-09-09T22:09:19.573Z"
+    },
+    {
+      "userAgent": "Desktop (Control)",
+      "userAgentString": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+      "url": "/categories/trading-cards",
+      "statusCode": 404,
+      "headers": {
+        "date": "Tue, 09 Sep 2025 22:09:20 GMT",
+        "content-type": "text/html; charset=UTF-8",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "vary": "Accept-Encoding",
+        "cache-control": "no-cache, private",
+        "x-frame-options": "SAMEORIGIN",
+        "cf-cache-status": "DYNAMIC",
+        "set-cookie": [
+          "__cf_bm=DxSsddS5kCpGC4pdbYQ_RM.EQYEwSbkQOALgj0aepqc-1757455760-1.0.1.1-hi6ZogaUHkKqPK2MAsCr9ntrX9XAaYhEkJINubQWtHQSBtaGv6lKqqP2Zk6EvIsiWxkFrRVpxE0ah8_kV9bM.TeXub5Q7d17N7lEbEAU7Ys; path=/; expires=Tue, 09-Sep-25 22:39:20 GMT; domain=.fanaticscollect.com; HttpOnly; Secure; SameSite=None"
+        ],
+        "server": "cloudflare",
+        "cf-ray": "97ca026818c627dd-SAN"
+      },
+      "contentLength": 4259,
+      "content": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003�\\{w۶��?�\u0002�[I[A\u0002)��d�=��6�؎ז���9> 0�\u0010�U\u0002��:��{��,۲+7�g�{��F\"0\u000f�o�\u00040�h���w��_NGh��p�ծ�@!�'�\u0001��\u001b��W�\u0010ڍ@QĦ4��<c�\u0002�\u001a{���R)��fb�\u0019?�!�O��*�` ��\nb�\u0019�#\u000f�\u0004�\\��+�c\u001a�g�\u0005,�$Sk�\u000b����0\u0017\fp~�D\"\u0016J�\u0010KFC��|\fz\u0018�`�~�s��X\"��J\r\b�\"�B\u0019��A�4\u0004��\u0019�bMh )~\u0007�\u0019�K>�.1�4��3��\t[i<1*�k\u0002\u000b!j��g��N��\t+�\u001d�s�Z�\f�����\t4�Ϧ�@`������\"\u0000�V\\UC�L��\u001c�D�d�4�����c�XQ�%�\u0013��0�<�\u001f]ߧ�{+jͧ\u0005�Q�\u0010�\u0002|L�\u0014+��D�\u000f4�J0���0\u0004�\u001e�$\u0018U\"��ny.��B\u00048\u001f�\u001a�?���\n�{H0\u001a'�`4���Q.\u0007��b�h\u0005�VV(m�$j3�`�d\u0002d[e��x�\u0019͸4P�����\u0002��+��\u0006U�\u001e�9L{��C_и\u0010����&:�(ɨ/BAѷ4Jw�q��n��u\u000bD�%)dj�\u0019�d�Cl�N\u0003_\n\u0005�@7���Ӷ\u001d��\u001afY�&�+��u�T�\u0010�ZT.c���\u0003�FIJ�P�\u0001\"�\u001b\u0011�\u000e��\r�m\u0017įv%�D��8Z��'�\u0016��\u001e�%d�C\u001f�\r:SS�U\u0019��*0\u0006�\u000e�e�̤q�qG\u001bڮdUR���\u001f��I��\u0010�$k}��\u000b���\u001d�\u0005��'>��\u001cFM\u0002\u000et|�R�g`�=Ԥ�_\u000ff1�\u0003�Ӧl.�q�5�M��Mh\\�\u0016\u000b��'4��\u001a�}�ܙ��������a�\u000e�\u0002mŴ\u00051���\u0012v��[��� \r)��\u0019LF��z\r}_�n�h�j�\u001b-�N?�\u001f=�ϗ/\u001f>6Z�#�tG�\u001a�\b�����\u0010��N�:���M��KU�yL��i�\u000b�4y�f\u0011ĪU}\u0019��?��[�ך��\u0013kM�\u0010�|��u���\u0018��o��\u000fj\u0003��঱�j\u001b�M�d\u0012B�*\u0011��!w���ۚ�G]�����E�7e3l��u\u0015\u001f��?4h;kͭt&����dW����`m�*\u000f�\u001b�I�o��\\��\u001cb5(8>�Zٮ-/��i�\u0002�!��K0���N����|���Ч��e@\u0015��u�X��!�P���К\u001b����m���w(D\u0003T�U�?\u0015�,���m��t[��\u001b\u0014�D4�\u0013�rG\u0014vi\u001fh�\u0002}�xXI\tZ)� V'\t���%d�5\u0004I\u0006�O͠D��\u0015B��BUT5Q��\\��nE\u0013�~\u001c\u001f�u�/��_�\u001b>k\u000f��=\u0001\u0016�Y\u0012�I��o�t�Ӭ-b\u000e���\u0002s�o����\u0005=�:\f�i\u0003�6\u0001�s]�\u001es��s���VIń��\u0004'�^\u001b��̵�=F]�q�2\u001b(u\u001c\u001e�\u000e\u0010�\u0007=ڣ\u001d�(����*�\u0000jm�w�\u0011����O�@L�kC�)�Y\b��õ!�10�v���i���\u001e6M\b�˝\u0000\u0013�\f��ksp|�iD4�\u0002�?����\u001e�*\\��,������\u001cV�糘�U7���7����=���\u000f\u001ac`X��b���\u001e��\u0001!\u0003B0�\r\b1�\u0006�|\u0003���R*�f�\u0018\u0018I\nz$z�\u001b�x����1�m/�bZ\f��|i�~4z{�˯3B,��(���3�\u0012�|u)����7�\u0012c���C}\u0017\u0007�\r\nNʘ��Ł��\t:���\u0018[O`l��bl�O`�f�w\u0013�V��\u0004k\u0003�\u000e�A7�\f\u0013�ќ\u0001��ӳ0�]��\u0003��X\u000f`>� \u0012�=��\u001cR\u0005�\u000f\u0019zH�\u0014��v0w���%�^w�$YE���7\u001a�i��е0���h�9���@M��~�}lu�2��:���\u0019�o��-\u0001�\u00005�t\u001c��\u0016&}�\u0014�n��>\u001d_φ�~\u0002�MQ�\u0001j�`��\u001b@�%`\u001b�������I@�խ��_\fu�1�5�ֶP���\u0000�-\u0001�\u0000u/�]�ӧ��Z%�\u001bt{�8N����\u000e�z_\u000f��\u0014������\r��\u0012�\rP��\u0012�\u000f\u0018������M��\u0004����\u0019�S\t��\u0015�V�/���\u0003&�\u0011�&]ťE��P˵-�\"��\u0005���\u0013F�ζ�e9���\u0012�\rP3\u0000�6m\u0007[��KJ�]L,3�\u0014\\�gu�\u001ej�\t�7E�&�ͻOW�\t�-\u0001�\u0000u��q��)����(#�/���O@�![C��\u001b@�%`��v9�~��\u0016��\u0010�4\u001dL�iq��cN��Z��\n�\rP��8\u000f\u0001�\f���\u001d��\u000e�\rP��ou:�����+\u001f==��ġ�oq�������I2���D��\ni�<\u000f�G�'7\u0000�Q�`���dN��'��\u0003`ϳ�ʳ\u001f��l��g}��܂�o�͔֚��O��_4��l���\u000e&&&�\u0016&甖��&l\u001aQ�\u0011y\fR�\tT4,��J����/Hcpm�$=����i\u001a�C�A^i\u0011�ι�N�$\u0010�J@�L�����6",
+      "timestamp": "2025-09-09T22:09:20.827Z"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "timestamp": "2025-09-10T06:00:54.833Z",
+  "safetyChecks": {
+    "/ws/v2.0/games": {
+      "accessible": true,
+      "statusCode": 403,
+      "requiresAuth": true,
+      "hasRateLimit": false,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    "/ws/v2.0/output.json/games": {
+      "accessible": true,
+      "statusCode": 403,
+      "requiresAuth": true,
+      "hasRateLimit": false,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    "/ws/documentation": {
+      "accessible": true,
+      "statusCode": 200,
+      "requiresAuth": false,
+      "hasRateLimit": false,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    "/ws/v2.0/products/find?search=test": {
+      "accessible": true,
+      "statusCode": 403,
+      "requiresAuth": true,
+      "hasRateLimit": false,
+      "contentType": "text/html; charset=UTF-8"
+    }
+  },
+  "apiStructure": {
+    "/ws/v2.0/expansions": {
+      "statusCode": 404,
+      "requiresParams": false,
+      "accessible": false,
+      "responseSize": 186,
+      "contentType": "application/xml; charset=utf-8;"
+    },
+    "/ws/v2.0/products": {
+      "statusCode": 403,
+      "requiresParams": false,
+      "accessible": true,
+      "responseSize": 0,
+      "contentType": "text/html; charset=UTF-8"
+    },
+    "/ws/v2.0/articles": {
+      "statusCode": 404,
+      "requiresParams": false,
+      "accessible": false,
+      "responseSize": 186,
+      "contentType": "application/xml; charset=utf-8;"
+    },
+    "/ws/v2.0/users": {
+      "statusCode": 403,
+      "requiresParams": false,
+      "accessible": true,
+      "responseSize": 0,
+      "contentType": "text/html; charset=UTF-8"
+    }
+  },
+  "rateLimit": {
+    "testResults": {
+      "rapidRequestsBlocked": true,
+      "averageResponseTime": 146.2,
+      "totalTestTime": 731,
+      "successfulRequests": 0
+    }
+  },
+  "authentication": {
+    "requiredForGames": true,
+    "oauthRequired": false,
+    "publicEndpoints": false,
+    "authErrorMessage": ""
+  },
+  "pokemonAvailability": {
+    "error": "HTTP 403"
+  },
+  "recommendations": [
+    "CAUTION: Full authentication required - need API keys",
+    "IMPORTANT: Implement request throttling (>1 second between requests)",
+    "CRITICAL: Setup OAuth authentication before any data extraction",
+    "MANDATORY: Implement rate limiting (recommend 1 request per 2 seconds)"
+  ],
+  "overallSafety": {
+    "level": "LOW",
+    "requiresSetup": true
+  }
+}

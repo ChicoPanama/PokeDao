@@ -1,0 +1,464 @@
+{
+  "extraction_complete": true,
+  "timestamp": "2025-09-10T04:43:01.953Z",
+  "total_sold_items": 881,
+  "price_stats": {
+    "min": 2,
+    "max": 35000,
+    "average": "228.41",
+    "median": 35
+  },
+  "graded_items": 0,
+  "high_value_sales": [
+    {
+      "id": "fanatics-mega-1757476496531-5311",
+      "name": "2002 pokemon legendary collection reverse holo charizard #3 psa 10 gem mint sold on sep 08, 2025",
+      "sold_price": "$35,000",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2002 pokemon legendary collection reverse holo charizard #3 psa 10 gem mint $35,000sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475817360-643",
+      "name": "2011 pokemon japanese bw promo battle carnival 1st place victory cup psa 10 gempsa population 1 of 3 sold on sep 09, 2025",
+      "sold_price": "$16,000",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2011 pokemon japanese bw promo battle carnival 1st place victory cup psa 10 gempsa population 1 of 3 $16,000sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477103162-7795",
+      "name": "2011 pokemon japanese bw promo battle carnival 3rd place victory cup psa 10 gempsa population 1 of 3 sold on sep 07, 2025",
+      "sold_price": "$15,500",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2011 pokemon japanese bw promo battle carnival 3rd place victory cup psa 10 gempsa population 1 of 3 $15,500sold on sep 07, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476218177-4051",
+      "name": "2018 pokemon japanese sm promo munch a retrospective scream mimikyu #289 psa 10 sold on sep 08, 2025",
+      "sold_price": "$10,000",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2018 pokemon japanese sm promo munch a retrospective scream mimikyu #289 psa 10 $10,000sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477173808-8080",
+      "name": "2002 pokemon japanese mysterious mountains 1st edition holo gengar #44 psa 10 w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$6,600",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2002 pokemon japanese mysterious mountains 1st edition holo gengar #44 psa 10 $6,600w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477319985-8626",
+      "name": "2001 pokemon japanese promo corocoro comics holo shining mew #151 bgs 9.5 gembgs population 1 of 4 - none graded higher w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$5,040",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2001 pokemon japanese promo corocoro comics holo shining mew #151 bgs 9.5 gembgs population 1 of 4 - none graded higher $5,040w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475896251-1627",
+      "name": "2016 pokemon japanese xy promo shiny rayquaza poncho pikachu #231 psa 9 mint sold on sep 09, 2025",
+      "sold_price": "$4,750",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2016 pokemon japanese xy promo shiny rayquaza poncho pikachu #231 psa 9 mint $4,750sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476303831-4471",
+      "name": "2002 pokemon japanese split earth holo umbreon #72 psa 10 gem mint sold on sep 08, 2025",
+      "sold_price": "$4,700",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2002 pokemon japanese split earth holo umbreon #72 psa 10 gem mint $4,700sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477395776-8886",
+      "name": "2023 pokemon chinese sm promos battle of kings winner the masked royal cgc 10cgc population 1 of 5 w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$3,600",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon chinese sm promos battle of kings winner the masked royal cgc 10cgc population 1 of 5 $3,600w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476002947-2479",
+      "name": "2003 pokemon aquapolis foil pack tyranitar art psa 10 gem mint sold on sep 09, 2025",
+      "sold_price": "$3,500",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2003 pokemon aquapolis foil pack tyranitar art psa 10 gem mint $3,500sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476034049-2839",
+      "name": "1999 pokemon base set shadowless 1st edition thin stamp holo mewtwo #10 bgs 9 sold on sep 08, 2025",
+      "sold_price": "$3,500",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "1999 pokemon base set shadowless 1st edition thin stamp holo mewtwo #10 bgs 9 $3,500sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477319984-8457",
+      "name": "2004 pokemon ex team rocket returns holo mudkip gold star auto #107 psa authsigned by masakazu fukuda w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$3,240",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2004 pokemon ex team rocket returns holo mudkip gold star auto #107 psa authsigned by masakazu fukuda $3,240w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477717159-9744",
+      "name": "2012 pokemon japanese bw promo super rare card set get! rayquaza ex #145 psa 5 w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$3,120",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2012 pokemon japanese bw promo super rare card set get! rayquaza ex #145 psa 5 $3,120w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475973649-2275",
+      "name": "2000 pokemon base set 2 holo chansey #3 psa 10 gem mint sold on sep 09, 2025",
+      "sold_price": "$2,750",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2000 pokemon base set 2 holo chansey #3 psa 10 gem mint $2,750sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476549003-5707",
+      "name": "2006 pokemon ex crystal guardians reverse holo charizard #4 psa 9 mint sold on sep 08, 2025",
+      "sold_price": "$2,500",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2006 pokemon ex crystal guardians reverse holo charizard #4 psa 9 mint $2,500sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476496531-5299",
+      "name": "2001 pokemon japanese vs 1st edition lance's charizard #97 psa 10 gem mint sold on sep 08, 2025",
+      "sold_price": "$1,800",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2001 pokemon japanese vs 1st edition lance's charizard #97 psa 10 gem mint $1,800sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476659609-6187",
+      "name": "2025 pokemon sv prismatic evolutions sir umbreon ex #161 cgc 10 gem mint sold on sep 08, 2025",
+      "sold_price": "$1,799",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2025 pokemon sv prismatic evolutions sir umbreon ex #161 cgc 10 gem mint $1,799sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476396691-4951",
+      "name": "2001 pokemon japanese promo corocoro comics holo shining mew #151 psa 9 mint sold on sep 08, 2025",
+      "sold_price": "$1,700",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2001 pokemon japanese promo corocoro comics holo shining mew #151 psa 9 mint $1,700sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477473337-9198",
+      "name": "1996 pokemon japanese base set no rarity symbol squirtle #7 psa 10 gem mint w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$1,620",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "1996 pokemon japanese base set no rarity symbol squirtle #7 psa 10 gem mint $1,620w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476902654-6991",
+      "name": "1996 pokemon japanese base set no rarity symbol holo charizard #6 psa 2 gd sold on sep 08, 2025",
+      "sold_price": "$1,500",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "1996 pokemon japanese base set no rarity symbol holo charizard #6 psa 2 gd $1,500sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475973649-2323",
+      "name": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 sold on sep 09, 2025",
+      "sold_price": "$1,299",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 $1,299sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475973649-2311",
+      "name": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 sold on sep 09, 2025",
+      "sold_price": "$1,289",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 $1,289sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757478645215-12565",
+      "name": "2001 pokemon japanese vs 1st edition holo bugsy's scizor #13 psa 10 gem mint w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$1,230",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2001 pokemon japanese vs 1st edition holo bugsy's scizor #13 psa 10 gem mint $1,230w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475896251-1543",
+      "name": "2023 pokemon scarlet & violet 151 sir charizard ex #199 psa 10 gem mint sold on sep 09, 2025",
+      "sold_price": "$1,200",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon scarlet & violet 151 sir charizard ex #199 psa 10 gem mint $1,200sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477634112-9692",
+      "name": "1997 pokemon japanese rocket gang holo dark charizard #6 psa 10 gem mint w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$1,200",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "1997 pokemon japanese rocket gang holo dark charizard #6 psa 10 gem mint $1,200w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475920359-1675",
+      "name": "1999 pokemon base set shadowless holo venusaur #15 psa 9 mint sold on sep 09, 2025",
+      "sold_price": "$1,115",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "1999 pokemon base set shadowless holo venusaur #15 psa 9 mint $1,115sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477245995-8392",
+      "name": "2016 pokemon japanese xy center skytree cracked ice rayquaza #232 psa 10 gem w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$1,020",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2016 pokemon japanese xy center skytree cracked ice rayquaza #232 psa 10 gem $1,020w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475834496-739",
+      "name": "2023 pokemon japanese sv 151 master ball reverse holo jolteon bgs 10 black label sold on sep 09, 2025",
+      "sold_price": "$1,000",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon japanese sv 151 master ball reverse holo jolteon bgs 10 black label $1,000sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477319984-8470",
+      "name": "2016 pokemon japanese xy center skytree cracked ice rayquaza #232 psa 10 gem w/ buyers premiumsold on sep 07, 2025 in auction",
+      "sold_price": "$990",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2016 pokemon japanese xy center skytree cracked ice rayquaza #232 psa 10 gem $990w/ buyers premiumsold on sep 07, 2025 in auction",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476717736-6391",
+      "name": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 sold on sep 08, 2025",
+      "sold_price": "$989",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 $989sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476303831-4483",
+      "name": "2002 pokemon japanese mysterious mountains 1st ed. holo crystal crobat cgc 9.5cgc population 1 of 1 - five graded higher sold on sep 08, 2025",
+      "sold_price": "$950",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2002 pokemon japanese mysterious mountains 1st ed. holo crystal crobat cgc 9.5cgc population 1 of 1 - five graded higher $950sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475973649-2143",
+      "name": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 sold on sep 09, 2025",
+      "sold_price": "$925",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 $925sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757477103162-7687",
+      "name": "2022 pokemon sword & shield lost origin alt art giratina v #186 cgc 10 gem mint sold on sep 07, 2025",
+      "sold_price": "$900",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2022 pokemon sword & shield lost origin alt art giratina v #186 cgc 10 gem mint $900sold on sep 07, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475946217-2131",
+      "name": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 sold on sep 09, 2025",
+      "sold_price": "$891",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2023 pokemon sv black star promo van gogh pikachu with grey felt hat #85 psa 10 $891sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476218177-3859",
+      "name": "2021 pokemon swsh chilling reign alt art blaziken vmax #201 psa 10 gem mint sold on sep 08, 2025",
+      "sold_price": "$825",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2021 pokemon swsh chilling reign alt art blaziken vmax #201 psa 10 gem mint $825sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475817359-463",
+      "name": "2001 pokemon neo revelation 1st edition holo ho-oh #7 cgc 9 mint sold on sep 09, 2025",
+      "sold_price": "$800",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2001 pokemon neo revelation 1st edition holo ho-oh #7 cgc 9 mint $800sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475802330-307",
+      "name": "2003 pokemon skyridge reverse holo crystal celebi #145 cgc 10 gem mintcgc population 1 of 14 sold on sep 09, 2025",
+      "sold_price": "$782",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2003 pokemon skyridge reverse holo crystal celebi #145 cgc 10 gem mintcgc population 1 of 14 $782sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475802329-235",
+      "name": "2017 pokemon sm burning shadows rainbow rare charizard gx #150 psa 9 mint sold on sep 09, 2025",
+      "sold_price": "$750",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2017 pokemon sm burning shadows rainbow rare charizard gx #150 psa 9 mint $750sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476260152-4063",
+      "name": "2021 pokemon sword & shield evolving skies alt art rayquaza vmax #218 cgc 9 mint sold on sep 08, 2025",
+      "sold_price": "$729",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2021 pokemon sword & shield evolving skies alt art rayquaza vmax #218 cgc 9 mint $729sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476839111-6835",
+      "name": "2000 pokemon base set 2 holo charizard #4 bgs 8.5 nm-mt+ sold on sep 08, 2025",
+      "sold_price": "$700",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2000 pokemon base set 2 holo charizard #4 bgs 8.5 nm-mt+ $700sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476777544-6559",
+      "name": "2001 pokemon japanese neo 4 holo shining kabutops #141 cgc 8.5 nm-mt+ sold on sep 08, 2025",
+      "sold_price": "$690",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2001 pokemon japanese neo 4 holo shining kabutops #141 cgc 8.5 nm-mt+ $690sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475873685-1351",
+      "name": "2021 pokemon japanese swsh single strike master alt art tyranitar v #77 psa 10 sold on sep 09, 2025",
+      "sold_price": "$666",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2021 pokemon japanese swsh single strike master alt art tyranitar v #77 psa 10 $666sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475802330-295",
+      "name": "2003 pokemon skyridge holo flareon #h7 cgc 9.5 mint+ sold on sep 09, 2025",
+      "sold_price": "$650",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2003 pokemon skyridge holo flareon #h7 cgc 9.5 mint+ $650sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476777544-6535",
+      "name": "2001 pokemon japanese neo 4 holo shining noctowl #164 cgc 8.5 nm-mt+ sold on sep 08, 2025",
+      "sold_price": "$620",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2001 pokemon japanese neo 4 holo shining noctowl #164 cgc 8.5 nm-mt+ $620sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476967850-7411",
+      "name": "2003 pokemon ex dragon holo dragonite ex #90 cgc 9 mint sold on sep 07, 2025",
+      "sold_price": "$600",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2003 pokemon ex dragon holo dragonite ex #90 cgc 9 mint $600sold on sep 07, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476967850-7279",
+      "name": "2002 pokemon expedition holo mew #19 cgc 8.5 nm-mt+ sold on sep 07, 2025",
+      "sold_price": "$590",
+      "sold_date": "sep 07, 2025",
+      "grade": null,
+      "raw_text": "2002 pokemon expedition holo mew #19 cgc 8.5 nm-mt+ $590sold on sep 07, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757475896251-1615",
+      "name": "2019 pokemon sun & moon cosmic eclipse reshiram & zekrom gx #157 psa 10 gem mint sold on sep 09, 2025",
+      "sold_price": "$560",
+      "sold_date": "sep 09, 2025",
+      "grade": null,
+      "raw_text": "2019 pokemon sun & moon cosmic eclipse reshiram & zekrom gx #157 psa 10 gem mint $560sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476102430-3307",
+      "name": "2003 pokemon skyridge holo flareon #h7 psa 6 exmt sold on sep 08, 2025",
+      "sold_price": "$560",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2003 pokemon skyridge holo flareon #h7 psa 6 exmt $560sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476218177-4003",
+      "name": "2003 pokemon skyridge reverse holo vaporeon #33 cgc 10 pristinecgc population 1 of 4 sold on sep 08, 2025",
+      "sold_price": "$550",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2003 pokemon skyridge reverse holo vaporeon #33 cgc 10 pristinecgc population 1 of 4 $550sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476839111-6811",
+      "name": "2016 pokemon xy evolutions full art m charizard ex #101 cgc 10 gem mint sold on sep 08, 2025",
+      "sold_price": "$545",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2016 pokemon xy evolutions full art m charizard ex #101 cgc 10 gem mint $545sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    }
+  ]
+}

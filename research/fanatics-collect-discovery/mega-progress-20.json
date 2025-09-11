@@ -1,0 +1,34 @@
+{
+  "round": 20,
+  "total_items": 380,
+  "timestamp": "2025-09-10T03:53:26.276Z",
+  "latest_items": [
+    {
+      "id": "fanatics-mega-1757476396691-4987",
+      "name": "2007 pokemon japanese promo w.h. fair dp card exchange glameow #24 cgc auth sold on sep 08, 2025",
+      "sold_price": "$9",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2007 pokemon japanese promo w.h. fair dp card exchange glameow #24 cgc auth $9sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476396691-4999",
+      "name": "2019 pokemon japanese sm tag team gx reshiram & charizard gx #16 cgc 10 pristine sold on sep 08, 2025",
+      "sold_price": "$85",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2019 pokemon japanese sm tag team gx reshiram & charizard gx #16 cgc 10 pristine $85sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    },
+    {
+      "id": "fanatics-mega-1757476396691-5011",
+      "name": "2021 pokemon japanese swsh high-class deck gengar vmax #2 psa 10 gem mint sold on sep 08, 2025",
+      "sold_price": "$89",
+      "sold_date": "sep 08, 2025",
+      "grade": null,
+      "raw_text": "2021 pokemon japanese swsh high-class deck gengar vmax #2 psa 10 gem mint $89sold on sep 08, 2025 in buy now",
+      "extraction_method": "fanatics_mega_v1"
+    }
+  ]
+}

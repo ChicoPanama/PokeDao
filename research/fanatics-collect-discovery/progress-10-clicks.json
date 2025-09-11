@@ -1,0 +1,52 @@
+{
+  "clicks_completed": 10,
+  "total_items": 19,
+  "timestamp": "2025-09-10T03:35:00.034Z",
+  "latest_items": [
+    {
+      "id": "fanatics-sold-v2-1757475257933-403",
+      "name": "2023 pokemon scarlet & violet 151 reverse holo gengar #94 cgc 9.5 mint+ n buy now",
+      "sold_price": "$29",
+      "sold_date": "sep 09, 2025 i",
+      "grade": null,
+      "raw_text": "2023 pokemon scarlet & violet 151 reverse holo gengar #94 cgc 9.5 mint+ $29sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_sold_v2"
+    },
+    {
+      "id": "fanatics-sold-v2-1757475257933-415",
+      "name": "2019 pokemon japanese sm sky legend moltres & zapdos & articuno gx #35 psa 10 n buy now",
+      "sold_price": "$91",
+      "sold_date": "sep 09, 2025 i",
+      "grade": null,
+      "raw_text": "2019 pokemon japanese sm sky legend moltres & zapdos & articuno gx #35 psa 10 $91sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_sold_v2"
+    },
+    {
+      "id": "fanatics-sold-v2-1757475257933-427",
+      "name": "2001 pokemon japanese expedition 1st edition holo alakazam #116 psa 9 mint n buy now",
+      "sold_price": "$153",
+      "sold_date": "sep 09, 2025 i",
+      "grade": null,
+      "raw_text": "2001 pokemon japanese expedition 1st edition holo alakazam #116 psa 9 mint $153sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_sold_v2"
+    },
+    {
+      "id": "fanatics-sold-v2-1757475257933-439",
+      "name": "2023 pokemon scarlet & violet 151 full art ninetales ex #186 cgc 9 mint n buy now",
+      "sold_price": "$19",
+      "sold_date": "sep 09, 2025 i",
+      "grade": null,
+      "raw_text": "2023 pokemon scarlet & violet 151 full art ninetales ex #186 cgc 9 mint $19sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_sold_v2"
+    },
+    {
+      "id": "fanatics-sold-v2-1757475257933-451",
+      "name": "2001 pokemon neo revelation 1st edition holo ho-oh #7 cgc 9 mint n buy now",
+      "sold_price": "$800",
+      "sold_date": "sep 09, 2025 i",
+      "grade": null,
+      "raw_text": "2001 pokemon neo revelation 1st edition holo ho-oh #7 cgc 9 mint $800sold on sep 09, 2025 in buy now",
+      "extraction_method": "fanatics_sold_v2"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-09-10T06:25:33.220Z",
+  "totalSDKsFound": 2,
+  "workingSDKs": 0,
+  "foundSDKs": [
+    {
+      "name": "mkm-api",
+      "description": "This is a simple node JS client for MKM API.",
+      "version": "2.1.0",
+      "keywords": [],
+      "lastUpdate": "5/27/2019",
+      "npmUrl": "https://www.npmjs.com/package/mkm-api",
+      "license": "ISC"
+    },
+    {
+      "name": "cardmarket-wrapper",
+      "description": "This is an unofficial wrapper for Cardmarket.",
+      "version": "1.0.6",
+      "keywords": [
+        "Cardmarket",
+        "MKM",
+        "mkm api",
+        "cardmarket wrapper"
+      ],
+      "lastUpdate": "3/29/2023",
+      "npmUrl": "https://www.npmjs.com/package/cardmarket-wrapper",
+      "author": {
+        "name": "Joel Robles"
+      },
+      "license": "ISC"
+    }
+  ],
+  "workingSDKsList": [],
+  "recommendations": [
+    "⚠️ MANUAL: Found SDKs but failed to load - review manually",
+    "🔧 ALTERNATIVE: Use custom OAuth implementation provided earlier"
+  ]
+}

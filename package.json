@@ -10,12 +10,24 @@
     "ml"
   ],
   "scripts": {
+    "build": "pnpm -r --parallel run build",
+    "dev": "pnpm -r --parallel run dev",
+    "typecheck": "pnpm -r --parallel run typecheck",
+    "lint": "pnpm -r --parallel run lint",
+    "green:verify": "cd api && npx prisma validate && npx prisma generate && cd .. && pnpm -w typecheck && pnpm -w build",
     "build:scripts": "tsc -p ./scripts/tsconfig.json",
-    "build": "pnpm run build:scripts",
-    "dev": "echo \"run package-level dev scripts\""
+    "setup": "pnpm install && pnpm --filter api prisma generate && pnpm run db:reset",
+    "db:reset": "pnpm --filter api prisma migrate reset --force && pnpm run db:seed",
+    "db:seed": "pnpm --filter api prisma db seed",
+    "test": "pnpm -r run test",
+    "smoke": "node scripts/smoke.sh",
+    "cardmarket:test": "node cardmarket-pokemon-extractor.js --test",
+    "cardmarket:extract": "node cardmarket-pokemon-extractor.js",
+    "cardmarket:setup": "node test-cardmarket-integration.js"
   },
   "prisma": {
-    "seed": "npx --yes ts-node prisma/seed.ts"
+    "schema": "./api/prisma/schema.prisma",
+    "seed": "npx --yes ts-node api/prisma/seed.ts"
   },
   "devDependencies": {
     "@prisma/client": "^6.15.0",
@@ -25,6 +37,9 @@
   },
   "dependencies": {
     "redis": "^5.8.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "cardmarket-wrapper": "^1.0.6",
+    "node-fetch": "^2.6.7",
+    "dotenv": "^16.0.0"
   }
 }

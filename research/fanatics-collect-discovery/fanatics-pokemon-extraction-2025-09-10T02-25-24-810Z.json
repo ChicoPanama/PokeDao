@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-09-10T02:25:24.800Z",
+  "extraction_summary": {
+    "total_pokemon_cards": 0,
+    "unique_cards": 0,
+    "duplicate_cards_filtered": 0,
+    "sources_accessed": 4
+  },
+  "cards_by_type": {
+    "auctions": 0,
+    "buy_now": 0,
+    "graded": 0,
+    "raw": 0,
+    "vintage": 0,
+    "modern": 0
+  },
+  "sample_cards": [],
+  "all_pokemon_cards": []
+}
