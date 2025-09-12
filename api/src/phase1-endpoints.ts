@@ -42,8 +42,7 @@ export async function getCardWithData(cardId: string) {
       },
       marketData: true,
       compSales: {
-        where: { verified: true },
-        orderBy: { saleDate: 'desc' },
+        orderBy: { soldAt: 'desc' },
         take: 5
       }
     }

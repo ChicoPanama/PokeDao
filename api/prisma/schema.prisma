@@ -10,48 +10,51 @@ datasource db {
 // === UNIFIED TRADING CARD MODEL ===
 // Incorporates: Current schema + Fanatics + TCGPlayer + Phase1 approaches
 model Card {
-  id             String   @id @default(cuid())
-  name           String
-  set            String
-  number         String
-  variant        String?
-  grade          String?
-  condition      String?
-  language       String   @default("English")
-  
+  id        String  @id @default(cuid())
+  name      String
+  set       String
+  number    String
+  variant   String?
+  grade     String?
+  condition String?
+  language  String  @default("English")
+
   // Enhanced normalization (from Phase1 + TCGPlayer)
   normalizedName String?
-  cleanedName    String?  // TCGPlayer approach
+  cleanedName    String? // TCGPlayer approach
   setCode        String?
   rarity         String?
-  rarityWeight   Int?     // TCGPlayer: For sorting (higher = rarer)
+  rarityWeight   Int? // TCGPlayer: For sorting (higher = rarer)
   variantKey     String?
-  cardKey        String?  // Phase1: Normalized grouping key
-  cardType       String?  // TCGPlayer: Pokemon, Trainer, Energy
-  cardNumber     String?  // Alternative to number for flexibility
-  category       String   @default("Pokemon")
-  
+  cardKey        String? // Phase1: Normalized grouping key
+  cardType       String? // TCGPlayer: Pokemon, Trainer, Energy
+  cardNumber     String? // Alternative to number for flexibility
+  category       String  @default("Pokemon")
+
   // Metadata
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   // Relations - Unified from all schemas
-  listings         Listing[]
-  compSales        CompSale[]
-  priceHistory     PriceSnapshot[]
-  marketData       MarketData?
-  evaluations      Evaluation[]
-  watchlistItems   WatchlistItem[]
-  qualityReports   DataQuality[]
-  catalogItems     SourceCatalogItem[]  // Phase1: Multi-source catalog
-  priceCache       PriceCache[]         // Phase1: Price snapshots
-  modelInsights    ModelInsight[]       // Phase1: AI insights
+  listings       Listing[]
+  compSales      CompSale[]
+  priceHistory   PriceSnapshot[]
+  marketData     MarketData?
+  evaluations    Evaluation[]
+  watchlistItems WatchlistItem[]
+  qualityReports DataQuality[]
+  catalogItems   SourceCatalogItem[] // Phase1: Multi-source catalog
+  priceCache     PriceCache[] // Phase1: Price snapshots
+  modelInsights  ModelInsight[] // Phase1: AI insights
+  MarketListing  MarketListing[]
+  features       FeatureSnapshot[]
+  signals        Signal[]
 
   @@unique([set, number, variant, grade])
   @@index([normalizedName, setCode])
   @@index([variantKey])
-  @@index([cardKey])           // Phase1 addition
-  @@index([cleanedName])       // TCGPlayer addition
+  @@index([cardKey]) // Phase1 addition
+  @@index([cleanedName]) // TCGPlayer addition
   @@index([rarity, rarityWeight]) // TCGPlayer sorting
 }
 
@@ -71,23 +74,23 @@ model Listing {
   condition       String?
   grade           String?
   marketplace     String?
-  
+
   // Enhanced from Fanatics/TCGPlayer
-  externalId     String?  // TCGPlayer: Original listing ID
-  marketPrice    Float?   // TCGPlayer: Market price reference
-  lowPrice       Float?   // TCGPlayer: Low price for comparison
-  midPrice       Float?   // TCGPlayer: Mid price for comparison
-  highPrice      Float?   // TCGPlayer: High price for comparison
-  directLowPrice Float?   // TCGPlayer: Direct low price
-  shippingPrice  Float?   // Fanatics: Shipping costs
-  totalPrice     Float?   // Fanatics: Including shipping
-  listingType    String?  // Fanatics: "auction", "buy_it_now", etc.
+  externalId     String? // TCGPlayer: Original listing ID
+  marketPrice    Float? // TCGPlayer: Market price reference
+  lowPrice       Float? // TCGPlayer: Low price for comparison
+  midPrice       Float? // TCGPlayer: Mid price for comparison
+  highPrice      Float? // TCGPlayer: High price for comparison
+  directLowPrice Float? // TCGPlayer: Direct low price
+  shippingPrice  Float? // Fanatics: Shipping costs
+  totalPrice     Float? // Fanatics: Including shipping
+  listingType    String? // Fanatics: "auction", "buy_it_now", etc.
   endTime        DateTime? // Fanatics: For auctions
-  bidCount       Int?     // Fanatics: Number of bids
-  watchers       Int?     // Fanatics: Number watching
-  stock          Int      @default(1) // TCGPlayer: Available quantity
-  imageUrl       String?  // Common: Listing image
-  description    String?  // Common: Listing description
+  bidCount       Int? // Fanatics: Number of bids
+  watchers       Int? // Fanatics: Number watching
+  stock          Int       @default(1) // TCGPlayer: Available quantity
+  imageUrl       String? // Common: Listing image
+  description    String? // Common: Listing description
 
   // Relations
   card           Card          @relation(fields: [cardId], references: [id])
@@ -98,8 +101,70 @@ model Listing {
   @@index([source])
   @@index([normalizedPrice])
   @@index([condition])
-  @@index([externalId, source])  // TCGPlayer addition
+  @@index([externalId, source]) // TCGPlayer addition
   @@index([listingType, endTime]) // Fanatics auction indexing
+}
+
+// Canonical marketplace listing table (natural key: [source, sourceId])
+model MarketListing {
+  id         String   @id @default(cuid())
+  cardId     String
+  source     String
+  sourceId   String
+  priceCents Int
+  currency   String
+  condition  String
+  grade      String?
+  url        String
+  seenAt     DateTime @default(now())
+  isActive   Boolean  @default(true)
+
+  // Relations
+  card   Card     @relation(fields: [cardId], references: [id])
+  Signal Signal[]
+
+  @@unique([source, sourceId])
+  @@index([cardId])
+  @@index([seenAt])
+}
+
+// Rolling statistics for comparable sales windows (paper-mode featurizer)
+model FeatureSnapshot {
+  id           String   @id @default(cuid())
+  cardId       String
+  windowDays   Int
+  medianCents  Int
+  p95Cents     Int
+  p05Cents     Int
+  volume       Int
+  volatilityBp Int
+  nhiScore     Int?
+  updatedAt    DateTime @default(now())
+
+  // Relations
+  card Card @relation(fields: [cardId], references: [id])
+
+  @@unique([cardId, windowDays])
+  @@index([updatedAt])
+}
+
+// Paper-mode Signals produced by scorer (no posting yet)
+model Signal {
+  id         String   @id @default(cuid())
+  cardId     String
+  listingId  String?
+  kind       String
+  edgeBp     Int
+  confidence Float
+  thesis     String   @default("")
+  createdAt  DateTime @default(now())
+
+  // Relations
+  card          Card           @relation(fields: [cardId], references: [id])
+  marketListing MarketListing? @relation(fields: [listingId], references: [id])
+
+  @@index([createdAt])
+  @@index([cardId])
 }
 
 // === USER SYSTEM ===
@@ -140,29 +205,33 @@ model Evaluation {
 }
 
 model CompSale {
-  id              String   @id @default(cuid())
-  cardId          String
-  salePrice       Float
-  currency        String   @default("USD")
-  normalizedPrice Float
-  condition       String
-  grade           String?
-  saleDate        DateTime
-  source          String
-  marketplace     String
-  seller          String?
-  buyer           String?
-  verified        Boolean  @default(false)
-  outlier         Boolean  @default(false)
-  weight          Float    @default(1.0)
+  id         String   @id @default(cuid())
+  cardId     String
+  source     String // e.g., "EbaySold" | "TCGplayerMarket"
+  externalId String? // natural key when the marketplace gives one
+  priceCents Int
+  currency   String
+  soldAt     DateTime
+  raw        Json? // raw payload for audit
+  createdAt  DateTime @default(now())
 
-  // Relations
   card Card @relation(fields: [cardId], references: [id])
 
-  @@index([cardId, saleDate])
-  @@index([normalizedPrice])
-  @@index([condition])
-  @@index([verified])
+  @@unique([source, externalId]) // allows many NULLs; dedup when externalId exists
+  @@index([cardId, soldAt])
+}
+
+model RawImport {
+  id         String   @id @default(cuid())
+  table      String // "Card" | "MarketListing" | "CompSale"
+  source     String // "Ebay" | "EbaySold" | ...
+  sourceId   String? // marketplace id if any
+  payload    Json // full raw JSON we ingested
+  dedupKey   String? // stable hash for idempotency
+  ingestedAt DateTime @default(now())
+
+  @@index([table, source])
+  @@index([ingestedAt])
 }
 
 model MarketData {
@@ -359,23 +428,23 @@ model AuditLog {
 // === PHASE 1 INTEGRATION MODELS ===
 // Source catalog for multi-source data mapping
 model SourceCatalogItem {
-  id              String   @id @default(cuid())
-  cardId          String   // Links to canonical Card
-  sourceType      String   // "tcgplayer", "fanatics", "ebay", etc.
-  externalId      String   // Original ID in source system
-  cardKey         String   // Normalized grouping key
-  sourceName      String   // Name in source system
-  sourceSet       String   // Set in source system  
-  sourceNumber    String   // Number in source system
-  confidence      Float    @default(0.0) // Matching confidence
-  isVerified      Boolean  @default(false)
-  notes           String?  // Manual verification notes
-  createdAt       DateTime @default(now())
-  updatedAt       DateTime @updatedAt
-  
+  id           String   @id @default(cuid())
+  cardId       String // Links to canonical Card
+  sourceType   String // "tcgplayer", "fanatics", "ebay", etc.
+  externalId   String // Original ID in source system
+  cardKey      String // Normalized grouping key
+  sourceName   String // Name in source system
+  sourceSet    String // Set in source system  
+  sourceNumber String // Number in source system
+  confidence   Float    @default(0.0) // Matching confidence
+  isVerified   Boolean  @default(false)
+  notes        String? // Manual verification notes
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
   // Relations
-  card            Card     @relation(fields: [cardId], references: [id])
-  
+  card Card @relation(fields: [cardId], references: [id])
+
   @@unique([sourceType, externalId])
   @@index([cardKey])
   @@index([sourceType, isVerified])
@@ -383,36 +452,36 @@ model SourceCatalogItem {
 
 // Price snapshots for historical tracking
 model PriceCache {
-  id              String   @id @default(cuid())
-  cardId          String
-  sourceType      String
-  priceType       String   // "market", "low", "mid", "high", "last_sale"
-  price           Float
-  currency        String   @default("USD")
-  confidence      Float    @default(0.0)
-  sampleSize      Int      @default(0)
-  timestamp       DateTime @default(now())
-  
+  id         String   @id @default(cuid())
+  cardId     String
+  sourceType String
+  priceType  String // "market", "low", "mid", "high", "last_sale"
+  price      Float
+  currency   String   @default("USD")
+  confidence Float    @default(0.0)
+  sampleSize Int      @default(0)
+  timestamp  DateTime @default(now())
+
   // Relations
-  card            Card     @relation(fields: [cardId], references: [id])
-  
+  card Card @relation(fields: [cardId], references: [id])
+
   @@index([cardId, sourceType, priceType])
   @@index([timestamp])
 }
 
 // AI model insights and predictions
 model ModelInsight {
-  id              String   @id @default(cuid())
-  cardId          String
-  modelType       String   // "price_prediction", "trend_analysis", "market_sentiment"
-  insight         Json     // Structured insight data
-  confidence      Float    @default(0.0)
-  validUntil      DateTime?
-  createdAt       DateTime @default(now())
-  
+  id         String    @id @default(cuid())
+  cardId     String
+  modelType  String // "price_prediction", "trend_analysis", "market_sentiment"
+  insight    Json // Structured insight data
+  confidence Float     @default(0.0)
+  validUntil DateTime?
+  createdAt  DateTime  @default(now())
+
   // Relations
-  card            Card     @relation(fields: [cardId], references: [id])
-  
+  card Card @relation(fields: [cardId], references: [id])
+
   @@index([cardId, modelType])
   @@index([modelType, confidence])
 }

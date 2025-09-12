@@ -27,19 +27,20 @@
   },
   "prisma": {
     "schema": "./api/prisma/schema.prisma",
-    "seed": "npx --yes ts-node api/prisma/seed.ts"
+    "seed": "node api/prisma/seed.mjs"
   },
   "devDependencies": {
     "@prisma/client": "^6.15.0",
     "@types/node": "^24.3.1",
     "dotenv": "^17.2.2",
-    "prisma": "^6.15.0"
+    "prisma": "^6.15.0",
+    "ts-node": "^10.9.2"
   },
   "dependencies": {
-    "redis": "^5.8.2",
-    "typescript": "^5.9.2",
     "cardmarket-wrapper": "^1.0.6",
+    "dotenv": "^16.0.0",
     "node-fetch": "^2.6.7",
-    "dotenv": "^16.0.0"
+    "redis": "^5.8.2",
+    "typescript": "^5.9.2"
   }
 }
