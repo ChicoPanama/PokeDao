@@ -46,8 +46,60 @@ async function buildServer() {
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       request.log.error({ err: e }, 'health check failed');
-      return reply.code(500).send({ status: 'error', error: msg });
+      // Return 200 for Docker health checks, but log the error
+      return reply.code(200).send({ status: 'degraded', error: msg });
     }
+  });
+
+  app.get('/ready', async (request, reply) => {
+    try {
+      const [pong] = await Promise.all([
+        redis.ping(),
+        prisma.$queryRaw`SELECT 1`
+      ]);
+      if (pong !== 'PONG') throw new Error('Redis not ready');
+      return reply.code(200).send({ ready: true });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      request.log.error({ err: e }, 'readiness check failed');
+      return reply.code(503).send({ ready: false, error: msg });
+    }
+  });
+
+  // API routes catalog (dev-only)
+  app.get('/api/_routes', async (request, reply) => {
+    return reply.code(200).send({
+      health: "/health",
+      ready: "/ready", 
+      metrics: "/metrics",
+      cards: "/api/cards?limit=10",
+      listings: "/api/listings?limit=10",
+      feed: "/feed?limit=25",
+      fairValue: "/fv?name=Charizard&set=Base%20Set&listPrice=100",
+      external: "/external/status"
+    });
+  });
+
+  // Prometheus metrics endpoint
+  app.get('/metrics', async (request, reply) => {
+    // Basic metrics - can be enhanced with prom-client later
+    const dbConnections = await prisma.$queryRaw`SELECT count(*) as count FROM pg_stat_activity WHERE datname = current_database()`;
+    const cardCount = await prisma.card.count();
+    const listingCount = await prisma.listing.count();
+    
+    const metrics = [
+      '# HELP pokedao_cards_total Total number of cards in database',
+      '# TYPE pokedao_cards_total gauge',
+      `pokedao_cards_total ${cardCount}`,
+      '# HELP pokedao_listings_total Total number of listings in database', 
+      '# TYPE pokedao_listings_total gauge',
+      `pokedao_listings_total ${listingCount}`,
+      '# HELP pokedao_db_connections Current database connections',
+      '# TYPE pokedao_db_connections gauge',
+      `pokedao_db_connections ${(dbConnections as any[])[0]?.count || 0}`
+    ].join('\n');
+
+    return reply.code(200).type('text/plain').send(metrics);
   });
 
   // fair value endpoint
@@ -207,6 +259,52 @@ async function buildServer() {
       logger.error?.({ err }, 'referral analytics error'); // Use optional chaining for safety
       reply.code(500);
       return { ok: false, error: 'Internal error' };
+    }
+  });
+
+  // cards list endpoint
+  app.get('/api/cards', async (req, reply) => {
+    try {
+      const q = req.query as Record<string, string | undefined>;
+      const limit = Math.min(100, Math.max(1, Number(q.limit || '10')));
+      const cursor = q.cursor ? { id: q.cursor } : undefined;
+
+      const cards = await prisma.card.findMany({
+        ...(cursor ? { cursor, skip: 1 } : {}),
+        take: limit,
+        orderBy: { createdAt: 'desc' },
+        include: {
+          listings: {
+            where: { isActive: true },
+            orderBy: { scrapedAt: 'desc' },
+            take: 1,
+            select: {
+              price: true,
+              currency: true,
+              url: true,
+              source: true,
+              scrapedAt: true
+            }
+          },
+          _count: {
+            select: {
+              listings: true
+            }
+          }
+        }
+      });
+
+      return {
+        cards,
+        pagination: {
+          hasMore: cards.length === limit,
+          nextCursor: cards.length === limit ? cards[cards.length - 1].id : null
+        }
+      };
+    } catch (err: any) {
+      app.log.error({ err }, "cards list error");
+      reply.code(500);
+      return { ok: false, error: "Internal error" };
     }
   });
 

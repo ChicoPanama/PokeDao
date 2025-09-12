@@ -227,11 +227,12 @@ except Exception as e:
       }
       
     } catch (error) {
-      console.log(`   ❌ Normalization test failed: ${error.message}`);
+      const errorMsg = error instanceof Error ? error.message : String(error);
+      console.log(`   ❌ Normalization test failed: ${errorMsg}`);
       this.results.push({
         source: 'normalization_engine',
         compatible: false,
-        issues: [error.message],
+        issues: [errorMsg],
         recommendations: ['Install Python dependencies and verify normalize.py']
       });
     }
@@ -345,8 +346,9 @@ except Exception as e:
           result.issues.push(`Endpoint returned ${testResponse.status}`);
         }
       } catch (error) {
-        console.log(`   ⚠️ Endpoint test failed: ${error.message}`);
-        result.issues.push(`Endpoint accessibility: ${error.message}`);
+        const errorMsg = error instanceof Error ? error.message : String(error);
+        console.log(`   ⚠️ Endpoint test failed: ${errorMsg}`);
+        result.issues.push(`Endpoint accessibility: ${errorMsg}`);
       }
 
       // Test normalization compatibility with sample titles
@@ -365,10 +367,11 @@ except Exception as e:
       }
 
     } catch (error) {
+      const errorMsg = error instanceof Error ? error.message : String(error);
       result.compatible = false;
-      result.issues.push(`Evaluation failed: ${error.message}`);
+      result.issues.push(`Evaluation failed: ${errorMsg}`);
       result.recommendations.push('Check npm registry connectivity');
-      console.log(`   ❌ Evaluation failed: ${error.message}`);
+      console.log(`   ❌ Evaluation failed: ${errorMsg}`);
     }
 
     this.results.push(result);
@@ -509,7 +512,7 @@ except Exception as e:
   }
 
   private getPackageName(sourceName: string): string {
-    const packageMap = {
+    const packageMap: Record<string, string> = {
       'TCGPlayer API': '@tcgplayer/tcgplayer-api',
       'eBay Browse API': 'ebay-api', 
       'Pokemon TCG API': 'pokemontcgsdk'

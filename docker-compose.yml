@@ -9,6 +9,8 @@ services:
       POSTGRES_DB: pokedao
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U pokedao -d pokedao"]
       interval: 5s
@@ -21,29 +23,87 @@ services:
     restart: unless-stopped
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
       timeout: 3s
       retries: 20
 
-  api:
-    image: node:20-bullseye
-    container_name: pokedao-api
-    working_dir: /app
-    # Debian path: install openssl, enable pnpm, install, generate Prisma, run dev
-    command: bash -lc "apt-get update && apt-get install -y openssl && corepack enable && pnpm i && pnpm -w exec prisma generate && PORT=3000 pnpm -F api dev"
+  web:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    container_name: pokedao-web
     ports:
       - "3000:3000"
-    volumes:
-      - ./:/app
     environment:
       NODE_ENV: development
       PORT: 3000
       DATABASE_URL: "postgresql://pokedao:pokedao@db:5432/pokedao"
       REDIS_URL: "redis://redis:6379"
+    volumes:
+      - ./api:/app
+      - /app/node_modules
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:3000/health || exit 1"]
+      interval: 5s
+      timeout: 2s
+      retries: 12
+
+  worker:
+    build:
+      context: .
+      dockerfile: ./worker/Dockerfile
+    container_name: pokedao-worker
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: "postgresql://pokedao:pokedao@db:5432/pokedao"
+      REDIS_URL: "redis://redis:6379"
+    volumes:
+      - ./worker:/app
+      - /app/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "process.exit(0)"]
+      interval: 5s
+      timeout: 2s
+      retries: 12
+
+  bot:
+    build:
+      context: .
+      dockerfile: ./bot/Dockerfile
+    container_name: pokedao-bot
+    environment:
+      NODE_ENV: development
+      BOT_TOKEN: ${BOT_TOKEN:-dummy_token}
+      DATABASE_URL: "postgresql://pokedao:pokedao@db:5432/pokedao"
+      REDIS_URL: "redis://redis:6379"
+    volumes:
+      - ./bot:/app
+      - /app/node_modules
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "process.exit(0)"]
+      interval: 5s
+      timeout: 2s
+      retries: 12
+
+volumes:
+  postgres_data:
+  redis_data:

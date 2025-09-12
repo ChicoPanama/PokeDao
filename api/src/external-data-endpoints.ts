@@ -239,7 +239,7 @@ export async function getMarketSignals(limit: number = 20): Promise<any[]> {
       
       // Calculate basic signals
       const insuredValue = card.insuredValue ? parseFloat(card.insuredValue) : undefined
-      const hasHighGrade = card.gradeNum && card.gradeNum >= 9.0
+      const hasHighGrade = Boolean(card.gradeNum && card.gradeNum >= 9.0)
       const isVintage = card.itemName.includes('1998') || card.itemName.includes('1999')
       
       let signal = 'HOLD'

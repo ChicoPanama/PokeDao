@@ -1,0 +1,12 @@
+{
+  "name": "@pokedao/research-consolidated",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Consolidated research scripts compatible with canonical schema",
+  "scripts": {
+    "test": "node example-canonical-integration.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.15.0"
+  }
+}

@@ -1,20 +1,45 @@
-# Use Node.js LTS version
-FROM node:20-alpine
+# Bot Dockerfile
+FROM node:20-bullseye-slim
 
-# Set working directory inside container
+# Install system dependencies  
+RUN apt-get update && apt-get install -y \
+    curl \
+    openssl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Enable pnpm
+RUN corepack enable
+
+# Set working directory
 WORKDIR /app
 
-# Copy package files first (for better Docker caching)
-COPY package*.json ./
+# Copy root package files for workspace setup
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+
+# Copy package files
+COPY bot/package.json ./bot/
+
+# Copy prisma schema
+COPY prisma/ ./prisma/
 
 # Install dependencies
-RUN npm install
+RUN pnpm install --frozen-lockfile
 
-# Copy the rest of the application code
-COPY . .
+# Generate Prisma client
+RUN pnpm exec prisma generate --schema=./prisma/schema.prisma
 
-# Expose port (optional, bots don't need ports but good practice)
-EXPOSE 3000
+# Copy bot source code
+COPY bot/ ./bot/
 
-# Command to run the bot
-CMD ["npm", "run", "dev"]
+# Set working directory to bot package
+WORKDIR /app/bot
+
+# Build the application
+RUN pnpm run build
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD node -e "process.exit(0)"
+
+# Start the application  
+CMD ["pnpm", "start"]

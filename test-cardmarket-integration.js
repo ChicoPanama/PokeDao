@@ -7,8 +7,7 @@ const CardMarketConfig = require('./cardmarket-config');
 const CardMarketPokemonExtractor = require('./cardmarket-pokemon-extractor');
 
 async function testCardMarketIntegration() {
-    console.log('🧪 Testing CardMarket Integration...
-');
+    console.log('🧪 Testing CardMarket Integration...\n');
     
     const tests = [
         testSDKInstallation,

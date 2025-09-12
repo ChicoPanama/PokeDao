@@ -107,23 +107,104 @@ export class CollectorCryptDatabaseImporter {
   }
   
   private async importBatch(cards: CollectorCryptCard[]): Promise<void> {
-    const prismaCards = cards.map(card => ({
-      id: card.id,
-      title: card.title,
-      price: card.price,
-      currency: card.currency,
-      source: card.source,
-      url: card.url,
-      seller: card.seller,
-      isActive: card.isActive,
-      scrapedAt: new Date(card.scrapedAt),
-      metadata: card.metadata
-    }))
-    
-    await prisma.card.createMany({
-      data: prismaCards,
-      skipDuplicates: true
-    })
+    for (const cardData of cards) {
+      try {
+        // Parse card metadata to extract name, set, number
+        const { name, set, number, variant, grade, condition } = this.parseCardTitle(cardData.title)
+        
+        // Create or find the card record
+        const card = await prisma.card.upsert({
+          where: {
+            id: cardData.id
+          },
+          create: {
+            id: cardData.id,
+            name,
+            set: set || 'Unknown',
+            number: number || 'Unknown', 
+            variant,
+            grade,
+            condition,
+            cardKey: this.generateCardKey(name, set, number, variant, grade)
+          },
+          update: {
+            name,
+            set: set || 'Unknown',
+            number: number || 'Unknown',
+            variant,
+            grade, 
+            condition,
+            cardKey: this.generateCardKey(name, set, number, variant, grade)
+          }
+        })
+
+        // Create the listing record (check if exists first)
+        const existingListing = await prisma.listing.findFirst({
+          where: {
+            source: 'collector_crypt',
+            sourceItemId: cardData.id
+          }
+        })
+        
+        if (existingListing) {
+          await prisma.listing.update({
+            where: { id: existingListing.id },
+            data: {
+              price: cardData.price,
+              currency: cardData.currency,
+              url: cardData.url,
+              seller: cardData.seller,
+              isActive: cardData.isActive,
+              raw: cardData.metadata,
+              scrapedAt: new Date(cardData.scrapedAt)
+            }
+          })
+        } else {
+          await prisma.listing.create({
+            data: {
+              cardId: card.id,
+              source: 'collector_crypt',
+              sourceItemId: cardData.id,
+              price: cardData.price,
+              currency: cardData.currency,
+              url: cardData.url,
+              seller: cardData.seller,
+              isActive: cardData.isActive,
+              raw: cardData.metadata,
+              scrapedAt: new Date(cardData.scrapedAt)
+            }
+          })
+        }
+      } catch (error) {
+        console.error(`Failed to import card ${cardData.id}:`, error)
+        // Continue with next card
+      }
+    }
+  }
+
+  private parseCardTitle(title: string): {
+    name: string
+    set: string | null
+    number: string | null  
+    variant: string | null
+    grade: string | null
+    condition: string | null
+  } {
+    // Basic parsing - could be enhanced with more sophisticated logic
+    // For now, just use the title as the name
+    return {
+      name: title,
+      set: null,
+      number: null,
+      variant: null,
+      grade: null,
+      condition: null
+    }
+  }
+
+  private generateCardKey(name: string, set: string | null, number: string | null, variant: string | null, grade: string | null): string {
+    const parts = [name, set, number, variant, grade].filter(Boolean)
+    return parts.join('|').toLowerCase().replace(/\s+/g, '-')
   }
   
   async generateImportSummary(): Promise<void> {
@@ -134,16 +215,20 @@ export class CollectorCryptDatabaseImporter {
     const totalCards = await prisma.card.count()
     console.log(`Total cards in database: ${totalCards}`)
     
-    // Collector Crypt cards
-    const collectorCryptCards = await prisma.card.count({
+    // Total listings
+    const totalListings = await prisma.listing.count()
+    console.log(`Total listings in database: ${totalListings}`)
+    
+    // Collector Crypt listings
+    const collectorCryptListings = await prisma.listing.count({
       where: {
         source: 'collector_crypt'
       }
     })
-    console.log(`Collector Crypt cards: ${collectorCryptCards}`)
+    console.log(`Collector Crypt listings: ${collectorCryptListings}`)
     
     // Active listings
-    const activeListings = await prisma.card.count({
+    const activeListings = await prisma.listing.count({
       where: {
         source: 'collector_crypt',
         isActive: true
@@ -152,7 +237,7 @@ export class CollectorCryptDatabaseImporter {
     console.log(`Active Collector Crypt listings: ${activeListings}`)
     
     // Price analysis
-    const priceStats = await prisma.card.aggregate({
+    const priceStats = await prisma.listing.aggregate({
       where: {
         source: 'collector_crypt',
         isActive: true,
@@ -174,15 +259,19 @@ export class CollectorCryptDatabaseImporter {
       }
     })
     
-    if (priceStats._count.price > 0) {
+    if (priceStats._count && priceStats._count.price && priceStats._count.price > 0) {
       console.log(`\n💰 Price Analysis:`)
-      console.log(`   Cards with prices: ${priceStats._count.price}`)
-      console.log(`   Price range: $${priceStats._min.price} - $${priceStats._max.price}`)
-      console.log(`   Average price: $${priceStats._avg.price?.toFixed(2)}`)
+      console.log(`   Listings with prices: ${priceStats._count.price}`)
+      if (priceStats._min?.price && priceStats._max?.price) {
+        console.log(`   Price range: $${priceStats._min.price} - $${priceStats._max.price}`)
+      }
+      if (priceStats._avg?.price) {
+        console.log(`   Average price: $${priceStats._avg.price.toFixed(2)}`)
+      }
     }
     
     // Most recent imports
-    const recentImports = await prisma.card.findMany({
+    const recentImports = await prisma.listing.findMany({
       where: {
         source: 'collector_crypt'
       },
@@ -190,17 +279,18 @@ export class CollectorCryptDatabaseImporter {
         scrapedAt: 'desc'
       },
       take: 5,
-      select: {
-        title: true,
-        price: true,
-        currency: true,
-        scrapedAt: true
+      include: {
+        card: {
+          select: {
+            name: true
+          }
+        }
       }
     })
     
     console.log(`\n🕒 Most Recent Imports:`)
-    recentImports.forEach((card, index) => {
-      console.log(`   ${index + 1}. ${card.title} - $${card.price} ${card.currency} (${card.scrapedAt.toISOString()})`)
+    recentImports.forEach((listing, index) => {
+      console.log(`   ${index + 1}. ${listing.card.name} - $${listing.price} ${listing.currency} (${listing.scrapedAt.toISOString()})`)
     })
   }
 }

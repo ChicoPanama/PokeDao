@@ -1,51 +1,38 @@
 {
   "files.associations": {
-    "**/*.prisma": "plaintext",
-    "**/*.plan.prisma": "plaintext"
+    "**/*.prisma": "prisma",
+    "**/backup/**/*.prisma": "plaintext",
+    "**/*.backup": "plaintext",
+    "**/*.plan.backup": "plaintext"
   },
-  
-  "problems.exclude": {
-    "**/*.prisma": true,
-    "**/*.plan.prisma": true,
-    "**/.pnpm/**": true,
-    "**/node_modules/**": true,
-    "**/.prisma/**": true,
-    "research/**": true,
-    "**/generated/**": true,
-    "**/*prisma*/**": true
-  },
-  
-  "search.exclude": {
-    "**/*.prisma": true,
-    "**/dist": true,
-    "**/node_modules": true,
+  "files.exclude": {
     "**/.pnpm": true,
-    "**/.prisma": true
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/research/**/generated": true,
+    "**/research/**/.prisma": true,
+    "**/*.backup": true,
+    "**/*.plan.backup": true,
+    "**/research-backup-*": true
   },
-  
+  "search.exclude": {
+    "**/.pnpm": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/research/**/generated": true,
+    "**/research/**/.prisma": true,
+    "**/*.backup": true,
+    "**/research-backup-*": true
+  },
   "files.watcherExclude": {
-    "**/*.prisma": true,
-    "**/dist/**": true,
-    "**/node_modules/**": true,
     "**/.pnpm/**": true,
-    "**/.prisma/**": true
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/research/**/generated/**": true,
+    "**/research/**/.prisma/**": true,
+    "**/*.backup": true,
+    "**/research-backup-*/**": true
   },
-  
-  "typescript.preferences.exclude": [
-    "**/node_modules/**",
-    "**/.pnpm/**",
-    "**/.prisma/**"
-  ],
-  
-  "eslint.workingDirectories": [
-    { "pattern": "api" },
-    { "pattern": "bot" },
-    { "pattern": "worker" },
-    { "pattern": "ml" },
-    { "pattern": "packages/**" }
-  ],
-  "eslint.validate": ["typescript"],
-  
-  "extensions.ignoreRecommendations": true,
-  "prisma.trace.server": "off"
+  "prisma.fileWatcher": false,
+  "prisma.schemaPath": "./api/prisma/schema.prisma"
 }
