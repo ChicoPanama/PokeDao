@@ -1,5 +1,4 @@
-import { upsertCardByKey, upsertListing, sharedPrisma } from '../../packages/shared/db.js';
-import { cardKey } from '../../packages/shared/keys.js';
+import { upsertCardByKey, upsertListing, sharedPrisma, cardKey } from '@pokedao/shared';
 
 const BASE = process.env.POKEMON_TCG_API_BASE || 'https://api.pokemontcg.io/v2';
 const KEY = process.env.POKEMON_TCG_API_KEY || '';

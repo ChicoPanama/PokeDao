@@ -1,0 +1,2 @@
+declare module '@pokedao/shared';
+

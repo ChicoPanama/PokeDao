@@ -28,6 +28,7 @@
     "harvest-reset": "tsx src/resumable-harvester.ts reset"
   },
   "dependencies": {
+    "@pokedao/shared": "workspace:*",
     "@prisma/client": "^6.15.0",
     "@types/axios": "^0.14.4",
     "axios": "^1.11.0",

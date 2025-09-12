@@ -1,5 +1,7 @@
-import { PrismaClient } from '@prisma/client';
-
+// Avoid tight type dependency on generated Prisma types during typecheck
+// by importing the package as any (paper-mode stub).
+import prismaPkg from '@prisma/client';
+const { PrismaClient } = prismaPkg as any;
 const prisma = new PrismaClient();
 
 // Paper-mode stub: fill thesis with a short placeholder, and block none.
@@ -20,4 +22,3 @@ export async function auditAndThesisForNewSignals({ take = 50 } = {}) {
   }
   return { updated, blocked };
 }
-

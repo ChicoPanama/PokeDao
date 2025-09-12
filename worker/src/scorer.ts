@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { saveSignal } from '../../packages/shared/db.js';
+import { saveSignal } from '@pokedao/shared';
 
 const prisma = new PrismaClient();
 
@@ -65,4 +65,3 @@ export async function scoreListingsPaper({ limit = 200 } = {}) {
   }
   return { created, dropped };
 }
-

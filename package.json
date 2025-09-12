@@ -36,6 +36,12 @@
     "prisma": "^6.15.0",
     "ts-node": "^10.9.2"
   },
+  "pnpm": {
+    "overrides": {
+      "@prisma/client": "6.15.0",
+      "prisma": "6.15.0"
+    }
+  },
   "dependencies": {
     "cardmarket-wrapper": "^1.0.6",
     "dotenv": "^16.0.0",

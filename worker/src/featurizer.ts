@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { saveFeatureSnapshot } from '../../packages/shared/db.js';
+import { saveFeatureSnapshot } from '@pokedao/shared';
 
 const prisma = new PrismaClient();
 
@@ -71,4 +71,3 @@ export async function featurizeTouchedCards({ sinceHours = 24 } = {}) {
   }
   return { cards: touched.length, snapshots: wrote };
 }
-
