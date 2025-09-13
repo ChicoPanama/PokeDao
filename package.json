@@ -8,7 +8,8 @@
     "bot",
     "worker",
     "ml",
-    "packages/shared"
+    "packages/shared",
+    "apps/agent"
   ],
   "scripts": {
     "preflight": "ts-node scripts/preflight.ts",
@@ -43,7 +44,9 @@
     "cardmarket:test": "node cardmarket-pokemon-extractor.js --test",
     "cardmarket:extract": "node cardmarket-pokemon-extractor.js",
     "cardmarket:setup": "node test-cardmarket-integration.js",
-    "x:dry": "POSTING_ENABLED=false POSTING_DRY_RUN=true tsx scripts/x-dry-run.ts"
+    "x:dry": "POSTING_ENABLED=false POSTING_DRY_RUN=true tsx scripts/x-dry-run.ts",
+    "agent:dev": "pnpm --filter @pokedao/agent dev",
+    "agent:tick": "pnpm --filter @pokedao/agent tick"
   },
   "prisma": {
     "schema": "./api/prisma/schema.prisma",

@@ -111,6 +111,15 @@ importers:
         specifier: ^0.34.6
         version: 0.34.6(playwright@1.55.0)
 
+  apps/agent:
+    dependencies:
+      bullmq:
+        specifier: ^4.15.4
+        version: 4.18.3
+      ioredis:
+        specifier: ^5.7.0
+        version: 5.7.0
+
   bot:
     dependencies:
       dotenv:
