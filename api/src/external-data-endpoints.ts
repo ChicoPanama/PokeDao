@@ -2,12 +2,12 @@
  * External Data Integration Endpoints
  * Implements the "scrape → analyze → alert" pipeline using existing 24,307 card dataset
  */
-import { PrismaClient } from '@prisma/client'
+import prisma from './lib/prisma.js'
 import { createHash } from 'node:crypto'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-const prisma = new PrismaClient()
+// Use shared Prisma client from service
 
 // Types for external data sources
 export interface CollectorCryptCard {

@@ -42,7 +42,8 @@
     "pipeline:live": "pnpm run collect:sold:ebay && tsx scripts/run-featurizer.ts && tsx scripts/run-scorer.ts && pnpm run pipeline:strict",
     "cardmarket:test": "node cardmarket-pokemon-extractor.js --test",
     "cardmarket:extract": "node cardmarket-pokemon-extractor.js",
-    "cardmarket:setup": "node test-cardmarket-integration.js"
+    "cardmarket:setup": "node test-cardmarket-integration.js",
+    "x:dry": "POSTING_ENABLED=false POSTING_DRY_RUN=true tsx scripts/x-dry-run.ts"
   },
   "prisma": {
     "schema": "./api/prisma/schema.prisma",
@@ -53,7 +54,8 @@
     "@types/node": "^24.3.1",
     "dotenv": "^17.2.2",
     "prisma": "^6.15.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.5"
   },
   "pnpm": {
     "overrides": {
@@ -66,6 +68,7 @@
     "dotenv": "^16.0.0",
     "node-fetch": "^2.6.7",
     "redis": "^5.8.2",
+    "twitter-api-v2": "^1.27.0",
     "typescript": "^5.9.2"
   }
 }
