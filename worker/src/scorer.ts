@@ -47,6 +47,12 @@ export async function scoreListingsPaper({ limit = 200 } = {}) {
 
     const askCents = (L as any).priceCentsUsd ?? L.priceCents;
     const freshDays = Math.max(0, Math.floor((Date.now() - L.seenAt.getTime()) / 86400000));
+
+    // High-value pre-gate: only queue signals when either ask or 30d median >= $500
+    if ((askCents ?? 0) < 50000 && (fair ?? 0) < 50000) {
+      dropped++;
+      continue;
+    }
     if (comps < GUARDS.minComps || freshDays > GUARDS.maxFreshDays || vol > GUARDS.maxVolBp || L.priceCents < GUARDS.minPriceCents) {
       dropped++;
       continue;

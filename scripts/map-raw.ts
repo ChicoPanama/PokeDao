@@ -65,8 +65,16 @@ export async function mapRawListingToCanonical(raw: RawListing, source: string) 
 }
 
 export function mapRawCompToCanonical(raw: RawComp, source: string) {
-  const setCode = raw.setCode || raw.set || '';
-  const number = raw.number || raw.cardNumber || '';
+  let setCode = raw.setCode || raw.set || '';
+  let number = raw.number || raw.cardNumber || '';
+  // Try to recover from missing fields using title parsing (mirrors listings)
+  if ((!setCode || !number) && raw.title) {
+    const parsed = (parseTitleFallback(raw.title));
+    if (parsed) {
+      setCode = setCode || parsed.setCode;
+      number = number || parsed.number;
+    }
+  }
   const vkey = buildVariantKey({
     edition: raw.edition === 1 ? '1st' : raw.edition,
     shadowless: !!raw.shadowless,
