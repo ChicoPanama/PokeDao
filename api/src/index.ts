@@ -1,6 +1,6 @@
 import loadAndValidateEnv from './lib/validate-env.js';
-// Validate API env vars
-loadAndValidateEnv(['PORT', 'REDIS_URL']);
+// Load env (non-fatal). We default PORT/REDIS_URL later if missing.
+loadAndValidateEnv([]);
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import prisma from "./lib/prisma.js";
@@ -11,6 +11,7 @@ import type { FastifyBaseLogger } from "fastify";
 // worker helpers (exported by @pokedao/worker)
 import { normalizeCardQuery, getComparableSales, sanitizeComps, computeFairValue } from "@pokedao/worker";
 import { Prisma } from "@prisma/client";
+import { registerSignals } from "./routes/signals.js";
 
 // External data integration endpoints
 import { 
@@ -33,10 +34,11 @@ type watchlistKey = Prisma.WatchlistItemWhereUniqueInput;
 
 async function buildServer() {
   const app = Fastify({
-    logger: true,
+    logger: { level: process.env.API_LOG_LEVEL || 'info' },
   });
 
   await app.register(cors, { origin: true });
+  await registerSignals(app);
 
   app.get('/health', async (request, reply) => {
     try {

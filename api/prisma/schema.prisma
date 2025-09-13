@@ -112,6 +112,7 @@ model MarketListing {
   source     String
   sourceId   String
   priceCents Int
+  priceCentsUsd Int?
   currency   String
   condition  String
   grade      String?
@@ -162,9 +163,24 @@ model Signal {
   // Relations
   card          Card           @relation(fields: [cardId], references: [id])
   marketListing MarketListing? @relation(fields: [listingId], references: [id])
+  posts         PostQueue[]
 
   @@index([createdAt])
   @@index([cardId])
+}
+
+// Queue of outbound posts (dry-run; not sent to X yet)
+model PostQueue {
+  id          String   @id @default(cuid())
+  signalId    String
+  payload     Json
+  status      String   @default("PENDING") // PENDING | SENT | SKIPPED
+  scheduledAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+
+  Signal Signal @relation(fields: [signalId], references: [id])
+
+  @@index([scheduledAt])
 }
 
 // === USER SYSTEM ===
@@ -210,6 +226,7 @@ model CompSale {
   source     String // e.g., "EbaySold" | "TCGplayerMarket"
   externalId String? // natural key when the marketplace gives one
   priceCents Int
+  priceCentsUsd Int?
   currency   String
   soldAt     DateTime
   raw        Json? // raw payload for audit
@@ -219,6 +236,13 @@ model CompSale {
 
   @@unique([source, externalId]) // allows many NULLs; dedup when externalId exists
   @@index([cardId, soldAt])
+}
+
+// FX rates (baseline USD)
+model FxRate {
+  code        String   @id
+  usdPerUnit  Float
+  updatedAt   DateTime @default(now())
 }
 
 model RawImport {

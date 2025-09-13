@@ -1,0 +1,42 @@
+[
+  {
+    "saleId": "S-EBAY-3003",
+    "setCode": "sv1",
+    "number": "15",
+    "price": 12.75,
+    "currency": "USD",
+    "soldAt": "2025-09-10T00:51:03.094Z",
+    "language": "EN",
+    "title": "Pikachu 15/198 Scarlet & Violet"
+  },
+  {
+    "saleId": "S-EBAY-3004",
+    "setCode": "sv1",
+    "number": "15",
+    "price": 13,
+    "currency": "USD",
+    "soldAt": "2025-09-11T00:51:03.097Z",
+    "language": "EN",
+    "title": "Pikachu 15/198 Scarlet & Violet"
+  },
+  {
+    "saleId": "S-EBAY-4001",
+    "setCode": "sv2",
+    "number": "210",
+    "price": 35.25,
+    "currency": "USD",
+    "soldAt": "2025-09-09T00:51:03.097Z",
+    "language": "EN",
+    "title": "Miraidon ex 210/198 Secret Rare"
+  },
+  {
+    "saleId": "S-EBAY-4002",
+    "setCode": "sv2",
+    "number": "210",
+    "price": 37.1,
+    "currency": "USD",
+    "soldAt": "2025-09-12T00:51:03.097Z",
+    "language": "EN",
+    "title": "Miraidon ex 210/198 Secret Rare"
+  }
+]

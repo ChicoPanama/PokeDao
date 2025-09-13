@@ -30,10 +30,10 @@ async function centsSeries(cardId: string, days: number) {
   const since = new Date(Date.now() - days * 24 * 3600 * 1000);
   const rows = await prisma.compSale.findMany({
     where: { cardId, soldAt: { gte: since } },
-    select: { priceCents: true },
+    select: { priceCents: true, priceCentsUsd: true },
     orderBy: { soldAt: 'desc' },
   });
-  return rows.map((r) => r.priceCents);
+  return rows.map((r) => (r as any).priceCentsUsd ?? r.priceCents);
 }
 
 export async function computeFeatureForCard(cardId: string, windowDays: 7 | 30 | 90) {

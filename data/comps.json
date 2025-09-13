@@ -1,0 +1,42 @@
+[
+  {
+    "saleId": "S-EBAY-1001",
+    "setCode": "base1",
+    "number": "4",
+    "price": 250,
+    "currency": "USD",
+    "soldAt": "2025-01-09T10:00:00Z",
+    "language": "EN",
+    "title": "Charizard Holo 4/102 Base Set"
+  },
+  {
+    "saleId": "S-EBAY-1002",
+    "setCode": "base1",
+    "number": "4",
+    "price": 265,
+    "currency": "USD",
+    "soldAt": "2025-01-11T16:20:00Z",
+    "language": "EN",
+    "title": "Charizard Holo 4/102 Base Set"
+  },
+  {
+    "saleId": "S-EBAY-2001",
+    "setCode": "sv1",
+    "number": "15",
+    "price": 12,
+    "currency": "USD",
+    "soldAt": "2025-01-12T20:00:00Z",
+    "language": "EN",
+    "title": "Pikachu 15/198 Scarlet & Violet"
+  },
+  {
+    "saleId": "S-EBAY-2002",
+    "setCode": "sv1",
+    "number": "15",
+    "price": 11.5,
+    "currency": "USD",
+    "soldAt": "2025-01-13T09:45:00Z",
+    "language": "EN",
+    "title": "Pikachu 15/198 Scarlet & Violet"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "L-EBAY-001",
+    "setCode": "base1",
+    "number": "4",
+    "title": "Charizard Holo 4/102 Base Set",
+    "price": 199.99,
+    "currency": "USD",
+    "condition": "Near Mint",
+    "language": "EN",
+    "url": "https://www.ebay.com/itm/L-EBAY-001",
+    "seenAt": "2025-09-13T00:51:18.345Z"
+  },
+  {
+    "id": "L-EBAY-002",
+    "setCode": "sv1",
+    "number": "15",
+    "title": "Pikachu 15/198 Scarlet & Violet",
+    "price": 9.5,
+    "currency": "USD",
+    "condition": "Lightly Played",
+    "language": "EN",
+    "url": "https://www.ebay.com/itm/L-EBAY-002",
+    "seenAt": "2025-09-13T00:51:18.346Z"
+  },
+  {
+    "id": "L-EBAY-003",
+    "setCode": "sv2",
+    "number": "210",
+    "title": "Miraidon ex 210/198 Secret Rare",
+    "price": 34,
+    "currency": "USD",
+    "condition": "Near Mint",
+    "language": "EN",
+    "url": "https://www.ebay.com/itm/L-EBAY-003",
+    "seenAt": "2025-09-13T00:51:18.346Z"
+  }
+]

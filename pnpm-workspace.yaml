@@ -3,6 +3,7 @@ packages:
   - bot
   - worker
   - ml
+  - packages/shared
   - prisma
   - utils
 

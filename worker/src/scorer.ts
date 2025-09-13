@@ -9,7 +9,7 @@ function basisPoints(delta: number, base: number) {
 }
 
 type Guards = { minComps: number; maxFreshDays: number; maxVolBp: number; minPriceCents: number };
-const GUARDS: Guards = { minComps: 5, maxFreshDays: 14, maxVolBp: 1200, minPriceCents: 200 };
+const GUARDS: Guards = { minComps: 3, maxFreshDays: 14, maxVolBp: 1200, minPriceCents: 200 };
 
 function sigmoid(x: number) {
   return 1 / (1 + Math.exp(-x));
@@ -45,13 +45,14 @@ export async function scoreListingsPaper({ limit = 200 } = {}) {
     const comps = s.volume;
     const vol = s.volatilityBp;
 
+    const askCents = (L as any).priceCentsUsd ?? L.priceCents;
     const freshDays = Math.max(0, Math.floor((Date.now() - L.seenAt.getTime()) / 86400000));
     if (comps < GUARDS.minComps || freshDays > GUARDS.maxFreshDays || vol > GUARDS.maxVolBp || L.priceCents < GUARDS.minPriceCents) {
       dropped++;
       continue;
     }
 
-    const { edgeBp, confidence } = scoreFrom(fair, L.priceCents, comps, freshDays, vol);
+    const { edgeBp, confidence } = scoreFrom(fair, askCents, comps, freshDays, vol);
 
     await saveSignal(prisma, {
       cardId: L.cardId,

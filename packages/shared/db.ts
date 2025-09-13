@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import type { CardKey } from './keys.js';
+import { toUSD } from './money.js';
 
 // If a caller doesn't provide a Prisma instance, use a shared one.
 const sharedPrisma = new PrismaClient();
@@ -65,6 +66,7 @@ export async function upsertListing(
     seenAt: Date;
   },
 ) {
+  const priceCentsUsd = await toUSD(prisma, data.priceCents, data.currency);
   const card = await upsertCardByKey(
     prisma,
     data.cardKey,
@@ -76,6 +78,7 @@ export async function upsertListing(
     update: {
       cardId: card.id,
       priceCents: data.priceCents,
+      priceCentsUsd,
       currency: data.currency,
       condition: data.condition,
       grade: data.grade ?? null,
@@ -88,6 +91,7 @@ export async function upsertListing(
       source: data.source,
       sourceId: data.sourceId,
       priceCents: data.priceCents,
+      priceCentsUsd,
       currency: data.currency,
       condition: data.condition,
       grade: data.grade ?? null,
@@ -110,12 +114,14 @@ export async function insertCompSale(
     raw?: any;
   },
 ) {
+  const priceCentsUsd = await toUSD(prisma, sale.priceCents, sale.currency);
   return prisma.compSale.create({
     data: {
       cardId: sale.cardId,
       source: sale.source,
       externalId: sale.externalId ?? null,
       priceCents: sale.priceCents,
+      priceCentsUsd,
       currency: sale.currency,
       soldAt: sale.soldAt,
       raw: sale.raw ?? null,
