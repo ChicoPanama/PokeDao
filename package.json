@@ -27,6 +27,8 @@
     "pipeline:relaxed": "pnpm dlx tsx scripts/run-featurizer.ts && pnpm dlx tsx scripts/run-scorer.ts && THESIS_RELAXED=1 pnpm dlx tsx scripts/run-thesis.ts",
     "pipeline:strict": "pnpm dlx tsx scripts/run-featurizer.ts && pnpm dlx tsx scripts/run-scorer.ts && THESIS_RELAXED=0 THESIS_MIN_COMPS_90=5 THESIS_MAX_VOL_BP=1200 THESIS_MAX_FRESH_DAYS=14 pnpm dlx tsx scripts/run-thesis.ts",
     "collect:sold:ebay": "tsx scripts/collect-ebay-sold.ts",
+    "export:ebay:extended": "tsx scripts/export-ebay-extended.ts",
+    "ingest:ebay:extended": "tsx scripts/ingest-ebay-extended.ts data/research/ebay_current_extended.json",
     "pipeline:live": "pnpm run collect:sold:ebay && tsx scripts/run-featurizer.ts && tsx scripts/run-scorer.ts && pnpm run pipeline:strict",
     "cardmarket:test": "node cardmarket-pokemon-extractor.js --test",
     "cardmarket:extract": "node cardmarket-pokemon-extractor.js",
