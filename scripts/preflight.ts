@@ -33,6 +33,26 @@ const checks: Check[] = [
     },
   },
   {
+    name: 'TitleParseCache present + stats',
+    run: () => (async () => {
+      try {
+        const { PrismaClient } = await import('@prisma/client');
+        const prisma = new PrismaClient();
+        const stats = await prisma.$queryRawUnsafe<any>(
+          'SELECT COUNT(*)::bigint AS rows, COALESCE(SUM(hits),0)::bigint AS total_hits, ROUND(AVG(confidence)::numeric,3) AS avg_conf FROM "TitleParseCache"',
+        );
+        const row = Array.isArray(stats) ? stats[0] : stats;
+        const rows = Number(row?.rows || 0);
+        const hits = Number(row?.total_hits || 0);
+        const avg = row?.avg_conf ?? null;
+        console.log(`✔ TitleParseCache rows=${rows} hits=${hits} avg_conf=${avg ?? 'n/a'}`);
+        await prisma.$disconnect();
+      } catch {
+        console.log('⚠ TitleParseCache check skipped');
+      }
+    })(),
+  },
+  {
     name: 'pnpm available',
     run: () => {
       const v = execSync('pnpm --version', { stdio: ['ignore', 'pipe', 'ignore'] })
