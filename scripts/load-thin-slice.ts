@@ -1,7 +1,7 @@
 import Database from 'better-sqlite3';
 import { PrismaClient } from '@prisma/client';
-import { mapRawListingToCanonical, mapRawCompToCanonical } from './map-raw';
-import { upsertCardByKey, upsertListing, insertCompSale } from '../packages/shared/db';
+import { mapRawListingToCanonical, mapRawCompToCanonical } from './map-raw.js';
+import { upsertCardByKey, upsertListing, insertCompSale } from '../packages/shared/db.js';
 
 const prisma = new PrismaClient();
 
@@ -29,7 +29,7 @@ async function main() {
     listErr = 0;
   for (const raw of listings) {
     try {
-      const { canonical, rawImport } = mapRawListingToCanonical(raw, raw.source || 'Ebay');
+      const { canonical, rawImport } = await mapRawListingToCanonical(raw, raw.source || 'Ebay');
       // audit copy
       await prisma.rawImport.create({ data: rawImport as any });
 
@@ -63,7 +63,7 @@ async function main() {
     compErr = 0;
   for (const raw of comps) {
     try {
-      const { canonical, rawImport } = mapRawCompToCanonical(raw, raw.source || 'EbaySold');
+      const { canonical, rawImport } = await mapRawCompToCanonical(raw, raw.source || 'EbaySold');
       await prisma.rawImport.create({ data: rawImport as any });
 
       const card = await upsertCardByKey(prisma, canonical.cardKey, raw.name || `${canonical.cardKey.setCode} ${canonical.cardKey.number}`);

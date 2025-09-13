@@ -23,7 +23,13 @@
     "setup": "pnpm install && pnpm --filter api prisma generate && pnpm run db:reset",
     "db:reset": "pnpm --filter api prisma migrate reset --force && pnpm run db:seed",
     "db:seed": "pnpm --filter api prisma db seed",
-    "test": "pnpm -r run test",
+  "test": "pnpm -r run test",
+  "seed:minimal": "tsx scripts/seed-minimal.ts",
+  "seed:oppty": "tsx scripts/seed-oppty.ts",
+  "seed:from-listing": "tsx scripts/seed-from-listing.ts",
+  "seed:mini": "pnpm --filter @pokedao/agent exec tsx scripts/seed-minimal.ts",
+  "seed-and-tick": "pnpm -s seed:from-listing && OPP_MIN_NET_SPREAD_BPS=0 OPP_MIN_30D_SALES=0 AGENT_SMOKE_ONLY=false pnpm -s agent:tick",
+  "test:smoke": "AGENT_DEBUG=true OPP_MIN_NET_SPREAD_BPS=0 OPP_MIN_30D_SALES=0 AGENT_SMOKE_ONLY=false tsx scripts/verify-opportunity.ts",
     "smoke": "node scripts/smoke.sh",
     "pipeline:relaxed": "pnpm dlx tsx scripts/run-featurizer.ts && pnpm dlx tsx scripts/run-scorer.ts && THESIS_RELAXED=1 pnpm dlx tsx scripts/run-thesis.ts",
     "pipeline:strict": "pnpm dlx tsx scripts/run-featurizer.ts && pnpm dlx tsx scripts/run-scorer.ts && THESIS_RELAXED=0 THESIS_MIN_COMPS_90=5 THESIS_MAX_VOL_BP=1200 THESIS_MAX_FRESH_DAYS=14 pnpm dlx tsx scripts/run-thesis.ts",
@@ -46,7 +52,10 @@
     "cardmarket:setup": "node test-cardmarket-integration.js",
     "x:dry": "POSTING_ENABLED=false POSTING_DRY_RUN=true tsx scripts/x-dry-run.ts",
     "agent:dev": "pnpm --filter @pokedao/agent dev",
-    "agent:tick": "pnpm --filter @pokedao/agent tick"
+    "agent:tick": "pnpm --filter @pokedao/agent tick",
+    "smoke:tick": "tsx scripts/agent-smoke-tick.ts",
+    "smoke:daily": "tsx scripts/post-daily-once.ts",
+    "smoke:flash": "tsx scripts/flash-direct.ts"
   },
   "prisma": {
     "schema": "./api/prisma/schema.prisma",

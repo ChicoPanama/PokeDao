@@ -1,7 +1,11 @@
-import type { FreshListing } from './01_fetch';
+import type { FreshListing } from './01_fetch.js';
 
-// Pass-through normalization (placeholder for TitleParseCache / card normalization hooks)
+// Pass-through with debug; require cardId present.
 export async function normalizeListings(listings: FreshListing[]) {
-  return listings.filter((l) => !!l.cardId);
+  const norm = listings.filter(l => !!l.cardId);
+  if (process.env.AGENT_DEBUG === 'true') {
+    console.log(`[dbg][02_normalize] in=${listings.length} out=${norm.length}`);
+  }
+  return norm;
 }
 

@@ -1,14 +1,18 @@
-// For Step 3 we just prepare strings and call the X dry-run layer.
-import { postThread } from '../../../../packages/social/x/client';
-import { formatOpportunityThread } from '../../../../packages/social/x/post';
-import type { OpportunityCandidate } from './04_signal';
+// Still does the X dry-run post for visibility.
+import { postThread } from '../../../../packages/social/x/client.js';
+import { formatOpportunityThread } from '../../../../packages/social/x/post.js';
+import type { OpportunityCandidate } from './04_signal.js';
 
 export async function stageAndMaybePost(cands: OpportunityCandidate[]) {
+  if (process.env.AGENT_DEBUG === 'true') {
+    console.log(`[dbg][06_output] candsIn=${cands.length}`);
+  }
   if (cands.length === 0) return;
-  const top = [...cands].sort((a, b) => b.netSpreadBps - a.netSpreadBps || b.confidence - a.confidence)[0];
+
+  const top = cands.sort((a,b) => b.netSpreadBps - a.netSpreadBps || b.confidence - a.confidence)[0];
 
   const lines = formatOpportunityThread({
-    cardTitle: top.cardId, // replace with a human-readable title if available
+    cardTitle: top.cardId, // replace with human-readable if available
     spreadPct: top.netSpreadBps / 100,
     buyUrl: top.url || 'https://example.com',
     sellCompUrl: undefined,
@@ -17,6 +21,8 @@ export async function stageAndMaybePost(cands: OpportunityCandidate[]) {
     timeWindow: 'Next 24–72h',
   });
 
+  if (process.env.AGENT_DEBUG === 'true') {
+    console.log(`[dbg][06_output] posting candidate id=${top.id} cardId=${top.cardId} spreadBp=${top.netSpreadBps}`);
+  }
   await postThread(lines); // dry-run by default
 }
-

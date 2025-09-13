@@ -1,40 +1,41 @@
-import { sharedPrisma as prisma } from '../../../../packages/shared/db';
+import { sharedPrisma as db } from '../../../../packages/shared/db.js';
 
 export type FreshListing = {
-  id: string; // MarketListing.id
-  cardId: string; // normalized card id
-  source: string; // 'EBAY' | 'TCGPLAYER' | ...
+  id: string;
+  cardId: string;
+  source: string;
   priceCents: number;
-  shippingCents: number | null;
+  shippingCents?: number | null;
   url?: string | null;
-  seenAt: Date;
+  effectiveAt: Date;
+  isActive?: boolean | null;
 };
 
-export async function findFreshListings({
-  maxAgeMin = Number(process.env.OPP_MAX_LISTING_AGE_MIN || 60),
-} = {}): Promise<FreshListing[]> {
+export async function findFreshListings(
+  { maxAgeMin = Number(process.env.OPP_MAX_LISTING_AGE_MIN || 60) } = {}
+): Promise<FreshListing[]> {
   const since = new Date(Date.now() - maxAgeMin * 60_000);
-  // Use MarketListing.seenAt as freshness indicator
-  const rows = await prisma.marketListing.findMany({
+
+  // Use seenAt (schema has seenAt) as the freshness indicator
+  const rows = await db.marketListing.findMany({
     where: { seenAt: { gte: since }, isActive: true },
-    select: {
-      id: true,
-      cardId: true,
-      source: true,
-      priceCents: true,
-      url: true,
-      seenAt: true,
-    },
+    select: { id: true, cardId: true, source: true, priceCents: true, url: true, seenAt: true, isActive: true },
+    orderBy: [{ seenAt: 'desc' }],
     take: 2000,
-    orderBy: { seenAt: 'desc' },
   });
-  return rows.map((r) => ({
+
+  const mapped: FreshListing[] = rows.map((r: any) => ({
     id: r.id,
     cardId: r.cardId,
     source: r.source,
     priceCents: r.priceCents,
-    shippingCents: null, // unknown at this layer; fee profile provides default
+  shippingCents: null,
     url: r.url,
-    seenAt: r.seenAt,
-  }));
+    effectiveAt: r.seenAt,
+    isActive: r.isActive ?? true,
+  })).filter(l => l.cardId);
+
+  // Debugging removed in cleanup; keep function behavior identical.
+
+  return mapped.filter(m => m.isActive !== false);
 }

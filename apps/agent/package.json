@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "tsx src/index.ts",
     "start": "node dist/index.js",
-    "tick": "tsx src/tick.ts"
+  "tick": "tsx src/cli/tick.ts"
   },
   "dependencies": {
     "bullmq": "^4.15.4",

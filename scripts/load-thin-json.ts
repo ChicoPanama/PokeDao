@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import { PrismaClient } from '@prisma/client';
-import { mapRawListingToCanonical, mapRawCompToCanonical } from './map-raw';
-import { upsertCardByKey, upsertListing, insertCompSale } from '../packages/shared/db';
+import { mapRawListingToCanonical, mapRawCompToCanonical } from './map-raw.js';
+import { upsertCardByKey, upsertListing, insertCompSale } from '../packages/shared/db.js';
 
 const prisma = new PrismaClient();
 
@@ -32,14 +32,15 @@ function readJson(path: string): any[] {
 
 async function main() {
   const { listings, comps, limit, source } = parseArgs();
-  console.log(`[thin-json] source=${source} limit=${limit || 'ALL'} listings=${!!listings} comps=${!!comps}`);
+  const sourceStr = source ?? 'Ebay';
+  console.log(`[thin-json] source=${sourceStr} limit=${limit || 'ALL'} listings=${!!listings} comps=${!!comps}`);
 
   if (listings) {
     const arr = readJson(listings);
     let listOk = 0, listDup = 0, listErr = 0;
     for (const raw of (limit ? arr.slice(0, limit) : arr)) {
       try {
-        const { canonical, rawImport } = await mapRawListingToCanonical(raw, source);
+  const { canonical, rawImport } = await mapRawListingToCanonical(raw, sourceStr as string);
         await prisma.rawImport.create({ data: rawImport as any });
         const card = await upsertCardByKey(prisma, canonical.cardKey, raw.name || `${canonical.cardKey.setCode} ${canonical.cardKey.number}`);
         await upsertListing(prisma, {
@@ -67,7 +68,7 @@ async function main() {
     let compOk = 0, compDup = 0, compErr = 0;
     for (const raw of (limit ? arr.slice(0, limit) : arr)) {
       try {
-        const { canonical, rawImport } = mapRawCompToCanonical(raw, source + 'Sold');
+  const { canonical, rawImport } = mapRawCompToCanonical(raw, sourceStr + 'Sold');
         await prisma.rawImport.create({ data: rawImport as any });
         const card = await upsertCardByKey(prisma, canonical.cardKey, raw.name || `${canonical.cardKey.setCode} ${canonical.cardKey.number}`);
         await insertCompSale(prisma, {

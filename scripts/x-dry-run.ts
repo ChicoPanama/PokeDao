@@ -1,5 +1,5 @@
-import { formatOpportunityThread } from '../packages/social/x/post';
-import { postThread } from '../packages/social/x/client';
+import { formatOpportunityThread } from '../packages/social/x/post.js';
+import { postThread } from '../packages/social/x/client.js';
 
 async function main() {
   const sample = {
@@ -22,4 +22,3 @@ main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
-

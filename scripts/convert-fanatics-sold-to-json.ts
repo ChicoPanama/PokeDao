@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import readline from 'node:readline';
-import { parseTitleWithQwen, parseTitleFallback } from './normalizers/titleParser';
+import { parseTitleWithQwen, parseTitleFallback } from './normalizers/titleParser.ts';
 
 type Row = {
   ID: string;
@@ -150,4 +150,3 @@ async function main() {
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
-

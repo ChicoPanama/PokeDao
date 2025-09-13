@@ -1,70 +1,81 @@
 import 'dotenv/config';
-import { Queue, Worker, JobsOptions } from 'bullmq';
 import IORedis from 'ioredis';
+import { Queue, Worker, JobsOptions } from 'bullmq';
 import { runAgentTick } from './tick.js';
+import { postDailyBest } from './pipelines/daily.js';
 
 const connection = new IORedis(process.env.REDIS_URL || 'redis://localhost:6379/0');
-const queueName = 'agent:scan';
-const scanQueue = new Queue(queueName, { connection });
 
+// --- scan worker ---
+const scanQueueName = 'agent:scan';
+const scanQueue = new Queue(scanQueueName, { connection });
 const enabled = process.env.AGENT_ENABLED !== 'false';
 const repeatMs = Number(process.env.AGENT_REPEAT_MS || 15 * 60 * 1000);
-const jobTimeoutMs = Number(process.env.AGENT_TIMEOUT_MS || 60_000);
+const addImmediate = process.env.AGENT_ADD_IMMEDIATE !== 'false';
 
-async function main() {
+new Worker(
+  scanQueueName,
+  async () => {
+    console.time('[agent] tick');
+    try {
+      await runAgentTick();
+    } catch (e) {
+      console.error('[agent] tick error:', e);
+      throw e;
+    } finally {
+      console.timeEnd('[agent] tick');
+    }
+  },
+  { connection }
+);
+
+// --- post worker ---
+const postQueueName = 'agent:post';
+const postQueue = new Queue(postQueueName, { connection });
+
+new Worker(
+  postQueueName,
+  async (job) => {
+    const kind = job.data?.kind as string | undefined;
+    if (kind === 'daily') return postDailyBest();
+    if (kind === 'flash') {
+      const { postThread } = await import('../../../packages/social/x/client.js');
+      const lines: string[] = job.data?.lines || [];
+      if (lines.length) await postThread(lines);
+      return;
+    }
+  },
+  { connection }
+);
+
+async function bootstrap() {
   if (enabled) {
-    const repeat: JobsOptions = {
-      jobId: 'agent-tick',
-      repeat: { every: repeatMs },
-      timeout: jobTimeoutMs,
-      removeOnComplete: { count: 100 },
-      removeOnFail: { count: 100 },
-    } as any;
+    const repeat: JobsOptions = { jobId: 'agent-tick', repeat: { every: repeatMs } } as any;
     await scanQueue.add('tick', {}, repeat);
-    console.log(`[agent] scheduled repeat every ${Math.round(repeatMs / 60000)} min (timeout ${jobTimeoutMs}ms)`);
-
-    // Optionally enqueue an immediate tick for smoke test
-    if (process.env.AGENT_ADD_IMMEDIATE !== 'false') {
-      await scanQueue.add('tick-now', {}, { timeout: jobTimeoutMs, removeOnComplete: true, removeOnFail: { count: 10 } as any });
-      console.log('[agent] enqueued immediate tick-now');
+    console.log(`[agent] scheduled repeat every ${Math.round(repeatMs / 60000)} min`);
+    if (addImmediate) {
+      await scanQueue.add('tick-now', {}, { removeOnComplete: true, removeOnFail: true });
+      console.log('[agent] enqueued immediate tick');
     }
   } else {
     console.log('[agent] scheduling disabled (AGENT_ENABLED=false)');
   }
 
-  const worker = new Worker(
-    queueName,
-    async () => {
-      console.time('[agent] tick');
-      try {
-        await runAgentTick();
-      } catch (e) {
-        console.error('[agent] tick error:', e);
-        throw e; // let BullMQ record failure
-      } finally {
-        console.timeEnd('[agent] tick');
-      }
-    },
-    { connection }
-  );
+  // daily post schedule
+  const cron = process.env.DAILY_POST_CRON || '5 10 * * *';
+  const tz = process.env.TZ || 'America/Los_Angeles';
+  const opts: JobsOptions = { jobId: 'post-daily', repeat: { cron, tz } } as any;
+  await postQueue.add('daily', { kind: 'daily' }, opts);
+  console.log(`[post] scheduled daily thread at cron="${cron}" tz="${tz}"`);
 
-  worker.on('completed', (job) => {
-    console.log(`[agent] completed job ${job.id}`);
-  });
-  worker.on('failed', (job, err) => {
-    console.error(`[agent] failed job ${job?.id}:`, err?.message);
-  });
-  worker.on('stalled', (jobId) => {
-    console.warn(`[agent] stalled job ${jobId}`);
-  });
-  worker.on('error', (err) => {
-    console.error('[agent] worker error:', err);
-  });
+  // keepalive log so external tools don’t think we’re idle
+  const keepAliveMs = Number(process.env.AGENT_KEEPALIVE_MS || 15000);
+  setInterval(() => process.stdout.write('[agent] alive\n'), keepAliveMs);
 
-  console.log('[agent] worker up');
+  console.log('[agent] workers up');
 }
 
-main().catch((e) => {
+bootstrap().catch((e) => {
   console.error(e);
   process.exit(1);
 });

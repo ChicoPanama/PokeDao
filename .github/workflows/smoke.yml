@@ -1,0 +1,52 @@
+name: Agent Smoke
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: pokedao
+          POSTGRES_PASSWORD: pokedao
+          POSTGRES_DB: pokedao
+        ports:
+          - "5432:5432"
+        options: >-
+          --health-cmd="pg_isready -U pokedao" --health-interval=5s
+          --health-timeout=5s --health-retries=10
+      redis:
+        image: redis:7-alpine
+        ports:
+          - "6379:6379"
+        options: --health-cmd="redis-cli ping" --health-interval=5s --health-timeout=5s --health-retries=10
+
+    env:
+      DATABASE_URL: postgresql://pokedao:pokedao@localhost:5432/pokedao?schema=public
+      REDIS_URL: redis://localhost:6379/0
+      POSTING_ENABLED: "false"
+      POSTING_DRY_RUN: "true"
+      TZ: America/Los_Angeles
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - run: pnpm i
+      - name: Seed minimal data
+        run: pnpm seed:minimal
+      - name: Smoke test (seed, tick, assert)
+        run: pnpm test:smoke

@@ -4,7 +4,7 @@ export type OpportunityForPost = {
   buyUrl: string;
   sellCompUrl?: string;
   rationale: string; // short paragraph
-  risks: string[]; // bullet points
+  risks: readonly string[]; // bullet points (read-only ok)
   timeWindow: string; // e.g., "Next 24–72h"
 };
 
@@ -15,4 +15,3 @@ export function formatOpportunityThread(o: OpportunityForPost) {
   const risk = `Risks:\n${o.risks.map((r) => `• ${r}`).join('\n')}\nNot financial advice.`;
   return [head, why, how, risk];
 }
-
