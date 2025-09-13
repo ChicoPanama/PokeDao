@@ -31,6 +31,8 @@
     "ingest:ebay:extended": "tsx scripts/ingest-ebay-extended.ts data/research/ebay_current_extended.json",
     "export:tcg:anchors": "tsx scripts/export-tcgplayer-anchors.ts",
     "ingest:pricecache": "tsx scripts/ingest-pricecache.ts data/research/tcgplayer_anchors.json tcgplayer",
+    "export:cc:comps": "tsx scripts/export-collector-crypt-comps.ts",
+    "ingest:cc:comps": "pnpm dlx tsx scripts/load-thin-json.ts --comps data/research/comps_collectorcrypt.json --source CollectorCrypt --limit 200000",
     "pipeline:live": "pnpm run collect:sold:ebay && tsx scripts/run-featurizer.ts && tsx scripts/run-scorer.ts && pnpm run pipeline:strict",
     "cardmarket:test": "node cardmarket-pokemon-extractor.js --test",
     "cardmarket:extract": "node cardmarket-pokemon-extractor.js",
