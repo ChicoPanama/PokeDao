@@ -5,3 +5,4 @@ export * from './keys.js';
 export * from './money.js';
 export * from './normalizers/titleParser.js';
 export * from './mappers/ebaySoldToComp.js';
+export * from './fees.js';

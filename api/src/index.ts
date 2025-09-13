@@ -3,9 +3,13 @@ import loadAndValidateEnv from './lib/validate-env.js';
 loadAndValidateEnv([]);
 import Fastify from "fastify";
 import cors from "@fastify/cors";
+import helmet from "@fastify/helmet";
+import rateLimit from "@fastify/rate-limit";
+import swagger from "@fastify/swagger";
+import swaggerUi from "@fastify/swagger-ui";
 import prisma from "./lib/prisma.js";
 import { getRedis } from "./lib/redis.js";
-import { createHash } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import type { FastifyBaseLogger } from "fastify";
 
 // worker helpers (exported by @pokedao/worker)
@@ -36,9 +40,30 @@ type watchlistKey = Prisma.WatchlistItemWhereUniqueInput;
 async function buildServer() {
   const app = Fastify({
     logger: { level: process.env.API_LOG_LEVEL || 'info' },
+    genReqId: (req) => (req.headers['x-request-id'] as string) || randomUUID(),
+  });
+
+  // Propagate request id for client correlation
+  app.addHook('onRequest', async (req, reply) => {
+    reply.header('x-request-id', req.id);
   });
 
   await app.register(cors, { origin: true });
+  await app.register(helmet, { global: true });
+  await app.register(rateLimit, {
+    max: Number(process.env.RATE_LIMIT_MAX || 300),
+    timeWindow: process.env.RATE_LIMIT_WINDOW || '1 minute',
+  });
+  await app.register(swagger, {
+    openapi: {
+      info: {
+        title: 'PokeDAO API',
+        description: 'Market intelligence API for trading cards',
+        version: '0.1.0',
+      },
+    },
+  });
+  await app.register(swaggerUi, { routePrefix: '/docs' });
   await registerSignals(app);
   await registerPosts(app);
 
@@ -235,19 +260,24 @@ async function buildServer() {
     }
   });
 
-  // Referral attribution middleware
+  // Referral attribution middleware (best-effort, non-fatal)
   app.addHook('onRequest', async (req) => {
-    const query = req.query as Record<string, string | undefined>; // Explicitly type req.query
-    const ref = query.ref;
-    if (ref) {
-      const ipHash = createHash('sha256').update(req.ip).digest('hex');
+    try {
+      const query = req.query as Record<string, string | undefined>;
+      const ref = query.ref;
+      const userId = req.headers['user-id'] as string | undefined;
+      if (!ref || !userId) return;
+      // hashed IP available if we later add a column
+      const _ipHash = createHash('sha256').update(req.ip).digest('hex');
       await prisma.referralEvent.create({
         data: {
           code: ref,
-          path: req.routerPath,
-          user: { connect: { id: req.headers['user-id'] as string } },
+          path: (req as any).routerPath || req.url,
+          user: { connect: { id: userId } },
         },
       });
+    } catch (err) {
+      req.log.warn({ err }, 'referral attribution failed');
     }
   });
 
@@ -457,6 +487,21 @@ async function buildServer() {
       reply.code(500);
       return { ok: false, error: 'Internal error' };
     }
+  });
+
+  // Central error handler for consistency
+  app.setErrorHandler((err, req, reply) => {
+    req.log.error({ err }, 'unhandled_error');
+    const status = typeof err.statusCode === 'number' && err.statusCode >= 400 ? err.statusCode : 500;
+    const body = {
+      type: 'about:blank',
+      title: status === 500 ? 'Internal Server Error' : err.name || 'Error',
+      status,
+      detail: process.env.NODE_ENV === 'production' ? undefined : err.message,
+      instance: req.url,
+      requestId: req.id,
+    } as const;
+    reply.code(status).header('content-type', 'application/problem+json').send(body);
   });
 
   return app;

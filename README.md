@@ -201,6 +201,20 @@ node research/tcgplayer-discovery/unified-pricing-analyzer.js
 }
 ```
 
+---
+
+## Prisma in a Monorepo
+
+This repo contains multiple historical or research Prisma schemas (e.g., `prisma/schema.prisma`, `research/**/*.prisma`) in addition to the API schema at `api/prisma/schema.prisma`.
+
+- VS Code is configured to only lint the API schema to avoid duplicate-model diagnostics. See `.vscode/settings.json`:
+  - `prisma.schemaPath` → `./api/prisma/schema.prisma`
+  - `files.associations` maps only `api/prisma/schema.prisma` to `prisma` and marks `prisma/**` and `research/**` as `plaintext`.
+  - If you still see duplicate errors, use the Command Palette → “Prisma: Restart Language Server”.
+- CLI validation should always target the API schema explicitly:
+  - `pnpm exec prisma validate --schema=api/prisma/schema.prisma`
+
+
 ### **Cross-Platform Analysis**
 ```javascript
 // Market intelligence example

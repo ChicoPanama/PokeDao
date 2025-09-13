@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { parseTitleWithModel } from './normalizers/titleParser';
+import { parseTitleWithModel } from './normalizers/titleParser.ts';
 
 const argv = process.argv.slice(2);
 const usage = `
@@ -75,4 +75,3 @@ function parseTitleFallback(title: string) {
   }
   if (pretty) console.log(JSON.stringify(results, null, 2));
 })().catch((e) => { console.error(e); process.exit(1); });
-

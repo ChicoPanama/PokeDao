@@ -1,16 +1,20 @@
 {
   "files.associations": {
-    "**/*.prisma": "prisma",
+    "api/prisma/schema.prisma": "prisma",
     "**/backup/**/*.prisma": "plaintext",
     "**/*.backup": "plaintext",
-    "**/*.plan.backup": "plaintext"
+    "**/*.plan.backup": "plaintext",
+    "research/**/*.prisma": "plaintext",
+    "prisma/**/*.prisma": "plaintext",
+    "schema-phase1-plan.prisma": "plaintext"
   },
   "files.exclude": {
     "**/.pnpm": true,
     "**/node_modules": true,
     "**/dist": true,
     "**/research/**/generated": true,
-    "**/research/**/.prisma": true,
+    "**/research/**/*.prisma": true,
+    "prisma/**/*.prisma": true,
     "**/*.backup": true,
     "**/*.plan.backup": true,
     "**/research-backup-*": true
@@ -20,7 +24,8 @@
     "**/node_modules": true,
     "**/dist": true,
     "**/research/**/generated": true,
-    "**/research/**/.prisma": true,
+    "**/research/**/*.prisma": true,
+    "prisma/**/*.prisma": true,
     "**/*.backup": true,
     "**/research-backup-*": true
   },
@@ -29,7 +34,8 @@
     "**/node_modules/**": true,
     "**/dist/**": true,
     "**/research/**/generated/**": true,
-    "**/research/**/.prisma/**": true,
+    "**/research/**/*.prisma": true,
+    "prisma/**/*.prisma": true,
     "**/*.backup": true,
     "**/research-backup-*/**": true
   },

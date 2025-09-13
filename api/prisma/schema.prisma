@@ -545,3 +545,40 @@ model Comp {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// === OPPORTUNITY PIPELINE ===
+enum OpportunityStatus {
+  PENDING
+  POSTED
+  EXPIRED
+  RETRACTED
+}
+
+model Opportunity {
+  id                  String             @id @default(cuid())
+  cardId              String
+  listingId           String
+  sourceBuy           String
+  sourceSell          String
+
+  buyPriceCents       Int
+  buyShippingCents    Int               @default(0)
+  buyFeesCents        Int               @default(0)
+
+  sellCompCents       Int
+  sellFeesCents       Int               @default(0)
+  sellShippingCents   Int               @default(0)
+
+  expectedProfitCents Int
+  netSpreadBps        Int
+  confidence          Float             @default(0)
+  rationale           String            @default("")
+  status              OpportunityStatus @default(PENDING)
+
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
+
+  @@index([cardId, createdAt])
+  @@index([status, createdAt])
+  @@unique([cardId, listingId, createdAt])
+}

@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
-import { parseTitleWithModel, parseTitleFallback } from './normalizers/titleParser';
-import { upsertCardByKey } from '../packages/shared/db';
-import { cardKey } from '../packages/shared/keys';
+import { parseTitleWithModel, parseTitleFallback } from './normalizers/titleParser.ts';
+import { upsertCardByKey } from '../packages/shared/db.js';
+import { cardKey } from '../packages/shared/keys.js';
 
 const prisma = new PrismaClient();
 

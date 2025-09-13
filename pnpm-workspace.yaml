@@ -4,6 +4,7 @@ packages:
   - worker
   - ml
   - packages/shared
+  - apps/agent
   - prisma
   - utils
 

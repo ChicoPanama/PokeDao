@@ -15,7 +15,8 @@ export function hashTitle(norm: string) {
 }
 
 export function makeCardSlug(setCode: string, number: string, variantKey = 'EN') {
-  const num = String(number || '').padStart(3, (String(number || '').length >= 3 ? 3 : 2));
+  const numRaw = String(number || '');
+  const num = numRaw.padStart(3, '0');
   return `${String(setCode || '').toLowerCase()}-${num}-${String(variantKey || 'EN').toLowerCase()}`;
 }
 
@@ -70,4 +71,3 @@ export async function putCachedParse(
     },
   });
 }
-

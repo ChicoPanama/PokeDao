@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Ask for JSON-only, then validate with your ReasonedSignal schema
 
 const userPayload = process.argv[2]

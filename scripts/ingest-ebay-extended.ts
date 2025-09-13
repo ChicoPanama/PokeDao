@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import { PrismaClient } from '@prisma/client';
-import { cardKey } from '../packages/shared/keys';
-import { upsertCardByKey } from '../packages/shared/db';
+import { cardKey } from '../packages/shared/keys.js';
+import { upsertCardByKey } from '../packages/shared/db.js';
 
 type Row = {
   set_name?: string | null;
@@ -124,4 +124,3 @@ async function main() {
 }
 
 main().catch(async (e) => { console.error(e); await prisma.$disconnect(); process.exit(1); });
-

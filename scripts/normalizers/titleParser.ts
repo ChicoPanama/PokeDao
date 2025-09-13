@@ -1,4 +1,4 @@
-import { ollamaChatJSON } from '../../ml/src/clients/ollama';
+import { ollamaChatJSON } from '../../ml/src/clients/ollama.ts';
 import { runModel } from '../../ml/src/clients/runModel.ts';
 import { PrismaClient } from '@prisma/client';
 import { getCachedParse, putCachedParse } from '../../packages/shared/titleCache.ts';

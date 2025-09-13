@@ -1,5 +1,5 @@
-import { cardKey, compNaturalKey, stableHash } from '../packages/shared/keys';
-import { parseTitleWithModel, parseTitleFallback } from './normalizers/titleParser';
+import { cardKey, compNaturalKey, stableHash } from '../packages/shared/keys.ts';
+import { parseTitleWithModel, parseTitleFallback } from './normalizers/titleParser.ts';
 
 // Minimal variant key builder; replace with domain logic as needed
 function buildVariantKey(input: {

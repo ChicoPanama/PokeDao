@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
 dotenv.config({ path: '.env' });
-import { findCompletedItems } from '../ml/src/vendors/ebayFinding';
+import { findCompletedItems } from '../ml/src/vendors/ebayFinding.ts';
 import { insertEbaySoldBatch } from '../packages/shared/mappers/ebaySoldToComp';
 
 const prisma = new PrismaClient();

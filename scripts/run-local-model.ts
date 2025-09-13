@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Quick free-form test against local Ollama
 const prompt = process.argv.slice(2).join(' ') || 'Say hello in one short sentence.';
 (async () => {
