@@ -1,28 +1,17 @@
 // Minimal harmless pipeline: format a sample opportunity and hit the X dry-run layer.
 // Swap to real steps in future iterations.
-import { postThread } from '../../../packages/social/x/client';
-import { formatOpportunityThread } from '../../../packages/social/x/post';
+import { findFreshListings } from './steps/01_fetch';
+import { normalizeListings } from './steps/02_normalize';
+import { attachComps } from './steps/03_features';
+import { detectCandidates } from './steps/04_signal';
+import { validateAndPersist } from './steps/05_validate';
+import { stageAndMaybePost } from './steps/06_output';
 
 export async function runAgentTick() {
-  const sample = {
-    cardTitle: 'Pikachu (Jungle) #60, Raw vs PSA 9 comps',
-    spreadPct: 16.2,
-    buyUrl: 'https://example.com/listing/pikachu-raw',
-    sellCompUrl: 'https://example.com/comps/pikachu-psa9',
-    rationale: 'Weekend lags on raw; comps holding flat week-over-week.',
-    risks: ['Condition variance', 'Listing cancellation', 'Fee drift'],
-    timeWindow: 'Next 24–72h',
-  } as const;
-
-  const lines = formatOpportunityThread(sample);
-  await postThread(lines); // with POSTING_DRY_RUN=true this only logs
+  const listings = await findFreshListings();
+  const norm = await normalizeListings(listings);
+  const withComps = await attachComps(norm);
+  const cands = detectCandidates(withComps);
+  const kept = await validateAndPersist(cands);
+  await stageAndMaybePost(kept);
 }
-
-// Allow direct execution for one-off testing
-if (import.meta.url === `file://${process.argv[1]}`) {
-  runAgentTick().catch((e) => {
-    console.error(e);
-    process.exit(1);
-  });
-}
-
