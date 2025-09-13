@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import { parseTitleWithQwen, parseTitleFallback } from './normalizers/titleParser';
+import { parseTitleWithModel, parseTitleFallback } from './normalizers/titleParser';
 import { upsertCardByKey } from '../packages/shared/db';
 import { cardKey } from '../packages/shared/keys';
 
@@ -17,7 +17,7 @@ const prisma = new PrismaClient();
     // We don't persist raw title; use URL or skip if nothing plausible
     const title = L.url || '';
     if (!title) { skipped++; continue; }
-    const parsed = (await parseTitleWithQwen(title).catch(()=>null)) || parseTitleFallback(title);
+    const parsed = (await parseTitleWithModel(title).catch(()=>null)) || parseTitleFallback(title);
     if (!parsed || parsed.confidence < 0.65) { skipped++; continue; }
     if (L.card && L.card.setCode && L.card.number) { skipped++; continue; }
 
@@ -29,4 +29,3 @@ const prisma = new PrismaClient();
   console.log(`[parse-titles] fixed=${fixed} skipped=${skipped}`);
   await prisma.$disconnect();
 })();
-

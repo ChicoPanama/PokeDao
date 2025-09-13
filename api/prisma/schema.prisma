@@ -241,6 +241,31 @@ model CompSale {
   @@index([cardId, soldAt])
 }
 
+// Cache for parsed titles to avoid repeated LLM calls
+model TitleParseCache {
+  id            String   @id @default(cuid())
+  schemaVersion Int      @default(1)
+
+  titleRaw   String
+  titleNorm  String
+  titleHash  String
+
+  setCode    String
+  number     String
+  variantKey String   @default("EN")
+  language   String?
+  confidence Float
+  cardSlug   String?
+
+  hits      Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([schemaVersion, titleHash])
+  @@index([updatedAt])
+  @@index([hits])
+}
+
 // FX rates (baseline USD)
 model FxRate {
   code        String   @id

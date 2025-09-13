@@ -1,35 +1,60 @@
 import { PrismaClient } from '@prisma/client';
 import OpenAI from 'openai';
 import { ReasonedSignal } from '../schemas/reasonedSignal.js';
+import { runModel } from './clients/runModel.js';
 
 const prisma = new PrismaClient();
 
 export async function auditAndThesisForNewSignals({ take = 50 } = {}) {
   // Check for AI provider configuration
-  const deepseekApiKey = process.env.DEEPSEEK_API_KEY;
+  const deepseekApiKey = process.env.DEEPSEEK_API_KEY || '';
   const ollamaBaseUrl = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
-  const useOllama = process.env.USE_OLLAMA === '1' || !deepseekApiKey;
+  const preferOllama = process.env.USE_OLLAMA === '1' || !deepseekApiKey;
 
-  let client: OpenAI;
-  let model: string;
+  // Prepare both providers if available
+  const ollamaClient = new OpenAI({ apiKey: 'ollama', baseURL: `${ollamaBaseUrl}/v1` });
+  const ollamaModel = process.env.OLLAMA_MODEL || process.env.QWEN_MODEL || 'qwen2.5:7b-instruct';
+  const deepseekClient = deepseekApiKey
+    ? new OpenAI({ apiKey: deepseekApiKey, baseURL: process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com' })
+    : null;
+  const deepseekModel = process.env.DEEPSEEK_MODEL_FAST || 'deepseek-chat';
 
-  if (useOllama) {
-    console.log('[thesis] Using Ollama for local AI inference');
-    client = new OpenAI({
-      apiKey: 'ollama', // Ollama doesn't require an API key
-      baseURL: `${ollamaBaseUrl}/v1`,
-    });
-    model = process.env.OLLAMA_MODEL || 'qwen2.5:7b-instruct';
-  } else {
-    console.log('[thesis] Using DeepSeek API');
-    const baseURL = process.env.DEEPSEEK_BASE_URL || 'https://api.deepseek.com';
-    client = new OpenAI({ apiKey: deepseekApiKey, baseURL });
-    model = process.env.DEEPSEEK_MODEL_FAST || 'deepseek-chat';
-  }
-
-  if (!client) {
-    console.warn('[thesis] No AI provider configured — skipping');
-    return { updated: 0, blocked: 0 };
+  async function textWithFallback(prompt: string): Promise<string> {
+    // Prefer local Ollama via runModel; fallback to DeepSeek JSON chat if configured
+    if (preferOllama) {
+      try {
+        console.log('[thesis] Using Ollama for local AI inference');
+        return await runModel({ provider: 'ollama', prompt, model: ollamaModel, baseUrl: ollamaBaseUrl });
+      } catch (e: any) {
+        console.warn('[thesis] Ollama error, falling back to DeepSeek:', e?.message || e);
+        if (!deepseekClient) throw e;
+        const c = await deepseekClient.chat.completions.create({
+          model: deepseekModel,
+          messages: [
+            { role: 'system', content: 'You output strict JSON only.' },
+            { role: 'user', content: prompt },
+          ],
+          temperature: 0.2,
+        });
+        return c.choices?.[0]?.message?.content ?? '{}';
+      }
+    } else {
+      try {
+        console.log('[thesis] Using DeepSeek API');
+        const c = await deepseekClient!.chat.completions.create({
+          model: deepseekModel,
+          messages: [
+            { role: 'system', content: 'You output strict JSON only.' },
+            { role: 'user', content: prompt },
+          ],
+          temperature: 0.2,
+        });
+        return c.choices?.[0]?.message?.content ?? '{}';
+      } catch (e: any) {
+        console.warn('[thesis] DeepSeek error, falling back to Ollama:', e?.message || e);
+        return await runModel({ provider: 'ollama', prompt, model: ollamaModel, baseUrl: ollamaBaseUrl });
+      }
+    }
   }
 
   // Thresholds can be relaxed for local testing by setting THESIS_RELAXED=1
@@ -166,17 +191,13 @@ Rules:
     };
 
     try {
-      const completion = await client.chat.completions.create({
-        model,
-        response_format: { type: 'json_object' },
-        messages: [
-          { role: 'system', content: sys },
-          { role: 'user', content: JSON.stringify(payload, null, 2) + "\n\nExample 1 → Output:\n{\"edgeBp\":740,\"confidence\":0.63,\"thesis\":\"Ask sits below converging US/EU anchors; seller A+ with low ship, demand warm.\",\"drivers\":[\"Anchors align (TCG≈CM)\",\"Seller risk low\",\"Seasonality tailwind\"],\"flags\":{\"staleComps\":false,\"highVolatility\":false,\"lowLiquidity\":false}}\n\nExample 2 → Output:\n{\"edgeBp\":820,\"confidence\":0.58,\"thesis\":\"Price beats 30d median; auction interest strong; watch pop supports entry.\",\"drivers\":[\"Below 30d median\",\"Auction momentum\",\"NHI high\"],\"flags\":{\"staleComps\":false,\"highVolatility\":true,\"lowLiquidity\":false}}" },
-        ],
-        temperature: 0.2,
-      });
-      const content = completion.choices?.[0]?.message?.content ?? '{}';
-      const parsed = JSON.parse(content);
+      const fewshots =
+        '{"edgeBp":740,"confidence":0.63,"thesis":"Ask sits below converging US/EU anchors; seller A+ with low ship, demand warm.","drivers":["Anchors align (TCG≈CM)","Seller risk low","Seasonality tailwind"],"flags":{"staleComps":false,"highVolatility":false,"lowLiquidity":false}}\n' +
+        '{"edgeBp":820,"confidence":0.58,"thesis":"Price beats 30d median; auction interest strong; watch pop supports entry.","drivers":["Below 30d median","Auction momentum","NHI high"],"flags":{"staleComps":false,"highVolatility":true,"lowLiquidity":false}}';
+      const prompt = `${sys}\n\nINPUT:\n${JSON.stringify(payload)}\n\nEXAMPLES:\n${fewshots}\n\nReturn JSON only.`;
+      const content = await textWithFallback(prompt);
+      const cleaned = content.trim().replace(/^```(?:json)?/i, '').replace(/```$/, '').trim();
+      const parsed = JSON.parse(cleaned);
       const rs = ReasonedSignal.parse(parsed);
 
       const isFlagged = rs.flags.staleComps || rs.flags.highVolatility || rs.flags.lowLiquidity;

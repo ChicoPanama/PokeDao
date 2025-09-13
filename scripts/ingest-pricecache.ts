@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import { PrismaClient } from '@prisma/client';
+import { upsertCardByKey } from '../packages/shared/db';
+import { cardKey } from '../packages/shared/keys';
 
 type AnchorRow = {
   setCode: string;
@@ -36,11 +38,9 @@ async function main() {
   const arr = JSON.parse(raw) as AnchorRow[];
   let linked = 0, skipped = 0;
   for (const r of arr) {
-    const card = await prisma.card.findFirst({
-      where: { set: r.setCode, number: r.number, variant: null, grade: null },
-      select: { id: true },
-    });
-    if (!card) { skipped++; continue; }
+    // Upsert Card by (set_id + number) using minimal variant/language
+    const ck = cardKey(r.setCode, r.number, '', 'EN');
+    const card = await upsertCardByKey(prisma as any, ck, `${r.setCode} ${r.number}`);
     await upsertPrice(card.id, sourceType, 'market', r.market);
     await upsertPrice(card.id, sourceType, 'low', r.low);
     await upsertPrice(card.id, sourceType, 'mid', r.mid);
@@ -53,4 +53,3 @@ async function main() {
 }
 
 main().catch(async (e) => { console.error(e); await prisma.$disconnect(); process.exit(1); });
-

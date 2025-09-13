@@ -1,5 +1,5 @@
 import { cardKey, compNaturalKey, stableHash } from '../packages/shared/keys';
-import { parseTitleWithQwen, parseTitleFallback } from './normalizers/titleParser';
+import { parseTitleWithModel, parseTitleFallback } from './normalizers/titleParser';
 
 // Minimal variant key builder; replace with domain logic as needed
 function buildVariantKey(input: {
@@ -33,7 +33,7 @@ export async function mapRawListingToCanonical(raw: RawListing, source: string) 
     language: (raw.language || 'EN').toUpperCase(),
   });
   if ((!setCode || !number) && raw.title) {
-    const parsed = (await parseTitleWithQwen(raw.title).catch(() => null)) || parseTitleFallback(raw.title);
+    const parsed = (await parseTitleWithModel(raw.title).catch(() => null)) || parseTitleFallback(raw.title);
     if (parsed && (parsed.confidence >= 0.65 || (!setCode && !number))) {
       setCode = setCode || parsed.setCode;
       number = number || parsed.number;
