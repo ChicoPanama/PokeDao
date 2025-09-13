@@ -22,12 +22,17 @@ async function main() {
   // 2) baseline count
   const before = await db.opportunity.count({ where: { status: 'PENDING' } });
 
-  // 3) seed from newest recent listing (or LISTING_ID)
+  // 3) seed from newest recent listing (or LISTING_ID); fallback to minimal if none
   if ((process.env.SEED_FIRST ?? 'true') !== 'false') {
-    await sh('pnpm seed:from-listing', {
-      LISTING_ID: process.env.LISTING_ID ?? '',
-      COMP_MULT: process.env.COMP_MULT ?? '5.1',
-    });
+    try {
+      await sh('pnpm seed:from-listing', {
+        LISTING_ID: process.env.LISTING_ID ?? '',
+        COMP_MULT: process.env.COMP_MULT ?? '5.1',
+      });
+    } catch (e) {
+      console.warn('[smoke] seed-from-listing failed, falling back to seed-minimal:', (e as any)?.message || e);
+      await sh('pnpm seed:minimal');
+    }
   }
 
   // 4) run real pipeline with debug & zero thresholds

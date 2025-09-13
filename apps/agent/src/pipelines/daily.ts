@@ -1,6 +1,7 @@
 import { formatOpportunityThread } from '../../../../packages/social/x/post.js';
 import { postThread } from '../../../../packages/social/x/client.js';
 import { sharedPrisma as prisma } from '../../../../packages/shared/db.js';
+import { cardTitleForTweet } from './title.js';
 
 function inWindow(now: Date) {
   const start = process.env.POSTING_WINDOW_START || '09:00';
@@ -35,8 +36,10 @@ export async function postDailyBest() {
     select: { url: true },
   });
 
+  const cardTitle = await cardTitleForTweet(best.cardId);
+
   const lines = formatOpportunityThread({
-    cardTitle: best.cardId, // replace with human-friendly title if available
+    cardTitle,
     spreadPct: best.netSpreadBps / 100,
     buyUrl: listing?.url || 'https://example.com',
     sellCompUrl: undefined,

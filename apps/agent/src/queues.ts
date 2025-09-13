@@ -1,16 +1,11 @@
-import IORedis from 'ioredis';
+import { Redis } from 'ioredis';
 import { Queue } from 'bullmq';
 
-const connection = new IORedis(process.env.REDIS_URL || 'redis://localhost:6379/0');
+export const connection = new Redis(process.env.REDIS_URL || 'redis://localhost:6379/0');
 
-export const scanQueue = new Queue('agent:scan', { connection });
-export const postQueue = new Queue('agent:post', { connection });
+export const SCAN_Q = 'agent:scan';
+export const POST_Q = 'agent:post';
 
-export async function shutdownQueues() {
-  try { await scanQueue.close(); } catch {}
-  try { await postQueue.close(); } catch {}
-  const conn: any = (scanQueue as any).opts?.connection || (postQueue as any).opts?.connection;
-  try {
-    if (conn && typeof conn.quit === 'function') await conn.quit();
-  } catch {}
-}
+export const scanQueue = new Queue(SCAN_Q, { connection });
+export const postQueue = new Queue(POST_Q, { connection });
+

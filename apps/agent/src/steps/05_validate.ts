@@ -1,4 +1,5 @@
 import { sharedPrisma as db } from '../../../../packages/shared/db.js';
+import { getProfile } from '../../../../packages/shared/fees.js';
 import type { OpportunityCandidate } from './04_signal.js';
 
 export async function validateAndPersist(cands: OpportunityCandidate[]) {
@@ -24,6 +25,9 @@ export async function validateAndPersist(cands: OpportunityCandidate[]) {
   let created = 0;
   for (const k of kept) {
     try {
+      const sellP = getProfile(k.sourceSell || 'EBAY');
+      const sellFeesCents = Math.round(k.sellCompCents * sellP.sellFeeRate);
+      const sellShippingCents = sellP.avgOutboundShipCents;
       await db.opportunity.create({
         data: {
           cardId: k.cardId,
@@ -34,8 +38,8 @@ export async function validateAndPersist(cands: OpportunityCandidate[]) {
           buyShippingCents: k.shippingCents ?? 0,
           buyFeesCents: k.buyNetCents - k.priceCents - (k.shippingCents ?? 0),
           sellCompCents: k.sellCompCents,
-          sellFeesCents: Math.max(0, k.sellCompCents - k.sellNetCents - 0), // rough; already netted
-          sellShippingCents: 0,
+          sellFeesCents,
+          sellShippingCents,
           expectedProfitCents: k.expectedProfitCents,
           netSpreadBps: k.netSpreadBps,
           confidence: k.confidence,
