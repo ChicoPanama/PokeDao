@@ -1,6 +1,7 @@
 import { execSync } from 'node:child_process';
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import dotenv from 'dotenv';
 
 type Check = { name: string; run: () => void };
 
@@ -17,6 +18,7 @@ function readJson(path: string): any {
 }
 
 const root = process.cwd();
+dotenv.config({ path: join(root, '.env') });
 
 const checks: Check[] = [
   {
@@ -101,6 +103,16 @@ const checks: Check[] = [
         ok(`Ollama at ${base}${has ? ` (model present: ${model})` : ''}`);
       } catch {
         console.log('✖ Ollama not reachable (optional for AI parsing)');
+      }
+    },
+  },
+  {
+    name: 'eBay APP ID presence',
+    run: () => {
+      if (process.env.EBAY_APP_ID) {
+        console.log('✔ eBay APP ID present');
+      } else {
+        console.log('⚠ eBay APP ID missing (collector will be skipped)');
       }
     },
   },

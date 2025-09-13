@@ -12,6 +12,7 @@ import type { FastifyBaseLogger } from "fastify";
 import { normalizeCardQuery, getComparableSales, sanitizeComps, computeFairValue } from "@pokedao/worker";
 import { Prisma } from "@prisma/client";
 import { registerSignals } from "./routes/signals.js";
+import { registerPosts } from "./routes/posts.js";
 
 // External data integration endpoints
 import { 
@@ -39,6 +40,7 @@ async function buildServer() {
 
   await app.register(cors, { origin: true });
   await registerSignals(app);
+  await registerPosts(app);
 
   app.get('/health', async (request, reply) => {
     try {

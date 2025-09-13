@@ -147,6 +147,7 @@ model FeatureSnapshot {
 
   @@unique([cardId, windowDays])
   @@index([updatedAt])
+  @@index([cardId, windowDays, updatedAt(sort: Desc)])
 }
 
 // Paper-mode Signals produced by scorer (no posting yet)
@@ -167,6 +168,8 @@ model Signal {
 
   @@index([createdAt])
   @@index([cardId])
+  @@index([edgeBp(sort: Desc), createdAt(sort: Desc)])
+  @@index([cardId, createdAt(sort: Desc)])
 }
 
 // Queue of outbound posts (dry-run; not sent to X yet)

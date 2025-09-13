@@ -24,6 +24,11 @@ async function main() {
   for (const s of sigs) {
     const edgePct = Number((s.edgeBp / 100).toFixed(1));
     const confPct = Math.round(s.confidence * 100);
+    const slugPart = (x: string) => String(x || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const setCode = s.card?.setCode || s.card?.set || '';
+    const number = s.card?.number || '';
+    const variant = (s.card?.variantKey || 'EN').toLowerCase();
+    const cardSlug = `${slugPart(setCode)}-${slugPart(number)}-${slugPart(variant)}`;
     const text = composeTraderTake({
       name: s.card?.name ?? '',
       setCode: s.card?.setCode ?? s.card?.set ?? '',
@@ -44,6 +49,7 @@ async function main() {
         signalId: s.id,
         edgeBp: s.edgeBp,
         confidence: s.confidence,
+        cardSlug,
       },
     };
 
@@ -66,4 +72,3 @@ main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
-
