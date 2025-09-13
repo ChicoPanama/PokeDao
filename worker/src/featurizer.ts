@@ -26,6 +26,12 @@ function volatilityBp(sorted: number[]) {
   return Math.round((acc / Math.max(1, n)) * 10000);
 }
 
+function simpleNHI({ volume, volatilityBp }: { volume: number; volatilityBp: number }) {
+  const v = Math.min(100, Math.round(volume * 5));
+  const damp = Math.max(0, 100 - Math.min(100, Math.round(volatilityBp / 20)));
+  return Math.max(0, Math.min(100, Math.round(0.6 * v + 0.4 * damp)));
+}
+
 async function centsSeries(cardId: string, days: number) {
   const since = new Date(Date.now() - days * 24 * 3600 * 1000);
   const rows = await prisma.compSale.findMany({
@@ -48,7 +54,7 @@ export async function computeFeatureForCard(cardId: string, windowDays: 7 | 30 |
     p05Cents: pct(sorted, 5),
     volume: cents.length,
     volatilityBp: volatilityBp(sorted),
-    nhiScore: null,
+    nhiScore: windowDays === 30 ? simpleNHI({ volume: cents.length, volatilityBp: volatilityBp(sorted) }) : null,
     updatedAt: new Date(),
   };
   await saveFeatureSnapshot(prisma, snap as any);

@@ -39,7 +39,7 @@ async function main() {
     let listOk = 0, listDup = 0, listErr = 0;
     for (const raw of (limit ? arr.slice(0, limit) : arr)) {
       try {
-        const { canonical, rawImport } = mapRawListingToCanonical(raw, source);
+        const { canonical, rawImport } = await mapRawListingToCanonical(raw, source);
         await prisma.rawImport.create({ data: rawImport as any });
         const card = await upsertCardByKey(prisma, canonical.cardKey, raw.name || `${canonical.cardKey.setCode} ${canonical.cardKey.number}`);
         await upsertListing(prisma, {
@@ -93,4 +93,3 @@ async function main() {
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
-

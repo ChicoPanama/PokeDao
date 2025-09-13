@@ -89,6 +89,21 @@ const checks: Check[] = [
       ok('Prisma client present');
     },
   },
+  {
+    name: 'Ollama reachable',
+    run: () => {
+      const base = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
+      try {
+        const out = execSync(`curl -fsS ${base}/api/tags`, { stdio: ['ignore', 'pipe', 'ignore'] }).toString();
+        const json = JSON.parse(out);
+        const model = process.env.QWEN_MODEL || 'qwen2.5:7b-instruct';
+        const has = Array.isArray(json?.models) && json.models.some((m: any) => String(m?.name || '').includes(model.split(':')[0]));
+        ok(`Ollama at ${base}${has ? ` (model present: ${model})` : ''}`);
+      } catch {
+        console.log('✖ Ollama not reachable (optional for AI parsing)');
+      }
+    },
+  },
 ];
 
 for (const c of checks) {

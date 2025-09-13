@@ -1,4 +1,5 @@
 import { cardKey, compNaturalKey, stableHash } from '../packages/shared/keys';
+import { parseTitleWithQwen, parseTitleFallback } from './normalizers/titleParser';
 
 // Minimal variant key builder; replace with domain logic as needed
 function buildVariantKey(input: {
@@ -21,9 +22,9 @@ function buildVariantKey(input: {
 export type RawListing = any;
 export type RawComp = any;
 
-export function mapRawListingToCanonical(raw: RawListing, source: string) {
-  const setCode = raw.setCode || raw.set || '';
-  const number = raw.number || raw.cardNumber || '';
+export async function mapRawListingToCanonical(raw: RawListing, source: string) {
+  let setCode = raw.setCode || raw.set || '';
+  let number = raw.number || raw.cardNumber || '';
   const vkey = buildVariantKey({
     edition: raw.edition === 1 ? '1st' : raw.edition,
     shadowless: !!raw.shadowless,
@@ -31,6 +32,13 @@ export function mapRawListingToCanonical(raw: RawListing, source: string) {
     reverse: !!raw.reverse,
     language: (raw.language || 'EN').toUpperCase(),
   });
+  if ((!setCode || !number) && raw.title) {
+    const parsed = (await parseTitleWithQwen(raw.title).catch(() => null)) || parseTitleFallback(raw.title);
+    if (parsed && (parsed.confidence >= 0.65 || (!setCode && !number))) {
+      setCode = setCode || parsed.setCode;
+      number = number || parsed.number;
+    }
+  }
   const cKey = cardKey(setCode, number, vkey, (raw.language || 'EN').toUpperCase());
 
   const canonical = {
@@ -102,4 +110,3 @@ export function mapRawCompToCanonical(raw: RawComp, source: string) {
 
   return { canonical: payload, rawImport };
 }
-
