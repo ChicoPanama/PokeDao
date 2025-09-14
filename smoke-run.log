@@ -1,0 +1,41 @@
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "pokedao", schema "public" at "localhost:5432"
+
+5 migrations found in prisma/migrations
+
+
+No pending migrations to apply.
+Environment variables loaded from .env
+✔ Seeded from listing:
+  listingId: test-listing-1
+  cardId   : test-card-1
+  price    : $10.00
+  comps    : $48.00, $49.00, $49.50, $50.00, $50.50, $51.00, $51.50, $52.00, $52.50, $53.00
+[dbg][02_normalize] in=1 out=1
+[dbg][03_features] listings=1 cards=1 compsRows=150 withComps=1
+[dbg][03_features] sample= [
+  {
+    id: 'test-listing-1',
+    cardId: 'test-card-1',
+    compCount: 150,
+    median: 5100
+  }
+]
+[info][04_signal] candidates=1
+[dbg][05_validate] kept=1 created=1
+[dbg][06_output] candsIn=1
+[dbg][06_output] dry-run post id=test-listing-1 cardId=test-card-1 spreadBp=15937
+[DRY RUN][X] Thread with 4 tweets
+[dbg][X] Thread with 4 tweets took 0ms (dry)
+
+=== Smoke Verification ===
+Before: 23 After: 24 Created: 1
+Newest: {
+  id: 'cmfixb0un0000fhld10cbg38u',
+  cardId: 'test-card-1',
+  listingId: 'test-listing-1',
+  netSpreadBps: 15937,
+  confidence: 0.7176091259055681,
+  createdAt: 2025-09-13T23:54:37.967Z
+}
+✅ Passed: PENDING Opportunity created.

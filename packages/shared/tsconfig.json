@@ -7,7 +7,8 @@
     "declaration": true,
     "declarationMap": true,
     "noImplicitAny": false,
-    "strict": false
+    "strict": false,
+    "types": ["node"]
   },
   "include": ["types", "./**/*.ts"],
   "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]

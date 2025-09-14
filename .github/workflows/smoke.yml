@@ -1,14 +1,11 @@
 name: Agent Smoke
-
-"on":
-  workflow_dispatch: {}
+on:
   push:
     branches:
       - main
   pull_request:
     branches:
       - main
-
 jobs:
   smoke:
     runs-on: ubuntu-latest
@@ -22,21 +19,18 @@ jobs:
         ports:
           - "5432:5432"
         options: >-
-          --health-cmd="pg_isready -U pokedao" --health-interval=5s
-          --health-timeout=5s --health-retries=10
+          --health-cmd="pg_isready -U pokedao" --health-interval=5s --health-timeout=5s --health-retries=10
       redis:
         image: redis:7-alpine
         ports:
           - "6379:6379"
         options: --health-cmd="redis-cli ping" --health-interval=5s --health-timeout=5s --health-retries=10
-
     env:
       DATABASE_URL: postgresql://pokedao:pokedao@localhost:5432/pokedao?schema=public
       REDIS_URL: redis://localhost:6379/0
       POSTING_ENABLED: "false"
       POSTING_DRY_RUN: "true"
       TZ: America/Los_Angeles
-
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4

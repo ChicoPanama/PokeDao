@@ -44,7 +44,7 @@ export async function postDailyBest() {
     buyUrl: listing?.url || 'https://example.com',
     sellCompUrl: undefined,
     rationale: best.rationale,
-  risks: ['Condition variance', 'Fee drift', 'Listing cancellation'] as readonly string[],
+    risks: ['Condition variance', 'Fee drift', 'Listing cancellation'],
     timeWindow: 'Next 24–72h',
   });
 

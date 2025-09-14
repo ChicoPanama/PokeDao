@@ -20,23 +20,12 @@ function getXClient() {
 }
 
 async function maybePost<T>(label: string, fn: () => Promise<T>): Promise<T | { data: { id: string; text?: string } }> {
-  const shouldDry = !POSTING_ENABLED || POSTING_DRY_RUN;
-  const start = Date.now();
-  if (shouldDry) {
+  if (!POSTING_ENABLED || POSTING_DRY_RUN) {
+    // Dry-run: don’t require credentials; just log
     console.log(`[DRY RUN][X] ${label}`);
-    if (process.env.AGENT_DEBUG === 'true') console.log(`[dbg][X] ${label} took ${Date.now()-start}ms (dry)`);
     return { data: { id: 'dry-run' } } as any;
   }
-
-  if (process.env.AGENT_DEBUG === 'true') console.log(`[dbg][X] POST start: ${label}`);
-  try {
-    const res = await fn();
-    if (process.env.AGENT_DEBUG === 'true') console.log(`[dbg][X] POST done: ${label} ${Date.now()-start}ms`);
-    return res;
-  } catch (err: any) {
-    console.error('[err][X] post failed:', String(err?.message ?? err));
-    throw err;
-  }
+  return fn();
 }
 
 export async function postText(text: string) {
@@ -50,17 +39,12 @@ export async function postThread(lines: string[]) {
   return maybePost('Thread with ' + lines.length + ' tweets', async () => {
     const client = getXClient();
     let replyTo: string | undefined;
-    let i = 0;
     for (const raw of lines) {
-      i++;
       const text = raw.slice(0, 270); // safety buffer
-      const tstart = Date.now();
-      if (process.env.AGENT_DEBUG === 'true') console.log(`[dbg][X] tweet#${i} start`);
       const res = await client.v2.tweet({
         text,
         ...(replyTo ? { reply: { in_reply_to_tweet_id: replyTo } } : {}),
       } as any);
-      if (process.env.AGENT_DEBUG === 'true') console.log(`[dbg][X] tweet#${i} done ${Date.now()-tstart}ms`);
       replyTo = (res as any).data.id;
     }
     return { data: { id: replyTo! } } as any;

@@ -9,7 +9,8 @@
       "@/*": ["src/*"]
     },
     "noImplicitAny": false,
-    "strict": false
+    "strict": false,
+    "types": ["node"]
   },
   "include": ["src", "types"],
   "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]

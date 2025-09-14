@@ -4,9 +4,6 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/ChicoPanama/PokeDao)](https://github.com/ChicoPanama/PokeDao/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/ChicoPanama/PokeDao)](https://github.com/ChicoPanama/PokeDao)
 
-[![CI: Validate Workflows](https://github.com/ChicoPanama/PokeDao/actions/workflows/ci-validate-workflows.yml/badge.svg)](https://github.com/ChicoPanama/PokeDao/actions/workflows/ci-validate-workflows.yml)
-[![Smoke: Agent Smoke](https://github.com/ChicoPanama/PokeDao/actions/workflows/smoke.yml/badge.svg)](https://github.com/ChicoPanama/PokeDao/actions/workflows/smoke.yml)
-
 > **The world's most comprehensive Pokemon card pricing intelligence and arbitrage detection system**
 
 ## 🚀 **What is PokeDAO?**
