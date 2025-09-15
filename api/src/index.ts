@@ -1,22 +1,16 @@
 import loadAndValidateEnv from './lib/validate-env.js';
-// Load env (non-fatal). We default PORT/REDIS_URL later if missing.
-loadAndValidateEnv([]);
+// Validate API env vars
+loadAndValidateEnv(['PORT', 'REDIS_URL']);
 import Fastify from "fastify";
 import cors from "@fastify/cors";
-import helmet from "@fastify/helmet";
-import rateLimit from "@fastify/rate-limit";
-import swagger from "@fastify/swagger";
-import swaggerUi from "@fastify/swagger-ui";
 import prisma from "./lib/prisma.js";
 import { getRedis } from "./lib/redis.js";
-import { createHash, randomUUID } from "node:crypto";
+import { createHash } from "node:crypto";
 import type { FastifyBaseLogger } from "fastify";
 
 // worker helpers (exported by @pokedao/worker)
 import { normalizeCardQuery, getComparableSales, sanitizeComps, computeFairValue } from "@pokedao/worker";
 import { Prisma } from "@prisma/client";
-import { registerSignals } from "./routes/signals.js";
-import { registerPosts } from "./routes/posts.js";
 
 // External data integration endpoints
 import { 
@@ -25,6 +19,8 @@ import {
   getMarketSignals, 
   getDiscoveryEndpoints 
 } from "./external-data-endpoints.js";
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
 
 const PORT = Number(process.env.PORT || 3000);
 const HOST = "0.0.0.0";
@@ -39,33 +35,10 @@ type watchlistKey = Prisma.WatchlistItemWhereUniqueInput;
 
 async function buildServer() {
   const app = Fastify({
-    logger: { level: process.env.API_LOG_LEVEL || 'info' },
-    genReqId: (req) => (req.headers['x-request-id'] as string) || randomUUID(),
-  });
-
-  // Propagate request id for client correlation
-  app.addHook('onRequest', async (req, reply) => {
-    reply.header('x-request-id', req.id);
+    logger: true,
   });
 
   await app.register(cors, { origin: true });
-  await app.register(helmet, { global: true });
-  await app.register(rateLimit, {
-    max: Number(process.env.RATE_LIMIT_MAX || 300),
-    timeWindow: process.env.RATE_LIMIT_WINDOW || '1 minute',
-  });
-  await app.register(swagger, {
-    openapi: {
-      info: {
-        title: 'PokeDAO API',
-        description: 'Market intelligence API for trading cards',
-        version: '0.1.0',
-      },
-    },
-  });
-  await app.register(swaggerUi, { routePrefix: '/docs' });
-  await registerSignals(app);
-  await registerPosts(app);
 
   app.get('/health', async (request, reply) => {
     try {
@@ -75,60 +48,8 @@ async function buildServer() {
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       request.log.error({ err: e }, 'health check failed');
-      // Return 200 for Docker health checks, but log the error
-      return reply.code(200).send({ status: 'degraded', error: msg });
+      return reply.code(500).send({ status: 'error', error: msg });
     }
-  });
-
-  app.get('/ready', async (request, reply) => {
-    try {
-      const [pong] = await Promise.all([
-        redis.ping(),
-        prisma.$queryRaw`SELECT 1`
-      ]);
-      if (pong !== 'PONG') throw new Error('Redis not ready');
-      return reply.code(200).send({ ready: true });
-    } catch (e) {
-      const msg = e instanceof Error ? e.message : String(e);
-      request.log.error({ err: e }, 'readiness check failed');
-      return reply.code(503).send({ ready: false, error: msg });
-    }
-  });
-
-  // API routes catalog (dev-only)
-  app.get('/api/_routes', async (request, reply) => {
-    return reply.code(200).send({
-      health: "/health",
-      ready: "/ready", 
-      metrics: "/metrics",
-      cards: "/api/cards?limit=10",
-      listings: "/api/listings?limit=10",
-      feed: "/feed?limit=25",
-      fairValue: "/fv?name=Charizard&set=Base%20Set&listPrice=100",
-      external: "/external/status"
-    });
-  });
-
-  // Prometheus metrics endpoint
-  app.get('/metrics', async (request, reply) => {
-    // Basic metrics - can be enhanced with prom-client later
-    const dbConnections = await prisma.$queryRaw`SELECT count(*) as count FROM pg_stat_activity WHERE datname = current_database()`;
-    const cardCount = await prisma.card.count();
-    const listingCount = await prisma.listing.count();
-    
-    const metrics = [
-      '# HELP pokedao_cards_total Total number of cards in database',
-      '# TYPE pokedao_cards_total gauge',
-      `pokedao_cards_total ${cardCount}`,
-      '# HELP pokedao_listings_total Total number of listings in database', 
-      '# TYPE pokedao_listings_total gauge',
-      `pokedao_listings_total ${listingCount}`,
-      '# HELP pokedao_db_connections Current database connections',
-      '# TYPE pokedao_db_connections gauge',
-      `pokedao_db_connections ${(dbConnections as any[])[0]?.count || 0}`
-    ].join('\n');
-
-    return reply.code(200).type('text/plain').send(metrics);
   });
 
   // fair value endpoint
@@ -198,7 +119,7 @@ async function buildServer() {
     }
   });
 
-  // top100 endpoint: robust ranking implementation
+  // top100 endpoint: rank most frequent comp names (placeholder until richer metrics)
   app.get('/top100', async (req, reply) => {
     try {
       const q = req.query as Record<string, string | undefined>;
@@ -206,16 +127,14 @@ async function buildServer() {
       const cursor = q.cursor ? { id: q.cursor } : undefined;
 
       const group = await prisma.comp.groupBy({
-        by: ['id'], // Replace 'cardId' with 'id' as per schema
-        where: {}, // Remove 'soldAt' as it does not exist in the schema
-        _count: { id: true }, // Replace '_all' with 'id' for valid aggregation
-        orderBy: [{ _count: { id: 'desc' } }, { id: 'asc' }],
-        cursor: cursor as never, // Explicitly cast cursor to match the expected type
+        by: ['name'],
+        _count: { name: true },
+        orderBy: { _count: { name: 'desc' } },
         take: limit + 1,
       });
 
-  const nextCursor = group.length > limit ? group.pop()?.id : null;
-      return { ok: true, items: group, nextCursor, count: group.length, generatedAt: new Date().toISOString() };
+      const items = group.slice(0, limit);
+      return { ok: true, items, nextCursor: null, count: items.length, generatedAt: new Date().toISOString() };
     } catch (err: any) {
       app.log.error({ err }, 'top100 route error'); // Use error for logging
       reply.code(500);
@@ -241,7 +160,10 @@ async function buildServer() {
 
   // Middleware to check Redis cache
   app.addHook('onRequest', async (req, reply) => {
-    const cacheKey = `${req.routerPath}:v1:${JSON.stringify(req.query)}`;
+    const method = req.method;
+    const keyUrl = req.url.split('?')[0];
+    const sortedQuery = JSON.stringify(Object.fromEntries(Object.entries((req.query as any) || {}).sort()));
+    const cacheKey = `${method}:${keyUrl}:v1:${sortedQuery}`;
     const cached = await redis.get(cacheKey);
     if (cached) {
       reply.header('x-cache', 'hit');
@@ -260,24 +182,22 @@ async function buildServer() {
     }
   });
 
-  // Referral attribution middleware (best-effort, non-fatal)
+  // Referral attribution middleware (non-blocking)
   app.addHook('onRequest', async (req) => {
+    const query = req.query as Record<string, string | undefined>;
+    const ref = query?.ref?.trim();
+    if (!ref) return;
     try {
-      const query = req.query as Record<string, string | undefined>;
-      const ref = query.ref;
-      const userId = req.headers['user-id'] as string | undefined;
-      if (!ref || !userId) return;
-      // hashed IP available if we later add a column
-      const _ipHash = createHash('sha256').update(req.ip).digest('hex');
+      const ipHash = createHash('sha256').update(req.ip).digest('hex');
       await prisma.referralEvent.create({
         data: {
           code: ref,
-          path: (req as any).routerPath || req.url,
-          user: { connect: { id: userId } },
+          path: req.url,
+          userId: (req.headers['user-id'] as string | undefined) || null,
         },
       });
     } catch (err) {
-      req.log.warn({ err }, 'referral attribution failed');
+      // swallow non-critical errors
     }
   });
 
@@ -293,52 +213,6 @@ async function buildServer() {
       logger.error?.({ err }, 'referral analytics error'); // Use optional chaining for safety
       reply.code(500);
       return { ok: false, error: 'Internal error' };
-    }
-  });
-
-  // cards list endpoint
-  app.get('/api/cards', async (req, reply) => {
-    try {
-      const q = req.query as Record<string, string | undefined>;
-      const limit = Math.min(100, Math.max(1, Number(q.limit || '10')));
-      const cursor = q.cursor ? { id: q.cursor } : undefined;
-
-      const cards = await prisma.card.findMany({
-        ...(cursor ? { cursor, skip: 1 } : {}),
-        take: limit,
-        orderBy: { createdAt: 'desc' },
-        include: {
-          listings: {
-            where: { isActive: true },
-            orderBy: { scrapedAt: 'desc' },
-            take: 1,
-            select: {
-              price: true,
-              currency: true,
-              url: true,
-              source: true,
-              scrapedAt: true
-            }
-          },
-          _count: {
-            select: {
-              listings: true
-            }
-          }
-        }
-      });
-
-      return {
-        cards,
-        pagination: {
-          hasMore: cards.length === limit,
-          nextCursor: cards.length === limit ? cards[cards.length - 1].id : null
-        }
-      };
-    } catch (err: any) {
-      app.log.error({ err }, "cards list error");
-      reply.code(500);
-      return { ok: false, error: "Internal error" };
     }
   });
 
@@ -451,6 +325,33 @@ async function buildServer() {
     }
   });
 
+  // Analytics endpoint (parity with external-data-server)
+  app.get('/external/analytics', async (_req, reply) => {
+    try {
+      const datasetPath = path.join(process.cwd(), '../worker/unified-collector-crypt-dataset.json');
+      const raw = await readFile(datasetPath, 'utf8');
+      const dataset = JSON.parse(raw);
+
+      const totalCards = dataset.length;
+      const byYear: Record<string, number> = {};
+      const byGrade: Record<string, number> = {};
+
+      for (const item of dataset.slice(0, 5000)) {
+        const yearMatch = item.itemName.match(/\b(19\d{2}|20\d{2})\b/);
+        const year = yearMatch ? yearMatch[1] : 'unknown';
+        byYear[year] = (byYear[year] || 0) + 1;
+
+        const grade = (item.grade || 'unknown').toUpperCase();
+        byGrade[grade] = (byGrade[grade] || 0) + 1;
+      }
+
+      return reply.send({ ok: true, analytics: { totalCards, byYear, byGrade }, generatedAt: new Date().toISOString() });
+    } catch (err: any) {
+      reply.code(500);
+      return { ok: false, error: 'Internal error' };
+    }
+  });
+
   // watchlist endpoints
   app.post('/watchlist', async (req, reply) => {
     try {
@@ -487,21 +388,6 @@ async function buildServer() {
       reply.code(500);
       return { ok: false, error: 'Internal error' };
     }
-  });
-
-  // Central error handler for consistency
-  app.setErrorHandler((err, req, reply) => {
-    req.log.error({ err }, 'unhandled_error');
-    const status = typeof err.statusCode === 'number' && err.statusCode >= 400 ? err.statusCode : 500;
-    const body = {
-      type: 'about:blank',
-      title: status === 500 ? 'Internal Server Error' : err.name || 'Error',
-      status,
-      detail: process.env.NODE_ENV === 'production' ? undefined : err.message,
-      instance: req.url,
-      requestId: req.id,
-    } as const;
-    reply.code(status).header('content-type', 'application/problem+json').send(body);
   });
 
   return app;

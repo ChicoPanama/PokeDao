@@ -1,13 +1,29 @@
 {
-  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": ".",
+    "target": "ES2020",
+    "lib": ["ES2020"],
+  "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+  "rootDir": "src",
     "outDir": "dist",
-    "typeRoots": ["./types", "../node_modules/@types", "../../node_modules/@types"],
-    "noImplicitAny": false,
-    "strict": false,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "strict": true,
+    "esModuleInterop": true,
     "skipLibCheck": true
   },
-  "include": ["src", "types"],
-  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
+  "include": [
+    "src/index.ts",
+    "src/core/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/collector-crypt-database-importer.ts",
+    "src/**/collector-crypt-harvester.ts",
+    "src/**/resumable-harvester.ts",
+    "test",
+    "src/**/debug-*.ts",
+    "src/**/save-*.ts",
+    "src/**/analyze-*.ts"
+  ]
 }

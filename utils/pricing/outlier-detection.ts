@@ -8,7 +8,6 @@
  * @inspired_by Statistical outlier detection patterns from market analysis tools
  */
 
-import { PrismaClient } from '@prisma/client';
 import { Decimal } from '@prisma/client/runtime/library';
 
 // Define types based on our Prisma schema

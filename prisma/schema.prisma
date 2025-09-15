@@ -107,12 +107,12 @@ model Comp {
 
 model ReferralEvent {
   id        String   @id @default(cuid())
-  userId    String
+  userId    String?
   code      String
   path      String
   createdAt DateTime @default(now())
 
-  user User @relation(fields: [userId], references: [id])
+  user User? @relation(fields: [userId], references: [id])
 }
 
 model WatchlistItem {

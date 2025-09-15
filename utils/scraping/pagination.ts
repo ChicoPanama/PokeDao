@@ -9,7 +9,23 @@
  * @inspired_by Robust scraping and pagination patterns
  */
 
-import { PrismaClient } from '@prisma/client';
+// Decouple from concrete ORM to keep utils portable
+export interface DatabaseClient {
+  scrapeCursor: {
+    upsert(args: {
+      where: { sessionId: string };
+      update: { state: any; lastUpdated: Date };
+      create: {
+        sessionId: string;
+        source: string;
+        state: any;
+        createdAt: Date;
+        lastUpdated: Date;
+      };
+    }): Promise<void> | Promise<any>;
+    findUnique(args: { where: { sessionId: string } }): Promise<any>;
+  };
+}
 
 type ScrapeCursor = {
   id: number;
@@ -93,14 +109,14 @@ export class PaginationHandler {
     }
   };
 
-  protected prisma: PrismaClient;
+  protected prisma: DatabaseClient;
   protected sessionId: string;
   protected source: string;
   protected state: PaginationState;
   protected config: PaginationConfig;
 
   constructor(
-    prisma: PrismaClient,
+    prisma: DatabaseClient,
     source: keyof typeof PaginationHandler.SITE_CONFIGS,
     sessionId?: string
   ) {
