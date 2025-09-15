@@ -37,8 +37,8 @@ const checks: Check[] = [
     run: () => (async () => {
       try {
         const { PrismaClient } = await import('@prisma/client');
-        const prisma = new PrismaClient();
-        const stats = await prisma.$queryRawUnsafe<any>(
+        const prisma = new (PrismaClient as any)();
+        const stats = await (prisma as any).$queryRawUnsafe(
           'SELECT COUNT(*)::bigint AS rows, COALESCE(SUM(hits),0)::bigint AS total_hits, ROUND(AVG(confidence)::numeric,3) AS avg_conf FROM "TitleParseCache"',
         );
         const row = Array.isArray(stats) ? stats[0] : stats;

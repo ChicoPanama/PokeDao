@@ -1,3 +1,4 @@
 # Prisma configuration to ignore research schemas
 schema = "prisma/schema.prisma"
 
+
