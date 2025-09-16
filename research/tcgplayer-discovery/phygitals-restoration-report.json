@@ -1,0 +1,33 @@
+{
+  "restorationSummary": {
+    "sessionId": 1757981660971,
+    "totalCards": 2,
+    "cardsWithPrices": 2,
+    "totalSales": 1,
+    "totalUsers": 1,
+    "totalSets": 3,
+    "restorationTimestamp": "2025-09-16T00:14:21.060Z"
+  },
+  "pricingAnalysis": {
+    "min_price": 1.29,
+    "max_price": 6.47,
+    "avg_price": 3.88,
+    "total_with_prices": 2
+  },
+  "topCards": [
+    {
+      "name": "2002 Pokemon Expedition Holo Magby #17",
+      "usd_price": 6.47,
+      "grader": "CGC",
+      "grade": "9",
+      "set_name": "Expedition"
+    },
+    {
+      "name": "2002 Pokemon Japanese Split Earth 1st Edition Poliwag #21 CGC 9 MINT",
+      "usd_price": 1.29,
+      "grader": "CGC",
+      "grade": "9",
+      "set_name": "Japanese Split Earth"
+    }
+  ]
+}

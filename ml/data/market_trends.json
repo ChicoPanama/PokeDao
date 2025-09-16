@@ -1,0 +1,47 @@
+[
+  {
+    "trend": "Base Set Revival",
+    "description": "Increased demand for original Base Set cards",
+    "confidence": 0.89,
+    "timeframe": "3-6 months",
+    "affectedCards": ["Charizard", "Blastoise", "Venusaur", "Pikachu"],
+    "expectedImpact": "+25% price increase",
+    "drivers": ["nostalgia", "anniversary", "new_collectors"]
+  },
+  {
+    "trend": "Graded Card Premium",
+    "description": "Higher premiums for PSA/BGS graded cards",
+    "confidence": 0.94,
+    "timeframe": "ongoing",
+    "affectedCards": ["all_rare_cards"],
+    "expectedImpact": "+15-30% premium for graded",
+    "drivers": ["authenticity", "condition_assurance", "investment_grade"]
+  },
+  {
+    "trend": "Modern Set Decline",
+    "description": "Decreasing interest in recent sets",
+    "confidence": 0.76,
+    "timeframe": "6-12 months",
+    "affectedCards": ["Sword & Shield", "Scarlet & Violet"],
+    "expectedImpact": "-10-20% price decrease",
+    "drivers": ["oversupply", "low_rarity", "reprint_policy"]
+  },
+  {
+    "trend": "First Edition Mania",
+    "description": "Extreme premiums for First Edition cards",
+    "confidence": 0.91,
+    "timeframe": "ongoing",
+    "affectedCards": ["Base Set First Edition"],
+    "expectedImpact": "+50-200% premium",
+    "drivers": ["historical_significance", "limited_supply", "collector_demand"]
+  },
+  {
+    "trend": "Japanese Card Appreciation",
+    "description": "Growing interest in Japanese Pokemon cards",
+    "confidence": 0.83,
+    "timeframe": "12+ months",
+    "affectedCards": ["Japanese Base Set", "Japanese Promos"],
+    "expectedImpact": "+30-50% price increase",
+    "drivers": ["cultural_authenticity", "different_artwork", "rarity"]
+  }
+]

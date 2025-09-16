@@ -1,0 +1,38 @@
+[
+  {
+    "mint": "So11111111111111111111111111111111111111112",
+    "name": "Charizard #001",
+    "collection": "Pokemon NFTs",
+    "floorPrice": 2.5,
+    "volume24h": 150.2,
+    "marketCap": 2500000,
+    "holders": 1250,
+    "blockchain": "solana",
+    "lastSale": 2.8,
+    "rarity": "legendary"
+  },
+  {
+    "mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+    "name": "Pikachu #025",
+    "collection": "Pokemon NFTs",
+    "floorPrice": 1.2,
+    "volume24h": 89.5,
+    "marketCap": 1200000,
+    "holders": 2100,
+    "blockchain": "solana",
+    "lastSale": 1.4,
+    "rarity": "rare"
+  },
+  {
+    "mint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+    "name": "Mew #151",
+    "collection": "Pokemon NFTs",
+    "floorPrice": 5.8,
+    "volume24h": 45.3,
+    "marketCap": 580000,
+    "holders": 890,
+    "blockchain": "solana",
+    "lastSale": 6.2,
+    "rarity": "mythical"
+  }
+]

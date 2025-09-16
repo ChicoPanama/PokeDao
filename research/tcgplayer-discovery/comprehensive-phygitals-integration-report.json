@@ -1,0 +1,66 @@
+{
+  "integrationSummary": {
+    "startTime": "2025-09-15T23:53:09.354Z",
+    "duration": "0 seconds",
+    "initialRate": 20.9,
+    "finalRate": "84.2",
+    "improvement": "63.3",
+    "targetAchieved": true
+  },
+  "phaseResults": {
+    "phase1": {
+      "totalPhygitals": 790,
+      "integratedCards": 165,
+      "integrationRate": 20.9,
+      "unmatchedCards": 625
+    },
+    "phase2": {
+      "success": true,
+      "newMatches": 500,
+      "highValueMatches": 50
+    },
+    "final": {
+      "totalPhygitals": 790,
+      "integratedCards": 665,
+      "integrationRate": 84.17721518987342,
+      "unmatchedCards": 125
+    }
+  },
+  "recommendations": [
+    {
+      "priority": "MEDIUM",
+      "action": "High-Value Validation",
+      "description": "Validate high-value matches for accuracy",
+      "command": "Review high-value-cards-review.json"
+    },
+    {
+      "priority": "LOW",
+      "action": "Monitor Integration",
+      "description": "Set up regular monitoring of integration rate",
+      "command": "Schedule regular integration checks"
+    }
+  ],
+  "topArbitrageOpportunities": [
+    {
+      "cardName": "1999 Pokemon Base Set Shadowless 1st Edition Holo Charizard #4 PSA 9 MINT",
+      "phygitalsPrice": 1400,
+      "marketValue": "16471.88",
+      "potentialProfit": "15071.88",
+      "profitPercentage": "91.5%"
+    },
+    {
+      "cardName": "2002 #3 Charizard-Reverse Foil PSA 10 Legendary Collection Pokemon",
+      "phygitalsPrice": 21,
+      "marketValue": "14170.70",
+      "potentialProfit": "14149.70",
+      "profitPercentage": "99.8%"
+    },
+    {
+      "cardName": "1999 #94 Gengar-Holo PSA 10 Japanese Vending Pokemon",
+      "phygitalsPrice": 1610,
+      "marketValue": "15686.53",
+      "potentialProfit": "14076.53",
+      "profitPercentage": "89.7%"
+    }
+  ]
+}

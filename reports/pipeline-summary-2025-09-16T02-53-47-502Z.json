@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-09-16T02:53:47.182Z",
+  "duration": null,
+  "status": "RUNNING",
+  "statistics": {
+    "totalListings": 0,
+    "newOpportunities": 50,
+    "totalProfitPotential": 20085918,
+    "collectionsUpdated": 1
+  },
+  "errors": []
+}

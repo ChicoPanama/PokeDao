@@ -1,0 +1,46 @@
+[
+  {
+    "cardName": "Charizard",
+    "setName": "Base Set",
+    "currentPrice": 45000,
+    "predictedPrice1M": 52000,
+    "predictedPrice3M": 58000,
+    "predictedPrice6M": 65000,
+    "confidence": 0.87,
+    "factors": ["market_demand", "rarity", "historical_performance"],
+    "trend": "bullish"
+  },
+  {
+    "cardName": "Pikachu",
+    "setName": "Base Set",
+    "currentPrice": 12000,
+    "predictedPrice1M": 13500,
+    "predictedPrice3M": 14200,
+    "predictedPrice6M": 15800,
+    "confidence": 0.92,
+    "factors": ["popularity", "cultural_impact", "collectibility"],
+    "trend": "bullish"
+  },
+  {
+    "cardName": "Mew",
+    "setName": "Promo",
+    "currentPrice": 25000,
+    "predictedPrice1M": 28000,
+    "predictedPrice3M": 31000,
+    "predictedPrice6M": 35000,
+    "confidence": 0.79,
+    "factors": ["mythical_status", "limited_availability"],
+    "trend": "bullish"
+  },
+  {
+    "cardName": "Blastoise",
+    "setName": "Base Set",
+    "currentPrice": 18000,
+    "predictedPrice1M": 19500,
+    "predictedPrice3M": 21000,
+    "predictedPrice6M": 22500,
+    "confidence": 0.85,
+    "factors": ["starter_pokemon", "nostalgia_factor"],
+    "trend": "bullish"
+  }
+]

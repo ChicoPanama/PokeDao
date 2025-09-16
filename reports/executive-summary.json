@@ -1,0 +1,32 @@
+{
+  "reportType": "EXECUTIVE SUMMARY",
+  "timestamp": "2025-09-16T03:00:56.695Z",
+  "keyFindings": {
+    "portfolioValue": 451053500,
+    "arbitrageOpportunities": 97,
+    "profitPotential": 96136734,
+    "marketListings": 9921,
+    "highConfidenceOpportunities": 70,
+    "lowRiskOpportunities": 67
+  },
+  "recommendations": [
+    "Execute high-confidence, low-risk arbitrage opportunities immediately",
+    "Increase position in Charizard and Pikachu cards due to strong fundamentals",
+    "Monitor real-time alerts for new opportunities",
+    "Consider scaling operations to additional market sources",
+    "Implement automated execution for opportunities with >90% confidence"
+  ],
+  "riskAssessment": {
+    "overallRisk": "MEDIUM",
+    "riskFactors": [
+      "Market volatility in collectibles",
+      "Liquidity constraints on high-value items",
+      "Authentication and condition risks"
+    ],
+    "mitigationStrategies": [
+      "Diversified portfolio across multiple card types",
+      "Focus on high-liquidity opportunities",
+      "Strong authentication and grading processes"
+    ]
+  }
+}

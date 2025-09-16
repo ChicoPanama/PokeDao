@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Card Hedge Fund Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0a0a0a; color: #fff; }
+        .dashboard { padding: 20px; max-width: 1400px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 { font-size: 2.5em; color: #00ff88; margin-bottom: 10px; }
+        .header p { color: #888; font-size: 1.1em; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .metric-card { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border-radius: 15px; padding: 25px; border: 1px solid #333; }
+        .metric-card h3 { color: #00ff88; margin-bottom: 15px; font-size: 1.3em; }
+        .metric-value { font-size: 2em; font-weight: bold; color: #fff; margin-bottom: 10px; }
+        .metric-label { color: #888; font-size: 0.9em; }
+        .charts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+        .chart-card { background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%); border-radius: 15px; padding: 25px; border: 1px solid #333; }
+        .chart-card h3 { color: #00ff88; margin-bottom: 20px; font-size: 1.3em; }
+        .top-list { list-style: none; }
+        .top-list li { padding: 10px 0; border-bottom: 1px solid #333; display: flex; justify-content: space-between; }
+        .top-list li:last-child { border-bottom: none; }
+        .card-name { color: #fff; font-weight: 500; }
+        .card-value { color: #00ff88; font-weight: bold; }
+        .alert-badge { display: inline-block; padding: 4px 8px; border-radius: 12px; font-size: 0.8em; font-weight: bold; }
+        .alert-critical { background: #ff4444; color: #fff; }
+        .alert-high { background: #ff8800; color: #fff; }
+        .alert-medium { background: #ffaa00; color: #000; }
+        .alert-low { background: #00ff88; color: #000; }
+        .status-indicator { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+        .status-online { background: #00ff88; }
+        .status-warning { background: #ffaa00; }
+        .status-offline { background: #ff4444; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>🔥 POKEMON CARD HEDGE FUND</h1>
+            <p>Ultimate Arbitrage Intelligence Dashboard</p>
+            <p>Last Updated: 2025-09-16T03:00:56.682Z</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>💰 Total Portfolio Value</h3>
+                <div class="metric-value">$4,510,535</div>
+                <div class="metric-label">153 items across 8 collections</div>
+            </div>
+
+            <div class="metric-card">
+                <h3>📈 Arbitrage Opportunities</h3>
+                <div class="metric-value">97</div>
+                <div class="metric-label">$961,367.34 profit potential</div>
+            </div>
+
+            <div class="metric-card">
+                <h3>🎯 Market Listings</h3>
+                <div class="metric-value">9,921</div>
+                <div class="metric-label">$3517 average price</div>
+            </div>
+
+            <div class="metric-card">
+                <h3>⚡ Real-Time Alerts</h3>
+                <div class="metric-value">15</div>
+                <div class="metric-label">
+                    <span class="alert-badge alert-critical">3 Critical</span>
+                    <span class="alert-badge alert-high">12 High</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>🏆 Top Portfolio Performers</h3>
+                <ul class="top-list">
+                    
+                        <li>
+                            <span class="card-name">Charizard Team Rocket</span>
+                            <span class="card-value">$47,413.68</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Team Rocket</span>
+                            <span class="card-value">$47,413.68</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Base Set</span>
+                            <span class="card-value">$46,331.58</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Base Set</span>
+                            <span class="card-value">$46,331.58</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Base Set</span>
+                            <span class="card-value">$46,331.58</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Base Set</span>
+                            <span class="card-value">$46,331.58</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Base Set</span>
+                            <span class="card-value">$46,331.58</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Base Set</span>
+                            <span class="card-value">$46,331.58</span>
+                        </li>
+                    
+                </ul>
+            </div>
+
+            <div class="chart-card">
+                <h3>💎 Top Arbitrage Opportunities</h3>
+                <ul class="top-list">
+                    
+                        <li>
+                            <span class="card-name">Charizard Evolutions</span>
+                            <span class="card-value">$43105 (4780.8%)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Team Rocket</span>
+                            <span class="card-value">$42794 (4792.5%)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Base Set</span>
+                            <span class="card-value">$41802 (4710.1%)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Gengar Jungle</span>
+                            <span class="card-value">$39717 (4289.3%)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Charizard Hidden Fates</span>
+                            <span class="card-value">$38924 (4443.6%)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Gengar Evolutions</span>
+                            <span class="card-value">$38637 (4280.2%)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Gengar Base Set</span>
+                            <span class="card-value">$36859 (3806.0%)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Gengar Hidden Fates</span>
+                            <span class="card-value">$36437 (3713.9%)</span>
+                        </li>
+                    
+                </ul>
+            </div>
+
+            <div class="chart-card">
+                <h3>🃏 Top Cards by Volume</h3>
+                <ul class="top-list">
+                    
+                        <li>
+                            <span class="card-name">Charizard</span>
+                            <span class="card-value">2989 listings ($3846)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Pikachu</span>
+                            <span class="card-value">2633 listings ($5142)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Mew</span>
+                            <span class="card-value">1669 listings ($2044)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Gengar</span>
+                            <span class="card-value">748 listings ($3844)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Gyarados</span>
+                            <span class="card-value">461 listings ($2495)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Blastoise</span>
+                            <span class="card-value">453 listings ($1597)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Venusaur</span>
+                            <span class="card-value">341 listings ($1836)</span>
+                        </li>
+                    
+                        <li>
+                            <span class="card-name">Dragonite</span>
+                            <span class="card-value">307 listings ($2057)</span>
+                        </li>
+                    
+                </ul>
+            </div>
+
+            <div class="chart-card">
+                <h3>📊 Performance Metrics</h3>
+                <div style="margin-bottom: 15px;">
+                    <span class="status-indicator status-online"></span>
+                    <strong>Daily P&L:</strong> $17314.37
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <span class="status-indicator status-online"></span>
+                    <strong>Weekly P&L:</strong> $129857.74
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <span class="status-indicator status-online"></span>
+                    <strong>Monthly P&L:</strong> $562716.87
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <span class="status-indicator status-warning"></span>
+                    <strong>ROI:</strong> 25.5%
+                </div>
+                <div>
+                    <span class="status-indicator status-online"></span>
+                    <strong>Sharpe Ratio:</strong> 1.8
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

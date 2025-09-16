@@ -21,7 +21,7 @@ function getXClient() {
 
 async function maybePost<T>(label: string, fn: () => Promise<T>): Promise<T | { data: { id: string; text?: string } }> {
   if (!POSTING_ENABLED || POSTING_DRY_RUN) {
-    // Dry-run: don’t require credentials; just log
+    // Dry-run: don't require credentials; just log
     console.log(`[DRY RUN][X] ${label}`);
     return { data: { id: 'dry-run' } } as any;
   }
@@ -36,19 +36,31 @@ export async function postText(text: string) {
 }
 
 export async function postThread(lines: string[]) {
-  return maybePost('Thread with ' + lines.length + ' tweets', async () => {
-    const client = getXClient();
-    let replyTo: string | undefined;
-    for (const raw of lines) {
-      const text = raw.slice(0, 270); // safety buffer
-      const res = await client.v2.tweet({
-        text,
-        ...(replyTo ? { reply: { in_reply_to_tweet_id: replyTo } } : {}),
-      } as any);
-      replyTo = (res as any).data.id;
-    }
-    return { data: { id: replyTo! } } as any;
-  });
+  if (!POSTING_ENABLED || POSTING_DRY_RUN) {
+    // Enhanced dry-run output to show actual tweet content
+    console.log(`[DRY RUN][X] Thread with ${lines.length} tweets:`);
+    console.log('─'.repeat(60));
+    lines.forEach((line, index) => {
+      console.log(`Tweet ${index + 1}:`);
+      console.log(line);
+      console.log(`\nCharacter count: ${line.length}/280`);
+      console.log('─'.repeat(60));
+    });
+    return { data: { id: 'dry-run' } } as any;
+  }
+  
+  // Real posting
+  const client = getXClient();
+  let replyTo: string | undefined;
+  for (const raw of lines) {
+    const text = raw.slice(0, 270); // safety buffer
+    const res = await client.v2.tweet({
+      text,
+      ...(replyTo ? { reply: { in_reply_to_tweet_id: replyTo } } : {}),
+    } as any);
+    replyTo = (res as any).data.id;
+  }
+  return { data: { id: replyTo! } } as any;
 }
 
 export async function postWithImage(text: string, pngOrJpg: Buffer) {
@@ -58,4 +70,3 @@ export async function postWithImage(text: string, pngOrJpg: Buffer) {
     return client.v2.tweet({ text, media: { media_ids: [mediaId] } });
   });
 }
-

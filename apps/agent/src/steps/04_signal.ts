@@ -15,6 +15,8 @@ export type OpportunityCandidate = ListingWithComps & {
 export function detectCandidates(rows: ListingWithComps[]): OpportunityCandidate[] {
   const minSpreadBps = Number(process.env.OPP_MIN_NET_SPREAD_BPS || 1500);
   const minSales = Number(process.env.OPP_MIN_30D_SALES || 3);
+  const minCardValueCents = Number(process.env.OPP_MIN_CARD_VALUE_CENTS || 0); // $100 = 10000 cents
+  const minProfitCents = Number(process.env.OPP_MIN_PROFIT_CENTS || 0); // Minimum profit threshold
 
   const out: OpportunityCandidate[] = [];
   for (const r of rows) {
@@ -34,9 +36,14 @@ export function detectCandidates(rows: ListingWithComps[]): OpportunityCandidate
     const profit = sellNet - buyNet;
     const spreadBps = Math.round((profit / Math.max(1, buyNet)) * 10_000);
 
-    if (spreadBps >= minSpreadBps) {
+    // Apply all crypto trader thresholds
+    const passesSpread = spreadBps >= minSpreadBps;
+    const passesCardValue = r.compMedianCents30d >= minCardValueCents;
+    const passesProfit = profit >= minProfitCents;
+
+    if (passesSpread && passesCardValue && passesProfit) {
       const confidence = Math.min(0.95, 0.5 + 0.1 * Math.log10(Math.max(1, r.compCount30d)));
-      const rationale = `Median 30d comps ${(r.compMedianCents30d / 100).toFixed(2)} vs listing ${(r.priceCents / 100).toFixed(2)} + fees/ship; ${r.compCount30d} sales last 30d.`;
+      const rationale = `Median 30d comps $${(r.compMedianCents30d / 100).toFixed(2)} vs listing $${(r.priceCents / 100).toFixed(2)} + fees/ship; ${r.compCount30d} sales last 30d.`;
       out.push({
         ...r,
         sellCompCents: r.compMedianCents30d,
