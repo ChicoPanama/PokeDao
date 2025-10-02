@@ -9,6 +9,10 @@
     "worker",
     "ml",
     "packages/shared",
+    "packages/core",
+    "packages/analysis",
+    "packages/storage",
+    "packages/adapters",
     "apps/agent"
   ],
   "scripts": {
@@ -24,12 +28,6 @@
     "db:reset": "pnpm --filter api prisma migrate reset --force && pnpm run db:seed",
     "db:seed": "pnpm --filter api prisma db seed",
     "test": "pnpm -r run test",
-    "seed:minimal": "tsx scripts/seed-minimal.ts",
-    "seed:oppty": "tsx scripts/seed-oppty.ts",
-    "seed:from-listing": "tsx scripts/seed-from-listing.ts",
-    "seed:mini": "pnpm --filter @pokedao/agent exec tsx scripts/seed-minimal.ts",
-    "seed-and-tick": "pnpm -s seed:from-listing && OPP_MIN_NET_SPREAD_BPS=0 OPP_MIN_30D_SALES=0 AGENT_SMOKE_ONLY=false pnpm -s agent:tick",
-    "test:smoke": "AGENT_DEBUG=true OPP_MIN_NET_SPREAD_BPS=0 OPP_MIN_30D_SALES=0 AGENT_SMOKE_ONLY=false tsx scripts/verify-opportunity.ts",
     "smoke": "node scripts/smoke.sh",
     "pipeline:relaxed": "pnpm dlx tsx scripts/run-featurizer.ts && pnpm dlx tsx scripts/run-scorer.ts && THESIS_RELAXED=1 pnpm dlx tsx scripts/run-thesis.ts",
     "pipeline:strict": "pnpm dlx tsx scripts/run-featurizer.ts && pnpm dlx tsx scripts/run-scorer.ts && THESIS_RELAXED=0 THESIS_MIN_COMPS_90=5 THESIS_MAX_VOL_BP=1200 THESIS_MAX_FRESH_DAYS=14 pnpm dlx tsx scripts/run-thesis.ts",
@@ -55,21 +53,25 @@
     "agent:tick": "pnpm --filter @pokedao/agent tick",
     "smoke:tick": "tsx scripts/agent-smoke-tick.ts",
     "smoke:daily": "tsx scripts/post-daily-once.ts",
-    "smoke:flash": "tsx scripts/flash-direct.ts"
+    "smoke:flash": "tsx scripts/flash-direct.ts",
+    "collect:justtcg": "tsx scripts/collect-justtcg.ts",
+    "data:ingest:bronze": "tsx scripts/data/ingest-bronze.ts",
+    "data:build:silver": "tsx scripts/data/build-silver.ts",
+    "data:build:gold": "tsx scripts/data/build-gold.ts",
+    "data:sync:db": "tsx scripts/data/sync-postgres.ts",
+    "data:pipeline": "pnpm data:ingest:bronze && pnpm data:build:silver && pnpm data:build:gold && pnpm data:sync:db"
   },
   "prisma": {
     "schema": "./api/prisma/schema.prisma",
     "seed": "node api/prisma/seed.mjs"
   },
   "devDependencies": {
-    "@prisma/client": "6.15.0",
-    "@types/node": "^24.3.3",
+    "@prisma/client": "^6.15.0",
+    "@types/node": "^24.3.1",
     "dotenv": "^17.2.2",
-    "js-yaml": "^4.1.0",
     "prisma": "^6.15.0",
     "ts-node": "^10.9.2",
-    "tsx": "^4.20.5",
-    "yaml": "^2.3.1"
+    "tsx": "^4.20.5"
   },
   "pnpm": {
     "overrides": {
@@ -81,8 +83,10 @@
     "cardmarket-wrapper": "^1.0.6",
     "dotenv": "^16.0.0",
     "node-fetch": "^2.6.7",
+    "parquetjs": "^0.11.2",
     "redis": "^5.8.2",
     "twitter-api-v2": "^1.27.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "zod": "^4.1.11"
   }
 }

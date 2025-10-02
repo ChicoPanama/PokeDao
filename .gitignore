@@ -1,11 +1,23 @@
+# Dependencies
 node_modules/
+.pnpm-store/
+
+# Build outputs
 dist/
+*.tsbuildinfo
+
+# Environment variables
 .env
 .env.*
 .env.local
 .env.*.local
+!.env.example
+
+# OS files
 .DS_Store
-.env.*.local
+Thumbs.db
+
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -17,6 +29,12 @@ venv/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
 
 # Large database files (>50MB)
 *.db
@@ -30,3 +48,13 @@ research/**/phygitals_*.db
 # Keep smaller essential files
 !research/**/*_sample.db
 !research/**/*_schema.db
+
+# Temporary files
+temp-*
+*.tmp
+*.bak
+*~
+
+# Archive (local only)
+archive/
+research-backup*/

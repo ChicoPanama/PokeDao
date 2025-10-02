@@ -1,0 +1,23 @@
+{
+  "name": "@pokedao/analysis",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./fair-value": "./src/fair-value.ts",
+    "./liquidity": "./src/liquidity.ts",
+    "./risk": "./src/risk.ts",
+    "./opportunity": "./src/opportunity.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@pokedao/core": "workspace:*",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

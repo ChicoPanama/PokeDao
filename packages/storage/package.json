@@ -1,0 +1,25 @@
+{
+  "name": "@pokedao/storage",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./repositories/cards": "./src/repositories/cards.ts",
+    "./repositories/comps": "./src/repositories/comps.ts",
+    "./repositories/listings": "./src/repositories/listings.ts",
+    "./repositories/signals": "./src/repositories/signals.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@pokedao/core": "workspace:*",
+    "@prisma/client": "^6.15.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "prisma": "^6.15.0"
+  }
+}
