@@ -50,8 +50,21 @@ export interface ActiveListing extends PricePoint {
   seller?: string;
   condition?: string;
   grader?: string;
-  grade?: string;
+  grade?: string | number; // Can be string ("10") or number (10)
   isActive: boolean;
+}
+
+/**
+ * Enriched listing with card metadata
+ * Used for collection tagging and advanced analysis
+ */
+export interface EnrichedListing extends ActiveListing {
+  variantKey?: VariantKey;
+  cardName?: string;
+  setName?: string;
+  number?: string;
+  variant?: string;
+  language?: string;
 }
 
 // ============================================================================
@@ -62,6 +75,7 @@ export interface TFVResult {
   tfvUsd: number; // True Fair Value in USD
   tfvCents: number; // TFV in cents
   support: number; // Number of comps used
+  effectiveComps: number; // Time-weighted comp count
   median30d: number; // 30-day median
   iqr: number; // Interquartile range
   confidence: number; // 0-1 score
@@ -108,6 +122,13 @@ export interface OpportunityScore {
   tfv: TFVResult;
   liquidity: LiquidityMetrics;
   risk: RiskScore;
+
+  // Additional fields for convenience
+  listingPriceCents: number;
+  tfvCents: number;
+  discountPct: number;
+  riskScore: number;
+  cardName?: string;
 }
 
 // ============================================================================

@@ -60,6 +60,7 @@ export function calculateTFV(
       tfvUsd: 0,
       tfvCents: 0,
       support: recentComps.length,
+      effectiveComps: 0,
       median30d: 0,
       iqr: 0,
       confidence: 0,
@@ -147,10 +148,17 @@ export function calculateTFV(
 
   const confidence = (supportScore * 0.4 + recencyScore * 0.3 + varianceScore * 0.3);
 
+  // Calculate effective comps (time-weighted count)
+  const effectiveComps = weightedComps.reduce((sum, c) => {
+    const weight = timeDecayWeight(c.soldAt, opts.halfLifeDays, now);
+    return sum + weight;
+  }, 0);
+
   return {
     tfvUsd: centsToUsd(tfvCents),
     tfvCents,
     support: recentComps.length,
+    effectiveComps: Math.round(effectiveComps * 10) / 10, // Round to 1 decimal
     median30d: centsToUsd(median30d),
     iqr: centsToUsd(iqr),
     confidence: Math.max(0, Math.min(1, confidence)),

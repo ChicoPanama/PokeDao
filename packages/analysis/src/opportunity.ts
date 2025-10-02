@@ -60,10 +60,10 @@ export function calculateOpportunity(
     ? Math.round(((tfv.tfvCents - listing.priceCents) / tfv.tfvCents) * 10000)
     : 0;
 
-  const discountPct = edgeBp / 100;
+  const discountPct1 = edgeBp / 100;
 
   // Component scores (0-1)
-  const discountScore = Math.max(0, Math.min(1, discountPct / 50)); // 50% discount = max score
+  const discountScore = Math.max(0, Math.min(1, discountPct1 / 50)); // 50% discount = max score
   const liquidityScore = Math.min(1, liquidity.salesPerWeek / 10); // 10 sales/week = max score
   const riskPenalty = risk.score; // Already 0-1
 
@@ -84,7 +84,7 @@ export function calculateOpportunity(
   const passesFilters = checkFilters(
     {
       edgeBp,
-      discountPct,
+      discountPct: discountPct1,
       tfv,
       liquidity,
       risk,
@@ -99,6 +99,8 @@ export function calculateOpportunity(
     (1 - risk.score) * 0.2
   );
 
+  const finalDiscountPct = (tfv.tfvCents - listing.priceCents) / tfv.tfvCents * 100;
+
   return {
     score,
     edgeBp,
@@ -107,6 +109,10 @@ export function calculateOpportunity(
     tfv,
     liquidity,
     risk,
+    listingPriceCents: listing.priceCents,
+    tfvCents: tfv.tfvCents,
+    discountPct: finalDiscountPct,
+    riskScore: risk.score,
   };
 }
 
