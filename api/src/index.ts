@@ -17,6 +17,7 @@ import { normalizeCardQuery, getComparableSales, sanitizeComps, computeFairValue
 import { Prisma } from "@prisma/client";
 import { registerSignals } from "./routes/signals.js";
 import { registerPosts } from "./routes/posts.js";
+import { registerEbayMADWebhook } from "./routes/webhooks/ebay-mad.js";
 
 // External data integration endpoints
 import { 
@@ -66,6 +67,7 @@ async function buildServer() {
   await app.register(swaggerUi, { routePrefix: '/docs' });
   await registerSignals(app);
   await registerPosts(app);
+  await registerEbayMADWebhook(app);
 
   app.get('/health', async (request, reply) => {
     try {
