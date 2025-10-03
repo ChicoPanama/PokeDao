@@ -119,6 +119,14 @@ async function deleteEbayUserData(ebayUserId: string, logger: any): Promise<void
  * Register eBay MAD webhook route
  */
 export async function registerEbayMADWebhook(app: FastifyInstance) {
+  // GET endpoint for eBay to verify endpoint exists
+  app.get('/webhooks/ebay/mad', async (request: FastifyRequest, reply: FastifyReply) => {
+    return reply.code(200).send({
+      status: 'eBay MAD endpoint ready',
+      methods: ['POST'],
+    });
+  });
+
   app.post('/webhooks/ebay/mad', async (request: FastifyRequest, reply: FastifyReply) => {
     const notification = request.body as EbayMADNotification;
 
@@ -147,9 +155,12 @@ export async function registerEbayMADWebhook(app: FastifyInstance) {
 
       request.log.info('eBay MAD verification challenge passed');
 
-      return reply.code(200).send({
-        challengeResponse,
-      });
+      return reply
+        .code(200)
+        .header('Content-Type', 'application/json')
+        .send({
+          challengeResponse,
+        });
     }
 
     // =====================================================================
