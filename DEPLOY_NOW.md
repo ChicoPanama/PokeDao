@@ -80,10 +80,10 @@ Follow these exact steps to deploy and unlock eBay production access.
    - **Name**: `pokedao-api`
    - **Region**: Oregon (US West)
    - **Branch**: `main`
-   - **Root Directory**: `api`
+   - **Root Directory**: (leave blank - we use monorepo)
    - **Runtime**: Node
-   - **Build Command**: `pnpm install`
-   - **Start Command**: `pnpm start`
+   - **Build Command**: `pnpm install && cd api && pnpm build`
+   - **Start Command**: `cd api && pnpm start`
    - **Plan**: **Free**
 
 4. **Add Environment Variables** (click "Advanced"):

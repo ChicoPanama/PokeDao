@@ -7,7 +7,7 @@ services:
     runtime: node
     region: oregon
     plan: free
-    buildCommand: cd api && pnpm install
+    buildCommand: pnpm install && cd api && pnpm build
     startCommand: cd api && pnpm start
     envVars:
       - key: NODE_ENV
