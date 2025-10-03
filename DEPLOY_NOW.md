@@ -41,21 +41,30 @@ Follow these exact steps to deploy and unlock eBay production access.
 
 ---
 
-## Step 3: Create Redis Instance (2 minutes)
+## Step 3: Get Free Redis (2 minutes)
 
-**Render also provides free Redis!**
+**Upstash (Recommended - Free Forever)**
 
-1. Click **"New +"** → **"Redis"**
-2. Settings:
+1. Go to: **https://console.upstash.com**
+2. Sign up with GitHub (easiest)
+3. Click **"Create Database"**
+4. Settings:
    - **Name**: `pokedao-redis`
-   - **Region**: Oregon (US West)
-   - **Plan**: **Free**
-   - **Maxmemory Policy**: `allkeys-lru`
+   - **Type**: **Regional**
+   - **Region**: `us-east-1` (closest to Render)
+   - **Eviction**: Enable
+   - **TLS**: Enable
 
-3. Click **"Create Redis"**
-4. Wait 1 minute for provisioning
-5. Copy the **"Internal Redis URL"** (looks like: `redis://red-...render.com:6379`)
+5. Click **"Create"**
+6. On the database page:
+   - Scroll to **"Connect"** section
+   - Copy the **Redis URL** (looks like: `rediss://default:...@...upstash.io:6379`)
    - Save this! You'll need it in Step 4
+
+**Alternative: Redis Cloud**
+- Go to https://redis.com/try-free/
+- Create free 30MB database
+- Use connection string in Step 4
 
 ---
 
@@ -254,15 +263,18 @@ You now have:
 ## Cost
 
 **Free Forever Plan:**
-- API: Free (750 hours/month - enough for 24/7)
-- PostgreSQL: Free (1GB storage, 90 day data retention)
-- Redis: Free (25MB)
+- **Render API**: Free (750 hours/month - enough for 24/7)
+- **Render PostgreSQL**: Free (1GB storage, 90 day data retention)
+- **Upstash Redis**: Free (10,000 commands/day, 256MB storage)
+
+**Total: $0/month** ✅
 
 **Paid Plans (optional later):**
-- Starter: $7/month (better performance)
-- Professional: $25/month (custom domains, more resources)
+- Render Starter: $7/month (better performance, more hours)
+- Render Professional: $25/month (custom domains, more resources)
+- Upstash Pro: $10/month (100K commands/day)
 
-For now, free tier is perfect for development and testing!
+For now, free tier is perfect for development and production testing!
 
 ---
 
