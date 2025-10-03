@@ -82,7 +82,7 @@ Follow these exact steps to deploy and unlock eBay production access.
    - **Branch**: `main`
    - **Root Directory**: (leave blank - we use monorepo)
    - **Runtime**: Node
-   - **Build Command**: `pnpm install && cd api && pnpm build`
+   - **Build Command**: `pnpm install && pnpm -r build`
    - **Start Command**: `cd api && pnpm start`
    - **Plan**: **Free**
 

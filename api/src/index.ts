@@ -12,8 +12,8 @@ import { getRedis } from "./lib/redis.js";
 import { createHash, randomUUID } from "node:crypto";
 import type { FastifyBaseLogger } from "fastify";
 
-// worker helpers (exported by @pokedao/worker)
-import { normalizeCardQuery, getComparableSales, sanitizeComps, computeFairValue } from "@pokedao/worker";
+// TODO: worker helpers - package doesn't exist yet
+// import { normalizeCardQuery, getComparableSales, sanitizeComps, computeFairValue } from "@pokedao/worker";
 import { Prisma } from "@prisma/client";
 import { registerSignals } from "./routes/signals.js";
 import { registerPosts } from "./routes/posts.js";
@@ -133,6 +133,7 @@ async function buildServer() {
     return reply.code(200).type('text/plain').send(metrics);
   });
 
+  /* TODO: fair value endpoint - disabled until worker package exists
   // fair value endpoint
   app.get("/fv", async (req, reply) => {
     try {
@@ -175,6 +176,7 @@ async function buildServer() {
       return { ok: false, error: "Internal error" };
     }
   });
+  */
 
   // feed endpoint: recent active listings with card info
   app.get('/feed', async (req, reply) => {
