@@ -70,9 +70,6 @@ importers:
       '@fastify/swagger-ui':
         specifier: ^5.0.1
         version: 5.2.3
-      '@pokedao/worker':
-        specifier: workspace:*
-        version: link:../worker
       '@prisma/client':
         specifier: 6.15.0
         version: 6.15.0(prisma@6.15.0(typescript@5.9.2))(typescript@5.9.2)
