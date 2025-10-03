@@ -1,0 +1,55 @@
+# Render.com Blueprint for PokeDAO API
+# This file enables one-click deployment to Render
+
+services:
+  - type: web
+    name: pokedao-api
+    runtime: node
+    region: oregon
+    plan: free
+    buildCommand: cd api && pnpm install
+    startCommand: cd api && pnpm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      - key: PORT
+        value: 3000
+
+      - key: LOG_LEVEL
+        value: info
+
+      # Database (you'll need to add your production DB URL)
+      - key: DATABASE_URL
+        sync: false
+
+      # Redis (you'll need to add your production Redis URL)
+      - key: REDIS_URL
+        sync: false
+
+      # eBay MAD Configuration
+      - key: EBAY_MAD_VERIFICATION_TOKEN
+        value: 55a9ed6caab78e821aba2cd79115c98ded4d74ec6ac8329b139452184488f3a6
+
+      - key: EBAY_MAD_ENDPOINT_URL
+        value: https://pokedao-api.onrender.com/webhooks/ebay/mad
+
+      # eBay API (Production)
+      - key: EBAY_APP_ID
+        value: ArcadioP-Pokedao-PRD-c3c559702-e00ba59f
+
+      # JustTCG
+      - key: JUSTTCG_API_KEY
+        sync: false
+
+      # AI Models
+      - key: DEEPSEEK_API_KEY
+        sync: false
+
+      # Other configs
+      - key: TZ
+        value: UTC
+
+    healthCheckPath: /health
+
+    autoDeploy: true
