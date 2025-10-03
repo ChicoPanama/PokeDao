@@ -130,6 +130,26 @@ Follow these exact steps to deploy and unlock eBay production access.
    Value: ArcadioP-Pokedao-PRD-c3c559702-e00ba59f
    ```
 
+   ```
+   Name: POKEMON_TCG_API_KEY
+   Value: 221c33c8-ef23-4165-b2a5-c4f6cafa4cb7
+   ```
+
+   ```
+   Name: POKEMON_TCG_API_BASE
+   Value: https://api.pokemontcg.io/v2
+   ```
+
+   ```
+   Name: TELEGRAM_BOT_TOKEN
+   Value: 8202063521:AAGIgprLdfpgGyd1CsqhOPoNO2P6vsnP6iU
+   ```
+
+   ```
+   Name: TELEGRAM_ADMIN_USERNAMES
+   Value: @ChicoPanama
+   ```
+
 5. Click **"Create Web Service"**
 
 6. Wait 5-8 minutes for deployment

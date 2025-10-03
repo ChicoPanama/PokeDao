@@ -38,6 +38,20 @@ services:
       - key: EBAY_APP_ID
         value: ArcadioP-Pokedao-PRD-c3c559702-e00ba59f
 
+      # Pokemon TCG API
+      - key: POKEMON_TCG_API_KEY
+        value: 221c33c8-ef23-4165-b2a5-c4f6cafa4cb7
+
+      - key: POKEMON_TCG_API_BASE
+        value: https://api.pokemontcg.io/v2
+
+      # Telegram Bot
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+
+      - key: TELEGRAM_ADMIN_USERNAMES
+        value: @ChicoPanama
+
       # JustTCG
       - key: JUSTTCG_API_KEY
         sync: false
