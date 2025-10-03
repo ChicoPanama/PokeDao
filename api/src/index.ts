@@ -258,9 +258,9 @@ async function buildServer() {
   // Middleware to set Redis cache
   app.addHook('onSend', async (req, reply, payload) => {
     const cacheKey = (req as any).cacheKey; // Use type assertion to access cacheKey
-    if (cacheKey) {
+    if (cacheKey && req.routeOptions?.url) {
       const payloadString = typeof payload === 'string' ? payload : JSON.stringify(payload); // Ensure payload is a string
-      await redis.set(cacheKey, payloadString, { EX: req.routerPath.includes('/top100') ? 300 : 120 });
+      await redis.set(cacheKey, payloadString, { EX: req.routeOptions.url.includes('/top100') ? 300 : 120 });
     }
   });
 
