@@ -511,8 +511,13 @@ async function buildServer() {
   return app;
 }
 
+let server: Awaited<ReturnType<typeof buildServer>>;
+
 buildServer()
-  .then((app) => app.listen({ port: PORT, host: HOST }))
+  .then((app) => {
+    server = app;
+    return app.listen({ port: PORT, host: HOST });
+  })
   .then(() => {
     console.log(`[api] listening on http://${HOST}:${PORT}`);
   })
@@ -520,3 +525,25 @@ buildServer()
     console.error("[api] failed to start:", err);
     process.exit(1);
   });
+
+// Graceful shutdown
+const shutdown = async (signal: string) => {
+  console.log(`\n[api] ${signal} received, shutting down gracefully...`);
+  try {
+    if (server) {
+      await server.close();
+      console.log('[api] server closed');
+    }
+    await prisma.$disconnect();
+    console.log('[api] database disconnected');
+    await redis.quit();
+    console.log('[api] redis disconnected');
+    process.exit(0);
+  } catch (err) {
+    console.error('[api] error during shutdown:', err);
+    process.exit(1);
+  }
+};
+
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+process.on('SIGINT', () => shutdown('SIGINT'));
