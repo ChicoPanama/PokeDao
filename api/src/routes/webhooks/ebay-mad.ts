@@ -119,11 +119,46 @@ async function deleteEbayUserData(ebayUserId: string, logger: any): Promise<void
  * Register eBay MAD webhook route
  */
 export async function registerEbayMADWebhook(app: FastifyInstance) {
-  // GET endpoint for eBay to verify endpoint exists
+  // GET endpoint for eBay verification challenge
   app.get('/webhooks/ebay/mad', async (request: FastifyRequest, reply: FastifyReply) => {
+    const query = request.query as Record<string, string | undefined>;
+    const challengeCode = query.challenge_code;
+
+    // Get configuration from environment
+    const verificationToken = process.env.EBAY_MAD_VERIFICATION_TOKEN;
+    const endpointUrl = process.env.EBAY_MAD_ENDPOINT_URL;
+
+    if (!verificationToken || !endpointUrl) {
+      request.log.error('eBay MAD endpoint not configured properly');
+      return reply.code(500).send({
+        error: 'Server configuration error',
+      });
+    }
+
+    // If challenge_code is provided, respond with verification hash
+    if (challengeCode) {
+      request.log.info({ challengeCode }, 'eBay MAD verification challenge received (GET)');
+
+      const challengeResponse = calculateChallengeResponse(
+        challengeCode,
+        verificationToken,
+        endpointUrl
+      );
+
+      request.log.info('eBay MAD verification challenge passed');
+
+      return reply
+        .code(200)
+        .header('Content-Type', 'application/json')
+        .send({
+          challengeResponse,
+        });
+    }
+
+    // No challenge code, return endpoint info
     return reply.code(200).send({
       status: 'eBay MAD endpoint ready',
-      methods: ['POST'],
+      methods: ['GET', 'POST'],
     });
   });
 
