@@ -14,8 +14,8 @@
  * 3. Run: pnpm tsx scripts/harvest-phygitals-helius.ts
  */
 
-import { Connection, PublicKey } from '@solana/web3.js';
-import { Helius } from 'helius-sdk';
+import 'dotenv/config';
+import fetch from 'node-fetch';
 import { writeFileSync } from 'fs';
 
 // ============================================================================
@@ -23,7 +23,7 @@ import { writeFileSync } from 'fs';
 // ============================================================================
 
 const HELIUS_API_KEY = process.env.HELIUS_API_KEY || ''; // Get from https://dev.helius.xyz
-const HELIUS_RPC_URL = `https://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}`;
+const HELIUS_API_URL = `https://mainnet.helius-rpc.com/?api-key=${HELIUS_API_KEY}`;
 
 // Known Phygitals creator/authority addresses (from metadata_json)
 const PHYGITALS_CREATORS = [
@@ -34,6 +34,7 @@ const PHYGITALS_CREATORS = [
 const CONFIG = {
   OUTPUT_FILE: 'data/phygitals/helius-complete-harvest.json',
   BATCH_SIZE: 1000, // Helius supports up to 1000 per request
+  RATE_LIMIT_MS: 100, // 10 req/s for safety
 };
 
 // ============================================================================
@@ -56,20 +57,67 @@ interface PhygitalsNFT {
 // ============================================================================
 
 class HeliusPhygitalsHarvester {
-  private helius: Helius;
   private nfts: Map<string, PhygitalsNFT> = new Map();
+  private lastRequestTime = 0;
 
-  constructor(apiKey: string) {
+  constructor(private apiKey: string) {
     if (!apiKey) {
       throw new Error('HELIUS_API_KEY is required. Get one at https://dev.helius.xyz/');
     }
-
-    this.helius = new Helius(apiKey);
-    console.log('🔥 Helius SDK initialized');
+    console.log('🔥 Helius API initialized');
   }
 
   /**
-   * Strategy 1: Get all NFTs by creator address
+   * Rate limiting
+   */
+  private async rateLimit() {
+    const now = Date.now();
+    const elapsed = now - this.lastRequestTime;
+    if (elapsed < CONFIG.RATE_LIMIT_MS) {
+      await new Promise(resolve => setTimeout(resolve, CONFIG.RATE_LIMIT_MS - elapsed));
+    }
+    this.lastRequestTime = Date.now();
+  }
+
+  /**
+   * Make Helius DAS API request
+   */
+  private async heliusRequest(method: string, params: any): Promise<any> {
+    await this.rateLimit();
+
+    try {
+      const response = await fetch(HELIUS_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          id: 'pokedao-harvest',
+          method,
+          params,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+
+      if (data.error) {
+        throw new Error(`Helius API error: ${JSON.stringify(data.error)}`);
+      }
+
+      return data.result;
+    } catch (error: any) {
+      console.error(`   ❌ Helius request failed:`, error.message);
+      throw error;
+    }
+  }
+
+  /**
+   * Strategy 1: Get all NFTs by creator address using DAS API
    */
   private async harvestByCreator(creatorAddress: string) {
     console.log(`\n🎨 Fetching NFTs by creator: ${creatorAddress}`);
@@ -77,13 +125,19 @@ class HeliusPhygitalsHarvester {
     try {
       let page = 1;
       let hasMore = true;
+      let before: string | undefined = undefined;
 
       while (hasMore) {
-        const response = await this.helius.rpc.getAssetsByCreator({
+        const params: any = {
           creatorAddress,
-          page,
           limit: CONFIG.BATCH_SIZE,
-        });
+        };
+
+        if (before) {
+          params.before = before;
+        }
+
+        const response = await this.heliusRequest('getAssetsByCreator', params);
 
         if (!response || !response.items || response.items.length === 0) {
           console.log(`   ✓ Completed (no more results)`);
@@ -120,11 +174,10 @@ class HeliusPhygitalsHarvester {
 
         console.log(`   Page ${page}: +${pokemonCards.length} Pokemon cards (Total: ${this.nfts.size})`);
 
+        // Update cursor for next page
+        before = response.items[response.items.length - 1]?.id;
         page++;
         hasMore = response.items.length === CONFIG.BATCH_SIZE;
-
-        // Rate limit: Helius free tier = 100 req/s, but be conservative
-        await new Promise(resolve => setTimeout(resolve, 100));
       }
 
     } catch (error: any) {
@@ -139,7 +192,7 @@ class HeliusPhygitalsHarvester {
     console.log(`\n👛 Fetching NFTs by owner: ${ownerAddress}`);
 
     try {
-      const response = await this.helius.rpc.getAssetsByOwner({
+      const response = await this.heliusRequest('getAssetsByOwner', {
         ownerAddress,
         page: 1,
         limit: CONFIG.BATCH_SIZE,
