@@ -397,6 +397,8 @@ enum LiquidityLevel {
 }
 
 enum MarketSource {
+  JUSTTCG
+  TCGPLAYER_ACTIVE
   EBAY
   TCGPLAYER
   FANATICS
