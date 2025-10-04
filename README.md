@@ -17,7 +17,7 @@ The Pokémon TCG market is fragmented across dozens of marketplaces, with pricin
 **The Solution:**
 PokeDAO is a 24/7 quantitative system that consolidates multi-venue data, computes true fair value with liquidity-adjusted pricing, and executes trades through on-chain vaults — bringing institutional-grade infrastructure to the TCG collectibles market.
 
-### Two Core Products
+### Three Core Products
 
 #### 1. **PokeDex** — The Signal Engine
 A systematic research platform that continuously:
@@ -29,7 +29,17 @@ A systematic research platform that continuously:
 
 **Value:** Removes manual research burden. Surfaces mispriced cards before arbitrage closes. Transparent methodology builds trust with collectors.
 
-#### 2. **PokeStrategy** — The On-Chain Vault
+#### 2. **Project Mew-1A** — TCG Pricing AI Model
+The world's first AI model specifically trained on Pokemon TCG market data:
+- **Training Data:** 400k+ real listings across 5 marketplaces, 13,738 unique cards
+- **Architecture:** Fine-tuned Llama-3.2-3B on TCG-specific pricing patterns
+- **Capabilities:** Instant pricing analysis, arbitrage detection, liquidity scoring, market sentiment
+- **Integration:** Powers AI ensemble analysis (Mew-1A + DeepSeek R1) for institutional-grade insights
+- **Deployment:** HuggingFace Inference API (100x faster than generic models, no local GPU needed)
+
+**Value:** Domain-specific AI that understands TCG market dynamics better than general LLMs. Provides instant, specialized analysis for every card in the database.
+
+#### 3. **PokeStrategy** — The On-Chain Vault
 An autonomous execution layer that:
 - Listens to PokeDex signals in real-time
 - Executes buys/sells via integrated APIs (Phygitals, Collector Crypt)
@@ -90,6 +100,7 @@ PokeDAO is a **TypeScript monorepo** with clean separation of concerns:
 | App | Purpose | Status |
 |-----|---------|--------|
 | **`/pokedex`** | Signal generation & X posting engine | 🚧 In progress |
+| **`/mew1a`** | Custom TCG pricing AI model (fine-tuned LLM) | 🚧 Training |
 | **`/strategy`** | On-chain vault execution | 🔜 Planned |
 
 ### 🗄️ Data Lakehouse
@@ -522,18 +533,24 @@ cd ../.. && pnpm install
 
 ## Roadmap
 
-### ✅ Phase 1: Data Infrastructure (Complete)
-- [x] Bronze/Silver/Gold lakehouse (145k+ records)
+### ✅ Phase 1: Data Infrastructure & AI Foundation (Complete)
+- [x] Bronze/Silver/Gold lakehouse (400k+ records across 5 marketplaces)
 - [x] JustTCG API integration
+- [x] eBay Browse API harvester (1,875 new listings/day)
+- [x] Courtyard, Collector Crypt, Phygitals integrations (353k+ tokenized assets)
 - [x] TFV, Liquidity, Risk, Opportunity models
 - [x] Prisma schema for Cards/Listings/Comps/Signals
 - [x] Monorepo refactor with clean package boundaries
+- [x] **Project Mew-1A:** TCG-specific AI model training pipeline
+- [x] **AI Ensemble Engine:** Multi-model analysis (Mew-1A + DeepSeek R1)
+- [x] 258 high-quality training examples extracted from real market data
 
-### 🚧 Phase 2: Signal Generation (In Progress)
+### 🚧 Phase 2: Signal Generation & Mew-1A Deployment (In Progress)
+- [x] AI thesis generation (AI Ensemble: Mew-1A + DeepSeek R1)
+- [ ] Deploy Project Mew-1A to HuggingFace (fine-tune Llama-3.2-3B)
 - [ ] Automated daily data collection (cron job)
 - [ ] End-to-end signal pipeline (features → scoring → ranking)
-- [ ] AI thesis generation (Qwen 2.5 7B via Ollama)
-- [ ] X/Twitter posting integration (Top 3-5 daily signals)
+- [ ] X/Twitter posting integration (Top 3-5 daily signals with AI analysis)
 
 ### 🔜 Phase 3: On-Chain Vault (Planned Q1 2026)
 - [ ] Phygitals API integration (buy/sell/custody)
@@ -555,11 +572,13 @@ cd ../.. && pnpm install
 
 | System | Status | Notes |
 |--------|--------|-------|
-| **Data Collection** | ✅ Production | JustTCG integration complete, 145k+ records |
+| **Data Collection** | ✅ Production | 5 marketplaces, 400k+ records, eBay harvesting 1,875/day |
 | **Lakehouse** | ✅ Production | Bronze/Silver/Gold with zero data loss |
 | **Analysis Models** | ✅ Production | TFV, Liquidity, Risk, Opportunity tested |
-| **Database** | ✅ Production | Prisma schema with indexes |
-| **API** | ✅ Production | REST endpoints for signals, cards, analytics |
+| **Database** | ✅ Production | Prisma schema with indexes, 13,738 unique cards |
+| **API** | ✅ Production | REST endpoints for signals, cards, analytics, AI analysis |
+| **AI Ensemble** | ✅ Production | Multi-model analysis (Qwen + DeepSeek R1) live |
+| **Project Mew-1A** | 🚧 Training | 258 examples ready, fine-tuning on HuggingFace next |
 | **Signal Pipeline** | 🚧 In Progress | Scoring works, X posting in development |
 | **Vault Execution** | 🔜 Planned | Smart contracts + API integrations pending |
 
