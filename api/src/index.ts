@@ -20,6 +20,11 @@ import { registerPosts } from "./routes/posts.js";
 import { registerEbayMADWebhook } from "./routes/webhooks/ebay-mad.js";
 import { registerSearch } from "./routes/search.js";
 import { registerArbitrage } from "./routes/arbitrage.js";
+import { registerPriceHistory } from "./routes/price-history.js";
+import { registerTokenized } from "./routes/tokenized.js";
+import { registerBestExecution } from "./routes/best-execution.js";
+import { registerConfidence } from "./routes/confidence.js";
+import { registerAIAnalysis } from "./routes/ai-analysis.js";
 
 // External data integration endpoints
 import { 
@@ -72,6 +77,11 @@ async function buildServer() {
   await registerEbayMADWebhook(app);
   await registerSearch(app);
   await registerArbitrage(app);
+  await registerPriceHistory(app);
+  await registerTokenized(app);
+  await registerBestExecution(app);
+  await registerConfidence(app);
+  await registerAIAnalysis(app);
 
   app.get('/health', async (request, reply) => {
     try {
