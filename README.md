@@ -21,13 +21,14 @@ PokeDAO is a 24/7 quantitative system that consolidates multi-venue data, comput
 
 #### 1. **PokeDex** — The Signal Engine
 A systematic research platform that continuously:
-- Ingests data from 5+ marketplaces (JustTCG, eBay, Collector Crypt, Fanatics, Phygitals)
-- Computes **True Fair Value (TFV)** using fee-adjusted, time-decayed, venue-weighted comps
+- Ingests data from **9 marketplaces** (eBay, JustTCG, Collector Crypt, Courtyard, Phygitals, OpenSea, MagicEden, PokePriceTracker, Pokemon TCG API)
+- Multi-layer pricing architecture with **TCGdex as Layer 0** (21,627 official Pokemon TCG cards for metadata validation)
+- Computes **True Fair Value (TFV)** using weighted consensus from multiple sources with confidence scoring
 - Calculates **Liquidity Metrics** (sales velocity, days-to-clear, probability of selling)
 - Generates **Opportunity Scores** combining discount depth, liquidity quality, and risk penalties
 - Publishes ranked signals to X/Twitter as actionable investment theses
 
-**Value:** Removes manual research burden. Surfaces mispriced cards before arbitrage closes. Transparent methodology builds trust with collectors.
+**Value:** Removes manual research burden. Surfaces mispriced cards before arbitrage closes. Multi-source consensus pricing eliminates single-point failures. Transparent methodology builds trust with collectors.
 
 #### 2. **Project Mew-1A** — TCG Pricing AI Model
 The world's first AI model specifically trained on Pokemon TCG market data:
@@ -76,6 +77,19 @@ PokeDAO applies **quantitative finance principles** to collectibles:
 ## Current Architecture
 
 PokeDAO is a **TypeScript monorepo** with clean separation of concerns:
+
+### 📊 Database Stats (Live)
+
+| Metric | Count | Coverage |
+|--------|-------|----------|
+| **Total Cards** | 98,759+ | 9 marketplaces |
+| **With Pricing** | 67,207+ | 68% coverage |
+| **eBay Listings** | 22,376 | 100% pricing |
+| **JustTCG Listings** | 2,428+ | 100% pricing |
+| **Courtyard NFTs** | 33,266 | Blockchain-verified |
+| **Collector Crypt** | 17,763 | 100% pricing |
+| **Phygitals NFTs** | 20,487 | Tokenized assets |
+| **TCGdex Official** | 21,627 | Complete Pokemon TCG metadata |
 
 ### 📦 Packages (Core Libraries)
 
@@ -534,10 +548,14 @@ cd ../.. && pnpm install
 ## Roadmap
 
 ### ✅ Phase 1: Data Infrastructure & AI Foundation (Complete)
-- [x] Bronze/Silver/Gold lakehouse (400k+ records across 5 marketplaces)
-- [x] JustTCG API integration
-- [x] eBay Browse API harvester (1,875 new listings/day)
-- [x] Courtyard, Collector Crypt, Phygitals integrations (353k+ tokenized assets)
+- [x] Bronze/Silver/Gold lakehouse (400k+ records across 9 marketplaces)
+- [x] **Multi-Layer Pricing Architecture** with TCGdex Layer 0 (21,627 official Pokemon TCG cards)
+- [x] 9 marketplace integrations: eBay, JustTCG, Collector Crypt, Courtyard, Phygitals, OpenSea, MagicEden, PokePriceTracker, Pokemon TCG API
+- [x] **98,759+ total cards** in unified database (68% with pricing)
+- [x] eBay Browse API harvester (22,376 listings, 100% pricing)
+- [x] JustTCG comprehensive harvester (2,428+ listings across 62 sets)
+- [x] Courtyard blockchain data (33,266 NFTs) + OpenSea pricing layer
+- [x] **Weighted Consensus Pricing:** 4-layer strategy (Direct → Exact → Close → Estimated)
 - [x] TFV, Liquidity, Risk, Opportunity models
 - [x] Prisma schema for Cards/Listings/Comps/Signals
 - [x] Monorepo refactor with clean package boundaries
@@ -572,13 +590,15 @@ cd ../.. && pnpm install
 
 | System | Status | Notes |
 |--------|--------|-------|
-| **Data Collection** | ✅ Production | 5 marketplaces, 400k+ records, eBay harvesting 1,875/day |
+| **Data Collection** | ✅ Production | 9 marketplaces, 98,759+ cards (68% pricing coverage) |
+| **Multi-Layer Pricing** | ✅ Production | TCGdex Layer 0 (21,627 official cards) + 4-layer consensus |
 | **Lakehouse** | ✅ Production | Bronze/Silver/Gold with zero data loss |
-| **Analysis Models** | ✅ Production | TFV, Liquidity, Risk, Opportunity tested |
-| **Database** | ✅ Production | Prisma schema with indexes, 13,738 unique cards |
+| **Analysis Models** | ✅ Production | Weighted consensus TFV, Liquidity, Risk, Opportunity |
+| **Database** | ✅ Production | Prisma schema, 98,759 cards across 9 sources |
 | **API** | ✅ Production | REST endpoints for signals, cards, analytics, AI analysis |
 | **AI Ensemble** | ✅ Production | Multi-model analysis (Qwen + DeepSeek R1) live |
 | **Project Mew-1A** | 🚧 Training | 258 examples ready, fine-tuning on HuggingFace next |
+| **TCGdex Enrichment** | 🚧 Ready | Script created to apply Layer 0 metadata validation |
 | **Signal Pipeline** | 🚧 In Progress | Scoring works, X posting in development |
 | **Vault Execution** | 🔜 Planned | Smart contracts + API integrations pending |
 
@@ -613,4 +633,4 @@ Proprietary. All rights reserved.
 
 **Built with ❤️ by collectors, for collectors.**
 
-*Last Updated: 2025-10-02*
+*Last Updated: 2025-10-05*
