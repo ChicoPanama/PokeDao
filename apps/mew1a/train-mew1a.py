@@ -273,15 +273,28 @@ def main():
     # Create trainer
     print("🎯 Initializing trainer...")
 
-    # For newer TRL versions, use DataCollatorForLanguageModeling
-    from transformers import DataCollatorForLanguageModeling
+    # Tokenize the dataset
+    def tokenize_function(examples):
+        return tokenizer(
+            examples["text"],
+            truncation=True,
+            max_length=MAX_SEQ_LENGTH,
+            padding="max_length",
+        )
+
+    tokenized_dataset = formatted_dataset.map(
+        tokenize_function,
+        batched=True,
+        remove_columns=formatted_dataset.column_names,
+    )
+
+    # Use standard Trainer with data collator
+    from transformers import Trainer, DataCollatorForLanguageModeling
     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 
-    trainer = SFTTrainer(
+    trainer = Trainer(
         model=model,
-        train_dataset=formatted_dataset,
-        peft_config=peft_config,
-        tokenizer=tokenizer,
+        train_dataset=tokenized_dataset,
         args=training_args,
         data_collator=data_collator,
     )
