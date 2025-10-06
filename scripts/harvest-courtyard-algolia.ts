@@ -50,7 +50,7 @@ interface AlgoliaResponse {
 const ALGOLIA_APP_ID = 'HWRWJ8DPSM'; // Found from marketplace page
 const ALGOLIA_API_KEY = '6c02c0dfeafe9f0e6032a1f77b126555'; // Public search key
 const INDEX_NAME = 'marketplace_prod_recently_listed';
-const BASE_URL = `https://${ALGOLIA_APP_ID}.algolia.net/1/indexes/${INDEX_NAME}/query`;
+const BASE_URL = `https://${ALGOLIA_APP_ID.toLowerCase()}-dsn.algolia.net/1/indexes/${INDEX_NAME}/query`;
 
 const BATCH_SIZE = 1000; // Algolia max
 const RATE_LIMIT_MS = 100; // Conservative delay

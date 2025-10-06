@@ -28,6 +28,8 @@ interface CollectorCryptCard {
     createdAt: string;
     updatedAt: string;
   };
+  insuredValue?: string; // USD insured value - ALL cards have this!
+  suggestPrice?: string | null;
   id: string;
   category: string;
   grade?: string;
@@ -128,9 +130,28 @@ class CollectorCryptParser {
     try {
       const parsed = this.parseCardName(card.itemName);
 
-      // Price in cents (convert from USDC)
-      const priceCents = card.listing ? Math.round(card.listing.price * 100) : 0;
-      const currency = card.listing?.currency || 'USDC';
+      // Price priority:
+      // 1. Active listing price (SOL/USDC)
+      // 2. Insured value (USD) - fallback for all cards
+      let priceCents = 0;
+      let currency = 'USD';
+
+      if (card.listing?.price) {
+        // Active listing - convert SOL to USD or use USDC
+        if (card.listing.currency === 'SOL') {
+          // Convert SOL to USD (approximate rate: 1 SOL = $140)
+          priceCents = Math.round(card.listing.price * 140 * 100);
+        } else {
+          priceCents = Math.round(card.listing.price * 100);
+        }
+        currency = card.listing.currency;
+      } else if (card.insuredValue) {
+        // Use insured value as fallback (already in USD)
+        const insuredUSD = parseFloat(card.insuredValue);
+        if (!isNaN(insuredUSD) && insuredUSD > 0) {
+          priceCents = Math.round(insuredUSD * 100);
+        }
+      }
 
       return {
         nftAddress: card.nftAddress,
@@ -152,17 +173,24 @@ class CollectorCryptParser {
   }
 
   /**
-   * Parse all cards
+   * Parse all cards (uses listing price OR insured value)
    */
   parseAll(cards: CollectorCryptCard[]): ParsedCard[] {
     const parsed: ParsedCard[] = [];
+    let skipped = 0;
 
     for (const card of cards) {
       const parsedCard = this.parseCard(card);
-      if (parsedCard) {
+
+      // Only skip if card has NO pricing at all (no listing AND no insured value)
+      if (parsedCard && parsedCard.priceCents > 0) {
         parsed.push(parsedCard);
+      } else {
+        skipped++;
       }
     }
+
+    console.log(`\n  ✓ Parsed ${parsed.length} cards with pricing (${skipped} skipped - no listing or insured value)`);
 
     return parsed;
   }

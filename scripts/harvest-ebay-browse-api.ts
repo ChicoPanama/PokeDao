@@ -391,12 +391,61 @@ async function harvestEbayData() {
 function buildSearchQuery(card: any): string {
   const parts: string[] = [];
 
+  // Clean card name - extract just the Pokemon name
   if (card.cardName && card.cardName !== 'Unknown') {
-    parts.push(card.cardName);
+    let cleanName = card.cardName;
+
+    // Remove leading/trailing quotes
+    cleanName = cleanName.replace(/^["']+|["']+$/g, '');
+
+    // Remove lot numbers like "lot: 6689f22016" or "Lot #123456"
+    cleanName = cleanName.replace(/\blot[:\s#]*[a-z0-9]+/gi, '');
+
+    // Remove SKUs/IDs like "18wa191" or "30wa191" at start
+    cleanName = cleanName.replace(/^\d+[a-z]+\d+\s*/i, '');
+
+    // Remove "pokemon" prefix/infix
+    cleanName = cleanName.replace(/\bpokemon\b/gi, '');
+
+    // Remove set/region qualifiers (japanese, xy promo, swsh, etc)
+    cleanName = cleanName.replace(/\b(japanese|english|swsh|xy|sm|bw|dp|ex|promo|special box|holo|reverse holo|non-holo|shiny|full art|alt art|sir|sar|chr|rainbow rare)\b/gi, '');
+
+    // Remove parentheticals like "(Holo)"
+    cleanName = cleanName.replace(/\([^)]*\)/g, '');
+
+    // Remove card numbers like "#295" or "#sv107"
+    cleanName = cleanName.replace(/#[a-z0-9]+/gi, '');
+
+    // Clean up whitespace
+    cleanName = cleanName.replace(/\s+/g, ' ').trim();
+
+    // Extract just the Pokemon name (usually 1-3 capitalized words)
+    // Match patterns like "Pikachu", "Mega Gengar", "Charizard VMAX", "Blaine's Charizard"
+    const nameMatch = cleanName.match(/\b([A-Z][a-z']+(?:'s)?(?:\s+[A-Z][a-z]+){0,3}(?:\s+(?:EX|GX|V|VMAX|VSTAR|ex|gx|v))?)\b/i);
+    if (nameMatch) {
+      cleanName = nameMatch[1];
+    }
+
+    if (cleanName && cleanName.length > 2) parts.push(cleanName);
   }
+
+  // Clean set name (remove "Pokemon" duplication, years)
   if (card.setName && card.setName !== 'Unknown') {
-    parts.push(card.setName);
+    let cleanSet = card.setName;
+
+    // Remove "Pokemon" from set name (we add it at end)
+    cleanSet = cleanSet.replace(/\bpokemon\b/gi, '');
+
+    // Remove years like "2023" or "(2023)"
+    cleanSet = cleanSet.replace(/\(?\b(19|20)\d{2}\)?/g, '');
+
+    // Clean up
+    cleanSet = cleanSet.replace(/\s+/g, ' ').trim();
+
+    if (cleanSet) parts.push(cleanSet);
   }
+
+  // Add grading info
   if (card.gradeCompany && card.gradeCompany !== 'RAW') {
     parts.push(card.gradeCompany);
     if (card.grade) {
@@ -409,6 +458,132 @@ function buildSearchQuery(card: any): string {
   return parts.join(' ');
 }
 
+/**
+ * Parse eBay listing title to extract Pokemon card details
+ */
+function parseEbayTitle(title: string): {
+  cardName: string;
+  setName: string;
+  cardNumber: string | null;
+  gradeCompany: 'PSA' | 'BGS' | 'CGC' | 'SGC' | 'ACE' | 'RAW' | null;
+  grade: number | null;
+  variant: string | null;
+  language: string | null;
+  edition: string | null;
+} {
+  // Grade parsing (PSA 10, BGS 9.5, CGC 9, etc)
+  const gradeMatch = title.match(/\b(PSA|BGS|CGC|SGC|ACE)\s+(\d+(?:\.\d+)?)\b/i);
+  const gradeCompany = gradeMatch ? (gradeMatch[1].toUpperCase() as 'PSA' | 'BGS' | 'CGC' | 'SGC' | 'ACE') : null;
+  const grade = gradeMatch ? parseFloat(gradeMatch[2]) : null;
+
+  // Card number (#123/456 or #123)
+  const cardNumMatch = title.match(/#(\d+)(?:\/\d+)?/);
+  const cardNumber = cardNumMatch ? cardNumMatch[1] : null;
+
+  // Set name (common Pokemon sets)
+  const setPatterns = [
+    /Base Set/i,
+    /Jungle/i,
+    /Fossil/i,
+    /Team Rocket/i,
+    /Gym Heroes/i,
+    /Gym Challenge/i,
+    /Neo Genesis/i,
+    /Neo Discovery/i,
+    /Neo Revelation/i,
+    /Neo Destiny/i,
+    /Legendary Collection/i,
+    /Expedition/i,
+    /Aquapolis/i,
+    /Skyridge/i,
+    /EX Ruby & Sapphire/i,
+    /FireRed & LeafGreen/i,
+    /Evolutions/i,
+    /Shining Fates/i,
+    /Crown Zenith/i,
+    /Lost Origin/i,
+    /Brilliant Stars/i,
+    /Fusion Strike/i,
+    /Evolving Skies/i,
+    /Chilling Reign/i,
+    /Battle Styles/i,
+    /Vivid Voltage/i,
+    /Champions Path/i,
+    /Darkness Ablaze/i,
+    /Rebel Clash/i,
+    /Sword & Shield/i,
+    /Cosmic Eclipse/i,
+    /Hidden Fates/i,
+    /Unified Minds/i,
+    /Unbroken Bonds/i,
+    /Team Up/i,
+    /Lost Thunder/i,
+    /Celestial Storm/i,
+    /Forbidden Light/i,
+    /Ultra Prism/i,
+    /Crimson Invasion/i,
+    /Shining Legends/i,
+    /Burning Shadows/i,
+    /Guardians Rising/i,
+    /Sun & Moon/i,
+    /Scarlet & Violet/i,
+    /Obsidian Flames/i,
+    /Paldean Fates/i,
+    /Paradox Rift/i,
+    /151/i,
+    /Prismatic Evolutions/i,
+  ];
+
+  let setName = 'Unknown';
+  for (const pattern of setPatterns) {
+    const match = title.match(pattern);
+    if (match) {
+      setName = match[0];
+      break;
+    }
+  }
+
+  // Language
+  const language = /\b(japanese|korean|chinese|german|french|italian|spanish)\b/i.test(title)
+    ? title.match(/\b(japanese|korean|chinese|german|french|italian|spanish)\b/i)![0]
+    : null;
+
+  // Edition (1st Edition, Unlimited, Shadowless)
+  const edition = /\b(1st edition|shadowless|unlimited)\b/i.test(title)
+    ? title.match(/\b(1st edition|shadowless|unlimited)\b/i)![0]
+    : null;
+
+  // Variant (Holo, Reverse Holo, etc)
+  const variantMatch = title.match(/\b(holo|reverse holo|non-holo|holographic|holofoil)\b/i);
+  const variant = variantMatch ? variantMatch[0] : null;
+
+  // Card name - try to extract Pokemon name
+  // Remove grade, set, numbers, and common keywords
+  let cleanTitle = title;
+  if (gradeMatch) cleanTitle = cleanTitle.replace(gradeMatch[0], '');
+  if (cardNumMatch) cleanTitle = cleanTitle.replace(cardNumMatch[0], '');
+  cleanTitle = cleanTitle.replace(new RegExp(setName, 'i'), '');
+  cleanTitle = cleanTitle.replace(/\b(pokemon|tcg|card|rare|ultra rare|secret rare|full art|alt art|rainbow|gold|promo)\b/gi, '');
+  if (variant) cleanTitle = cleanTitle.replace(new RegExp(variant, 'i'), '');
+  if (language) cleanTitle = cleanTitle.replace(new RegExp(language, 'i'), '');
+  if (edition) cleanTitle = cleanTitle.replace(new RegExp(edition, 'i'), '');
+
+  // Extract Pokemon name (capitalized words, possibly with EX/GX/V/VMAX suffixes)
+  const nameMatch = cleanTitle.match(/\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+){0,2}(?:\s+(?:EX|GX|V|VMAX|VSTAR|ex|gx))?)\b/);
+  const cardName = nameMatch ? nameMatch[1].trim() : 'Unknown';
+
+  return {
+    cardName,
+    setName,
+    cardNumber,
+    gradeCompany,
+    grade,
+    variant,
+    language,
+    edition,
+  };
+}
+
 async function saveActiveListing(card: any, item: BrowseAPIItem): Promise<boolean> {
   try {
     // Skip if no price
@@ -416,10 +591,20 @@ async function saveActiveListing(card: any, item: BrowseAPIItem): Promise<boolea
       return false;
     }
 
+    // Parse eBay listing title to extract card details
+    const parsed = parseEbayTitle(item.title);
+
     const priceCents = Math.round(parseFloat(item.price.value) * 100);
     const shippingCents = item.shippingOptions?.[0]?.shippingCost?.value
       ? Math.round(parseFloat(item.shippingOptions[0].shippingCost.value) * 100)
       : 0;
+
+    // Calculate data quality based on how much info we extracted
+    let dataQuality = 0.5; // Base quality
+    if (parsed.cardName !== 'Unknown') dataQuality += 0.15;
+    if (parsed.setName !== 'Unknown') dataQuality += 0.15;
+    if (parsed.gradeCompany) dataQuality += 0.1;
+    if (parsed.cardNumber) dataQuality += 0.1;
 
     await prisma.unifiedMarketListing.upsert({
       where: {
@@ -434,22 +619,28 @@ async function saveActiveListing(card: any, item: BrowseAPIItem): Promise<boolea
         sourceId: item.itemId,
         title: item.title.substring(0, 500),
         rawTitle: item.title.substring(0, 500),
-        cardName: card.cardName?.substring(0, 255),
-        setName: card.setName?.substring(0, 255),
-        cardNumber: card.cardNumber?.substring(0, 10),
-        gradeCompany: card.gradeCompany,
-        grade: card.grade,
+        cardName: parsed.cardName.substring(0, 255),
+        setName: parsed.setName.substring(0, 255),
+        cardNumber: parsed.cardNumber?.substring(0, 10),
+        gradeCompany: parsed.gradeCompany,
+        grade: parsed.grade,
         priceCents,
         shippingCents,
         url: item.itemWebUrl?.substring(0, 500),
         condition: item.condition?.substring(0, 50),
-        dataQuality: 0.85,
+        dataQuality,
         createdAt: new Date(),
         updatedAt: new Date(),
       },
       update: {
         priceCents,
         shippingCents,
+        cardName: parsed.cardName.substring(0, 255),
+        setName: parsed.setName.substring(0, 255),
+        cardNumber: parsed.cardNumber?.substring(0, 10),
+        gradeCompany: parsed.gradeCompany,
+        grade: parsed.grade,
+        dataQuality,
         updatedAt: new Date(),
       },
     });

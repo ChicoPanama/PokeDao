@@ -66,7 +66,8 @@ function loadTCGdexData(): TCGdexIndex {
   console.log('📚 Loading TCGdex metadata...');
 
   const rawData = JSON.parse(readFileSync(TCGDEX_DATA_PATH, 'utf8'));
-  const cards: TCGdexCard[] = rawData.cards || [];
+  // TCGdex data is an array at root level
+  const cards: TCGdexCard[] = Array.isArray(rawData) ? rawData : (rawData.cards || []);
 
   console.log(`  ✓ Loaded ${cards.length.toLocaleString()} official Pokemon TCG cards`);
 

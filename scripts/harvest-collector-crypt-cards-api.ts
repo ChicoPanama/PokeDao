@@ -65,7 +65,8 @@ async function harvestCards() {
           page,
           step: BATCH_SIZE,
           cardType: 'Card', // Important: Only cards, not packs
-          orderBy: 'listedDateDesc'
+          categories: 'Pokemon', // Filter to Pokemon only
+          // REMOVED: orderBy: 'listedDateDesc' - this filters to only listed cards
         },
         headers: {
           'User-Agent': 'PokeDAO-Harvester/1.0.0'
@@ -136,7 +137,7 @@ async function harvestCards() {
             page,
             step: BATCH_SIZE,
             cardType: 'Card',
-            orderBy: 'listedDateDesc'
+            categories: 'Pokemon',
           },
           timeout: 10000,
         });

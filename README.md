@@ -585,20 +585,6 @@ cd ../.. && pnpm install
 
 ---
 
-## Documentation
-
-| Document | Description |
-|----------|-------------|
-| [README.md](README.md) | **This file** — Vision, architecture, quick start |
-| [REFACTOR_COMPLETE.md](REFACTOR_COMPLETE.md) | Package architecture & analysis models deep dive |
-| [DATA_CONSOLIDATION_COMPLETE.md](DATA_CONSOLIDATION_COMPLETE.md) | Lakehouse implementation details |
-| [docs/JUSTTCG_INTEGRATION.md](docs/JUSTTCG_INTEGRATION.md) | JustTCG API setup & usage |
-| [RUNBOOK.md](RUNBOOK.md) | Operational procedures (signals, posting, audits) |
-| [data/README_data.md](data/README_data.md) | Data schemas & validation rules |
-| [docs/NEXT-PHASE-ROADMAP.md](docs/NEXT-PHASE-ROADMAP.md) | Upcoming features & priorities |
-
----
-
 ## Architecture Principles
 
 ✅ **Separation of Concerns** — Clean package boundaries (core/analysis/storage/adapters)
@@ -614,42 +600,35 @@ cd ../.. && pnpm install
 
 ## Roadmap
 
-### ✅ Phase 1: Data Infrastructure & AI Foundation (Complete)
-- [x] Bronze/Silver/Gold lakehouse (400k+ records across 9 marketplaces)
-- [x] **Multi-Layer Pricing Architecture** with TCGdex Layer 0 (21,627 official Pokemon TCG cards)
-- [x] 9 marketplace integrations: eBay, JustTCG, Collector Crypt, Courtyard, Phygitals, OpenSea, MagicEden, PokePriceTracker, Pokemon TCG API
-- [x] **98,759+ total cards** in unified database (68% with pricing)
-- [x] eBay Browse API harvester (22,376 listings, 100% pricing)
-- [x] JustTCG comprehensive harvester (2,428+ listings across 62 sets)
-- [x] Courtyard blockchain data (33,266 NFTs) + OpenSea pricing layer
-- [x] **Weighted Consensus Pricing:** 4-layer strategy (Direct → Exact → Close → Estimated)
-- [x] TFV, Liquidity, Risk, Opportunity models
-- [x] Prisma schema for Cards/Listings/Comps/Signals
-- [x] Monorepo refactor with clean package boundaries
-- [x] **Project Mew-1A:** TCG-specific AI model training pipeline
-- [x] **AI Ensemble Engine:** Multi-model analysis (Mew-1A + DeepSeek R1)
-- [x] 258 high-quality training examples extracted from real market data
+### ✅ Phase 1: Data Infrastructure & AI Foundation
+- Bronze/Silver/Gold lakehouse (400k+ records, 9 marketplaces)
+- Multi-layer pricing with TCGdex Layer 0 (21,627 official cards)
+- 98,759+ cards in unified database (68% pricing coverage)
+- Weighted consensus pricing (4-layer strategy)
+- TFV, Liquidity, Risk, Opportunity models
+- Project Mew-1A training pipeline
+- AI Ensemble (Mew-1A + DeepSeek R1)
 
-### 🚧 Phase 2: Signal Generation & Mew-1A Deployment (In Progress)
-- [x] AI thesis generation (AI Ensemble: Mew-1A + DeepSeek R1)
-- [ ] Deploy Project Mew-1A to HuggingFace (fine-tune Llama-3.2-3B)
-- [ ] Automated daily data collection (cron job)
-- [ ] End-to-end signal pipeline (features → scoring → ranking)
-- [ ] X/Twitter posting integration (Top 3-5 daily signals with AI analysis)
+### 🚧 Phase 2: Signal Generation & Mew-1A Deployment
+- AI thesis generation ✅
+- Deploy Mew-1A to HuggingFace 🚧
+- Automated daily data collection 🔜
+- End-to-end signal pipeline 🔜
+- X/Twitter posting integration 🔜
 
-### 🔜 Phase 3: On-Chain Vault (Planned Q1 2026)
-- [ ] Phygitals API integration (buy/sell/custody)
-- [ ] Collector Crypt API integration
-- [ ] PokeStrategy vault smart contracts (Solana/Base)
-- [ ] LP deposit/withdrawal mechanism
-- [ ] On-chain performance tracking
+### 🔜 Phase 3: On-Chain Vault
+- Phygitals API integration (buy/sell/custody)
+- Collector Crypt API integration
+- PokeStrategy vault smart contracts (Solana/Base)
+- LP deposit/withdrawal mechanism
+- On-chain performance tracking
 
-### 🔜 Phase 4: Institutional Features (Planned Q2 2026)
-- [ ] Portfolio analytics dashboard
-- [ ] Risk management (position sizing, diversification)
-- [ ] Backtesting framework
-- [ ] API for external integrations
-- [ ] White-label signal feeds
+### 🔜 Phase 4: Institutional Features
+- Portfolio analytics dashboard
+- Risk management (position sizing, diversification)
+- Backtesting framework
+- API for external integrations
+- White-label signal feeds
 
 ---
 
@@ -673,14 +652,7 @@ cd ../.. && pnpm install
 
 ## Contributing
 
-PokeDAO is currently in private beta. If you're interested in contributing:
-
-1. **Data Sources** — Help integrate new marketplaces (Whatnot, StockX, etc.)
-2. **Modeling** — Improve TFV/liquidity algorithms with academic rigor
-3. **Smart Contracts** — Audit/review vault execution logic
-4. **Testing** — Add unit/integration tests for uncovered paths
-
-Open an issue or reach out to the core team.
+PokeDAO is in private beta. Interested in contributing? Open an issue or reach out on [GitHub](https://github.com/ChicoPanama/PokeDao).
 
 ---
 
@@ -690,14 +662,6 @@ Proprietary. All rights reserved.
 
 ---
 
-## Contact
-
-- **X/Twitter:** [@PokeDAO](https://twitter.com/PokeDAO) *(Coming soon)*
-- **Email:** team@pokedao.xyz *(Coming soon)*
-- **GitHub:** [ChicoPanama/PokeDao](https://github.com/ChicoPanama/PokeDao)
-
----
-
 **Built with ❤️ by collectors, for collectors.**
 
-*Last Updated: 2025-10-05*
+*Last Updated: 2025-10-06*
