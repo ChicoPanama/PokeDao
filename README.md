@@ -32,11 +32,12 @@ A systematic research platform that continuously:
 
 #### 2. **Project Mew-1A** — TCG Pricing AI Model
 The world's first AI model specifically trained on Pokemon TCG market data:
-- **Training Data:** 400k+ real listings across 5 marketplaces, 13,738 unique cards
-- **Architecture:** Fine-tuned Llama-3.2-3B on TCG-specific pricing patterns
+- **Training Data:** 10,000 curated examples from 400k+ real listings
+- **Architecture:** Fine-tuned Llama-3.2-3B with LoRA adapters (48.7MB)
+- **Training Results:** 0.170 final loss, 3 epochs, 1h 16m on RTX 4090
 - **Capabilities:** Instant pricing analysis, arbitrage detection, liquidity scoring, market sentiment
 - **Integration:** Powers AI ensemble analysis (Mew-1A + DeepSeek R1) for institutional-grade insights
-- **Deployment:** HuggingFace Inference API (100x faster than generic models, no local GPU needed)
+- **Deployment:** Live on [HuggingFace Hub](https://huggingface.co/ChicoPanama/mew1a-llama-3.2-3b-tcg-pricing)
 
 **Value:** Domain-specific AI that understands TCG market dynamics better than general LLMs. Provides instant, specialized analysis for every card in the database.
 
@@ -611,7 +612,7 @@ cd ../.. && pnpm install
 
 ### 🚧 Phase 2: Signal Generation & Mew-1A Deployment
 - AI thesis generation ✅
-- Deploy Mew-1A to HuggingFace 🚧
+- Deploy Mew-1A to HuggingFace ✅
 - Automated daily data collection 🔜
 - End-to-end signal pipeline 🔜
 - X/Twitter posting integration 🔜
@@ -642,8 +643,8 @@ cd ../.. && pnpm install
 | **Analysis Models** | ✅ Production | Weighted consensus TFV, Liquidity, Risk, Opportunity |
 | **Database** | ✅ Production | Prisma schema, 98,759 cards across 9 sources |
 | **API** | ✅ Production | REST endpoints for signals, cards, analytics, AI analysis |
-| **AI Ensemble** | ✅ Production | Multi-model analysis (Qwen + DeepSeek R1) live |
-| **Project Mew-1A** | 🚧 Training | 258 examples ready, fine-tuning on HuggingFace next |
+| **AI Ensemble** | ✅ Production | Multi-model analysis (Mew-1A + DeepSeek R1) live |
+| **Project Mew-1A** | ✅ Production | Deployed to HuggingFace Hub, 0.170 loss, 3 epochs |
 | **TCGdex Enrichment** | 🚧 Ready | Script created to apply Layer 0 metadata validation |
 | **Signal Pipeline** | 🚧 In Progress | Scoring works, X posting in development |
 | **Vault Execution** | 🔜 Planned | Smart contracts + API integrations pending |
