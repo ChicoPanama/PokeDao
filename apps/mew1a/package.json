@@ -1,0 +1,25 @@
+{
+  "name": "@pokedao/mew1a",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Project Mew-1A: TCG-specific pricing AI model (fine-tuned Llama-3.2-3B)",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "train:extract": "tsx src/training/extract-data.ts",
+    "train:upload": "tsx src/training/upload-dataset.ts",
+    "inference:test": "tsx src/inference/test-model.ts"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^2.8.1",
+    "@pokedao/core": "workspace:*",
+    "@pokedao/storage": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.6.3"
+  }
+}
