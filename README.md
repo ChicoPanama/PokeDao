@@ -43,14 +43,71 @@ The world's first AI model specifically trained on Pokemon TCG market data:
 #### 3. **PokeStrategy** — The On-Chain Vault
 An autonomous execution layer that:
 - Listens to PokeDex signals in real-time
-- Executes buys/sells via integrated APIs (Phygitals, Collector Crypt)
-- Manages physical custody through verified warehouses
+- Executes buys/sells via integrated NFT marketplaces (Phygitals, Collector Crypt, Courtyard)
+- Manages tokenized Pokemon card assets on-chain
+- Fully on-chain settlement and custody (no physical warehouses)
 - Tracks performance on-chain with transparent reporting
 - Allows LPs to deposit/withdraw based on vault NAV
 
-**Value:** Removes emotional decision-making. Executes faster than humans. Provides passive exposure to systematic TCG alpha. On-chain transparency builds institutional credibility.
+**Value:** Removes emotional decision-making. Executes faster than humans. Provides passive exposure to systematic TCG alpha. On-chain transparency and tokenized custody eliminate counterparty risk.
 
 ---
+
+## System Overview
+
+```mermaid
+graph TB
+    subgraph Sources[📦 Data Sources - 9 Marketplaces]
+        direction LR
+        eBay[eBay<br/>22,376 listings]
+        JustTCG[JustTCG<br/>2,428 listings]
+        CC[Collector Crypt<br/>17,763 cards]
+        Courtyard[Courtyard<br/>33,266 NFTs]
+        Phygitals[Phygitals<br/>20,487 NFTs]
+        TCGdex[TCGdex Layer 0<br/>21,627 official cards]
+    end
+
+    subgraph Lakehouse[🗄️ Data Lakehouse]
+        Bronze[Bronze<br/>Raw Parquet]
+        Silver[Silver<br/>Normalized]
+        Gold[Gold<br/>TFV/Liquidity]
+    end
+
+    subgraph Analysis[⚡ Analysis Engine]
+        TFV[True Fair Value<br/>Weighted Consensus]
+        Liq[Liquidity Metrics<br/>Sales Velocity]
+        Opp[Opportunity Score<br/>Risk-Adjusted]
+    end
+
+    subgraph AI[🧠 AI Ensemble]
+        Mew[Mew-1A<br/>TCG Specialist<br/>10k examples]
+        Deep[DeepSeek R1<br/>Deep Reasoning]
+    end
+
+    subgraph Products[🎯 Three Products]
+        PokeDex[PokeDex<br/>Signal Engine]
+        Strategy[PokeStrategy<br/>On-Chain Vault]
+        Twitter[X/Twitter<br/>Public Signals]
+    end
+
+    Sources --> Bronze
+    Bronze --> Silver
+    Silver --> Gold
+    Gold --> Analysis
+    Analysis --> AI
+    AI --> PokeDex
+    PokeDex --> Twitter
+    PokeDex --> Strategy
+    Strategy -.Executes.-> Phygitals
+    Strategy -.Executes.-> CC
+    Strategy -.Executes.-> Courtyard
+
+    style Mew fill:#ff6b6b,color:#fff
+    style PokeDex fill:#4ecdc4,color:#fff
+    style Strategy fill:#ffe66d,color:#000
+    style Gold fill:#ffd700,color:#000
+```
+
 
 ## Why This Matters
 
