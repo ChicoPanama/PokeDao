@@ -1,0 +1,25 @@
+{
+  "name": "@pokedao/streams",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./reddit": "./src/reddit/index.ts",
+    "./normalizer": "./src/normalizer/index.ts",
+    "./types": "./src/types/index.ts"
+  },
+  "dependencies": {
+    "@pokedao/core": "workspace:*",
+    "@pokedao/shared": "workspace:*",
+    "axios": "^1.7.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.6.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  }
+}
