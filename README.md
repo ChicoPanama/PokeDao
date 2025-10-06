@@ -55,57 +55,67 @@ An autonomous execution layer that:
 
 ## System Overview
 
-```mermaid
-graph TB
-    subgraph Sources[📦 Data Sources - 9 Marketplaces]
-        direction LR
-        eBay[eBay<br/>22,376 listings]
-        JustTCG[JustTCG<br/>2,428 listings]
-        CC[Collector Crypt<br/>17,763 cards]
-        Courtyard[Courtyard<br/>33,266 NFTs]
-        Phygitals[Phygitals<br/>20,487 NFTs]
-        TCGdex[TCGdex Layer 0<br/>21,627 official cards]
-    end
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          POKEDAO SYSTEM OVERVIEW                             │
+└─────────────────────────────────────────────────────────────────────────────┘
 
-    subgraph Lakehouse[🗄️ Data Lakehouse]
-        Bronze[Bronze<br/>Raw Parquet]
-        Silver[Silver<br/>Normalized]
-        Gold[Gold<br/>TFV/Liquidity]
-    end
+┌──────────────────────────────────────────────────────────────────────────┐
+│  📦 DATA SOURCES (9 Marketplaces)                                        │
+│  ─────────────────────────────────────────────────────────────────────   │
+│  • eBay (22,376 listings)        • Courtyard (33,266 NFTs)              │
+│  • JustTCG (2,428 listings)      • Phygitals (20,487 NFTs)              │
+│  • Collector Crypt (17,763)      • TCGdex Layer 0 (21,627 official)     │
+└──────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌──────────────────────────────────────────────────────────────────────────┐
+│  🗄️  DATA LAKEHOUSE (Medallion Architecture)                            │
+│  ─────────────────────────────────────────────────────────────────────   │
+│                                                                           │
+│  [Bronze Layer]  ──▶  [Silver Layer]  ──▶  [Gold Layer]                 │
+│   Raw Parquet        Normalized          TFV/Liquidity                   │
+│   SHA256 Hashes      Deduplicated        Aggregations                    │
+│                                                                           │
+└──────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌──────────────────────────────────────────────────────────────────────────┐
+│  ⚡ ANALYSIS ENGINE                                                       │
+│  ─────────────────────────────────────────────────────────────────────   │
+│  • True Fair Value (TFV) - Weighted consensus pricing                    │
+│  • Liquidity Metrics - Sales velocity, days-to-clear                     │
+│  • Opportunity Score - Risk-adjusted discount detection                  │
+└──────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌──────────────────────────────────────────────────────────────────────────┐
+│  🧠 AI ENSEMBLE                                                           │
+│  ─────────────────────────────────────────────────────────────────────   │
+│  • Mew-1A (TCG Specialist) - 10k examples, Llama-3.2-3B fine-tuned       │
+│  • DeepSeek R1 (Deep Reasoning) - Multi-step analysis                    │
+└──────────────────────────────────────────────────────────────────────────┘
+                                    │
+                    ┌───────────────┼───────────────┐
+                    │               │               │
+                    ▼               ▼               ▼
+        ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+        │   PokeDex    │ │ PokeStrategy │ │  X/Twitter   │
+        │    Signal    │ │  On-Chain    │ │   Public     │
+        │    Engine    │ │    Vault     │ │   Signals    │
+        └──────────────┘ └──────────────┘ └──────────────┘
+                            │
+                            │ Executes on
+                            ▼
+                ┌───────────────────────────┐
+                │   NFT Marketplaces        │
+                │  • Phygitals              │
+                │  • Collector Crypt        │
+                │  • Courtyard              │
+                └───────────────────────────┘
 
-    subgraph Analysis[⚡ Analysis Engine]
-        TFV[True Fair Value<br/>Weighted Consensus]
-        Liq[Liquidity Metrics<br/>Sales Velocity]
-        Opp[Opportunity Score<br/>Risk-Adjusted]
-    end
-
-    subgraph AI[🧠 AI Ensemble]
-        Mew[Mew-1A<br/>TCG Specialist<br/>10k examples]
-        Deep[DeepSeek R1<br/>Deep Reasoning]
-    end
-
-    subgraph Products[🎯 Three Products]
-        PokeDex[PokeDex<br/>Signal Engine]
-        Strategy[PokeStrategy<br/>On-Chain Vault]
-        Twitter[X/Twitter<br/>Public Signals]
-    end
-
-    Sources --> Bronze
-    Bronze --> Silver
-    Silver --> Gold
-    Gold --> Analysis
-    Analysis --> AI
-    AI --> PokeDex
-    PokeDex --> Twitter
-    PokeDex --> Strategy
-    Strategy -.Executes.-> Phygitals
-    Strategy -.Executes.-> CC
-    Strategy -.Executes.-> Courtyard
-
-    style Mew fill:#ff6b6b,color:#fff
-    style PokeDex fill:#4ecdc4,color:#fff
-    style Strategy fill:#ffe66d,color:#000
-    style Gold fill:#ffd700,color:#000
+KEY:
+─── Data Flow          ▶ Transformation          │ Pipeline Stage
 ```
 
 
