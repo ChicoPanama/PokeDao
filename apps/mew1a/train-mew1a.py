@@ -276,10 +276,10 @@ def main():
         model=model,
         train_dataset=formatted_dataset,
         peft_config=peft_config,
-        dataset_text_field="text",
         max_seq_length=MAX_SEQ_LENGTH,
         tokenizer=tokenizer,
         args=training_args,
+        formatting_func=lambda x: x["text"],  # Use formatting_func instead of dataset_text_field
     )
     print("   ✓ Trainer ready")
     print()
