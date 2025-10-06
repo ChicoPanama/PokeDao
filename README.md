@@ -30,16 +30,18 @@ A systematic research platform that continuously:
 
 **Value:** Removes manual research burden. Surfaces mispriced cards before arbitrage closes. Multi-source consensus pricing eliminates single-point failures. Transparent methodology builds trust with collectors.
 
-#### 2. **Project Mew-1A** — TCG Pricing AI Model
+#### 2. **Project Mew-1A** — TCG Pricing AI Model ✅
 The world's first AI model specifically trained on Pokemon TCG market data:
 - **Training Data:** 10,000 curated examples from 400k+ real listings
 - **Architecture:** Fine-tuned Llama-3.2-3B with LoRA adapters (48.7MB)
 - **Training Results:** 0.170 final loss, 3 epochs, 1h 16m on RTX 4090
 - **Capabilities:** Instant pricing analysis, arbitrage detection, liquidity scoring, market sentiment
-- **Integration:** Powers AI ensemble analysis (Mew-1A + DeepSeek R1) for institutional-grade insights
-- **Deployment:** Live on [HuggingFace Hub](https://huggingface.co/ChicoPanama/mew1a-llama-3.2-3b-tcg-pricing)
+- **Integration:** Powers AI ensemble analysis (Mew-1A + Ollama + DeepSeek R1) as Layer 1 TCG specialist
+- **Deployment:** Production on [Modal Labs serverless GPU](https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run)
+- **Model Repository:** [HuggingFace Hub](https://huggingface.co/ChicoPanama/mew1a-llama-3.2-3b-tcg-pricing)
+- **Performance:** 3-7s inference, pay-per-use pricing ($0.00015/sec GPU time)
 
-**Value:** Domain-specific AI that understands TCG market dynamics better than general LLMs. Provides instant, specialized analysis for every card in the database.
+**Value:** Domain-specific AI that understands TCG market dynamics better than general LLMs. Provides instant, specialized analysis for every card in the database. Deployed to serverless GPU for production-grade inference.
 
 #### 3. **PokeStrategy** — The On-Chain Vault
 An autonomous execution layer that:
@@ -91,10 +93,12 @@ An autonomous execution layer that:
                                     │
                                     ▼
 ┌──────────────────────────────────────────────────────────────────────────┐
-│  🧠 AI ENSEMBLE                                                           │
+│  🧠 AI ENSEMBLE (Triple-Layer)                                            │
 │  ─────────────────────────────────────────────────────────────────────   │
-│  • Mew-1A (TCG Specialist) - 10k examples, Llama-3.2-3B fine-tuned       │
-│  • DeepSeek R1 (Deep Reasoning) - Multi-step analysis                    │
+│  • Layer 1: Mew-1A (TCG Specialist) - Modal Labs serverless GPU          │
+│  • Layer 2: Ollama (Fast Local) - Qwen 2.5 3B quantized                  │
+│  • Layer 3: DeepSeek R1 (Deep Reasoning) - Multi-step analysis           │
+│  • Layer 4: Ensemble Voting - Conviction scoring & conflict detection    │
 └──────────────────────────────────────────────────────────────────────────┘
                                     │
                     ┌───────────────┼───────────────┐
@@ -182,7 +186,7 @@ PokeDAO is a **TypeScript monorepo** with clean separation of concerns:
 | App | Purpose | Status |
 |-----|---------|--------|
 | **`/pokedex`** | Signal generation & X posting engine | 🚧 In progress |
-| **`/mew1a`** | Custom TCG pricing AI model (fine-tuned LLM) | 🚧 Training |
+| **`/mew1a`** | Custom TCG pricing AI model (fine-tuned LLM) | ✅ Deployed to Modal Labs |
 | **`/strategy`** | On-chain vault execution | 🔜 Planned |
 
 ### 🗄️ Data Lakehouse
@@ -613,6 +617,8 @@ cd ../.. && pnpm install
 ### 🚧 Phase 2: Signal Generation & Mew-1A Deployment
 - AI thesis generation ✅
 - Deploy Mew-1A to HuggingFace ✅
+- Deploy Mew-1A to Modal Labs production ✅
+- Integrate Mew-1A into AI ensemble as Layer 1 ✅
 - Automated daily data collection 🔜
 - End-to-end signal pipeline 🔜
 - X/Twitter posting integration 🔜
@@ -643,8 +649,8 @@ cd ../.. && pnpm install
 | **Analysis Models** | ✅ Production | Weighted consensus TFV, Liquidity, Risk, Opportunity |
 | **Database** | ✅ Production | Prisma schema, 98,759 cards across 9 sources |
 | **API** | ✅ Production | REST endpoints for signals, cards, analytics, AI analysis |
-| **AI Ensemble** | ✅ Production | Multi-model analysis (Mew-1A + DeepSeek R1) live |
-| **Project Mew-1A** | ✅ Production | Deployed to HuggingFace Hub, 0.170 loss, 3 epochs |
+| **AI Ensemble** | ✅ Production | Triple-layer analysis (Mew-1A + Ollama + DeepSeek R1) live |
+| **Project Mew-1A** | ✅ Production | Deployed to Modal Labs serverless GPU, 3-7s inference |
 | **TCGdex Enrichment** | 🚧 Ready | Script created to apply Layer 0 metadata validation |
 | **Signal Pipeline** | 🚧 In Progress | Scoring works, X posting in development |
 | **Vault Execution** | 🔜 Planned | Smart contracts + API integrations pending |

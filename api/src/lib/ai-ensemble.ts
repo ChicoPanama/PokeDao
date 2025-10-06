@@ -1,10 +1,14 @@
 /**
  * AI ENSEMBLE ANALYSIS ENGINE
  *
- * Multi-model architecture for institutional-grade TCG analysis:
- * - Layer 1: Ollama (Fast local inference for quick signals)
- * - Layer 2: DeepSeek R1 (Deep quantitative analysis)
- * - Layer 3: Ensemble voting & conviction scoring
+ * Triple-layer architecture for institutional-grade TCG analysis:
+ * - Layer 1: Mew-1A (TCG-specialized model trained on market data)
+ * - Layer 2: Ollama (Fast local inference for quick signals)
+ * - Layer 3: DeepSeek R1 (Deep quantitative analysis with reasoning)
+ * - Layer 4: Ensemble voting & conviction scoring
+ *
+ * Mew-1A deployed at: https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run
+ * Model: ChicoPanama/mew1a-llama-3.2-3b-tcg-pricing (Llama-3.2-3B + LoRA adapters)
  */
 
 import OpenAI from 'openai';
@@ -36,6 +40,14 @@ export interface AIAnalysisResult {
   alphaSignalStrength: number; // 0-100: How much edge vs market
 
   // Analysis Components
+  mew1aAnalysis: {
+    model: 'mew1a-llama-3.2';
+    recommendation: 'BUY' | 'PASS' | 'NEUTRAL';
+    reasoning: string;
+    confidence: number;
+    responseTime: number;
+  };
+
   quickAnalysis: {
     model: 'ollama-qwen';
     sentiment: 'bullish' | 'neutral' | 'bearish';
@@ -66,6 +78,37 @@ export interface AIAnalysisResult {
   sellProbability: number; // 0-1: Chance of selling within 30d
   daysToSell: number; // Expected days to clear
   whaleActivity: boolean; // Institutional buying detected
+}
+
+// ============================================================================
+// MEW-1A CLIENT (Modal Labs)
+// ============================================================================
+
+class Mew1AClient {
+  private endpoint: string;
+
+  constructor(endpoint = 'https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run') {
+    this.endpoint = endpoint;
+  }
+
+  async analyze(prompt: string, maxTokens = 150): Promise<{ response: string; time: number }> {
+    const start = Date.now();
+
+    const response = await fetch(this.endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        prompt,
+        max_tokens: maxTokens,
+      }),
+    });
+
+    const data: any = await response.json();
+    return {
+      response: data.response,
+      time: Date.now() - start,
+    };
+  }
 }
 
 // ============================================================================
@@ -140,23 +183,26 @@ class DeepSeekClient {
 // ============================================================================
 
 export class AIEnsembleEngine {
+  private mew1a: Mew1AClient;
   private ollama: OllamaClient;
   private deepseek: DeepSeekClient;
 
-  constructor(config: { deepseekApiKey: string; ollamaURL?: string }) {
+  constructor(config: { deepseekApiKey: string; ollamaURL?: string; mew1aEndpoint?: string }) {
+    this.mew1a = new Mew1AClient(config.mew1aEndpoint);
     this.ollama = new OllamaClient(config.ollamaURL);
     this.deepseek = new DeepSeekClient(config.deepseekApiKey);
   }
 
   async analyzeCard(signal: MarketSignal): Promise<AIAnalysisResult> {
-    // Parallel execution: Layer 1 (fast) + Layer 2 (deep)
-    const [quickResult, deepResult] = await Promise.all([
+    // Parallel execution: Layer 1 (TCG specialist) + Layer 2 (fast) + Layer 3 (deep)
+    const [mew1aResult, quickResult, deepResult] = await Promise.all([
+      this.runMew1AAnalysis(signal),
       this.runQuickAnalysis(signal),
       this.runDeepAnalysis(signal),
     ]);
 
-    // Layer 3: Ensemble voting & conviction scoring
-    const ensemble = this.computeEnsemble(quickResult, deepResult, signal);
+    // Layer 4: Ensemble voting & conviction scoring
+    const ensemble = this.computeEnsemble(mew1aResult, quickResult, deepResult, signal);
 
     // Calculate unique metrics
     const liquidityMetrics = this.calculateLiquidityMetrics(signal);
@@ -166,6 +212,7 @@ export class AIEnsembleEngine {
       recommendation: ensemble.recommendation,
       convictionScore: ensemble.convictionScore,
       alphaSignalStrength: ensemble.alphaStrength,
+      mew1aAnalysis: mew1aResult,
       quickAnalysis: quickResult,
       deepAnalysis: deepResult,
       ensemble: {
@@ -179,7 +226,40 @@ export class AIEnsembleEngine {
   }
 
   // ========================================================================
-  // LAYER 1: FAST LOCAL ANALYSIS (Ollama Plutus)
+  // LAYER 1: MEW-1A TCG SPECIALIST ANALYSIS
+  // ========================================================================
+
+  private async runMew1AAnalysis(signal: MarketSignal) {
+    const discount = ((signal.listedPrice - signal.marketData.fairValue) / signal.marketData.fairValue) * 100;
+
+    const prompt = `Analyze this Pokemon TCG investment opportunity:
+
+CARD: ${signal.cardName} ${signal.setName || ''} ${signal.gradeCompany || ''} ${signal.grade || ''}
+LISTED: $${signal.listedPrice.toLocaleString()}
+FAIR VALUE: $${signal.marketData.fairValue.toLocaleString()} (${signal.marketData.salesCount} recent sales)
+DISCOUNT: ${discount.toFixed(1)}%
+SALES VELOCITY: ${signal.marketData.avgVolume30d} sales/month
+TREND: ${signal.marketData.priceChange7d > 0 ? '+' : ''}${signal.marketData.priceChange7d.toFixed(1)}% (7d), ${signal.marketData.priceChange30d > 0 ? '+' : ''}${signal.marketData.priceChange30d.toFixed(1)}% (30d)
+
+Provide your BUY/PASS recommendation with reasoning (50 words max).`;
+
+    const result = await this.mew1a.analyze(prompt, 100);
+
+    // Extract recommendation from response
+    const recommendation = this.extractMew1ARecommendation(result.response);
+    const confidence = this.extractMew1AConfidence(result.response, discount);
+
+    return {
+      model: 'mew1a-llama-3.2' as const,
+      recommendation,
+      reasoning: result.response,
+      confidence,
+      responseTime: result.time,
+    };
+  }
+
+  // ========================================================================
+  // LAYER 2: FAST LOCAL ANALYSIS (Ollama Qwen)
   // ========================================================================
 
   private async runQuickAnalysis(signal: MarketSignal) {
@@ -212,7 +292,7 @@ Format: SENTIMENT: [x] | KEY_POINTS: [1. x, 2. x, 3. x] | CONFIDENCE: [x]`;
   }
 
   // ========================================================================
-  // LAYER 2: DEEP QUANTITATIVE ANALYSIS (DeepSeek R1)
+  // LAYER 3: DEEP QUANTITATIVE ANALYSIS (DeepSeek R1)
   // ========================================================================
 
   private async runDeepAnalysis(signal: MarketSignal) {
@@ -251,46 +331,53 @@ CONFIDENCE: [75-95]%`;
   }
 
   // ========================================================================
-  // LAYER 3: ENSEMBLE VOTING & CONVICTION
+  // LAYER 4: ENSEMBLE VOTING & CONVICTION
   // ========================================================================
 
-  private computeEnsemble(quick: any, deep: any, signal: MarketSignal) {
+  private computeEnsemble(mew1a: any, quick: any, deep: any, signal: MarketSignal) {
     // Map sentiments to numeric scores
+    const mew1aScore = mew1a.recommendation === 'BUY' ? 1 : mew1a.recommendation === 'PASS' ? -1 : 0;
     const sentimentScore = { bullish: 1, neutral: 0, bearish: -1 };
     const quickScore = sentimentScore[quick.sentiment];
-
-    // DeepSeek score from thesis
     const deepScore = deep.investmentThesis.toLowerCase().includes('buy') ? 1 :
                      deep.investmentThesis.toLowerCase().includes('pass') ? -1 : 0;
 
-    // Agreement level (0-1)
-    const agreement = quickScore === deepScore ? 1.0 :
-                     Math.abs(quickScore - deepScore) === 1 ? 0.5 : 0.0;
+    // Three-way agreement level (0-1)
+    const scores = [mew1aScore, quickScore, deepScore];
+    const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+    const variance = scores.reduce((sum, s) => sum + Math.pow(s - avgScore, 2), 0) / scores.length;
+    const agreement = 1 - Math.min(1, variance); // Low variance = high agreement
 
-    // Conviction = agreement * avg(confidence)
-    const avgConfidence = (quick.confidence + deep.confidence) / 2;
+    // Conviction = agreement * avg(confidence) with 2x weight on Mew-1A (TCG specialist)
+    const avgConfidence = (mew1a.confidence * 2 + quick.confidence + deep.confidence) / 4;
     const convictionScore = agreement * avgConfidence;
 
     // Alpha strength = discount magnitude * conviction
     const discount = ((signal.listedPrice - signal.marketData.fairValue) / signal.marketData.fairValue) * 100;
     const alphaStrength = Math.min(100, Math.abs(discount) * (convictionScore / 100));
 
-    // Final recommendation
+    // Final recommendation (prioritize Mew-1A when high confidence)
     let recommendation: AIAnalysisResult['recommendation'];
-    if (convictionScore >= 80 && discount < -15) recommendation = 'STRONG_BUY';
+    if (mew1a.confidence >= 85 && mew1aScore === 1 && discount < -15) recommendation = 'STRONG_BUY';
+    else if (convictionScore >= 80 && discount < -15) recommendation = 'STRONG_BUY';
     else if (convictionScore >= 70 && discount < -10) recommendation = 'BUY';
     else if (convictionScore >= 60 && discount < 10) recommendation = 'HOLD';
     else if (discount > 20) recommendation = 'PASS';
     else recommendation = 'HOLD';
 
     const conflicts: string[] = [];
-    if (agreement < 0.5) {
-      conflicts.push(`Ollama: ${quick.sentiment}, DeepSeek: ${deepScore > 0 ? 'bullish' : deepScore < 0 ? 'bearish' : 'neutral'}`);
+    if (agreement < 0.6) {
+      const models = [
+        `Mew-1A: ${mew1a.recommendation}`,
+        `Ollama: ${quick.sentiment}`,
+        `DeepSeek: ${deepScore > 0 ? 'bullish' : deepScore < 0 ? 'bearish' : 'neutral'}`,
+      ];
+      conflicts.push(models.join(', '));
     }
 
     const verdict = agreement >= 0.8 ?
-      `Strong consensus: ${recommendation}` :
-      `Mixed signals: ${quick.sentiment} (Ollama) vs ${deepScore > 0 ? 'bullish' : 'bearish'} (DeepSeek)`;
+      `Strong consensus (${(agreement * 100).toFixed(0)}%): ${recommendation}` :
+      `Mixed signals: ${conflicts[0] || 'Moderate disagreement'}`;
 
     return {
       recommendation,
@@ -385,5 +472,28 @@ CONFIDENCE: [75-95]%`;
   private extractConfidence(text: string): number {
     const match = text.match(/CONFIDENCE:\s*(\d+)/i);
     return match ? parseInt(match[1]) : 75;
+  }
+
+  private extractMew1ARecommendation(text: string): 'BUY' | 'PASS' | 'NEUTRAL' {
+    const lower = text.toLowerCase();
+    if (lower.includes('buy') || lower.includes('strong buy')) return 'BUY';
+    if (lower.includes('pass') || lower.includes('avoid')) return 'PASS';
+    return 'NEUTRAL';
+  }
+
+  private extractMew1AConfidence(text: string, discount: number): number {
+    // Extract explicit confidence if present
+    const match = text.match(/confidence[:\s]+(\d+)/i);
+    if (match) return parseInt(match[1]);
+
+    // Infer confidence from discount and response strength
+    const hasBuy = text.toLowerCase().includes('buy');
+    const hasPass = text.toLowerCase().includes('pass');
+
+    if (hasBuy && discount < -15) return 90; // Strong buy signal
+    if (hasBuy && discount < -10) return 80;
+    if (hasPass && discount > 10) return 85;
+    if (hasBuy || hasPass) return 75;
+    return 60; // Neutral
   }
 }
