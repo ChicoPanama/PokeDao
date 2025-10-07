@@ -270,7 +270,7 @@ model RedditSignal {
   // Relations
   canonicalCard CanonicalCard? @relation(fields: [canonicalCardId], references: [id], onUpdate: Cascade, onDelete: SetNull)
 
-  @@unique([subreddit, postId])
+  @@unique([subreddit, postId, cardName])
   @@index([cardName])
   @@index([sentiment])
   @@index([sentimentScore])

@@ -1,17 +1,19 @@
 /**
  * AI ENSEMBLE ANALYSIS ENGINE
  *
- * Triple-layer architecture for institutional-grade TCG analysis:
+ * Quad-layer architecture for institutional-grade TCG analysis:
  * - Layer 1: Mew-1A (TCG-specialized model trained on market data)
  * - Layer 2: Ollama (Fast local inference for quick signals)
  * - Layer 3: DeepSeek R1 (Deep quantitative analysis with reasoning)
- * - Layer 4: Ensemble voting & conviction scoring
+ * - Layer 4: Reddit Sentiment (Community sentiment analysis)
+ * - Layer 5: Ensemble voting & conviction scoring
  *
  * Mew-1A deployed at: https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run
  * Model: ChicoPanama/mew1a-llama-3.2-3b-tcg-pricing (Llama-3.2-3B + LoRA adapters)
  */
 
 import OpenAI from 'openai';
+import { getRedditSentiment } from './reddit-scraper.js';
 
 // ============================================================================
 // TYPES
@@ -34,6 +36,39 @@ export interface MarketSignal {
 }
 
 export interface AIAnalysisResult {
+  // Card Information
+  card: {
+    name: string;
+    setName?: string;
+    rarity?: string;
+    cardType?: string;
+    setNumber?: string;
+    releaseYear?: number;
+    grade?: string;
+    gradeCompany?: string;
+    isFirstEdition?: boolean;
+    isShadowless?: boolean;
+    isReverseHolo?: boolean;
+  };
+
+  // Pricing Information
+  pricing: {
+    listed: number;
+    fairValue: number;
+    discount: number;
+    lowestAvailable?: number;
+    venue?: string;
+    listingUrl?: string;
+  };
+
+  // Market Metrics
+  market: {
+    salesCount: number;
+    avgVolume30d: number;
+    priceChange7d: number;
+    priceChange30d: number;
+  };
+
   // Pricing Assessment
   recommendation: 'STRONG_BUY' | 'BUY' | 'HOLD' | 'SELL' | 'PASS';
   convictionScore: number; // 0-100: Agreement across all models
@@ -65,6 +100,14 @@ export interface AIAnalysisResult {
     timeHorizon: string;
     confidence: number;
     responseTime: number;
+  };
+
+  redditSentiment: {
+    sentiment: 'BULLISH' | 'BEARISH' | 'NEUTRAL';
+    score: number; // -1 to 1
+    confidence: number;
+    discussionVolume: number;
+    topPosts: Array<{ title: string; url: string; score: number }>;
   };
 
   ensemble: {
@@ -194,27 +237,49 @@ export class AIEnsembleEngine {
   }
 
   async analyzeCard(signal: MarketSignal): Promise<AIAnalysisResult> {
-    // Parallel execution: Layer 1 (TCG specialist) + Layer 2 (fast) + Layer 3 (deep)
-    const [mew1aResult, quickResult, deepResult] = await Promise.all([
+    // Parallel execution: Layer 1-4 (TCG specialist + fast + deep + Reddit)
+    const [mew1aResult, quickResult, deepResult, redditResult] = await Promise.all([
       this.runMew1AAnalysis(signal),
       this.runQuickAnalysis(signal),
       this.runDeepAnalysis(signal),
+      this.runRedditAnalysis(signal),
     ]);
 
-    // Layer 4: Ensemble voting & conviction scoring
-    const ensemble = this.computeEnsemble(mew1aResult, quickResult, deepResult, signal);
+    // Layer 5: Ensemble voting & conviction scoring
+    const ensemble = this.computeEnsemble(mew1aResult, quickResult, deepResult, redditResult, signal);
 
     // Calculate unique metrics
     const liquidityMetrics = this.calculateLiquidityMetrics(signal);
     const whaleActivity = this.detectWhaleActivity(signal);
 
+    const discount = ((signal.listedPrice - signal.marketData.fairValue) / signal.marketData.fairValue) * 100;
+
     return {
+      card: {
+        name: signal.cardName,
+        setName: signal.setName,
+        grade: signal.grade,
+        gradeCompany: signal.gradeCompany,
+      },
+      pricing: {
+        listed: signal.listedPrice,
+        fairValue: signal.marketData.fairValue,
+        discount,
+        lowestAvailable: signal.marketData.lowestAvailable,
+      },
+      market: {
+        salesCount: signal.marketData.salesCount,
+        avgVolume30d: signal.marketData.avgVolume30d,
+        priceChange7d: signal.marketData.priceChange7d,
+        priceChange30d: signal.marketData.priceChange30d,
+      },
       recommendation: ensemble.recommendation,
       convictionScore: ensemble.convictionScore,
       alphaSignalStrength: ensemble.alphaStrength,
       mew1aAnalysis: mew1aResult,
       quickAnalysis: quickResult,
       deepAnalysis: deepResult,
+      redditSentiment: redditResult,
       ensemble: {
         agreementLevel: ensemble.agreement,
         conflictingSignals: ensemble.conflicts,
@@ -331,25 +396,46 @@ CONFIDENCE: [75-95]%`;
   }
 
   // ========================================================================
-  // LAYER 4: ENSEMBLE VOTING & CONVICTION
+  // LAYER 4: REDDIT SENTIMENT ANALYSIS
   // ========================================================================
 
-  private computeEnsemble(mew1a: any, quick: any, deep: any, signal: MarketSignal) {
+  private async runRedditAnalysis(signal: MarketSignal) {
+    try {
+      const sentiment = await getRedditSentiment(signal.cardName);
+      return sentiment;
+    } catch (error) {
+      // Fallback if Reddit data unavailable
+      return {
+        sentiment: 'NEUTRAL' as const,
+        score: 0,
+        confidence: 0,
+        discussionVolume: 0,
+        topPosts: [],
+      };
+    }
+  }
+
+  // ========================================================================
+  // LAYER 5: ENSEMBLE VOTING & CONVICTION
+  // ========================================================================
+
+  private computeEnsemble(mew1a: any, quick: any, deep: any, reddit: any, signal: MarketSignal) {
     // Map sentiments to numeric scores
     const mew1aScore = mew1a.recommendation === 'BUY' ? 1 : mew1a.recommendation === 'PASS' ? -1 : 0;
     const sentimentScore = { bullish: 1, neutral: 0, bearish: -1 };
     const quickScore = sentimentScore[quick.sentiment];
     const deepScore = deep.investmentThesis.toLowerCase().includes('buy') ? 1 :
                      deep.investmentThesis.toLowerCase().includes('pass') ? -1 : 0;
+    const redditScore = reddit.sentiment === 'BULLISH' ? reddit.score : reddit.sentiment === 'BEARISH' ? reddit.score : 0;
 
-    // Three-way agreement level (0-1)
-    const scores = [mew1aScore, quickScore, deepScore];
+    // Four-way agreement level with weighted scoring (Mew-1A gets 2x weight, Reddit gets 0.5x weight)
+    const scores = [mew1aScore, mew1aScore, quickScore, deepScore, redditScore * 0.5];
     const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
     const variance = scores.reduce((sum, s) => sum + Math.pow(s - avgScore, 2), 0) / scores.length;
     const agreement = 1 - Math.min(1, variance); // Low variance = high agreement
 
-    // Conviction = agreement * avg(confidence) with 2x weight on Mew-1A (TCG specialist)
-    const avgConfidence = (mew1a.confidence * 2 + quick.confidence + deep.confidence) / 4;
+    // Conviction = agreement * avg(confidence) with 2x weight on Mew-1A, 0.3x weight on Reddit
+    const avgConfidence = (mew1a.confidence * 2 + quick.confidence + deep.confidence + reddit.confidence * 0.3) / 4.3;
     const convictionScore = agreement * avgConfidence;
 
     // Alpha strength = discount magnitude * conviction
@@ -371,6 +457,7 @@ CONFIDENCE: [75-95]%`;
         `Mew-1A: ${mew1a.recommendation}`,
         `Ollama: ${quick.sentiment}`,
         `DeepSeek: ${deepScore > 0 ? 'bullish' : deepScore < 0 ? 'bearish' : 'neutral'}`,
+        `Reddit: ${reddit.sentiment} (${reddit.discussionVolume} posts)`,
       ];
       conflicts.push(models.join(', '));
     }

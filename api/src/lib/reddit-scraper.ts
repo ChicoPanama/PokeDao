@@ -219,7 +219,13 @@ export async function scrapeRedditSignals(deepseekApiKey: string): Promise<numbe
         const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
 
         await prisma.redditSignal.upsert({
-          where: { id },
+          where: {
+            subreddit_postId_cardName: {
+              subreddit,
+              postId: post.id,
+              cardName: mention.cardName,
+            },
+          },
           create: {
             id,
             cardName: mention.cardName,
