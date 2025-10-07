@@ -93,12 +93,13 @@ An autonomous execution layer that:
                                     │
                                     ▼
 ┌──────────────────────────────────────────────────────────────────────────┐
-│  🧠 AI ENSEMBLE (Triple-Layer)                                            │
+│  🧠 AI ENSEMBLE (Quad-Layer)                                              │
 │  ─────────────────────────────────────────────────────────────────────   │
 │  • Layer 1: Mew-1A (TCG Specialist) - Modal Labs serverless GPU          │
 │  • Layer 2: Ollama (Fast Local) - Qwen 2.5 3B quantized                  │
 │  • Layer 3: DeepSeek R1 (Deep Reasoning) - Multi-step analysis           │
-│  • Layer 4: Ensemble Voting - Conviction scoring & conflict detection    │
+│  • Layer 4: Reddit Sentiment - r/PokeInvesting + r/PokemonTCG            │
+│  • Layer 5: Ensemble Voting - Conviction scoring & conflict detection    │
 └──────────────────────────────────────────────────────────────────────────┘
                                     │
                     ┌───────────────┼───────────────┐
@@ -614,11 +615,14 @@ cd ../.. && pnpm install
 - Project Mew-1A training pipeline
 - AI Ensemble (Mew-1A + DeepSeek R1)
 
-### 🚧 Phase 2: Signal Generation & Mew-1A Deployment
+### 🚧 Phase 2: Signal Generation & Twitter Launch Preparation
 - AI thesis generation ✅
 - Deploy Mew-1A to HuggingFace ✅
 - Deploy Mew-1A to Modal Labs production ✅
 - Integrate Mew-1A into AI ensemble as Layer 1 ✅
+- Reddit sentiment analysis (r/PokeInvesting + r/PokemonTCG) ✅
+- Image generation (card overlays + price charts) ✅
+- Database integration (9,826 sale records loaded) ✅
 - Automated daily data collection 🔜
 - End-to-end signal pipeline 🔜
 - X/Twitter posting integration 🔜
@@ -647,10 +651,12 @@ cd ../.. && pnpm install
 | **Multi-Layer Pricing** | ✅ Production | TCGdex Layer 0 (21,627 official cards) + 4-layer consensus |
 | **Lakehouse** | ✅ Production | Bronze/Silver/Gold with zero data loss |
 | **Analysis Models** | ✅ Production | Weighted consensus TFV, Liquidity, Risk, Opportunity |
-| **Database** | ✅ Production | Prisma schema, 98,759 cards across 9 sources |
+| **Database** | ✅ Production | Prisma schema, 98,759 cards + 9,826 sales across 9 sources |
 | **API** | ✅ Production | REST endpoints for signals, cards, analytics, AI analysis |
-| **AI Ensemble** | ✅ Production | Triple-layer analysis (Mew-1A + Ollama + DeepSeek R1) live |
+| **AI Ensemble** | ✅ Production | Quad-layer analysis (Mew-1A + Ollama + DeepSeek + Reddit) live |
 | **Project Mew-1A** | ✅ Production | Deployed to Modal Labs serverless GPU, 3-7s inference |
+| **Reddit Integration** | ✅ Production | Sentiment analysis from r/PokeInvesting + r/PokemonTCG |
+| **Image Generation** | ✅ Production | SVG-based card overlays + price charts for Twitter |
 | **TCGdex Enrichment** | 🚧 Ready | Script created to apply Layer 0 metadata validation |
 | **Signal Pipeline** | 🚧 In Progress | Scoring works, X posting in development |
 | **Vault Execution** | 🔜 Planned | Smart contracts + API integrations pending |

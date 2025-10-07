@@ -7,6 +7,282 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// ============================================================================
+// CORE CANONICAL DATA MODELS
+// ============================================================================
+
+model CanonicalCard {
+  id               String    @id
+  officialCardId   String?
+  canonicalName    String
+  canonicalSet     String
+  cardNumber       String?
+  variant          String?
+  supportedGraders String[]
+  aliases          Json?
+  rarity           String?
+  hp               Int?
+  types            String[]
+  illustrator      String?
+  totalListings    Int       @default(0)
+  avgPriceCents    Int?
+  dataQuality      Float     @default(0.5)
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  // Relations
+  officialCard     OfficialPokemonCard? @relation(fields: [officialCardId], references: [id], onUpdate: Cascade, onDelete: SetNull)
+  saleRecords      SaleRecord[]
+  cardSignals      CardSignal[]
+  consensusPricing ConsensusPricing[]
+  marketListings   MarketListing[]
+  redditSignals    RedditSignal[]
+
+  @@index([canonicalName, canonicalSet])
+  @@index([officialCardId])
+  @@map("canonical_cards")
+}
+
+model OfficialPokemonCard {
+  id                  String    @id
+  localId             String
+  name                String
+  setId               String
+  setName             String
+  rarity              String?
+  category            String?
+  hp                  Int?
+  types               String[]
+  stage               String?
+  illustrator         String?
+  retreat             Int?
+  variantFirstEdition Boolean   @default(false)
+  variantHolo         Boolean   @default(false)
+  variantNormal       Boolean   @default(false)
+  variantReverse      Boolean   @default(false)
+  variantShadowless   Boolean   @default(false)
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  // Relations
+  canonicalCards CanonicalCard[]
+
+  @@index([name])
+  @@index([setId, localId])
+  @@map("official_pokemon_cards")
+}
+
+// ============================================================================
+// MARKET DATA MODELS
+// ============================================================================
+
+model SaleRecord {
+  id                  String        @id
+  canonicalCardId     String?
+  source              MarketSource
+  sourceId            String
+  sourceUrl           String?
+  soldPriceCents      Int
+  currency            String        @default("USD")
+  cardName            String
+  setName             String?
+  cardNumber          String?
+  variant             String?
+  gradeCompany        String?
+  grade               Float?
+  condition           String?
+  soldAt              DateTime
+  buyerFeeCents       Int           @default(0)
+  shippingCents       Int           @default(0)
+  totalBuyerCostCents Int
+  dataQuality         Float         @default(0.5)
+  ageDays             Int?
+  weight              Float?
+  createdAt           DateTime      @default(now())
+
+  // Relations
+  canonicalCard CanonicalCard? @relation(fields: [canonicalCardId], references: [id], onUpdate: Cascade, onDelete: SetNull)
+
+  @@index([canonicalCardId])
+  @@index([soldAt])
+  @@index([source])
+  @@map("sale_records")
+}
+
+model MarketListing {
+  id              String       @id
+  canonicalCardId String?
+  source          MarketSource
+  sourceId        String
+  sourceUrl       String?
+  title           String
+  rawTitle        String?
+  priceCents      Int?
+  currency        String       @default("USD")
+  cardName        String?
+  setName         String?
+  cardNumber      String?
+  variant         String?
+  gradeCompany    String?
+  grade           Float?
+  condition       String?
+  quantity        Int          @default(1)
+  seller          String?
+  sellerRating    Float?
+  dataQuality     Float        @default(0.5)
+  isActive        Boolean      @default(true)
+  listedAt        DateTime?
+  lastSeenAt      DateTime     @default(now())
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  // Relations
+  canonicalCard CanonicalCard? @relation(fields: [canonicalCardId], references: [id], onUpdate: Cascade, onDelete: SetNull)
+
+  @@unique([source, sourceId])
+  @@index([canonicalCardId])
+  @@index([lastSeenAt])
+  @@index([source, isActive])
+  @@map("market_listings")
+}
+
+model UnifiedMarketListing {
+  id           String       @id
+  source       MarketSource
+  sourceId     String
+  title        String
+  rawTitle     String?
+  cardName     String?
+  setName      String?
+  cardNumber   String?
+  variant      String?
+  grade        Float?
+  gradeCompany String?
+  condition    String?
+  priceCents   Int?
+  currency     String       @default("USD")
+  url          String?
+  dataQuality  Float        @default(0.5)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  @@unique([source, sourceId])
+  @@index([priceCents])
+  @@map("UnifiedMarketListing")
+}
+
+// ============================================================================
+// SIGNAL & PRICING MODELS
+// ============================================================================
+
+model CardSignal {
+  id                 String    @id
+  canonicalCardId    String    @unique
+  salesPerWeek       Float     @default(0)
+  daysToClear        Float?
+  pSell30d           Float?
+  pSell60d           Float?
+  pSell90d           Float?
+  activeListings     Int       @default(0)
+  marketVelocity     String?
+  tfvCents           Int?
+  floorPriceCents    Int?
+  discountPct        Float?
+  opportunityScore   Float     @default(0)
+  opportunityRank    String?
+  recommendation     String?
+  riskScore          Float     @default(0)
+  riskFactors        String[]
+  hasArbitrage       Boolean   @default(false)
+  arbitrageSpreadPct Float?
+  arbitrageVenues    String[]
+  signalStrength     Float     @default(0)
+  lastComputed       DateTime  @default(now())
+  expiresAt          DateTime  @default(now())
+
+  // Relations
+  canonicalCard CanonicalCard @relation(fields: [canonicalCardId], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+  @@index([opportunityScore])
+  @@index([hasArbitrage, arbitrageSpreadPct])
+  @@map("card_signals")
+}
+
+model ConsensusPricing {
+  id                   String    @id
+  canonicalCardId      String
+  gradeCompany         String?
+  grade                Float?
+  layer1DirectPrice    Int?
+  layer1Confidence     Float     @default(0)
+  layer1Sources        String[]
+  layer2ExactPrice     Int?
+  layer2Confidence     Float     @default(0)
+  layer2Sources        String[]
+  layer2CompCount      Int       @default(0)
+  layer3ClosePrice     Int?
+  layer3Confidence     Float     @default(0)
+  layer3Sources        String[]
+  layer3CompCount      Int       @default(0)
+  layer4EstimatedPrice Int?
+  layer4Confidence     Float     @default(0)
+  layer4Sources        String[]
+  consensusPriceCents  Int
+  confidenceScore      Float
+  sourceCount          Int
+  minPriceCents        Int?
+  maxPriceCents        Int?
+  medianPriceCents     Int?
+  stdDevCents          Int?
+  lastUpdated          DateTime  @default(now())
+  nextUpdateDue        DateTime  @default(now())
+
+  // Relations
+  canonicalCard CanonicalCard @relation(fields: [canonicalCardId], references: [id], onUpdate: Cascade, onDelete: Restrict)
+
+  @@unique([canonicalCardId, gradeCompany, grade])
+  @@index([confidenceScore])
+  @@index([consensusPriceCents])
+  @@map("consensus_pricing")
+}
+
+model RedditSignal {
+  id              String   @id
+  canonicalCardId String?
+  cardName        String
+  setName         String?
+  subreddit       String // "PokeInvesting" or "PokemonTCG"
+  postId          String
+  postTitle       String
+  postUrl         String
+  author          String
+  score           Int      @default(0)
+  numComments     Int      @default(0)
+  sentiment       String // "BULLISH", "BEARISH", "NEUTRAL"
+  sentimentScore  Float // -1.0 to 1.0
+  confidence      Float // 0.0 to 1.0
+  discussionVolume Int     @default(1)
+  keyPhrases      String[] // ["investment", "buy", "hold", etc.]
+  createdAt       DateTime @default(now())
+  scrapedAt       DateTime @default(now())
+  expiresAt       DateTime // Signal expires after 7 days
+
+  // Relations
+  canonicalCard CanonicalCard? @relation(fields: [canonicalCardId], references: [id], onUpdate: Cascade, onDelete: SetNull)
+
+  @@unique([subreddit, postId])
+  @@index([cardName])
+  @@index([sentiment])
+  @@index([sentimentScore])
+  @@index([scrapedAt])
+  @@index([expiresAt])
+  @@map("reddit_signals")
+}
+
+// ============================================================================
+// LEGACY MODELS (Keep for backward compatibility)
+// ============================================================================
+
 model Card {
   id              String          @id
   name            String          @db.VarChar(255)
@@ -19,7 +295,7 @@ model Card {
   setCode         String          @db.VarChar(50)
   rarity          String?         @db.VarChar(50)
   createdAt       DateTime        @default(now())
-  updatedAt       DateTime
+  updatedAt       DateTime        @updatedAt
   cardKey         String          @unique @db.VarChar(100)
   cardType        String          @default("Pokemon") @db.VarChar(50)
   isValidated     Boolean         @default(false)
@@ -30,7 +306,6 @@ model Card {
   DataQuality     DataQuality[]
   Evaluation      Evaluation[]
   Listing         Listing[]
-  MarketListing   MarketListing[]
   Opportunity     Opportunity[]
   Signal          Signal[]
   WatchlistItem   WatchlistItem[]
@@ -55,7 +330,6 @@ model CardSet {
   @@index([year])
 }
 
-/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model CompSale {
   id         String   @id
   cardId     String
@@ -72,6 +346,7 @@ model CompSale {
   @@index([priceCents])
   @@index([soldAt])
   @@index([source])
+  @@index([cardId, soldAt(sort: Desc), priceCents], map: "idx_compsale_recent_card")
 }
 
 model CrossReferenceData {
@@ -83,7 +358,7 @@ model CrossReferenceData {
   matchType       String   @db.VarChar(20)
   discrepancies   String[] @default([])
   createdAt       DateTime @default(now())
-  updatedAt       DateTime
+  updatedAt       DateTime @updatedAt
 
   @@index([matchConfidence])
   @@index([matchType])
@@ -100,7 +375,6 @@ model DataQuality {
   recommendations String[] @default([])
   issues          String[] @default([])
   Card            Card     @relation(fields: [entityId], references: [id], onDelete: Cascade, map: "DataQuality_card_fkey")
-  Listing         Listing  @relation(fields: [entityId], references: [id], onDelete: Cascade, map: "DataQuality_listing_fkey")
 
   @@index([checkedAt])
   @@index([entityType, entityId])
@@ -144,7 +418,6 @@ model Listing {
   totalPrice    Float?
   isVerified    Boolean       @default(false)
   lastSeen      DateTime      @default(now())
-  DataQuality   DataQuality[]
   Evaluation    Evaluation[]
   Card          Card          @relation(fields: [cardId], references: [id], onDelete: Cascade)
 
@@ -152,31 +425,6 @@ model Listing {
   @@index([cardId])
   @@index([price])
   @@index([scrapedAt])
-  @@index([source, isActive])
-}
-
-model MarketListing {
-  id            String        @id
-  cardId        String
-  source        String        @db.VarChar(50)
-  sourceId      String        @db.VarChar(100)
-  priceCents    Int
-  currency      String        @default("USD") @db.VarChar(3)
-  condition     String?       @db.VarChar(50)
-  grade         String?       @db.VarChar(20)
-  url           String        @db.VarChar(500)
-  seenAt        DateTime      @default(now())
-  isActive      Boolean       @default(true)
-  seller        String?       @db.VarChar(255)
-  shippingCents Int?          @default(0)
-  Card          Card          @relation(fields: [cardId], references: [id], onDelete: Cascade)
-  Opportunity   Opportunity[]
-  Signal        Signal[]
-
-  @@unique([source, sourceId])
-  @@index([cardId])
-  @@index([priceCents])
-  @@index([seenAt])
   @@index([source, isActive])
 }
 
@@ -198,11 +446,10 @@ model Opportunity {
   rationale           String            @default("")
   status              OpportunityStatus @default(PENDING)
   createdAt           DateTime          @default(now())
-  updatedAt           DateTime
+  updatedAt           DateTime          @updatedAt
   isValidated         Boolean           @default(false)
   validationErrors    String[]          @default([])
   Card                Card              @relation(fields: [cardId], references: [id], onDelete: Cascade)
-  MarketListing       MarketListing     @relation(fields: [listingId], references: [id], onDelete: Cascade)
 
   @@unique([cardId, listingId, createdAt])
   @@index([cardId, createdAt])
@@ -235,7 +482,7 @@ model PortfolioCollection {
   slug                 String                 @unique @db.VarChar(100)
   description          String?
   createdAt            DateTime               @default(now())
-  updatedAt            DateTime
+  updatedAt            DateTime               @updatedAt
   UnifiedPortfolioItem UnifiedPortfolioItem[]
 
   @@index([slug])
@@ -252,18 +499,16 @@ model PostQueue {
 }
 
 model Signal {
-  id            String        @id
-  cardId        String
-  listingId     String
-  edgeBp        Int
-  confidence    Float
-  thesis        String
-  createdAt     DateTime      @default(now())
-  isValidated   Boolean       @default(false)
-  status        String        @default("ACTIVE") @db.VarChar(20)
-  updatedAt     DateTime
-  Card          Card          @relation(fields: [cardId], references: [id], onDelete: Cascade)
-  MarketListing MarketListing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  id          String   @id
+  cardId      String
+  edgeBp      Int
+  confidence  Float
+  thesis      String
+  createdAt   DateTime @default(now())
+  isValidated Boolean  @default(false)
+  status      String   @default("ACTIVE") @db.VarChar(20)
+  updatedAt   DateTime @updatedAt
+  Card        Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
 
   @@index([cardId])
   @@index([confidence])
@@ -271,77 +516,13 @@ model Signal {
   @@index([status])
 }
 
-model UnifiedArbitrageOpportunity {
-  id                    String               @id
-  listingId             String               @db.VarChar(191)
-  source                MarketSource
-  expectedResaleCents   Int
-  expectedFeesCents     Int
-  expectedShippingCents Int
-  netProfitCents        Int
-  marginPct             Float
-  liquidity             LiquidityLevel
-  velocity              Float
-  demand                DemandTrend
-  volatility            Float
-  confidence            Float
-  risk                  RiskLevel
-  collectionTags        String[]             @default([])
-  createdAt             DateTime             @default(now())
-  updatedAt             DateTime
-  UnifiedMarketListing  UnifiedMarketListing @relation(fields: [listingId], references: [id], onDelete: Cascade)
-
-  @@index([createdAt])
-  @@index([liquidity])
-  @@index([listingId])
-  @@index([marginPct, confidence])
-  @@index([netProfitCents])
-  @@index([risk])
-}
-
-model UnifiedMarketListing {
-  id                          String                        @id @db.VarChar(191)
-  source                      MarketSource
-  sourceId                    String                        @db.VarChar(100)
-  title                       String                        @db.VarChar(500)
-  rawTitle                    String                        @db.VarChar(500)
-  cardName                    String?                       @db.VarChar(255)
-  setName                     String?                       @db.VarChar(255)
-  cardNumber                  String?                       @db.VarChar(10)
-  variant                     String?                       @db.VarChar(100)
-  gradeCompany                GradeCompany?
-  grade                       Float?
-  condition                   String?                       @db.VarChar(50)
-  priceCents                  Int
-  currency                    String                        @default("USD") @db.VarChar(3)
-  shippingCents               Int?                          @default(0)
-  location                    String?                       @db.VarChar(255)
-  listedAt                    DateTime?
-  url                         String?                       @db.VarChar(500)
-  dataQuality                 Float?                        @default(0.0)
-  createdAt                   DateTime                      @default(now())
-  updatedAt                   DateTime
-  UnifiedArbitrageOpportunity UnifiedArbitrageOpportunity[]
-  UnifiedPortfolioItem        UnifiedPortfolioItem[]
-
-  @@unique([source, sourceId])
-  @@index([cardName])
-  @@index([createdAt])
-  @@index([dataQuality])
-  @@index([gradeCompany, grade])
-  @@index([priceCents])
-  @@index([setName, cardNumber])
-  @@index([source])
-}
-
 model UnifiedPortfolioItem {
-  id                   String               @id
-  collectionId         String
-  listingId            String               @db.VarChar(191)
-  addedAt              DateTime             @default(now())
-  tags                 String[]             @default([])
-  PortfolioCollection  PortfolioCollection  @relation(fields: [collectionId], references: [id], onDelete: Cascade)
-  UnifiedMarketListing UnifiedMarketListing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  id                  String              @id
+  collectionId        String
+  listingId           String              @db.VarChar(191)
+  addedAt             DateTime            @default(now())
+  tags                String[]            @default([])
+  PortfolioCollection PortfolioCollection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
 
   @@unique([collectionId, listingId])
   @@index([addedAt])
@@ -372,22 +553,17 @@ model WatchlistItem {
 
   @@unique([cardId, userId])
   @@index([userId])
+  @@index([userId, createdAt(sort: Desc)], map: "idx_watchlist_user_recent")
 }
+
+// ============================================================================
+// ENUMS
+// ============================================================================
 
 enum DemandTrend {
   RISING
   STABLE
   FALLING
-}
-
-enum GradeCompany {
-  RAW
-  PSA
-  BGS
-  CGC
-  SGC
-  ACE
-  OTHER
 }
 
 enum LiquidityLevel {
@@ -397,8 +573,6 @@ enum LiquidityLevel {
 }
 
 enum MarketSource {
-  JUSTTCG
-  TCGPLAYER_ACTIVE
   EBAY
   TCGPLAYER
   FANATICS
@@ -407,6 +581,11 @@ enum MarketSource {
   CSV
   PHYGITALS
   COURTYARD
+  JUSTTCG
+  OPENSEA
+  MAGICEDEN
+  POKEPRICE_TRACKER
+  POKEMON_TCG_API
 }
 
 enum OpportunityStatus {

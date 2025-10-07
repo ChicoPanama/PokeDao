@@ -58,3 +58,8 @@ temp-*
 # Archive (local only)
 archive/
 research-backup*/
+
+# Large data harvest files (>50MB)
+data/collector-crypt/*.json
+data/courtyard/*.json
+data/phygitals/*.json
