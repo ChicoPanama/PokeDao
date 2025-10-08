@@ -60,7 +60,7 @@ async function testImageGeneration() {
     console.log('-'.repeat(80));
     console.log(`Searching for: ${mockAnalysis.card.name} - ${mockAnalysis.card.setName}`);
 
-    const cardImage = await fetchCardImage(mockAnalysis.card.name, mockAnalysis.card.setName);
+    let cardImage = await fetchCardImage(mockAnalysis.card.name, mockAnalysis.card.setName);
 
     if (!cardImage) {
       console.error('❌ Failed to fetch card image');
@@ -73,12 +73,15 @@ async function testImageGeneration() {
       console.log('Trying with a different card...');
 
       // Try Pikachu as fallback
-      const fallbackImage = await fetchCardImage('Pikachu', 'Base Set');
-      if (!fallbackImage) {
+      cardImage = await fetchCardImage('Pikachu', 'Base Set');
+      if (!cardImage) {
         console.error('❌ Fallback also failed. Skipping image tests.');
         process.exit(1);
       }
       console.log('✅ Fetched fallback card image (Pikachu - Base Set)');
+      // Update mock analysis to match fallback
+      mockAnalysis.card.name = 'Pikachu';
+      mockAnalysis.card.setName = 'Base Set';
     } else {
       console.log(`✅ Fetched card image (${(cardImage.length / 1024).toFixed(2)} KB)`);
     }
@@ -88,7 +91,7 @@ async function testImageGeneration() {
     console.log('Step 2: Create price overlay');
     console.log('-'.repeat(80));
 
-    const imageWithOverlay = await createCardOverlay(cardImage!, mockAnalysis);
+    const imageWithOverlay = await createCardOverlay(cardImage, mockAnalysis);
     console.log(`✅ Created overlay (${(imageWithOverlay.length / 1024).toFixed(2)} KB)`);
     console.log('');
 
