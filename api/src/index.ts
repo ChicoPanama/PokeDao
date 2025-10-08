@@ -1,6 +1,6 @@
 import loadAndValidateEnv from './lib/validate-env.js';
-// Load env (non-fatal). We default PORT/REDIS_URL later if missing.
-loadAndValidateEnv([]);
+// Validate required environment variables on startup
+loadAndValidateEnv(['DATABASE_URL', 'DEEPSEEK_API_KEY']);
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import helmet from "@fastify/helmet";

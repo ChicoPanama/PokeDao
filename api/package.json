@@ -30,10 +30,11 @@
   },
   "devDependencies": {
     "@types/node": "^20.19.13",
+    "@vitest/ui": "^3.2.4",
     "pino-pretty": "^13.1.1",
     "prisma": "^6.15.0",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
-    "vitest": "^0.34.6"
+    "vitest": "^3.2.4"
   }
 }
