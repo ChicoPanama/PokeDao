@@ -157,8 +157,10 @@ PokeDAO is a **TypeScript monorepo** with clean separation of concerns:
 |--------|-------|----------|
 | **Total Cards** | 98,759+ | 9 marketplaces |
 | **With Pricing** | 67,207+ | 68% coverage |
-| **eBay Listings** | 22,376 | 100% pricing |
-| **JustTCG Listings** | 2,428+ | 100% pricing |
+| **Active Listings** | 3,602+ | Latest market pricing |
+| **eBay Listings** | 1,603 | OAuth Browse API |
+| **JustTCG Listings** | 1,999 | 100% pricing |
+| **Unique Cards** | 1,833 | With comprehensive pricing |
 | **Courtyard NFTs** | 33,266 | Blockchain-verified |
 | **Collector Crypt** | 17,763 | 100% pricing |
 | **Phygitals NFTs** | 20,487 | Tokenized assets |
@@ -217,6 +219,11 @@ PokeDAO is a **TypeScript monorepo** with clean separation of concerns:
 | `pnpm data:build:gold` | Compute TFV, liquidity, variant aggregations |
 | `pnpm data:sync:db` | Sync Silver layer to Postgres with indexes |
 | `pnpm data:pipeline` | **Run full Bronze → Silver → Gold → DB pipeline** |
+| `scripts/harvest-justtcg-top-cards.ts` | Collect top 3,000 individual cards from JustTCG |
+| `scripts/harvest-ebay-browse-oauth.ts` | Collect active eBay listings via Browse API |
+| `scripts/harvest-top-sold-cards-with-trends.ts` | Collect sold cards with price trends (1/6/12 month) |
+| `scripts/generate-top-cards-report.ts` | Generate comprehensive pricing reports (JSON + CSV) |
+| `scripts/schedule-sold-data-collection.sh` | Automated scheduler for daily sold data collection |
 
 ---
 
@@ -623,7 +630,10 @@ cd ../.. && pnpm install
 - Reddit sentiment analysis (r/PokeInvesting + r/PokemonTCG) ✅
 - Image generation (card overlays + price charts) ✅
 - Database integration (9,826 sale records loaded) ✅
-- Automated daily data collection 🔜
+- Automated sold data collection with price trends ✅
+- Comprehensive pricing reports (JSON + CSV) ✅
+- Top 1,833 cards with market pricing ✅
+- eBay Browse API integration (OAuth) ✅
 - End-to-end signal pipeline 🔜
 - X/Twitter posting integration 🔜
 
@@ -657,6 +667,9 @@ cd ../.. && pnpm install
 | **Project Mew-1A** | ✅ Production | Deployed to Modal Labs serverless GPU, 3-7s inference |
 | **Reddit Integration** | ✅ Production | Sentiment analysis from r/PokeInvesting + r/PokemonTCG |
 | **Image Generation** | ✅ Production | SVG-based card overlays + price charts for Twitter |
+| **Data Collection** | ✅ Production | Automated harvesters for JustTCG + eBay Browse API |
+| **Pricing Reports** | ✅ Production | Top 1,833 cards with comprehensive market data (JSON + CSV) |
+| **Sold Data Pipeline** | ✅ Ready | Scheduled collection with 1/6/12-month price trends |
 | **TCGdex Enrichment** | 🚧 Ready | Script created to apply Layer 0 metadata validation |
 | **Signal Pipeline** | 🚧 In Progress | Scoring works, X posting in development |
 | **Vault Execution** | 🔜 Planned | Smart contracts + API integrations pending |
@@ -677,4 +690,4 @@ Proprietary. All rights reserved.
 
 **Built with ❤️ by collectors, for collectors.**
 
-*Last Updated: 2025-10-06*
+*Last Updated: 2025-10-11*

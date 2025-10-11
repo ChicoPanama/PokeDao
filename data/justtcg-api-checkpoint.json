@@ -1,0 +1,28 @@
+{
+  "processedSets": [
+    "base-set-pokemon",
+    "base-set-shadowless-pokemon",
+    "base-set-2-pokemon",
+    "jungle-pokemon",
+    "fossil-pokemon",
+    "team-rocket-pokemon",
+    "gym-heroes-pokemon",
+    "gym-challenge-pokemon",
+    "neo-genesis-pokemon",
+    "neo-discovery-pokemon",
+    "neo-revelation-pokemon",
+    "neo-destiny-pokemon",
+    "legendary-collection-pokemon",
+    "expedition-pokemon",
+    "aquapolis-pokemon",
+    "skyridge-pokemon",
+    "crown-zenith-pokemon",
+    "swsh12-silver-tempest-pokemon",
+    "swsh09-brilliant-stars-pokemon",
+    "swsh07-evolving-skies-pokemon",
+    "swsh08-fusion-strike-pokemon",
+    "celebrations-pokemon"
+  ],
+  "totalCards": 440,
+  "apiCalls": 22
+}
