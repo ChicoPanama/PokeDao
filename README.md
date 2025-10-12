@@ -32,14 +32,17 @@ A systematic research platform that continuously:
 
 #### 2. **Project Mew-1A** — TCG Pricing AI Model ✅
 The world's first AI model specifically trained on Pokemon TCG market data:
-- **Training Data:** 10,000 curated examples from 400k+ real listings
+- **Training Data v1:** 10,000 curated examples from 400k+ real listings
+- **Training Data v2:** **40,328 examples** from 239k+ consolidated multi-source data (4x expansion)
 - **Architecture:** Fine-tuned Llama-3.2-3B with LoRA adapters (48.7MB)
 - **Training Results:** 0.170 final loss, 3 epochs, 1h 16m on RTX 4090
+- **Training Categories:** Arbitrage Detection, Liquidity Analysis, Price Trends, Multi-Source Consensus, Condition/Grade Adjustments
 - **Capabilities:** Instant pricing analysis, arbitrage detection, liquidity scoring, market sentiment
 - **Integration:** Powers AI ensemble analysis (Mew-1A + Ollama + DeepSeek R1) as Layer 1 TCG specialist
 - **Deployment:** Production on [Modal Labs serverless GPU](https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run)
 - **Model Repository:** [HuggingFace Hub](https://huggingface.co/ChicoPanama/mew1a-llama-3.2-3b-tcg-pricing)
 - **Performance:** 3-7s inference, pay-per-use pricing ($0.00015/sec GPU time)
+- **v2 Status:** 40,328 training examples ready for retraining (targeting <0.150 final loss)
 
 **Value:** Domain-specific AI that understands TCG market dynamics better than general LLMs. Provides instant, specialized analysis for every card in the database. Deployed to serverless GPU for production-grade inference.
 
@@ -155,14 +158,17 @@ PokeDAO is a **TypeScript monorepo** with clean separation of concerns:
 
 | Metric | Count | Coverage |
 |--------|-------|----------|
+| **Total Records** | **239,785** | **Consolidated PostgreSQL** |
 | **Total Cards** | 98,759+ | 9 marketplaces |
-| **With Pricing** | 67,207+ | 68% coverage |
-| **Active Listings** | 3,602+ | Latest market pricing |
-| **eBay Listings** | 1,603 | OAuth Browse API |
-| **JustTCG Listings** | 1,999 | 100% pricing |
-| **Unique Cards** | 1,833 | With comprehensive pricing |
+| **With Pricing** | 216,848 | 90.4% coverage |
+| **Unique Card Names** | **5,559** | Comprehensive coverage |
+| **Unique Sets** | **176** | Complete set representation |
+| **Active Listings** | 239,785 | Real-time market data |
+| **eBay Listings** | 199,648 | Browse API + Historical |
+| **JustTCG Listings** | 1,999 | Top expensive cards |
+| **TCGPlayer Listings** | 15,201 | Direct pricing API |
+| **Collector Crypt** | 22,937 | 100% pricing |
 | **Courtyard NFTs** | 33,266 | Blockchain-verified |
-| **Collector Crypt** | 17,763 | 100% pricing |
 | **Phygitals NFTs** | 20,487 | Tokenized assets |
 | **TCGdex Official** | 21,627 | Complete Pokemon TCG metadata |
 
@@ -224,6 +230,9 @@ PokeDAO is a **TypeScript monorepo** with clean separation of concerns:
 | `scripts/harvest-top-sold-cards-with-trends.ts` | Collect sold cards with price trends (1/6/12 month) |
 | `scripts/generate-top-cards-report.ts` | Generate comprehensive pricing reports (JSON + CSV) |
 | `scripts/schedule-sold-data-collection.sh` | Automated scheduler for daily sold data collection |
+| **`scripts/consolidate-all-data-to-postgres.ts`** | **Migrate 239k+ records from SQLite to PostgreSQL** |
+| **`scripts/audit-mew1a-training-data.ts`** | **Comprehensive data quality audit for AI training** |
+| **`scripts/mew1a-extract-training-data.ts`** | **Extract 40k+ training examples for Mew-1A v2** |
 
 ---
 
@@ -657,18 +666,20 @@ cd ../.. && pnpm install
 
 | System | Status | Notes |
 |--------|--------|-------|
-| **Data Collection** | ✅ Production | 9 marketplaces, 98,759+ cards (68% pricing coverage) |
+| **Data Consolidation** | ✅ Complete | **239,785 records** consolidated from SQLite to PostgreSQL |
+| **Data Collection** | ✅ Production | 9 marketplaces, 98,759+ cards (**90.4% pricing coverage**) |
 | **Multi-Layer Pricing** | ✅ Production | TCGdex Layer 0 (21,627 official cards) + 4-layer consensus |
 | **Lakehouse** | ✅ Production | Bronze/Silver/Gold with zero data loss |
 | **Analysis Models** | ✅ Production | Weighted consensus TFV, Liquidity, Risk, Opportunity |
-| **Database** | ✅ Production | Prisma schema, 98,759 cards + 9,826 sales across 9 sources |
+| **Database** | ✅ Production | **239,785 unified records**, 5,559 unique cards, 176 sets |
 | **API** | ✅ Production | REST endpoints for signals, cards, analytics, AI analysis |
 | **AI Ensemble** | ✅ Production | Quad-layer analysis (Mew-1A + Ollama + DeepSeek + Reddit) live |
-| **Project Mew-1A** | ✅ Production | Deployed to Modal Labs serverless GPU, 3-7s inference |
+| **Project Mew-1A v1** | ✅ Production | Deployed to Modal Labs serverless GPU, 3-7s inference |
+| **Mew-1A Training v2** | ✅ Ready | **40,328 training examples** extracted (4x v1 dataset) |
 | **Reddit Integration** | ✅ Production | Sentiment analysis from r/PokeInvesting + r/PokemonTCG |
 | **Image Generation** | ✅ Production | SVG-based card overlays + price charts for Twitter |
-| **Data Collection** | ✅ Production | Automated harvesters for JustTCG + eBay Browse API |
-| **Pricing Reports** | ✅ Production | Top 1,833 cards with comprehensive market data (JSON + CSV) |
+| **Data Harvesters** | ✅ Production | Automated JustTCG + eBay Browse API + TCGPlayer collectors |
+| **Pricing Reports** | ✅ Production | 5,559 unique cards with comprehensive market data (JSON + CSV) |
 | **Sold Data Pipeline** | ✅ Ready | Scheduled collection with 1/6/12-month price trends |
 | **TCGdex Enrichment** | 🚧 Ready | Script created to apply Layer 0 metadata validation |
 | **Signal Pipeline** | 🚧 In Progress | Scoring works, X posting in development |
@@ -690,4 +701,4 @@ Proprietary. All rights reserved.
 
 **Built with ❤️ by collectors, for collectors.**
 
-*Last Updated: 2025-10-11*
+*Last Updated: 2025-10-12* 🚀 **Major Update:** 239k+ records consolidated, 40k+ Mew-1A v2 training examples ready
