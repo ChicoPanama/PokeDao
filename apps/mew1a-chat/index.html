@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mew-1A Chat - Pokemon TCG AI Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+
+        .model-selector {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .model-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .model-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .model-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: white;
+            font-weight: bold;
+        }
+
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            flex-direction: row-reverse;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            flex-shrink: 0;
+        }
+
+        .message.user .avatar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .message.assistant .avatar {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .message-content {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 18px;
+            max-width: 70%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message.user .message-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .message-meta {
+            font-size: 0.75em;
+            opacity: 0.6;
+            margin-top: 8px;
+        }
+
+        .recommendation {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .recommendation.BUY {
+            background: #10b981;
+            color: white;
+        }
+
+        .recommendation.PASS {
+            background: #ef4444;
+            color: white;
+        }
+
+        .recommendation.HOLD {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .input-container {
+            padding: 20px 30px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .input-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        #messageInput {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 25px;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        #messageInput:focus {
+            border-color: #667eea;
+        }
+
+        #sendButton {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+        }
+
+        #sendButton:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        #sendButton:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .examples {
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .example-btn {
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            padding: 8px 15px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .example-btn:hover {
+            background: #e5e7eb;
+            border-color: #667eea;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: currentColor;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ef4444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Mew-1A Chat</h1>
+            <p>Your Pokemon TCG Investment AI Assistant</p>
+            <div class="model-selector">
+                <button class="model-btn active" data-model="local" data-endpoint="http://localhost:11434/api/generate">
+                    Local (Ollama)
+                </button>
+                <button class="model-btn" data-model="v1" data-endpoint="https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run">
+                    v1 Cloud (Modal)
+                </button>
+                <button class="model-btn" data-model="v4.2" data-endpoint="https://chicopanama--mew1a-vllm-v4-2-fastapi-app.modal.run/analyze">
+                    v4.2 Cloud (vLLM)
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="message assistant">
+                <div class="avatar">🤖</div>
+                <div class="message-content">
+                    <div>Hi! I'm Mew-1A, your Pokemon TCG investment advisor. I can help you analyze cards, identify arbitrage opportunities, and provide BUY/PASS recommendations based on market data and Reddit sentiment.</div>
+                    <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                        Try asking me about specific cards or pricing scenarios!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="examples">
+            <button class="example-btn" onclick="sendExample('Analyze: Charizard ex from Obsidian Flames listed at $45, fair value $52')">
+                Charizard ex analysis
+            </button>
+            <button class="example-btn" onclick="sendExample('Should I buy Pikachu VMAX at $120 when fair value is $95?')">
+                Pikachu VMAX pricing
+            </button>
+            <button class="example-btn" onclick="sendExample('What are the best investment opportunities in Paldea Evolved?')">
+                Set investment tips
+            </button>
+        </div>
+
+        <div class="input-container">
+            <div class="input-wrapper">
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Ask about card prices, market trends, or investment advice..."
+                    autocomplete="off"
+                >
+                <button id="sendButton" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentModel = 'local';
+        let currentEndpoint = 'http://localhost:11434/api/generate';
+        let isProcessing = false;
+
+        // Model selector
+        document.querySelectorAll('.model-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.model-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentModel = this.dataset.model;
+                currentEndpoint = this.dataset.endpoint;
+                addMessage('assistant', `Switched to ${this.textContent.trim()} model`);
+            });
+        });
+
+        // Send message on Enter key
+        document.getElementById('messageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !isProcessing) {
+                sendMessage();
+            }
+        });
+
+        function addMessage(role, content, meta = {}) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${role}`;
+
+            const avatar = document.createElement('div');
+            avatar.className = 'avatar';
+            avatar.textContent = role === 'user' ? '👤' : '🤖';
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+
+            let html = `<div>${content}</div>`;
+
+            if (meta.recommendation) {
+                html += `<span class="recommendation ${meta.recommendation}">${meta.recommendation}</span>`;
+            }
+
+            if (meta.time || meta.model) {
+                let metaText = [];
+                if (meta.model) metaText.push(meta.model);
+                if (meta.time) metaText.push(`${meta.time}s`);
+                html += `<div class="message-meta">${metaText.join(' • ')}</div>`;
+            }
+
+            contentDiv.innerHTML = html;
+
+            messageDiv.appendChild(avatar);
+            messageDiv.appendChild(contentDiv);
+            chatContainer.appendChild(messageDiv);
+
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function addError(message) {
+            const chatContainer = document.getElementById('chatContainer');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error';
+            errorDiv.textContent = message;
+            chatContainer.appendChild(errorDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+
+            if (!message || isProcessing) return;
+
+            // Add user message
+            addMessage('user', message);
+            input.value = '';
+            isProcessing = true;
+
+            const sendButton = document.getElementById('sendButton');
+            sendButton.disabled = true;
+            sendButton.innerHTML = '<span class="loading"></span> Processing...';
+
+            try {
+                const startTime = Date.now();
+                let response;
+
+                if (currentModel === 'local') {
+                    // Ollama local inference
+                    response = await fetch(currentEndpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            model: 'mew1a:v42-q4_k_m',
+                            prompt: message,
+                            stream: false
+                        })
+                    });
+
+                    const data = await response.json();
+                    const inferenceTime = ((Date.now() - startTime) / 1000).toFixed(2);
+
+                    addMessage('assistant', data.response, {
+                        model: 'Local (Ollama)',
+                        time: inferenceTime
+                    });
+
+                } else {
+                    // Modal cloud inference
+                    // Parse card details if present
+                    const cardMatch = message.match(/(?:Analyze:|about)\s+(.+?)(?:\s+from\s+(.+?))?(?:\s+listed\s+at\s+\$?([\d.]+))?(?:fair value\s+\$?([\d.]+))?/i);
+
+                    let requestBody;
+                    if (cardMatch) {
+                        requestBody = {
+                            card_name: cardMatch[1].trim(),
+                            set_name: cardMatch[2] || '',
+                            listed_price: parseFloat(cardMatch[3]) || 0,
+                            fair_value: parseFloat(cardMatch[4]) || 0,
+                            max_tokens: 200
+                        };
+                    } else {
+                        requestBody = {
+                            prompt: message,
+                            max_tokens: 200
+                        };
+                    }
+
+                    response = await fetch(currentEndpoint, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(requestBody)
+                    });
+
+                    const data = await response.json();
+                    const inferenceTime = data.inference_time?.toFixed(2) || ((Date.now() - startTime) / 1000).toFixed(2);
+
+                    addMessage('assistant', data.analysis || data.response, {
+                        recommendation: data.recommendation,
+                        model: currentModel === 'v1' ? 'v1 Cloud' : 'v4.2 Cloud (vLLM)',
+                        time: inferenceTime
+                    });
+                }
+
+            } catch (error) {
+                console.error('Error:', error);
+                addError(`Error: ${error.message}. Make sure the ${currentModel === 'local' ? 'Ollama server is running' : 'Modal endpoint is accessible'}.`);
+            } finally {
+                isProcessing = false;
+                sendButton.disabled = false;
+                sendButton.textContent = 'Send';
+            }
+        }
+
+        function sendExample(text) {
+            document.getElementById('messageInput').value = text;
+            sendMessage();
+        }
+    </script>
+</body>
+</html>

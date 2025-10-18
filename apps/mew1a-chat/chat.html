@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mew-1A v4.2 - Pokemon TCG Price Analyzer</title>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --bg-tertiary: #3d3d3d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent: #4a9eff;
+            --accent-hover: #6bb0ff;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --error: #f44336;
+            --border: #404040;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .status-bar {
+            display: flex;
+            gap: 20px;
+            padding: 12px 16px;
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--text-secondary);
+        }
+
+        .status-dot.connected {
+            background-color: var(--success);
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        .status-dot.error {
+            background-color: var(--error);
+            box-shadow: 0 0 8px var(--error);
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .messages::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .messages::-webkit-scrollbar-track {
+            background: var(--bg-tertiary);
+        }
+
+        .messages::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        .messages::-webkit-scrollbar-thumb:hover {
+            background: #505050;
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-header {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .message-content {
+            padding: 16px;
+            border-radius: 8px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .message.user .message-header {
+            color: var(--accent);
+        }
+
+        .message.user .message-content {
+            background-color: var(--bg-tertiary);
+            border-left: 3px solid var(--accent);
+        }
+
+        .message.assistant .message-header {
+            color: var(--success);
+        }
+
+        .message.assistant .message-content {
+            background-color: var(--bg-primary);
+            border-left: 3px solid var(--success);
+        }
+
+        .message.error .message-content {
+            background-color: rgba(244, 67, 54, 0.1);
+            border-left: 3px solid var(--error);
+            color: var(--error);
+        }
+
+        .streaming-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--success);
+            border-radius: 50%;
+            animation: pulse 1.5s ease-in-out infinite;
+            margin-left: 8px;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .input-container {
+            padding: 20px;
+            border-top: 1px solid var(--border);
+            background-color: var(--bg-tertiary);
+        }
+
+        .input-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        textarea {
+            flex: 1;
+            padding: 12px 16px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            resize: none;
+            min-height: 60px;
+            max-height: 200px;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea::placeholder {
+            color: var(--text-secondary);
+        }
+
+        button {
+            padding: 12px 24px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+            white-space: nowrap;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        button:disabled {
+            background-color: var(--bg-tertiary);
+            color: var(--text-secondary);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .examples {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .example-btn {
+            padding: 8px 12px;
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .example-btn:hover {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border-color: var(--accent);
+        }
+
+        .metrics {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .metric {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .welcome-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .welcome-screen h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .welcome-screen p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 24px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 24px;
+        }
+
+        .feature {
+            padding: 16px;
+            background-color: var(--bg-tertiary);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .feature h3 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+
+        .feature p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mew-1A v4.2 TCG Price Analyzer</h1>
+            <p class="subtitle">Real-time Pokemon TCG pricing analysis powered by fine-tuned Llama 3.2 3B</p>
+        </header>
+
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-dot" id="statusDot"></div>
+                <span id="statusText">Connecting...</span>
+            </div>
+            <div class="status-item metrics" id="metricsDisplay" style="display: none;">
+                <div class="metric">
+                    <span>Model:</span>
+                    <strong id="modelName">-</strong>
+                </div>
+                <div class="metric">
+                    <span>Uptime:</span>
+                    <strong id="uptime">-</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <div class="messages" id="messages">
+                <div class="welcome-screen">
+                    <h2>Welcome to Mew-1A v4.2</h2>
+                    <p>
+                        This model was trained on 500K+ Pokemon TCG pricing examples to provide
+                        expert-level market analysis. Ask about card prices, market trends, or
+                        get buying recommendations.
+                    </p>
+                    <div class="features">
+                        <div class="feature">
+                            <h3>Price Analysis</h3>
+                            <p>Get instant fair value estimates for any Pokemon card</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Market Trends</h3>
+                            <p>Understand if cards are trending up or down</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Buy/Pass Recommendations</h3>
+                            <p>Get expert advice on whether to purchase specific listings</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Real-time Streaming</h3>
+                            <p>See responses generate in real-time with SSE streaming</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <div class="input-row">
+                    <textarea
+                        id="promptInput"
+                        placeholder="e.g., Analyze: Charizard ex - Obsidian Flames. Listed $45, fair value $52, discount 13%"
+                        rows="2"
+                    ></textarea>
+                    <button id="sendBtn">Send</button>
+                </div>
+                <div class="examples">
+                    <button class="example-btn" data-prompt="Analyze: Charizard ex - Obsidian Flames. Listed $45, fair value $52, discount 13%">
+                        Charizard Analysis
+                    </button>
+                    <button class="example-btn" data-prompt="BUY or PASS? Pikachu VMAX - Listed $120, Fair Value $95, trending down 12%">
+                        Buy/Pass Decision
+                    </button>
+                    <button class="example-btn" data-prompt="What's the market trend for Umbreon VMAX cards?">
+                        Market Trends
+                    </button>
+                    <button class="example-btn" data-prompt="Compare: Mewtwo V-UNION vs Lugia VSTAR - which is a better investment?">
+                        Investment Comparison
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            API_URL: 'https://chicopanama--mew1a-v42-streaming-model-stream.modal.run',
+            HEALTH_URL: 'https://chicopanama--mew1a-v42-streaming-model-health.modal.run',
+            HEALTH_CHECK_INTERVAL: 30000, // 30 seconds
+        };
+
+        // State
+        let isConnected = false;
+        let isStreaming = false;
+        let currentStreamingMessage = null;
+
+        // DOM elements
+        const statusDot = document.getElementById('statusDot');
+        const statusText = document.getElementById('statusText');
+        const metricsDisplay = document.getElementById('metricsDisplay');
+        const modelName = document.getElementById('modelName');
+        const uptime = document.getElementById('uptime');
+        const messages = document.getElementById('messages');
+        const promptInput = document.getElementById('promptInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const exampleBtns = document.querySelectorAll('.example-btn');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            checkHealth();
+            setInterval(checkHealth, CONFIG.HEALTH_CHECK_INTERVAL);
+
+            sendBtn.addEventListener('click', sendMessage);
+            promptInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+
+            exampleBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    promptInput.value = btn.dataset.prompt;
+                    promptInput.focus();
+                });
+            });
+        });
+
+        // Health check
+        async function checkHealth() {
+            try {
+                const response = await fetch(CONFIG.HEALTH_URL);
+                const data = await response.json();
+
+                if (data.status === 'healthy' && data.model_loaded) {
+                    updateStatus(true, 'Connected');
+                    modelName.textContent = data.model_name.split('/').pop();
+                    uptime.textContent = formatTime(data.uptime);
+                    metricsDisplay.style.display = 'flex';
+                } else {
+                    updateStatus(false, 'Model loading...');
+                }
+            } catch (error) {
+                updateStatus(false, 'Disconnected');
+                console.error('Health check failed:', error);
+            }
+        }
+
+        // Update connection status
+        function updateStatus(connected, text) {
+            isConnected = connected;
+            statusDot.className = connected ? 'status-dot connected' : 'status-dot error';
+            statusText.textContent = text;
+            sendBtn.disabled = !connected || isStreaming;
+        }
+
+        // Send message
+        async function sendMessage() {
+            const prompt = promptInput.value.trim();
+            if (!prompt || !isConnected || isStreaming) return;
+
+            // Clear welcome screen on first message
+            const welcomeScreen = messages.querySelector('.welcome-screen');
+            if (welcomeScreen) {
+                welcomeScreen.remove();
+            }
+
+            // Add user message
+            addMessage('user', prompt);
+            promptInput.value = '';
+
+            // Start streaming
+            isStreaming = true;
+            sendBtn.disabled = true;
+            sendBtn.textContent = 'Streaming...';
+
+            try {
+                await streamResponse(prompt);
+            } catch (error) {
+                addMessage('error', `Error: ${error.message}`);
+            } finally {
+                isStreaming = false;
+                sendBtn.disabled = false;
+                sendBtn.textContent = 'Send';
+                currentStreamingMessage = null;
+            }
+        }
+
+        // Stream response using SSE
+        async function streamResponse(prompt) {
+            return new Promise((resolve, reject) => {
+                const url = new URL(CONFIG.API_URL);
+                url.searchParams.append('prompt', prompt);
+                url.searchParams.append('max_tokens', '200');
+                url.searchParams.append('temperature', '0.3');
+                url.searchParams.append('top_p', '0.9');
+
+                const eventSource = new EventSource(url.toString());
+                const startTime = Date.now();
+                let tokenCount = 0;
+                let fullText = '';
+
+                eventSource.onopen = () => {
+                    // Create initial empty assistant message
+                    currentStreamingMessage = addMessage('assistant', '', true);
+                };
+
+                eventSource.onmessage = (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+
+                        if (data.done) {
+                            // Streaming complete
+                            const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
+                            const tokensPerSec = (tokenCount / parseFloat(elapsed)).toFixed(1);
+
+                            // Update message with final text and metrics
+                            updateStreamingMessage(
+                                fullText,
+                                false,
+                                `${elapsed}s • ${tokenCount} tokens • ${tokensPerSec} tok/s`
+                            );
+
+                            eventSource.close();
+                            resolve();
+                        } else if (data.token) {
+                            // Append new token
+                            fullText += data.token;
+                            tokenCount++;
+                            updateStreamingMessage(fullText, true);
+                        }
+                    } catch (error) {
+                        console.error('Error parsing SSE data:', error);
+                    }
+                };
+
+                eventSource.onerror = (error) => {
+                    console.error('SSE error:', error);
+                    eventSource.close();
+
+                    if (fullText.length === 0) {
+                        // No data received, show error
+                        if (currentStreamingMessage) {
+                            currentStreamingMessage.remove();
+                        }
+                        reject(new Error('Failed to connect to streaming endpoint'));
+                    } else {
+                        // Partial data received, mark as incomplete
+                        updateStreamingMessage(
+                            fullText + '\n\n[Stream interrupted]',
+                            false,
+                            'Incomplete'
+                        );
+                        resolve();
+                    }
+                };
+
+                // Timeout after 60 seconds
+                setTimeout(() => {
+                    if (eventSource.readyState !== EventSource.CLOSED) {
+                        eventSource.close();
+                        updateStreamingMessage(
+                            fullText + '\n\n[Timeout]',
+                            false,
+                            'Timeout'
+                        );
+                        resolve();
+                    }
+                }, 60000);
+            });
+        }
+
+        // Add message to chat
+        function addMessage(role, content, streaming = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${role}`;
+
+            const header = document.createElement('div');
+            header.className = 'message-header';
+            header.innerHTML = role === 'user' ? 'You' :
+                              role === 'assistant' ? 'Mew-1A' :
+                              'Error';
+
+            if (streaming) {
+                header.innerHTML += '<span class="streaming-indicator"></span>';
+            }
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.textContent = content;
+
+            messageDiv.appendChild(header);
+            messageDiv.appendChild(contentDiv);
+            messages.appendChild(messageDiv);
+
+            // Scroll to bottom
+            messages.scrollTop = messages.scrollHeight;
+
+            return messageDiv;
+        }
+
+        // Update streaming message
+        function updateStreamingMessage(text, streaming, metrics = null) {
+            if (!currentStreamingMessage) return;
+
+            const header = currentStreamingMessage.querySelector('.message-header');
+            const content = currentStreamingMessage.querySelector('.message-content');
+
+            // Update header
+            if (streaming) {
+                header.innerHTML = 'Mew-1A<span class="streaming-indicator"></span>';
+            } else {
+                header.innerHTML = 'Mew-1A';
+                if (metrics) {
+                    header.innerHTML += ` <span style="color: var(--text-secondary); font-weight: normal;">${metrics}</span>`;
+                }
+            }
+
+            // Update content
+            content.textContent = text;
+
+            // Scroll to bottom
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        // Format time
+        function formatTime(seconds) {
+            if (seconds < 60) return `${seconds.toFixed(0)}s`;
+            if (seconds < 3600) return `${(seconds / 60).toFixed(1)}m`;
+            return `${(seconds / 3600).toFixed(1)}h`;
+        }
+    </script>
+</body>
+</html>

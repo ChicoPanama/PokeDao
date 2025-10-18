@@ -32,17 +32,19 @@ A systematic research platform that continuously:
 
 #### 2. **Project Mew-1A** — TCG Pricing AI Model ✅
 The world's first AI model specifically trained on Pokemon TCG market data:
-- **Training Data v1:** 10,000 curated examples from 400k+ real listings
-- **Training Data v2:** **40,328 examples** from 239k+ consolidated multi-source data (4x expansion)
+- **Training Data v4.2:** **509,746 examples** from comprehensive multi-source consolidation (50x v1 dataset)
+  - 84.8% temporal data (432,107 price records with timestamps)
+  - Multi-source: eBay, TCGPlayer, Reddit, PostgreSQL research data
 - **Architecture:** Fine-tuned Llama-3.2-3B with LoRA adapters (48.7MB)
-- **Training Results:** 0.170 final loss, 3 epochs, 1h 16m on RTX 4090
-- **Training Categories:** Arbitrage Detection, Liquidity Analysis, Price Trends, Multi-Source Consensus, Condition/Grade Adjustments
+- **Training Results v1:** 0.170 final loss, 3 epochs, 1h 16m on RTX 4090
+- **Training v4.2:** In progress on RunPod (targeting <0.100 final loss with 50x more data)
 - **Capabilities:** Instant pricing analysis, arbitrage detection, liquidity scoring, market sentiment
 - **Integration:** Powers AI ensemble analysis (Mew-1A + Ollama + DeepSeek R1) as Layer 1 TCG specialist
-- **Deployment:** Production on [Modal Labs serverless GPU](https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run)
+- **Deployment v1:** Production on [Modal Labs serverless GPU](https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run)
 - **Model Repository:** [HuggingFace Hub](https://huggingface.co/ChicoPanama/mew1a-llama-3.2-3b-tcg-pricing)
-- **Performance:** 3-7s inference, pay-per-use pricing ($0.00015/sec GPU time)
-- **v2 Status:** 40,328 training examples ready for retraining (targeting <0.150 final loss)
+- **Performance:** 3-7s inference, 15-25 tok/s streaming, pay-per-use pricing ($0.00015/sec GPU time)
+- **🚀 NEW - Streaming UI:** ChatGPT-style real-time streaming interface with SSE (Server-Sent Events)
+- **🚀 NEW - Production Infrastructure:** FastAPI + vLLM + TypeScript client following [NanoChat](https://github.com/karpathy/nanochat) patterns
 
 **Value:** Domain-specific AI that understands TCG market dynamics better than general LLMs. Provides instant, specialized analysis for every card in the database. Deployed to serverless GPU for production-grade inference.
 
@@ -196,6 +198,7 @@ PokeDAO is a **TypeScript monorepo** with clean separation of concerns:
 |-----|---------|--------|
 | **`/pokedex`** | Signal generation & X posting engine | 🚧 In progress |
 | **`/mew1a`** | Custom TCG pricing AI model (fine-tuned LLM) | ✅ Deployed to Modal Labs |
+| **`/mew1a-chat`** | Streaming chat UI for Mew-1A (vanilla JS, SSE) | ✅ Production-ready |
 | **`/strategy`** | On-chain vault execution | 🔜 Planned |
 
 ### 🗄️ Data Lakehouse
@@ -388,6 +391,93 @@ Where:
 | **API Client** | JustTCG API | Primary TCG data source |
 | **ML/AI** | Ollama (Qwen 2.5 7B), DeepSeek API | Thesis generation, audit |
 | **CI/CD** | GitHub Actions | Validation, smoke tests |
+
+---
+
+## 📚 Documentation
+
+Comprehensive documentation is available in the [`/docs`](docs/) folder:
+
+- **[Quick Start Guide](docs/guides/)** - Get up and running fast
+- **[Training Documentation](docs/training/)** - Mew-1A model training guides
+- **[Deployment Guides](docs/deployment/)** - v4.2 deployment runbooks
+- **[Architecture Docs](docs/architecture/)** - System design and NanoChat upgrade plan
+- **[Troubleshooting](docs/troubleshooting/)** - Common issues and solutions
+
+---
+
+## 🚀 NEW: ChatGPT-Style Streaming UI
+
+**Phase 1 of the NanoChat Upgrade is 90% Complete!**
+
+Following [Andrej Karpathy's NanoChat](https://github.com/karpathy/nanochat) architecture patterns, we've built production-grade streaming infrastructure for Mew-1A:
+
+### What's New
+
+**1. Server-Sent Events (SSE) Streaming**
+- Real-time token-by-token generation (ChatGPT-style UX)
+- FastAPI server with vLLM for 2-3x faster inference
+- Health monitoring endpoint with uptime tracking
+- Both streaming and non-streaming modes
+
+**2. Vanilla JavaScript UI**
+- Zero dependencies, zero build step
+- Pure vanilla JS following NanoChat philosophy
+- Dark mode optimized, < 500 lines total
+- Performance metrics (tokens/sec, latency)
+- [Try it now](apps/mew1a-chat/) - Just open `chat.html` in browser
+
+**3. TypeScript Client Library**
+- Type-safe SSE client wrapper
+- Simple API: `streamMew1A()`, `generateMew1A()`
+- Automatic error handling and reconnection
+- Comprehensive test suite
+
+### Quick Start
+
+```bash
+# Try the streaming UI locally
+cd apps/mew1a-chat
+python3 -m http.server 8001
+open http://localhost:8001/chat.html
+```
+
+### TypeScript Usage
+
+```typescript
+import { streamMew1A } from '@/ml/clients/mew1a-streaming';
+
+// Stream response token-by-token
+await streamMew1A(
+  'Analyze: Charizard ex - Listed $45, Fair Value $52',
+  (token, done, metrics) => {
+    if (done) {
+      console.log(`Complete! ${metrics.totalTokens} tokens in ${metrics.elapsedTime}s`);
+    } else {
+      process.stdout.write(token);
+    }
+  }
+);
+```
+
+### Architecture
+
+```
+Browser (Vanilla JS) ──SSE──▶ FastAPI (Modal) ──▶ vLLM GPU ──▶ Mew-1A v4.2
+   ↓ EventSource              ↓ Lifespan Mgmt      ↓ Streaming   ↓ 3B params
+   Token-by-token              Model cached         15-25 tok/s   LoRA adapters
+```
+
+### Files Created (~1,800 lines total)
+
+| File | Purpose |
+|------|---------|
+| [`apps/mew1a/vllm_deploy_v4.2_streaming.py`](apps/mew1a/vllm_deploy_v4.2_streaming.py) | SSE streaming server |
+| [`apps/mew1a-chat/chat.html`](apps/mew1a-chat/chat.html) | Vanilla JS UI |
+| [`ml/src/clients/mew1a-streaming.ts`](ml/src/clients/mew1a-streaming.ts) | TypeScript client |
+| [`scripts/test-streaming-client.ts`](scripts/test-streaming-client.ts) | Test suite |
+
+**Read more:** [Phase 1 Streaming Complete](docs/architecture/PHASE-1-STREAMING-COMPLETE.md) | [NanoChat Upgrade Roadmap](docs/architecture/NANOCHAT-UPGRADE-ROADMAP.md)
 
 ---
 
@@ -701,4 +791,4 @@ Proprietary. All rights reserved.
 
 **Built with ❤️ by collectors, for collectors.**
 
-*Last Updated: 2025-10-12* 🚀 **Major Update:** 239k+ records consolidated, 40k+ Mew-1A v2 training examples ready
+*Last Updated: 2025-10-18* 🚀 **Major Update:** ChatGPT-style streaming UI complete! Phase 1 of NanoChat upgrade (90% done) - SSE streaming server + vanilla JS UI + TypeScript client. Mew-1A v4.2 training in progress with 509k examples.
