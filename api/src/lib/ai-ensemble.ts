@@ -124,20 +124,58 @@ export interface AIAnalysisResult {
 }
 
 // ============================================================================
-// MEW-1A CLIENT (Modal Labs)
+// MEW-1A CLIENT (vLLM + Modal Labs fallback)
 // ============================================================================
 
 class Mew1AClient {
-  private endpoint: string;
+  private vllmEndpoint: string;
+  private modalEndpoint: string;
+  private useVLLM: boolean;
 
-  constructor(endpoint = 'https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run') {
-    this.endpoint = endpoint;
+  constructor(
+    vllmEndpoint = process.env.VLLM_ENDPOINT || 'https://chicopanama--mew1a-vllm-analyze.modal.run',
+    modalEndpoint = 'https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run',
+    useVLLM = process.env.USE_VLLM !== 'false' // Default to vLLM unless explicitly disabled
+  ) {
+    this.vllmEndpoint = vllmEndpoint;
+    this.modalEndpoint = modalEndpoint;
+    this.useVLLM = useVLLM;
   }
 
-  async analyze(prompt: string, maxTokens = 150): Promise<{ response: string; time: number }> {
+  async analyze(prompt: string, maxTokens = 150): Promise<{ response: string; time: number; backend: 'vllm' | 'modal' }> {
     const start = Date.now();
 
-    const response = await fetch(this.endpoint, {
+    // Try vLLM first (2-3x faster)
+    if (this.useVLLM) {
+      try {
+        const response = await fetch(this.vllmEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            prompt,
+            max_tokens: maxTokens,
+          }),
+          signal: AbortSignal.timeout(30000), // 30s timeout
+        });
+
+        if (response.ok) {
+          const data: any = await response.json();
+          return {
+            response: data.response,
+            time: Date.now() - start,
+            backend: 'vllm',
+          };
+        }
+
+        // vLLM failed, fall back to Modal
+        console.warn('vLLM endpoint returned error, falling back to Modal:', response.status);
+      } catch (error) {
+        console.warn('vLLM inference failed, falling back to Modal:', error instanceof Error ? error.message : 'Unknown error');
+      }
+    }
+
+    // Fallback to Modal (original transformers-based endpoint)
+    const response = await fetch(this.modalEndpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -150,6 +188,67 @@ class Mew1AClient {
     return {
       response: data.response,
       time: Date.now() - start,
+      backend: 'modal',
+    };
+  }
+
+  async analyzeCard(
+    cardName: string,
+    setName: string,
+    listedPrice: number,
+    fairValue: number,
+    maxTokens = 150
+  ): Promise<{ response: string; recommendation: string; time: number; backend: 'vllm' | 'modal' }> {
+    const start = Date.now();
+
+    // Try vLLM structured endpoint (optimized for card analysis)
+    if (this.useVLLM) {
+      try {
+        const response = await fetch(this.vllmEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            card_name: cardName,
+            set_name: setName,
+            listed_price: listedPrice,
+            fair_value: fairValue,
+            max_tokens: maxTokens,
+          }),
+          signal: AbortSignal.timeout(30000),
+        });
+
+        if (response.ok) {
+          const data: any = await response.json();
+          return {
+            response: data.analysis,
+            recommendation: data.recommendation,
+            time: data.inference_time * 1000, // Convert to ms
+            backend: 'vllm',
+          };
+        }
+      } catch (error) {
+        console.warn('vLLM card analysis failed, using prompt-based fallback');
+      }
+    }
+
+    // Fallback: Build prompt manually and use standard analyze
+    const discount = ((fairValue - listedPrice) / fairValue) * 100;
+    const prompt = `Analyze: ${cardName}${setName ? ` - ${setName}` : ''}. Listed at $${listedPrice.toFixed(2)}, fair value $${fairValue.toFixed(2)} (${discount.toFixed(1)}% ${discount > 0 ? 'discount' : 'premium'})`;
+
+    const result = await this.analyze(prompt, maxTokens);
+
+    // Parse recommendation from response
+    const recommendation = result.response.toUpperCase().includes('BUY') && !result.response.toUpperCase().includes('PASS')
+      ? 'BUY'
+      : result.response.toUpperCase().includes('PASS')
+      ? 'PASS'
+      : 'NEUTRAL';
+
+    return {
+      response: result.response,
+      recommendation,
+      time: result.time,
+      backend: result.backend,
     };
   }
 }

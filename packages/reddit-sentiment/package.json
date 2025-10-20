@@ -1,0 +1,29 @@
+{
+  "name": "@pokedao/reddit-sentiment",
+  "version": "1.0.0",
+  "description": "Reddit sentiment extraction for Pokemon TCG community data",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "sentiment": "^5.0.2",
+    "snoowrap": "^1.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.14",
+    "typescript": "^5.9.2",
+    "vitest": "^0.34.6"
+  },
+  "keywords": [
+    "reddit",
+    "sentiment",
+    "pokemon",
+    "tcg",
+    "analysis"
+  ]
+}

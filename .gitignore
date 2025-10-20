@@ -13,6 +13,15 @@ dist/
 .env.*.local
 !.env.example
 
+# Test coverage
+coverage/
+.coverage
+htmlcov/
+
+# Development databases
+*.db
+!schema.db
+
 # OS files
 .DS_Store
 Thumbs.db
@@ -28,8 +37,6 @@ venv/
 .venv/
 .venv*/
 .pytest_cache/
-.coverage
-htmlcov/
 
 # Logs
 logs/
@@ -38,7 +45,6 @@ npm-debug.log*
 pnpm-debug.log*
 
 # Large database files (>50MB)
-*.db
 research/**/*.db
 research/**/collector_crypt_*.db
 research/**/pokemon_*.db
@@ -64,3 +70,13 @@ research-backup*/
 data/collector-crypt/*.json
 data/courtyard/*.json
 data/phygitals/*.json
+
+# Training data files (generated artifacts)
+data/training/*.jsonl
+data/training/.reddit-checkpoint.json
+
+# Generated reports and analysis
+reports/*.json
+*-audit-report.json
+database-analysis-*.json
+card-parsing-enhancement-*.json

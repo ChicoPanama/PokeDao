@@ -433,8 +433,8 @@
     <script>
         // Configuration
         const CONFIG = {
-            API_URL: 'https://chicopanama--mew1a-v42-streaming-model-stream.modal.run',
-            HEALTH_URL: 'https://chicopanama--mew1a-v42-streaming-model-health.modal.run',
+            API_URL: 'https://chicopanama--mew1a-vllm-v4-2-streaming-fastapi-app.modal.run/stream',
+            HEALTH_URL: 'https://chicopanama--mew1a-vllm-v4-2-streaming-fastapi-app.modal.run/health',
             HEALTH_CHECK_INTERVAL: 30000, // 30 seconds
         };
 
@@ -481,10 +481,10 @@
                 const response = await fetch(CONFIG.HEALTH_URL);
                 const data = await response.json();
 
-                if (data.status === 'healthy' && data.model_loaded) {
+                if (data.status === 'healthy') {
                     updateStatus(true, 'Connected');
-                    modelName.textContent = data.model_name.split('/').pop();
-                    uptime.textContent = formatTime(data.uptime);
+                    modelName.textContent = data.model ? data.model.split('/').pop() : 'v4.2';
+                    uptime.textContent = formatTime(data.uptime || 0);
                     metricsDisplay.style.display = 'flex';
                 } else {
                     updateStatus(false, 'Model loading...');
@@ -535,88 +535,103 @@
             }
         }
 
-        // Stream response using SSE
+        // Stream response using fetch + ReadableStream (more reliable than EventSource)
         async function streamResponse(prompt) {
-            return new Promise((resolve, reject) => {
-                const url = new URL(CONFIG.API_URL);
-                url.searchParams.append('prompt', prompt);
-                url.searchParams.append('max_tokens', '200');
-                url.searchParams.append('temperature', '0.3');
-                url.searchParams.append('top_p', '0.9');
+            const startTime = Date.now();
+            let tokenCount = 0;
+            let fullText = '';
 
-                const eventSource = new EventSource(url.toString());
-                const startTime = Date.now();
-                let tokenCount = 0;
-                let fullText = '';
+            try {
+                // Create initial empty assistant message
+                currentStreamingMessage = addMessage('assistant', '', true);
 
-                eventSource.onopen = () => {
-                    // Create initial empty assistant message
-                    currentStreamingMessage = addMessage('assistant', '', true);
-                };
+                // Use POST with JSON body for better compatibility
+                const response = await fetch(CONFIG.API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'text/event-stream',
+                    },
+                    body: JSON.stringify({
+                        prompt: prompt,
+                        max_tokens: 250,
+                        temperature: 0.6,
+                        top_p: 0.9
+                    })
+                });
 
-                eventSource.onmessage = (event) => {
-                    try {
-                        const data = JSON.parse(event.data);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
 
-                        if (data.done) {
-                            // Streaming complete
-                            const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
-                            const tokensPerSec = (tokenCount / parseFloat(elapsed)).toFixed(1);
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = '';
 
-                            // Update message with final text and metrics
-                            updateStreamingMessage(
-                                fullText,
-                                false,
-                                `${elapsed}s • ${tokenCount} tokens • ${tokensPerSec} tok/s`
-                            );
+                while (true) {
+                    const { done, value } = await reader.read();
 
-                            eventSource.close();
-                            resolve();
-                        } else if (data.token) {
-                            // Append new token
-                            fullText += data.token;
-                            tokenCount++;
-                            updateStreamingMessage(fullText, true);
+                    if (done) break;
+
+                    // Decode the chunk and add to buffer
+                    buffer += decoder.decode(value, { stream: true });
+
+                    // Process complete SSE messages
+                    const lines = buffer.split('\n');
+                    buffer = lines.pop() || ''; // Keep incomplete line in buffer
+
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            try {
+                                const data = JSON.parse(line.slice(6));
+
+                                if (data.done) {
+                                    // Streaming complete
+                                    const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
+                                    const tokensPerSec = (tokenCount / parseFloat(elapsed)).toFixed(1);
+
+                                    updateStreamingMessage(
+                                        fullText,
+                                        false,
+                                        `${elapsed}s • ${tokenCount} tokens • ${tokensPerSec} tok/s`
+                                    );
+                                    return;
+                                } else if (data.token) {
+                                    // Append new token
+                                    fullText += data.token;
+                                    tokenCount++;
+                                    updateStreamingMessage(fullText, true);
+                                }
+                            } catch (error) {
+                                console.error('Error parsing SSE data:', error, line);
+                            }
                         }
-                    } catch (error) {
-                        console.error('Error parsing SSE data:', error);
                     }
-                };
+                }
 
-                eventSource.onerror = (error) => {
-                    console.error('SSE error:', error);
-                    eventSource.close();
+                // Stream ended without "done" message
+                if (fullText.length > 0) {
+                    const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
+                    updateStreamingMessage(fullText, false, `${elapsed}s • ${tokenCount} tokens`);
+                }
 
-                    if (fullText.length === 0) {
-                        // No data received, show error
-                        if (currentStreamingMessage) {
-                            currentStreamingMessage.remove();
-                        }
-                        reject(new Error('Failed to connect to streaming endpoint'));
-                    } else {
-                        // Partial data received, mark as incomplete
-                        updateStreamingMessage(
-                            fullText + '\n\n[Stream interrupted]',
-                            false,
-                            'Incomplete'
-                        );
-                        resolve();
+            } catch (error) {
+                console.error('Streaming error:', error);
+                if (fullText.length === 0) {
+                    // No data received, show error
+                    if (currentStreamingMessage) {
+                        currentStreamingMessage.remove();
                     }
-                };
-
-                // Timeout after 60 seconds
-                setTimeout(() => {
-                    if (eventSource.readyState !== EventSource.CLOSED) {
-                        eventSource.close();
-                        updateStreamingMessage(
-                            fullText + '\n\n[Timeout]',
-                            false,
-                            'Timeout'
-                        );
-                        resolve();
-                    }
-                }, 60000);
-            });
+                    throw new Error(`Failed to stream: ${error.message}`);
+                } else {
+                    // Partial data received, mark as incomplete
+                    updateStreamingMessage(
+                        fullText + '\n\n[Stream interrupted]',
+                        false,
+                        'Incomplete'
+                    );
+                }
+            }
         }
 
         // Add message to chat

@@ -262,8 +262,8 @@ export function createMew1AClient(
   customConfig?: Partial<StreamingConfig>
 ): Mew1AStreamingClient {
   const defaultConfig: StreamingConfig = {
-    streamUrl: 'https://chicopanama--mew1a-v42-streaming-model-stream.modal.run',
-    healthUrl: 'https://chicopanama--mew1a-v42-streaming-model-health.modal.run',
+    streamUrl: 'https://chicopanama--mew1a-vllm-v4-2-streaming-fastapi-app.modal.run/stream',
+    healthUrl: 'https://chicopanama--mew1a-vllm-v4-2-streaming-fastapi-app.modal.run/health',
     maxTokens: 200,
     temperature: 0.3,
     topP: 0.9,
