@@ -1,0 +1,4502 @@
+[
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 38.86,
+    "fair_value": 54.775496235896654,
+    "discount_pct": 29.05,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 29.0% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 47.83,
+    "fair_value": 55.99,
+    "discount_pct": 14.58,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 148.03,
+    "fair_value": 137.21716292974887,
+    "discount_pct": -7.88,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 40.56,
+    "fair_value": 50.98,
+    "discount_pct": 20.44,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 20.4% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 43.65,
+    "fair_value": 44.06533348357308,
+    "discount_pct": 0.93,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 1623.52,
+    "fair_value": 1420.17,
+    "discount_pct": -14.32,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.3% premium"
+  },
+  {
+    "card_name": "Gengar",
+    "listed_price": 1665.13,
+    "fair_value": 2237.73,
+    "discount_pct": 25.59,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Machamp",
+    "listed_price": 241.25,
+    "fair_value": 201.97,
+    "discount_pct": -19.45,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 19.4% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 148.04,
+    "fair_value": 203.96,
+    "discount_pct": 27.42,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 27.4% discount with upward trend"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 69.66,
+    "fair_value": 71.88208276170143,
+    "discount_pct": 3.09,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 67.56,
+    "fair_value": 56.32780820495436,
+    "discount_pct": -19.94,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 19.9% premium"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 4029.18,
+    "fair_value": 3977.6309346136877,
+    "discount_pct": -1.3,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 62.85,
+    "fair_value": 84.30219872476465,
+    "discount_pct": 25.45,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 25.4% discount with upward trend"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 246.75,
+    "fair_value": 289.24,
+    "discount_pct": 14.69,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.7% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 77.99,
+    "fair_value": 94.52,
+    "discount_pct": 17.48,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 17.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 47.55,
+    "fair_value": 59.18,
+    "discount_pct": 19.65,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 395.53,
+    "fair_value": 337.76,
+    "discount_pct": -17.1,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 17.1% premium"
+  },
+  {
+    "card_name": "Gengar",
+    "listed_price": 225.74,
+    "fair_value": 210.92,
+    "discount_pct": -7.03,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 834.59,
+    "fair_value": 808.33,
+    "discount_pct": -3.25,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 57.23,
+    "fair_value": 51.31,
+    "discount_pct": -11.54,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 11.5% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 976.44,
+    "fair_value": 943.65,
+    "discount_pct": -3.47,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 11581.11,
+    "fair_value": 9512.14,
+    "discount_pct": -21.75,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.8% premium"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 36.19,
+    "fair_value": 43.76531371141006,
+    "discount_pct": 17.31,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 104.1,
+    "fair_value": 137.81,
+    "discount_pct": 24.46,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 24.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 31.47,
+    "fair_value": 32.42876422803895,
+    "discount_pct": 2.94,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 150.6,
+    "fair_value": 189.7793056941945,
+    "discount_pct": 20.65,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 20.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 51.64,
+    "fair_value": 68.62,
+    "discount_pct": 24.75,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 24.8% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 62.23,
+    "fair_value": 55.231364190056844,
+    "discount_pct": -12.68,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 12.7% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 79.45,
+    "fair_value": 77.00321160706717,
+    "discount_pct": -3.17,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 29.15,
+    "fair_value": 37.980282597569705,
+    "discount_pct": 23.25,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 23.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 93.62,
+    "fair_value": 113.18,
+    "discount_pct": 17.28,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 17.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 69.27,
+    "fair_value": 60.5,
+    "discount_pct": -14.5,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.5% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 80.31,
+    "fair_value": 100.16,
+    "discount_pct": 19.82,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 1495.29,
+    "fair_value": 1154.4848120658914,
+    "discount_pct": -29.52,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 29.5% premium"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 64.01,
+    "fair_value": 86.75290407018565,
+    "discount_pct": 26.21,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 26.2% discount with upward trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 142.2,
+    "fair_value": 151.57066087136874,
+    "discount_pct": 6.18,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 6.2% discount with upward momentum"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 564.16,
+    "fair_value": 450.00362550924496,
+    "discount_pct": -25.37,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 25.4% premium"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 61.44,
+    "fair_value": 66.2973516240268,
+    "discount_pct": 7.33,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dragonite",
+    "listed_price": 159.58,
+    "fair_value": 170.82,
+    "discount_pct": 6.58,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 1058.36,
+    "fair_value": 1028,
+    "discount_pct": -2.95,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 35.72,
+    "fair_value": 33.48441881950895,
+    "discount_pct": -6.69,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 222.68,
+    "fair_value": 183.92107854585748,
+    "discount_pct": -21.07,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.1% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 316.9,
+    "fair_value": 346.8430025618512,
+    "discount_pct": 8.63,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 61.9,
+    "fair_value": 64.98722726203644,
+    "discount_pct": 4.74,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 56.32,
+    "fair_value": 55.411269790344825,
+    "discount_pct": -1.63,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 737.04,
+    "fair_value": 676.35,
+    "discount_pct": -8.97,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Alakazam",
+    "listed_price": 440.7,
+    "fair_value": 560.03,
+    "discount_pct": 21.31,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 21.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 241.84,
+    "fair_value": 202.15581083868236,
+    "discount_pct": -19.63,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 19.6% premium"
+  },
+  {
+    "card_name": "Gengar",
+    "listed_price": 41.88,
+    "fair_value": 47.51,
+    "discount_pct": 11.84,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 11.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 41.9,
+    "fair_value": 41.68,
+    "discount_pct": -0.52,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 249.91,
+    "fair_value": 231.37953050424008,
+    "discount_pct": -8.01,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Alakazam",
+    "listed_price": 60.83,
+    "fair_value": 79.5,
+    "discount_pct": 23.48,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 23.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 82.87,
+    "fair_value": 87.26375721418418,
+    "discount_pct": 5.04,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 5.0% discount with upward momentum"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 60.15,
+    "fair_value": 46.863810382988646,
+    "discount_pct": -28.34,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 28.3% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 48.19,
+    "fair_value": 43.52,
+    "discount_pct": -10.73,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 10.7% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 1126.75,
+    "fair_value": 1201.01,
+    "discount_pct": 6.18,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 46.96,
+    "fair_value": 48.57145162786715,
+    "discount_pct": 3.32,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 49.19,
+    "fair_value": 46.721775197102794,
+    "discount_pct": -5.29,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 87.74,
+    "fair_value": 121.66,
+    "discount_pct": 27.88,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 27.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 36.37,
+    "fair_value": 41.10087751681654,
+    "discount_pct": 11.51,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 11.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 42.25,
+    "fair_value": 49.74,
+    "discount_pct": 15.06,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 15.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 53.88,
+    "fair_value": 59.90664628337275,
+    "discount_pct": 10.05,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 237.19,
+    "fair_value": 323.0064274544601,
+    "discount_pct": 26.57,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 26.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 332.92,
+    "fair_value": 273.1070523907975,
+    "discount_pct": -21.9,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.9% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 57.13,
+    "fair_value": 46.26194520335397,
+    "discount_pct": -23.49,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 23.5% premium"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 62.89,
+    "fair_value": 80.13717552858772,
+    "discount_pct": 21.53,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 21.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 48.06,
+    "fair_value": 42.00255344743509,
+    "discount_pct": -14.41,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.4% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 68.57,
+    "fair_value": 69.61,
+    "discount_pct": 1.49,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 188.22,
+    "fair_value": 192.02206282559905,
+    "discount_pct": 1.98,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 116.13,
+    "fair_value": 101.66839585202142,
+    "discount_pct": -14.22,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.2% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 153.11,
+    "fair_value": 125.28849255335768,
+    "discount_pct": -22.21,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 22.2% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 40.76,
+    "fair_value": 47.8,
+    "discount_pct": 14.72,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.7% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 2382.75,
+    "fair_value": 2185.3143643613203,
+    "discount_pct": -9.03,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 58.16,
+    "fair_value": 80.58092751949029,
+    "discount_pct": 27.83,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 27.8% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 67.51,
+    "fair_value": 54.16,
+    "discount_pct": -24.65,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 24.6% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 77.42,
+    "fair_value": 69.58349943575037,
+    "discount_pct": -11.26,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 11.3% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 152.09,
+    "fair_value": 171.4429676091932,
+    "discount_pct": 11.29,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 60.26,
+    "fair_value": 61.95889091823006,
+    "discount_pct": 2.74,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 59.64,
+    "fair_value": 49.27,
+    "discount_pct": -21.04,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.0% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 66.73,
+    "fair_value": 61.28391272067284,
+    "discount_pct": -8.88,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 223.6,
+    "fair_value": 189.25,
+    "discount_pct": -18.15,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 18.2% premium"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 73.41,
+    "fair_value": 59.05890429821927,
+    "discount_pct": -24.29,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 24.3% premium"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 40.73,
+    "fair_value": 37.82095121422806,
+    "discount_pct": -7.7,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 96.95,
+    "fair_value": 78.14,
+    "discount_pct": -24.08,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 24.1% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 134.85,
+    "fair_value": 171.62006808197754,
+    "discount_pct": 21.43,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 21.4% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 79.48,
+    "fair_value": 86.64626594742948,
+    "discount_pct": 8.27,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 1365.51,
+    "fair_value": 1491.2,
+    "discount_pct": 8.43,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 93.05,
+    "fair_value": 124.15,
+    "discount_pct": 25.05,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 25.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 195.65,
+    "fair_value": 237.50434756495,
+    "discount_pct": 17.62,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 17.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 269.49,
+    "fair_value": 207.8182746693244,
+    "discount_pct": -29.67,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 29.7% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 435.15,
+    "fair_value": 360.13,
+    "discount_pct": -20.83,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.8% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 28.95,
+    "fair_value": 31.429637585720474,
+    "discount_pct": 7.9,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 35.94,
+    "fair_value": 33.97686430141036,
+    "discount_pct": -5.77,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 525,
+    "fair_value": 535.16,
+    "discount_pct": 1.9,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Gengar",
+    "listed_price": 59.74,
+    "fair_value": 47,
+    "discount_pct": -27.1,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 27.1% premium"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 44.88,
+    "fair_value": 64.05638028696661,
+    "discount_pct": 29.93,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 29.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Dragonite",
+    "listed_price": 96.38,
+    "fair_value": 89.02,
+    "discount_pct": -8.27,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Alakazam",
+    "listed_price": 41.41,
+    "fair_value": 46.81,
+    "discount_pct": 11.54,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 11.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 4868.59,
+    "fair_value": 4526.97,
+    "discount_pct": -7.55,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 56.92,
+    "fair_value": 44.48534901672687,
+    "discount_pct": -27.96,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 28.0% premium"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 50.35,
+    "fair_value": 61.38092265636113,
+    "discount_pct": 17.98,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 18.0% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 57.65,
+    "fair_value": 70.72671515708362,
+    "discount_pct": 18.49,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 95.33,
+    "fair_value": 79.36,
+    "discount_pct": -20.13,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.1% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 50.83,
+    "fair_value": 56.785431679985464,
+    "discount_pct": 10.48,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 173.08,
+    "fair_value": 164.9990429682256,
+    "discount_pct": -4.9,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 69.7,
+    "fair_value": 69.2,
+    "discount_pct": -0.73,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 46.96,
+    "fair_value": 43.22989267207591,
+    "discount_pct": -8.63,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 39.59,
+    "fair_value": 34.2863596666463,
+    "discount_pct": -15.46,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 15.5% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 135.89,
+    "fair_value": 163.84993259004378,
+    "discount_pct": 17.06,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 17.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 92.46,
+    "fair_value": 116.95,
+    "discount_pct": 20.94,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 20.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 83.95,
+    "fair_value": 88.61,
+    "discount_pct": 5.26,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 64.47,
+    "fair_value": 83.16480098359747,
+    "discount_pct": 22.48,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 22.5% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 46.39,
+    "fair_value": 53.565062549278025,
+    "discount_pct": 13.39,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.4% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 66.59,
+    "fair_value": 55.04150339823012,
+    "discount_pct": -20.98,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.0% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 39.14,
+    "fair_value": 34.857924640922256,
+    "discount_pct": -12.28,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 12.3% premium"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 154.31,
+    "fair_value": 129.96,
+    "discount_pct": -18.74,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 18.7% premium"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 32.99,
+    "fair_value": 35.76601773227181,
+    "discount_pct": 7.76,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dragonite",
+    "listed_price": 1130.33,
+    "fair_value": 1017.34,
+    "discount_pct": -11.11,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 11.1% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 86.08,
+    "fair_value": 105.07838771584817,
+    "discount_pct": 18.08,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 18.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 87.18,
+    "fair_value": 84.11841112760924,
+    "discount_pct": -3.64,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 198.23,
+    "fair_value": 236.76,
+    "discount_pct": 16.27,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 16.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 47.82,
+    "fair_value": 44.25,
+    "discount_pct": -8.07,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 59.02,
+    "fair_value": 58.99236991566579,
+    "discount_pct": -0.05,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 76.05,
+    "fair_value": 87.04,
+    "discount_pct": 12.62,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 12.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 378.5,
+    "fair_value": 470.1302646586482,
+    "discount_pct": 19.49,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 671.24,
+    "fair_value": 725.9271023243135,
+    "discount_pct": 7.53,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 7.5% discount with upward momentum"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 383.64,
+    "fair_value": 461.91,
+    "discount_pct": 16.94,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 27.81,
+    "fair_value": 27.7,
+    "discount_pct": -0.41,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 48.51,
+    "fair_value": 55.9266915032613,
+    "discount_pct": 13.25,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 185.97,
+    "fair_value": 161.30430055975427,
+    "discount_pct": -15.29,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 15.3% premium"
+  },
+  {
+    "card_name": "Alakazam",
+    "listed_price": 1467.89,
+    "fair_value": 1666.97,
+    "discount_pct": 11.94,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 11.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 67.97,
+    "fair_value": 54.92,
+    "discount_pct": -23.77,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 23.8% premium"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 140.05,
+    "fair_value": 131.57,
+    "discount_pct": -6.45,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 102.45,
+    "fair_value": 89.01009465021714,
+    "discount_pct": -15.1,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 15.1% premium"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 322.18,
+    "fair_value": 269.5,
+    "discount_pct": -19.55,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 19.5% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 885.81,
+    "fair_value": 784.7,
+    "discount_pct": -12.89,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 12.9% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 128.6,
+    "fair_value": 161.68,
+    "discount_pct": 20.46,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 20.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 45.39,
+    "fair_value": 46.427756852529974,
+    "discount_pct": 2.23,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 451.55,
+    "fair_value": 374.6935826065728,
+    "discount_pct": -20.51,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.5% premium"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 238.21,
+    "fair_value": 276.4,
+    "discount_pct": 13.82,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 41.01,
+    "fair_value": 33.75,
+    "discount_pct": -21.51,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.5% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 63.24,
+    "fair_value": 58.55471192327108,
+    "discount_pct": -8.01,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 594.93,
+    "fair_value": 737.79,
+    "discount_pct": 19.36,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.4% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 75.82,
+    "fair_value": 76.97474811888722,
+    "discount_pct": 1.5,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 522.5,
+    "fair_value": 495.37399987687127,
+    "discount_pct": -5.48,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 2774.7,
+    "fair_value": 3709.71,
+    "discount_pct": 25.2,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 25.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 46.07,
+    "fair_value": 48.51761269167752,
+    "discount_pct": 5.05,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 81.85,
+    "fair_value": 72.51962101505656,
+    "discount_pct": -12.86,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 12.9% premium"
+  },
+  {
+    "card_name": "Gengar",
+    "listed_price": 6165.07,
+    "fair_value": 6761.02,
+    "discount_pct": 8.81,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 2975.11,
+    "fair_value": 2370.71,
+    "discount_pct": -25.49,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 25.5% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 74.94,
+    "fair_value": 59.72,
+    "discount_pct": -25.49,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 25.5% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 915.08,
+    "fair_value": 1094.46,
+    "discount_pct": 16.39,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 45.67,
+    "fair_value": 46.99824305494846,
+    "discount_pct": 2.82,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 95.7,
+    "fair_value": 92.93561678558783,
+    "discount_pct": -2.98,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 47.1,
+    "fair_value": 39.663608657122026,
+    "discount_pct": -18.74,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 18.7% premium"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 62.7,
+    "fair_value": 79.41470109361244,
+    "discount_pct": 21.04,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 21.0% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 37.39,
+    "fair_value": 32.71,
+    "discount_pct": -14.3,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.3% premium"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 85.38,
+    "fair_value": 77.59975258407111,
+    "discount_pct": -10.02,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 10.0% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 117.99,
+    "fair_value": 106.33,
+    "discount_pct": -10.97,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 11.0% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 47.63,
+    "fair_value": 45.15,
+    "discount_pct": -5.5,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 43.34,
+    "fair_value": 60.32893945926392,
+    "discount_pct": 28.15,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 28.2% discount with upward trend"
+  },
+  {
+    "card_name": "Alakazam",
+    "listed_price": 66.14,
+    "fair_value": 62.05,
+    "discount_pct": -6.59,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 78.04,
+    "fair_value": 93.83174851045433,
+    "discount_pct": 16.83,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 16.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Gengar",
+    "listed_price": 87.38,
+    "fair_value": 80.23,
+    "discount_pct": -8.91,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 146.21,
+    "fair_value": 145.2125568284807,
+    "discount_pct": -0.68,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 2797.4,
+    "fair_value": 2687.46,
+    "discount_pct": -4.09,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 150.57,
+    "fair_value": 176.34,
+    "discount_pct": 14.61,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 285.7,
+    "fair_value": 402.54,
+    "discount_pct": 29.02,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 29.0% discount with upward trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 443.25,
+    "fair_value": 467.402253709552,
+    "discount_pct": 5.17,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 66.43,
+    "fair_value": 53.249737515785306,
+    "discount_pct": -24.75,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 24.8% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 39.33,
+    "fair_value": 42.99459602604908,
+    "discount_pct": 8.51,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 82.95,
+    "fair_value": 93.75463682075555,
+    "discount_pct": 11.52,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 11.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 39.99,
+    "fair_value": 35.52897276022679,
+    "discount_pct": -12.56,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 12.6% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 94.33,
+    "fair_value": 110.3441380541024,
+    "discount_pct": 14.52,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 42.39,
+    "fair_value": 49.72893701249812,
+    "discount_pct": 14.76,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 158.62,
+    "fair_value": 153.64,
+    "discount_pct": -3.24,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 34.71,
+    "fair_value": 43.587534664500524,
+    "discount_pct": 20.36,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 20.4% discount with upward trend"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 68.4,
+    "fair_value": 59.07579361681594,
+    "discount_pct": -15.78,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 15.8% premium"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 66.84,
+    "fair_value": 71.11300636404428,
+    "discount_pct": 6.01,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 149.43,
+    "fair_value": 125.75,
+    "discount_pct": -18.83,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 18.8% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 104.5,
+    "fair_value": 137.75,
+    "discount_pct": 24.14,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 24.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 115.37,
+    "fair_value": 122.41,
+    "discount_pct": 5.75,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 152.13,
+    "fair_value": 208.5023932574789,
+    "discount_pct": 27.04,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 27.0% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 783.82,
+    "fair_value": 876.95,
+    "discount_pct": 10.62,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 326.31,
+    "fair_value": 464.5656367828929,
+    "discount_pct": 29.76,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 29.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 32.12,
+    "fair_value": 43.74,
+    "discount_pct": 26.57,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 174.34,
+    "fair_value": 165.57,
+    "discount_pct": -5.3,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 4549.76,
+    "fair_value": 4857.647748350448,
+    "discount_pct": 6.34,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 270.32,
+    "fair_value": 316.83,
+    "discount_pct": 14.68,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.7% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 59.37,
+    "fair_value": 62.40214789873279,
+    "discount_pct": 4.85,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 110.74,
+    "fair_value": 145.52569258524443,
+    "discount_pct": 23.9,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 23.9% discount with upward trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 116.95,
+    "fair_value": 110.254771650719,
+    "discount_pct": -6.07,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 28.33,
+    "fair_value": 37.56556916499633,
+    "discount_pct": 24.58,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 39.55,
+    "fair_value": 41.5568426563601,
+    "discount_pct": 4.83,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 36.08,
+    "fair_value": 35.44,
+    "discount_pct": -1.79,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 43.28,
+    "fair_value": 53.08328833941499,
+    "discount_pct": 18.47,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 18.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 132.06,
+    "fair_value": 135.18,
+    "discount_pct": 2.31,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 91.98,
+    "fair_value": 120.97,
+    "discount_pct": 23.96,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 24.0% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 31.32,
+    "fair_value": 35.82998536924497,
+    "discount_pct": 12.6,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 12.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 395.9,
+    "fair_value": 309.74929939558933,
+    "discount_pct": -27.81,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 27.8% premium"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 48.61,
+    "fair_value": 60.26211325396222,
+    "discount_pct": 19.34,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 107.64,
+    "fair_value": 114.8,
+    "discount_pct": 6.23,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 339.96,
+    "fair_value": 283.81113992898713,
+    "discount_pct": -19.78,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 19.8% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 164.59,
+    "fair_value": 131.69487432007665,
+    "discount_pct": -24.98,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 25.0% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 85.11,
+    "fair_value": 82.8,
+    "discount_pct": -2.78,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 39.53,
+    "fair_value": 53.051562091186604,
+    "discount_pct": 25.48,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 25.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 102.22,
+    "fair_value": 114.2,
+    "discount_pct": 10.49,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 46.84,
+    "fair_value": 52.57557592138865,
+    "discount_pct": 10.91,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 3022.87,
+    "fair_value": 3057.21,
+    "discount_pct": 1.12,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 3262.46,
+    "fair_value": 3395.35,
+    "discount_pct": 3.91,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 238.93,
+    "fair_value": 228.11,
+    "discount_pct": -4.74,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 120.86,
+    "fair_value": 121.90659848147311,
+    "discount_pct": 0.86,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 32.17,
+    "fair_value": 43.38963882688562,
+    "discount_pct": 25.85,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 25.8% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 346.01,
+    "fair_value": 347.49,
+    "discount_pct": 0.43,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 59.88,
+    "fair_value": 79.2632827352519,
+    "discount_pct": 24.45,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 24.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 367.78,
+    "fair_value": 302.642536658977,
+    "discount_pct": -21.52,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.5% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 179.47,
+    "fair_value": 171.19,
+    "discount_pct": -4.84,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 34.76,
+    "fair_value": 45.84153107352682,
+    "discount_pct": 24.16,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 24.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 128.75,
+    "fair_value": 133.16976899983274,
+    "discount_pct": 3.32,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 53.01,
+    "fair_value": 59.357532039200656,
+    "discount_pct": 10.7,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.7% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 336.2,
+    "fair_value": 424.36072543825725,
+    "discount_pct": 20.77,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 20.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 121.73,
+    "fair_value": 149.65,
+    "discount_pct": 18.66,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 98.41,
+    "fair_value": 91.3184110833547,
+    "discount_pct": -7.76,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 80.78,
+    "fair_value": 69.56804251750576,
+    "discount_pct": -16.12,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 16.1% premium"
+  },
+  {
+    "card_name": "Machamp",
+    "listed_price": 123.5,
+    "fair_value": 110.47,
+    "discount_pct": -11.8,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 11.8% premium"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 91.86,
+    "fair_value": 89.5,
+    "discount_pct": -2.63,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 205.8,
+    "fair_value": 287.68,
+    "discount_pct": 28.46,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 199.76,
+    "fair_value": 172.64,
+    "discount_pct": -15.71,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 15.7% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 76.17,
+    "fair_value": 106.84228482529537,
+    "discount_pct": 28.7,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 28.7% discount with upward trend"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 130.58,
+    "fair_value": 117.0241933054397,
+    "discount_pct": -11.58,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 11.6% premium"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 180.82,
+    "fair_value": 237.3526984474791,
+    "discount_pct": 23.82,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 589.9,
+    "fair_value": 807.14,
+    "discount_pct": 26.92,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 312.19,
+    "fair_value": 396.2,
+    "discount_pct": 21.21,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 21.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 30.03,
+    "fair_value": 28.47,
+    "discount_pct": -5.49,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 188.15,
+    "fair_value": 157.62,
+    "discount_pct": -19.37,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 19.4% premium"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 88.13,
+    "fair_value": 84.6517206171199,
+    "discount_pct": -4.11,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 191.91,
+    "fair_value": 239.54,
+    "discount_pct": 19.88,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 90.52,
+    "fair_value": 123.10600617654619,
+    "discount_pct": 26.47,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 26.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 199.66,
+    "fair_value": 205.5,
+    "discount_pct": 2.84,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 74.86,
+    "fair_value": 61.55,
+    "discount_pct": -21.63,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.6% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 119.01,
+    "fair_value": 127.2056986672443,
+    "discount_pct": 6.45,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 39.89,
+    "fair_value": 52.81438021708942,
+    "discount_pct": 24.48,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 24.5% discount with upward trend"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 157.26,
+    "fair_value": 165.86,
+    "discount_pct": 5.19,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 2231.6,
+    "fair_value": 1878.2143807926218,
+    "discount_pct": -18.82,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 18.8% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 362.95,
+    "fair_value": 353.1677113303844,
+    "discount_pct": -2.77,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 41.33,
+    "fair_value": 52.11105908792169,
+    "discount_pct": 20.69,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 20.7% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 36.27,
+    "fair_value": 43.03877139938315,
+    "discount_pct": 15.74,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 15.7% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 302.66,
+    "fair_value": 258.96047755859905,
+    "discount_pct": -16.88,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 16.9% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 302.12,
+    "fair_value": 246.6,
+    "discount_pct": -22.52,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 22.5% premium"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 114.83,
+    "fair_value": 92.68,
+    "discount_pct": -23.9,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 23.9% premium"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 61.03,
+    "fair_value": 50.27081339079167,
+    "discount_pct": -21.41,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.4% premium"
+  },
+  {
+    "card_name": "Dragonite",
+    "listed_price": 47.65,
+    "fair_value": 48.94,
+    "discount_pct": 2.64,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 81.81,
+    "fair_value": 105.60398830746958,
+    "discount_pct": 22.53,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 22.5% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 62.19,
+    "fair_value": 78.05670948352021,
+    "discount_pct": 20.32,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 20.3% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 28.21,
+    "fair_value": 36.21207491737274,
+    "discount_pct": 22.11,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 172.57,
+    "fair_value": 213.83,
+    "discount_pct": 19.29,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 136.26,
+    "fair_value": 107.59,
+    "discount_pct": -26.64,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 26.6% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 40.29,
+    "fair_value": 44.59560357753666,
+    "discount_pct": 9.66,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 9.7% discount with upward momentum"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 35.05,
+    "fair_value": 39.56599087592151,
+    "discount_pct": 11.42,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 11.4% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 589.99,
+    "fair_value": 469.54,
+    "discount_pct": -25.65,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 25.7% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 87.57,
+    "fair_value": 103.94012213122008,
+    "discount_pct": 15.75,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 15.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 828.71,
+    "fair_value": 1078.26,
+    "discount_pct": 23.14,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 23.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 97.59,
+    "fair_value": 131.2020052706106,
+    "discount_pct": 25.62,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 141.07,
+    "fair_value": 114.27223427109696,
+    "discount_pct": -23.45,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 23.5% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 103.91,
+    "fair_value": 98.27,
+    "discount_pct": -5.74,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 107.38,
+    "fair_value": 87.30537176515955,
+    "discount_pct": -23,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 23.0% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 34.39,
+    "fair_value": 42.5,
+    "discount_pct": 19.09,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 193.5,
+    "fair_value": 209.74,
+    "discount_pct": 7.74,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 7.7% discount with upward momentum"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 261.74,
+    "fair_value": 202.40937754460174,
+    "discount_pct": -29.31,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 29.3% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 82.97,
+    "fair_value": 113.06395754064094,
+    "discount_pct": 26.62,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 26.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 47.92,
+    "fair_value": 67.73,
+    "discount_pct": 29.26,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 29.3% discount with upward trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 57.34,
+    "fair_value": 60.6125314463773,
+    "discount_pct": 5.4,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 151.76,
+    "fair_value": 176.148161486808,
+    "discount_pct": 13.84,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 133.18,
+    "fair_value": 174.4725259750113,
+    "discount_pct": 23.67,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 23.7% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 49.01,
+    "fair_value": 43.23,
+    "discount_pct": -13.37,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 13.4% premium"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 318.36,
+    "fair_value": 357.38222044802933,
+    "discount_pct": 10.92,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 88.48,
+    "fair_value": 117.71430892740429,
+    "discount_pct": 24.84,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 24.8% discount with upward trend"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 110.61,
+    "fair_value": 117.66073849446171,
+    "discount_pct": 5.99,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 6.0% discount with upward momentum"
+  },
+  {
+    "card_name": "Gengar",
+    "listed_price": 1188.18,
+    "fair_value": 1010.08,
+    "discount_pct": -17.63,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 17.6% premium"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 54.48,
+    "fair_value": 53.15,
+    "discount_pct": -2.51,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 51.64,
+    "fair_value": 39.89,
+    "discount_pct": -29.47,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 29.5% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 83.36,
+    "fair_value": 107.12,
+    "discount_pct": 22.18,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 22.2% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 25.74,
+    "fair_value": 35.6383708646259,
+    "discount_pct": 27.78,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 27.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 9141.14,
+    "fair_value": 9006.82,
+    "discount_pct": -1.49,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 75.43,
+    "fair_value": 58.527311766679865,
+    "discount_pct": -28.87,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 28.9% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 184.44,
+    "fair_value": 168.58,
+    "discount_pct": -9.41,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 41.13,
+    "fair_value": 42.85,
+    "discount_pct": 4,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 62.46,
+    "fair_value": 50.07198637101662,
+    "discount_pct": -24.75,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 24.7% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 60.85,
+    "fair_value": 64.93,
+    "discount_pct": 6.28,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 6.3% discount with upward momentum"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 4096.3,
+    "fair_value": 3813.47,
+    "discount_pct": -7.42,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 36.04,
+    "fair_value": 35.3,
+    "discount_pct": -2.1,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 92.21,
+    "fair_value": 87.84,
+    "discount_pct": -4.98,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 199.4,
+    "fair_value": 164.91371104422234,
+    "discount_pct": -20.91,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.9% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 122.79,
+    "fair_value": 106.70408847166838,
+    "discount_pct": -15.07,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 15.1% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 50.67,
+    "fair_value": 70.35248108440352,
+    "discount_pct": 27.98,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 28.0% discount with upward trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 32.01,
+    "fair_value": 27.47,
+    "discount_pct": -16.51,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 16.5% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 241.77,
+    "fair_value": 239.09,
+    "discount_pct": -1.12,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 197.42,
+    "fair_value": 262.08,
+    "discount_pct": 24.67,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 24.7% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 35.37,
+    "fair_value": 39.657258583412485,
+    "discount_pct": 10.81,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 4153.25,
+    "fair_value": 4859.041448936426,
+    "discount_pct": 14.53,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 55.55,
+    "fair_value": 54.82,
+    "discount_pct": -1.33,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 41.88,
+    "fair_value": 51.85325823073302,
+    "discount_pct": 19.23,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 55.99,
+    "fair_value": 77.81257138981795,
+    "discount_pct": 28.04,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 332.45,
+    "fair_value": 263.02,
+    "discount_pct": -26.4,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 26.4% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 533.05,
+    "fair_value": 613.64,
+    "discount_pct": 13.13,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 38.95,
+    "fair_value": 33.82300110267609,
+    "discount_pct": -15.17,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 15.2% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 387.93,
+    "fair_value": 320.48,
+    "discount_pct": -21.05,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.0% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 45.84,
+    "fair_value": 59.499464148866224,
+    "discount_pct": 22.95,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 22.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 189.4,
+    "fair_value": 166.5,
+    "discount_pct": -13.76,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 13.8% premium"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 36.79,
+    "fair_value": 42.55836150750942,
+    "discount_pct": 13.55,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 67.25,
+    "fair_value": 55.382292400499146,
+    "discount_pct": -21.42,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.4% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 132.09,
+    "fair_value": 151.12776888475335,
+    "discount_pct": 12.6,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 351.9,
+    "fair_value": 375.54,
+    "discount_pct": 6.3,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 607.95,
+    "fair_value": 701.2998422490799,
+    "discount_pct": 13.31,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 421.1,
+    "fair_value": 415.8201379932193,
+    "discount_pct": -1.27,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 159.06,
+    "fair_value": 196.55611522692965,
+    "discount_pct": 19.08,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 43.11,
+    "fair_value": 37.83461644959264,
+    "discount_pct": -13.95,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 13.9% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 43.1,
+    "fair_value": 59.57,
+    "discount_pct": 27.65,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 27.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 42.6,
+    "fair_value": 52.77,
+    "discount_pct": 19.27,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 1241.99,
+    "fair_value": 1085.4,
+    "discount_pct": -14.43,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.4% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 49.06,
+    "fair_value": 43.54,
+    "discount_pct": -12.69,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 12.7% premium"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 913.05,
+    "fair_value": 716.5395911532028,
+    "discount_pct": -27.42,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 27.4% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 339,
+    "fair_value": 366.74,
+    "discount_pct": 7.56,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 7.6% discount with upward momentum"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 217.32,
+    "fair_value": 303.57,
+    "discount_pct": 28.41,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 28.4% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 213.41,
+    "fair_value": 176.87,
+    "discount_pct": -20.66,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.7% premium"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 102.75,
+    "fair_value": 101.54,
+    "discount_pct": -1.19,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 569.14,
+    "fair_value": 754.8012247300426,
+    "discount_pct": 24.6,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 24.6% discount with upward trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 240.86,
+    "fair_value": 193.32,
+    "discount_pct": -24.59,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 24.6% premium"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 79.74,
+    "fair_value": 77.28723186549625,
+    "discount_pct": -3.17,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 438.55,
+    "fair_value": 573.36,
+    "discount_pct": 23.51,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 31.67,
+    "fair_value": 39.27111235455496,
+    "discount_pct": 19.35,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 36.01,
+    "fair_value": 40.39908084494209,
+    "discount_pct": 10.87,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 236.19,
+    "fair_value": 330.41229505164915,
+    "discount_pct": 28.52,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 28.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 119.09,
+    "fair_value": 151.29507260317544,
+    "discount_pct": 21.29,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 21.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 594.24,
+    "fair_value": 508.91,
+    "discount_pct": -16.77,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 16.8% premium"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 328.56,
+    "fair_value": 387.62081177865673,
+    "discount_pct": 15.24,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 115.86,
+    "fair_value": 115.77136465095113,
+    "discount_pct": -0.08,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 145.87,
+    "fair_value": 192.34,
+    "discount_pct": 24.16,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 24.2% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 26.57,
+    "fair_value": 31.559882460894272,
+    "discount_pct": 15.82,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 232.9,
+    "fair_value": 303.62,
+    "discount_pct": 23.29,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 23.3% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 42.64,
+    "fair_value": 52.33165181506202,
+    "discount_pct": 18.52,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 18.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 5047.39,
+    "fair_value": 6109.49,
+    "discount_pct": 17.38,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 17.4% discount with favorable trend"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 670.17,
+    "fair_value": 687.82,
+    "discount_pct": 2.57,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Gengar",
+    "listed_price": 36.72,
+    "fair_value": 43.57,
+    "discount_pct": 15.73,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 136.2,
+    "fair_value": 141.48450109206036,
+    "discount_pct": 3.74,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 82.78,
+    "fair_value": 112.09,
+    "discount_pct": 26.15,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 26.2% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 33.47,
+    "fair_value": 35.13816475534246,
+    "discount_pct": 4.73,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 72.74,
+    "fair_value": 87.26109776120266,
+    "discount_pct": 16.64,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 16.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 320.29,
+    "fair_value": 364.71223151665714,
+    "discount_pct": 12.18,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 12.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 66.34,
+    "fair_value": 54.52470216450879,
+    "discount_pct": -21.67,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.7% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 1451.45,
+    "fair_value": 1730.39,
+    "discount_pct": 16.12,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 16.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 173.3,
+    "fair_value": 240.0490758840756,
+    "discount_pct": 27.81,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 27.8% discount with upward trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 339.21,
+    "fair_value": 273.3406319448459,
+    "discount_pct": -24.1,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 24.1% premium"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 33.99,
+    "fair_value": 46.999365608595305,
+    "discount_pct": 27.68,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 27.7% discount with favorable trend"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 43.17,
+    "fair_value": 51.51,
+    "discount_pct": 16.18,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 16.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 105.95,
+    "fair_value": 110.91870533330241,
+    "discount_pct": 4.48,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 93.16,
+    "fair_value": 81.47421631675904,
+    "discount_pct": -14.35,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.3% premium"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 48.84,
+    "fair_value": 45.7641877683019,
+    "discount_pct": -6.73,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 111.94,
+    "fair_value": 88.31606760411725,
+    "discount_pct": -26.75,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 26.8% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 615,
+    "fair_value": 561.33,
+    "discount_pct": -9.56,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 63.58,
+    "fair_value": 52.85447317669507,
+    "discount_pct": -20.28,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.3% premium"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 39.2,
+    "fair_value": 39.462014467004934,
+    "discount_pct": 0.67,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 652.86,
+    "fair_value": 856.21,
+    "discount_pct": 23.75,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 23.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 207.71,
+    "fair_value": 266.63,
+    "discount_pct": 22.1,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 22.1% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 76.09,
+    "fair_value": 76.05384611586025,
+    "discount_pct": -0.04,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Machamp",
+    "listed_price": 50.01,
+    "fair_value": 65.08,
+    "discount_pct": 23.16,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 23.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 313.12,
+    "fair_value": 260.79074169580645,
+    "discount_pct": -20.07,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.1% premium"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 924.09,
+    "fair_value": 1199.324264188624,
+    "discount_pct": 22.95,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 22.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 63.33,
+    "fair_value": 56.72,
+    "discount_pct": -11.66,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 11.7% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 24217.85,
+    "fair_value": 20053.61,
+    "discount_pct": -20.77,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.8% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 961.06,
+    "fair_value": 841.93,
+    "discount_pct": -14.15,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.2% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 4656.58,
+    "fair_value": 4089.65,
+    "discount_pct": -13.86,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 13.9% premium"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 29.76,
+    "fair_value": 33.64073045910299,
+    "discount_pct": 11.52,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Dragonite",
+    "listed_price": 444.63,
+    "fair_value": 584.26,
+    "discount_pct": 23.9,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Alakazam",
+    "listed_price": 658.62,
+    "fair_value": 761.83,
+    "discount_pct": 13.55,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 85.5,
+    "fair_value": 94.25,
+    "discount_pct": 9.28,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 187.76,
+    "fair_value": 155.3989060717805,
+    "discount_pct": -20.82,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.8% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 256.17,
+    "fair_value": 200.55873262674265,
+    "discount_pct": -27.73,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 27.7% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 46.79,
+    "fair_value": 45.68498408081101,
+    "discount_pct": -2.43,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 86.74,
+    "fair_value": 103.30079802936602,
+    "discount_pct": 16.03,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 16.0% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 70.95,
+    "fair_value": 64.03041333987665,
+    "discount_pct": -10.81,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 10.8% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 173.84,
+    "fair_value": 214.49,
+    "discount_pct": 18.95,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 246.66,
+    "fair_value": 191.36722085827577,
+    "discount_pct": -28.9,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 28.9% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 48.1,
+    "fair_value": 68.66,
+    "discount_pct": 29.95,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 30.0% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 11829.71,
+    "fair_value": 9910.72,
+    "discount_pct": -19.36,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 19.4% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 118.99,
+    "fair_value": 154.71810197276673,
+    "discount_pct": 23.09,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 23.1% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 32.88,
+    "fair_value": 42.81,
+    "discount_pct": 23.2,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 23.2% discount with upward trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 50.18,
+    "fair_value": 41.71,
+    "discount_pct": -20.3,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.3% premium"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 60.93,
+    "fair_value": 63.29,
+    "discount_pct": 3.72,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Machamp",
+    "listed_price": 67.7,
+    "fair_value": 75.52,
+    "discount_pct": 10.36,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.4% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 941.23,
+    "fair_value": 766.89,
+    "discount_pct": -22.73,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 22.7% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 11260.09,
+    "fair_value": 8956.15,
+    "discount_pct": -25.72,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 25.7% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 76.92,
+    "fair_value": 65.22,
+    "discount_pct": -17.94,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 17.9% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 94.53,
+    "fair_value": 77.74466726619953,
+    "discount_pct": -21.59,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.6% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 148.33,
+    "fair_value": 206.86,
+    "discount_pct": 28.29,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 28.3% discount with upward trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 59.15,
+    "fair_value": 53.98124329620536,
+    "discount_pct": -9.57,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 230.13,
+    "fair_value": 328.28,
+    "discount_pct": 29.9,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 29.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 1586.59,
+    "fair_value": 1737.96,
+    "discount_pct": 8.71,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 8.7% discount with upward momentum"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 60.79,
+    "fair_value": 75.89,
+    "discount_pct": 19.9,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 19.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 69.45,
+    "fair_value": 65.01,
+    "discount_pct": -6.83,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 89.11,
+    "fair_value": 68.57886766985781,
+    "discount_pct": -29.94,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 29.9% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 458.84,
+    "fair_value": 651.61,
+    "discount_pct": 29.58,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 29.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 99.92,
+    "fair_value": 82.88335973833846,
+    "discount_pct": -20.55,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.5% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 83.58,
+    "fair_value": 115.81256646728566,
+    "discount_pct": 27.83,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 27.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 215.61,
+    "fair_value": 224.76,
+    "discount_pct": 4.07,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 49.97,
+    "fair_value": 55.873270547863996,
+    "discount_pct": 10.57,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 51.19,
+    "fair_value": 57.46321885321662,
+    "discount_pct": 10.92,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 85.63,
+    "fair_value": 75.33628535059881,
+    "discount_pct": -13.67,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 13.7% premium"
+  },
+  {
+    "card_name": "Machamp",
+    "listed_price": 182.1,
+    "fair_value": 203.44,
+    "discount_pct": 10.49,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 10.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 108.15,
+    "fair_value": 110.95951497923296,
+    "discount_pct": 2.53,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 114.48,
+    "fair_value": 89.51,
+    "discount_pct": -27.89,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 27.9% premium"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 29.98,
+    "fair_value": 39.91614720836134,
+    "discount_pct": 24.9,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 24.9% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 33.14,
+    "fair_value": 36.65,
+    "discount_pct": 9.58,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 815.89,
+    "fair_value": 884.43,
+    "discount_pct": 7.75,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 7.7% discount with upward momentum"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 73.56,
+    "fair_value": 59.6,
+    "discount_pct": -23.42,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 23.4% premium"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 70.85,
+    "fair_value": 92.6084216501427,
+    "discount_pct": 23.5,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 146,
+    "fair_value": 180.91,
+    "discount_pct": 19.3,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 38.47,
+    "fair_value": 41.119721099220214,
+    "discount_pct": 6.45,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 43.53,
+    "fair_value": 35.64,
+    "discount_pct": -22.15,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 22.1% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 384.67,
+    "fair_value": 384.42,
+    "discount_pct": -0.06,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 143.76,
+    "fair_value": 127.13151491541964,
+    "discount_pct": -13.08,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 13.1% premium"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 904.06,
+    "fair_value": 999.2,
+    "discount_pct": 9.52,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 117.21,
+    "fair_value": 93.72933548929068,
+    "discount_pct": -25.05,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 25.0% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 133.86,
+    "fair_value": 188.8042018901615,
+    "discount_pct": 29.1,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 111.15,
+    "fair_value": 105.17,
+    "discount_pct": -5.69,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 64.14,
+    "fair_value": 88.37106286169188,
+    "discount_pct": 27.42,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 27.4% discount with favorable trend"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 135.8,
+    "fair_value": 144.21,
+    "discount_pct": 5.83,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 5.8% discount with upward momentum"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 43.57,
+    "fair_value": 34.36,
+    "discount_pct": -26.79,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 26.8% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 37.69,
+    "fair_value": 37.27558343692561,
+    "discount_pct": -1.1,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 61.22,
+    "fair_value": 79.1631938017182,
+    "discount_pct": 22.66,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 22.7% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 38.88,
+    "fair_value": 49.68,
+    "discount_pct": 21.74,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Strong buy: 21.7% discount with upward trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 108.5,
+    "fair_value": 91.43,
+    "discount_pct": -18.67,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 18.7% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 4684.01,
+    "fair_value": 3862.98,
+    "discount_pct": -21.25,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.3% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 219.02,
+    "fair_value": 248.9,
+    "discount_pct": 12,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 12.0% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 66.8,
+    "fair_value": 57.78,
+    "discount_pct": -15.61,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 15.6% premium"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 129.95,
+    "fair_value": 113.77477079009678,
+    "discount_pct": -14.21,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.2% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 173.44,
+    "fair_value": 169.3069265076746,
+    "discount_pct": -2.44,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 9099,
+    "fair_value": 8498.22,
+    "discount_pct": -7.07,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 53.59,
+    "fair_value": 42.09892600103377,
+    "discount_pct": -27.3,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 27.3% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 48.69,
+    "fair_value": 44.06,
+    "discount_pct": -10.51,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 10.5% premium"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 128.99,
+    "fair_value": 109.74006121912436,
+    "discount_pct": -17.54,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 17.5% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 71.54,
+    "fair_value": 72.65,
+    "discount_pct": 1.53,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 192.47,
+    "fair_value": 171.32164958100205,
+    "discount_pct": -12.34,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 12.3% premium"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 32.23,
+    "fair_value": 44.82115362522568,
+    "discount_pct": 28.09,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 28.1% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 271.33,
+    "fair_value": 293.58,
+    "discount_pct": 7.58,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Marginal buy: 7.6% discount with upward momentum"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 163.46,
+    "fair_value": 188.89842073467884,
+    "discount_pct": 13.47,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.5% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 6405.3,
+    "fair_value": 6419.67,
+    "discount_pct": 0.22,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 71.88,
+    "fair_value": 81.90492839692605,
+    "discount_pct": 12.23,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 12.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 260.13,
+    "fair_value": 262.27018824072417,
+    "discount_pct": 0.82,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 24.47,
+    "fair_value": 33.84302077629673,
+    "discount_pct": 27.69,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 27.7% discount with favorable trend"
+  },
+  {
+    "card_name": "Dragonite",
+    "listed_price": 6028.45,
+    "fair_value": 5101.58,
+    "discount_pct": -18.17,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 18.2% premium"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 605.26,
+    "fair_value": 470.1570374642518,
+    "discount_pct": -28.74,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 28.7% premium"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 54.73,
+    "fair_value": 57.49,
+    "discount_pct": 4.8,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 215.58,
+    "fair_value": 178.37,
+    "discount_pct": -20.86,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.9% premium"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 70.7,
+    "fair_value": 64.22,
+    "discount_pct": -10.09,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 10.1% premium"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "listed_price": 87.65,
+    "fair_value": 67.81583493818903,
+    "discount_pct": -29.25,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 29.3% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 46.08,
+    "fair_value": 37.16,
+    "discount_pct": -24,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 24.0% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 41.64,
+    "fair_value": 41.754416611454516,
+    "discount_pct": 0.28,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 324,
+    "fair_value": 318.92,
+    "discount_pct": -1.59,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 75.17,
+    "fair_value": 71.91,
+    "discount_pct": -4.53,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 324.24,
+    "fair_value": 390.1100420999768,
+    "discount_pct": 16.88,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 16.9% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 86,
+    "fair_value": 81.10459803676103,
+    "discount_pct": -6.04,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 238.93,
+    "fair_value": 184.24,
+    "discount_pct": -29.68,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 29.7% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 53.52,
+    "fair_value": 56.64,
+    "discount_pct": 5.51,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 101.22,
+    "fair_value": 98.95,
+    "discount_pct": -2.29,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 70.8,
+    "fair_value": 82.9096053184491,
+    "discount_pct": 14.61,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.6% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 105.57,
+    "fair_value": 87.30056135807507,
+    "discount_pct": -20.93,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.9% premium"
+  },
+  {
+    "card_name": "Alakazam",
+    "listed_price": 74.5,
+    "fair_value": 61.52,
+    "discount_pct": -21.09,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 21.1% premium"
+  },
+  {
+    "card_name": "Charizard ex",
+    "listed_price": 117.2,
+    "fair_value": 106.34894554264704,
+    "discount_pct": -10.2,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 10.2% premium"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "listed_price": 172.53,
+    "fair_value": 181.57348405810257,
+    "discount_pct": 4.98,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 189.34,
+    "fair_value": 173.75,
+    "discount_pct": -8.97,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Gyarados",
+    "listed_price": 422.54,
+    "fair_value": 325.25,
+    "discount_pct": -29.91,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 29.9% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 63.29,
+    "fair_value": 51.280124413795185,
+    "discount_pct": -23.42,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 23.4% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 29.85,
+    "fair_value": 32.4566897258599,
+    "discount_pct": 8.04,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 79.9,
+    "fair_value": 112.60239842843251,
+    "discount_pct": 29.04,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 29.0% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 374.77,
+    "fair_value": 460.01,
+    "discount_pct": 18.53,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 33.22,
+    "fair_value": 42.514490016182755,
+    "discount_pct": 21.86,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 285.96,
+    "fair_value": 262.27,
+    "discount_pct": -9.03,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 205.63,
+    "fair_value": 264.97,
+    "discount_pct": 22.4,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 261.5,
+    "fair_value": 258.77,
+    "discount_pct": -1.05,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 300.49,
+    "fair_value": 240.66,
+    "discount_pct": -24.86,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 24.9% premium"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 36.08,
+    "fair_value": 42.53334708862716,
+    "discount_pct": 15.17,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 15.2% discount with favorable trend"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 205.11,
+    "fair_value": 281.99,
+    "discount_pct": 27.26,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 27.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 26.57,
+    "fair_value": 31.18338923333575,
+    "discount_pct": 14.78,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 14.8% discount with favorable trend"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 272.66,
+    "fair_value": 273.22,
+    "discount_pct": 0.21,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 100.28,
+    "fair_value": 96.74,
+    "discount_pct": -3.66,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "listed_price": 231.48,
+    "fair_value": 192.7227189863261,
+    "discount_pct": -20.11,
+    "trend": "up",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 20.1% premium"
+  },
+  {
+    "card_name": "Blastoise",
+    "listed_price": 56.09,
+    "fair_value": 57.323347224002646,
+    "discount_pct": 2.15,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 41.31,
+    "fair_value": 45.58149930516135,
+    "discount_pct": 9.38,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Gengar",
+    "listed_price": 29963.46,
+    "fair_value": 34210.03,
+    "discount_pct": 12.41,
+    "trend": "up",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 12.4% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 759.36,
+    "fair_value": 715.91,
+    "discount_pct": -6.07,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "listed_price": 113.69,
+    "fair_value": 99.24836590516274,
+    "discount_pct": -14.55,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.6% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 1562.92,
+    "fair_value": 1907.2302309978593,
+    "discount_pct": 18.05,
+    "trend": "down",
+    "correct_decision": "PASS",
+    "reasoning": "Trending down: avoid catching falling knife"
+  },
+  {
+    "card_name": "Mew",
+    "listed_price": 368.81,
+    "fair_value": 353.14,
+    "discount_pct": -4.44,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 472.66,
+    "fair_value": 377.098270476652,
+    "discount_pct": -25.34,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 25.3% premium"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "listed_price": 69.82,
+    "fair_value": 62.44806895826629,
+    "discount_pct": -11.8,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 11.8% premium"
+  },
+  {
+    "card_name": "Charizard",
+    "listed_price": 339,
+    "fair_value": 391.07010373600104,
+    "discount_pct": 13.32,
+    "trend": "stable",
+    "correct_decision": "BUY",
+    "reasoning": "Good buy: 13.3% discount with favorable trend"
+  },
+  {
+    "card_name": "Pikachu",
+    "listed_price": 144.15,
+    "fair_value": 141.85,
+    "discount_pct": -1.62,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Fair price but no compelling upside"
+  },
+  {
+    "card_name": "Venusaur",
+    "listed_price": 3757.67,
+    "fair_value": 3273.73,
+    "discount_pct": -14.78,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 14.8% premium"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "listed_price": 49.51,
+    "fair_value": 38.32361953328864,
+    "discount_pct": -29.19,
+    "trend": "stable",
+    "correct_decision": "PASS",
+    "reasoning": "Overpriced: 29.2% premium"
+  }
+]

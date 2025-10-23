@@ -1,25 +1,16 @@
-# PokeDAO Research Folder
+# Active Research
 
-This folder contains research scripts and data collection tools that have been organized and made compatible with the canonical schema.
+This directory is for actively maintained research scripts and experiments.
 
-## Structure
+**Archived Research**: See `../archive/research-exploration-2025-10-23/` for historical exploration scripts.
 
-- `consolidated/extractors/` - Data extraction scripts
-- `consolidated/analyzers/` - Data analysis scripts  
-- `consolidated/integrations/` - Integration and harvesting scripts
-- `consolidated/utilities/` - Utility scripts
-- `consolidated/canonical-adapter.js` - Canonical schema adapter
+## Guidelines
 
-## Usage
+- Keep scripts here only if actively maintained
+- Document purpose and usage in script headers
+- Move old explorations to archive when done
+- One-off experiments should be in personal branches
 
-All scripts should use the canonical schema adapter:
+## Current Active Research
 
-```javascript
-import { PrismaClient, normalizeCardData, getCanonicalPrisma } from './canonical-adapter.js';
-```
-
-## Canonical Schema
-
-The single source of truth is: `/api/prisma/schema.prisma`
-
-All data should be normalized to this schema format before storage.
+(None - add new research projects here as needed)

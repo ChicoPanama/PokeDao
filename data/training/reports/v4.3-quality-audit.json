@@ -1,0 +1,347 @@
+{
+  "dataset": "mew1a-v4.3-FINAL",
+  "total_examples": 253810,
+  "quality_score": 82.24,
+  "metrics": {
+    "hallucination_rate": 6.45,
+    "valid_card_names_rate": 92.15,
+    "price_sanity_rate": 62.54,
+    "refusal_coverage": 9.02,
+    "buypass_coverage": 5.91
+  },
+  "category_distribution": {
+    "market_analysis": 175309,
+    "refusal_real_time_data": 5849,
+    "refusal_obscure_cards": 5953,
+    "card_knowledge": 20156,
+    "price_pattern": 19065,
+    "refusal_ambiguous_queries": 5996,
+    "refusal_out_of_domain": 3130,
+    "refusal_unanswerable": 1978,
+    "price_trends": 1374,
+    "investment_decision": 15000
+  },
+  "source_distribution": {
+    "valid_clean": 103018,
+    "pseudo_labeled": 93821,
+    "refusal_synthetic": 22906,
+    "price_patterns": 19065,
+    "unknown": 15000
+  },
+  "benchmark_compliance": {
+    "hallucination_rate": {
+      "value": 0.0645482841495607,
+      "target": 0.05,
+      "pass": false
+    },
+    "valid_card_names": {
+      "value": 0.9215239746266892,
+      "target": 0.95,
+      "pass": false
+    },
+    "price_sanity": {
+      "value": 0.6254245301603562,
+      "target": 0.9,
+      "pass": false
+    },
+    "refusal_coverage": {
+      "value": 0.09024861116583272,
+      "target": 0.07,
+      "pass": false
+    },
+    "buypass_coverage": {
+      "value": 0.059099326267680545,
+      "target": 0.05,
+      "pass": true
+    },
+    "quality_score": {
+      "value": 82.24337102557031,
+      "target": 85.0,
+      "pass": false
+    }
+  },
+  "sample_issues": {
+    "hallucinations": [
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Mew sale on 2025-09-04 at $51.12 represents a moderate price point for a BGS 9.5 graded card.",
+        "instruction": "Analyze this Mew sale from 2025-09-04."
+      },
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Pikachu sale on 2025-07-02 at $3182.47 represents a premium price point for a CGC 9 graded card. ",
+        "instruction": "Analyze this Pikachu sale from 2025-07-02."
+      },
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Charizard sale on 2025-08-17 at $144.39 represents a premium price point for a PSA 7 graded card.",
+        "instruction": "Analyze this Charizard sale from 2025-08-17."
+      },
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Gengar sale on 2025-08-17 at $146.72 represents a premium price point for a BGS 8.5 graded card. ",
+        "instruction": "Analyze this Gengar sale from 2025-08-17."
+      },
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Mew sale on 2025-08-07 at $166.25 represents a premium price point for a PSA 6 graded card. ",
+        "instruction": "Analyze this Mew sale from 2025-08-07."
+      },
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Gyarados sale on 2025-07-23 at $737.15 represents a premium price point for a CGC 9.5 graded card. ",
+        "instruction": "Analyze this Gyarados sale from 2025-07-23."
+      },
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Gengar sale on 2025-07-31 at $34.56 represents an affordable price point for a BGS 8 graded card.",
+        "instruction": "Analyze this Gengar sale from 2025-07-31."
+      },
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Charizard sale on 2025-08-24 at $190.20 represents a premium price point for a CGC 9 graded card.",
+        "instruction": "Analyze this Charizard sale from 2025-08-24."
+      },
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Pikachu sale on 2025-08-30 at $176.59 represents a premium price point for a PSA 8 graded card.",
+        "instruction": "Analyze this Pikachu sale from 2025-08-30."
+      },
+      {
+        "reason": "Hallucinated grade",
+        "output": "This Charizard sale on 2025-07-05 at $73.81 represents a moderate price point for a PSA 8.5 graded card.",
+        "instruction": "Analyze this Charizard sale from 2025-07-05."
+      }
+    ],
+    "invalid_cards": [
+      {
+        "reason": "Invalid: No recognized Pokemon (Altaria)",
+        "instruction": "Tell me about Altaria."
+      },
+      {
+        "reason": "Invalid: No recognized Pokemon (Pupitar)",
+        "instruction": "Tell me about Pupitar."
+      },
+      {
+        "reason": "Invalid: No recognized Pokemon (Impact Energy)",
+        "instruction": "Tell me about Impact Energy."
+      },
+      {
+        "reason": "Invalid: No recognized Pokemon (Meloetta)",
+        "instruction": "Tell me about Meloetta."
+      },
+      {
+        "reason": "Invalid: No recognized Pokemon (Rocket's Tricky Gym)",
+        "instruction": "What do you know about Rocket's Tricky Gym?"
+      },
+      {
+        "reason": "Invalid: No recognized Pokemon (Rare Candy)",
+        "instruction": "Tell me about Rare Candy."
+      },
+      {
+        "reason": "Invalid: No recognized Pokemon (Dawn Stadium)",
+        "instruction": "Tell me about Dawn Stadium."
+      },
+      {
+        "reason": "Invalid: No recognized Pokemon (Simisear)",
+        "instruction": "Tell me about Simisear."
+      },
+      {
+        "reason": "Invalid: No recognized Pokemon (Pow! Hand Extension)",
+        "instruction": "Tell me about Pow! Hand Extension."
+      },
+      {
+        "reason": "Invalid: No recognized Pokemon (Bronzor)",
+        "instruction": "Tell me about Bronzor."
+      }
+    ],
+    "price_issues": [
+      {
+        "reason": "Too much precision: $56.950671460901404 (15 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Pikachu ex",
+          "sold_price": 56.950671460901404,
+          "sold_date": "2025-09-06",
+          "bid_count": 5,
+          "_salvaged": true,
+          "_confidence": 0.6,
+          "_original_year": "2023",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      },
+      {
+        "reason": "Too much precision: $325.09104660647466 (14 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Charizard VSTAR",
+          "sold_price": 325.09104660647466,
+          "sold_date": "2025-09-08",
+          "bid_count": 10,
+          "_salvaged": true,
+          "_confidence": 0.7,
+          "_original_year": "2025",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      },
+      {
+        "reason": "Too much precision: $42.55836150750942 (14 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Dark Blastoise",
+          "sold_price": 42.55836150750942,
+          "sold_date": "2025-07-11",
+          "bid_count": 8,
+          "_salvaged": true,
+          "_confidence": 0.6,
+          "_original_year": "2000",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      },
+      {
+        "reason": "Too much precision: $84.93696957325469 (14 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Pikachu VMAX",
+          "sold_price": 84.93696957325469,
+          "sold_date": "2025-09-06",
+          "bid_count": 13,
+          "_salvaged": true,
+          "_confidence": 0.6,
+          "_original_year": "2024",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      },
+      {
+        "reason": "Too much precision: $123.37154737499682 (14 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Charizard ex",
+          "sold_price": 123.37154737499682,
+          "sold_date": "2025-06-21",
+          "bid_count": 16,
+          "_salvaged": true,
+          "_confidence": 0.7,
+          "_original_year": "2024",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      },
+      {
+        "reason": "Too much precision: $114.26401247171624 (14 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Charizard ex",
+          "sold_price": 114.26401247171624,
+          "sold_date": "2025-08-12",
+          "bid_count": 14,
+          "_salvaged": true,
+          "_confidence": 0.7,
+          "_original_year": "2023",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      },
+      {
+        "reason": "Too much precision: $66.95729434373298 (14 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Pikachu VMAX",
+          "sold_price": 66.95729434373298,
+          "sold_date": "2025-06-26",
+          "bid_count": 1,
+          "_salvaged": true,
+          "_confidence": 0.6,
+          "_original_year": "2024",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      },
+      {
+        "reason": "Too much precision: $158.73734480614638 (14 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Charizard",
+          "sold_price": 158.73734480614638,
+          "sold_date": "2025-07-30",
+          "bid_count": 6,
+          "_salvaged": true,
+          "_confidence": 0.85,
+          "_original_year": "1999",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      },
+      {
+        "reason": "Too much precision: $57.86072793545962 (14 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Pikachu V-UNION",
+          "sold_price": 57.86072793545962,
+          "sold_date": "2025-06-24",
+          "bid_count": 16,
+          "_salvaged": true,
+          "_confidence": 0.6,
+          "_original_year": "2025",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      },
+      {
+        "reason": "Too much precision: $42.87330903487356 (14 decimals)",
+        "metadata": {
+          "source": "ebay_temporal_sales",
+          "card_name": "Pikachu V-UNION",
+          "sold_price": 42.87330903487356,
+          "sold_date": "2025-07-16",
+          "bid_count": 8,
+          "_salvaged": true,
+          "_confidence": 0.6,
+          "_original_year": "2025",
+          "pseudo_labeled": true,
+          "confidence": 0.9,
+          "model": "meta-llama/Llama-3.2-3B-Instruct",
+          "source_v4.3": "pseudo_labeled",
+          "weight": 1.0
+        }
+      }
+    ]
+  },
+  "comparison_v4.2": {
+    "hallucination_improvement": "87.3%",
+    "card_validity_improvement": "204.1%",
+    "refusal_capability": "NEW (was 0%)",
+    "buypass_coverage": "195.5% increase"
+  }
+}

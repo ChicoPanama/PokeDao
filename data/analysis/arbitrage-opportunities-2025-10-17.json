@@ -1,0 +1,1427 @@
+[
+  {
+    "cardName": "1999 Base Set",
+    "setName": "Base Set",
+    "lowestPrice": 1.5,
+    "highestPrice": 3999.89,
+    "averagePrice": 285.8,
+    "profitPotential": 3998.39,
+    "profitPercentage": 266559.3333333333,
+    "listingCount": 19,
+    "sources": [
+      "EBAY"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Latias & Latios-GX",
+    "setName": "Team Up",
+    "lowestPrice": 64.72,
+    "highestPrice": 2464.58,
+    "averagePrice": 694.84,
+    "profitPotential": 2399.86,
+    "profitPercentage": 3708.0655129789866,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Lugia",
+    "setName": "Aquapolis",
+    "lowestPrice": 500,
+    "highestPrice": 2499.98,
+    "averagePrice": 1250,
+    "profitPotential": 1999.98,
+    "profitPercentage": 399.99600000000004,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Lugia",
+    "setName": "Neo Genesis",
+    "lowestPrice": 120.96,
+    "highestPrice": 1999.95,
+    "averagePrice": 742.94,
+    "profitPotential": 1878.99,
+    "profitPercentage": 1553.3978174603176,
+    "listingCount": 11,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Umbreon (13)",
+    "setName": "Neo Discovery",
+    "lowestPrice": 138.05,
+    "highestPrice": 1799.99,
+    "averagePrice": 465.56,
+    "profitPotential": 1661.94,
+    "profitPercentage": 1203.8681637088011,
+    "listingCount": 7,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Umbreon VMAX",
+    "setName": "Evolving Skies",
+    "lowestPrice": 20.09,
+    "highestPrice": 1538.99,
+    "averagePrice": 537.05,
+    "profitPotential": 1518.9,
+    "profitPercentage": 7560.477849676457,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Charizard",
+    "setName": "Base Set (Shadowless)",
+    "lowestPrice": 225,
+    "highestPrice": 1299,
+    "averagePrice": 663.96,
+    "profitPotential": 1074,
+    "profitPercentage": 477.33333333333337,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Gengar (H9)",
+    "setName": "Skyridge",
+    "lowestPrice": 451.24,
+    "highestPrice": 1499.99,
+    "averagePrice": 812.81,
+    "profitPotential": 1048.75,
+    "profitPercentage": 232.41512277280384,
+    "listingCount": 4,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Gyarados (H10)",
+    "setName": "Skyridge",
+    "lowestPrice": 209,
+    "highestPrice": 1200,
+    "averagePrice": 539.25,
+    "profitPotential": 991,
+    "profitPercentage": 474.16267942583727,
+    "listingCount": 4,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Nidoking",
+    "setName": "Aquapolis",
+    "lowestPrice": 35,
+    "highestPrice": 999,
+    "averagePrice": 370.68,
+    "profitPotential": 964,
+    "profitPercentage": 2754.2857142857147,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Blastoise",
+    "setName": "Base Set (Shadowless)",
+    "lowestPrice": 91.39,
+    "highestPrice": 873.99,
+    "averagePrice": 318.73,
+    "profitPotential": 782.6,
+    "profitPercentage": 856.3300142247512,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Nidoking (150)",
+    "setName": "Aquapolis",
+    "lowestPrice": 250,
+    "highestPrice": 999,
+    "averagePrice": 476.78,
+    "profitPotential": 749,
+    "profitPercentage": 299.6,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Dark Scizor",
+    "setName": "Neo Destiny",
+    "lowestPrice": 43.93,
+    "highestPrice": 749.84,
+    "averagePrice": 282.27,
+    "profitPotential": 705.9100000000001,
+    "profitPercentage": 1606.8973366719786,
+    "listingCount": 9,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Gengar & Mimikyu-GX",
+    "setName": "Team Up",
+    "lowestPrice": 224.35,
+    "highestPrice": 910.6,
+    "averagePrice": 412.26,
+    "profitPotential": 686.25,
+    "profitPercentage": 305.8836639179853,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Rayquaza VMAX",
+    "setName": "Evolving Skies",
+    "lowestPrice": 6.63,
+    "highestPrice": 677.36,
+    "averagePrice": 243.81,
+    "profitPotential": 670.73,
+    "profitPercentage": 10116.59125188537,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Alakazam (H1)",
+    "setName": "Skyridge",
+    "lowestPrice": 140,
+    "highestPrice": 800,
+    "averagePrice": 403.91,
+    "profitPotential": 660,
+    "profitPercentage": 471.42857142857144,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Charizard (6)",
+    "setName": "Expedition",
+    "lowestPrice": 73,
+    "highestPrice": 699.98,
+    "averagePrice": 254.52,
+    "profitPotential": 626.98,
+    "profitPercentage": 858.8767123287672,
+    "listingCount": 9,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Umbreon",
+    "setName": "Aquapolis",
+    "lowestPrice": 29.21,
+    "highestPrice": 630.99,
+    "averagePrice": 153.83,
+    "profitPotential": 601.78,
+    "profitPercentage": 2060.184868195823,
+    "listingCount": 12,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Tyranitar",
+    "setName": "Aquapolis",
+    "lowestPrice": 21.11,
+    "highestPrice": 615.95,
+    "averagePrice": 135.83,
+    "profitPotential": 594.84,
+    "profitPercentage": 2817.8114637612507,
+    "listingCount": 12,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "M Charizard-EX",
+    "setName": "Flashfire",
+    "lowestPrice": 60.76,
+    "highestPrice": 653.33,
+    "averagePrice": 294.13,
+    "profitPotential": 592.57,
+    "profitPercentage": 975.2633311389072,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Dark Gengar",
+    "setName": "Neo Destiny",
+    "lowestPrice": 107.53,
+    "highestPrice": 699.69,
+    "averagePrice": 326.32,
+    "profitPotential": 592.1600000000001,
+    "profitPercentage": 550.6928299079328,
+    "listingCount": 8,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Shining Noctowl",
+    "setName": "Neo Destiny",
+    "lowestPrice": 60,
+    "highestPrice": 631.04,
+    "averagePrice": 226.69,
+    "profitPotential": 571.04,
+    "profitPercentage": 951.7333333333333,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Kabutops",
+    "setName": "Skyridge",
+    "lowestPrice": 45,
+    "highestPrice": 599,
+    "averagePrice": 293.83,
+    "profitPotential": 554,
+    "profitPercentage": 1231.111111111111,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Dragonair",
+    "setName": "Base Set (Shadowless)",
+    "lowestPrice": 5.75,
+    "highestPrice": 554.98,
+    "averagePrice": 102.7,
+    "profitPotential": 549.23,
+    "profitPercentage": 9551.826086956522,
+    "listingCount": 7,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Charizard",
+    "setName": "Expedition Base Set",
+    "lowestPrice": 157.47,
+    "highestPrice": 699.98,
+    "averagePrice": 392.15,
+    "profitPotential": 542.51,
+    "profitPercentage": 344.51641582523655,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Crobat (147)",
+    "setName": "Skyridge",
+    "lowestPrice": 175,
+    "highestPrice": 700,
+    "averagePrice": 303.95,
+    "profitPotential": 525,
+    "profitPercentage": 300,
+    "listingCount": 8,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Houndoom",
+    "setName": "Aquapolis",
+    "lowestPrice": 36.11,
+    "highestPrice": 555,
+    "averagePrice": 243.62,
+    "profitPotential": 518.89,
+    "profitPercentage": 1436.9703683190253,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Tyranitar (H28)",
+    "setName": "Aquapolis",
+    "lowestPrice": 106.67,
+    "highestPrice": 615.95,
+    "averagePrice": 328.86,
+    "profitPotential": 509.28000000000003,
+    "profitPercentage": 477.4350801537453,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Eevee",
+    "setName": "Legendary Collection",
+    "lowestPrice": 1.18,
+    "highestPrice": 499.99,
+    "averagePrice": 160.46,
+    "profitPotential": 498.81,
+    "profitPercentage": 42272.03389830508,
+    "listingCount": 9,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Gengar (13)",
+    "setName": "Expedition",
+    "lowestPrice": 56.26,
+    "highestPrice": 555,
+    "averagePrice": 158.08,
+    "profitPotential": 498.74,
+    "profitPercentage": 886.4912904372555,
+    "listingCount": 10,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Pikachu",
+    "setName": "Legendary Collection",
+    "lowestPrice": 1.44,
+    "highestPrice": 499.99,
+    "averagePrice": 209.95,
+    "profitPotential": 498.55,
+    "profitPercentage": 34621.527777777774,
+    "listingCount": 5,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Sabrina's Gengar",
+    "setName": "Gym Heroes",
+    "lowestPrice": 83.95,
+    "highestPrice": 579.51,
+    "averagePrice": 220.31,
+    "profitPotential": 495.56,
+    "profitPercentage": 590.3037522334722,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Gardevoir & Sylveon-GX",
+    "setName": "Unbroken Bonds",
+    "lowestPrice": 53.82,
+    "highestPrice": 546.5,
+    "averagePrice": 198.09,
+    "profitPotential": 492.68,
+    "profitPercentage": 915.4217762913415,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Houndoom (H11)",
+    "setName": "Aquapolis",
+    "lowestPrice": 64.98,
+    "highestPrice": 556.66,
+    "averagePrice": 282.02,
+    "profitPotential": 491.67999999999995,
+    "profitPercentage": 756.6635887965526,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Mewtwo",
+    "setName": "Legendary Collection",
+    "lowestPrice": 5.5,
+    "highestPrice": 487.5,
+    "averagePrice": 172.15,
+    "profitPotential": 482,
+    "profitPercentage": 8763.636363636364,
+    "listingCount": 11,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Kabutops (150)",
+    "setName": "Skyridge",
+    "lowestPrice": 121.43,
+    "highestPrice": 599,
+    "averagePrice": 249.2,
+    "profitPotential": 477.57,
+    "profitPercentage": 393.2883142551264,
+    "listingCount": 7,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Magikarp & Wailord-GX",
+    "setName": "Team Up",
+    "lowestPrice": 87.74,
+    "highestPrice": 564.86,
+    "averagePrice": 249.13,
+    "profitPotential": 477.12,
+    "profitPercentage": 543.7884659220424,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Mewtwo-GX",
+    "setName": "Shining Legends",
+    "lowestPrice": 8.31,
+    "highestPrice": 475.44,
+    "averagePrice": 142.22,
+    "profitPotential": 467.13,
+    "profitPercentage": 5621.29963898917,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Houndoom (H11)",
+    "setName": "Skyridge",
+    "lowestPrice": 139.99,
+    "highestPrice": 600,
+    "averagePrice": 297.88,
+    "profitPotential": 460.01,
+    "profitPercentage": 328.6020430030716,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Flareon (H7)",
+    "setName": "Skyridge",
+    "lowestPrice": 164.99,
+    "highestPrice": 599.99,
+    "averagePrice": 307.14,
+    "profitPotential": 435,
+    "profitPercentage": 263.6523425662161,
+    "listingCount": 4,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Shining Mewtwo",
+    "setName": "Neo Destiny",
+    "lowestPrice": 349.99,
+    "highestPrice": 783.14,
+    "averagePrice": 605.17,
+    "profitPotential": 433.15,
+    "profitPercentage": 123.76067887653932,
+    "listingCount": 5,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Suicune (14)",
+    "setName": "Neo Revelation",
+    "lowestPrice": 36.9,
+    "highestPrice": 459.99,
+    "averagePrice": 131.51,
+    "profitPotential": 423.09000000000003,
+    "profitPercentage": 1146.5853658536587,
+    "listingCount": 7,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Base Set French",
+    "setName": "Base Set",
+    "lowestPrice": 39.95,
+    "highestPrice": 449.95,
+    "averagePrice": 183.28,
+    "profitPotential": 410,
+    "profitPercentage": 1026.2828535669587,
+    "listingCount": 3,
+    "sources": [
+      "EBAY"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Celebrations Flying Pikachu",
+    "setName": "Celebrations",
+    "lowestPrice": 5.99,
+    "highestPrice": 400,
+    "averagePrice": 107.87,
+    "profitPotential": 394.01,
+    "profitPercentage": 6577.7963272120205,
+    "listingCount": 4,
+    "sources": [
+      "EBAY"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Zekrom ex",
+    "setName": "Black Bolt",
+    "lowestPrice": 4.25,
+    "highestPrice": 391.35,
+    "averagePrice": 198.46,
+    "profitPotential": 387.1,
+    "profitPercentage": 9108.235294117649,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Lugia V",
+    "setName": "Silver Tempest",
+    "lowestPrice": 11.01,
+    "highestPrice": 397.54,
+    "averagePrice": 140.65,
+    "profitPotential": 386.53000000000003,
+    "profitPercentage": 3510.7175295186194,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Arceus & Dialga & Palkia-GX",
+    "setName": "Cosmic Eclipse",
+    "lowestPrice": 29.11,
+    "highestPrice": 406.25,
+    "averagePrice": 138.39,
+    "profitPotential": 377.14,
+    "profitPercentage": 1295.5685331501202,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Reshiram ex",
+    "setName": "White Flare",
+    "lowestPrice": 3.3,
+    "highestPrice": 375.3,
+    "averagePrice": 182.74,
+    "profitPotential": 372,
+    "profitPercentage": 11272.727272727274,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Team Rocket's Mewtwo ex",
+    "setName": "Destined Rivals",
+    "lowestPrice": 1.52,
+    "highestPrice": 368.14,
+    "averagePrice": 114.54,
+    "profitPotential": 366.62,
+    "profitPercentage": 24119.736842105263,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Treecko",
+    "setName": "Nintendo Black Star Promos",
+    "lowestPrice": 9.36,
+    "highestPrice": 374.95,
+    "averagePrice": 132.32,
+    "profitPotential": 365.59,
+    "profitPercentage": 3905.8760683760684,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Leafeon VMAX",
+    "setName": "Evolving Skies",
+    "lowestPrice": 5.97,
+    "highestPrice": 367.63,
+    "averagePrice": 134.29,
+    "profitPotential": 361.65999999999997,
+    "profitPercentage": 6057.956448911223,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Blastoise (4)",
+    "setName": "Expedition",
+    "lowestPrice": 40.94,
+    "highestPrice": 400,
+    "averagePrice": 128.12,
+    "profitPotential": 359.06,
+    "profitPercentage": 877.0395701025892,
+    "listingCount": 8,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Charizard",
+    "setName": "Legendary Collection",
+    "lowestPrice": 128.11,
+    "highestPrice": 485.99,
+    "averagePrice": 283.56,
+    "profitPotential": 357.88,
+    "profitPercentage": 279.3536804308797,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Snorlax",
+    "setName": "Skyridge",
+    "lowestPrice": 22.08,
+    "highestPrice": 375,
+    "averagePrice": 113.67,
+    "profitPotential": 352.92,
+    "profitPercentage": 1598.3695652173915,
+    "listingCount": 10,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Dark Espeon",
+    "setName": "Neo Destiny",
+    "lowestPrice": 85.55,
+    "highestPrice": 437.5,
+    "averagePrice": 218.93,
+    "profitPotential": 351.95,
+    "profitPercentage": 411.3968439509059,
+    "listingCount": 10,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Umbreon (H29)",
+    "setName": "Aquapolis",
+    "lowestPrice": 279.99,
+    "highestPrice": 630.99,
+    "averagePrice": 418.47,
+    "profitPotential": 351,
+    "profitPercentage": 125.3616200578592,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Blaziken VMAX",
+    "setName": "Chilling Reign",
+    "lowestPrice": 3.45,
+    "highestPrice": 351.9,
+    "averagePrice": 126.04,
+    "profitPotential": 348.45,
+    "profitPercentage": 10099.999999999998,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "2000 Team Rocket",
+    "setName": "Team Rocket",
+    "lowestPrice": 2.99,
+    "highestPrice": 350,
+    "averagePrice": 91.89,
+    "profitPotential": 347.01,
+    "profitPercentage": 11605.685618729096,
+    "listingCount": 5,
+    "sources": [
+      "EBAY"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Umbreon V",
+    "setName": "Evolving Skies",
+    "lowestPrice": 4.17,
+    "highestPrice": 350.91,
+    "averagePrice": 136.46,
+    "profitPotential": 346.74,
+    "profitPercentage": 8315.107913669066,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Gengar (10)",
+    "setName": "Skyridge",
+    "lowestPrice": 67.5,
+    "highestPrice": 409.99,
+    "averagePrice": 225.54,
+    "profitPotential": 342.49,
+    "profitPercentage": 507.3925925925926,
+    "listingCount": 9,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Mewtwo (20)",
+    "setName": "Expedition",
+    "lowestPrice": 35.2,
+    "highestPrice": 375,
+    "averagePrice": 160.78,
+    "profitPotential": 339.8,
+    "profitPercentage": 965.340909090909,
+    "listingCount": 10,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Rocket's Mewtwo",
+    "setName": "Gym Challenge",
+    "lowestPrice": 63.52,
+    "highestPrice": 397.99,
+    "averagePrice": 157.47,
+    "profitPotential": 334.47,
+    "profitPercentage": 526.558564231738,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Blastoise",
+    "setName": "Expedition Base Set",
+    "lowestPrice": 65.6,
+    "highestPrice": 400,
+    "averagePrice": 195.2,
+    "profitPotential": 334.4,
+    "profitPercentage": 509.7560975609756,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Houndoom",
+    "setName": "Neo Revelation",
+    "lowestPrice": 49.76,
+    "highestPrice": 382.5,
+    "averagePrice": 169.53,
+    "profitPotential": 332.74,
+    "profitPercentage": 668.6897106109325,
+    "listingCount": 10,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Moltres (H20)",
+    "setName": "Skyridge",
+    "lowestPrice": 119.9,
+    "highestPrice": 449,
+    "averagePrice": 304.73,
+    "profitPotential": 329.1,
+    "profitPercentage": 274.4787322768974,
+    "listingCount": 4,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Gengar",
+    "setName": "Legendary Collection",
+    "lowestPrice": 31.42,
+    "highestPrice": 360,
+    "averagePrice": 118.97,
+    "profitPotential": 328.58,
+    "profitPercentage": 1045.7670273711012,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Feraligatr (12)",
+    "setName": "Expedition",
+    "lowestPrice": 24.44,
+    "highestPrice": 350,
+    "averagePrice": 94.26,
+    "profitPotential": 325.56,
+    "profitPercentage": 1332.0785597381341,
+    "listingCount": 7,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Umbreon (32)",
+    "setName": "Skyridge",
+    "lowestPrice": 65,
+    "highestPrice": 387.99,
+    "averagePrice": 183.85,
+    "profitPotential": 322.99,
+    "profitPercentage": 496.90769230769234,
+    "listingCount": 10,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Typhlosion (17)",
+    "setName": "Neo Genesis",
+    "lowestPrice": 46.65,
+    "highestPrice": 361.66,
+    "averagePrice": 135.44,
+    "profitPotential": 315.01000000000005,
+    "profitPercentage": 675.2625937834943,
+    "listingCount": 7,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Dragonite (9)",
+    "setName": "Expedition",
+    "lowestPrice": 52.89,
+    "highestPrice": 364.99,
+    "averagePrice": 159.39,
+    "profitPotential": 312.1,
+    "profitPercentage": 590.0926451124976,
+    "listingCount": 9,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Shining Celebi",
+    "setName": "Neo Destiny",
+    "lowestPrice": 131.44,
+    "highestPrice": 442.97,
+    "averagePrice": 279.3,
+    "profitPotential": 311.53000000000003,
+    "profitPercentage": 237.0130858186245,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Pokémon Umbreon Sun",
+    "setName": "Base Set",
+    "lowestPrice": 4,
+    "highestPrice": 309.53,
+    "averagePrice": 66.42,
+    "profitPotential": 305.53,
+    "profitPercentage": 7638.249999999999,
+    "listingCount": 6,
+    "sources": [
+      "EBAY"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Solgaleo & Lunala-GX",
+    "setName": "Cosmic Eclipse",
+    "lowestPrice": 36.66,
+    "highestPrice": 340.54,
+    "averagePrice": 159.82,
+    "profitPotential": 303.88,
+    "profitPercentage": 828.9143480632843,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Gengar (5)",
+    "setName": "Fossil",
+    "lowestPrice": 31.95,
+    "highestPrice": 330.89,
+    "averagePrice": 122.01,
+    "profitPotential": 298.94,
+    "profitPercentage": 935.6494522691706,
+    "listingCount": 10,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Golem",
+    "setName": "Skyridge",
+    "lowestPrice": 186.57,
+    "highestPrice": 484.99,
+    "averagePrice": 343.26,
+    "profitPotential": 298.42,
+    "profitPercentage": 159.95068874953103,
+    "listingCount": 7,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Snorlax",
+    "setName": "Legendary Collection",
+    "lowestPrice": 2.27,
+    "highestPrice": 300,
+    "averagePrice": 73.27,
+    "profitPotential": 297.73,
+    "profitPercentage": 13115.859030837004,
+    "listingCount": 7,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Ninetales",
+    "setName": "Legendary Collection",
+    "lowestPrice": 6.45,
+    "highestPrice": 300,
+    "averagePrice": 66.07,
+    "profitPotential": 293.55,
+    "profitPercentage": 4551.162790697674,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Charizard ex",
+    "setName": "151",
+    "lowestPrice": 4.15,
+    "highestPrice": 295.79,
+    "averagePrice": 109.75,
+    "profitPotential": 291.64000000000004,
+    "profitPercentage": 7027.469879518073,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Charizard (39)",
+    "setName": "Expedition",
+    "lowestPrice": 28.01,
+    "highestPrice": 318.99,
+    "averagePrice": 125.68,
+    "profitPotential": 290.98,
+    "profitPercentage": 1038.8432702606212,
+    "listingCount": 10,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Sylveon VMAX",
+    "setName": "Evolving Skies",
+    "lowestPrice": 11.27,
+    "highestPrice": 300.56,
+    "averagePrice": 117.64,
+    "profitPotential": 289.29,
+    "profitPercentage": 2566.9032830523515,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Tyranitar (29)",
+    "setName": "Expedition",
+    "lowestPrice": 39.72,
+    "highestPrice": 327.48,
+    "averagePrice": 119.21,
+    "profitPotential": 287.76,
+    "profitPercentage": 724.4712990936556,
+    "listingCount": 9,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Snorlax (11)",
+    "setName": "Jungle",
+    "lowestPrice": 17.73,
+    "highestPrice": 305.22,
+    "averagePrice": 93.23,
+    "profitPotential": 287.49,
+    "profitPercentage": 1621.4890016920474,
+    "listingCount": 10,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "D"
+  },
+  {
+    "cardName": "Reshiram & Zekrom-GX",
+    "setName": "Cosmic Eclipse",
+    "lowestPrice": 93.9,
+    "highestPrice": 379.26,
+    "averagePrice": 210.71,
+    "profitPotential": 285.36,
+    "profitPercentage": 303.89776357827475,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Articuno (H3)",
+    "setName": "Skyridge",
+    "lowestPrice": 115,
+    "highestPrice": 400,
+    "averagePrice": 288.25,
+    "profitPotential": 285,
+    "profitPercentage": 247.82608695652172,
+    "listingCount": 4,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Raichu (H25)",
+    "setName": "Skyridge",
+    "lowestPrice": 87.41,
+    "highestPrice": 366.94,
+    "averagePrice": 234.45,
+    "profitPotential": 279.53,
+    "profitPercentage": 319.79178583686075,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Squirtle",
+    "setName": "Legendary Collection",
+    "lowestPrice": 1.17,
+    "highestPrice": 280.08,
+    "averagePrice": 108.92,
+    "profitPotential": 278.90999999999997,
+    "profitPercentage": 23838.461538461535,
+    "listingCount": 5,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Blastoise & Piplup-GX",
+    "setName": "Cosmic Eclipse",
+    "lowestPrice": 54.6,
+    "highestPrice": 329.61,
+    "averagePrice": 133.01,
+    "profitPotential": 275.01,
+    "profitPercentage": 503.68131868131866,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Charizard",
+    "setName": "Base Set",
+    "lowestPrice": 186.23,
+    "highestPrice": 457.49,
+    "averagePrice": 296.27,
+    "profitPotential": 271.26,
+    "profitPercentage": 145.65859421145893,
+    "listingCount": 5,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Dewgong (H6)",
+    "setName": "Skyridge",
+    "lowestPrice": 112.5,
+    "highestPrice": 379.99,
+    "averagePrice": 212.51,
+    "profitPotential": 267.49,
+    "profitPercentage": 237.7688888888889,
+    "listingCount": 3,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Raikou (13)",
+    "setName": "Neo Revelation",
+    "lowestPrice": 32.65,
+    "highestPrice": 299.99,
+    "averagePrice": 126.03,
+    "profitPotential": 267.34000000000003,
+    "profitPercentage": 818.8055130168455,
+    "listingCount": 7,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Mewtwo",
+    "setName": "Base Set (Shadowless)",
+    "lowestPrice": 32.86,
+    "highestPrice": 300,
+    "averagePrice": 123.9,
+    "profitPotential": 267.14,
+    "profitPercentage": 812.9640900791236,
+    "listingCount": 6,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Ho-oh (7)",
+    "setName": "Neo Revelation",
+    "lowestPrice": 40.99,
+    "highestPrice": 304.98,
+    "averagePrice": 126.67,
+    "profitPotential": 263.99,
+    "profitPercentage": 644.035130519639,
+    "listingCount": 9,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Pikachu ex",
+    "setName": "Surging Sparks",
+    "lowestPrice": 5.39,
+    "highestPrice": 268.82,
+    "averagePrice": 86.4,
+    "profitPotential": 263.43,
+    "profitPercentage": 4887.384044526902,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Starmie",
+    "setName": "Skyridge",
+    "lowestPrice": 19.13,
+    "highestPrice": 273,
+    "averagePrice": 117.71,
+    "profitPotential": 253.87,
+    "profitPercentage": 1327.0778881338213,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Glaceon VMAX",
+    "setName": "Evolving Skies",
+    "lowestPrice": 5.53,
+    "highestPrice": 258.57,
+    "averagePrice": 97.26,
+    "profitPotential": 253.04,
+    "profitPercentage": 4575.768535262206,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Bulbasaur",
+    "setName": "Legendary Collection",
+    "lowestPrice": 1.17,
+    "highestPrice": 249.99,
+    "averagePrice": 59.48,
+    "profitPotential": 248.82000000000002,
+    "profitPercentage": 21266.666666666668,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Charizard V",
+    "setName": "Brilliant Stars",
+    "lowestPrice": 3.37,
+    "highestPrice": 250.5,
+    "averagePrice": 91.36,
+    "profitPotential": 247.13,
+    "profitPercentage": 7333.234421364985,
+    "listingCount": 3,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Mega Sableye & Tyranitar-GX",
+    "setName": "Unified Minds",
+    "lowestPrice": 37.7,
+    "highestPrice": 281.57,
+    "averagePrice": 107.16,
+    "profitPotential": 243.87,
+    "profitPercentage": 646.8700265251989,
+    "listingCount": 4,
+    "sources": [
+      "TCGPLAYER"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Espeon (1)",
+    "setName": "Neo Discovery",
+    "lowestPrice": 55.99,
+    "highestPrice": 299,
+    "averagePrice": 133,
+    "profitPotential": 243.01,
+    "profitPercentage": 434.0239328451509,
+    "listingCount": 8,
+    "sources": [
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  },
+  {
+    "cardName": "Alakazam",
+    "setName": "Legendary Collection",
+    "lowestPrice": 12.66,
+    "highestPrice": 250,
+    "averagePrice": 65.74,
+    "profitPotential": 237.34,
+    "profitPercentage": 1874.7235387045812,
+    "listingCount": 6,
+    "sources": [
+      "TCGPLAYER",
+      "JUSTTCG"
+    ],
+    "liquidityGrade": "F"
+  }
+]

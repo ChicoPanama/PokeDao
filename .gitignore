@@ -80,3 +80,12 @@ reports/*.json
 *-audit-report.json
 database-analysis-*.json
 card-parsing-enhancement-*.json
+
+# Vector store (large binary files)
+data/vector-store/
+
+# RunPod training outputs
+data/training/runpod-outputs/
+
+# Intermediate training files
+data/training/intermediate/

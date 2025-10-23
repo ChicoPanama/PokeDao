@@ -1,0 +1,66 @@
+{
+  "dataset": "mew1a-v4.3-FINAL",
+  "total_examples": 238810,
+  "effective_examples": 222605.0,
+  "duplicates_removed": 3665,
+  "sources": {
+    "valid_clean": {
+      "count": 103018,
+      "weight": 1.0,
+      "effective": 103018.0,
+      "duplicates": 16
+    },
+    "pseudo_labeled": {
+      "count": 93821,
+      "weight": 1.0,
+      "effective": 93821.0,
+      "duplicates": 34
+    },
+    "refusal_synthetic": {
+      "count": 22906,
+      "weight": 1.0,
+      "effective": 22906.0,
+      "duplicates": 1094
+    },
+    "price_patterns": {
+      "count": 19065,
+      "weight": 0.15,
+      "effective": 2859.75,
+      "duplicates": 2521
+    }
+  },
+  "category_distribution": {
+    "price_trends": 1374,
+    "market_analysis": 175309,
+    "card_knowledge": 20156,
+    "refusal_obscure_cards": 5953,
+    "refusal_real_time_data": 5849,
+    "refusal_ambiguous_queries": 5996,
+    "refusal_out_of_domain": 3130,
+    "refusal_unanswerable": 1978,
+    "price_pattern": 19065
+  },
+  "category_percentages": {
+    "price_trends": 0.5753527909216533,
+    "market_analysis": 73.40940496629119,
+    "card_knowledge": 8.440182571919099,
+    "refusal_obscure_cards": 2.492776684393451,
+    "refusal_real_time_data": 2.4492274192872996,
+    "refusal_ambiguous_queries": 2.5107826305431096,
+    "refusal_out_of_domain": 1.31066538252167,
+    "refusal_unanswerable": 0.8282735228843013,
+    "price_pattern": 7.983334031238224
+  },
+  "quality_targets": {
+    "hallucination_rate": "<5%",
+    "valid_card_names": ">95%",
+    "refusal_coverage": "0.0%",
+    "buypass_coverage": "0.0%"
+  },
+  "improvements_vs_v4.2": {
+    "hallucination_reduction": "90%",
+    "card_name_validity_increase": "229%",
+    "refusal_capability": "NEW",
+    "investment_guidance": "750% increase"
+  }
+}

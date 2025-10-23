@@ -1,0 +1,194 @@
+[
+  {
+    "card_name": "Venusaur",
+    "current_price": 137.22,
+    "price_30d_ago": 74.81,
+    "actual_price_30d_later": 194.12,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Pikachu ex",
+    "current_price": 75.98243457490233,
+    "price_30d_ago": 87.4735311822153,
+    "actual_price_30d_later": 53.96382955128054,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "current_price": 199.32187879805724,
+    "price_30d_ago": 346.2976527524132,
+    "actual_price_30d_later": 288.3726893757376,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Charizard",
+    "current_price": 68.05,
+    "price_30d_ago": 623.52,
+    "actual_price_30d_later": 174.70710527294588,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Pikachu",
+    "current_price": 11038.26,
+    "price_30d_ago": 11038.26,
+    "actual_price_30d_later": 109.85,
+    "prediction_date": "2025-06-10",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "current_price": 62.763873991537594,
+    "price_30d_ago": 86.22544669358881,
+    "actual_price_30d_later": 48.09399672994479,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "current_price": 57.92451575483144,
+    "price_30d_ago": 77.1952812598158,
+    "actual_price_30d_later": 79.2195602514244,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Charizard ex",
+    "current_price": 350.4987536366268,
+    "price_30d_ago": 187.30944154569585,
+    "actual_price_30d_later": 147.48183193364483,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "current_price": 61.55908623125455,
+    "price_30d_ago": 97.940466935118,
+    "actual_price_30d_later": 38.71331344626147,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Mew",
+    "current_price": 323.89,
+    "price_30d_ago": 176.32,
+    "actual_price_30d_later": 462.77,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Gengar",
+    "current_price": 535.26,
+    "price_30d_ago": 42.44,
+    "actual_price_30d_later": 857.53,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Dark Charizard",
+    "current_price": 455.4040397387026,
+    "price_30d_ago": 109.85033814262822,
+    "actual_price_30d_later": 387.27205177976793,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Blastoise",
+    "current_price": 43.59,
+    "price_30d_ago": 77.35989895874934,
+    "actual_price_30d_later": 60.41,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Gyarados",
+    "current_price": 4746.45,
+    "price_30d_ago": 125.05,
+    "actual_price_30d_later": 90.59,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Machamp",
+    "current_price": 29.77,
+    "price_30d_ago": 204.95,
+    "actual_price_30d_later": 69.57,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Alakazam",
+    "current_price": 49.78,
+    "price_30d_ago": 224.75,
+    "actual_price_30d_later": 285.74,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Dragonite",
+    "current_price": 106.5,
+    "price_30d_ago": 39.37,
+    "actual_price_30d_later": 32.91,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Mew ex",
+    "current_price": 27.131605990273787,
+    "price_30d_ago": 28.383134846422784,
+    "actual_price_30d_later": 28.05754695956758,
+    "prediction_date": "2025-06-25",
+    "outcome_date": "2025-06-27"
+  },
+  {
+    "card_name": "Rocket's Sneak Attack",
+    "current_price": 28.659415950984453,
+    "price_30d_ago": 27.5300094925405,
+    "actual_price_30d_later": 27.302425679554563,
+    "prediction_date": "2025-07-03",
+    "outcome_date": "2025-08-06"
+  },
+  {
+    "card_name": "Mewtwo",
+    "current_price": 26.824844798350064,
+    "price_30d_ago": 27.042613471171684,
+    "actual_price_30d_later": 29.45858718554584,
+    "prediction_date": "2025-07-24",
+    "outcome_date": "2025-07-31"
+  },
+  {
+    "card_name": "invalid",
+    "current_price": 45.33,
+    "price_30d_ago": 45.33,
+    "actual_price_30d_later": 71.58,
+    "prediction_date": "2025-06-19",
+    "outcome_date": "2025-06-20"
+  },
+  {
+    "card_name": "INVALID",
+    "current_price": 36.94,
+    "price_30d_ago": 72.04,
+    "actual_price_30d_later": 72.04,
+    "prediction_date": "2025-06-11",
+    "outcome_date": "2025-06-11"
+  },
+  {
+    "card_name": "Rayquaza VMAX",
+    "current_price": 28.759632005470284,
+    "price_30d_ago": 29.13163973177831,
+    "actual_price_30d_later": 28.56397842875085,
+    "prediction_date": "2025-06-24",
+    "outcome_date": "2025-07-01"
+  },
+  {
+    "card_name": "Mew VMAX",
+    "current_price": 29.562147437681805,
+    "price_30d_ago": 29.317495617024548,
+    "actual_price_30d_later": 26.932116228681174,
+    "prediction_date": "2025-06-24",
+    "outcome_date": "2025-06-28"
+  }
+]

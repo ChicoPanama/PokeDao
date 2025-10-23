@@ -1,0 +1,902 @@
+[
+  {
+    "cardName": "Lugia",
+    "setName": "Aquapolis",
+    "avgPrice": 1250,
+    "stdDev": 948.15,
+    "coefficient": 75.852,
+    "priceRange": 1999.98,
+    "listingCount": 6
+  },
+  {
+    "cardName": "1999 Base Set",
+    "setName": "Base Set",
+    "avgPrice": 285.8,
+    "stdDev": 902.48,
+    "coefficient": 315.7732680195941,
+    "priceRange": 3998.39,
+    "listingCount": 19
+  },
+  {
+    "cardName": "Lugia",
+    "setName": "Neo Genesis",
+    "avgPrice": 742.94,
+    "stdDev": 713.23,
+    "coefficient": 96.00102296282337,
+    "priceRange": 1878.99,
+    "listingCount": 11
+  },
+  {
+    "cardName": "Umbreon (13)",
+    "setName": "Neo Discovery",
+    "avgPrice": 465.56,
+    "stdDev": 594.04,
+    "coefficient": 127.59687258355528,
+    "priceRange": 1661.94,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Charizard",
+    "setName": "Base Set (Shadowless)",
+    "avgPrice": 663.96,
+    "stdDev": 400.66,
+    "coefficient": 60.34399662630279,
+    "priceRange": 1074,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Blastoise",
+    "setName": "Base Set (Shadowless)",
+    "avgPrice": 318.73,
+    "stdDev": 321.9,
+    "coefficient": 100.99457220845227,
+    "priceRange": 782.6,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Shining Mewtwo",
+    "setName": "Neo Destiny",
+    "avgPrice": 504.35,
+    "stdDev": 321.54,
+    "coefficient": 63.75334589075047,
+    "priceRange": 782.89,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Nidoking (150)",
+    "setName": "Aquapolis",
+    "avgPrice": 476.78,
+    "stdDev": 306.38,
+    "coefficient": 64.2602458156802,
+    "priceRange": 749,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Dark Scizor",
+    "setName": "Neo Destiny",
+    "avgPrice": 282.27,
+    "stdDev": 305.08,
+    "coefficient": 108.08091543557587,
+    "priceRange": 705.91,
+    "listingCount": 9
+  },
+  {
+    "cardName": "Alakazam (H1)",
+    "setName": "Skyridge",
+    "avgPrice": 403.91,
+    "stdDev": 243.22,
+    "coefficient": 60.21638483820653,
+    "priceRange": 660,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Dark Gengar",
+    "setName": "Neo Destiny",
+    "avgPrice": 326.32,
+    "stdDev": 239.47,
+    "coefficient": 73.3850208384408,
+    "priceRange": 592.16,
+    "listingCount": 8
+  },
+  {
+    "cardName": "Tyranitar (H28)",
+    "setName": "Aquapolis",
+    "avgPrice": 328.86,
+    "stdDev": 222.42,
+    "coefficient": 67.63364349571246,
+    "priceRange": 509.28,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Pikachu",
+    "setName": "Legendary Collection",
+    "avgPrice": 131.48,
+    "stdDev": 213.23,
+    "coefficient": 162.17675692120474,
+    "priceRange": 499.46,
+    "listingCount": 8
+  },
+  {
+    "cardName": "Shining Noctowl",
+    "setName": "Neo Destiny",
+    "avgPrice": 226.69,
+    "stdDev": 206.65,
+    "coefficient": 91.15973355683974,
+    "priceRange": 571.04,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Dragonair",
+    "setName": "Base Set (Shadowless)",
+    "avgPrice": 102.7,
+    "stdDev": 200.66,
+    "coefficient": 195.3846153846154,
+    "priceRange": 549.23,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Charizard (6)",
+    "setName": "Expedition",
+    "avgPrice": 254.52,
+    "stdDev": 195.89,
+    "coefficient": 76.96448216250195,
+    "priceRange": 626.98,
+    "listingCount": 9
+  },
+  {
+    "cardName": "Eevee",
+    "setName": "Legendary Collection",
+    "avgPrice": 144.51,
+    "stdDev": 187.75,
+    "coefficient": 129.9218047193966,
+    "priceRange": 499,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Sabrina's Gengar",
+    "setName": "Gym Heroes",
+    "avgPrice": 220.31,
+    "stdDev": 187.65,
+    "coefficient": 85.17543461486088,
+    "priceRange": 495.56,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Mewtwo",
+    "setName": "Legendary Collection",
+    "avgPrice": 172.15,
+    "stdDev": 186.75,
+    "coefficient": 108.48097589311647,
+    "priceRange": 482,
+    "listingCount": 11
+  },
+  {
+    "cardName": "Houndoom (H11)",
+    "setName": "Aquapolis",
+    "avgPrice": 282.02,
+    "stdDev": 186.69,
+    "coefficient": 66.19743280618397,
+    "priceRange": 491.68,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Houndoom (H11)",
+    "setName": "Skyridge",
+    "avgPrice": 297.88,
+    "stdDev": 185,
+    "coefficient": 62.105545857392244,
+    "priceRange": 460.01,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Tyranitar",
+    "setName": "Aquapolis",
+    "avgPrice": 135.83,
+    "stdDev": 174.6,
+    "coefficient": 128.54303173084,
+    "priceRange": 594.84,
+    "listingCount": 12
+  },
+  {
+    "cardName": "Crobat (147)",
+    "setName": "Skyridge",
+    "avgPrice": 303.95,
+    "stdDev": 167.17,
+    "coefficient": 54.999177496298735,
+    "priceRange": 525,
+    "listingCount": 8
+  },
+  {
+    "cardName": "Umbreon",
+    "setName": "Aquapolis",
+    "avgPrice": 153.83,
+    "stdDev": 163.74,
+    "coefficient": 106.44217642852499,
+    "priceRange": 601.78,
+    "listingCount": 12
+  },
+  {
+    "cardName": "Kabutops (150)",
+    "setName": "Skyridge",
+    "avgPrice": 249.2,
+    "stdDev": 158.68,
+    "coefficient": 63.67576243980739,
+    "priceRange": 477.57,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Gengar (13)",
+    "setName": "Expedition",
+    "avgPrice": 158.08,
+    "stdDev": 157.2,
+    "coefficient": 99.44331983805667,
+    "priceRange": 498.74,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Umbreon (H29)",
+    "setName": "Aquapolis",
+    "avgPrice": 418.47,
+    "stdDev": 151.49,
+    "coefficient": 36.20092240781896,
+    "priceRange": 351,
+    "listingCount": 5
+  },
+  {
+    "cardName": "2000 Team Rocket",
+    "setName": "Team Rocket",
+    "avgPrice": 91.89,
+    "stdDev": 150.26,
+    "coefficient": 163.52160191533355,
+    "priceRange": 347.01,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Suicune (14)",
+    "setName": "Neo Revelation",
+    "avgPrice": 131.51,
+    "stdDev": 147.88,
+    "coefficient": 112.44772260664588,
+    "priceRange": 423.09,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Charizard",
+    "setName": "Legendary Collection",
+    "avgPrice": 283.56,
+    "stdDev": 137.77,
+    "coefficient": 48.58583721258288,
+    "priceRange": 357.88,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Dark Espeon",
+    "setName": "Neo Destiny",
+    "avgPrice": 218.93,
+    "stdDev": 137.42,
+    "coefficient": 62.76892157310555,
+    "priceRange": 351.95,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Shining Celebi",
+    "setName": "Neo Destiny",
+    "avgPrice": 279.3,
+    "stdDev": 134.76,
+    "coefficient": 48.24919441460794,
+    "priceRange": 311.53,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Gengar (10)",
+    "setName": "Skyridge",
+    "avgPrice": 225.54,
+    "stdDev": 133.37,
+    "coefficient": 59.13363483195886,
+    "priceRange": 342.49,
+    "listingCount": 9
+  },
+  {
+    "cardName": "Snorlax",
+    "setName": "Skyridge",
+    "avgPrice": 113.67,
+    "stdDev": 133.07,
+    "coefficient": 117.06694818333771,
+    "priceRange": 352.92,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Gengar",
+    "setName": "Legendary Collection",
+    "avgPrice": 118.97,
+    "stdDev": 124.92,
+    "coefficient": 105.00126082205598,
+    "priceRange": 328.58,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Rocket's Mewtwo",
+    "setName": "Gym Challenge",
+    "avgPrice": 157.47,
+    "stdDev": 124.62,
+    "coefficient": 79.1388835968756,
+    "priceRange": 334.47,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Mewtwo (20)",
+    "setName": "Expedition",
+    "avgPrice": 160.78,
+    "stdDev": 123.8,
+    "coefficient": 76.99962681925612,
+    "priceRange": 339.8,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Houndoom",
+    "setName": "Neo Revelation",
+    "avgPrice": 169.53,
+    "stdDev": 123.68,
+    "coefficient": 72.9546392968796,
+    "priceRange": 332.74,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Pokémon Umbreon Sun",
+    "setName": "Base Set",
+    "avgPrice": 66.42,
+    "stdDev": 119.73,
+    "coefficient": 180.26196928635954,
+    "priceRange": 305.53,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Dragonite (9)",
+    "setName": "Expedition",
+    "avgPrice": 159.39,
+    "stdDev": 119.71,
+    "coefficient": 75.10508814856641,
+    "priceRange": 312.1,
+    "listingCount": 9
+  },
+  {
+    "cardName": "Golem",
+    "setName": "Skyridge",
+    "avgPrice": 343.26,
+    "stdDev": 119.47,
+    "coefficient": 34.80452135407563,
+    "priceRange": 298.42,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Snorlax",
+    "setName": "Legendary Collection",
+    "avgPrice": 73.27,
+    "stdDev": 118.95,
+    "coefficient": 162.34475228606524,
+    "priceRange": 297.73,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Blastoise (4)",
+    "setName": "Expedition",
+    "avgPrice": 128.12,
+    "stdDev": 116.11,
+    "coefficient": 90.62597564783016,
+    "priceRange": 359.06,
+    "listingCount": 8
+  },
+  {
+    "cardName": "Raichu (H25)",
+    "setName": "Skyridge",
+    "avgPrice": 234.45,
+    "stdDev": 115.55,
+    "coefficient": 49.285561953508214,
+    "priceRange": 279.53,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Ninetales",
+    "setName": "Legendary Collection",
+    "avgPrice": 66.07,
+    "stdDev": 115.4,
+    "coefficient": 174.66323596185867,
+    "priceRange": 293.55,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Feraligatr (12)",
+    "setName": "Expedition",
+    "avgPrice": 94.26,
+    "stdDev": 115.25,
+    "coefficient": 122.26819435603649,
+    "priceRange": 325.56,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Charmander",
+    "setName": "Legendary Collection",
+    "avgPrice": 46.7,
+    "stdDev": 112.82,
+    "coefficient": 241.58458244111344,
+    "priceRange": 276.65,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Squirtle",
+    "setName": "Legendary Collection",
+    "avgPrice": 68.28,
+    "stdDev": 109.66,
+    "coefficient": 160.6033977738723,
+    "priceRange": 279.74,
+    "listingCount": 8
+  },
+  {
+    "cardName": "Mewtwo",
+    "setName": "Base Set (Shadowless)",
+    "avgPrice": 123.9,
+    "stdDev": 108.51,
+    "coefficient": 87.57869249394673,
+    "priceRange": 267.14,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Charizard",
+    "setName": "Base Set",
+    "avgPrice": 296.27,
+    "stdDev": 107.66,
+    "coefficient": 36.33847503965978,
+    "priceRange": 271.26,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Typhlosion (17)",
+    "setName": "Neo Genesis",
+    "avgPrice": 135.44,
+    "stdDev": 106.8,
+    "coefficient": 78.85410513880686,
+    "priceRange": 315.01,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Charizard (39)",
+    "setName": "Expedition",
+    "avgPrice": 125.68,
+    "stdDev": 104.05,
+    "coefficient": 82.78962444302991,
+    "priceRange": 290.98,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Umbreon (32)",
+    "setName": "Skyridge",
+    "avgPrice": 183.85,
+    "stdDev": 100.31,
+    "coefficient": 54.560783247212406,
+    "priceRange": 322.99,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Light Arcanine",
+    "setName": "Neo Destiny",
+    "avgPrice": 183.48,
+    "stdDev": 96.76,
+    "coefficient": 52.735993023762816,
+    "priceRange": 205.6,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Tyranitar (29)",
+    "setName": "Expedition",
+    "avgPrice": 119.21,
+    "stdDev": 96.38,
+    "coefficient": 80.84892207029611,
+    "priceRange": 287.76,
+    "listingCount": 9
+  },
+  {
+    "cardName": "Raikou (13)",
+    "setName": "Neo Revelation",
+    "avgPrice": 126.03,
+    "stdDev": 95.78,
+    "coefficient": 75.99777830675237,
+    "priceRange": 267.34,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Bulbasaur",
+    "setName": "Legendary Collection",
+    "avgPrice": 51.06,
+    "stdDev": 95.1,
+    "coefficient": 186.2514688601645,
+    "priceRange": 249.44,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Gengar (5)",
+    "setName": "Fossil",
+    "avgPrice": 122.01,
+    "stdDev": 94.61,
+    "coefficient": 77.54282435865912,
+    "priceRange": 298.94,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Suicune (H25)",
+    "setName": "Aquapolis",
+    "avgPrice": 155.13,
+    "stdDev": 91.88,
+    "coefficient": 59.227744472378006,
+    "priceRange": 212.43,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Alakazam",
+    "setName": "Legendary Collection",
+    "avgPrice": 65.74,
+    "stdDev": 91.49,
+    "coefficient": 139.16945543048374,
+    "priceRange": 237.34,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Dark Tyranitar",
+    "setName": "Neo Destiny",
+    "avgPrice": 144.08,
+    "stdDev": 89.49,
+    "coefficient": 62.11132704053303,
+    "priceRange": 206.88,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Snorlax (11)",
+    "setName": "Jungle",
+    "avgPrice": 93.23,
+    "stdDev": 86.52,
+    "coefficient": 92.80274589724337,
+    "priceRange": 287.49,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Ho-oh (7)",
+    "setName": "Neo Revelation",
+    "avgPrice": 126.67,
+    "stdDev": 83.53,
+    "coefficient": 65.94300149996053,
+    "priceRange": 263.99,
+    "listingCount": 9
+  },
+  {
+    "cardName": "Espeon (1)",
+    "setName": "Neo Discovery",
+    "avgPrice": 133,
+    "stdDev": 82.84,
+    "coefficient": 62.28571428571429,
+    "priceRange": 243.01,
+    "listingCount": 8
+  },
+  {
+    "cardName": "Ho-oh",
+    "setName": "Skyridge",
+    "avgPrice": 333.83,
+    "stdDev": 82.83,
+    "coefficient": 24.81203007518797,
+    "priceRange": 178.01,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Dark Charizard (4)",
+    "setName": "Team Rocket",
+    "avgPrice": 161.91,
+    "stdDev": 81.76,
+    "coefficient": 50.497189796800704,
+    "priceRange": 207.17,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Dragonite (4)",
+    "setName": "Fossil",
+    "avgPrice": 119.45,
+    "stdDev": 80.36,
+    "coefficient": 67.27501046462955,
+    "priceRange": 225.98,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Houndour (5)",
+    "setName": "Neo Discovery",
+    "avgPrice": 72.4,
+    "stdDev": 80.26,
+    "coefficient": 110.85635359116021,
+    "priceRange": 232.79,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Jolteon",
+    "setName": "Legendary Collection",
+    "avgPrice": 68.53,
+    "stdDev": 80.21,
+    "coefficient": 117.04363052677658,
+    "priceRange": 208.36,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Misty's Gyarados",
+    "setName": "Gym Challenge",
+    "avgPrice": 95.5,
+    "stdDev": 79.93,
+    "coefficient": 83.69633507853403,
+    "priceRange": 215.82,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Entei (6)",
+    "setName": "Neo Revelation",
+    "avgPrice": 137.53,
+    "stdDev": 79.81,
+    "coefficient": 58.030975059986915,
+    "priceRange": 221.55,
+    "listingCount": 9
+  },
+  {
+    "cardName": "Erika's Venusaur",
+    "setName": "Gym Challenge",
+    "avgPrice": 104.44,
+    "stdDev": 79.5,
+    "coefficient": 76.12026043661433,
+    "priceRange": 213.93,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Charizard",
+    "setName": "Base Set 2",
+    "avgPrice": 211.74,
+    "stdDev": 78.46,
+    "coefficient": 37.05487862472844,
+    "priceRange": 188.8,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Light Dragonite",
+    "setName": "Neo Destiny",
+    "avgPrice": 133.58,
+    "stdDev": 75.71,
+    "coefficient": 56.67764635424464,
+    "priceRange": 207.8,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Mew (19)",
+    "setName": "Expedition",
+    "avgPrice": 129.85,
+    "stdDev": 72.77,
+    "coefficient": 56.041586445899114,
+    "priceRange": 195.17,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Zapdos (H32)",
+    "setName": "Aquapolis",
+    "avgPrice": 111.02,
+    "stdDev": 72.57,
+    "coefficient": 65.36660061250224,
+    "priceRange": 179.78,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Venusaur",
+    "setName": "Base Set (Shadowless)",
+    "avgPrice": 135.87,
+    "stdDev": 71.52,
+    "coefficient": 52.638551556635015,
+    "priceRange": 177.66,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Shining Kabutops",
+    "setName": "Neo Destiny",
+    "avgPrice": 242.13,
+    "stdDev": 70.91,
+    "coefficient": 29.285920786354435,
+    "priceRange": 159.82,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Dark Raichu",
+    "setName": "Team Rocket",
+    "avgPrice": 92.26,
+    "stdDev": 69.83,
+    "coefficient": 75.68827227400823,
+    "priceRange": 178.91,
+    "listingCount": 8
+  },
+  {
+    "cardName": "Dark Typhlosion",
+    "setName": "Neo Destiny",
+    "avgPrice": 58.63,
+    "stdDev": 69.77,
+    "coefficient": 119.0005116834385,
+    "priceRange": 183.58,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Mewtwo-EX",
+    "setName": "BREAKthrough",
+    "avgPrice": 70.84,
+    "stdDev": 69.59,
+    "coefficient": 98.23546019198193,
+    "priceRange": 174.8,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Vaporeon (12)",
+    "setName": "Jungle",
+    "avgPrice": 52.49,
+    "stdDev": 69,
+    "coefficient": 131.45361021146883,
+    "priceRange": 224.18,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Rocket's Zapdos",
+    "setName": "Gym Challenge",
+    "avgPrice": 67.83,
+    "stdDev": 67.9,
+    "coefficient": 100.10319917440663,
+    "priceRange": 182.58,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Misty (18)",
+    "setName": "Gym Heroes",
+    "avgPrice": 75.02,
+    "stdDev": 64.9,
+    "coefficient": 86.51026392961879,
+    "priceRange": 201.41,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Flareon",
+    "setName": "Legendary Collection",
+    "avgPrice": 65.06,
+    "stdDev": 64.84,
+    "coefficient": 99.66185059944667,
+    "priceRange": 168.46,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Shining Raichu",
+    "setName": "Neo Destiny",
+    "avgPrice": 263.06,
+    "stdDev": 64.63,
+    "coefficient": 24.568539496692768,
+    "priceRange": 149.95,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Alakazam (1)",
+    "setName": "Expedition",
+    "avgPrice": 70.52,
+    "stdDev": 64.14,
+    "coefficient": 90.95292115711855,
+    "priceRange": 205.59,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Zapdos",
+    "setName": "Base Set (Shadowless)",
+    "avgPrice": 83.46,
+    "stdDev": 63.52,
+    "coefficient": 76.10831536065183,
+    "priceRange": 153.13,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Rocket's Scyther",
+    "setName": "Gym Heroes",
+    "avgPrice": 64.42,
+    "stdDev": 63.13,
+    "coefficient": 97.99751629928593,
+    "priceRange": 168.26,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Slowking (H22)",
+    "setName": "Aquapolis",
+    "avgPrice": 106.58,
+    "stdDev": 62.76,
+    "coefficient": 58.8853443422781,
+    "priceRange": 159.57,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Slowking",
+    "setName": "Neo Genesis",
+    "avgPrice": 66.16,
+    "stdDev": 61.54,
+    "coefficient": 93.01692865779928,
+    "priceRange": 182.2,
+    "listingCount": 11
+  },
+  {
+    "cardName": "Feraligatr (4)",
+    "setName": "Neo Genesis",
+    "avgPrice": 69.78,
+    "stdDev": 60.08,
+    "coefficient": 86.09916881627974,
+    "priceRange": 174.25,
+    "listingCount": 7
+  },
+  {
+    "cardName": "Scizor (H21)",
+    "setName": "Aquapolis",
+    "avgPrice": 92.68,
+    "stdDev": 59.45,
+    "coefficient": 64.14544669831679,
+    "priceRange": 143.73,
+    "listingCount": 5
+  },
+  {
+    "cardName": "Shining Steelix",
+    "setName": "Neo Destiny",
+    "avgPrice": 190.29,
+    "stdDev": 58.78,
+    "coefficient": 30.889694676546327,
+    "priceRange": 140.34,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Arcanine",
+    "setName": "Legendary Collection",
+    "avgPrice": 25.74,
+    "stdDev": 57.9,
+    "coefficient": 224.94172494172494,
+    "priceRange": 143.02,
+    "listingCount": 6
+  },
+  {
+    "cardName": "Celebi (3)",
+    "setName": "Neo Revelation",
+    "avgPrice": 78.47,
+    "stdDev": 54.43,
+    "coefficient": 69.36408818656813,
+    "priceRange": 170,
+    "listingCount": 9
+  },
+  {
+    "cardName": "Eevee",
+    "setName": "Aquapolis",
+    "avgPrice": 47.77,
+    "stdDev": 54.1,
+    "coefficient": 113.2509943479171,
+    "priceRange": 142.09,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Ampharos",
+    "setName": "Neo Revelation",
+    "avgPrice": 59.86,
+    "stdDev": 51.38,
+    "coefficient": 85.83361176077516,
+    "priceRange": 137.1,
+    "listingCount": 10
+  },
+  {
+    "cardName": "Brock's Rhydon",
+    "setName": "Gym Heroes",
+    "avgPrice": 45.1,
+    "stdDev": 51,
+    "coefficient": 113.08203991130821,
+    "priceRange": 118.2,
+    "listingCount": 8
+  },
+  {
+    "cardName": "Dark Feraligatr",
+    "setName": "Neo Destiny",
+    "avgPrice": 87.71,
+    "stdDev": 50.97,
+    "coefficient": 58.11195986774599,
+    "priceRange": 116.72,
+    "listingCount": 6
+  }
+]

@@ -1,0 +1,5002 @@
+[
+  {
+    "card_name": "Venusaur",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Pikachu ex",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Charizard VSTAR",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Charizard",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Pikachu",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Dark Blastoise",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Pikachu VMAX",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Altaria",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Charizard ex",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Pikachu V-UNION",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Pupitar",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Mew",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Gengar",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Dark Charizard",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Blastoise",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Impact Energy",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Gyarados",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Meloetta",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Machamp",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Dark Espeon",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Alakazam",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Rocket's Tricky Gym",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Rare Candy",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Dawn Stadium",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Simisear",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Pow! Hand Extension",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Dragonite",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Bronzor",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Furfrou",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Trapinch",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Noctowl",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Pancham",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Cufant",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Sceptile-EX",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Mr. Mime",
+    "question_type": "type",
+    "correct_answer": "Water",
+    "distractors": [
+      "Fire",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Mewtwo V-UNION",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Marshtomp",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Blaine's Vulpix",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Lucky Energy",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Sandygast",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Eiscue V",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Charjabug",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Litwick",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Pokémon Reversal",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Exeggcute",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Zeraora",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Crown Zenith: Galarian Gallery",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Parasect",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Rillaboom",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Chili & Cilan & Cress",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Sabrina's Mr. Mime",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Azelf",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Chimchar",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Scizor",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Arceus",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Pidgeot",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Techno Radar",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Kyurem-EX",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Dusk Mane Necrozma GX",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Machoke",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Celebi",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Solosis",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Lickilicky",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Cloyster δ",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Water Energy",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Lucky Egg",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Houndoom G",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Petilil",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Mareep",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Kricketot",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Glaceon",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Trubbish",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Meowth V",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Lurantis",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Rocky Helmet",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Pidgeotto",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Spiritomb",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Heliolisk",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Leafeon GX",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Thwackey",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Haunter",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Absol",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Wimpod",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Pyukumuku",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Psyduck",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Kabuto",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Dragonite ex",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Greninja-GX",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Houndstone",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Raichu",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Primarina",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Moomoo Milk",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Mewtwo",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Lopunny",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Jigglypuff",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Wingull",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Chatot",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Alolan Ninetales",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Unidentified Fossil",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Zoroark",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Energy Search",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Lugia",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Gengar VMAX",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Pawniard",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Energy Switch",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Scolipede",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Super Potion",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Gastrodon",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Rocket's Snorlax",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Clawitzer",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Bounsweet",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Swanna",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Hitmonlee",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Ariados",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Raikou",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Kakuna",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Orbeetle V",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Koga's Trap",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Fearow",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Acro Bike",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Machamp-EX",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Pansage",
+    "question_type": "type",
+    "correct_answer": "Water",
+    "distractors": [
+      "Fire",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Cherubi",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Venusaur V",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Crobat",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Corvisquire",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Eevee & Snorlax GX",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Kingler",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Energy Root",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Marowak",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Bulbasaur",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Solrock",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Genesect-EX",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Tapu Lele-GX",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Scraggy",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Bisharp",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Tangrowth",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Dangerous Energy",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Sableye",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Bunnelby",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Typhlosion",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Torchic",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Wigglytuff",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Feebas",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Tsareena",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Poliwhirl",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Mesprit",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Victini ex",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Golduck",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Dark Dragonite",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Kirlia",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Porygon",
+    "question_type": "type",
+    "correct_answer": "Water",
+    "distractors": [
+      "Fire",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Toxicroak",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Tyrogue",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Slakoth",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Sliggoo",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Hatenna",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Larvitar",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Ursaluna",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Yanma",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Weavile",
+    "question_type": "type",
+    "correct_answer": "Water",
+    "distractors": [
+      "Fire",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Slowpoke",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Finizen",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Druddigon",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Beldum",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Skorupi",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Vileplume",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Sigilyph",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Dunsparce",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Crasher Wake",
+    "question_type": "type",
+    "correct_answer": "Water",
+    "distractors": [
+      "Fire",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Registeel",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Gardevoir",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Shinx",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Alakazam Star",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Sudowoodo",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Nidorino",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Rhyperior",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Kartana-GX",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Misty's Dewgong",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Snorunt",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Tinkatuff",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Energy Removal 2",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Elemental Badge",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Galarian Obstagoon",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Panpour",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Erika's Tangela",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Ursaluna V",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Arbok",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Palkia G",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Mewtwo EX",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Katy",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Horsea δ",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Magikarp",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Mystery Energy",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Corviknight V",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Master Ball",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Zygarde",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Skwovet",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Electabuzz",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Wobbuffet",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Brigette",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Weepinbell",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Zapdos",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Heatmor",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Vanillish",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Buneary",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Mew ex",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Scoop Up Cyclone",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Garchomp",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Dark Typhlosion",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Memory Berry",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Unown [A]",
+    "question_type": "type",
+    "correct_answer": "Water",
+    "distractors": [
+      "Fire",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Starmie",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Rocket's Sneak Attack",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "M Tyranitar-EX",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Infernape",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Good Manners",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Comfey",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Manaphy",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Galarian Meowth",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Guzzlord ex",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Zigzagoon",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Moltres",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Greninja BREAK",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Weedle",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Darkrai ex",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Lechonk",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Circhester Bath",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Dratini",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Magneton",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Stonjourner",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Eelektrik",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Yveltal BREAK",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Poliwrath",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Giratina EX",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Tapu Koko",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Metapod",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Roserade",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Houndstone ex",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Unown O",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Burmy Trash Cloak",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Copperajah",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Cloyster",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Healing Berry",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Axew",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Chikorita",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Dark Flaaffy",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Briar",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Atticus",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Crobat δ",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Nidoran♀",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Sharpedo",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Krookodile",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Rhydon",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Aggron",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Nidoran♂",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Yamper",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Xurkitree-GX",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Grass Energy",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Grabber",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Castform",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Krabby",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Quick Ball",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Teddiursa",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Pansear",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Breloom",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Camerupt G",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Lightning Energy",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Paras",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Surskit",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Infernape LV.X",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Chingling",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Giratina VSTAR",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Milotic",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Weeding Gloves",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Alcremie V",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Celio's Network",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Dubwool V",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Poké Ball",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Alakazam E4",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Electrike",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Klawf",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Golisopod",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Iron Bundle",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Jolteon",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Talonflame",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Walrein",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Chaos Gym",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Sealeo",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Magnemite",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Golbat",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Meowstic",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Hop",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Spoink",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Simipour",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Swirlix",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Skrelp",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Magmar",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Cleffa",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Silver Bangle",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Clefable",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Whismur",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Mimikyu",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Salamence LV.X",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Grotle",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Dragapult",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Omastar",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Ursaring",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Raboot",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Lavender Town",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Team Magma's Aron",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Morpeko V",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Nihilego",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Bewear",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Energy Link",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Ice Rider Calyrex VMAX",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Magearna",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Omanyte",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Fan Rotom",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Sunkern",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Snorlax",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Eternatus VMAX",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Professor Birch",
+    "question_type": "type",
+    "correct_answer": "Water",
+    "distractors": [
+      "Fire",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Applin",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Jet Energy",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Dhelmise",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Tauros",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Electivire",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Riolu",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Klang",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Clefairy",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Dark Dragonair",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Cleansing Gloves",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Charmander",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Ninetales",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Diglett",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Koraidon ex",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Mantine",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Hippowdon",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Emolga",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Brock's Primeape",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Ruffian",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Latias",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Dedenne",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Giovanni's Charisma",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Pachirisu",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Bent Spoon",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Buzzwole ex",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Falinks",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Mega Absol ex",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Cacturne δ",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Light Jolteon",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Lairon",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Sidney's Stadium",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Pichu",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Tympole",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Wartortle",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Mamoswine",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Flaaffy",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Gliscor",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Silcoon",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Eldegoss V",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Spinarak",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Gardevoir & Sylveon GX",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Delphox-EX",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Miraidon ex",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Full Heal",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Shiftry",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Nidorina",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Jynx",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Pikachu-EX",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Oddish",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Treecko",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Professor Elm's Training Method",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Smoochum",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Primeape δ",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Trick or Trade BOOster Bundle",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Nidoking",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Heat Fire Energy",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Vulpix",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Sandshrew",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Plusle",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Scyther",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Nosepass",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Ribombee",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Mankey",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Pokémon Park",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Sewaddle",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Super Rod",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Sentret",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Team Aqua's Poochyena",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Rayquaza ex",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Sizzlipede",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Zinnia",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Ho-Oh-EX",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Fire Energy",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Dawn",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Darkrai-EX",
+    "question_type": "type",
+    "correct_answer": "Darkness",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Hatterene VMAX",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Taillow",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Goldeen",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Power Plant",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Milotic V",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Floette",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Turtwig",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Dragonite ex δ",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Plasma Energy",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Masquerain",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Vaporeon",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Switch",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Team Magma's Rhydon",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Skitty",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Staraptor",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Ethan's Ho-Oh ex",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Manectric",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Joltik",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Arrokuda",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Uxie",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Wailord",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Darkness Energy",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Pineco",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Espeon",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Marill",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Staryu",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Bronzong",
+    "question_type": "type",
+    "correct_answer": "Water",
+    "distractors": [
+      "Fire",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Tsareena ex",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Probopass",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "SM - Burning Shadows",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Dreepy",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Magikarp & Wailord GX",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Squirtle",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Quilava δ",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Piloswine",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Bellossom",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Archen",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Marshadow GX",
+    "question_type": "rarity",
+    "correct_answer": "Ultra Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Shuppet",
+    "question_type": "type",
+    "correct_answer": "Water",
+    "distractors": [
+      "Fire",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Malamar",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Primal Kyogre EX",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Ledyba",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Leafeon VMAX",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Miltank",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Poipole",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Tentacool",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Incineroar",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Celadon City Gym",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Ledian",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Shellder",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Darumaka",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Excadrill",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "VS Seeker",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Piplup",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Toxicroak-EX",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Counter Gain",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Lass's Special",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Lillie",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Giacomo",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "White Kyurem-EX",
+    "question_type": "type",
+    "correct_answer": "Fighting",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Drowzee",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Blacephalon",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Darkrai",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Swadloon",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Malamar-EX",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Porygon-Z",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Slaking",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Team Rocket's Evil Deeds",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Persian δ",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Camerupt",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Rotom",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Lokix",
+    "question_type": "type",
+    "correct_answer": "Psychic",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Rocket's Mission",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Nincada",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Empoleon FB",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Cherrim",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Seismitoad",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Tinkaton ex",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Lycanroc GX",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Regigigas",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Abomasnow",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Koga's Muk",
+    "question_type": "set",
+    "correct_answer": "Neo Genesis",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Grimmsnarl",
+    "question_type": "rarity",
+    "correct_answer": "Common",
+    "distractors": [
+      "Uncommon",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Item Finder",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Yveltal-EX",
+    "question_type": "set",
+    "correct_answer": "Fossil",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Phanpy",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Expert Belt",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Zapdos ex",
+    "question_type": "set",
+    "correct_answer": "Team Rocket",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Stunfisk",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Igglybuff",
+    "question_type": "type",
+    "correct_answer": "Fire",
+    "distractors": [
+      "Water",
+      "Grass",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Darkrai ◇",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Illumise",
+    "question_type": "rarity",
+    "correct_answer": "Rare Holo",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Stufful",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Warp Point",
+    "question_type": "set",
+    "correct_answer": "Jungle",
+    "distractors": [
+      "Base Set",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Celebi ★",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Snorlax Doll",
+    "question_type": "type",
+    "correct_answer": "Lightning",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  },
+  {
+    "card_name": "Rowlet",
+    "question_type": "set",
+    "correct_answer": "Sword & Shield",
+    "distractors": [
+      "Base Set",
+      "Jungle",
+      "Fossil"
+    ]
+  },
+  {
+    "card_name": "Alolan Graveler",
+    "question_type": "rarity",
+    "correct_answer": "Uncommon",
+    "distractors": [
+      "Common",
+      "Rare Holo",
+      "Ultra Rare"
+    ]
+  },
+  {
+    "card_name": "Dragonair δ",
+    "question_type": "type",
+    "correct_answer": "Grass",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Lightning"
+    ]
+  },
+  {
+    "card_name": "Quaxly",
+    "question_type": "set",
+    "correct_answer": "Base Set",
+    "distractors": [
+      "Jungle",
+      "Fossil",
+      "Team Rocket"
+    ]
+  },
+  {
+    "card_name": "Metagross Star",
+    "question_type": "rarity",
+    "correct_answer": "Secret Rare",
+    "distractors": [
+      "Common",
+      "Uncommon",
+      "Rare Holo"
+    ]
+  },
+  {
+    "card_name": "Rapidash",
+    "question_type": "type",
+    "correct_answer": "Metal",
+    "distractors": [
+      "Fire",
+      "Water",
+      "Grass"
+    ]
+  }
+]

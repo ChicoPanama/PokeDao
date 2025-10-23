@@ -1,0 +1,43 @@
+{
+  "input_file": "data/training/discarded-for-patterns.jsonl",
+  "output_file": "data/training/price-patterns-50k.jsonl",
+  "total_processed": 50000,
+  "converted": 21586,
+  "conversion_rate": "43.17%",
+  "effective_examples": 3237,
+  "weight": 0.15,
+  "price_tier_distribution": {
+    "budget": 762,
+    "mid": 9373,
+    "premium": 5835,
+    "high_end": 5616
+  },
+  "price_statistics": {
+    "budget": {
+      "count": 762,
+      "avg_price": 28.096667359507602,
+      "min_price": 24.53265076075761,
+      "max_price": 29.99993703944027
+    },
+    "mid": {
+      "count": 9373,
+      "avg_price": 59.23681199532105,
+      "min_price": 30.003531278446605,
+      "max_price": 99.99558348722907
+    },
+    "premium": {
+      "count": 5835,
+      "avg_price": 173.39979884190083,
+      "min_price": 100.01290105925933,
+      "max_price": 299.9694043726034
+    },
+    "high_end": {
+      "count": 5616,
+      "avg_price": 1825.7958472074183,
+      "min_price": 300.01163567080084,
+      "max_price": 27749.101292847194
+    }
+  },
+  "strategy": "SoftDedup - Reweight instead of delete",
+  "research_reference": "SoftDedup: 26% faster training, +1.8% accuracy (2025)"
+}
