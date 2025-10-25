@@ -1,16 +1,17 @@
 """
-MEW-1A v4.2 vLLM DEPLOYMENT WITH VECTOR RAG
+MEW-1A v4.3 vLLM DEPLOYMENT WITH VECTOR RAG
 ===========================================
 
-Combines vLLM inference with FAISS semantic search for enhanced responses.
+Production deployment of Mew-1A v4.3 with Vector RAG.
 
-New Features:
-- Semantic card search (FAISS vector embeddings)
-- Automatic RAG augmentation for card queries
-- 7x improvement in query coverage vs pattern matching
+Model Details:
+- Base: Llama-3.2-3B-Instruct
+- Training: 253,810 examples, 3 epochs
+- Final loss: 0.3508
+- LoRA adapters: 24.3M parameters (0.75%)
 
 Performance: 2-3x faster than transformers (1-2s vs 3-7s)
-Model: ChicoPanama/mew1a-v4.2-merged-llama-3.2-3b-pokemon-tcg
+Model: ChicoPanama/mew1a-v4.3
 """
 
 import modal
@@ -19,22 +20,42 @@ import modal
 # CONFIGURATION
 # =============================================================================
 
-# Using base Llama-3.2-3B until trained model is uploaded to HuggingFace
-# TODO: Replace with ChicoPanama/mew1a-v4.3 when uploaded
-MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
+import os
+
+# Mew-1A v4.3 - Trained on 253,810 examples, Final loss: 0.3508
+MODEL_NAME = "ChicoPanama/mew1a-v4.3"
 
 # vLLM Configuration (optimized for T4 GPU)
 VLLM_CONFIG = {
     "gpu_memory_utilization": 0.9,
     "max_model_len": 2048,
-    "dtype": "bfloat16",
+    "dtype": "float16",  # T4 GPU only supports float16, not bfloat16 (compute 7.5 < 8.0)
     "enable_chunked_prefill": True,
     "max_num_batched_tokens": 4096,
     "tensor_parallel_size": 1,
 }
 
+# Guardrail Configuration (environment toggles)
+GUARDRAIL_CONFIG = {
+    # TFV footer mode: "once" (session-aware), "always", "off"
+    "tfv_footer_mode": os.environ.get("TFV_FOOTER_MODE", "once"),
+
+    # Auto-preface threshold: Enable 1-line TFV preface if repair_rate > threshold over 60m
+    "tfv_autopreface_threshold": float(os.environ.get("TFV_AUTOPREFACE_THRESHOLD", "0.20")),
+
+    # /analyze failover settings
+    "analyze_failover_enabled": os.environ.get("ANALYZE_FAILOVER_ENABLED", "true").lower() == "true",
+    "analyze_failover_threshold_5xx": float(os.environ.get("ANALYZE_FAILOVER_THRESHOLD_5XX", "0.01")),
+}
+
+# Policy Engine Configuration
+POLICY_ENGINE_ENABLED = os.environ.get("POLICY_ENGINE_ENABLED", "true").lower() == "true"
+BUY_THRESHOLD_PCT = float(os.environ.get("BUY_THRESHOLD_PCT", "10"))
+PASS_THRESHOLD_PCT = float(os.environ.get("PASS_THRESHOLD_PCT", "10"))
+POLICY_HEADER_INLINE = os.environ.get("POLICY_HEADER_INLINE", "false").lower() == "true"
+
 # Modal App
-app = modal.App("mew1a-vllm-v4.2-vector-rag")
+app = modal.App("mew1a-vllm-v4.3-vector-rag")
 
 # Create volume for vector store
 vector_store_volume = modal.Volume.from_name("mew1a-vector-store", create_if_missing=True)
@@ -51,10 +72,23 @@ vllm_image = (
         "sentence-transformers==3.3.1",
         "faiss-cpu==1.9.0",
         "numpy==1.26.4",
+        "prometheus-client==0.21.0",  # Metrics
     )
     .add_local_file(
-        local_path="apps/mew1a/rag_middleware_vector.py",
+        local_path="rag_middleware_vector.py",
         remote_path="/root/rag_middleware_vector.py"
+    )
+    .add_local_file(
+        local_path="tfv_validator.py",
+        remote_path="/root/tfv_validator.py"
+    )
+    .add_local_file(
+        local_path="prometheus_metrics.py",
+        remote_path="/root/prometheus_metrics.py"
+    )
+    .add_local_file(
+        local_path="policy_engine.py",
+        remote_path="/root/policy_engine.py"
     )
 )
 
@@ -70,8 +104,8 @@ vllm_image = (
     scaledown_window=300,
     timeout=600,
 )
-class Mew1AV42VectorRAGModel:
-    """vLLM-powered Mew-1A v4.2 with FAISS Vector RAG"""
+class Mew1AV43VectorRAGModel:
+    """vLLM-powered Mew-1A v4.3 with FAISS Vector RAG"""
 
     @modal.enter()
     def load_model(self):
@@ -84,15 +118,16 @@ class Mew1AV42VectorRAGModel:
         # Add root directory to path (where rag_middleware_vector.py is located)
         sys.path.insert(0, "/root")
 
-        # Import Vector RAG
+        # Import Vector RAG and TFV Validator
         from rag_middleware_vector import VectorRAGMiddleware
+        from tfv_validator import apply_all_guardrails
 
         hf_token = os.environ.get("HUGGINGFACE_TOKEN")
 
-        print("🚀 Initializing Mew-1A v4.2 vLLM + Vector RAG...")
+        print("🚀 Initializing Mew-1A v4.3 vLLM + Vector RAG...")
         print(f"   Model: {MODEL_NAME}")
-        print(f"   Training Examples: 509,746")
-        print(f"   Temporal Data: 84.8% (432,107 examples)")
+        print(f"   Training Examples: 253,810")
+        print(f"   Training Loss: 0.3508 (3 epochs)")
 
         # Initialize vLLM with merged model
         self.llm = LLM(
@@ -110,11 +145,11 @@ class Mew1AV42VectorRAGModel:
             metadata_path="/vector-store/metadata.pkl"
         )
 
-        print("✅ Mew-1A v4.2 + Vector RAG ready!")
+        print("✅ Mew-1A v4.3 + Vector RAG ready!")
         print(f"   Max batch size: {VLLM_CONFIG['max_num_batched_tokens']}")
         print(f"   Max sequence length: {VLLM_CONFIG['max_model_len']}")
-        print(f"   Vector search: 10,000 cards indexed")
-        print(f"   Features: Semantic search, Market forecasting, Reddit sentiment")
+        print(f"   Vector search: 482,298 cards indexed")
+        print(f"   Features: Semantic search, TFV estimation, BUY/PASS decisions")
 
     @modal.method()
     def generate(
@@ -124,6 +159,7 @@ class Mew1AV42VectorRAGModel:
         temperature: float = 0.3,
         top_p: float = 0.9,
         use_rag: bool = True,
+        session_id: str = None,
     ) -> dict:
         """
         Generate response using vLLM with optional RAG augmentation
@@ -134,6 +170,7 @@ class Mew1AV42VectorRAGModel:
             temperature: Sampling temperature
             top_p: Nucleus sampling parameter
             use_rag: Whether to use Vector RAG augmentation
+            session_id: Optional session ID for session-aware guardrails
 
         Returns:
             Response dict with text, tokens, timing, and RAG info
@@ -169,14 +206,40 @@ class Mew1AV42VectorRAGModel:
         generated_text = output.outputs[0].text
         num_tokens = len(output.outputs[0].token_ids)
 
+        # Apply post-response guardrails (TFV validation + $0.00 sanitization)
+        from tfv_validator import apply_all_guardrails
+
+        # Determine session awareness based on config
+        use_session_awareness = GUARDRAIL_CONFIG["tfv_footer_mode"] == "once"
+        if GUARDRAIL_CONFIG["tfv_footer_mode"] == "off":
+            # Footer disabled entirely
+            guardrail_result = {
+                "text": generated_text.strip(),
+                "tfv_repaired": False,
+                "zero_price_sanitized": False,
+                "footer_shown": False,
+                "footer_type": "none",
+            }
+        else:
+            guardrail_result = apply_all_guardrails(
+                generated_text.strip(),
+                session_id=session_id,
+                use_session_awareness=use_session_awareness
+            )
+
         return {
-            "response": generated_text.strip(),
+            "response": guardrail_result["text"],
             "tokens": num_tokens,
             "inference_time": inference_time,
             "tokens_per_second": num_tokens / inference_time if inference_time > 0 else 0,
             "rag_augmented": was_augmented,
             "rag_cards_count": len(rag_cards) if rag_cards else 0,
             "rag_cards": rag_cards[:3] if rag_cards else [],  # Top 3 for reference
+            "guardrails": {
+                "tfv_repaired": guardrail_result["tfv_repaired"],
+                "zero_price_sanitized": guardrail_result["zero_price_sanitized"],
+                "footer_type": guardrail_result.get("footer_type", "none"),
+            },
         }
 
     @modal.method()
@@ -315,24 +378,59 @@ class Mew1AV42VectorRAGModel:
 @app.function(image=vllm_image)
 @modal.asgi_app()
 def fastapi_app():
-    from fastapi import FastAPI
+    from fastapi import FastAPI, Request, Response
     from fastapi.responses import JSONResponse
+    import time
+    import sys
+    sys.path.insert(0, "/root")
+
+    # Policy Engine imports
+    from policy_engine import compute_recommendation, PolicyConfig, check_text_contradiction
+
+    # Initialize policy config
+    _policy_cfg = PolicyConfig(
+        buy_threshold_pct=BUY_THRESHOLD_PCT,
+        pass_threshold_pct=PASS_THRESHOLD_PCT
+    )
 
     web_app = FastAPI(
-        title="Mew-1A v4.2 Vector RAG API",
-        description="Pokemon TCG AI with semantic search (509K examples + 482K vector indexed)",
-        version="4.2.1"
+        title="Mew-1A v4.3 Vector RAG API",
+        description="Pokemon TCG AI with semantic search (254K examples + 482K vector indexed)",
+        version="4.3.0"
     )
+
+    @web_app.get("/metrics")
+    async def metrics():
+        """Prometheus metrics endpoint"""
+        from prometheus_metrics import get_metrics_text, CONTENT_TYPE_LATEST
+        return Response(content=get_metrics_text(), media_type=CONTENT_TYPE_LATEST)
 
     @web_app.get("/health")
     async def health():
         """Health check endpoint"""
-        model = Mew1AV42VectorRAGModel()
-        return model.health_check.remote()
+        import prometheus_metrics as pm
+        start = time.time()
+        try:
+            model = Mew1AV43VectorRAGModel()
+            result = model.health_check.remote()
+            pm.record_request("/health", 200, time.time() - start)
+            return result
+        except Exception as e:
+            pm.record_request("/health", 500, time.time() - start)
+            raise
 
     @web_app.post("/analyze")
-    async def analyze(data: dict):
-        """Card analysis endpoint with Vector RAG"""
+    async def analyze(request: Request):
+        """
+        Card analysis endpoint with Vector RAG
+
+        NOTE: This endpoint routes through /generate internally to avoid timeout issues.
+        The analyze_card method calls generate() with structured prompts.
+        """
+        import prometheus_metrics as pm
+        start = time.time()
+
+        data = await request.json()
         card_name = data.get("card_name", "")
         set_name = data.get("set_name", "")
         listed_price = float(data.get("listed_price", 0.0))
@@ -340,49 +438,149 @@ def fastapi_app():
         reddit_sentiment = data.get("reddit_sentiment", "")
         max_tokens = int(data.get("max_tokens", 200))
         use_rag = data.get("use_rag", True)
+        session_id = data.get("session_id", None)
 
         if not card_name:
+            pm.record_request("/analyze", 400, time.time() - start)
             return JSONResponse(
                 status_code=400,
                 content={"error": "Missing 'card_name' field"}
             )
 
-        model = Mew1AV42VectorRAGModel()
-        result = model.analyze_card.remote(
-            card_name=card_name,
-            set_name=set_name,
-            listed_price=listed_price,
-            fair_value=fair_value,
-            reddit_sentiment=reddit_sentiment,
-            max_tokens=max_tokens,
-            use_rag=use_rag,
-        )
-        return result
+        try:
+            # Compute policy recommendation
+            policy = {"recommendation": "NEUTRAL", "discount_pct": None, "policy_engine": False}
+            if POLICY_ENGINE_ENABLED and listed_price is not None and fair_value is not None and listed_price > 0 and fair_value > 0:
+                policy = compute_recommendation(fair_value, listed_price, _policy_cfg)
+
+            model = Mew1AV43VectorRAGModel()
+            result = model.analyze_card.remote(
+                card_name=card_name,
+                set_name=set_name,
+                listed_price=listed_price,
+                fair_value=fair_value,
+                reddit_sentiment=reddit_sentiment,
+                max_tokens=max_tokens,
+                use_rag=use_rag,
+            )
+
+            # Check for contradiction
+            contradiction = False
+            if policy["policy_engine"] and "response" in result:
+                contradiction = check_text_contradiction(result["response"], policy["recommendation"])
+                if contradiction:
+                    pm.record_contradiction("/analyze")
+
+            # Record metrics
+            latency = time.time() - start
+            pm.record_request("/analyze", 200, latency)
+            if "tokens" in result:
+                pm.record_generation("/analyze", result["tokens"], result.get("inference_time", latency))
+            if "guardrails" in result:
+                pm.record_guardrails(
+                    "/analyze",
+                    result["guardrails"].get("tfv_repaired", False),
+                    result["guardrails"].get("footer_type", "none"),
+                    result["guardrails"].get("zero_price_sanitized", False)
+                )
+            if "rag_augmented" in result:
+                pm.record_rag("/analyze", result["rag_augmented"])
+
+            # Return with policy fields
+            return {
+                **result,
+                "recommendation": policy["recommendation"],
+                "discount_pct": policy.get("discount_pct"),
+                "tfv": fair_value,
+                "listed": listed_price,
+                "policy_engine": policy["policy_engine"],
+                "consistency": {"model_text_contradiction": contradiction}
+            }
+        except Exception as e:
+            # If analyze_card fails, provide helpful error response
+            pm.record_request("/analyze", 500, time.time() - start)
+            return JSONResponse(
+                status_code=500,
+                content={
+                    "error": "Analysis failed",
+                    "detail": str(e),
+                    "suggestion": "Try using /generate endpoint with custom prompt as fallback"
+                }
+            )
 
     @web_app.post("/generate")
-    async def generate(data: dict):
-        """Raw text generation endpoint with Vector RAG"""
+    async def generate(request: Request):
+        """Raw text generation endpoint with Vector RAG + Policy Engine"""
+        import prometheus_metrics as pm
+        start = time.time()
+
+        data = await request.json()
         prompt = data.get("prompt", "")
         max_tokens = int(data.get("max_tokens", 200))
         temperature = float(data.get("temperature", 0.3))
         top_p = float(data.get("top_p", 0.9))
         use_rag = data.get("use_rag", True)
+        session_id = data.get("session_id", None)
+
+        # Policy Engine: Extract prices
+        listed_price = data.get("listed_price")
+        fair_value = data.get("fair_value")
 
         if not prompt:
+            pm.record_request("/generate", 400, time.time() - start)
             return JSONResponse(
                 status_code=400,
                 content={"error": "Missing 'prompt' field"}
             )
 
-        model = Mew1AV42VectorRAGModel()
-        result = model.generate.remote(
-            prompt=prompt,
-            max_tokens=max_tokens,
-            temperature=temperature,
-            top_p=top_p,
-            use_rag=use_rag,
-        )
-        return result
+        try:
+            # Compute policy recommendation
+            policy = {"recommendation": "NEUTRAL", "discount_pct": None, "policy_engine": False}
+            if POLICY_ENGINE_ENABLED and listed_price is not None and fair_value is not None:
+                policy = compute_recommendation(fair_value, listed_price, _policy_cfg)
+
+            model = Mew1AV43VectorRAGModel()
+            result = model.generate.remote(
+                prompt=prompt,
+                max_tokens=max_tokens,
+                temperature=temperature,
+                top_p=top_p,
+                use_rag=use_rag,
+                session_id=session_id,
+            )
+
+            # Check for contradiction
+            contradiction = False
+            if policy["policy_engine"]:
+                contradiction = check_text_contradiction(result["response"], policy["recommendation"])
+                if contradiction:
+                    pm.record_contradiction("/generate")
+
+            # Record metrics
+            latency = time.time() - start
+            pm.record_request("/generate", 200, latency)
+            pm.record_generation("/generate", result["tokens"], result["inference_time"])
+            pm.record_guardrails(
+                "/generate",
+                result["guardrails"]["tfv_repaired"],
+                result["guardrails"]["footer_type"],
+                result["guardrails"]["zero_price_sanitized"]
+            )
+            pm.record_rag("/generate", result["rag_augmented"])
+
+            # Return with policy fields
+            return {
+                **result,
+                "recommendation": policy["recommendation"],
+                "discount_pct": policy.get("discount_pct"),
+                "tfv": fair_value,
+                "listed": listed_price,
+                "policy_engine": policy["policy_engine"],
+                "consistency": {"model_text_contradiction": contradiction}
+            }
+        except Exception as e:
+            pm.record_request("/generate", 500, time.time() - start)
+            raise
 
     @web_app.post("/search")
     async def search(data: dict):
@@ -396,7 +594,7 @@ def fastapi_app():
                 content={"error": "Missing 'query' field"}
             )
 
-        model = Mew1AV42VectorRAGModel()
+        model = Mew1AV43VectorRAGModel()
         result = model.semantic_search.remote(
             query=query,
             top_k=top_k,
@@ -420,7 +618,7 @@ def test():
     print("Vector RAG: 482,298 cards indexed with FAISS")
     print("=" * 80)
 
-    model = Mew1AV42VectorRAGModel()
+    model = Mew1AV43VectorRAGModel()
 
     # Test 1: Health check
     print("\n🏥 Test 1: Health Check")
