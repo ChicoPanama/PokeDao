@@ -22,8 +22,8 @@ import modal
 
 import os
 
-# Mew-1A v4.3 - Trained on 253,810 examples, Final loss: 0.3508
-MODEL_NAME = "ChicoPanama/mew1a-v4.3"
+# Mew-1A v4.3.1 - BUY/PASS/HOLD alignment patch (200 examples, Final loss: 0.4677)
+MODEL_NAME = "ChicoPanama/mew1a-v4.3.1"
 
 # vLLM Configuration (optimized for T4 GPU)
 VLLM_CONFIG = {

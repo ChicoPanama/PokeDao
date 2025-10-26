@@ -50,6 +50,7 @@ def compute_recommendation(
         "reason": "insufficient_data",
         "tfv": tfv,
         "listed": listed,
+        "fallback_used": False,  # True for HOLD/NEUTRAL cases where model text may contradict
     }
 
     # Missing data check
@@ -72,14 +73,17 @@ def compute_recommendation(
         # Listed price is at least 10% below TFV → BUY
         result["recommendation"] = "BUY"
         result["reason"] = "discount_meets_threshold"
+        result["fallback_used"] = False
     elif discount_pct <= -cfg.pass_threshold_pct:
         # Listed price is at least 10% above TFV → PASS
         result["recommendation"] = "PASS"
         result["reason"] = "premium_exceeds_threshold"
+        result["fallback_used"] = False
     else:
-        # Within ±10% band → HOLD
+        # Within ±10% band → HOLD (fallback - model may say BUY or PASS)
         result["recommendation"] = "HOLD"
         result["reason"] = "within_band"
+        result["fallback_used"] = True  # HOLD uses fallback logic
 
     return result
 

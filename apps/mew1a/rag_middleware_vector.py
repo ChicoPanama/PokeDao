@@ -124,48 +124,52 @@ class VectorRAGMiddleware:
         if not cards:
             return "No relevant cards found in database."
 
-        context = "Based on TCG pricing database (semantic search results):\n\n"
-
+        context = ""
         for i, card in enumerate(cards, 1):
             name = card.get('pokemon_name', 'Unknown')
             price = card.get('sold_price', 0)
-            date = card.get('sold_date', 'Unknown')
             grade = card.get('grade', 'Unknown')
-            score = card.get('similarity_score', 0)
+            context += f"{i}. {name} (Grade: {grade}) - ${price:,.2f}\n"
 
-            context += f"{i}. {name} - ${price:,.2f}\n"
-            context += f"   Grade: {grade}, Date: {date}\n"
-            context += f"   Relevance: {score:.2f}\n\n"
-
-        return context
+        return context.strip()
 
     def augment_prompt(self, user_prompt: str) -> Tuple[str, bool]:
         """
         Augment prompt with semantic search results if it's a card query.
+        ALWAYS includes TFV guardrail preamble + few-shot examples (ChatGPT approach).
 
         Returns:
             (augmented_prompt, was_augmented)
         """
+        # GUARDRAIL: Concise TFV definition (prepended to card queries)
+        TFV_PREAMBLE = """TFV = True Fair Value (market price estimate). NOT a grading scale. Grading uses PSA/BGS/CGC.
+
+"""
+
         # Check if this is a card query
         if not self.is_card_query(user_prompt):
+            # Non-card query - don't augment
             return user_prompt, False
 
         # Perform semantic search
         cards = self.semantic_search(user_prompt, top_k=5)
 
         if not cards:
-            # No results, let model handle it
-            return user_prompt, False
+            # No RAG results - still prepend TFV rules
+            augmented = TFV_PREAMBLE + user_prompt
+            return augmented[:12000], True  # Truncate to 12KB max
 
-        # Build augmented prompt
+        # Build augmented prompt with TFV preamble + RAG context
         context = self.format_context_for_llm(cards)
-        augmented = f"""[CARD DATABASE CONTEXT - Semantic Search]
+
+        augmented = f"""{TFV_PREAMBLE}Card database results:
 {context}
 
-[USER QUERY]
-{user_prompt}
+User query: {user_prompt}"""
 
-Answer using the database context above. Focus on the most relevant cards (highest similarity scores)."""
+        # Truncate to 12KB max (safety)
+        if len(augmented) > 12000:
+            augmented = augmented[:12000]
 
         return augmented, True
 

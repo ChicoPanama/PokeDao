@@ -1,0 +1,149 @@
+---
+# Prometheus Alert Rules for Mew-1A v4.3-shaped Canary Rollout
+# Deploy these to your Prometheus/AlertManager configuration
+
+groups:
+  - name: mew1a_v4_3_shaped_critical
+    interval: 60s
+    rules:
+      # CRITICAL ALERT 1: Visible Contradictions Detected
+      - alert: Mew1AVisibleContradictions
+        expr: increase(mew1a_visible_contradictions_total{service="v4.3-shaped"}[5m]) > 0
+        for: 5m
+        labels:
+          severity: critical
+          service: mew1a-v4.3-shaped
+          team: mew-core
+          rollback: required
+        annotations:
+          summary: "🚨 CRITICAL: Visible contradictions detected in shaped responses"
+          description: "{{ $value }} contradictions detected in last 5 minutes. Response shaping is failing. IMMEDIATE ROLLBACK REQUIRED."
+          action: "1. Execute rollback: modal app stop mew1a-vllm-v4-3-shaped\n2. Capture metrics\n3. Notify @mew-core immediately"
+          runbook: "https://docs.internal/mew1a/runbooks/visible-contradictions"
+
+      # CRITICAL ALERT 2: High Latency (p95 >= 15s)
+      - alert: Mew1AHighLatencyCritical
+        expr: histogram_quantile(0.95, rate(mew1a_latency_seconds_bucket{service="v4.3-shaped"}[5m])) >= 15
+        for: 5m
+        labels:
+          severity: critical
+          service: mew1a-v4.3-shaped
+          team: mew-core
+          rollback: required
+        annotations:
+          summary: "🚨 CRITICAL: p95 latency above 15s threshold"
+          description: "p95 latency: {{ $value }}s (Expected: <1s warm, <10s SLO). System severely degraded."
+          action: "1. Check warm-start keeper status\n2. Investigate Modal Labs container health\n3. Prepare rollback if not resolved in 5min"
+          runbook: "https://docs.internal/mew1a/runbooks/high-latency"
+
+      # CRITICAL ALERT 3: High 5xx Rate (>= 1%)
+      - alert: Mew1AHigh5xxRate
+        expr: |
+          (
+            rate(mew1a_requests_total{service="v4.3-shaped",status=~"5.."}[5m])
+            /
+            rate(mew1a_requests_total{service="v4.3-shaped"}[5m])
+          ) >= 0.01
+        for: 5m
+        labels:
+          severity: critical
+          service: mew1a-v4.3-shaped
+          team: mew-core
+          rollback: required
+        annotations:
+          summary: "🚨 CRITICAL: 5xx error rate above 1% threshold"
+          description: "5xx rate: {{ $value | humanizePercentage }} (Expected: 0%). Service is failing."
+          action: "1. Check Modal Labs logs\n2. Verify warm-start keeper running\n3. ROLLBACK IMMEDIATELY if rate stays high"
+          runbook: "https://docs.internal/mew1a/runbooks/high-5xx"
+
+  - name: mew1a_v4_3_shaped_warnings
+    interval: 60s
+    rules:
+      # WARNING ALERT 1: Elevated Latency (p95 >= 10s)
+      - alert: Mew1AElevatedLatency
+        expr: histogram_quantile(0.95, rate(mew1a_latency_seconds_bucket{service="v4.3-shaped"}[5m])) >= 10
+        for: 5m
+        labels:
+          severity: warning
+          service: mew1a-v4.3-shaped
+          team: mew-core
+        annotations:
+          summary: "⚠️ WARNING: p95 latency above 10s warning threshold"
+          description: "p95 latency: {{ $value }}s (Expected: <1s warm). Monitor closely for degradation."
+          action: "1. Check warm-start keeper logs\n2. Monitor for further increases\n3. Prepare rollback if crosses 15s"
+          runbook: "https://docs.internal/mew1a/runbooks/elevated-latency"
+
+      # WARNING ALERT 2: HOLD Fallback Rate High (> 10%)
+      - alert: Mew1AHighHoldFallbackRate
+        expr: |
+          (
+            rate(mew1a_hold_fallback_total{service="v4.3-shaped"}[1h])
+            /
+            rate(mew1a_requests_total{service="v4.3-shaped"}[1h])
+          ) > 0.10
+        for: 1h
+        labels:
+          severity: warning
+          service: mew1a-v4.3-shaped
+          team: mew-core
+        annotations:
+          summary: "⚠️ WARNING: HOLD fallback rate above 10%"
+          description: "HOLD fallback rate: {{ $value | humanizePercentage }} (Expected: <10%). More HOLD cases using fallback logic than expected."
+          action: "1. Review HOLD template effectiveness\n2. Check if market conditions changed\n3. Consider v4.3.2 HOLD template improvements"
+          runbook: "https://docs.internal/mew1a/runbooks/hold-fallback"
+
+      # WARNING ALERT 3: Response Rebuild Rate Low
+      - alert: Mew1AResponseRebuildRateLow
+        expr: |
+          (
+            rate(mew1a_response_rebuilt_total{service="v4.3-shaped"}[1h])
+            /
+            rate(mew1a_requests_total{service="v4.3-shaped"}[1h])
+          ) < 0.50
+        for: 1h
+        labels:
+          severity: warning
+          service: mew1a-v4.3-shaped
+          team: mew-core
+        annotations:
+          summary: "⚠️ INFO: Response rebuild rate below 50%"
+          description: "Rebuild rate: {{ $value | humanizePercentage }} (Expected: >80% during canary). Model may be generating policy-aligned text naturally."
+          action: "1. Verify this is expected behavior\n2. Check if model text quality improved\n3. Monitor visible_contradictions_total (must stay 0)"
+
+      # WARNING ALERT 4: Warm-Start Keeper Not Pinging
+      - alert: Mew1AWarmStartKeeperStale
+        expr: (time() - mew1a_requests_total{route="/health",service="v4.3-shaped"}) > 300
+        for: 5m
+        labels:
+          severity: warning
+          service: mew1a-v4.3-shaped
+          team: mew-core
+        annotations:
+          summary: "⚠️ WARNING: Warm-start keeper may have stopped"
+          description: "No /health requests in last 5 minutes. Warm-start keeper may not be running."
+          action: "1. Check if keeper process is running: ps aux | grep keep-v4.3-shaped-warm\n2. Restart if needed\n3. Monitor for cold-start timeouts"
+
+---
+# Usage Instructions:
+#
+# 1. Add this file to your Prometheus configuration:
+#    - Copy to: /etc/prometheus/alerts/mew1a-v4.3-shaped.yml
+#    - Or merge into existing alert rules
+#
+# 2. Update prometheus.yml to include:
+#    rule_files:
+#      - "alerts/mew1a-v4.3-shaped.yml"
+#
+# 3. Reload Prometheus configuration:
+#    curl -X POST http://localhost:9090/-/reload
+#
+# 4. Verify alerts loaded:
+#    curl http://localhost:9090/api/v1/rules | jq '.data.groups[] | select(.name | contains("mew1a"))'
+#
+# 5. Test alert delivery:
+#    - Trigger test alert in AlertManager
+#    - Verify PagerDuty/Slack notifications working
+#
+# 6. Monitor active alerts:
+#    - Prometheus UI: http://localhost:9090/alerts
+#    - Grafana: Create alert dashboard

@@ -84,6 +84,37 @@ reco_contradictions_total = Counter(
     ['route']
 )
 
+# Phase 1: Visible Contradiction Elimination Metrics
+visible_contradictions_total = Counter(
+    'mew1a_visible_contradictions_total',
+    'Visible contradictions after response shaping (should be 0)',
+    ['route']
+)
+
+rag_forced_total = Counter(
+    'mew1a_rag_forced_total',
+    'Queries where RAG was auto-enabled',
+    ['intent']  # intent: card_query, price_check, market_analysis
+)
+
+hold_fallback_total = Counter(
+    'mew1a_hold_fallback_total',
+    'Policy Engine fallbacks specific to HOLD cases',
+    []
+)
+
+response_sanitized_total = Counter(
+    'mew1a_response_sanitized_total',
+    'Responses that required text sanitization',
+    ['route']
+)
+
+response_rebuilt_total = Counter(
+    'mew1a_response_rebuilt_total',
+    'Responses rebuilt from policy template (fallback cases)',
+    ['route']
+)
+
 # =============================================================================
 # HELPER FUNCTIONS
 # =============================================================================
@@ -152,6 +183,47 @@ def record_contradiction(route: str):
         route: Endpoint route
     """
     reco_contradictions_total.labels(route=route).inc()
+
+
+def record_visible_contradiction(route: str):
+    """
+    Record visible contradiction AFTER response shaping.
+    This should NEVER increment if shaping is working correctly.
+
+    Args:
+        route: Endpoint route
+    """
+    visible_contradictions_total.labels(route=route).inc()
+
+
+def record_rag_forced(intent: str):
+    """
+    Record cases where RAG was auto-enabled.
+
+    Args:
+        intent: Query intent (card_query, price_check, market_analysis)
+    """
+    rag_forced_total.labels(intent=intent).inc()
+
+
+def record_hold_fallback():
+    """Record Policy Engine fallback specific to HOLD cases"""
+    hold_fallback_total.inc()
+
+
+def record_response_shaping(route: str, was_sanitized: bool, was_rebuilt: bool):
+    """
+    Record response shaping metrics.
+
+    Args:
+        route: Endpoint route
+        was_sanitized: Whether text was sanitized for contradictions
+        was_rebuilt: Whether response was rebuilt from policy template
+    """
+    if was_sanitized:
+        response_sanitized_total.labels(route=route).inc()
+    if was_rebuilt:
+        response_rebuilt_total.labels(route=route).inc()
 
 
 def get_metrics_text() -> str:
