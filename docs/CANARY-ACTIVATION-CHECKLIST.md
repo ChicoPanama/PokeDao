@@ -18,8 +18,8 @@ export MEW1A_CANARY_WEIGHT="0.10"  # 10% traffic to canary
 
 ### Restart Application
 ```bash
-# Restart your Node.js application to pick up new env vars
-pm2 restart all  # Or your restart method
+# Restart your Node.js application with new env vars
+pm2 restart all --update-env  # Forces PM2 to reload environment variables
 ```
 
 ### Verify Traffic Split
@@ -36,7 +36,7 @@ pm2 restart all  # Or your restart method
 ## Ramp to 50% (Hour 6, after successful Hour 1)
 ```bash
 export MEW1A_CANARY_WEIGHT="0.50"  # 50% traffic
-pm2 restart all
+pm2 restart all --update-env
 ```
 
 - [ ] Increase to 50%; continue monitoring every 15 minutes
@@ -46,7 +46,7 @@ pm2 restart all
 ## Cut-over to 100% (Hour 24, after successful Hour 6)
 ```bash
 export MEW1A_CANARY_WEIGHT="1.00"  # 100% traffic (full cutover)
-pm2 restart all
+pm2 restart all --update-env
 ```
 
 - [ ] Increase to 100%; maintain alerts/dashboards
@@ -57,7 +57,7 @@ pm2 restart all
 ```bash
 # INSTANT ROLLBACK: Set weight to 0
 export MEW1A_CANARY_WEIGHT="0.0"  # 0% traffic (all to stable)
-pm2 restart all
+pm2 restart all --update-env
 
 # Capture metrics before stopping canary
 curl https://chicopanama--mew1a-vllm-v4-3-shaped-fastapi-app.modal.run/metrics \
