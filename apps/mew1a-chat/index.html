@@ -281,6 +281,9 @@
                 <button class="model-btn" data-model="v4.2" data-endpoint="https://chicopanama--mew1a-vllm-v4-2-fastapi-app.modal.run/analyze">
                     v4.2 Cloud (vLLM)
                 </button>
+                <button class="model-btn" data-model="v4.3-shaped" data-endpoint="https://chicopanama--mew1a-vllm-v4-3-shaped-fastapi-app.modal.run/analyze">
+                    v4.3-shaped (Canary) 🕊️
+                </button>
             </div>
         </div>
 
@@ -356,10 +359,18 @@
             const contentDiv = document.createElement('div');
             contentDiv.className = 'message-content';
 
-            let html = `<div>${content}</div>`;
+            let html = '';
+
+            // Display headline if present (v4.3-shaped responses)
+            if (meta.headline) {
+                html += `<div style="font-weight: 600; margin-bottom: 8px; color: #667eea;">${meta.headline}</div>`;
+            }
+
+            html += `<div>${content}</div>`;
 
             if (meta.recommendation) {
-                html += `<span class="recommendation ${meta.recommendation}">${meta.recommendation}</span>`;
+                const shapedBadge = meta.shaped ? ' <span style="font-size: 0.7em; opacity: 0.7;">✓ Shaped</span>' : '';
+                html += `<span class="recommendation ${meta.recommendation}">${meta.recommendation}${shapedBadge}</span>`;
             }
 
             if (meta.time || meta.model) {
@@ -456,9 +467,17 @@
                     const data = await response.json();
                     const inferenceTime = data.inference_time?.toFixed(2) || ((Date.now() - startTime) / 1000).toFixed(2);
 
-                    addMessage('assistant', data.analysis || data.response, {
+                    // Prefer shaped fields (v4.3-shaped) with fallback to older formats
+                    const responseText = data.explanation || data.analysis || data.response;
+                    const modelLabel = currentModel === 'v1' ? 'v1 Cloud' :
+                                     currentModel === 'v4.3-shaped' ? 'v4.3-shaped (Canary)' :
+                                     'v4.2 Cloud (vLLM)';
+
+                    addMessage('assistant', responseText, {
                         recommendation: data.recommendation,
-                        model: currentModel === 'v1' ? 'v1 Cloud' : 'v4.2 Cloud (vLLM)',
+                        headline: data.headline,  // New: shaped response headline
+                        shaped: data.shaped,      // New: shaped flag
+                        model: modelLabel,
                         time: inferenceTime
                     });
                 }

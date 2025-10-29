@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mew-1A v4.3-shaped Canary Tester</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .preset-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .preset-btn {
+            padding: 10px 20px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .preset-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .test-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .test-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .test-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .result-headline {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .result-recommendation {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .result-recommendation.BUY {
+            background: #10b981;
+            color: white;
+        }
+
+        .result-recommendation.PASS {
+            background: #ef4444;
+            color: white;
+        }
+
+        .result-recommendation.HOLD {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .result-recommendation.NEUTRAL {
+            background: #6b7280;
+            color: white;
+        }
+
+        .result-explanation {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .result-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+            color: #666;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .result-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #667eea;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .error {
+            margin-top: 30px;
+            padding: 15px;
+            background: #fee2e2;
+            border: 2px solid #ef4444;
+            border-radius: 6px;
+            color: #991b1b;
+        }
+
+        .loading {
+            text-align: center;
+            margin-top: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🕊️ Mew-1A v4.3-shaped Canary Tester</h1>
+        <p class="subtitle">Test the shaped response endpoint with BUY/PASS/HOLD scenarios</p>
+
+        <div class="preset-buttons">
+            <button class="preset-btn" onclick="loadPreset('buy')">
+                📈 BUY Scenario (15% discount)
+            </button>
+            <button class="preset-btn" onclick="loadPreset('pass')">
+                📉 PASS Scenario (15% premium)
+            </button>
+            <button class="preset-btn" onclick="loadPreset('hold')">
+                ⏸️ HOLD Scenario (5% discount)
+            </button>
+        </div>
+
+        <form id="testForm">
+            <div class="form-group">
+                <label for="cardName">Card Name *</label>
+                <input type="text" id="cardName" placeholder="e.g. Charizard ex" required>
+            </div>
+
+            <div class="form-group">
+                <label for="setName">Set Name</label>
+                <input type="text" id="setName" placeholder="e.g. Obsidian Flames">
+            </div>
+
+            <div class="form-group">
+                <label for="listedPrice">Listed Price ($) *</label>
+                <input type="number" id="listedPrice" step="0.01" placeholder="e.g. 42.50" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fairValue">Fair Value ($) *</label>
+                <input type="number" id="fairValue" step="0.01" placeholder="e.g. 50.00" required>
+            </div>
+
+            <button type="submit" class="test-btn" id="submitBtn">
+                🚀 Test BUY/PASS/HOLD Decision
+            </button>
+        </form>
+
+        <div id="loading" class="loading" style="display: none;">
+            ⏳ Analyzing card... (may take up to 10s)
+        </div>
+
+        <div id="result" style="display: none;"></div>
+        <div id="error" style="display: none;"></div>
+    </div>
+
+    <script>
+        const ENDPOINT = 'https://chicopanama--mew1a-vllm-v4-3-shaped-fastapi-app.modal.run/analyze';
+
+        // Preset scenarios
+        const presets = {
+            buy: {
+                cardName: 'Charizard ex',
+                setName: 'Obsidian Flames',
+                listedPrice: 42.50,
+                fairValue: 50.00
+            },
+            pass: {
+                cardName: 'Pikachu VMAX',
+                setName: 'Vivid Voltage',
+                listedPrice: 57.50,
+                fairValue: 50.00
+            },
+            hold: {
+                cardName: 'Mewtwo V',
+                setName: 'Pokémon GO',
+                listedPrice: 47.50,
+                fairValue: 50.00
+            }
+        };
+
+        function loadPreset(type) {
+            const preset = presets[type];
+            document.getElementById('cardName').value = preset.cardName;
+            document.getElementById('setName').value = preset.setName;
+            document.getElementById('listedPrice').value = preset.listedPrice;
+            document.getElementById('fairValue').value = preset.fairValue;
+        }
+
+        document.getElementById('testForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const loading = document.getElementById('loading');
+            const resultDiv = document.getElementById('result');
+            const errorDiv = document.getElementById('error');
+
+            // Reset display
+            resultDiv.style.display = 'none';
+            errorDiv.style.display = 'none';
+            loading.style.display = 'block';
+            submitBtn.disabled = true;
+
+            const requestBody = {
+                card_name: document.getElementById('cardName').value,
+                set_name: document.getElementById('setName').value,
+                listed_price: parseFloat(document.getElementById('listedPrice').value),
+                fair_value: parseFloat(document.getElementById('fairValue').value),
+            };
+
+            try {
+                const startTime = Date.now();
+                const response = await fetch(ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestBody)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${await response.text()}`);
+                }
+
+                const data = await response.json();
+                const latency = ((Date.now() - startTime) / 1000).toFixed(2);
+
+                // Display result
+                resultDiv.innerHTML = `
+                    ${data.headline ? `<div class="result-headline">${data.headline}</div>` : ''}
+                    <div class="result-recommendation ${data.recommendation}">
+                        ${data.recommendation}
+                        ${data.shaped ? '<span class="badge">✓ Shaped</span>' : ''}
+                    </div>
+                    <div class="result-explanation">${data.explanation || data.analysis || data.response}</div>
+                    <div class="result-meta">
+                        <span>⏱️ Latency: ${latency}s</span>
+                        <span>📊 Discount: ${data.discount_pct ? data.discount_pct.toFixed(1) + '%' : 'N/A'}</span>
+                        <span>💰 TFV: $${data.tfv ? data.tfv.toFixed(2) : requestBody.fair_value.toFixed(2)}</span>
+                        <span>🏷️ Listed: $${data.listed ? data.listed.toFixed(2) : requestBody.listed_price.toFixed(2)}</span>
+                        ${data.rag_augmented ? '<span>🔍 RAG: ' + data.rag_cards_count + ' cards</span>' : ''}
+                    </div>
+                `;
+                resultDiv.style.display = 'block';
+
+            } catch (error) {
+                errorDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+                errorDiv.style.display = 'block';
+                console.error('Test failed:', error);
+            } finally {
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Load BUY preset by default
+        loadPreset('buy');
+    </script>
+</body>
+</html>

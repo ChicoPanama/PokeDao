@@ -371,3 +371,79 @@ This UI is intentionally minimal. Keep it that way!
 ---
 
 Built with inspiration from **Andrej Karpathy's NanoChat** - proving that the best tools are often the simplest.
+
+---
+
+## v4.3-shaped Canary Testing
+
+### New Files
+
+**`canary.html`** - Dedicated v4.3-shaped tester page
+- Explicit form fields for structured testing
+- Preset BUY/PASS/HOLD scenarios
+- Displays shaped response fields (headline + explanation)
+- Shows "✓ Shaped" badge for policy-aligned responses
+
+**`index.html` (updated)** - Now includes v4.3-shaped endpoint
+- New "v4.3-shaped (Canary) 🕊️" button
+- Automatic field preference: `explanation` → `analysis` → `response`
+- Displays headline above explanation (shaped responses only)
+- Shows shaped badge next to recommendation
+
+### Quick Start: Canary Testing
+
+**Open canary tester:**
+```bash
+# macOS
+open apps/mew1a-chat/canary.html
+
+# Or with Python server
+python3 -m http.server 8080
+open http://localhost:8080/apps/mew1a-chat/canary.html
+```
+
+**Test scenarios:**
+1. Click "📈 BUY Scenario" → Expect: BUY recommendation, 15% discount
+2. Click "📉 PASS Scenario" → Expect: PASS recommendation, 15% premium
+3. Click "⏸️ HOLD Scenario" → Expect: HOLD recommendation, 5% discount
+
+### Shaped Response Fields
+
+**v4.3-shaped returns:**
+- `headline` - Policy-aligned summary (e.g., "**RECOMMENDATION: BUY**")
+- `explanation` - Policy-aligned explanation (zero contradictions)
+- `recommendation` - Authoritative decision (BUY/PASS/HOLD/NEUTRAL)
+- `shaped` - Boolean flag (true = response shaping applied)
+
+**Backward compatibility:**
+- `index.html` works with v1, v4.2, and v4.3-shaped
+- Falls back gracefully: `explanation` || `analysis` || `response`
+
+### Canary Comparison Testing
+
+**Side-by-side test:**
+1. Open `index.html` - Select "v4.2 Cloud (vLLM)"
+2. Open `canary.html` - Default endpoint is v4.3-shaped
+3. Test same card in both:
+   - v4.2: May show contradictions
+   - Canary: Zero contradictions, headline displayed
+
+**Expected differences:**
+- **v4.2:** "analysis" field only, may contradict recommendation badge
+- **Canary:** "headline" + "explanation" fields, guaranteed alignment
+
+### Verification Checklist
+
+- [ ] Canary response includes `headline` field
+- [ ] Canary response includes `explanation` field
+- [ ] Recommendation badge matches explanation text (no contradiction)
+- [ ] "✓ Shaped" badge appears next to recommendation
+- [ ] Latency < 10s (shown in metadata)
+- [ ] BUY scenario: Green badge, discount language
+- [ ] PASS scenario: Red badge, premium language
+- [ ] HOLD scenario: Yellow badge, within-band language
+
+---
+
+**Last Updated:** 2025-10-29  
+**Canary Status:** Ready for testing
