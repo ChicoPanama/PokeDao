@@ -28,13 +28,15 @@ export interface VLLMAnalysisRequest {
   listedPrice?: number;
   fairValue?: number;
   maxTokens?: number;
+  userId?: string;                                       // Optional: for sticky canary routing
 }
 
 export interface VLLMAnalysisResponse {
   card: string;
   set?: string;
-  analysis: string;
-  recommendation: 'BUY' | 'PASS' | 'NEUTRAL';
+  analysis: string;                                      // Backward compatible: explanation or analysis
+  headline?: string;                                      // New in v4.3-shaped: policy-aligned headline
+  recommendation: 'BUY' | 'PASS' | 'HOLD' | 'NEUTRAL';   // Added 'HOLD' for v4.3-shaped
   tokens: number;
   inferenceTime: number;
   tokensPerSecond: number;
@@ -46,6 +48,7 @@ export interface VLLMGenerateRequest {
   maxTokens?: number;
   temperature?: number;
   topP?: number;
+  userId?: string;                                       // Optional: for sticky canary routing
 }
 
 export interface VLLMGenerateResponse {
@@ -59,8 +62,57 @@ export interface VLLMGenerateResponse {
 // CONFIGURATION
 // =============================================================================
 
-const VLLM_ENDPOINT = process.env.VLLM_ENDPOINT || 'https://chicopanama--mew1a-vllm-analyze.modal.run';
+// Canary deployment routing configuration
+const MEW1A_STABLE_ENDPOINT = process.env.MEW1A_STABLE_ENDPOINT ||
+  process.env.VLLM_ENDPOINT ||  // Backward compatibility
+  'https://chicopanama--mew1a-vllm-fastapi-app.modal.run/analyze';
+
+const MEW1A_CANARY_ENDPOINT = process.env.MEW1A_CANARY_ENDPOINT ||
+  'https://chicopanama--mew1a-vllm-v4-3-shaped-fastapi-app.modal.run/analyze';
+
+const MEW1A_CANARY_WEIGHT = parseFloat(process.env.MEW1A_CANARY_WEIGHT || '0.0');
+
 const VLLM_TIMEOUT = parseInt(process.env.VLLM_TIMEOUT || '30000'); // 30 seconds
+
+/**
+ * Simple string hash function for consistent routing
+ */
+function simpleHash(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32-bit integer
+  }
+  return Math.abs(hash);
+}
+
+/**
+ * Get Mew-1A endpoint based on canary weight and optional user identifier
+ *
+ * @param userId - Optional user ID for sticky routing (same user always gets same variant)
+ * @returns Selected endpoint URL
+ */
+function getMew1aEndpoint(userId?: string): { endpoint: string; variant: 'stable' | 'canary' } {
+  // Weight = 0: always stable (default)
+  if (MEW1A_CANARY_WEIGHT <= 0) {
+    return { endpoint: MEW1A_STABLE_ENDPOINT, variant: 'stable' };
+  }
+
+  // Weight = 1: always canary (full cutover)
+  if (MEW1A_CANARY_WEIGHT >= 1) {
+    return { endpoint: MEW1A_CANARY_ENDPOINT, variant: 'canary' };
+  }
+
+  // Sticky routing: hash userId if available, else random per request
+  const hash = userId ? simpleHash(userId) % 100 : Math.floor(Math.random() * 100);
+  const useCanary = hash < (MEW1A_CANARY_WEIGHT * 100);
+
+  return {
+    endpoint: useCanary ? MEW1A_CANARY_ENDPOINT : MEW1A_STABLE_ENDPOINT,
+    variant: useCanary ? 'canary' : 'stable'
+  };
+}
 
 // =============================================================================
 // CORE CLIENT
@@ -88,11 +140,15 @@ export async function vllmAnalyzeCard(
 ): Promise<VLLMAnalysisResponse> {
   const startTime = Date.now();
 
+  // Select endpoint based on canary weight and userId (if provided)
+  const { endpoint, variant } = getMew1aEndpoint(request.userId);
+
   try {
-    const response = await fetch(VLLM_ENDPOINT, {
+    const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-Mew1A-Variant': variant,                      // For observability in logs/metrics
       },
       body: JSON.stringify({
         card_name: request.cardName,
@@ -114,7 +170,8 @@ export async function vllmAnalyzeCard(
     return {
       card: data.card,
       set: data.set,
-      analysis: data.analysis,
+      analysis: data.explanation || data.analysis,  // v4.3-shaped uses 'explanation', fallback to 'analysis'
+      headline: data.headline,                       // New field from v4.3-shaped response shaping
       recommendation: data.recommendation,
       tokens: data.tokens,
       inferenceTime: data.inference_time,
@@ -150,15 +207,19 @@ export async function vllmGenerate(
 ): Promise<VLLMGenerateResponse> {
   const startTime = Date.now();
 
+  // Select endpoint based on canary weight and userId (if provided)
+  const { endpoint: analyzeEndpoint, variant } = getMew1aEndpoint(request.userId);
+
   try {
     // Note: For raw generation, we need to call the model's generate method
     // This assumes you've deployed a separate /generate endpoint
-    const generateEndpoint = VLLM_ENDPOINT.replace('/analyze', '/generate');
+    const generateEndpoint = analyzeEndpoint.replace('/analyze', '/generate');
 
     const response = await fetch(generateEndpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-Mew1A-Variant': variant,                      // For observability in logs/metrics
       },
       body: JSON.stringify({
         prompt: request.prompt,

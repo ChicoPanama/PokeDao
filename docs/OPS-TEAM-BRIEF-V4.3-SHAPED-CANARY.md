@@ -62,16 +62,16 @@ pkill -f keep-v4.3-shaped-warm
 
 **Debug steps:**
 ```bash
-# 1. Check warm-start keeper status
-ps aux | grep keep-v4.3-shaped-warm
-
-# 2. Check keeper logs
-tail -50 reports/warm-start-keeper.log
-
-# 3. Check Modal Labs container health
+# 1. Check Modal Labs container health
 modal app logs mew1a-vllm-v4-3-shaped | tail -50
 
-# 4. If cold starts detected → Restart keeper
+# 2. Verify keep_warm=1 is enabled
+modal app show mew1a-vllm-v4-3-shaped | grep -i "keep_warm\|idle"
+
+# 3. Check for Modal platform issues
+# Visit: https://status.modal.com
+
+# 4. If container repeatedly cold-starting → Check Modal quota/billing
 # 5. If not resolved in 5min → ROLLBACK
 ```
 
@@ -129,11 +129,11 @@ All responses include new fields:
 - **Visible contradictions:** 0
 - **HOLD fallback rate:** <10%
 
-### Warm-Start Keeper
-- **Process:** Should be running (PID check)
-- **Behavior:** Pings /health every 4 minutes
-- **Logs:** `reports/warm-start-keeper.log`
-- **Expected:** Keeps instance warm, prevents cold starts
+### Modal Platform Warming
+- **Configuration:** `keep_warm=1` + `container_idle_timeout=600`
+- **Behavior:** Modal automatically maintains 1 warm container
+- **Cost:** ~$15/month for guaranteed warm instance
+- **Expected:** No cold starts, consistent <3s p95 latency
 
 ---
 
@@ -279,11 +279,17 @@ A: v4.3-shaped adds response shaping layer to eliminate contradictions. Same mod
 **Q: Why 24 hours for rollout?**
 A: Conservative rollout ensures we catch any issues at each stage (10% → 50% → 100%).
 
-**Q: What if warm-start keeper dies?**
-A: Restart it:
+**Q: What if the container goes cold despite keep_warm=1?**
+A: Check Modal platform status and container configuration:
 ```bash
-cd /Users/arcadio/dev/pokedao
-nohup bash scripts/keep-v4.3-shaped-warm.sh > /dev/null 2>&1 &
+# Check Modal platform status
+open https://status.modal.com
+
+# Verify keep_warm configuration
+modal app show mew1a-vllm-v4-3-shaped | grep -i "keep_warm"
+
+# If configuration is missing, redeploy
+modal deploy apps/mew1a/vllm_deploy_v4_3_shaped.py
 ```
 
 **Q: Can I test the canary endpoint directly?**

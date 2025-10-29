@@ -34,6 +34,7 @@ import modal
 # =============================================================================
 
 import os
+from pathlib import Path
 
 # Mew-1A v4.3 - Original 509K training examples model with response shaping
 MODEL_NAME = "ChicoPanama/mew1a-v4.3"
@@ -80,6 +81,8 @@ vector_store_volume = modal.Volume.from_name("mew1a-vector-store", create_if_mis
 # DOCKER IMAGE WITH vLLM + VECTOR RAG
 # =============================================================================
 
+BASE_DIR = Path(__file__).parent.resolve()
+
 vllm_image = (
     modal.Image.debian_slim(python_version="3.11")
     .pip_install(
@@ -91,23 +94,23 @@ vllm_image = (
         "prometheus-client==0.21.0",  # Metrics
     )
     .add_local_file(
-        local_path="rag_middleware_vector.py",
+        local_path=str(BASE_DIR / "rag_middleware_vector.py"),
         remote_path="/root/rag_middleware_vector.py"
     )
     .add_local_file(
-        local_path="tfv_validator.py",
+        local_path=str(BASE_DIR / "tfv_validator.py"),
         remote_path="/root/tfv_validator.py"
     )
     .add_local_file(
-        local_path="prometheus_metrics.py",
+        local_path=str(BASE_DIR / "prometheus_metrics.py"),
         remote_path="/root/prometheus_metrics.py"
     )
     .add_local_file(
-        local_path="policy_engine.py",
+        local_path=str(BASE_DIR / "policy_engine.py"),
         remote_path="/root/policy_engine.py"
     )
     .add_local_file(
-        local_path="response_shaper.py",
+        local_path=str(BASE_DIR / "response_shaper.py"),
         remote_path="/root/response_shaper.py"
     )
 )
@@ -121,7 +124,8 @@ vllm_image = (
     gpu="T4",
     secrets=[modal.Secret.from_name("huggingface-secret")],
     volumes={"/vector-store": vector_store_volume},
-    scaledown_window=300,
+    min_containers=1,           # Keep at least 1 container warm (was keep_warm=1)
+    scaledown_window=600,       # 10 minutes idle before scale-down (was container_idle_timeout=600)
     timeout=600,
 )
 class Mew1AV43VectorRAGModel:
@@ -405,7 +409,12 @@ def fastapi_app():
     sys.path.insert(0, "/root")
 
     # Policy Engine imports
-    from policy_engine import compute_recommendation, PolicyConfig, check_text_contradiction
+    from policy_engine import (
+        compute_recommendation,
+        PolicyConfig,
+        check_text_contradiction,
+        build_explanation_prompt,
+    )
 
     # Initialize policy config
     _policy_cfg = PolicyConfig(
@@ -442,12 +451,14 @@ def fastapi_app():
     @web_app.post("/analyze")
     async def analyze(request: Request):
         """
-        Card analysis endpoint with Vector RAG
+        Card analysis endpoint with Vector RAG and Phase 1 response shaping.
 
-        NOTE: This endpoint routes through /generate internally to avoid timeout issues.
-        The analyze_card method calls generate() with structured prompts.
+        Implementation: compute policy decision server-side, then ask the
+        model to explain that decision. Shape the explanation to guarantee
+        zero visible contradictions.
         """
         import prometheus_metrics as pm
+        from response_shaper import shape_response
         start = time.time()
 
         data = await request.json()
@@ -458,118 +469,81 @@ def fastapi_app():
         reddit_sentiment = data.get("reddit_sentiment", "")
         max_tokens = int(data.get("max_tokens", 200))
         use_rag = data.get("use_rag", True)
-        session_id = data.get("session_id", None)
 
         if not card_name:
             pm.record_request("/analyze", 400, time.time() - start)
-            return JSONResponse(
-                status_code=400,
-                content={"error": "Missing 'card_name' field"}
-            )
+            return JSONResponse(status_code=400, content={"error": "Missing 'card_name' field"})
 
         try:
-            # Compute policy recommendation
-            policy = {"recommendation": "NEUTRAL", "discount_pct": None, "policy_engine": False}
-            if POLICY_ENGINE_ENABLED and listed_price is not None and fair_value is not None and listed_price > 0 and fair_value > 0:
+            # 1) Compute policy recommendation deterministically
+            policy = {"recommendation": "NEUTRAL", "discount_pct": None, "policy_engine": False, "fallback_used": False, "tfv": fair_value, "listed": listed_price}
+            if POLICY_ENGINE_ENABLED and fair_value > 0 and listed_price > 0:
                 policy = compute_recommendation(fair_value, listed_price, _policy_cfg)
 
-            model = Mew1AV43VectorRAGModel()
-            result = model.analyze_card.remote(
+            # 2) Ask the model to explain the policy result (not decide)
+            prompt = build_explanation_prompt(
                 card_name=card_name,
                 set_name=set_name,
-                listed_price=listed_price,
-                fair_value=fair_value,
+                policy_result=policy,
                 reddit_sentiment=reddit_sentiment,
+            )
+
+            model = Mew1AV43VectorRAGModel()
+            gen = model.generate.remote(
+                prompt=prompt,
                 max_tokens=max_tokens,
                 use_rag=use_rag,
             )
 
-            # Check for contradiction (pre-shaping)
-            contradiction = False
-            if policy["policy_engine"] and "analysis" in result:
-                contradiction = check_text_contradiction(result["analysis"], policy["recommendation"])
-                if contradiction:
-                    pm.record_contradiction("/analyze")
+            # 3) Shape the explanation to eliminate visible contradictions
+            model_text = gen.get("response", "")
+            discount_pct = policy.get("discount_pct") or 0.0
+            shaped = shape_response(
+                model_text=model_text,
+                recommendation=policy.get("recommendation", "NEUTRAL"),
+                listed_price=listed_price,
+                fair_value=fair_value,
+                discount_pct=discount_pct,
+                fallback_used=policy.get("fallback_used", False),
+                force_policy_headline=FORCE_POLICY_HEADLINE,
+            )
 
-            # Apply response shaping if Policy Engine is enabled
-            shaped_response = {}
-            if policy["policy_engine"] and listed_price > 0 and fair_value > 0:
-                from response_shaper import shape_response
-
-                model_text = result.get("analysis", "")
-                shaped = shape_response(
-                    model_text=model_text,
-                    recommendation=policy["recommendation"],
-                    listed_price=listed_price,
-                    fair_value=fair_value,
-                    discount_pct=policy.get("discount_pct", 0.0),
-                    fallback_used=policy.get("fallback_used", False),
-                    force_policy_headline=FORCE_POLICY_HEADLINE
-                )
-
-                shaped_response = {
-                    "headline": shaped["headline"],
-                    "explanation": shaped["explanation"],
-                    "shaped": True,
-                }
-
-                # Record HOLD fallback if applicable
-                if policy["recommendation"] == "HOLD" and policy.get("fallback_used"):
-                    pm.record_hold_fallback()
-
-                # Record response shaping metrics
-                pm.record_response_shaping("/analyze", shaped["was_sanitized"], shaped["was_rebuilt"])
-
-                # Record visible contradiction if it still exists (should never happen)
-                if shaped["visible_contradiction"]:
-                    pm.record_visible_contradiction("/analyze")
-            else:
-                # No shaping - return raw model text
-                shaped_response = {
-                    "headline": "",
-                    "explanation": result.get("analysis", ""),
-                    "shaped": False,
-                }
-
-            # Record metrics
+            # 4) Record metrics
             latency = time.time() - start
             pm.record_request("/analyze", 200, latency)
-            if "tokens" in result:
-                pm.record_generation("/analyze", result["tokens"], result.get("inference_time", latency))
-            if "guardrails" in result:
-                pm.record_guardrails(
-                    "/analyze",
-                    result["guardrails"].get("tfv_repaired", False),
-                    result["guardrails"].get("footer_type", "none"),
-                    result["guardrails"].get("zero_price_sanitized", False)
-                )
-            if "rag_augmented" in result:
-                pm.record_rag("/analyze", result["rag_augmented"])
+            if "tokens" in gen:
+                pm.record_generation("/analyze", gen["tokens"], gen.get("inference_time", latency))
+            if "rag_augmented" in gen:
+                pm.record_rag("/analyze", gen["rag_augmented"])
+            pm.record_response_shaping("/analyze", shaped["was_sanitized"], shaped["was_rebuilt"])
+            if shaped["visible_contradiction"]:
+                pm.record_visible_contradiction("/analyze")
 
-            # Return with policy fields + shaped response
-            return {
-                **result,
-                "recommendation": policy["recommendation"],
+            # 5) Build response
+            response = {
+                # Authoritative
+                "recommendation": policy.get("recommendation", "NEUTRAL"),
+                "headline": shaped["headline"],
+                "explanation": shaped["explanation"],
+                # Metadata
+                "shaped": True,
+                "policy_engine": True,
+                "tfv": policy.get("tfv", fair_value),
+                "listed": policy.get("listed", listed_price),
                 "discount_pct": policy.get("discount_pct"),
-                "tfv": fair_value,
-                "listed": listed_price,
-                "policy_engine": policy["policy_engine"],
-                "headline": shaped_response["headline"],
-                "explanation": shaped_response["explanation"],
-                "shaped": shaped_response["shaped"],
-                "consistency": {"model_text_contradiction": contradiction}
+                # Performance
+                "tokens": gen.get("tokens"),
+                "inference_time": gen.get("inference_time"),
+                "tokens_per_second": gen.get("tokens_per_second"),
+                # RAG
+                "rag_augmented": gen.get("rag_augmented", False),
+                "rag_cards_count": gen.get("rag_cards_count", 0),
             }
+
+            return response
         except Exception as e:
-            # If analyze_card fails, provide helpful error response
             pm.record_request("/analyze", 500, time.time() - start)
-            return JSONResponse(
-                status_code=500,
-                content={
-                    "error": "Analysis failed",
-                    "detail": str(e),
-                    "suggestion": "Try using /generate endpoint with custom prompt as fallback"
-                }
-            )
+            return JSONResponse(status_code=500, content={"error": "Analysis failed", "detail": str(e)})
 
     @web_app.post("/generate")
     async def generate(request: Request):

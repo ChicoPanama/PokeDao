@@ -1,0 +1,91 @@
+{
+  "title": "Mew-1A v4.3-shaped - Canary Rollout",
+  "tags": ["mew1a", "v4.3-shaped", "canary"],
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "p95 latency (s)",
+      "gridPos": {"x": 0, "y": 0, "w": 12, "h": 8},
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum by (le) (rate(mew1a_latency_seconds_bucket{route!=\"/health\"}[5m])))",
+          "legendFormat": "p95 latency"
+        }
+      ],
+      "fieldConfig": {"defaults": {"unit": "s"}}
+    },
+    {
+      "type": "timeseries",
+      "title": "5xx error rate (%)",
+      "gridPos": {"x": 12, "y": 0, "w": 12, "h": 8},
+      "targets": [
+        {
+          "expr": "100 * (sum(rate(mew1a_requests_total{status=~\"5..\"}[5m])) / sum(rate(mew1a_requests_total[5m])))",
+          "legendFormat": "5xx rate"
+        }
+      ],
+      "fieldConfig": {"defaults": {"unit": "percent"}}
+    },
+    {
+      "type": "timeseries",
+      "title": "Visible contradictions (5m)",
+      "gridPos": {"x": 0, "y": 8, "w": 8, "h": 8},
+      "targets": [
+        {
+          "expr": "sum(increase(mew1a_visible_contradictions_total[5m]))",
+          "legendFormat": "visible contradictions"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "HOLD fallback rate (1h) (%)",
+      "gridPos": {"x": 8, "y": 8, "w": 8, "h": 8},
+      "targets": [
+        {
+          "expr": "100 * (sum(rate(mew1a_hold_fallback_total[1h])) / sum(rate(mew1a_requests_total[1h])))",
+          "legendFormat": "HOLD fallback rate"
+        }
+      ],
+      "fieldConfig": {"defaults": {"unit": "percent"}}
+    },
+    {
+      "type": "timeseries",
+      "title": "Requests per second",
+      "gridPos": {"x": 16, "y": 8, "w": 8, "h": 8},
+      "targets": [
+        {
+          "expr": "sum(rate(mew1a_requests_total[1m]))",
+          "legendFormat": "rps"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "RAG usage rate (5m) (%)",
+      "gridPos": {"x": 0, "y": 16, "w": 12, "h": 8},
+      "targets": [
+        {
+          "expr": "100 * (sum(rate(mew1a_rag_augmented_total[5m])) / sum(rate(mew1a_requests_total[5m])))",
+          "legendFormat": "RAG usage rate"
+        }
+      ],
+      "fieldConfig": {"defaults": {"unit": "percent"}}
+    },
+    {
+      "type": "timeseries",
+      "title": "Avg tokens/second",
+      "gridPos": {"x": 12, "y": 16, "w": 12, "h": 8},
+      "targets": [
+        {
+          "expr": "rate(mew1a_tokens_per_second_sum[5m]) / rate(mew1a_tokens_per_second_count[5m])",
+          "legendFormat": "tps"
+        }
+      ]
+    }
+  ]
+}
+

@@ -21,6 +21,7 @@ import modal
 # =============================================================================
 
 import os
+from pathlib import Path
 
 # Mew-1A v4.3.1 - BUY/PASS/HOLD alignment patch (200 examples, Final loss: 0.4677)
 MODEL_NAME = "ChicoPanama/mew1a-v4.3.1"
@@ -64,6 +65,8 @@ vector_store_volume = modal.Volume.from_name("mew1a-vector-store", create_if_mis
 # DOCKER IMAGE WITH vLLM + VECTOR RAG
 # =============================================================================
 
+BASE_DIR = Path(__file__).parent.resolve()
+
 vllm_image = (
     modal.Image.debian_slim(python_version="3.11")
     .pip_install(
@@ -75,19 +78,19 @@ vllm_image = (
         "prometheus-client==0.21.0",  # Metrics
     )
     .add_local_file(
-        local_path="rag_middleware_vector.py",
+        local_path=str(BASE_DIR / "rag_middleware_vector.py"),
         remote_path="/root/rag_middleware_vector.py"
     )
     .add_local_file(
-        local_path="tfv_validator.py",
+        local_path=str(BASE_DIR / "tfv_validator.py"),
         remote_path="/root/tfv_validator.py"
     )
     .add_local_file(
-        local_path="prometheus_metrics.py",
+        local_path=str(BASE_DIR / "prometheus_metrics.py"),
         remote_path="/root/prometheus_metrics.py"
     )
     .add_local_file(
-        local_path="policy_engine.py",
+        local_path=str(BASE_DIR / "policy_engine.py"),
         remote_path="/root/policy_engine.py"
     )
 )
@@ -297,11 +300,19 @@ class Mew1AV43VectorRAGModel:
 ### Response:
 """
 
-        result = self.generate(
-            prompt=prompt,
-            max_tokens=max_tokens,
-            use_rag=use_rag
-        )
+        try:
+            result = self.generate.remote(
+                prompt=prompt,
+                max_tokens=max_tokens,
+                use_rag=use_rag
+            )
+        except Exception as e:
+            # Surface diagnostic info for callable confusion
+            return {
+                "error": "analyze_card_internal_error",
+                "detail": str(e),
+                "generate_attr_type": str(type(self.generate)),
+            }
         total_time = time.time() - start
 
         response_text = result["response"]
@@ -384,8 +395,9 @@ def fastapi_app():
     import sys
     sys.path.insert(0, "/root")
 
-    # Policy Engine imports
-    from policy_engine import compute_recommendation, PolicyConfig, check_text_contradiction
+    import prometheus_metrics as pm
+    # Policy Engine imports (kept for future shaping/validation)
+    from policy_engine import PolicyConfig
 
     # Initialize policy config
     _policy_cfg = PolicyConfig(
@@ -398,6 +410,165 @@ def fastapi_app():
         description="Pokemon TCG AI with semantic search (254K examples + 482K vector indexed)",
         version="4.3.0"
     )
+
+    @web_app.get("/metrics")
+    async def metrics():
+        from prometheus_metrics import get_metrics_text, CONTENT_TYPE_LATEST
+        return Response(content=get_metrics_text(), media_type=CONTENT_TYPE_LATEST)
+
+    @web_app.get("/health")
+    async def health():
+        start = time.time()
+        try:
+            model = Mew1AV43VectorRAGModel()
+            result = model.health_check.remote()
+            pm.record_request("/health", 200, time.time() - start)
+            return result
+        except Exception:
+            pm.record_request("/health", 500, time.time() - start)
+            raise
+
+    @web_app.post("/analyze")
+    async def analyze(request: Request):
+        """
+        Card analysis endpoint with Vector RAG
+
+        Implementation: Build structured prompt and invoke generate(),
+        bypassing analyze_card to avoid modal Function callable issues.
+        """
+        start = time.time()
+
+        data = await request.json()
+        card_name = data.get("card_name", "")
+        set_name = data.get("set_name", "")
+        listed_price = float(data.get("listed_price", 0.0))
+        fair_value = float(data.get("fair_value", 0.0))
+        reddit_sentiment = data.get("reddit_sentiment", "")
+        max_tokens = int(data.get("max_tokens", 200))
+        use_rag = data.get("use_rag", True)
+
+        if not card_name:
+            pm.record_request("/analyze", 400, time.time() - start)
+            return JSONResponse(status_code=400, content={"error": "Missing 'card_name' field"})
+
+        try:
+            instruction = f"Analyze: {card_name}"
+            if set_name:
+                instruction += f" - {set_name}"
+            if fair_value > 0 and listed_price > 0:
+                discount = ((fair_value - listed_price) / fair_value) * 100
+                instruction += f". Listed at ${listed_price:.2f}, fair value ${fair_value:.2f} ({discount:.1f}% discount)"
+            else:
+                instruction += ". Analyze market pricing and provide a recommendation."
+
+            prompt = f"""Below is an instruction that describes a task. Write a response that appropriately completes the request.
+
+### Instruction:
+{instruction}
+
+### Response:
+"""
+            model = Mew1AV43VectorRAGModel()
+            gen = model.generate.remote(
+                prompt=prompt,
+                max_tokens=max_tokens,
+                use_rag=use_rag,
+            )
+            latency = time.time() - start
+            pm.record_request("/analyze", 200, latency)
+            if "tokens" in gen:
+                pm.record_generation("/analyze", gen["tokens"], gen.get("inference_time", latency))
+            if "guardrails" in gen:
+                pm.record_guardrails(
+                    "/analyze",
+                    gen["guardrails"].get("tfv_repaired", False),
+                    gen["guardrails"].get("footer_type", "none"),
+                    gen["guardrails"].get("zero_price_sanitized", False)
+                )
+            if "rag_augmented" in gen:
+                pm.record_rag("/analyze", gen["rag_augmented"])
+
+            text = gen.get("response", "")
+            rec = "NEUTRAL"
+            up = text.upper()
+            if "BUY" in up and "PASS" not in up:
+                rec = "BUY"
+            elif "PASS" in up:
+                rec = "PASS"
+            elif "HOLD" in up:
+                rec = "HOLD"
+
+            return {
+                "card": card_name,
+                "set": set_name,
+                "analysis": text,
+                "recommendation": rec,
+                "tokens": gen.get("tokens"),
+                "inference_time": gen.get("inference_time"),
+                "tokens_per_second": gen.get("tokens_per_second"),
+                "rag_augmented": gen.get("rag_augmented"),
+                "rag_cards_count": gen.get("rag_cards_count"),
+                "rag_cards": gen.get("rag_cards"),
+            }
+        except Exception as e2:
+            pm.record_request("/analyze", 500, time.time() - start)
+            return JSONResponse(
+                status_code=500,
+                content={
+                    "error": "Analysis failed",
+                    "detail": str(e2),
+                    "suggestion": "Try using /generate endpoint with custom prompt as fallback"
+                }
+            )
+
+    @web_app.post("/generate")
+    async def generate(request: Request):
+        """Raw text generation endpoint with Vector RAG"""
+        start = time.time()
+
+        data = await request.json()
+        prompt = data.get("prompt", "")
+        max_tokens = int(data.get("max_tokens", 200))
+        temperature = float(data.get("temperature", 0.3))
+        top_p = float(data.get("top_p", 0.9))
+        use_rag = data.get("use_rag", True)
+        session_id = data.get("session_id", None)
+
+        if not prompt:
+            pm.record_request("/generate", 400, time.time() - start)
+            return JSONResponse(status_code=400, content={"error": "Missing 'prompt' field"})
+
+        try:
+            model = Mew1AV43VectorRAGModel()
+            result = model.generate.remote(
+                prompt=prompt,
+                max_tokens=max_tokens,
+                temperature=temperature,
+                top_p=top_p,
+                use_rag=use_rag,
+                session_id=session_id,
+            )
+
+            latency = time.time() - start
+            pm.record_request("/generate", 200, latency)
+            if "tokens" in result:
+                pm.record_generation("/generate", result["tokens"], result.get("inference_time", latency))
+            if "guardrails" in result:
+                pm.record_guardrails(
+                    "/generate",
+                    result["guardrails"].get("tfv_repaired", False),
+                    result["guardrails"].get("footer_type", "none"),
+                    result["guardrails"].get("zero_price_sanitized", False)
+                )
+            if "rag_augmented" in result:
+                pm.record_rag("/generate", result["rag_augmented"])
+
+            return result
+        except Exception as e:
+            pm.record_request("/generate", 500, time.time() - start)
+            return JSONResponse(status_code=500, content={"error": "Generation failed", "detail": str(e)})
+
+    return web_app
 
     @web_app.get("/metrics")
     async def metrics():

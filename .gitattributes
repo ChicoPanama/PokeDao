@@ -1,0 +1,10 @@
+*.safetensors filter=lfs diff=lfs merge=lfs -text
+
+# Ensure consistent line endings for shell scripts and code files
+*.sh text eol=lf
+*.py text eol=lf
+*.ts text eol=lf
+*.js text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
