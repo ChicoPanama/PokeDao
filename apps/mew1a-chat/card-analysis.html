@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Analysis - PokeDAO</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:20px}
+    .container{max-width:1200px;margin:0 auto;background:#fff;border-radius:16px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+    .back-btn{display:inline-block;padding:10px 20px;background:#f0f0f0;border-radius:8px;text-decoration:none;color:#333;margin-bottom:20px}
+    .header{display:flex;gap:30px;margin-bottom:30px;padding-bottom:30px;border-bottom:2px solid #eee}
+    .card-image{width:200px;height:280px;object-fit:contain;border-radius:12px;background:#f9f9f9}
+    .card-info h1{font-size:28px;margin-bottom:10px}
+    .card-info .set{color:#666;font-size:18px;margin-bottom:5px}
+    .card-info .meta{color:#888;font-size:14px}
+    .tfv-box{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:30px;border-radius:12px;margin-bottom:30px;text-align:center}
+    .tfv-box h2{font-size:24px;margin-bottom:10px}
+    .tfv-box .price{font-size:48px;font-weight:700}
+    .tfv-box .confidence{opacity:.9;margin-top:10px}
+    .best-deal{background:#2ecc71;color:#fff;padding:20px;border-radius:12px;margin-bottom:30px}
+    .best-deal h3{margin-bottom:10px}
+    .section{margin-bottom:30px;padding:20px;background:#f9f9f9;border-radius:12px}
+    .section h3{margin-bottom:15px;color:#333}
+    .no-data{color:#999;text-align:center;padding:20px;background:#fff3cd;border-radius:8px}
+    .marketplace-list{display:grid;gap:10px}
+    .marketplace-item{display:flex;justify-content:space-between;padding:10px;background:#fff;border-radius:8px}
+    .ai-analysis{background:#fff;padding:20px;border-left:4px solid #667eea}
+    .recommendation{display:inline-block;padding:10px 20px;border-radius:20px;font-weight:700;margin-bottom:15px}
+    .recommendation.BUY{background:#2ecc71;color:#fff}
+    .recommendation.PASS{background:#e74c3c;color:#fff}
+    .recommendation.HOLD{background:#f39c12;color:#fff}
+    .loading{text-align:center;padding:40px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="card-search.html" class="back-btn">← Back to Search</a>
+    <div id="content" class="loading">Loading analysis...</div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const cardId = params.get('id');
+    const language = params.get('lang') || 'EN';
+    const placeholderDataUrl = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 420">
+        <rect width="300" height="420" fill="#f3f4f6"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16" fill="#9ca3af">No Image</text>
+      </svg>
+    `);
+
+    async function loadAnalysis(){
+      try{
+        const res = await fetch(`/api/cards/comprehensive-analysis?canonicalCardId=${encodeURIComponent(cardId)}&language=${encodeURIComponent(language)}`);
+        const data = await res.json();
+        if(!data.ok){ document.getElementById('content').innerHTML = `<div class="error">Error: ${data.error || 'Unknown error'}</div>`; return; }
+        render(data);
+      }catch(err){ document.getElementById('content').innerHTML = `<div class="error">Failed to load: ${err.message}</div>`; }
+    }
+
+    function render(d){
+      const { card, trueFairValue: tfv, bestDeal, marketplaces, priceHistory, sentiment, aiAnalysis } = d;
+      document.getElementById('content').innerHTML = `
+        <div class="header">
+          <img class="card-image" src="${(card.imageCandidateUrls && card.imageCandidateUrls[0]) || ''}" onerror="this.src='${placeholderDataUrl}'" alt="${card.name}">
+          <div class="card-info">
+            <h1>${card.name}</h1>
+            <div class="set">${card.set}</div>
+            <div class="meta">#${card.cardNumber || '—'} • ${card.rarity}</div>
+            ${card.illustrator ? `<div class="meta">Illustrated by ${card.illustrator}</div>` : ''}
+          </div>
+        </div>
+        ${tfv ? `
+          <div class="tfv-box">
+            <h2>TRUE FAIR VALUE</h2>
+            <div class="price">$${Number(tfv.price || 0).toFixed(2)}</div>
+            <div class="confidence">Confidence: ${(Number(tfv.confidence || 0)*100).toFixed(0)}% (${tfv.sampleSize || 0} sources)</div>
+          </div>
+        ` : '<div class="no-data">⚠️ Insufficient pricing data</div>'}
+        ${bestDeal ? `
+          <div class="best-deal">
+            <h3>🎯 BEST DEAL</h3>
+            <div>${bestDeal.source}: <strong>$${Number(bestDeal.price||0).toFixed(2)}</strong></div>
+            <div>${bestDeal.discountPct > 0 ? `${Number(bestDeal.discountPct).toFixed(1)}% discount vs TFV` : 'At fair value'}</div>
+            <a href="${bestDeal.url}" target="_blank" style="color:#fff;text-decoration:underline">View Listing →</a>
+          </div>
+        ` : ''}
+        <div class="section">
+          <h3>📊 Marketplace Distribution</h3>
+          ${marketplaces.dataAvailable ? `
+            <div class="marketplace-list">
+              ${Object.entries(marketplaces.bySource || {}).map(([src, info]) => `
+                <div class="marketplace-item">
+                  <span>${src}: ${info.listingCount} listings</span>
+                  <strong>$${Number(info.avgPrice || 0).toFixed(2)} avg</strong>
+                </div>
+              `).join('')}
+            </div>
+          ` : '<div class="no-data">No active listings</div>'}
+        </div>
+        <div class="section">
+          <h3>📈 Price History (90 days)</h3>
+          ${priceHistory.dataAvailable ? `
+            <canvas id="priceChart" width="400" height="200"></canvas>
+            <div style="margin-top:15px;color:#666;">Trend: <strong>${priceHistory.trend.direction.toUpperCase()}</strong> (${priceHistory.trend.changePct>0?'+':''}${Number(priceHistory.trend.changePct).toFixed(1)}%)</div>
+          ` : `<div class="no-data">${priceHistory.reason || 'No sales data'}</div>`}
+        </div>
+        ${sentiment?.dataAvailable ? `
+          <div class="section"><h3>💬 Reddit Sentiment</h3>
+            <div>Overall: <strong>${sentiment.reddit.overall}</strong> (${(Number(sentiment.reddit.score||0)*100).toFixed(0)}%)</div>
+            <div style="color:#666;margin-top:5px;">${sentiment.reddit.discussionVolume} discussions this week</div>
+          </div>
+        ` : ''}
+        ${aiAnalysis ? `
+          <div class="section"><h3>🤖 MEW-1A Analysis</h3>
+            <div class="ai-analysis">
+              <span class="recommendation ${aiAnalysis.recommendation}">${aiAnalysis.recommendation}</span>
+              <div style="font-weight:600;margin-bottom:10px;">${aiAnalysis.mew1a.headline || ''}</div>
+              <div style="color:#555;line-height:1.6;">${aiAnalysis.mew1a.explanation || ''}</div>
+              <div style="margin-top:15px;color:#999;font-size:14px;">Conviction: ${aiAnalysis.conviction}% ${aiAnalysis.mew1a.shaped ? '• ✓ Shaped' : ''}</div>
+            </div>
+          </div>
+        ` : ''}
+      `;
+
+      if(priceHistory?.dataAvailable){
+        const ctx = (document.getElementById('priceChart') as HTMLCanvasElement).getContext('2d');
+        // @ts-ignore
+        new Chart(ctx, { type:'line', data:{ labels: priceHistory.dataPoints.map(d=>d.week), datasets:[{ label:'Avg Price', data: priceHistory.dataPoints.map(d=>d.avgPrice), borderColor:'#667eea', backgroundColor:'rgba(102,126,234,0.1)', tension:.3, fill:true }] }, options:{ responsive:true, plugins:{ legend:{ display:false } }, scales:{ y:{ beginAtZero:false, ticks:{ callback:(v)=>'$'+Number(v).toFixed(0) } } } } });
+      }
+    }
+
+    loadAnalysis();
+  </script>
+</body>
+</html>
+

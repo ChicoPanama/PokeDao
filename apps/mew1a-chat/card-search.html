@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokeDAO Card Analysis</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:20px}
+    .container{max-width:1200px;margin:0 auto;background:#fff;border-radius:16px;padding:40px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+    h1{color:#333;margin-bottom:30px}
+    .search-box{display:flex;gap:10px;margin-bottom:20px}
+    input{flex:1;padding:15px;font-size:16px;border:2px solid #ddd;border-radius:8px}
+    button{padding:15px 30px;background:#667eea;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:16px}
+    button:hover{background:#5568d3}
+    .language-toggle{display:flex;gap:10px;margin-bottom:20px}
+    .lang-btn{padding:10px 20px;background:#f0f0f0;border:2px solid #ddd;border-radius:8px;cursor:pointer}
+    .lang-btn.active{background:#667eea;border-color:#667eea;color:#fff}
+    .results{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-top:30px}
+    .card{border:2px solid #eee;border-radius:12px;padding:20px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.2)}
+    .card-image{width:100%;height:200px;object-fit:contain;background:#f9f9f9;border-radius:8px;margin-bottom:15px}
+    .card-name{font-size:18px;font-weight:600;margin-bottom:5px}
+    .card-set{color:#666;font-size:14px;margin-bottom:10px}
+    .card-number{color:#888;font-size:12px;margin-bottom:10px}
+    .prices{display:flex;flex-direction:column;gap:5px;font-size:14px}
+    .price-item{display:flex;justify-content:space-between}
+    .loading{text-align:center;padding:40px;color:#666}
+    .error{color:#e74c3c;padding:20px;background:#fee;border-radius:8px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 PokeDAO Card Analysis</h1>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Enter card name (e.g., Charizard ex Obsidian Flames)" />
+      <button onclick="search()">Search</button>
+    </div>
+
+    <div class="language-toggle">
+      <button class="lang-btn active" data-lang="EN" onclick="toggleLanguage('EN')">🇺🇸 English</button>
+      <button class="lang-btn" data-lang="JA" onclick="toggleLanguage('JA')">🇯🇵 Japanese</button>
+    </div>
+
+    <div id="results"></div>
+  </div>
+
+  <script>
+    let currentLanguage = 'EN';
+    const placeholderDataUrl = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+        <rect width="300" height="200" fill="#f3f4f6"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16" fill="#9ca3af">No Image</text>
+      </svg>
+    `);
+
+    function toggleLanguage(lang){
+      currentLanguage = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
+    }
+
+    async function search(){
+      const q = document.getElementById('searchInput').value.trim();
+      if(!q) return;
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '<div class="loading">Searching...</div>';
+      try{
+        const res = await fetch(`/api/cards/search-variants?q=${encodeURIComponent(q)}&language=${currentLanguage}`);
+        const data = await res.json();
+        if(!data.ok){ resultsDiv.innerHTML = `<div class="error">Error: ${data.error || 'Unknown error'}</div>`; return; }
+        if(data.matches.length === 0){ resultsDiv.innerHTML = '<div class="loading">No cards found</div>'; return; }
+        resultsDiv.innerHTML = '<div class="results">' + data.matches.map(card => `
+          <div class="card" onclick="viewAnalysis('${card.canonicalCardId}','${encodeURIComponent(card.name)}','${encodeURIComponent(card.set)}')">
+            <img class="card-image" src="${(card.imageCandidateUrls && card.imageCandidateUrls[0]) || ''}" onerror="this.src='${placeholderDataUrl}'" alt="${card.name}"/>
+            <div class="card-name">${card.name}</div>
+            <div class="card-set">${card.set}</div>
+            <div class="card-number">#${card.cardNumber || '—'} • ${card.rarity}</div>
+            <div class="prices">
+              ${Object.entries(card.pricesByGrade || {}).slice(0,3).map(([k,v]) => `
+                <div class="price-item"><span>${k.replace('_',' ')}:</span><strong>$${Number(v.avg||0).toFixed(2)}</strong></div>
+              `).join('')}
+            </div>
+          </div>
+        `).join('') + '</div>';
+      }catch(err){ resultsDiv.innerHTML = `<div class="error">Failed to search: ${err.message}</div>`; }
+    }
+
+    function viewAnalysis(id,name,set){
+      window.location.href = `card-analysis.html?id=${id}&lang=${currentLanguage}`;
+    }
+
+    document.getElementById('searchInput').addEventListener('keypress', (e)=>{ if(e.key==='Enter') search(); });
+  </script>
+</body>
+</html>
+

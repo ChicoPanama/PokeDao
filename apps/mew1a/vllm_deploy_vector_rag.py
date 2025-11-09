@@ -104,7 +104,8 @@ vllm_image = (
     gpu="T4",
     secrets=[modal.Secret.from_name("huggingface-secret")],
     volumes={"/vector-store": vector_store_volume},
-    scaledown_window=300,
+    min_containers=1,           # Keep at least 1 container warm during ramp
+    scaledown_window=600,       # Align with canary to reduce cold starts
     timeout=600,
 )
 class Mew1AV43VectorRAGModel:

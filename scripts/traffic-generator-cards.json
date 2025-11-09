@@ -1,0 +1,482 @@
+[
+  {
+    "name": "Charizard ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "223/197",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 150,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Charizard ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "228/197",
+    "rarity": "Hyper Rare",
+    "avgPriceRaw": 100,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Charizard ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "215/197",
+    "rarity": "Ultra Rare",
+    "avgPriceRaw": 65,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Charizard ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "125/197",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 35,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Pikachu VMAX",
+    "set": "Vivid Voltage",
+    "cardNumber": "188/185",
+    "rarity": "Secret Rare",
+    "avgPriceRaw": 120,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Pikachu VMAX",
+    "set": "Vivid Voltage",
+    "cardNumber": "044/185",
+    "rarity": "Rare Holo VMAX",
+    "avgPriceRaw": 55,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Umbreon VMAX",
+    "set": "Evolving Skies",
+    "cardNumber": "215/203",
+    "rarity": "Alternate Art",
+    "avgPriceRaw": 450,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Umbreon VMAX",
+    "set": "Evolving Skies",
+    "cardNumber": "095/203",
+    "rarity": "Rare Holo VMAX",
+    "avgPriceRaw": 85,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Rayquaza VMAX",
+    "set": "Evolving Skies",
+    "cardNumber": "218/203",
+    "rarity": "Alternate Art",
+    "avgPriceRaw": 380,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Rayquaza VMAX",
+    "set": "Evolving Skies",
+    "cardNumber": "111/203",
+    "rarity": "Rare Holo VMAX",
+    "avgPriceRaw": 75,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Lugia V",
+    "set": "Silver Tempest",
+    "cardNumber": "186/195",
+    "rarity": "Full Art",
+    "avgPriceRaw": 95,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Lugia V",
+    "set": "Silver Tempest",
+    "cardNumber": "138/195",
+    "rarity": "Ultra Rare",
+    "avgPriceRaw": 40,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Mewtwo ex",
+    "set": "151",
+    "cardNumber": "163/165",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 280,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Mewtwo ex",
+    "set": "151",
+    "cardNumber": "150/165",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 50,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Giratina VSTAR",
+    "set": "Lost Origin",
+    "cardNumber": "247/196",
+    "rarity": "Rainbow Rare",
+    "avgPriceRaw": 110,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Giratina VSTAR",
+    "set": "Lost Origin",
+    "cardNumber": "131/196",
+    "rarity": "Rare Holo VSTAR",
+    "avgPriceRaw": 55,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Iono",
+    "set": "Paldea Evolved",
+    "cardNumber": "269/193",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 95,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Iono",
+    "set": "Paldea Evolved",
+    "cardNumber": "254/193",
+    "rarity": "Full Art",
+    "avgPriceRaw": 45,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Iono",
+    "set": "Paldea Evolved",
+    "cardNumber": "185/193",
+    "rarity": "Uncommon",
+    "avgPriceRaw": 8,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Mew ex",
+    "set": "151",
+    "cardNumber": "151/165",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 42,
+    "tier": "mega-popular"
+  },
+  {
+    "name": "Gengar ex",
+    "set": "151",
+    "cardNumber": "094/165",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 48,
+    "tier": "popular"
+  },
+  {
+    "name": "Gengar ex",
+    "set": "151",
+    "cardNumber": "168/165",
+    "rarity": "Hyper Rare",
+    "avgPriceRaw": 85,
+    "tier": "popular"
+  },
+  {
+    "name": "Eevee",
+    "set": "151",
+    "cardNumber": "133/165",
+    "rarity": "Common",
+    "avgPriceRaw": 12,
+    "tier": "popular"
+  },
+  {
+    "name": "Eevee",
+    "set": "Evolving Skies",
+    "cardNumber": "125/203",
+    "rarity": "Common",
+    "avgPriceRaw": 8,
+    "tier": "popular"
+  },
+  {
+    "name": "Miraidon ex",
+    "set": "Scarlet & Violet",
+    "cardNumber": "080/198",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 38,
+    "tier": "popular"
+  },
+  {
+    "name": "Miraidon ex",
+    "set": "Scarlet & Violet",
+    "cardNumber": "247/198",
+    "rarity": "Hyper Rare",
+    "avgPriceRaw": 75,
+    "tier": "popular"
+  },
+  {
+    "name": "Koraidon ex",
+    "set": "Scarlet & Violet",
+    "cardNumber": "247/198",
+    "rarity": "Hyper Rare",
+    "avgPriceRaw": 72,
+    "tier": "popular"
+  },
+  {
+    "name": "Koraidon ex",
+    "set": "Scarlet & Violet",
+    "cardNumber": "125/198",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 35,
+    "tier": "popular"
+  },
+  {
+    "name": "Alakazam ex",
+    "set": "151",
+    "cardNumber": "065/165",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 28,
+    "tier": "popular"
+  },
+  {
+    "name": "Alakazam ex",
+    "set": "151",
+    "cardNumber": "200/165",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 65,
+    "tier": "popular"
+  },
+  {
+    "name": "Arcanine ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "059/197",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 18,
+    "tier": "popular"
+  },
+  {
+    "name": "Arcanine ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "218/197",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 52,
+    "tier": "popular"
+  },
+  {
+    "name": "Lechonk",
+    "set": "Scarlet & Violet",
+    "cardNumber": "159/198",
+    "rarity": "Common",
+    "avgPriceRaw": 3,
+    "tier": "popular"
+  },
+  {
+    "name": "Wiglett",
+    "set": "Paldea Evolved",
+    "cardNumber": "053/193",
+    "rarity": "Common",
+    "avgPriceRaw": 2,
+    "tier": "popular"
+  },
+  {
+    "name": "Iron Hands ex",
+    "set": "Paradox Rift",
+    "cardNumber": "070/182",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 32,
+    "tier": "popular"
+  },
+  {
+    "name": "Iron Hands ex",
+    "set": "Paradox Rift",
+    "cardNumber": "221/182",
+    "rarity": "Hyper Rare",
+    "avgPriceRaw": 68,
+    "tier": "popular"
+  },
+  {
+    "name": "Roaring Moon ex",
+    "set": "Paradox Rift",
+    "cardNumber": "124/182",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 28,
+    "tier": "popular"
+  },
+  {
+    "name": "Roaring Moon ex",
+    "set": "Paradox Rift",
+    "cardNumber": "251/182",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 85,
+    "tier": "popular"
+  },
+  {
+    "name": "Chien-Pao ex",
+    "set": "Paldea Evolved",
+    "cardNumber": "061/193",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 24,
+    "tier": "popular"
+  },
+  {
+    "name": "Chien-Pao ex",
+    "set": "Paldea Evolved",
+    "cardNumber": "261/193",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 62,
+    "tier": "popular"
+  },
+  {
+    "name": "Maushold ex",
+    "set": "Paldea Evolved",
+    "cardNumber": "226/193",
+    "rarity": "Ultra Rare",
+    "avgPriceRaw": 22,
+    "tier": "moderate"
+  },
+  {
+    "name": "Maushold ex",
+    "set": "Paldea Evolved",
+    "cardNumber": "268/193",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 48,
+    "tier": "moderate"
+  },
+  {
+    "name": "Gardevoir ex",
+    "set": "151",
+    "cardNumber": "086/165",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 38,
+    "tier": "moderate"
+  },
+  {
+    "name": "Gardevoir ex",
+    "set": "151",
+    "cardNumber": "206/165",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 95,
+    "tier": "moderate"
+  },
+  {
+    "name": "Squirtle",
+    "set": "151",
+    "cardNumber": "007/165",
+    "rarity": "Common",
+    "avgPriceRaw": 6,
+    "tier": "moderate"
+  },
+  {
+    "name": "Bulbasaur",
+    "set": "151",
+    "cardNumber": "001/165",
+    "rarity": "Common",
+    "avgPriceRaw": 7,
+    "tier": "moderate"
+  },
+  {
+    "name": "Charmander",
+    "set": "151",
+    "cardNumber": "004/165",
+    "rarity": "Common",
+    "avgPriceRaw": 8,
+    "tier": "moderate"
+  },
+  {
+    "name": "Iron Valiant ex",
+    "set": "Paradox Rift",
+    "cardNumber": "089/182",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 26,
+    "tier": "moderate"
+  },
+  {
+    "name": "Iron Valiant ex",
+    "set": "Paradox Rift",
+    "cardNumber": "231/182",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 58,
+    "tier": "moderate"
+  },
+  {
+    "name": "Gholdengo ex",
+    "set": "Paldea Evolved",
+    "cardNumber": "139/193",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 22,
+    "tier": "moderate"
+  },
+  {
+    "name": "Gholdengo ex",
+    "set": "Paldea Evolved",
+    "cardNumber": "265/193",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 52,
+    "tier": "moderate"
+  },
+  {
+    "name": "Tinkaton ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "162/197",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 18,
+    "tier": "moderate"
+  },
+  {
+    "name": "Tinkaton ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "221/197",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 45,
+    "tier": "moderate"
+  },
+  {
+    "name": "Pidgeot ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "164/197",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 32,
+    "tier": "moderate"
+  },
+  {
+    "name": "Pidgeot ex",
+    "set": "Obsidian Flames",
+    "cardNumber": "222/197",
+    "rarity": "Ultra Rare",
+    "avgPriceRaw": 62,
+    "tier": "moderate"
+  },
+  {
+    "name": "Dondozo ex",
+    "set": "Scarlet & Violet",
+    "cardNumber": "124/198",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 15,
+    "tier": "long-tail"
+  },
+  {
+    "name": "Dondozo ex",
+    "set": "Scarlet & Violet",
+    "cardNumber": "246/198",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 38,
+    "tier": "long-tail"
+  },
+  {
+    "name": "Great Tusk ex",
+    "set": "Paradox Rift",
+    "cardNumber": "053/182",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 14,
+    "tier": "long-tail"
+  },
+  {
+    "name": "Great Tusk ex",
+    "set": "Paradox Rift",
+    "cardNumber": "215/182",
+    "rarity": "Special Illustration Rare",
+    "avgPriceRaw": 42,
+    "tier": "long-tail"
+  },
+  {
+    "name": "Kingambit ex",
+    "set": "Paldea Evolved",
+    "cardNumber": "111/193",
+    "rarity": "Double Rare",
+    "avgPriceRaw": 16,
+    "tier": "long-tail"
+  }
+]

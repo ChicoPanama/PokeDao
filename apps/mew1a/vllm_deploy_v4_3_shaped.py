@@ -404,6 +404,7 @@ class Mew1AV43VectorRAGModel:
 def fastapi_app():
     from fastapi import FastAPI, Request, Response
     from fastapi.responses import JSONResponse
+    from fastapi.middleware.cors import CORSMiddleware
     import time
     import sys
     sys.path.insert(0, "/root")
@@ -426,6 +427,21 @@ def fastapi_app():
         title="Mew-1A v4.3 Vector RAG API",
         description="Pokemon TCG AI with semantic search (254K examples + 482K vector indexed)",
         version="4.3.0"
+    )
+
+    # Add CORS middleware to allow requests from localhost (testing) and production domains
+    web_app.add_middleware(
+        CORSMiddleware,
+        allow_origins=[
+            "http://localhost:8080",
+            "http://localhost:8000",
+            "http://localhost:3000",
+            "https://*.vercel.app",
+            "https://*.netlify.app",
+        ],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
     )
 
     @web_app.get("/metrics")

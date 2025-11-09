@@ -4,11 +4,13 @@ loadAndValidateEnv(['DATABASE_URL', 'DEEPSEEK_API_KEY']);
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import helmet from "@fastify/helmet";
+import compress from "@fastify/compress";
 import rateLimit from "@fastify/rate-limit";
 import swagger from "@fastify/swagger";
 import swaggerUi from "@fastify/swagger-ui";
 import prisma from "./lib/prisma.js";
 import { getRedis } from "./lib/redis.js";
+import { getMetricsText as getApiMetricsText } from './lib/metrics.js';
 import { createHash, randomUUID } from "node:crypto";
 import type { FastifyBaseLogger } from "fastify";
 
@@ -25,6 +27,7 @@ import { registerTokenized } from "./routes/tokenized.js";
 import { registerBestExecution } from "./routes/best-execution.js";
 import { registerConfidence } from "./routes/confidence.js";
 import { registerAIAnalysis } from "./routes/ai-analysis.js";
+import cardComprehensiveRoutes from "./routes/card-comprehensive.js";
 
 // External data integration endpoints
 import { 
@@ -49,6 +52,7 @@ async function buildServer() {
   const app = Fastify({
     logger: { level: process.env.API_LOG_LEVEL || 'info' },
     genReqId: (req) => (req.headers['x-request-id'] as string) || randomUUID(),
+    trustProxy: process.env.TRUST_PROXY === 'true',
   });
 
   // Propagate request id for client correlation
@@ -58,6 +62,7 @@ async function buildServer() {
 
   await app.register(cors, { origin: true });
   await app.register(helmet, { global: true });
+  await app.register(compress, { global: true, threshold: 1024 });
   await app.register(rateLimit, {
     max: Number(process.env.RATE_LIMIT_MAX || 300),
     timeWindow: process.env.RATE_LIMIT_WINDOW || '1 minute',
@@ -82,6 +87,7 @@ async function buildServer() {
   await registerBestExecution(app);
   await registerConfidence(app);
   await registerAIAnalysis(app);
+  await app.register(cardComprehensiveRoutes, { prefix: '/api/cards' });
 
   app.get('/health', async (request, reply) => {
     try {
@@ -141,7 +147,9 @@ async function buildServer() {
       `pokedao_listings_total ${listingCount}`,
       '# HELP pokedao_db_connections Current database connections',
       '# TYPE pokedao_db_connections gauge',
-      `pokedao_db_connections ${(dbConnections as any[])[0]?.count || 0}`
+      `pokedao_db_connections ${(dbConnections as any[])[0]?.count || 0}`,
+      '',
+      getApiMetricsText(),
     ].join('\n');
 
     return reply.code(200).type('text/plain').send(metrics);
@@ -262,10 +270,16 @@ async function buildServer() {
     const cacheKey = `${req.routerPath}:v1:${JSON.stringify(req.query)}`;
     const cached = await redis.get(cacheKey);
     if (cached) {
-      reply.header('x-cache', 'hit');
+      reply.header('x-cache-status', 'HIT');
+      try {
+        const metrics = await import('./lib/metrics.js');
+        // Attribute gateway cache hit and a fast request duration (~0s)
+        metrics.recordCacheHit('gateway');
+        metrics.recordRequest(req.routerPath || req.url, 200, 0);
+      } catch {}
       return reply.send(JSON.parse(cached));
     }
-    reply.header('x-cache', 'miss');
+    reply.header('x-cache-status', 'MISS');
     (req as any).cacheKey = cacheKey; // Use type assertion to add cacheKey
   });
 

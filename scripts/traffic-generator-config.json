@@ -1,0 +1,92 @@
+{
+  "normal": {
+    "name": "Normal Baseline",
+    "durationMs": 3600000,
+    "concurrentUsers": 5,
+    "userDistribution": {
+      "anonymous": 0.50,
+      "api_key": 0.40,
+      "power_user": 0.10
+    },
+    "cardDistribution": {
+      "mega_popular": 0.40,
+      "popular": 0.35,
+      "moderate": 0.20,
+      "long_tail": 0.05
+    },
+    "newTuplesBudgetPerMin": 10,
+    "repeatProbability": 0.70
+  },
+  "peak": {
+    "name": "Peak Traffic (Evening Rush)",
+    "durationMs": 1800000,
+    "concurrentUsers": 15,
+    "userDistribution": {
+      "anonymous": 0.40,
+      "api_key": 0.45,
+      "power_user": 0.15
+    },
+    "cardDistribution": {
+      "mega_popular": 0.50,
+      "popular": 0.30,
+      "moderate": 0.15,
+      "long_tail": 0.05
+    },
+    "newTuplesBudgetPerMin": 50,
+    "repeatProbability": 0.75
+  },
+  "spike": {
+    "name": "Traffic Spike (Product Hunt Launch)",
+    "durationMs": 900000,
+    "concurrentUsers": 30,
+    "userDistribution": {
+      "anonymous": 0.60,
+      "api_key": 0.30,
+      "power_user": 0.10
+    },
+    "cardDistribution": {
+      "mega_popular": 0.60,
+      "popular": 0.25,
+      "moderate": 0.10,
+      "long_tail": 0.05
+    },
+    "newTuplesBudgetPerMin": 100,
+    "repeatProbability": 0.80
+  },
+  "cache-buster": {
+    "name": "Cache Buster (Worst Case)",
+    "durationMs": 600000,
+    "concurrentUsers": 10,
+    "userDistribution": {
+      "anonymous": 0.30,
+      "api_key": 0.50,
+      "power_user": 0.20
+    },
+    "cardDistribution": {
+      "mega_popular": 0.10,
+      "popular": 0.20,
+      "moderate": 0.30,
+      "long_tail": 0.40
+    },
+    "newTuplesBudgetPerMin": 100,
+    "repeatProbability": 0.20
+  },
+  "cache-optimized": {
+    "name": "Cache Optimized (High Repeat)",
+    "durationMs": 3600000,
+    "concurrentUsers": 5,
+    "userDistribution": {
+      "anonymous": 0.20,
+      "api_key": 0.70,
+      "power_user": 0.10
+    },
+    "cardDistribution": {
+      "mega_popular": 0.50,
+      "popular": 0.35,
+      "moderate": 0.15,
+      "long_tail": 0.00
+    },
+    "newTuplesBudgetPerMin": 10,
+    "repeatProbability": 0.85
+  }
+}
