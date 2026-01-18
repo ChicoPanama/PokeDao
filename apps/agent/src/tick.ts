@@ -36,4 +36,15 @@ export async function runAgentTick() {
   const cands = detectCandidates(withComps);
   const kept = await validateAndPersist(cands);
   await stageAndMaybePost(kept);
+
+  // Send Telegram alerts for new signals
+  const TELEGRAM_ENABLED = process.env.TELEGRAM_ALERTS_ENABLED === 'true';
+  if (TELEGRAM_ENABLED) {
+    try {
+      const { processAlerts } = await import('../../../ml/src/alertSystem.js');
+      await processAlerts();
+    } catch (e: any) {
+      console.error('[agent] Telegram alert error:', e?.message || e);
+    }
+  }
 }
