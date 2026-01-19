@@ -3,8 +3,8 @@ packages:
   - bot
   - worker
   - ml
-  - packages/shared
-  - apps/agent
+  - packages/*
+  - apps/*
   - prisma
   - utils
 

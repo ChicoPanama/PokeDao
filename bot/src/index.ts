@@ -1,298 +1,139 @@
-import { Bot, GrammyError, HttpError } from 'grammy';
-import { config } from './lib/config.js';
-import { logger } from './lib/logger.js';
-import { prisma } from './lib/prisma.js';
-import { authMiddleware, rateLimitMiddleware, UserContext } from './middleware/auth.js';
+/**
+ * PokeDAO Telegram Bot
+ * 
+ * A Pokemon TCG investment assistant that:
+ * - Sends deal alerts for undervalued cards
+ * - Tracks user purchases and watchlists
+ * - Provides investment insights
+ */
 
-// Commands
-import { startCommand } from './commands/start.js';
-import { walletCommand, handleWalletSubmission } from './commands/wallet.js';
-import { referralCommand, handleReferralCallback } from './commands/referral.js';
-import { alertsCommand, handleAlertsCallback } from './commands/alerts.js';
-import { watchCommand, handleWatchCallback } from './commands/watch.js';
+import { Bot } from 'grammy';
+import { config } from 'dotenv';
 
-// Callbacks
-import { handleListingCallback } from './callbacks/listing.js';
+// Load environment variables
+config();
 
-// Alert system
-import { initAlertSender } from './alerts/sender.js';
+// Import handlers
+import { handleStart } from './handlers/start.js';
+import { handleHelp } from './handlers/help.js';
+import { handleWatch } from './handlers/watch.js';
+import { handleStats } from './handlers/stats.js';
+import { handleDeals, handleTestAlert } from './handlers/deals.js';
+import { 
+  handleBoughtCallback, 
+  handleWatchCallback, 
+  handleIgnoreCallback 
+} from './handlers/callbacks.js';
+import { disconnect } from './lib/db.js';
 
-// Create the bot
-const bot = new Bot<UserContext>(config.TELEGRAM_BOT_TOKEN);
+// Validate token
+const token = process.env.TELEGRAM_BOT_TOKEN;
 
-// Initialize alert sender
-const alertSender = initAlertSender(bot);
+if (!token) {
+  console.error('❌ TELEGRAM_BOT_TOKEN not found in environment');
+  process.exit(1);
+}
 
-// ========================
-// MIDDLEWARE
-// ========================
+// Create bot instance
+const bot = new Bot(token);
 
-// Rate limiting (before auth to prevent spam)
-bot.use(rateLimitMiddleware);
+// ============================================================================
+// COMMAND HANDLERS
+// ============================================================================
 
-// User registration/lookup
-bot.use(authMiddleware);
+bot.command('start', handleStart);
+bot.command('help', handleHelp);
+bot.command('watch', handleWatch);
+bot.command('stats', handleStats);
+bot.command('deals', handleDeals);
+bot.command('test_alert', handleTestAlert);
 
-// ========================
-// COMMANDS
-// ========================
-
-bot.command('start', startCommand);
-bot.command('wallet', walletCommand);
-bot.command('referral', referralCommand);
-bot.command('alerts', alertsCommand);
-bot.command('watch', watchCommand);
-
-// Help command
-bot.command('help', async (ctx) => {
-  await ctx.reply(
-    `🎮 **PokeDAO Bot Commands**
-
-**Getting Started:**
-/start - Welcome & onboarding
-/help - Show this help message
-
-**Trading:**
-/alerts - Configure deal alert settings
-/watch - Manage your watchlist
-
-**Account:**
-/wallet - Connect your Solana wallet
-/referral - Get your referral link & stats
-
-**Quick Stats:**
-/stats - View your activity summary
-
-_Need help? Visit our support channel or type /support_`,
-    { parse_mode: 'Markdown' }
-  );
+// Simple ping for health checks
+bot.command('ping', (ctx) => {
+  ctx.reply('🏓 Pong! PokeDAO bot is running!');
 });
 
-// Stats command
-bot.command('stats', async (ctx) => {
-  if (!ctx.user) {
-    await ctx.reply('Please use /start first to register.');
-    return;
-  }
+// ============================================================================
+// CALLBACK QUERY HANDLERS (Inline Buttons)
+// ============================================================================
 
-  const user = await prisma.user.findUnique({
-    where: { telegramId: ctx.user.telegramId },
-    include: {
-      purchases: true,
-      watchlistItems: true,
-      referrals: true,
-    },
-  });
+bot.callbackQuery(/^bought:/, handleBoughtCallback);
+bot.callbackQuery(/^watch:/, handleWatchCallback);
+bot.callbackQuery(/^ignore:/, handleIgnoreCallback);
 
-  if (!user) {
-    await ctx.reply('Please use /start first.');
-    return;
-  }
+// ============================================================================
+// DEFAULT HANDLERS
+// ============================================================================
 
-  const purchaseCount = user.purchases?.length || 0;
-  const watchlistCount = user.watchlistItems?.length || 0;
-  const referralCount = user.referrals?.length || 0;
-  const totalSpent = user.purchases?.reduce((sum, p) => sum + p.amount, 0) || 0;
-
-  await ctx.reply(
-    `📊 **Your Stats**
-
-👤 Member since: ${user.createdAt.toLocaleDateString()}
-
-💰 **Trading:**
-• Purchases: ${purchaseCount}
-• Total Spent: $${totalSpent.toFixed(2)}
-
-👀 **Watchlist:** ${watchlistCount} cards
-
-🔗 **Referrals:** ${referralCount} users
-
-_Keep trading to earn more rewards!_`,
-    { parse_mode: 'Markdown' }
-  );
-});
-
-// Ping command (health check)
-bot.command('ping', async (ctx) => {
-  const start = Date.now();
-  await prisma.$queryRaw`SELECT 1`;
-  const dbLatency = Date.now() - start;
-
-  await ctx.reply(
-    `🏓 **Pong!**\n\n` +
-    `Bot: ✅ Online\n` +
-    `Database: ✅ ${dbLatency}ms\n` +
-    `Alerts: ${alertSender ? '✅ Active' : '❌ Inactive'}`,
-    { parse_mode: 'Markdown' }
-  );
-});
-
-// ========================
-// CALLBACK QUERIES
-// ========================
-
-bot.on('callback_query:data', async (ctx) => {
-  const data = ctx.callbackQuery.data;
-  const parts = data.split(':');
-  const category = parts[0];
-  const action = parts[1];
-  const params = parts.slice(2).join(':');
-
-  logger.debug({ category, action, params }, 'Callback received');
-
-  try {
-    switch (category) {
-      case 'listing':
-        await handleListingCallback(ctx, action, params);
-        break;
-
-      case 'referral':
-        await handleReferralCallback(ctx, action);
-        break;
-
-      case 'alerts':
-        await handleAlertsCallback(ctx, action, params);
-        break;
-
-      case 'watch':
-        await handleWatchCallback(ctx, action, params);
-        break;
-
-      case 'wallet':
-        // Handle wallet callbacks
-        if (action === 'learn') {
-          await ctx.answerCallbackQuery();
-          await ctx.reply(
-            `💳 **What is Solana?**\n\n` +
-            `Solana is a fast, low-cost blockchain.\n\n` +
-            `**Getting a Wallet:**\n` +
-            `1. Download Phantom (phantom.app)\n` +
-            `2. Create a new wallet\n` +
-            `3. Copy your address\n` +
-            `4. Paste it here!\n\n` +
-            `_Your wallet lets you receive rewards automatically._`,
-            { parse_mode: 'Markdown' }
-          );
-        } else if (action === 'view') {
-          await ctx.answerCallbackQuery({ text: 'Opening Solscan...' });
-        } else if (action === 'disconnect') {
-          await ctx.answerCallbackQuery({ text: 'Wallet disconnected' });
-        }
-        break;
-
-      default:
-        await ctx.answerCallbackQuery({ text: 'Unknown callback' });
-    }
-  } catch (error) {
-    logger.error({ error, data }, 'Callback handler error');
-    await ctx.answerCallbackQuery({ text: 'An error occurred' });
-  }
-});
-
-// ========================
-// MESSAGE HANDLERS
-// ========================
-
-// Handle potential wallet addresses
-bot.on('message:text', async (ctx, next) => {
-  const text = ctx.message.text.trim();
-
-  // Check if it looks like a Solana address
-  if (/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(text)) {
-    const handled = await handleWalletSubmission(ctx, text);
-    if (handled) return;
-  }
-
-  return next();
-});
-
-// Default message handler
-bot.on('message', async (ctx) => {
-  // Only respond to direct messages, not groups
-  if (ctx.chat.type === 'private') {
-    await ctx.reply(
-      `👋 Hey! I'm the PokeDAO trading assistant.\n\n` +
-      `Try these commands:\n` +
-      `/start - Get started\n` +
-      `/alerts - Set up deal alerts\n` +
-      `/help - See all commands`,
-      { parse_mode: 'Markdown' }
+// Handle unknown commands
+bot.on('message:text', (ctx) => {
+  const text = ctx.message.text;
+  
+  if (text.startsWith('/')) {
+    ctx.reply(
+      '❓ Unknown command. Try /help to see available commands.',
+    );
+  } else {
+    ctx.reply(
+      '👋 Hey! Use /start to get started or /help for available commands.',
     );
   }
 });
 
-// ========================
+// ============================================================================
 // ERROR HANDLING
-// ========================
+// ============================================================================
 
 bot.catch((err) => {
   const ctx = err.ctx;
-  logger.error({ err: err.error, update: ctx.update }, 'Bot error');
-
-  const e = err.error;
-
-  if (e instanceof GrammyError) {
-    logger.error({ code: e.error_code, description: e.description }, 'Telegram API error');
-  } else if (e instanceof HttpError) {
-    logger.error({ error: e }, 'HTTP error');
-  } else {
-    logger.error({ error: e }, 'Unknown error');
-  }
+  console.error(`❌ Error while handling update ${ctx.update.update_id}:`);
+  console.error(err.error);
 });
 
-// ========================
+// ============================================================================
 // STARTUP
-// ========================
+// ============================================================================
 
-async function start() {
-  logger.info('Starting PokeDAO bot...');
+async function main() {
+  console.log('🚀 Starting PokeDAO Telegram Bot...');
+  console.log('📋 Available commands:');
+  console.log('   /start - Register and get welcome message');
+  console.log('   /help - Show help');
+  console.log('   /watch - View watchlist');
+  console.log('   /stats - View purchase stats');
+  console.log('   /deals - Show current top deals');
+  console.log('   /test_alert - Send a test deal alert');
+  console.log('   /ping - Health check');
+  console.log('');
 
-  // Test database connection
   try {
-    await prisma.$connect();
-    logger.info('Database connected');
+    // Start bot
+    await bot.start({
+      onStart: (botInfo) => {
+        console.log(`✅ Bot started as @${botInfo.username}`);
+        console.log('📱 Open Telegram and send /start to your bot');
+      },
+    });
   } catch (error) {
-    logger.error({ error }, 'Failed to connect to database');
+    console.error('❌ Failed to start bot:', error);
     process.exit(1);
   }
-
-  // Start the bot
-  await bot.start({
-    onStart: (botInfo) => {
-      logger.info({ username: botInfo.username }, 'Bot started successfully');
-      console.log(`🚀 PokeDAO bot is running!`);
-      console.log(`📱 Bot: @${botInfo.username}`);
-      console.log(`🔗 Link: https://t.me/${botInfo.username}`);
-    },
-  });
 }
 
 // Graceful shutdown
-async function shutdown(signal: string) {
-  logger.info({ signal }, 'Shutting down...');
-
-  try {
-    await bot.stop();
-    logger.info('Bot stopped');
-
-    await prisma.$disconnect();
-    logger.info('Database disconnected');
-
-    process.exit(0);
-  } catch (error) {
-    logger.error({ error }, 'Error during shutdown');
-    process.exit(1);
-  }
-}
-
-process.once('SIGINT', () => shutdown('SIGINT'));
-process.once('SIGTERM', () => shutdown('SIGTERM'));
-
-// Start the bot
-start().catch((error) => {
-  logger.error({ error }, 'Failed to start bot');
-  process.exit(1);
+process.on('SIGINT', async () => {
+  console.log('\n🛑 Shutting down...');
+  bot.stop();
+  await disconnect();
+  process.exit(0);
 });
 
-// Export for use in alert system
-export { bot, alertSender };
+process.on('SIGTERM', async () => {
+  console.log('\n🛑 Shutting down...');
+  bot.stop();
+  await disconnect();
+  process.exit(0);
+});
+
+// Run
+main();
