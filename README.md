@@ -152,13 +152,17 @@ Autonomous execution layer that:
 |-------|-----------|---------|
 | **ML Training** | PyTorch, Transformers, LoRA, PEFT | Fine-tuning Llama-3.2-3B on TCG data |
 | **ML Inference** | vLLM, Modal Labs, FastAPI | Serverless GPU deployment |
-| **Vector Search** | FAISS, Sentence Transformers | Semantic card query understanding |
+| **Vector Search** | Qdrant, Sentence Transformers | Production semantic search (upgraded from FAISS) |
 | **Evaluation** | NanoChat patterns, BPB metric | Production ML quality gates |
-| **Database** | PostgreSQL, Prisma ORM | 239,785 records with proper indexing |
+| **Database** | PostgreSQL + TimescaleDB, Prisma ORM | 239,785 records with time-series optimization |
 | **Data Lake** | Apache Parquet, DuckDB | Columnar storage with SHA256 addressing |
 | **Backend** | Node.js 20+, TypeScript, Zod | Type-safe monorepo (7 packages) |
-| **Queues** | BullMQ, Redis | Background job processing |
+| **API Layer** | Fastify + tRPC | End-to-end type-safe API |
+| **Queues** | BullMQ, Redis, Redpanda | Job processing + event streaming |
+| **AI Orchestration** | LangGraph, CrewAI | Multi-agent state machine workflows |
 | **AI Models** | Ollama (Qwen 2.5), DeepSeek R1 | Local + cloud LLM ensemble |
+| **Observability** | OpenTelemetry-style tracing | Agent pipeline monitoring |
+| **Dev Tools** | Claude Code, MCP servers, Skills.sh | AI-assisted development |
 | **CI/CD** | GitHub Actions | Validation, smoke tests |
 
 ---
@@ -211,7 +215,7 @@ pokedao/
 │   ├── analysis/          # TFV, liquidity, opportunity scoring
 │   ├── storage/           # Prisma ORM, repositories
 │   ├── adapters/          # JustTCG, Phygitals, CollectorCrypt clients
-│   ├── shared/            # Logging, config, validation
+│   ├── shared/            # Logging, config, validation, tracing
 │   ├── reddit-sentiment/  # Sentiment analysis
 │   └── streams/           # Data streaming utilities
 ├── api/                   # Fastify REST API (production-ready)
@@ -293,6 +297,64 @@ pokedao/
 
 ---
 
+## Claude Code Integration
+
+PokeDAO includes first-class support for [Claude Code](https://claude.com/claude-code), providing AI-assisted development with deep project understanding.
+
+### MCP Servers (Model Context Protocol)
+
+Pre-configured MCP servers in `.mcp.json` enable Claude to interact directly with your infrastructure:
+
+| Server | Purpose | Example Usage |
+|--------|---------|---------------|
+| **PostgreSQL** | Query 239k records directly | "Show signals with >25% edge" |
+| **GitHub** | PR/issue management | "Create a PR for this feature" |
+| **Redis** | Cache & queue inspection | "What's in the BullMQ agent queue?" |
+| **Telegram** | Task notifications | Alert when long jobs complete |
+
+### Project Context
+
+- **[CLAUDE.md](CLAUDE.md)** - Project architecture, commands, and conventions for Claude Code
+- Automatically loaded when Claude Code runs in this directory
+
+### Agent Pipeline Tracing
+
+The signal generation pipeline (`apps/agent/src/tick.ts`) includes OpenTelemetry-style tracing:
+
+```
+agent:tick (1.2s)
+├── agent:fetch (listing_count: 150)
+├── agent:normalize (normalized_count: 148)
+├── agent:attach_comps (with_comps_count: 142)
+├── agent:detect_candidates (candidate_count: 8)
+├── agent:validate_persist (kept_count: 5)
+└── agent:telegram_alerts
+```
+
+### Automation Hooks
+
+Configured in `.claude/settings.local.json`:
+- **PostToolUse**: Logs TypeScript file modifications
+- **Stop**: Records task completion timestamps to `.claude/activity.log`
+
+### Setup
+
+```bash
+# Install Claude Code plugins (requires Claude CLI)
+./scripts/setup-claude-tooling.sh
+
+# Or manually:
+claude plugin install claude-hud tdd-guard claude-code-safety-net
+```
+
+Required environment variables for MCP:
+```bash
+GITHUB_TOKEN=ghp_...           # For GitHub MCP
+TELEGRAM_ADMIN_CHAT_ID=...     # For Telegram MCP notifications
+```
+
+---
+
 ## Why This Matters
 
 ### The Market Opportunity
@@ -327,4 +389,42 @@ Proprietary. All rights reserved.
 
 **Built with ❤️ by collectors, for collectors.**
 
-*Last Updated: 2025-10-23*
+*Last Updated: 2026-01-23*
+
+---
+
+## 2026 Technology Upgrade (January 2026)
+
+PokeDAO has been upgraded with the latest 2026 technology stack:
+
+### Phase 1: Qdrant Vector Database
+- **Replaces**: FAISS in-memory
+- **Benefits**: Persistent storage, hybrid search, metadata filtering, production SLAs
+- **Files**: `packages/shared/qdrant.ts`, `apps/mew1a/rag_middleware_qdrant.py`
+
+### Phase 2: TimescaleDB Extension
+- **Enhances**: PostgreSQL for time-series price data
+- **Benefits**: 95% compression, automatic partitioning, continuous aggregates
+- **Migration**: `api/prisma/migrations/20260123_add_timescaledb/`
+
+### Phase 3: tRPC API Layer
+- **Adds**: End-to-end type safety
+- **Benefits**: Auto-generated client types, no API drift, Zod validation
+- **Files**: `api/src/trpc/`
+
+### Phase 4: LangGraph Agent Orchestration
+- **Replaces**: Sequential pipeline in tick.ts
+- **Benefits**: Visual debugging, retry/checkpoint, parallel execution
+- **Files**: `apps/agent/src/graph/`
+
+### Phase 5: Redpanda Event Streaming
+- **Adds**: Kafka-compatible event streaming
+- **Benefits**: Zero data loss, replay capability, multi-consumer
+- **Files**: `packages/shared/kafka.ts`
+
+### Phase 6: CrewAI Multi-Agent System
+- **Adds**: Specialized AI agents for analysis
+- **Agents**: PriceAnalyst, MarketScanner, RiskAssessor, ContentWriter
+- **Files**: `apps/crew/`
+
+[Full Plan →](.claude/plans/harmonic-dreaming-treehouse.md)
