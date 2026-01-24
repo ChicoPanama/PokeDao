@@ -7,10 +7,22 @@
  * 3. Formats and sends alerts to eligible Telegram users
  */
 
-import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import pg from 'pg';
 import { Bot } from 'grammy';
 
-const prisma = new PrismaClient();
+// Lazy-initialized Prisma client
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let prisma: any = null;
+
+async function getPrisma() {
+  if (prisma) return prisma;
+  const { PrismaClient } = await import('../../api/prisma/generated/client/client.js');
+  const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+  const adapter = new PrismaPg(pool);
+  prisma = new PrismaClient({ adapter });
+  return prisma;
+}
 
 // Alert thresholds
 const ALERT_CONFIG = {
@@ -49,8 +61,9 @@ export interface TelegramAlertData {
  */
 export async function fetchAlertableSignals(limit = 20): Promise<TelegramAlertData[]> {
   try {
+    const db = await getPrisma();
     // Get recent signals with thesis
-    const signals = await prisma.signal.findMany({
+    const signals = await db.signal.findMany({
       where: {
         thesis: { not: '' },
         edgeBp: { gte: ALERT_CONFIG.MIN_EDGE_BP },
@@ -148,13 +161,13 @@ export function formatTelegramAlert(data: TelegramAlertData): string {
   const ratingEmoji = {
     STRONG_BUY: '=%',
     BUY: '',
-    HOLD: 'ø',
-    PASS: 'í',
+    HOLD: 'ï¿½',
+    PASS: 'ï¿½',
   }[data.thesis.rating];
 
-  const discountEmoji = data.discountPct >= 20 ? '=¨' : data.discountPct >= 15 ? '=É' : '=Ê';
-  const confidenceBars = 'ˆ'.repeat(Math.round(data.confidence * 5)) +
-    '‘'.repeat(5 - Math.round(data.confidence * 5));
+  const discountEmoji = data.discountPct >= 20 ? '=ï¿½' : data.discountPct >= 15 ? '=ï¿½' : '=ï¿½';
+  const confidenceBars = 'ï¿½'.repeat(Math.round(data.confidence * 5)) +
+    'ï¿½'.repeat(5 - Math.round(data.confidence * 5));
 
   const formatPrice = (n: number) => n.toLocaleString('en-US', {
     minimumFractionDigits: 2,
@@ -163,20 +176,20 @@ export function formatTelegramAlert(data: TelegramAlertData): string {
 
   let message = `${discountEmoji} **DEAL ALERT**
 
-=æ **${data.cardName}**
-=Ú ${data.setName}${data.number ? ` #${data.number}` : ''}${data.grade ? ` " ${data.grade}` : ''}
-<ê ${data.source}
+=ï¿½ **${data.cardName}**
+=ï¿½ ${data.setName}${data.number ? ` #${data.number}` : ''}${data.grade ? ` " ${data.grade}` : ''}
+<ï¿½ ${data.source}
 
-=° **Listed:** $${formatPrice(data.priceUsd)}
-=Ê **Fair Value:** $${formatPrice(data.fairValueUsd)}
-=É **Discount:** ${data.discountPct.toFixed(1)}%
+=ï¿½ **Listed:** $${formatPrice(data.priceUsd)}
+=ï¿½ **Fair Value:** $${formatPrice(data.fairValueUsd)}
+=ï¿½ **Discount:** ${data.discountPct.toFixed(1)}%
 P **Confidence:** ${confidenceBars} ${(data.confidence * 100).toFixed(0)}%
 
 ${ratingEmoji} **${data.thesis.rating}**
-=¡ ${data.thesis.reasoning}`;
+=ï¿½ ${data.thesis.reasoning}`;
 
   if (data.thesis.riskFactors && data.thesis.riskFactors.length > 0) {
-    message += `\n\n  _Risks: ${data.thesis.riskFactors.join(', ')}_`;
+    message += `\n\nï¿½ _Risks: ${data.thesis.riskFactors.join(', ')}_`;
   }
 
   return message;
@@ -206,8 +219,9 @@ export function buildAlertKeyboard(listingId: string) {
  */
 export async function getEligibleUsers(alert: TelegramAlertData): Promise<string[]> {
   try {
+    const db = await getPrisma();
     // Get all users (in a real implementation, filter by preferences)
-    const users = await prisma.user.findMany({
+    const users = await db.user.findMany({
       select: { telegramId: true },
     });
 
@@ -318,6 +332,135 @@ export function clearSentAlerts(): void {
 
 function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+/**
+ * Check watchlist cards for price drops and send alerts
+ */
+export async function checkWatchlistPriceDrops(): Promise<{ sent: number; failed: number }> {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  if (!botToken) {
+    console.log('[alertSystem] No bot token, skipping watchlist checks');
+    return { sent: 0, failed: 0 };
+  }
+
+  try {
+    const db = await getPrisma();
+    // Get distinct cards being watched
+    const watchedCards = await db.watchlistItem.findMany({
+      distinct: ['cardId'],
+      include: {
+        card: true,
+        user: true,
+      },
+    });
+
+    let sent = 0;
+    let failed = 0;
+
+    for (const item of watchedCards) {
+      if (!item.card) continue;
+
+      // Get the card's feature snapshot for historical price
+      const snapshot = await db.featureSnapshot.findFirst({
+        where: { cardId: item.cardId, windowDays: 7 },
+        orderBy: { createdAt: 'desc' },
+      });
+
+      // Get cheapest active listing
+      const listing = await db.marketListing.findFirst({
+        where: {
+          canonicalCardId: item.card.canonicalCardId || undefined,
+          isActive: true,
+        },
+        orderBy: { priceCents: 'asc' },
+      });
+
+      if (!snapshot?.medianCents || !listing) continue;
+
+      // Calculate drop percentage
+      const dropPct = ((snapshot.medianCents - listing.priceCents) / snapshot.medianCents) * 100;
+
+      // Only alert if 15%+ below median
+      if (dropPct < 15) continue;
+
+      // Check cooldown for this card
+      const cooldownKey = `watchlist:${item.cardId}`;
+      const lastAlert = lastAlertTime.get(cooldownKey);
+      if (lastAlert && Date.now() - lastAlert < ALERT_CONFIG.COOLDOWN_MINUTES * 60 * 1000) {
+        continue;
+      }
+
+      // Get all users watching this card
+      const watchers = await db.watchlistItem.findMany({
+        where: { cardId: item.cardId },
+        include: { user: true },
+      });
+
+      // Send alert to each watcher
+      for (const watcher of watchers) {
+        try {
+          const message = `ðŸ‘€ **WATCHLIST ALERT**
+
+ðŸ“¦ **${item.card.name}**
+ðŸ“š ${item.card.set || ''}${item.card.grade ? ` â€¢ ${item.card.grade}` : ''}
+
+ðŸ’° **Price Drop Detected!**
+~~$${(snapshot.medianCents / 100).toFixed(2)}~~ â†’ **$${(listing.priceCents / 100).toFixed(2)}**
+ðŸ“‰ Down ${dropPct.toFixed(1)}%
+
+_This card is on your watchlist._`;
+
+          const keyboard = {
+            inline_keyboard: [
+              [
+                { text: 'ðŸ”— View Listing', url: listing.sourceUrl || '' },
+                { text: 'âœ… Bought', callback_data: `bought:${listing.id}` },
+              ],
+              [
+                { text: 'ðŸ˜´ Snooze', callback_data: `snooze:${item.cardId}` },
+                { text: 'âŒ Remove', callback_data: `watch:remove:${item.cardId}` },
+              ],
+            ],
+          };
+
+          const response = await fetch(
+            `https://api.telegram.org/bot${botToken}/sendMessage`,
+            {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                chat_id: watcher.user.telegramId,
+                text: message,
+                parse_mode: 'Markdown',
+                reply_markup: keyboard,
+                disable_web_page_preview: true,
+              }),
+            }
+          );
+
+          if (response.ok) {
+            sent++;
+          } else {
+            failed++;
+          }
+
+          await sleep(50);
+        } catch (e) {
+          failed++;
+        }
+      }
+
+      // Update cooldown
+      lastAlertTime.set(cooldownKey, Date.now());
+    }
+
+    console.log(`[alertSystem] Watchlist alerts: ${sent} sent, ${failed} failed`);
+    return { sent, failed };
+  } catch (error) {
+    console.error('[alertSystem] Watchlist check error:', error);
+    return { sent: 0, failed: 0 };
+  }
 }
 
 // Export for use in agent tick

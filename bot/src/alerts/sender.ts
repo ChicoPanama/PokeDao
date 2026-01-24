@@ -1,30 +1,14 @@
 import { Bot } from 'grammy';
 import { prisma } from '../lib/prisma.js';
 import { logger } from '../lib/logger.js';
-import { formatDealAlert, formatPriceDropAlert, DealAlertData } from './formatter.js';
+import { formatDealAlert, formatPriceDropAlert, formatArbitrageAlert, DealAlertData, ArbitrageAlertData } from './formatter.js';
 import { UserContext } from '../middleware/auth.js';
-
-// In-memory store for user preferences (until added to User model)
-const userPreferences = new Map<string, {
-  alertsEnabled: boolean;
-  minDiscountPct: number;
-  minPriceUsd: number;
-  maxPriceUsd: number;
-  grades: string[];
-}>();
-
-function getPreferences(telegramId: string) {
-  if (!userPreferences.has(telegramId)) {
-    return {
-      alertsEnabled: true,
-      minDiscountPct: 10,
-      minPriceUsd: 0,
-      maxPriceUsd: 10000,
-      grades: ['PSA 10', 'PSA 9', 'CGC 10', 'BGS 10'],
-    };
-  }
-  return userPreferences.get(telegramId)!;
-}
+import {
+  getPreferences,
+  getUsersWithAlertsEnabled,
+  isCardSnoozed,
+  UserPreferences,
+} from '../lib/preferences.js';
 
 /**
  * AlertSender class to manage sending alerts to users
@@ -62,20 +46,20 @@ export class AlertSender {
         await this.bot.api.sendMessage(user.telegramId, text, {
           parse_mode: 'Markdown',
           reply_markup: keyboard,
-          disable_web_page_preview: true,
+          link_preview_options: { is_disabled: true },
         });
 
         sent++;
-        logger.debug({ userId: user.id, listingId: alert.listingId }, 'Alert sent');
+        logger.debug({ userId: user.userId, listingId: alert.listingId }, 'Alert sent');
       } catch (error: any) {
         failed++;
 
         // Handle blocked/deactivated users
         if (error.error_code === 403) {
-          logger.warn({ userId: user.id }, 'User blocked the bot');
+          logger.warn({ userId: user.userId }, 'User blocked the bot');
           // Could mark user as inactive here
         } else {
-          logger.error({ error, userId: user.id }, 'Failed to send alert');
+          logger.error({ error, userId: user.userId }, 'Failed to send alert');
         }
       }
 
@@ -89,6 +73,65 @@ export class AlertSender {
       failed,
       total: users.length
     }, 'Deal alert sent');
+
+    return { sent, failed };
+  }
+
+  /**
+   * Send an arbitrage alert to users
+   */
+  async sendArbitrageAlert(alert: ArbitrageAlertData): Promise<{ sent: number; failed: number }> {
+    // Dedup check
+    const alertKey = `arb:${alert.cardId}:${alert.buyVenue}:${alert.sellVenue}`;
+    if (this.sentAlerts.has(alertKey)) {
+      logger.debug({ alertKey }, 'Arbitrage alert already sent, skipping');
+      return { sent: 0, failed: 0 };
+    }
+    this.sentAlerts.add(alertKey);
+
+    // Get users with alerts enabled and minimum spread threshold
+    const users = await getUsersWithAlertsEnabled();
+
+    let sent = 0;
+    let failed = 0;
+
+    for (const user of users) {
+      try {
+        // Check if card is snoozed
+        if (isCardSnoozed(user.prefs, alert.cardId)) {
+          continue;
+        }
+
+        // Skip if spread is below user's minimum discount threshold (use as proxy)
+        if (alert.spreadPct < user.prefs.minDiscountPct) {
+          continue;
+        }
+
+        const { text, keyboard } = formatArbitrageAlert(alert);
+
+        await this.bot.api.sendMessage(user.telegramId, text, {
+          parse_mode: 'Markdown',
+          reply_markup: keyboard,
+          link_preview_options: { is_disabled: true },
+        });
+
+        sent++;
+      } catch (error: any) {
+        failed++;
+        if (error.error_code !== 403) {
+          logger.error({ error, telegramId: user.telegramId }, 'Failed to send arbitrage alert');
+        }
+      }
+
+      await sleep(50);
+    }
+
+    logger.info({
+      cardId: alert.cardId,
+      spreadPct: alert.spreadPct,
+      sent,
+      failed,
+    }, 'Arbitrage alert sent');
 
     return { sent, failed };
   }
@@ -119,6 +162,11 @@ export class AlertSender {
 
     for (const watcher of watchers) {
       try {
+        // Check user preferences
+        const prefs = await getPreferences(watcher.user.telegramId);
+        if (!prefs.alertsEnabled) continue;
+        if (isCardSnoozed(prefs, data.cardId)) continue;
+
         const { text, keyboard } = formatPriceDropAlert({
           ...data,
           dropPct,
@@ -127,7 +175,7 @@ export class AlertSender {
         await this.bot.api.sendMessage(watcher.user.telegramId, text, {
           parse_mode: 'Markdown',
           reply_markup: keyboard,
-          disable_web_page_preview: true,
+          link_preview_options: { is_disabled: true },
         });
 
         sent++;
@@ -205,20 +253,21 @@ export class AlertSender {
    * Find users eligible to receive an alert based on their preferences
    */
   private async findEligibleUsers(alert: DealAlertData): Promise<Array<{
-    id: string;
     telegramId: string;
+    userId: string;
+    prefs: UserPreferences;
   }>> {
-    // Get all users
-    const allUsers = await prisma.user.findMany({
-      select: { id: true, telegramId: true },
-    });
+    // Get all users with alerts enabled
+    const users = await getUsersWithAlertsEnabled();
 
     // Filter based on preferences
-    return allUsers.filter(user => {
-      const prefs = getPreferences(user.telegramId);
+    return users.filter(user => {
+      const prefs = user.prefs;
 
-      // Check if alerts enabled
-      if (!prefs.alertsEnabled) return false;
+      // Check if card is snoozed
+      if (alert.cardId && isCardSnoozed(prefs, alert.cardId)) {
+        return false;
+      }
 
       // Check minimum discount
       if (alert.discountPct < prefs.minDiscountPct) return false;

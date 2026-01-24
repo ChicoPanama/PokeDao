@@ -93,6 +93,10 @@ vllm_image = (
         local_path=str(BASE_DIR / "policy_engine.py"),
         remote_path="/root/policy_engine.py"
     )
+    .add_local_file(
+        local_path=str(BASE_DIR / "input_sanitizer.py"),
+        remote_path="/root/input_sanitizer.py"
+    )
 )
 
 # =============================================================================
@@ -439,14 +443,20 @@ def fastapi_app():
         """
         start = time.time()
 
+        # Import sanitizers (injected into container image)
+        from input_sanitizer import (
+            sanitize_card_name, sanitize_set_name, sanitize_sentiment,
+            validate_price, validate_max_tokens, validate_boolean
+        )
+
         data = await request.json()
-        card_name = data.get("card_name", "")
-        set_name = data.get("set_name", "")
-        listed_price = float(data.get("listed_price", 0.0))
-        fair_value = float(data.get("fair_value", 0.0))
-        reddit_sentiment = data.get("reddit_sentiment", "")
-        max_tokens = int(data.get("max_tokens", 200))
-        use_rag = data.get("use_rag", True)
+        card_name = sanitize_card_name(data.get("card_name", ""))
+        set_name = sanitize_set_name(data.get("set_name", ""))
+        listed_price = validate_price(data.get("listed_price", 0.0))
+        fair_value = validate_price(data.get("fair_value", 0.0))
+        reddit_sentiment = sanitize_sentiment(data.get("reddit_sentiment", ""))
+        max_tokens = validate_max_tokens(data.get("max_tokens", 200))
+        use_rag = validate_boolean(data.get("use_rag", True))
 
         if not card_name:
             pm.record_request("/analyze", 400, time.time() - start)
@@ -527,13 +537,21 @@ def fastapi_app():
         """Raw text generation endpoint with Vector RAG"""
         start = time.time()
 
+        # Import sanitizers (injected into container image)
+        from input_sanitizer import (
+            sanitize_text, validate_max_tokens, validate_boolean
+        )
+
         data = await request.json()
-        prompt = data.get("prompt", "")
-        max_tokens = int(data.get("max_tokens", 200))
-        temperature = float(data.get("temperature", 0.3))
-        top_p = float(data.get("top_p", 0.9))
-        use_rag = data.get("use_rag", True)
+        # Note: prompt is sanitized but with larger limit for raw generation
+        prompt = sanitize_text(str(data.get("prompt", "")), max_length=4000)
+        max_tokens = validate_max_tokens(data.get("max_tokens", 200))
+        temperature = max(0.0, min(float(data.get("temperature", 0.3) or 0.3), 2.0))
+        top_p = max(0.0, min(float(data.get("top_p", 0.9) or 0.9), 1.0))
+        use_rag = validate_boolean(data.get("use_rag", True))
         session_id = data.get("session_id", None)
+        if session_id is not None:
+            session_id = str(session_id)[:64]  # Limit session ID length
 
         if not prompt:
             pm.record_request("/generate", 400, time.time() - start)

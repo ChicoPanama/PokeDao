@@ -12,17 +12,18 @@
  */
 
 import type { FastifyInstance } from 'fastify';
-import type { MarketSource, GradeCompany } from '@prisma/client';
+import { type MarketSource } from '../../prisma/generated/client/enums.js';
 import prisma from '../lib/prisma.js';
+
+type GradeCompany = 'PSA' | 'BGS' | 'CGC' | 'SGC' | 'RAW';
 
 const TOKENIZED_SOURCES: MarketSource[] = ['PHYGITALS', 'COURTYARD', 'COLLECTOR_CRYPT'];
 
-const BLOCKCHAIN_MAP: Record<MarketSource, string> = {
+const BLOCKCHAIN_MAP: Partial<Record<MarketSource, string>> = {
   PHYGITALS: 'Solana',
   COLLECTOR_CRYPT: 'Solana',
   COURTYARD: 'Ethereum/Polygon',
   JUSTTCG: 'N/A',
-  TCGPLAYER_ACTIVE: 'N/A',
   EBAY: 'N/A',
   TCGPLAYER: 'N/A',
   FANATICS: 'N/A',

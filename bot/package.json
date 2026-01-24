@@ -11,13 +11,17 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "@pokedao/storage": "workspace:*",
     "@pokedao/analysis": "workspace:*",
     "@pokedao/core": "workspace:*",
-    "@prisma/client": "^6.15.0",
+    "@pokedao/storage": "workspace:*",
+    "@prisma/adapter-pg": "^7.2.0",
+    "@prisma/client": "^7.2.0",
     "dotenv": "^16.6.1",
     "grammy": "^1.38.2",
-    "nanoid": "^5.0.9"
+    "nanoid": "^5.0.9",
+    "pg": "^8.17.2",
+    "pino": "^10.2.1",
+    "pino-pretty": "^13.1.1"
   },
   "devDependencies": {
     "@types/node": "^22.5.5",

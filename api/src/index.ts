@@ -12,11 +12,24 @@ import prisma from "./lib/prisma.js";
 import { getRedis } from "./lib/redis.js";
 import { getMetricsText as getApiMetricsText } from './lib/metrics.js';
 import { createHash, randomUUID } from "node:crypto";
-import type { FastifyBaseLogger } from "fastify";
+import type { FastifyBaseLogger, FastifyRequest } from "fastify";
 
 // TODO: worker helpers - package doesn't exist yet
 // import { normalizeCardQuery, getComparableSales, sanitizeComps, computeFairValue } from "@pokedao/worker";
-import { Prisma } from "@prisma/client";
+import type {
+  CompSaleWhereInput,
+  CompSaleWhereUniqueInput,
+  ReferralEventCreateInput,
+  WatchlistItemWhereUniqueInput
+} from "../prisma/generated/client/models.js";
+
+// Extended logger type that includes pino methods
+type Logger = FastifyBaseLogger & {
+  error: (obj: object, msg?: string) => void;
+  warn: (obj: object, msg?: string) => void;
+  info: (obj: object, msg?: string) => void;
+  debug: (obj: object, msg?: string) => void;
+};
 import { registerSignals } from "./routes/signals.js";
 import { registerPosts } from "./routes/posts.js";
 import { registerEbayMADWebhook } from "./routes/webhooks/ebay-mad.js";
@@ -43,10 +56,10 @@ const HOST = "0.0.0.0";
 const redis = getRedis();
 
 // Typed variables for Prisma queries
-type compWhere = Prisma.CompWhereInput;
-type compCursor = Prisma.CompWhereUniqueInput;
-type referralData = Prisma.ReferralEventCreateInput;
-type watchlistKey = Prisma.WatchlistItemWhereUniqueInput;
+type compWhere = CompSaleWhereInput;
+type compCursor = CompSaleWhereUniqueInput;
+type referralData = ReferralEventCreateInput;
+type watchlistKey = WatchlistItemWhereUniqueInput;
 
 async function buildServer() {
   const app = Fastify({
@@ -231,16 +244,15 @@ async function buildServer() {
       const limit = Math.min(100, Math.max(1, Number(q.limit || '25')));
       const cursor = q.cursor ? { id: q.cursor } : undefined;
 
-      const group = await prisma.comp.groupBy({
-        by: ['id'], // Replace 'cardId' with 'id' as per schema
-        where: {}, // Remove 'soldAt' as it does not exist in the schema
-        _count: { id: true }, // Replace '_all' with 'id' for valid aggregation
-        orderBy: [{ _count: { id: 'desc' } }, { id: 'asc' }],
-        cursor: cursor as never, // Explicitly cast cursor to match the expected type
+      const group = await prisma.compSale.groupBy({
+        by: ['cardId'],
+        where: {},
+        _count: { id: true },
+        orderBy: [{ _count: { id: 'desc' } }, { cardId: 'asc' }],
         take: limit + 1,
       });
 
-  const nextCursor = group.length > limit ? group.pop()?.id : null;
+  const nextCursor = group.length > limit ? group.pop()?.cardId : null;
       return { ok: true, items: group, nextCursor, count: group.length, generatedAt: new Date().toISOString() };
     } catch (err: any) {
       app.log.error({ err }, 'top100 route error'); // Use error for logging
@@ -390,12 +402,12 @@ async function buildServer() {
         take: 1,
       });
 
-      const comps = await prisma.comp.findMany({
+      const comps = await prisma.compSale.findMany({
         where: {
-          id,
-          createdAt: { gte: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000) },
+          cardId: id,
+          soldAt: { gte: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000) },
         },
-        orderBy: { createdAt: 'desc' },
+        orderBy: { soldAt: 'desc' },
       });
 
       return {

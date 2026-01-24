@@ -4,7 +4,7 @@
  * Exposes counters and histograms in Prom text format without external deps.
  */
 
-type Route = '/api/cards/search-variants' | '/api/cards/comprehensive-analysis';
+type Route = '/api/cards/search-variants' | '/api/cards/comprehensive-analysis' | string;
 
 const reqCounters: Record<string, Record<string, number>> = Object.create(null); // route -> status -> count
 const durSums: Record<string, number> = Object.create(null); // route -> total seconds
@@ -23,7 +23,7 @@ export function recordRequest(route: Route, status: number, durationSeconds: num
   inc(durCounts, route, 1);
 }
 
-export function recordCacheHit(endpoint: 'search-variants' | 'comprehensive-analysis') {
+export function recordCacheHit(endpoint: 'search-variants' | 'comprehensive-analysis' | 'gateway') {
   inc(cacheHits, endpoint, 1);
 }
 

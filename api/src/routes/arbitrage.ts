@@ -9,7 +9,7 @@
 
 import type { FastifyInstance } from 'fastify';
 import prisma from '../lib/prisma.js';
-import { Prisma } from '@prisma/client';
+import type { UnifiedMarketListingWhereInput } from '../../prisma/generated/client/models.js';
 
 interface ArbitrageOpportunity {
   cardName: string;
@@ -98,10 +98,11 @@ export async function registerArbitrage(app: FastifyInstance) {
         if (listings.length < minSampleSize) continue;
 
         // Calculate price statistics
-        const prices = listings.map(l => l.priceCents);
+        type Listing = typeof listings[number];
+        const prices = listings.map((l: Listing) => l.priceCents);
         const min = Math.min(...prices);
         const max = Math.max(...prices);
-        const avg = prices.reduce((a, b) => a + b, 0) / prices.length;
+        const avg = prices.reduce((a: number, b: number) => a + b, 0) / prices.length;
         const spread = max - min;
         const spreadPercent = (spread / min) * 100;
 
@@ -121,7 +122,7 @@ export async function registerArbitrage(app: FastifyInstance) {
 
         // Calculate confidence score (0-1)
         const sampleSizeScore = Math.min(listings.length / 10, 1);
-        const recencyScore = listings.filter(l => {
+        const recencyScore = listings.filter((l: Listing) => {
           const age = Date.now() - l.updatedAt.getTime();
           return age < 7 * 24 * 60 * 60 * 1000; // Within 7 days
         }).length / listings.length;
@@ -177,8 +178,8 @@ export async function registerArbitrage(app: FastifyInstance) {
         },
         generatedAt: new Date().toISOString(),
       };
-    } catch (err: any) {
-      app.log.error({ err }, 'arbitrage route error');
+    } catch (err: unknown) {
+      (app.log as any).error({ err }, 'arbitrage route error');
       reply.code(500);
       return { ok: false, error: 'Internal error' };
     }
@@ -206,7 +207,7 @@ export async function registerArbitrage(app: FastifyInstance) {
         return { ok: false, error: 'cardName is required' };
       }
 
-      const where: Prisma.UnifiedMarketListingWhereInput = {
+      const where: UnifiedMarketListingWhereInput = {
         cardName: { contains: query.cardName, mode: 'insensitive' },
         priceCents: { gt: 0 },
       };
@@ -243,24 +244,25 @@ export async function registerArbitrage(app: FastifyInstance) {
       }
 
       // Calculate statistics
-      const prices = listings.map(l => l.priceCents);
+      type AnalyzeListing = typeof listings[number];
+      const prices = listings.map((l: AnalyzeListing) => l.priceCents);
       const min = Math.min(...prices);
       const max = Math.max(...prices);
-      const sum = prices.reduce((a, b) => a + b, 0);
+      const sum = prices.reduce((a: number, b: number) => a + b, 0);
       const avg = sum / prices.length;
 
       // Calculate median
-      const sortedPrices = [...prices].sort((a, b) => a - b);
+      const sortedPrices = [...prices].sort((a: number, b: number) => a - b);
       const median = sortedPrices.length % 2 === 0
         ? (sortedPrices[sortedPrices.length / 2 - 1] + sortedPrices[sortedPrices.length / 2]) / 2
         : sortedPrices[Math.floor(sortedPrices.length / 2)];
 
       // Calculate standard deviation
-      const variance = prices.reduce((sum, price) => sum + Math.pow(price - avg, 2), 0) / prices.length;
+      const variance = prices.reduce((sum: number, price: number) => sum + Math.pow(price - avg, 2), 0) / prices.length;
       const stdDev = Math.sqrt(variance);
 
       // Group by source
-      const bySource = listings.reduce((acc, listing) => {
+      const bySource = listings.reduce((acc: Record<string, typeof listings>, listing: AnalyzeListing) => {
         if (!acc[listing.source]) {
           acc[listing.source] = [];
         }
@@ -321,22 +323,22 @@ export async function registerArbitrage(app: FastifyInstance) {
             medianUsd: (median / 100).toFixed(2),
             stdDevUsd: (stdDev / 100).toFixed(2),
           },
-          bySource: Object.entries(bySource).map(([source, items]) => ({
+          bySource: Object.entries(bySource).map(([source, items]: [string, AnalyzeListing[]]) => ({
             source,
             count: items.length,
-            avgPrice: Math.round(items.reduce((sum, i) => sum + i.priceCents, 0) / items.length),
-            avgPriceUsd: ((items.reduce((sum, i) => sum + i.priceCents, 0) / items.length) / 100).toFixed(2),
-            minPrice: Math.min(...items.map(i => i.priceCents)),
-            minPriceUsd: (Math.min(...items.map(i => i.priceCents)) / 100).toFixed(2),
-            maxPrice: Math.max(...items.map(i => i.priceCents)),
-            maxPriceUsd: (Math.max(...items.map(i => i.priceCents)) / 100).toFixed(2),
+            avgPrice: Math.round(items.reduce((sum: number, i: AnalyzeListing) => sum + i.priceCents, 0) / items.length),
+            avgPriceUsd: ((items.reduce((sum: number, i: AnalyzeListing) => sum + i.priceCents, 0) / items.length) / 100).toFixed(2),
+            minPrice: Math.min(...items.map((i: AnalyzeListing) => i.priceCents)),
+            minPriceUsd: (Math.min(...items.map((i: AnalyzeListing) => i.priceCents)) / 100).toFixed(2),
+            maxPrice: Math.max(...items.map((i: AnalyzeListing) => i.priceCents)),
+            maxPriceUsd: (Math.max(...items.map((i: AnalyzeListing) => i.priceCents)) / 100).toFixed(2),
           })),
           arbitrage,
         },
         generatedAt: new Date().toISOString(),
       };
-    } catch (err: any) {
-      app.log.error({ err }, 'price analysis route error');
+    } catch (err: unknown) {
+      (app.log as any).error({ err }, 'price analysis route error');
       reply.code(500);
       return { ok: false, error: 'Internal error' };
     }
@@ -408,8 +410,8 @@ export async function registerArbitrage(app: FastifyInstance) {
         },
         generatedAt: new Date().toISOString(),
       };
-    } catch (err: any) {
-      app.log.error({ err }, 'trending route error');
+    } catch (err: unknown) {
+      (app.log as any).error({ err }, 'trending route error');
       reply.code(500);
       return { ok: false, error: 'Internal error' };
     }

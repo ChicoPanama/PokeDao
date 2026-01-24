@@ -11,7 +11,10 @@
 
 import type { FastifyInstance } from 'fastify';
 import prisma from '../lib/prisma.js';
-import { Prisma } from '@prisma/client';
+import type {
+  UnifiedMarketListingWhereInput,
+  UnifiedMarketListingOrderByWithRelationInput
+} from '../../prisma/generated/client/models.js';
 
 interface SearchQuery {
   q?: string;              // Free text search
@@ -48,8 +51,8 @@ export async function registerSearch(app: FastifyInstance) {
       const cursor = query.cursor ? { id: query.cursor } : undefined;
 
       // Build WHERE clause
-      const where: Prisma.UnifiedMarketListingWhereInput = {};
-      const conditions: Prisma.UnifiedMarketListingWhereInput[] = [];
+      const where: UnifiedMarketListingWhereInput = {};
+      const conditions: UnifiedMarketListingWhereInput[] = [];
 
       // Free text search across title, cardName, setName
       if (query.q && query.q.trim()) {
@@ -137,7 +140,7 @@ export async function registerSearch(app: FastifyInstance) {
       }
 
       // Build ORDER BY clause
-      const orderBy: Prisma.UnifiedMarketListingOrderByWithRelationInput[] = [];
+      const orderBy: UnifiedMarketListingOrderByWithRelationInput[] = [];
 
       switch (query.sortBy) {
         case 'price_asc':

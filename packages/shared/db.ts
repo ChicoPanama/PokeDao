@@ -1,9 +1,24 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import pg from 'pg';
 import type { CardKey } from './keys.js';
 import { toUSD } from './money.js';
 
-// If a caller doesn't provide a Prisma instance, use a shared one.
-const sharedPrisma = new PrismaClient();
+// Lazy-initialized shared Prisma client
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let sharedPrisma: any = null;
+
+async function getSharedPrisma() {
+  if (sharedPrisma) return sharedPrisma;
+  const { PrismaClient } = await import('../../api/prisma/generated/client/client.js');
+  const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+  const adapter = new PrismaPg(pool);
+  sharedPrisma = new PrismaClient({ adapter });
+  return sharedPrisma;
+}
+
+// Type alias for Prisma client (use any for cross-package compatibility)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type PrismaClient = any;
 
 function langToName(lang?: string) {
   const l = (lang || 'EN').toUpperCase();
@@ -129,7 +144,7 @@ export async function insertCompSale(
   });
 }
 
-export { sharedPrisma };
+export { sharedPrisma, getSharedPrisma };
 
 // Save or update FeatureSnapshot by (cardId, windowDays)
 export async function saveFeatureSnapshot(

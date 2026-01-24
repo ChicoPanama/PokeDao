@@ -1,10 +1,10 @@
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"
+  output   = "./generated/client"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 // ============================================================================
@@ -135,9 +135,12 @@ model MarketListing {
   lastSeenAt      DateTime     @default(now())
   createdAt       DateTime     @default(now())
   updatedAt       DateTime     @updatedAt
+  url             String?      @db.VarChar(500)
+  seenAt          DateTime?
 
   // Relations
   canonicalCard CanonicalCard? @relation(fields: [canonicalCardId], references: [id], onUpdate: Cascade, onDelete: SetNull)
+  signals       Signal[]
 
   @@unique([source, sourceId])
   @@index([canonicalCardId])
@@ -284,33 +287,34 @@ model RedditSignal {
 // ============================================================================
 
 model Card {
-  id              String          @id
+  id              String          @id @default(cuid())
   name            String          @db.VarChar(255)
+  set             String          @db.VarChar(255) // Set name for bot compatibility
   number          String          @db.VarChar(10)
   variant         String?         @db.VarChar(100)
   grade           String?         @db.VarChar(20)
   condition       String?         @db.VarChar(50)
   language        String          @default("EN") @db.VarChar(10)
-  normalizedName  String          @db.VarChar(255)
-  setCode         String          @db.VarChar(50)
+  normalizedName  String          @default("") @db.VarChar(255)
+  setCode         String          @default("") @db.VarChar(50)
   rarity          String?         @db.VarChar(50)
   createdAt       DateTime        @default(now())
   updatedAt       DateTime        @updatedAt
-  cardKey         String          @unique @db.VarChar(100)
+  cardKey         String?         @db.VarChar(100)
   cardType        String          @default("Pokemon") @db.VarChar(50)
   isValidated     Boolean         @default(false)
   lastValidated   DateTime?
   validationScore Float           @default(0.0)
-  CardSet         CardSet         @relation(fields: [setCode], references: [code])
-  CompSale        CompSale[]
-  DataQuality     DataQuality[]
-  Evaluation      Evaluation[]
-  Listing         Listing[]
-  Opportunity     Opportunity[]
-  Signal          Signal[]
-  WatchlistItem   WatchlistItem[]
+  cardSet         CardSet?        @relation(fields: [setCode], references: [code])
+  compSales       CompSale[]
+  dataQuality     DataQuality[]
+  evaluations     Evaluation[]
+  listings        Listing[]
+  opportunities   Opportunity[]
+  signals         Signal[]
+  watchlistItems  WatchlistItem[]
 
-  @@unique([setCode, number, variant, grade, language])
+  @@unique([set, number, variant, grade, language])
   @@index([cardKey])
   @@index([isValidated, validationScore])
   @@index([normalizedName])
@@ -324,7 +328,7 @@ model CardSet {
   year       Int?
   totalCards Int?
   isActive   Boolean @default(true)
-  Card       Card[]
+  cards      Card[]
 
   @@index([code])
   @@index([year])
@@ -340,7 +344,7 @@ model CompSale {
   condition  String?  @db.VarChar(50)
   grade      String?  @db.VarChar(20)
   isVerified Boolean  @default(false)
-  Card       Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  card       Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
 
   @@index([cardId])
   @@index([priceCents])
@@ -374,7 +378,7 @@ model DataQuality {
   qualityScore    Float
   recommendations String[] @default([])
   issues          String[] @default([])
-  Card            Card     @relation(fields: [entityId], references: [id], onDelete: Cascade, map: "DataQuality_card_fkey")
+  card            Card     @relation(fields: [entityId], references: [id], onDelete: Cascade, map: "DataQuality_card_fkey")
 
   @@index([checkedAt])
   @@index([entityType, entityId])
@@ -393,8 +397,8 @@ model Evaluation {
   projectedReturn  Float?
   confidence       Float
   createdAt        DateTime @default(now())
-  Card             Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
-  Listing          Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  card             Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  listing          Listing  @relation(fields: [listingId], references: [id], onDelete: Cascade)
 
   @@index([cardId])
   @@index([confidence])
@@ -418,8 +422,8 @@ model Listing {
   totalPrice    Float?
   isVerified    Boolean       @default(false)
   lastSeen      DateTime      @default(now())
-  Evaluation    Evaluation[]
-  Card          Card          @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  evaluations   Evaluation[]
+  card          Card          @relation(fields: [cardId], references: [id], onDelete: Cascade)
 
   @@unique([source, externalId])
   @@index([cardId])
@@ -449,7 +453,7 @@ model Opportunity {
   updatedAt           DateTime          @updatedAt
   isValidated         Boolean           @default(false)
   validationErrors    String[]          @default([])
-  Card                Card              @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  card                Card              @relation(fields: [cardId], references: [id], onDelete: Cascade)
 
   @@unique([cardId, listingId, createdAt])
   @@index([cardId, createdAt])
@@ -483,7 +487,7 @@ model PortfolioCollection {
   description          String?
   createdAt            DateTime               @default(now())
   updatedAt            DateTime               @updatedAt
-  UnifiedPortfolioItem UnifiedPortfolioItem[]
+  unifiedPortfolioItems UnifiedPortfolioItem[]
 
   @@index([slug])
 }
@@ -499,21 +503,42 @@ model PostQueue {
 }
 
 model Signal {
-  id          String   @id
-  cardId      String
-  edgeBp      Int
-  confidence  Float
-  thesis      String
-  createdAt   DateTime @default(now())
-  isValidated Boolean  @default(false)
-  status      String   @default("ACTIVE") @db.VarChar(20)
-  updatedAt   DateTime @updatedAt
-  Card        Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  id              String         @id
+  cardId          String
+  marketListingId String?
+  edgeBp          Int
+  confidence      Float
+  thesis          String
+  createdAt       DateTime       @default(now())
+  isValidated     Boolean        @default(false)
+  status          String         @default("ACTIVE") @db.VarChar(20)
+  updatedAt       DateTime       @updatedAt
+  card            Card           @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  marketListing   MarketListing? @relation(fields: [marketListingId], references: [id], onDelete: SetNull)
 
   @@index([cardId])
   @@index([confidence])
   @@index([edgeBp])
   @@index([status])
+  @@index([marketListingId])
+}
+
+model FeatureSnapshot {
+  id           String   @id @default(cuid())
+  cardId       String
+  windowDays   Int
+  medianCents  Int?
+  p05Cents     Int?
+  p95Cents     Int?
+  volume       Int      @default(0)
+  volatilityBp Int?
+  nhiScore     Float?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([cardId, windowDays])
+  @@index([cardId])
+  @@index([windowDays])
 }
 
 model UnifiedPortfolioItem {
@@ -522,7 +547,7 @@ model UnifiedPortfolioItem {
   listingId           String              @db.VarChar(191)
   addedAt             DateTime            @default(now())
   tags                String[]            @default([])
-  PortfolioCollection PortfolioCollection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  portfolioCollection PortfolioCollection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
 
   @@unique([collectionId, listingId])
   @@index([addedAt])
@@ -531,7 +556,7 @@ model UnifiedPortfolioItem {
 }
 
 model User {
-  id           String   @id
+  id           String   @id @default(cuid())
   telegramId   String   @unique
   username     String?  @db.VarChar(255)
   firstName    String?  @db.VarChar(255)
@@ -540,16 +565,68 @@ model User {
   referredBy   String?  @db.VarChar(50)
   createdAt    DateTime @default(now())
 
+  purchases       Purchase[]
+  watchlistItems  WatchlistItem[]
+  referralEvents  ReferralEvent[]
+  preferences     UserPreference?
+
   @@index([referralCode])
   @@index([telegramId])
 }
 
+model UserPreference {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+  alertsEnabled  Boolean  @default(true)
+  minDiscountPct Int      @default(10)
+  minPriceUsd    Int      @default(0)
+  maxPriceUsd    Int      @default(10000)
+  grades         String[] @default(["PSA 10", "PSA 9", "CGC 10", "BGS 10"])
+  snoozedCards   Json?    // Map<cardId, expiresAt timestamp>
+  updatedAt      DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model ReferralEvent {
+  id        String   @id @default(cuid())
+  code      String   @db.VarChar(50)
+  path      String   @db.VarChar(500)
+  userId    String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([code])
+  @@index([userId])
+}
+
+model Purchase {
+  id        String   @id @default(cuid())
+  userId    String
+  listingId String
+  amount    Int      // Amount in cents
+  fee       Int      // Fee in cents
+  status    String   @default("COMPLETED") @db.VarChar(20)
+  txHash    String?
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([createdAt])
+}
+
 model WatchlistItem {
-  id        String   @id
+  id        String   @id @default(cuid())
   userId    String
   cardId    String
   createdAt DateTime @default(now())
-  Card      Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  card Card @relation(fields: [cardId], references: [id], onDelete: Cascade)
 
   @@unique([cardId, userId])
   @@index([userId])

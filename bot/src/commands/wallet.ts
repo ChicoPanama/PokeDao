@@ -129,3 +129,54 @@ _Use /wallet to manage your connection._`,
     return true;
   }
 }
+
+/**
+ * Handle wallet-related callbacks
+ */
+export async function handleWalletCallback(ctx: UserContext, action: string, _params?: string) {
+  if (!ctx.callbackQuery) return;
+
+  switch (action) {
+    case 'learn':
+      await ctx.answerCallbackQuery();
+      await ctx.reply(
+        `📚 **What is Solana?**
+
+Solana is a fast, low-cost blockchain network. We use it because:
+
+• **Fast:** Transactions confirm in ~400ms
+• **Cheap:** Fees are usually less than $0.01
+• **Secure:** Industry-standard encryption
+
+**To get started:**
+1. Download a Solana wallet (Phantom, Solflare)
+2. Create a new wallet and save your seed phrase
+3. Send your wallet address here
+
+_Your wallet address is public and safe to share. Never share your seed phrase._`,
+        { parse_mode: 'Markdown' }
+      );
+      break;
+
+    case 'view':
+      // TODO: Open Solscan link when wallet address is available
+      await ctx.answerCallbackQuery({ text: 'Opening Solscan...' });
+      await ctx.reply('_Wallet viewing coming soon._', { parse_mode: 'Markdown' });
+      break;
+
+    case 'disconnect':
+      // TODO: Implement wallet disconnect when walletAddress field exists
+      await ctx.answerCallbackQuery({ text: 'Wallet disconnected' });
+      await ctx.reply(
+        `✅ **Wallet Disconnected**
+
+Your wallet has been unlinked from your account.
+Use /wallet to connect a new wallet.`,
+        { parse_mode: 'Markdown' }
+      );
+      break;
+
+    default:
+      await ctx.answerCallbackQuery({ text: 'Unknown action' });
+  }
+}

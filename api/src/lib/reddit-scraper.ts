@@ -4,13 +4,27 @@
  * Uses Reddit's unofficial .json API (no authentication required)
  */
 
-import { PrismaClient } from '@prisma/client';
+import prisma from './prisma.js';
 import { createHash } from 'crypto';
 
-const prisma = new PrismaClient();
+// Configuration with defaults
+const CONFIG = {
+  userAgent: process.env.REDDIT_USER_AGENT || 'PokeDAO/1.0 (TCG Market Analysis Bot)',
+  maxRetries: Number(process.env.REDDIT_MAX_RETRIES || 3),
+  retryBackoffMs: Number(process.env.REDDIT_RETRY_BACKOFF_MS || 1000),
+  requestTimeoutMs: Number(process.env.REDDIT_REQUEST_TIMEOUT_MS || 10000),
+  rateLimitDelayMs: Number(process.env.REDDIT_RATE_LIMIT_DELAY_MS || 100),
+  subreddits: ['PokeInvesting', 'PokemonTCG'],
+};
 
-const USER_AGENT = 'PokeDAO/1.0 (TCG Market Analysis Bot)';
-const SUBREDDITS = ['PokeInvesting', 'PokemonTCG'];
+// Circuit breaker state
+let circuitOpen = false;
+let lastFailureTime = 0;
+const CIRCUIT_RESET_MS = 5 * 60 * 1000; // 5 minutes
+
+// Legacy exports for backward compatibility
+const USER_AGENT = CONFIG.userAgent;
+const SUBREDDITS = CONFIG.subreddits;
 
 interface RedditPost {
   id: string;
@@ -35,6 +49,103 @@ interface RedditResponse {
 }
 
 /**
+ * Helper function for exponential backoff sleep
+ */
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+/**
+ * Fetch with retry logic and circuit breaker
+ */
+async function fetchWithRetry(
+  url: string,
+  options: RequestInit = {}
+): Promise<Response> {
+  // Circuit breaker check
+  if (circuitOpen) {
+    if (Date.now() - lastFailureTime < CIRCUIT_RESET_MS) {
+      throw new Error('Circuit breaker is open - Reddit API temporarily unavailable');
+    }
+    // Try to reset circuit
+    circuitOpen = false;
+    console.log('[reddit-scraper] Circuit breaker reset, retrying...');
+  }
+
+  let lastError: Error | null = null;
+  let consecutiveFailures = 0;
+
+  for (let attempt = 0; attempt < CONFIG.maxRetries; attempt++) {
+    try {
+      // Create AbortController for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), CONFIG.requestTimeoutMs);
+
+      const response = await fetch(url, {
+        ...options,
+        signal: controller.signal,
+        headers: {
+          'User-Agent': CONFIG.userAgent,
+          ...options.headers,
+        },
+      });
+
+      clearTimeout(timeoutId);
+
+      // Handle rate limiting (429)
+      if (response.status === 429) {
+        const retryAfter = response.headers.get('Retry-After');
+        const waitTime = retryAfter
+          ? parseInt(retryAfter, 10) * 1000
+          : Math.pow(2, attempt) * CONFIG.retryBackoffMs;
+
+        console.warn(`[reddit-scraper] Rate limited (429), waiting ${waitTime}ms...`);
+        await sleep(waitTime);
+        continue;
+      }
+
+      // Handle server errors (5xx)
+      if (response.status >= 500) {
+        consecutiveFailures++;
+        const waitTime = Math.pow(2, attempt) * CONFIG.retryBackoffMs;
+        console.warn(`[reddit-scraper] Server error (${response.status}), retrying in ${waitTime}ms...`);
+        await sleep(waitTime);
+        continue;
+      }
+
+      // Success - reset failure count
+      consecutiveFailures = 0;
+      return response;
+    } catch (error: any) {
+      lastError = error;
+      consecutiveFailures++;
+
+      // Check if it's an abort (timeout)
+      if (error.name === 'AbortError') {
+        console.warn(`[reddit-scraper] Request timeout, attempt ${attempt + 1}/${CONFIG.maxRetries}`);
+      } else {
+        console.warn(`[reddit-scraper] Network error: ${error.message}, attempt ${attempt + 1}/${CONFIG.maxRetries}`);
+      }
+
+      // Exponential backoff
+      if (attempt < CONFIG.maxRetries - 1) {
+        const waitTime = Math.pow(2, attempt) * CONFIG.retryBackoffMs;
+        await sleep(waitTime);
+      }
+    }
+  }
+
+  // Open circuit breaker after exhausting retries
+  if (consecutiveFailures >= CONFIG.maxRetries) {
+    circuitOpen = true;
+    lastFailureTime = Date.now();
+    console.error('[reddit-scraper] Circuit breaker opened due to repeated failures');
+  }
+
+  throw lastError || new Error('Failed to fetch after retries');
+}
+
+/**
  * Fetch posts from a subreddit using Reddit's .json API
  */
 export async function fetchSubredditPosts(
@@ -44,18 +155,20 @@ export async function fetchSubredditPosts(
 ): Promise<RedditPost[]> {
   const url = `https://www.reddit.com/r/${subreddit}/${sort}.json?limit=${limit}`;
 
-  const response = await fetch(url, {
-    headers: {
-      'User-Agent': USER_AGENT,
-    },
-  });
+  try {
+    const response = await fetchWithRetry(url);
 
-  if (!response.ok) {
-    throw new Error(`Reddit API error: ${response.status} ${response.statusText}`);
+    if (!response.ok) {
+      throw new Error(`Reddit API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data: RedditResponse = await response.json();
+    return data.data.children.map((child) => child.data);
+  } catch (error: any) {
+    console.error(`[reddit-scraper] Failed to fetch r/${subreddit}: ${error.message}`);
+    // Return empty array instead of throwing to allow graceful degradation
+    return [];
   }
-
-  const data: RedditResponse = await response.json();
-  return data.data.children.map((child) => child.data);
 }
 
 /**
@@ -193,75 +306,104 @@ export async function scrapeRedditSignals(deepseekApiKey: string): Promise<numbe
   console.log('');
 
   let totalSignals = 0;
+  let errors = 0;
 
   for (const subreddit of SUBREDDITS) {
     console.log(`Fetching r/${subreddit}...`);
 
     const posts = await fetchSubredditPosts(subreddit, 100, 'hot');
+
+    if (posts.length === 0) {
+      console.log(`  No posts retrieved (possibly rate limited or error)`);
+      continue;
+    }
+
     console.log(`  Found ${posts.length} posts`);
 
     for (const post of posts) {
-      // Extract card mentions
-      const mentions = extractCardMentions(post.title + ' ' + post.selftext);
+      try {
+        // Extract card mentions
+        const mentions = extractCardMentions(post.title + ' ' + post.selftext);
 
-      if (mentions.length === 0) continue;
+        if (mentions.length === 0) continue;
 
-      // Analyze sentiment
-      const sentiment = await analyzeSentiment(post.title + ' ' + post.selftext, deepseekApiKey);
+        // Analyze sentiment with error handling
+        let sentiment;
+        try {
+          sentiment = await analyzeSentiment(post.title + ' ' + post.selftext, deepseekApiKey);
+        } catch (sentimentError: any) {
+          console.warn(`[reddit-scraper] Sentiment analysis failed for post ${post.id}: ${sentimentError.message}`);
+          // Use neutral sentiment as fallback
+          sentiment = {
+            sentiment: 'NEUTRAL' as const,
+            score: 0,
+            confidence: 0.3,
+            keyPhrases: [],
+          };
+        }
 
-      // Store signal for each card mention
-      for (const mention of mentions) {
-        const id = createHash('sha256')
-          .update(`${subreddit}::${post.id}::${mention.cardName}`)
-          .digest('hex')
-          .substring(0, 32);
+        // Store signal for each card mention
+        for (const mention of mentions) {
+          const id = createHash('sha256')
+            .update(`${subreddit}::${post.id}::${mention.cardName}`)
+            .digest('hex')
+            .substring(0, 32);
 
-        const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
+          const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
 
-        await prisma.redditSignal.upsert({
-          where: {
-            subreddit_postId_cardName: {
+          await prisma.redditSignal.upsert({
+            where: {
+              subreddit_postId_cardName: {
+                subreddit,
+                postId: post.id,
+                cardName: mention.cardName,
+              },
+            },
+            create: {
+              id,
+              cardName: mention.cardName,
+              setName: mention.setName,
               subreddit,
               postId: post.id,
-              cardName: mention.cardName,
+              postTitle: post.title,
+              postUrl: `https://www.reddit.com${post.permalink}`,
+              author: post.author,
+              score: post.score,
+              numComments: post.num_comments,
+              sentiment: sentiment.sentiment,
+              sentimentScore: sentiment.score,
+              confidence: sentiment.confidence,
+              discussionVolume: 1,
+              keyPhrases: sentiment.keyPhrases,
+              expiresAt,
             },
-          },
-          create: {
-            id,
-            cardName: mention.cardName,
-            setName: mention.setName,
-            subreddit,
-            postId: post.id,
-            postTitle: post.title,
-            postUrl: `https://www.reddit.com${post.permalink}`,
-            author: post.author,
-            score: post.score,
-            numComments: post.num_comments,
-            sentiment: sentiment.sentiment,
-            sentimentScore: sentiment.score,
-            confidence: sentiment.confidence,
-            discussionVolume: 1,
-            keyPhrases: sentiment.keyPhrases,
-            expiresAt,
-          },
-          update: {
-            score: post.score,
-            numComments: post.num_comments,
-            sentiment: sentiment.sentiment,
-            sentimentScore: sentiment.score,
-            confidence: sentiment.confidence,
-            keyPhrases: sentiment.keyPhrases,
-          },
-        });
+            update: {
+              score: post.score,
+              numComments: post.num_comments,
+              sentiment: sentiment.sentiment,
+              sentimentScore: sentiment.score,
+              confidence: sentiment.confidence,
+              keyPhrases: sentiment.keyPhrases,
+            },
+          });
 
-        totalSignals++;
+          totalSignals++;
+        }
+
+        // Rate limit: Wait between posts to avoid throttling
+        await sleep(CONFIG.rateLimitDelayMs);
+      } catch (postError: any) {
+        errors++;
+        console.error(`[reddit-scraper] Error processing post ${post.id}: ${postError.message}`);
+        // Continue to next post
       }
-
-      // Rate limit: Wait 100ms between posts to avoid throttling
-      await new Promise((resolve) => setTimeout(resolve, 100));
     }
 
     console.log('');
+  }
+
+  if (errors > 0) {
+    console.warn(`[reddit-scraper] Completed with ${errors} errors`);
   }
 
   return totalSignals;
@@ -304,8 +446,8 @@ export async function getRedditSentiment(cardName: string): Promise<{
   }
 
   // Aggregate sentiment
-  const avgScore = signals.reduce((sum, s) => sum + s.sentimentScore, 0) / signals.length;
-  const avgConfidence = signals.reduce((sum, s) => sum + s.confidence, 0) / signals.length;
+  const avgScore = signals.reduce((sum: number, s) => sum + s.sentimentScore, 0) / signals.length;
+  const avgConfidence = signals.reduce((sum: number, s) => sum + s.confidence, 0) / signals.length;
 
   // Determine overall sentiment
   let sentiment: 'BULLISH' | 'BEARISH' | 'NEUTRAL';

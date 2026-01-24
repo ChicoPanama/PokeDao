@@ -1,30 +1,13 @@
 import { CommandContext } from 'grammy';
 import { InlineKeyboard } from 'grammy';
 import { UserContext } from '../middleware/auth.js';
-import { prisma } from '../lib/prisma.js';
 import { logger } from '../lib/logger.js';
-
-// In-memory store for user preferences (until we add to User model)
-const userPreferences = new Map<string, {
-  alertsEnabled: boolean;
-  minDiscountPct: number;
-  minPriceUsd: number;
-  maxPriceUsd: number;
-  grades: string[];
-}>();
-
-function getPreferences(telegramId: string) {
-  if (!userPreferences.has(telegramId)) {
-    userPreferences.set(telegramId, {
-      alertsEnabled: true,
-      minDiscountPct: 10,
-      minPriceUsd: 0,
-      maxPriceUsd: 10000,
-      grades: ['PSA 10', 'PSA 9', 'CGC 10', 'BGS 10'],
-    });
-  }
-  return userPreferences.get(telegramId)!;
-}
+import {
+  getPreferences,
+  updatePreferences,
+  resetPreferences,
+  UserPreferences,
+} from '../lib/preferences.js';
 
 /**
  * /alerts command handler
@@ -36,7 +19,7 @@ export async function alertsCommand(ctx: CommandContext<UserContext>) {
     return;
   }
 
-  const prefs = getPreferences(ctx.user.telegramId);
+  const prefs = await getPreferences(ctx.user.telegramId);
 
   const statusEmoji = prefs.alertsEnabled ? '✅' : '❌';
   const statusText = prefs.alertsEnabled ? 'ON' : 'OFF';
@@ -84,33 +67,32 @@ _Use the buttons below to adjust your settings:_`;
 export async function handleAlertsCallback(ctx: UserContext, action: string, params?: string) {
   if (!ctx.callbackQuery || !ctx.from) return;
 
-  const prefs = getPreferences(ctx.from.id.toString());
+  const telegramId = ctx.from.id.toString();
+  let prefs = await getPreferences(telegramId);
 
   if (action === 'toggle') {
-    prefs.alertsEnabled = !prefs.alertsEnabled;
+    prefs = await updatePreferences(telegramId, { alertsEnabled: !prefs.alertsEnabled });
     await ctx.answerCallbackQuery({
       text: `Alerts ${prefs.alertsEnabled ? 'enabled' : 'disabled'}!`,
     });
-    // Refresh the message
-    await updateAlertSettings(ctx, prefs);
+    await updateAlertSettingsMessage(ctx, prefs);
   } else if (action === 'discount' && params) {
     const discount = parseInt(params, 10);
     if (!isNaN(discount)) {
-      prefs.minDiscountPct = discount;
+      prefs = await updatePreferences(telegramId, { minDiscountPct: discount });
       await ctx.answerCallbackQuery({
         text: `Min discount set to ${discount}%`,
       });
-      await updateAlertSettings(ctx, prefs);
+      await updateAlertSettingsMessage(ctx, prefs);
     }
   } else if (action === 'price' && params) {
     const [min, max] = params.split('-').map(s => parseInt(s, 10));
     if (!isNaN(min) && !isNaN(max)) {
-      prefs.minPriceUsd = min;
-      prefs.maxPriceUsd = max;
+      prefs = await updatePreferences(telegramId, { minPriceUsd: min, maxPriceUsd: max });
       await ctx.answerCallbackQuery({
         text: `Price range set to $${min} - $${max === 999999 ? '∞' : max}`,
       });
-      await updateAlertSettings(ctx, prefs);
+      await updateAlertSettingsMessage(ctx, prefs);
     }
   } else if (action === 'grades') {
     await ctx.answerCallbackQuery();
@@ -128,11 +110,13 @@ export async function handleAlertsCallback(ctx: UserContext, action: string, par
     await ctx.editMessageReplyMarkup({ reply_markup: gradeKeyboard });
   } else if (action === 'grade' && params) {
     const grade = params;
+    let newGrades: string[];
     if (prefs.grades.includes(grade)) {
-      prefs.grades = prefs.grades.filter(g => g !== grade);
+      newGrades = prefs.grades.filter(g => g !== grade);
     } else {
-      prefs.grades.push(grade);
+      newGrades = [...prefs.grades, grade];
     }
+    prefs = await updatePreferences(telegramId, { grades: newGrades });
     await ctx.answerCallbackQuery({
       text: `${grade} ${prefs.grades.includes(grade) ? 'added' : 'removed'}`,
     });
@@ -140,17 +124,11 @@ export async function handleAlertsCallback(ctx: UserContext, action: string, par
     await handleAlertsCallback(ctx, 'grades');
   } else if (action === 'back') {
     await ctx.answerCallbackQuery();
-    await updateAlertSettings(ctx, prefs);
+    await updateAlertSettingsMessage(ctx, prefs);
   } else if (action === 'reset') {
-    userPreferences.set(ctx.from.id.toString(), {
-      alertsEnabled: true,
-      minDiscountPct: 10,
-      minPriceUsd: 0,
-      maxPriceUsd: 10000,
-      grades: ['PSA 10', 'PSA 9', 'CGC 10', 'BGS 10'],
-    });
+    prefs = await resetPreferences(telegramId);
     await ctx.answerCallbackQuery({ text: 'Settings reset to defaults' });
-    await updateAlertSettings(ctx, getPreferences(ctx.from.id.toString()));
+    await updateAlertSettingsMessage(ctx, prefs);
   } else {
     await ctx.answerCallbackQuery({ text: 'Unknown action' });
   }
@@ -159,7 +137,7 @@ export async function handleAlertsCallback(ctx: UserContext, action: string, par
 /**
  * Update the alert settings message
  */
-async function updateAlertSettings(ctx: UserContext, prefs: ReturnType<typeof getPreferences>) {
+async function updateAlertSettingsMessage(ctx: UserContext, prefs: UserPreferences) {
   const statusEmoji = prefs.alertsEnabled ? '✅' : '❌';
   const statusText = prefs.alertsEnabled ? 'ON' : 'OFF';
 

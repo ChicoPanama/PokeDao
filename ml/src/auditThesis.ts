@@ -1,11 +1,24 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import pg from 'pg';
 import OpenAI from 'openai';
 import { ReasonedSignal } from '../schemas/reasonedSignal.js';
 import { runModel } from './clients/runModel.js';
 
-const prisma = new PrismaClient();
+// Lazy-initialized Prisma client
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let prisma: any = null;
+
+async function getPrisma() {
+  if (prisma) return prisma;
+  const { PrismaClient } = await import('../../api/prisma/generated/client/client.js');
+  const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+  const adapter = new PrismaPg(pool);
+  prisma = new PrismaClient({ adapter });
+  return prisma;
+}
 
 export async function auditAndThesisForNewSignals({ take = 50 } = {}) {
+  const db = await getPrisma();
   // Check for AI provider configuration
   const deepseekApiKey = process.env.DEEPSEEK_API_KEY || '';
   const ollamaBaseUrl = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
@@ -64,7 +77,7 @@ export async function auditAndThesisForNewSignals({ take = 50 } = {}) {
   const MAX_FRESH_DAYS = Number(process.env.THESIS_MAX_FRESH_DAYS || (RELAXED ? 60 : 14));
   const KEEP_FLAGGED = process.env.THESIS_KEEP_FLAGGED === '1' || RELAXED;
 
-  const signals = await prisma.signal.findMany({
+  const signals = await db.signal.findMany({
     where: { thesis: '' },
     orderBy: { createdAt: 'desc' },
     take,
@@ -73,8 +86,8 @@ export async function auditAndThesisForNewSignals({ take = 50 } = {}) {
 
   let updated = 0, blocked = 0;
   for (const s of signals) {
-    const f30 = await prisma.featureSnapshot.findUnique({ where: { cardId_windowDays: { cardId: s.cardId, windowDays: 30 } } });
-    const f90 = await prisma.featureSnapshot.findUnique({ where: { cardId_windowDays: { cardId: s.cardId, windowDays: 90 } } });
+    const f30 = await db.featureSnapshot.findUnique({ where: { cardId_windowDays: { cardId: s.cardId, windowDays: 30 } } });
+    const f90 = await db.featureSnapshot.findUnique({ where: { cardId_windowDays: { cardId: s.cardId, windowDays: 90 } } });
 
     const features = f30 ?? f90 ?? null;
     const comps90 = f90?.volume ?? 0;
@@ -104,7 +117,7 @@ Rules:
 
     const L: any = s.marketListing || null;
     // Try to enrich with anchors from PriceCache and any extended Listing row (seller/auction)
-    const priceCache = await prisma.priceCache.findMany({
+    const priceCache = await db.priceCache.findMany({
       where: { cardId: s.cardId },
       orderBy: { timestamp: 'desc' },
       take: 20,
@@ -128,10 +141,10 @@ Rules:
     // Attempt to find an extended Listing to extract auction/seller/shipping details
     let extListing: any = null;
     if (L?.url) {
-      extListing = await prisma.listing.findFirst({ where: { cardId: s.cardId, url: L.url }, orderBy: { scrapedAt: 'desc' } }).catch(() => null);
+      extListing = await db.listing.findFirst({ where: { cardId: s.cardId, url: L.url }, orderBy: { scrapedAt: 'desc' } }).catch(() => null);
     }
     if (!extListing) {
-      extListing = await prisma.listing.findFirst({ where: { cardId: s.cardId, isActive: true }, orderBy: { scrapedAt: 'desc' } }).catch(() => null);
+      extListing = await db.listing.findFirst({ where: { cardId: s.cardId, isActive: true }, orderBy: { scrapedAt: 'desc' } }).catch(() => null);
     }
     const askUsd = L ? (L.priceCentsUsd ?? L.priceCents ?? 0) : 0;
     const freshDays = L ? Math.max(0, Math.floor((Date.now() - new Date(L.seenAt).getTime()) / 86400000)) : null;
@@ -212,12 +225,12 @@ Rules:
       const boundedThesis = withFlags.slice(0, 240);
 
       if (isFlagged && !KEEP_FLAGGED) {
-        await prisma.signal.delete({ where: { id: s.id } });
+        await db.signal.delete({ where: { id: s.id } });
         blocked++;
         continue;
       }
 
-      await prisma.signal.update({ where: { id: s.id }, data: { thesis: boundedThesis } });
+      await db.signal.update({ where: { id: s.id }, data: { thesis: boundedThesis } });
       updated++;
     } catch (err: any) {
       console.error('[thesis] error', err?.message || err);

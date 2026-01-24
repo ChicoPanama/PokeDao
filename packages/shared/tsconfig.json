@@ -8,8 +8,12 @@
     "declarationMap": true,
     "noImplicitAny": false,
     "strict": false,
-    "types": ["node"]
+    "types": ["node"],
+    "composite": true
   },
   "include": ["types", "./**/*.ts"],
-  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
+  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"],
+  "references": [
+    { "path": "../../api" }
+  ]
 }

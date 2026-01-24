@@ -9,5 +9,8 @@
     "types": ["node"]
   },
   "include": ["src", "schemas", "types"],
-  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
+  "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"],
+  "references": [
+    { "path": "../api" }
+  ]
 }

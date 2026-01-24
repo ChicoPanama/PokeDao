@@ -76,33 +76,34 @@ export async function registerAIAnalysis(app: FastifyInstance) {
       }
 
       // Calculate fair value (trimmed mean)
-      const prices = comparables.map(c => c.priceCents / 100).sort((a, b) => a - b);
+      type Comparable = typeof comparables[number];
+      const prices = comparables.map((c: Comparable) => c.priceCents / 100).sort((a: number, b: number) => a - b);
       const trimCount = Math.floor(prices.length * 0.1);
       const trimmedPrices = prices.slice(trimCount, prices.length - trimCount);
-      const fairValue = trimmedPrices.reduce((sum, p) => sum + p, 0) / trimmedPrices.length;
+      const fairValue = trimmedPrices.reduce((sum: number, p: number) => sum + p, 0) / trimmedPrices.length;
 
       // Calculate 30-day volume
       const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-      const recent30d = comparables.filter(c => c.createdAt >= thirtyDaysAgo);
+      const recent30d = comparables.filter((c: Comparable) => c.createdAt >= thirtyDaysAgo);
       const avgVolume30d = recent30d.length;
 
       // Calculate price trends
       const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-      const recent7d = comparables.filter(c => c.createdAt >= sevenDaysAgo);
-      const recentOlder = comparables.filter(c => c.createdAt < sevenDaysAgo);
+      const recent7d = comparables.filter((c: Comparable) => c.createdAt >= sevenDaysAgo);
+      const recentOlder = comparables.filter((c: Comparable) => c.createdAt < sevenDaysAgo);
 
       const avg7d = recent7d.length > 0 ?
-        recent7d.reduce((sum, c) => sum + (c.priceCents / 100), 0) / recent7d.length :
+        recent7d.reduce((sum: number, c: Comparable) => sum + (c.priceCents / 100), 0) / recent7d.length :
         fairValue;
       const avgOlder = recentOlder.length > 0 ?
-        recentOlder.reduce((sum, c) => sum + (c.priceCents / 100), 0) / recentOlder.length :
+        recentOlder.reduce((sum: number, c: Comparable) => sum + (c.priceCents / 100), 0) / recentOlder.length :
         fairValue;
 
       const priceChange7d = avgOlder > 0 ? ((avg7d - avgOlder) / avgOlder) * 100 : 0;
       const priceChange30d = fairValue > 0 ? ((avg7d - fairValue) / fairValue) * 100 : 0;
 
       // Find lowest available
-      const lowestAvailable = Math.min(...comparables.map(c => c.priceCents / 100));
+      const lowestAvailable = Math.min(...comparables.map((c: Comparable) => c.priceCents / 100));
 
       // Build market signal
       const signal: MarketSignal = {

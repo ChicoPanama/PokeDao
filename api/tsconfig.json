@@ -1,17 +1,20 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "rootDir": "src",
+    "rootDir": ".",
     "outDir": "dist",
     "typeRoots": ["./types", "../node_modules/@types", "../../node_modules/@types"],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@prisma/generated/*": ["prisma/generated/*"]
     },
     "noImplicitAny": false,
     "strict": false,
-    "types": ["node"]
+    "types": ["node"],
+    "composite": true,
+    "declaration": true
   },
-  "include": ["src", "types"],
+  "include": ["src", "types", "prisma/generated"],
   "exclude": ["dist", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
 }

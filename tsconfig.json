@@ -26,5 +26,10 @@
       "@pokedao/adapters/*": ["./packages/adapters/src/*"]
     }
   },
-  "exclude": ["node_modules", "dist", "build"]
+  "exclude": ["node_modules", "dist", "build"],
+  "references": [
+    { "path": "./api" },
+    { "path": "./bot" },
+    { "path": "./packages/shared" }
+  ]
 }

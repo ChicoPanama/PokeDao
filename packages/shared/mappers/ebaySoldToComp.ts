@@ -1,8 +1,10 @@
-import type { PrismaClient } from '@prisma/client';
 import { parseTitleWithQwen, parseTitleFallback } from '../normalizers/titleParser.js';
 import { upsertCardByKey } from '../db.js';
 import { cardKey } from '../keys.js';
 import { toUSD } from '../money.js';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type PrismaClient = any;
 
 export async function insertEbaySoldBatch(
   prisma: PrismaClient,

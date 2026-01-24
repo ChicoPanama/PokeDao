@@ -6,3 +6,7 @@ export * from './money.js';
 export * from './normalizers/titleParser.js';
 export * from './mappers/ebaySoldToComp.js';
 export * from './fees.js';
+export * from './config.js';
+export * from './tracing.js';
+export * from './qdrant.js';
+export * from './kafka.js';

@@ -2,6 +2,7 @@ import { InlineKeyboard } from 'grammy';
 import { UserContext } from '../middleware/auth.js';
 import { prisma } from '../lib/prisma.js';
 import { logger } from '../lib/logger.js';
+import { snoozeCard } from '../lib/preferences.js';
 
 /**
  * Handle listing-related callbacks from deal alerts
@@ -43,7 +44,7 @@ export async function handleListingCallback(
         `💰 $${listing.price.toFixed(2)}\n` +
         `🏪 ${listing.source}\n\n` +
         `👉 [Click here to view](${listing.url})`,
-        { parse_mode: 'Markdown', disable_web_page_preview: false }
+        { parse_mode: 'Markdown', link_preview_options: { is_disabled: false } }
       );
       break;
 
@@ -141,15 +142,48 @@ export async function handleListingCallback(
       break;
 
     case 'snooze':
-      // Snooze alerts for this card
-      await ctx.answerCallbackQuery({ text: '😴 Snoozed for 24 hours' });
-      // TODO: Implement snooze logic with Redis or database
-      await ctx.reply(
-        `😴 **Snoozed**\n\n` +
-        `You won't receive alerts for ${listing.card?.name || 'this card'} ` +
-        `for the next 24 hours.`,
-        { parse_mode: 'Markdown' }
-      );
+      // Snooze alerts for this card for 24 hours
+      try {
+        await snoozeCard(ctx.from.id.toString(), listing.cardId);
+        await ctx.answerCallbackQuery({ text: '😴 Snoozed for 24 hours' });
+
+        // Update the keyboard to show snoozed state
+        const snoozedKeyboard = new InlineKeyboard()
+          .text('🔗 Open', `listing:open:${listingId}`)
+          .text('✅ Bought', `listing:bought:${listingId}`)
+          .row()
+          .text('👀 Watch', `listing:watch:${listingId}`)
+          .text('😴 Snoozed', `listing:snoozed:${listingId}`)
+          .text('❌ Ignore', `listing:ignore:${listingId}`);
+
+        try {
+          await ctx.editMessageReplyMarkup({ reply_markup: snoozedKeyboard });
+        } catch (e) {
+          // Message might not be editable
+        }
+
+        await ctx.reply(
+          `😴 **Snoozed**\n\n` +
+          `You won't receive alerts for **${listing.card?.name || 'this card'}** ` +
+          `for the next 24 hours.\n\n` +
+          `_Use /alerts to manage your snooze settings._`,
+          { parse_mode: 'Markdown' }
+        );
+
+        logger.info({
+          userId: user.id,
+          cardId: listing.cardId,
+          cardName: listing.card?.name
+        }, 'Card snoozed from alert');
+      } catch (error) {
+        logger.error({ error, listingId }, 'Failed to snooze card');
+        await ctx.answerCallbackQuery({ text: 'Failed to snooze' });
+      }
+      break;
+
+    case 'snoozed':
+      // Card is already snoozed
+      await ctx.answerCallbackQuery({ text: 'Already snoozed for 24 hours' });
       break;
 
     case 'confirmed':

@@ -1,7 +1,5 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '../lib/prisma.js';
 
 interface PriceHistoryQuery {
   cardName?: string;
@@ -64,7 +62,7 @@ export async function registerPriceHistory(app: FastifyInstance) {
         };
       }
       if (setName) {
-        cardFilters.CardSet = {
+        cardFilters.cardSet = {
           name: {
             contains: setName,
             mode: 'insensitive' as const,
@@ -87,12 +85,12 @@ export async function registerPriceHistory(app: FastifyInstance) {
       const sales = await prisma.compSale.findMany({
         where: {
           ...where,
-          Card: cardFilters,
+          card: cardFilters,
         },
         include: {
-          Card: {
+          card: {
             include: {
-              CardSet: true,
+              cardSet: true,
             },
           },
         },
@@ -127,8 +125,8 @@ export async function registerPriceHistory(app: FastifyInstance) {
       return {
         sales: sales.map(sale => ({
           id: sale.id,
-          cardName: sale.Card.name,
-          setName: sale.Card.CardSet.name,
+          cardName: sale.card.name,
+          setName: sale.card.cardSet?.name ?? '',
           grade: sale.grade,
           condition: sale.condition,
           priceCents: sale.priceCents,
@@ -189,7 +187,7 @@ export async function registerPriceHistory(app: FastifyInstance) {
       };
 
       if (setName) {
-        cardFilters.CardSet = {
+        cardFilters.cardSet = {
           name: {
             contains: setName,
             mode: 'insensitive' as const,
@@ -202,7 +200,7 @@ export async function registerPriceHistory(app: FastifyInstance) {
         soldAt: {
           gte: startDate,
         },
-        Card: cardFilters,
+        card: cardFilters,
       };
 
       if (grade) {
@@ -212,9 +210,9 @@ export async function registerPriceHistory(app: FastifyInstance) {
       const sales = await prisma.compSale.findMany({
         where,
         include: {
-          Card: {
+          card: {
             include: {
-              CardSet: true,
+              cardSet: true,
             },
           },
         },
@@ -287,8 +285,8 @@ export async function registerPriceHistory(app: FastifyInstance) {
 
       return {
         card: {
-          name: sales[0].Card.name,
-          set: sales[0].Card.CardSet.name,
+          name: sales[0].card.name,
+          set: sales[0].card.cardSet?.name ?? '',
           grade: grade || 'Any',
           gradeCompany: gradeCompany || 'Any',
         },
@@ -338,9 +336,9 @@ export async function registerPriceHistory(app: FastifyInstance) {
           },
         },
         include: {
-          Card: {
+          card: {
             include: {
-              CardSet: true,
+              cardSet: true,
             },
           },
         },
@@ -369,8 +367,8 @@ export async function registerPriceHistory(app: FastifyInstance) {
 
           return {
             cardId,
-            cardName: sales[0].Card.name,
-            setName: sales[0].Card.CardSet.name,
+            cardName: sales[0].card.name,
+            setName: sales[0].card.cardSet?.name ?? '',
             salesCount: sales.length,
             oldAvgPrice: Math.round(olderAvg),
             newAvgPrice: Math.round(recentAvg),

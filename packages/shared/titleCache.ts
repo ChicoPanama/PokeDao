@@ -1,5 +1,7 @@
 import crypto from 'node:crypto';
-import { PrismaClient } from '@prisma/client';
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type PrismaClient = any;
 
 export const TITLE_CACHE_VERSION = Number(process.env.TITLE_CACHE_VERSION ?? 1);
 
@@ -20,7 +22,7 @@ export function makeCardSlug(setCode: string, number: string, variantKey = 'EN')
   return `${String(setCode || '').toLowerCase()}-${num}-${String(variantKey || 'EN').toLowerCase()}`;
 }
 
-export async function getCachedParse(prisma: InstanceType<typeof PrismaClient>, rawTitle: string) {
+export async function getCachedParse(prisma: PrismaClient, rawTitle: string) {
   const titleNorm = normalizeTitle(rawTitle);
   const titleHash = hashTitle(titleNorm);
   const row = await prisma.titleParseCache.findUnique({
@@ -37,7 +39,7 @@ export async function getCachedParse(prisma: InstanceType<typeof PrismaClient>, 
 }
 
 export async function putCachedParse(
-  prisma: InstanceType<typeof PrismaClient>,
+  prisma: PrismaClient,
   rawTitle: string,
   parsed: { setCode: string; number: string; variantKey?: string; language?: string; confidence: number },
 ) {

@@ -384,7 +384,7 @@ const cardComprehensiveRoutes: FastifyPluginAsync = async (fastify) => {
         marketplacesWithListings: Object.keys(bySource).length,
       },
       bySource: Object.fromEntries(
-        Object.entries(bySource).map(([src, arr]) => [
+        Object.entries(bySource).map(([src, arr]: [string, any[]]) => [
           src,
           {
             listingCount: arr.length,

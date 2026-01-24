@@ -62,7 +62,7 @@ export async function registerSignals(app: FastifyInstance) {
         where: { cardId: { in: cardIds }, windowDays: 30 },
         select: { cardId: true, nhiScore: true },
       });
-      const nhiMap = new Map(snaps.map((s) => [s.cardId, s.nhiScore ?? 0]));
+      const nhiMap = new Map<string, number>(snaps.map((s) => [s.cardId, s.nhiScore ?? 0]));
       filtered = rows.filter((r) => (nhiMap.get(r.cardId) ?? 0) >= minNhi);
     }
 
@@ -99,26 +99,28 @@ export async function registerSignals(app: FastifyInstance) {
     }
 
     const out = deduped.map((s) => {
+      const card = s.card as any;
+      const listing = s.marketListing as any;
       const edgePctNum = Number((s.edgeBp / 100).toFixed(1));
       const edgePctStr = `${s.edgeBp >= 0 ? '+' : ''}${edgePctNum}%`;
-      const setCode = s.card?.setCode ?? s.card?.set ?? '';
-      const number = s.card?.number ?? '';
-      const variant = (s.card?.variantKey ?? 'EN').toLowerCase();
+      const setCode = card?.setCode ?? card?.set ?? '';
+      const number = card?.number ?? '';
+      const variant = (card?.variant ?? 'EN').toLowerCase();
       const slugPart = (x: string) => String(x || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
       const cardSlug = `${slugPart(setCode)}-${slugPart(number)}-${slugPart(variant)}`;
       return {
         id: s.id,
-        cardName: s.card?.name ?? '',
+        cardName: card?.name ?? '',
         setCode,
         number,
-        variantKey: s.card?.variantKey ?? '',
+        variantKey: card?.variant ?? '',
         cardSlug,
         edgePct: edgePctNum,
         edgePctStr,
         confidence: Number(s.confidence.toFixed(2)),
         thesis: s.thesis,
         ...(debug && nhiDebugMap ? { nhiScore: nhiDebugMap.get(s.cardId) ?? null } : {}),
-        listingUrl: s.marketListing?.url ?? '',
+        listingUrl: listing?.url ?? '',
         proofUrl: `${PROOF_BASE_URL}/signals/${s.id}/proof`,
       };
     });
@@ -136,6 +138,9 @@ export async function registerSignals(app: FastifyInstance) {
     });
     if (!sig) return reply.code(404).send({ error: 'not found' });
 
+    const card = sig.card as any;
+    const listing = sig.marketListing as any;
+
     const f30 = await prisma.featureSnapshot.findUnique({
       where: { cardId_windowDays: { cardId: sig.cardId, windowDays: 30 } },
     });
@@ -147,25 +152,25 @@ export async function registerSignals(app: FastifyInstance) {
       select: { priceCents: true, currency: true, soldAt: true, source: true },
     });
 
-    const series = f30 ? [f30.p05Cents, f30.medianCents, f30.p95Cents] : [];
+    const series = f30 ? [f30.p05Cents, f30.medianCents, f30.p95Cents].filter((x): x is number => x != null) : [];
     const spark = series.length ? sparklineUrl(series) : null;
 
     return reply.send({
       id: sig.id,
       card: {
-        name: sig.card?.name ?? '',
-        setCode: sig.card?.setCode ?? sig.card?.set ?? '',
-        number: sig.card?.number ?? '',
-        variantKey: sig.card?.variantKey ?? '',
+        name: card?.name ?? '',
+        setCode: card?.setCode ?? card?.set ?? '',
+        number: card?.number ?? '',
+        variantKey: card?.variant ?? '',
       },
-      listing: sig.marketListing && {
-        source: sig.marketListing.source,
-        priceCents: sig.marketListing.priceCents,
-        currency: sig.marketListing.currency,
-        condition: sig.marketListing.condition,
-        grade: sig.marketListing.grade,
-        url: sig.marketListing.url,
-        seenAt: sig.marketListing.seenAt,
+      listing: listing && {
+        source: listing.source,
+        priceCents: listing.priceCents,
+        currency: listing.currency,
+        condition: listing.condition,
+        grade: listing.grade,
+        url: listing.url,
+        seenAt: listing.seenAt,
       },
       features30d: f30 && {
         medianCents: f30.medianCents,

@@ -1,29 +1,23 @@
 /**
  * Phase 4 API Endpoints - Current schema verification
  */
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import prisma from './lib/prisma.js';
 
 export async function getTableCounts() {
   const counts = await Promise.all([
     prisma.card.count(),
     prisma.listing.count(),
     prisma.compSale.count(),
-    prisma.marketData.count(),
-    prisma.priceSnapshot.count(),
-    prisma.dataSource.count(),
-    prisma.processingJob.count()
+    prisma.evaluation.count(),
+    prisma.signal.count(),
   ])
 
   return {
     cards: counts[0],
     listings: counts[1],
     compSales: counts[2],
-    marketData: counts[3],
-    priceSnapshots: counts[4],
-    dataSources: counts[5],
-    processingJobs: counts[6],
+    evaluations: counts[3],
+    signals: counts[4],
     timestamp: new Date().toISOString()
   }
 }
@@ -34,15 +28,14 @@ export async function getCardWithData(cardId: string) {
     include: {
       listings: {
         where: { isActive: true },
-        orderBy: { normalizedPrice: 'asc' }
+        orderBy: { price: 'asc' }
       },
-      priceHistory: {
-        orderBy: { timestamp: 'desc' },
-        take: 10
-      },
-      marketData: true,
       compSales: {
         orderBy: { soldAt: 'desc' },
+        take: 5
+      },
+      evaluations: {
+        orderBy: { createdAt: 'desc' },
         take: 5
       }
     }
@@ -63,7 +56,7 @@ export async function getBestDeals() {
     take: 10
   })
 
-  return evaluations.map(evaluation => ({
+  return evaluations.map((evaluation: typeof evaluations[number]) => ({
     cardName: evaluation.card?.name,
     listingPrice: evaluation.listing?.price,
     fairValue: evaluation.fairValue,
