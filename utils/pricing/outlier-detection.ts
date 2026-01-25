@@ -9,14 +9,16 @@
  */
 
 import { PrismaClient } from '@prisma/client';
-import { Decimal } from '@prisma/client/runtime/library';
+
+// Decimal-compatible type (accepts number or Decimal-like objects with toNumber())
+type DecimalLike = number | { toNumber(): number };
 
 // Define types based on our Prisma schema
 type PriceCache = {
   id: number;
   cardKey: string;
   marketplace: string;
-  price: Decimal;
+  price: DecimalLike;
   currency: string;
   condition: string | null;
   grade: string | null;
@@ -28,7 +30,7 @@ type PriceCache = {
 type Listing = {
   id: number;
   cardId: number;
-  price: Decimal;
+  price: DecimalLike;
   condition: string | null;
   marketplace: string;
   url: string;
@@ -250,7 +252,9 @@ export class PriceCacheOutlierAnalyzer {
     outliers: OutlierResult[];
     cleanedPrices: number[];
   } {
-    const prices = priceCacheEntries.map(entry => entry.price.toNumber());
+    const prices = priceCacheEntries.map(entry =>
+      typeof entry.price === 'number' ? entry.price : entry.price.toNumber()
+    );
     const statistics = PriceOutlierDetector.calculateStatistics(prices);
     const outliers = PriceOutlierDetector.detectOutliers(prices, config);
     const cleanedPrices = prices.filter((_, index) => !outliers[index].isOutlier);

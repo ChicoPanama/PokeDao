@@ -1,76 +1,953 @@
 generator client {
-  provider      = "prisma-client-js"
-  binaryTargets = ["native", "linux-arm64-openssl-1.1.x"]
+  provider = "prisma-client"
+  output   = "./generated/client"
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
-model Card {
-  id        String   @id @default(cuid())
-  name      String
-  set       String
-  number    String
-  variant   String?
-  grade     String?
-  condition String?
-  cardKey   String?  // Normalized grouping key for price aggregation
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+// ===========================================
+// CORE ENTITIES
+// ===========================================
 
-  listings       Listing[]
-  evaluations    Evaluation[]
-  watchlistItems WatchlistItem[]
-  catalogItems   SourceCatalogItem[]
-  priceCache     PriceCache[]
-  modelInsights  ModelInsight[]
+model Card {
+  id              String   @id @default(cuid())
+
+  // Identity (canonical)
+  name            String   // Display name
+  set             String   // Set name (legacy field)
+  number          String   // Card number
+  variant         String?  // Holo, 1st Edition, Shadowless
+  grade           String?  // PSA 10, CGC 9.5, etc.
+  condition       String?  // Near Mint, Played, etc.
+  language        String   @default("EN")
+
+  // Normalized fields
+  cardKey         String?  // Normalized grouping key for price aggregation
+  searchName      String?  // lowercase, no special chars
+  searchSet       String?
+
+  // External IDs (for matching across sources)
+  priceChartingId String?
+  tcgPlayerId     String?
+  psaCertNumber   String?
+
+  // Tracking
+  tracked         Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  listings        Listing[]
+  evaluations     Evaluation[]
+  watchlistItems  WatchlistItem[]
+  catalogItems    SourceCatalogItem[]
+  priceCache      PriceCache[]
+  modelInsights   ModelInsight[]
+  priceSnapshots  PriceSnapshot[]
+  signalSnapshots SignalSnapshot[]
+  dailyStats      DailyCardStats[]
+  opportunities   Opportunity[]
+  psaPopulation   PsaPopulation?
 
   @@unique([set, number, variant, grade])
   @@index([cardKey])
-}
-
-model Listing {
-  id           String   @id @default(cuid())
-  cardId       String
-  source       String
-  sourceItemId String?  // Reference to external source ID
-  price        Float
-  currency     String   @default("USD")
-  url          String
-  seller       String?
-  isActive     Boolean  @default(true)
-  condition    String?  // Near Mint, Played, etc.
-  raw          Json?    // Raw scraping data
-  scrapedAt    DateTime @default(now())
-
-  card         Card         @relation(fields: [cardId], references: [id])
-  evaluations  Evaluation[]
-
-  @@index([source, scrapedAt])
-  @@index([sourceItemId])
+  @@index([searchName, searchSet])
+  @@index([tracked])
 }
 
 model User {
-  id            String   @id @default(cuid())
-  telegramId    String   @unique
-  username      String?
-  firstName     String?
-  lastName      String?
-  referralCode  String   @unique
-  referredBy    String?
-  walletAddress String?  // P1-3: Solana wallet address for tokenized features
-  createdAt     DateTime @default(now())
+  id              String   @id @default(cuid())
 
-  purchases      Purchase[]
-  referrals      User[]          @relation("UserReferrals")
-  referrer       User?           @relation("UserReferrals", fields: [referredBy], references: [referralCode])
-  referralEvents ReferralEvent[]
-  watchlistItems WatchlistItem[]
-  portfolio      Portfolio?
-  preferences    UserPreferences?
+  // Identity (legacy)
+  telegramId      String?  @unique
+  discordId       String?  @unique
+  username        String?
+  firstName       String?
+  lastName        String?
+
+  // Multi-platform identity
+  platform        String?  // TELEGRAM, DISCORD, WEB
+  platformUserId  String?  // Platform-specific user ID
+
+  // Profile
+  referralCode    String   @unique
+  referredBy      String?
+  walletAddress   String?  // Solana wallet address
+  tier            String   @default("FREE") // FREE, BASIC, PREMIUM
+
+  // Preferences (denormalized for fast access)
+  preferencesJson Json     @default("{}")
+
+  // Stats
+  totalAlerts     Int      @default(0)
+  totalBought     Int      @default(0)
+  totalPassed     Int      @default(0)
+  totalProfit     Float    @default(0)
+
+  // Tracking
+  lastActiveAt    DateTime?
+  createdAt       DateTime @default(now())
+
+  // Relations
+  purchases       Purchase[]
+  referrals       User[]          @relation("UserReferrals")
+  referrer        User?           @relation("UserReferrals", fields: [referredBy], references: [referralCode])
+  referralEvents  ReferralEvent[]
+  watchlistItems  WatchlistItem[]
+  portfolio       Portfolio?
+  preferences     UserPreferences?
+  queries         UserQuery[]
+  actions         UserAction[]
+  outcomes        UserOutcome[]
+  portfolioHoldings PortfolioHolding[]
+  alerts          AlertDelivery[]
+
+  @@index([tier])
+  @@index([lastActiveAt])
 }
+
+// ===========================================
+// PRICE DATA COLLECTION
+// ===========================================
+
+model PriceSnapshot {
+  id              String   @id @default(cuid())
+
+  // Card reference
+  cardId          String?
+  card            Card?    @relation(fields: [cardId], references: [id])
+  cardKey         String?  // For matching before card link
+
+  // Source info
+  source          String   // EBAY, MAGIC_EDEN, COURTYARD, etc.
+  sourceVersion   String   @default("v1") // Track parser version
+  externalId      String?  // Listing ID from source
+
+  // Price data
+  price           Float    // Original price
+  currency        String   // USD, SOL, ETH, etc.
+  priceUsd        Float    // Normalized to USD at time of collection
+  fxRate          Float?   // Exchange rate used
+
+  // Item details
+  grade           String?  // PSA 10, CGC 9.5, BGS 10, RAW
+  grader          String?  // PSA, CGC, BGS, null for raw
+  gradeNumeric    Float?   // 10, 9.5, etc. for sorting
+  condition       String?  // Near Mint, Lightly Played, etc.
+
+  // Listing metadata
+  listingType     String?  // AUCTION, BUY_NOW, OFFER
+  sellerId        String?
+  sellerRating    Float?
+  sellerSales     Int?
+
+  // Timing
+  listedAt        DateTime?
+  soldAt          DateTime?
+  expiresAt       DateTime?
+
+  // Media
+  imageUrls       String[] // All images
+  thumbnailUrl    String?
+
+  // Location
+  country         String?
+  shipping        Float?   // Shipping cost
+
+  // Full raw response (NEVER lose data)
+  raw             Json?    // Store complete API response
+  rawHash         String?  // Hash of raw for dedup
+
+  // Collection metadata
+  collectedAt     DateTime @default(now())
+  parsedAt        DateTime @default(now())
+  parserVersion   String   @default("1.0.0")
+
+  @@unique([source, externalId])
+  @@index([cardId, source, collectedAt])
+  @@index([cardKey, collectedAt])
+  @@index([source, collectedAt])
+  @@index([soldAt])
+  @@index([priceUsd])
+  @@index([grade, gradeNumeric])
+  @@index([rawHash])
+}
+
+model Listing {
+  id              String   @id @default(cuid())
+
+  // Card reference
+  cardId          String?
+  card            Card?    @relation(fields: [cardId], references: [id])
+
+  // Raw card info (before matching)
+  rawCardName     String?
+  rawSetName      String?
+  rawGrade        String?
+
+  // Source
+  source          String
+  sourceItemId    String?  // External ID from source
+  url             String
+
+  // Price
+  price           Float
+  currency        String   @default("USD")
+  priceUsd        Float?
+
+  // Legacy fields
+  seller          String?
+  isActive        Boolean  @default(true)
+  condition       String?
+  raw             Json?
+  scrapedAt       DateTime @default(now())
+
+  // New tracking fields
+  active          Boolean  @default(true)
+  firstSeenAt     DateTime @default(now())
+  lastSeenAt      DateTime @default(now())
+  soldAt          DateTime?
+  delistedAt      DateTime?
+
+  // Processing
+  matchConfidence Float?   // How confident card match is
+  processedAt     DateTime?
+
+  // Relations
+  evaluations     Evaluation[]
+  opportunities   Opportunity[]
+
+  @@unique([source, sourceItemId], name: "source_sourceItemId")
+  @@index([cardId, active])
+  @@index([source, active])
+  @@index([source, scrapedAt])
+  @@index([sourceItemId])
+  @@index([isActive, scrapedAt])
+  @@index([priceUsd])
+  @@index([firstSeenAt])
+}
+
+// ===========================================
+// SIGNAL & ANALYSIS COLLECTION
+// ===========================================
+
+model SignalSnapshot {
+  id              String   @id @default(cuid())
+
+  // Card reference
+  cardId          String
+  card            Card     @relation(fields: [cardId], references: [id])
+  cardKey         String?
+
+  // Fair value calculation
+  fairValue       Float
+  fairValueMethod String   // MEDIAN_10, WEIGHTED_AVG, etc.
+  confidence      Float    // 0-1
+  sampleSize      Int      // How many sales used
+
+  // Trend analysis
+  trendDirection  String   // UP, DOWN, STABLE
+  trendPercent    Float    // % change
+  trendPeriodDays Int      // Period analyzed
+
+  // Price distribution
+  priceMin        Float?
+  priceMax        Float?
+  priceMedian     Float?
+  priceStdDev     Float?
+
+  // Liquidity metrics
+  liquidityScore  Float    // 0-10
+  activeListings  Int
+  salesLast7d     Int
+  salesLast30d    Int
+  avgDaysOnMarket Float?
+
+  // Sentiment metrics
+  sentimentScore  Float    // -1 to 1
+  sentimentLabel  String   // BULLISH, BEARISH, NEUTRAL
+  mentionCount7d  Int      @default(0)
+
+  // Scarcity metrics
+  psa10Pop        Int?
+  psa9Pop         Int?
+  totalPop        Int?
+  scarcityScore   Float?   // 0-10
+
+  // Arbitrage opportunities
+  arbitrageCount  Int      @default(0)
+  bestArbitrage   Json?    // { buySource, sellSource, margin }
+
+  // Full signal object
+  signals         Json     // Complete signal calculation
+
+  // Metadata
+  calculatedAt    DateTime @default(now())
+  calculationMs   Int?     // How long calculation took
+  version         String   @default("1.0.0")
+
+  @@index([cardId, calculatedAt])
+  @@index([cardKey, calculatedAt])
+  @@index([calculatedAt])
+  @@index([fairValue])
+  @@index([liquidityScore])
+}
+
+model Opportunity {
+  id              String   @id @default(cuid())
+
+  // References
+  cardId          String?
+  card            Card?    @relation(fields: [cardId], references: [id])
+  listingId       String
+  listing         Listing  @relation(fields: [listingId], references: [id])
+  signalSnapshotId String?
+
+  // Card info (denormalized)
+  cardKey         String?
+  cardName        String
+  setName         String?
+  grade           String?
+
+  // Opportunity details
+  listingPrice    Float
+  fairValue       Float
+  discount        Float    // Percentage below fair value
+
+  // Thesis
+  thesis          String   @db.Text
+  thesisType      String?  // TEMPLATE, LLM
+  recommendation  String   // STRONG_BUY, BUY, WATCH, PASS
+
+  // Signals at time of opportunity (denormalized for ML)
+  signals         Json?
+
+  // Source
+  source          String
+  url             String
+
+  // Status
+  status          String   @default("PENDING") // PENDING, ALERTED, BOUGHT, PASSED, EXPIRED
+  usedLLM         Boolean  @default(false)
+
+  // Outcome tracking (filled in later)
+  wasAlerted      Boolean  @default(false)
+  alertedAt       DateTime?
+  wasActedOn      Boolean  @default(false)
+  userAction      String?  // BOUGHT, PASSED, IGNORED
+  actionAt        DateTime?
+
+  // If bought, track outcome
+  purchasePrice   Float?
+  currentValue    Float?
+  actualReturn    Float?   // Percentage
+  returnUpdatedAt DateTime?
+
+  // Metadata
+  createdAt       DateTime @default(now())
+  expiresAt       DateTime?
+
+  // Relations
+  thesisRecord    ThesisRecord?
+  userActions     UserAction[]
+  alerts          AlertDelivery[]
+
+  @@index([cardId, createdAt])
+  @@index([cardKey, createdAt])
+  @@index([status, createdAt])
+  @@index([recommendation])
+  @@index([discount])
+}
+
+model ThesisRecord {
+  id              String   @id @default(cuid())
+
+  // Reference
+  opportunityId   String   @unique
+  opportunity     Opportunity @relation(fields: [opportunityId], references: [id])
+  cardId          String?
+  cardKey         String?
+
+  // Generation details
+  thesisType      String   // TEMPLATE, LLM
+  templateName    String?  // Which template used
+  model           String?  // groq/llama-3.1-8b, etc.
+
+  // Input (for reproducibility)
+  promptTemplate  String?  @db.Text
+  promptVariables Json?
+  signalsInput    Json     // Signals used to generate
+
+  // Output
+  thesis          String   @db.Text
+  recommendation  String
+  confidence      Float?
+
+  // Performance
+  generationMs    Int
+  inputTokens     Int?
+  outputTokens    Int?
+  cost            Float?   // LLM cost in USD
+
+  // Outcome tracking
+  wasActedOn      Boolean  @default(false)
+  userAction      String?
+  actualReturn    Float?   // If user bought
+
+  // Quality metrics (filled in later)
+  userRating      Int?     // 1-5 stars
+  wasAccurate     Boolean? // Did prediction match reality
+
+  createdAt       DateTime @default(now())
+
+  @@index([cardId, createdAt])
+  @@index([cardKey, createdAt])
+  @@index([thesisType])
+  @@index([recommendation])
+  @@index([wasActedOn, actualReturn])
+}
+
+// ===========================================
+// USER ACTIVITY COLLECTION
+// ===========================================
+
+model UserQuery {
+  id              String   @id @default(cuid())
+
+  // User reference
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+
+  // Query details
+  platform        String   // TELEGRAM, DISCORD, WEB, API
+  sessionId       String?  // Group related queries
+
+  // Raw input
+  rawText         String   @db.Text
+
+  // Parsed intent
+  intentType      String   // SEARCH, PRICE, PORTFOLIO, SUBSCRIBE, HELP, OTHER
+  intentConfidence Float?
+
+  // Extracted entities
+  entities        Json     // { cardName, set, grade, maxPrice, etc. }
+
+  // Response
+  responseType    String?  // CARD_LIST, PRICE_INFO, ERROR, etc.
+  responseLength  Int?
+  resultsCount    Int?
+
+  // Performance
+  responseTimeMs  Int
+
+  // Context
+  conversationId  String?  // For multi-turn conversations
+  previousQueryId String?  // Link to previous query in conversation
+
+  // Raw messages (for debugging)
+  rawRequest      Json?
+  rawResponse     Json?
+
+  createdAt       DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([platform, createdAt])
+  @@index([intentType])
+  @@index([sessionId])
+}
+
+model UserAction {
+  id              String   @id @default(cuid())
+
+  // References
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  opportunityId   String?
+  opportunity     Opportunity? @relation(fields: [opportunityId], references: [id])
+  queryId         String?  // Which query led to this action
+
+  // Action details
+  action          String   // VIEWED, CLICKED, BOUGHT, PASSED, IGNORED, WATCHLIST_ADD, etc.
+  platform        String
+
+  // Context
+  source          String?  // ALERT, SEARCH, DASHBOARD, etc.
+  position        Int?     // Position in list if from search results
+
+  // Timing
+  timeToActionMs  Int?     // Time from alert/view to action
+
+  // Metadata
+  metadata        Json?    // Any additional context
+
+  createdAt       DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([opportunityId])
+  @@index([action, createdAt])
+}
+
+model UserOutcome {
+  id              String   @id @default(cuid())
+
+  // References
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  opportunityId   String?
+  cardId          String?
+  cardKey         String?
+
+  // Purchase details
+  purchasePrice   Float
+  purchaseDate    DateTime
+  purchaseSource  String?  // Where they bought
+  grade           String?
+
+  // Thesis at time of purchase (denormalized)
+  thesisAtPurchase String?  @db.Text
+  fairValueAtPurchase Float?
+  discountAtPurchase Float?
+
+  // Current tracking
+  currentValue    Float?
+  lastValueUpdate DateTime?
+
+  // Sale details (if sold)
+  soldPrice       Float?
+  soldDate        DateTime?
+  soldSource      String?
+
+  // Calculated returns
+  unrealizedReturn Float?  // Current value - purchase price
+  unrealizedReturnPct Float?
+  realizedReturn  Float?   // If sold
+  realizedReturnPct Float?
+
+  // Holding period
+  holdingDays     Int?
+
+  // Status
+  status          String   @default("HOLDING") // HOLDING, SOLD, LOST, UNKNOWN
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([userId, status])
+  @@index([cardId])
+  @@index([cardKey])
+  @@index([purchaseDate])
+  @@index([realizedReturnPct])
+}
+
+model PortfolioHolding {
+  id              String   @id @default(cuid())
+
+  // Legacy relation
+  portfolioId     String?
+  portfolio       Portfolio? @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+
+  // Direct user relation
+  userId          String?
+  user            User?    @relation(fields: [userId], references: [id])
+
+  cardId          String?
+  cardKey         String?
+  cardName        String?
+  setName         String?
+  grade           String?
+
+  // Holding details
+  quantity        Int      @default(1)
+  costBasisCents  Int?     // Legacy field
+  purchasePrice   Float?
+  purchaseDate    DateTime @default(now())
+  purchaseVenue   String?  // Where bought
+  notes           String?
+
+  // Current value
+  currentValue    Float?
+  lastUpdated     DateTime?
+
+  // Alerts
+  targetSellPrice Float?
+  stopLossPrice   Float?
+
+  // Sale tracking
+  soldAt          DateTime?
+  soldPriceCents  Int?     // Legacy
+  soldPrice       Float?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([portfolioId, cardKey])
+  @@index([userId])
+  @@index([cardId])
+  @@index([cardKey])
+}
+
+model AlertDelivery {
+  id              String   @id @default(cuid())
+
+  // References
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  opportunityId   String
+  opportunity     Opportunity @relation(fields: [opportunityId], references: [id])
+
+  // Delivery details
+  platform        String   // TELEGRAM, DISCORD, etc.
+  channel         String?  // DM, group, etc.
+  messageId       String?  // Platform message ID
+
+  // Content
+  thesis          String?  @db.Text
+  formattedMessage String? @db.Text
+
+  // Status
+  status          String   // QUEUED, SENT, DELIVERED, READ, FAILED
+  sentAt          DateTime?
+  deliveredAt     DateTime?
+  readAt          DateTime?
+  failureReason   String?
+
+  // User response
+  responseAction  String?  // BOUGHT, PASSED, etc.
+  responseAt      DateTime?
+  responseTimeMs  Int?     // Time from delivery to response
+
+  createdAt       DateTime @default(now())
+
+  @@index([userId, createdAt])
+  @@index([opportunityId])
+  @@index([status])
+}
+
+// ===========================================
+// SOCIAL & NEWS COLLECTION
+// ===========================================
+
+model SocialPost {
+  id              String   @id @default(cuid())
+
+  // Source
+  platform        String   // REDDIT, TWITTER, YOUTUBE, DISCORD
+  externalId      String
+  url             String
+
+  // Author
+  authorId        String?
+  authorUsername  String?
+  authorFollowers Int?
+  isInfluencer    Boolean  @default(false)
+
+  // Content
+  title           String?
+  body            String   @db.Text
+  contentType     String   // POST, COMMENT, TWEET, VIDEO
+
+  // Engagement
+  upvotes         Int?
+  downvotes       Int?
+  likes           Int?
+  retweets        Int?
+  comments        Int?
+  views           Int?
+  engagementScore Float?   // Normalized 0-100
+
+  // Analysis
+  sentiment       Float    // -1 to 1
+  sentimentLabel  String   // BULLISH, BEARISH, NEUTRAL
+  sentimentModel  String?  // Which model/method used
+
+  // Card mentions
+  mentionedCards  String[] // Card names detected
+  mentionedSets   String[] // Set names detected
+
+  // Topics
+  topics          String[] // PRICE, INVESTMENT, GRADING, FAKE, etc.
+
+  // Media
+  hasImage        Boolean  @default(false)
+  hasVideo        Boolean  @default(false)
+  imageUrls       String[]
+
+  // Timing
+  postedAt        DateTime
+  collectedAt     DateTime @default(now())
+
+  // Raw
+  raw             Json?
+
+  @@unique([platform, externalId])
+  @@index([platform, postedAt])
+  @@index([mentionedCards])
+  @@index([sentiment])
+  @@index([isInfluencer])
+}
+
+// Legacy Reddit model (kept for backwards compatibility)
+model RedditPost {
+  id             String   @id @default(cuid())
+  redditId       String   @unique
+  subreddit      String
+  title          String
+  body           String   @db.Text
+  score          Int
+  numComments    Int
+  url            String
+  sentiment      Float    // -1 to 1
+  sentimentLabel String   // BULLISH, BEARISH, NEUTRAL
+  mentionedCards String[] // Card names mentioned
+  createdAt      DateTime
+  updatedAt      DateTime @updatedAt
+
+  @@index([subreddit, createdAt])
+  @@index([sentimentLabel])
+}
+
+model NewsEvent {
+  id              String   @id @default(cuid())
+
+  // Event type
+  type            String   // SET_RELEASE, REPRINT, BAN, TOURNAMENT, COMPANY_NEWS, etc.
+  subtype         String?  // More specific categorization
+
+  // Content
+  title           String
+  description     String?  @db.Text
+  summary         String?  @db.Text // AI-generated summary
+
+  // Source
+  source          String   // POKEMON_COMPANY, WOTC, NEWS_SITE, etc.
+  sourceUrl       String?
+
+  // Impact analysis
+  affectedCards   String[] // Card IDs
+  affectedSets    String[] // Set names
+  expectedImpact  String?  // POSITIVE, NEGATIVE, NEUTRAL
+  impactScore     Float?   // -10 to 10
+
+  // Actual impact (filled in later)
+  actualPriceImpact Float? // Average % change in affected cards
+  actualPriceImpactMeasuredAt DateTime?
+
+  // Timing
+  eventDate       DateTime
+  announcedAt     DateTime?
+  collectedAt     DateTime @default(now())
+
+  // Raw
+  raw             Json?
+
+  @@index([type, eventDate])
+  @@index([affectedCards])
+  @@index([eventDate])
+}
+
+// ===========================================
+// GRADING DATA
+// ===========================================
+
+model PsaPopulation {
+  id              String   @id @default(cuid())
+
+  cardId          String   @unique
+  card            Card     @relation(fields: [cardId], references: [id])
+  cardKey         String?
+
+  // Population by grade
+  gem10           Int?     // PSA 10
+  mint9           Int?     // PSA 9
+  nmMt8           Int?
+  nm7             Int?
+  exMt6           Int?
+  ex5             Int?
+  vgEx4           Int?
+  vg3             Int?
+  good2           Int?
+  fair1           Int?
+  authentic       Int?     // Authentic (no grade)
+
+  totalPop        Int
+
+  // Historical tracking
+  previousPop     Json?    // { date, gem10, mint9, ... }
+  popChange30d    Json?    // Change in last 30 days
+
+  // Source
+  psaSetId        String?
+  psaCertLookupUrl String?
+
+  fetchedAt       DateTime
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([cardKey])
+  @@index([totalPop])
+  @@index([gem10])
+}
+
+// ===========================================
+// AGGREGATED STATS (for fast queries)
+// ===========================================
+
+model DailyCardStats {
+  id              String   @id @default(cuid())
+
+  date            DateTime @db.Date
+  cardId          String
+  card            Card     @relation(fields: [cardId], references: [id])
+  cardKey         String?
+
+  // Price stats
+  avgPrice        Float
+  minPrice        Float
+  maxPrice        Float
+  medianPrice     Float
+  priceStdDev     Float?
+
+  // Change from previous day
+  priceChangeAbs  Float?
+  priceChangePct  Float?
+
+  // Volume
+  salesCount      Int
+  listingsCount   Int
+  newListings     Int?
+  soldListings    Int?
+  volumeUsd       Float
+
+  // By source
+  salesBySource   Json?    // { EBAY: 10, MAGIC_EDEN: 5, ... }
+  volumeBySource  Json?
+
+  // Sentiment
+  sentimentAvg    Float?
+  mentionCount    Int?
+
+  // Signals summary
+  fairValue       Float?
+  liquidityScore  Float?
+
+  createdAt       DateTime @default(now())
+
+  @@unique([date, cardId])
+  @@index([date])
+  @@index([cardId])
+  @@index([cardKey])
+}
+
+model DailyMarketStats {
+  id              String   @id @default(cuid())
+
+  date            DateTime @db.Date @unique
+
+  // Overall market
+  totalCards      Int
+  trackedCards    Int
+  totalListings   Int
+  totalSales      Int
+  totalVolumeUsd  Float
+
+  // Price trends
+  avgPriceChange  Float?   // Average % change across all cards
+  cardsUp         Int?     // Cards with positive change
+  cardsDown       Int?     // Cards with negative change
+  cardsStable     Int?
+
+  // Top movers
+  topGainers      Json     // [{ cardId, name, changePct }]
+  topLosers       Json
+  mostVolume      Json
+  mostActive      Json     // Most sales
+
+  // By source
+  volumeBySource  Json     // { EBAY: 100000, MAGIC_EDEN: 50000, ... }
+  salesBySource   Json
+
+  // Sentiment
+  overallSentiment Float?
+  sentimentLabel  String?
+  socialMentions  Int?
+
+  // Opportunities
+  opportunitiesFound Int?
+  avgDiscount     Float?
+
+  createdAt       DateTime @default(now())
+
+  @@index([date])
+}
+
+model DailySourceStats {
+  id              String   @id @default(cuid())
+
+  date            DateTime @db.Date
+  source          String
+
+  listingsCollected Int
+  salesCollected  Int
+  volumeUsd       Float
+  uniqueCards     Int
+  avgPrice        Float
+
+  // Health metrics
+  apiCalls        Int?
+  apiErrors       Int?
+  avgLatencyMs    Int?
+
+  createdAt       DateTime @default(now())
+
+  @@unique([date, source])
+  @@index([date])
+  @@index([source])
+}
+
+// ===========================================
+// ML TRAINING DATA EXPORT
+// ===========================================
+
+model MLTrainingExample {
+  id              String   @id @default(cuid())
+
+  // Type
+  taskType        String   // PRICE_PREDICTION, BUY_SIGNAL, SENTIMENT, etc.
+
+  // Input features (flattened for ML)
+  features        Json     // All input features
+
+  // Target/label
+  label           String?  // For classification
+  target          Float?   // For regression
+
+  // Source references
+  cardId          String?
+  cardKey         String?
+  opportunityId   String?
+  thesisRecordId  String?
+
+  // Quality
+  isVerified      Boolean  @default(false) // Human verified
+  confidenceScore Float?
+
+  // Timing
+  featureDate     DateTime // When features were captured
+  labelDate       DateTime? // When outcome was known
+
+  createdAt       DateTime @default(now())
+
+  @@index([taskType])
+  @@index([isVerified])
+  @@index([featureDate])
+  @@index([cardKey])
+}
+
+// ===========================================
+// LEGACY MODELS (kept for backwards compatibility)
+// ===========================================
 
 model Evaluation {
   id               String   @id @default(cuid())
@@ -128,26 +1005,23 @@ model WatchlistItem {
   card Card @relation(fields: [cardId], references: [id])
 }
 
-// === PHASE 1: PokeDAO Core Tables ===
-
 model SourceCatalogItem {
   id           String   @id @default(cuid())
-  source       String   // "collector_crypt", "ebay", "fanatics", "goldin"
-  sourceItemId String   // External ID from source
-  title        String   // Raw title from source
-  setName      String?  // Parsed/normalized set name  
-  number       String?  // Card number
-  grade        String?  // PSA 10, BGS 9.5, etc.
-  url          String   // Link to original listing
-  cardKey      String?  // Normalized key for grouping
-  cardId       String?  // Link to canonical Card
+  source       String
+  sourceItemId String
+  title        String
+  setName      String?
+  number       String?
+  grade        String?
+  url          String
+  cardKey      String?
+  cardId       String?
   lastSeenAt   DateTime @default(now())
   createdAt    DateTime @default(now())
-  
-  // Relations
+
   card         Card?         @relation(fields: [cardId], references: [id])
   insights     ModelInsight[] @relation("CatalogInsights")
-  
+
   @@unique([source, sourceItemId])
   @@index([cardKey])
   @@index([source, lastSeenAt])
@@ -156,17 +1030,16 @@ model SourceCatalogItem {
 
 model PriceCache {
   id          String   @id @default(cuid())
-  cardKey     String   // Normalized card identifier
-  cardId      String?  // Optional link to canonical card
-  windowDays  Int      // 7, 30, 90
+  cardKey     String
+  cardId      String?
+  windowDays  Int
   median      Decimal  @db.Decimal(10,2)
-  iqr         Decimal  @db.Decimal(10,2) // Interquartile range
-  sampleSize  Int      // Number of listings used
+  iqr         Decimal  @db.Decimal(10,2)
+  sampleSize  Int
   updatedAt   DateTime @default(now())
-  
-  // Relations
+
   card        Card?    @relation(fields: [cardId], references: [id])
-  
+
   @@unique([cardKey, windowDays])
   @@index([cardKey])
   @@index([cardId])
@@ -174,23 +1047,22 @@ model PriceCache {
 
 model ModelInsight {
   id               String   @id @default(cuid())
-  cardKey          String?  // If normalized
-  cardId           String?  // Link to canonical card
-  catalogItemId    String?  // Link to SourceCatalogItem
-  verdict          String   // "BUY", "WATCH", "AVOID"
+  cardKey          String?
+  cardId           String?
+  catalogItemId    String?
+  verdict          String
   fairValue        Decimal? @db.Decimal(10,2)
-  confidence       Float    // 0.0 to 1.0
-  risks            String[] // Array of risk factors
-  rationale        String?  // AI explanation text
-  inputHash        String   // Hash of input data for caching
+  confidence       Float
+  risks            String[]
+  rationale        String?
+  inputHash        String
   model            String   @default("deepseek")
-  expiresAt        DateTime // TTL for cache invalidation
+  expiresAt        DateTime
   createdAt        DateTime @default(now())
-  
-  // Relations
+
   card             Card?              @relation(fields: [cardId], references: [id])
   catalogItem      SourceCatalogItem? @relation("CatalogInsights", fields: [catalogItemId], references: [id])
-  
+
   @@unique([inputHash])
   @@index([cardKey, createdAt])
   @@index([verdict, expiresAt])
@@ -199,35 +1071,33 @@ model ModelInsight {
 }
 
 model ScrapeCursor {
-  id        String   @id @default(cuid()) 
-  source    String   @unique // "collector_crypt", "ebay", etc.
-  cursor    String   // JSON or string cursor for pagination
+  id        String   @id @default(cuid())
+  source    String   @unique
+  cursor    String
   updatedAt DateTime @default(now())
 }
 
 model RateBudget {
   id            String   @id @default(cuid())
   source        String   @unique
-  maxPerWindow  Int      // Max requests per window
-  windowSec     Int      // Window size in seconds
+  maxPerWindow  Int
+  windowSec     Int
   lastResetAt   DateTime @default(now())
   usedCount     Int      @default(0)
 
   @@index([source, lastResetAt])
 }
 
-// === PHASE 2: Bloomberg Terminal Tables ===
-
 model PriceHistory {
   id        String   @id @default(cuid())
-  cardKey   String   // Normalized card identifier
-  cardId    String?  // Link to canonical card
-  source    String   // Venue: eBay, JustTCG, etc.
-  priceCents Int     // Price in cents
-  soldAt    DateTime // When the sale occurred
-  condition String?  // Near Mint, Played, etc.
-  grade     String?  // PSA 10, BGS 9.5
-  url       String?  // Original listing URL
+  cardKey   String
+  cardId    String?
+  source    String
+  priceCents Int
+  soldAt    DateTime
+  condition String?
+  grade     String?
+  url       String?
   createdAt DateTime @default(now())
 
   @@index([cardKey, soldAt])
@@ -246,57 +1116,28 @@ model Portfolio {
   holdings  PortfolioHolding[]
 }
 
-model PortfolioHolding {
-  id            String   @id @default(cuid())
-  portfolioId   String
-  cardId        String?  // Link to canonical card
-  cardKey       String   // Normalized key for lookups
-  cardName      String   // Display name
-  setName       String?
-  grade         String?
-  quantity      Int      @default(1)
-  costBasisCents Int     // Total cost in cents
-  purchaseDate  DateTime @default(now())
-  purchaseVenue String?  // Where bought
-  notes         String?
-  soldAt        DateTime?
-  soldPriceCents Int?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-
-  portfolio Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
-
-  @@index([portfolioId, cardKey])
-  @@index([cardId])
-}
-
 model UserPreferences {
   id                 String   @id @default(cuid())
   userId             String   @unique
-
-  // Alert settings
   alertsEnabled      Boolean  @default(true)
   minSpreadPct       Float    @default(15.0)
-  minPriceCents      Int      @default(500)    // $5 minimum
-  maxPriceCents      Int      @default(100000) // $1000 maximum
+  minPriceCents      Int      @default(500)
+  maxPriceCents      Int      @default(100000)
   alertGrades        String[] @default(["PSA 10", "PSA 9", "BGS 9.5", "CGC 10"])
   alertSources       String[] @default(["eBay", "JustTCG", "Phygitals"])
   maxAlertsPerHour   Int      @default(10)
-  quietHoursStart    Int?     // Hour in UTC (0-23)
-  quietHoursEnd      Int?     // Hour in UTC (0-23)
-
-  // Snooze/ignore tracking
-  snoozedCards       String[] @default([])
+  quietHoursStart    String?
+  quietHoursEnd      String?
+  minDiscountPct     Float    @default(10.0)
+  minPriceUsd        Float    @default(0)
+  maxPriceUsd        Float    @default(10000)
+  grades             String[] @default(["PSA 10", "PSA 9", "CGC 10", "BGS 10"])
+  snoozedCards       Json     @default("{}")
   snoozedUntil       DateTime?
-
-  // Token gating
   tokenGateEnabled   Boolean  @default(false)
   minTokenBalance    Int      @default(0)
-
-  // Display preferences
   currency           String   @default("USD")
   timezone           String   @default("UTC")
-
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 
@@ -305,16 +1146,16 @@ model UserPreferences {
 
 model MarketCommentary {
   id           String   @id @default(cuid())
-  type         String   // "daily", "weekly", "alert"
+  type         String
   title        String
-  content      String   // Full commentary text
-  highlights   String[] // Key points
-  topCards     String[] // Card IDs mentioned
-  sentiment    String?  // "bullish", "bearish", "neutral"
+  content      String
+  highlights   String[]
+  topCards     String[]
+  sentiment    String?
   model        String   @default("deepseek")
   publishedAt  DateTime?
-  xPostId      String?  // X/Twitter post ID if posted
-  telegramMsgId String? // Telegram message ID
+  xPostId      String?
+  telegramMsgId String?
   createdAt    DateTime @default(now())
 
   @@index([type, createdAt])

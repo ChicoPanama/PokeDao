@@ -9,7 +9,8 @@
  * @inspired_by Data quality patterns from marketplace analysis systems
  */
 
-import { Decimal } from '@prisma/client/runtime/library';
+// Decimal-compatible type (accepts number or Decimal-like objects with toNumber())
+type DecimalLike = number | { toNumber(): number };
 
 export interface ValidationResult {
   isValid: boolean;
@@ -40,7 +41,7 @@ export interface CardDataInput {
   variant?: string;
   condition?: string;
   grade?: string | number;
-  price?: string | number | Decimal;
+  price?: string | number | DecimalLike;
   currency?: string;
   marketplace?: string;
   url?: string;
@@ -49,7 +50,7 @@ export interface CardDataInput {
 }
 
 export interface PriceDataInput {
-  price: string | number | Decimal;
+  price: string | number | DecimalLike;
   currency?: string;
   condition?: string;
   grade?: string | number;
@@ -57,8 +58,8 @@ export interface PriceDataInput {
   listingType?: 'auction' | 'buy_it_now' | 'best_offer';
   soldAt?: Date | string;
   listedAt?: Date | string;
-  shippingCost?: string | number | Decimal;
-  totalCost?: string | number | Decimal;
+  shippingCost?: string | number | DecimalLike;
+  totalCost?: string | number | DecimalLike;
 }
 
 /**
@@ -232,8 +233,8 @@ export class DataValidator {
         // Remove common currency symbols and formatting
         const cleanPrice = data.price.replace(/[$,£€¥\s]/g, '');
         priceValue = parseFloat(cleanPrice);
-      } else if (data.price instanceof Decimal) {
-        priceValue = data.price.toNumber();
+      } else if (typeof data.price === 'object' && data.price !== null && 'toNumber' in data.price) {
+        priceValue = (data.price as { toNumber(): number }).toNumber();
       } else {
         priceValue = Number(data.price);
       }

@@ -71,6 +71,10 @@ research-backup*/
 data/collector-crypt/*.json
 data/courtyard/*.json
 data/phygitals/*.json
+data/ebay-harvest/
+
+# Generated images
+api/data/images/
 
 # Training data files (generated artifacts)
 data/training/*.jsonl

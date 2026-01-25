@@ -31,11 +31,11 @@ services:
       timeout: 3s
       retries: 20
 
-  web:
+  api:
     build:
       context: .
       dockerfile: ./api/Dockerfile
-    container_name: pokedao-web
+    container_name: pokedao-api
     ports:
       - "3000:3000"
     environment:
@@ -57,28 +57,57 @@ services:
       timeout: 2s
       retries: 12
 
-  worker:
+  workers:
     build:
       context: .
-      dockerfile: ./worker/Dockerfile
-    container_name: pokedao-worker
+      dockerfile: ./apps/agent/Dockerfile
+    container_name: pokedao-workers
+    command: ["pnpm", "run", "workers"]
     environment:
       NODE_ENV: development
       DATABASE_URL: "postgresql://pokedao:pokedao@db:5432/pokedao"
       REDIS_URL: "redis://redis:6379"
-    volumes:
-      - ./worker:/app
-      - /app/node_modules
+      DATA_WORKERS_ENABLED: "true"
     depends_on:
       db:
         condition: service_healthy
       redis:
         condition: service_healthy
-    healthcheck:
-      test: ["CMD", "node", "-e", "process.exit(0)"]
-      interval: 5s
-      timeout: 2s
-      retries: 12
+
+  processor:
+    build:
+      context: .
+      dockerfile: ./apps/agent/Dockerfile
+    container_name: pokedao-processor
+    command: ["pnpm", "run", "processor"]
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: "postgresql://pokedao:pokedao@db:5432/pokedao"
+      REDIS_URL: "redis://redis:6379"
+      GROQ_API_KEY: "${GROQ_API_KEY:-}"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      workers:
+        condition: service_started
+
+  warehouse:
+    build:
+      context: .
+      dockerfile: ./apps/agent/Dockerfile
+    container_name: pokedao-warehouse
+    command: ["pnpm", "run", "warehouse"]
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: "postgresql://pokedao:pokedao@db:5432/pokedao"
+      REDIS_URL: "redis://redis:6379"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
 
   bot:
     build:
@@ -87,7 +116,7 @@ services:
     container_name: pokedao-bot
     environment:
       NODE_ENV: development
-      BOT_TOKEN: ${BOT_TOKEN:-dummy_token}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-dummy_token}
       DATABASE_URL: "postgresql://pokedao:pokedao@db:5432/pokedao"
       REDIS_URL: "redis://redis:6379"
     volumes:
@@ -98,11 +127,20 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
-    healthcheck:
-      test: ["CMD", "node", "-e", "process.exit(0)"]
-      interval: 5s
-      timeout: 2s
-      retries: 12
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: ./apps/dashboard/Dockerfile
+    container_name: pokedao-dashboard
+    ports:
+      - "3001:3000"
+    environment:
+      NODE_ENV: development
+      NEXT_PUBLIC_API_URL: "http://api:3000"
+    depends_on:
+      api:
+        condition: service_healthy
 
 volumes:
   postgres_data:
