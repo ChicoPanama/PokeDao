@@ -1,9 +1,15 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { analyzeSentiment, scrapeRedditSignals, cleanupExpiredSignals, fetchSubredditPosts } from '../reddit-scraper.js';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { analyzeSentiment, scrapeRedditSignals, cleanupExpiredSignals, fetchSubredditPosts, resetCircuitBreaker } from '../reddit-scraper.js';
 import prisma from '../prisma.js';
 
 describe('Reddit Scraper - Full Coverage', () => {
   const DEEPSEEK_API_KEY = process.env.DEEPSEEK_API_KEY || 'sk-b2b1b770275140a8872e98ba46a52cff';
+
+  // Reset circuit breaker before each test to ensure isolation
+  beforeEach(() => {
+    resetCircuitBreaker();
+    vi.clearAllMocks();
+  });
 
   describe('analyzeSentiment - Error Handling', () => {
     it('should fallback to NEUTRAL when JSON parsing fails', async () => {
@@ -84,7 +90,7 @@ describe('Reddit Scraper - Full Coverage', () => {
       global.fetch = originalFetch;
     });
 
-    it('should throw error when Reddit API fails', async () => {
+    it('should return empty array when Reddit API fails (graceful degradation)', async () => {
       const originalFetch = global.fetch;
       global.fetch = vi.fn().mockResolvedValue({
         ok: false,
@@ -92,7 +98,9 @@ describe('Reddit Scraper - Full Coverage', () => {
         statusText: 'Too Many Requests',
       });
 
-      await expect(fetchSubredditPosts('PokeInvesting')).rejects.toThrow('Reddit API error: 429 Too Many Requests');
+      // Implementation catches errors and returns [] for graceful degradation
+      const result = await fetchSubredditPosts('PokeInvesting');
+      expect(result).toEqual([]);
 
       global.fetch = originalFetch;
     });

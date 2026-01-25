@@ -27,33 +27,39 @@ export type AggregateUser = {
 export type UserMinAggregateOutputType = {
   id: string | null
   telegramId: string | null
+  discordId: string | null
   username: string | null
   firstName: string | null
   lastName: string | null
   referralCode: string | null
   referredBy: string | null
+  walletAddress: string | null
   createdAt: Date | null
 }
 
 export type UserMaxAggregateOutputType = {
   id: string | null
   telegramId: string | null
+  discordId: string | null
   username: string | null
   firstName: string | null
   lastName: string | null
   referralCode: string | null
   referredBy: string | null
+  walletAddress: string | null
   createdAt: Date | null
 }
 
 export type UserCountAggregateOutputType = {
   id: number
   telegramId: number
+  discordId: number
   username: number
   firstName: number
   lastName: number
   referralCode: number
   referredBy: number
+  walletAddress: number
   createdAt: number
   _all: number
 }
@@ -62,33 +68,39 @@ export type UserCountAggregateOutputType = {
 export type UserMinAggregateInputType = {
   id?: true
   telegramId?: true
+  discordId?: true
   username?: true
   firstName?: true
   lastName?: true
   referralCode?: true
   referredBy?: true
+  walletAddress?: true
   createdAt?: true
 }
 
 export type UserMaxAggregateInputType = {
   id?: true
   telegramId?: true
+  discordId?: true
   username?: true
   firstName?: true
   lastName?: true
   referralCode?: true
   referredBy?: true
+  walletAddress?: true
   createdAt?: true
 }
 
 export type UserCountAggregateInputType = {
   id?: true
   telegramId?: true
+  discordId?: true
   username?: true
   firstName?: true
   lastName?: true
   referralCode?: true
   referredBy?: true
+  walletAddress?: true
   createdAt?: true
   _all?: true
 }
@@ -167,12 +179,14 @@ export type UserGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
 
 export type UserGroupByOutputType = {
   id: string
-  telegramId: string
+  telegramId: string | null
+  discordId: string | null
   username: string | null
   firstName: string | null
   lastName: string | null
   referralCode: string
   referredBy: string | null
+  walletAddress: string | null
   createdAt: Date
   _count: UserCountAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
@@ -199,37 +213,50 @@ export type UserWhereInput = {
   OR?: Prisma.UserWhereInput[]
   NOT?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   id?: Prisma.StringFilter<"User"> | string
-  telegramId?: Prisma.StringFilter<"User"> | string
+  telegramId?: Prisma.StringNullableFilter<"User"> | string | null
+  discordId?: Prisma.StringNullableFilter<"User"> | string | null
   username?: Prisma.StringNullableFilter<"User"> | string | null
   firstName?: Prisma.StringNullableFilter<"User"> | string | null
   lastName?: Prisma.StringNullableFilter<"User"> | string | null
   referralCode?: Prisma.StringFilter<"User"> | string
   referredBy?: Prisma.StringNullableFilter<"User"> | string | null
+  walletAddress?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   purchases?: Prisma.PurchaseListRelationFilter
   watchlistItems?: Prisma.WatchlistItemListRelationFilter
   referralEvents?: Prisma.ReferralEventListRelationFilter
   preferences?: Prisma.XOR<Prisma.UserPreferenceNullableScalarRelationFilter, Prisma.UserPreferenceWhereInput> | null
+  userQueries?: Prisma.UserQueryListRelationFilter
+  userActions?: Prisma.UserActionListRelationFilter
+  userOutcomes?: Prisma.UserOutcomeListRelationFilter
+  alertDeliveries?: Prisma.AlertDeliveryListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  telegramId?: Prisma.SortOrder
+  telegramId?: Prisma.SortOrderInput | Prisma.SortOrder
+  discordId?: Prisma.SortOrderInput | Prisma.SortOrder
   username?: Prisma.SortOrderInput | Prisma.SortOrder
   firstName?: Prisma.SortOrderInput | Prisma.SortOrder
   lastName?: Prisma.SortOrderInput | Prisma.SortOrder
   referralCode?: Prisma.SortOrder
   referredBy?: Prisma.SortOrderInput | Prisma.SortOrder
+  walletAddress?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   purchases?: Prisma.PurchaseOrderByRelationAggregateInput
   watchlistItems?: Prisma.WatchlistItemOrderByRelationAggregateInput
   referralEvents?: Prisma.ReferralEventOrderByRelationAggregateInput
   preferences?: Prisma.UserPreferenceOrderByWithRelationInput
+  userQueries?: Prisma.UserQueryOrderByRelationAggregateInput
+  userActions?: Prisma.UserActionOrderByRelationAggregateInput
+  userOutcomes?: Prisma.UserOutcomeOrderByRelationAggregateInput
+  alertDeliveries?: Prisma.AlertDeliveryOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   telegramId?: string
+  discordId?: string
   referralCode?: string
   AND?: Prisma.UserWhereInput | Prisma.UserWhereInput[]
   OR?: Prisma.UserWhereInput[]
@@ -238,21 +265,28 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   firstName?: Prisma.StringNullableFilter<"User"> | string | null
   lastName?: Prisma.StringNullableFilter<"User"> | string | null
   referredBy?: Prisma.StringNullableFilter<"User"> | string | null
+  walletAddress?: Prisma.StringNullableFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeFilter<"User"> | Date | string
   purchases?: Prisma.PurchaseListRelationFilter
   watchlistItems?: Prisma.WatchlistItemListRelationFilter
   referralEvents?: Prisma.ReferralEventListRelationFilter
   preferences?: Prisma.XOR<Prisma.UserPreferenceNullableScalarRelationFilter, Prisma.UserPreferenceWhereInput> | null
-}, "id" | "telegramId" | "referralCode">
+  userQueries?: Prisma.UserQueryListRelationFilter
+  userActions?: Prisma.UserActionListRelationFilter
+  userOutcomes?: Prisma.UserOutcomeListRelationFilter
+  alertDeliveries?: Prisma.AlertDeliveryListRelationFilter
+}, "id" | "telegramId" | "discordId" | "referralCode">
 
 export type UserOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  telegramId?: Prisma.SortOrder
+  telegramId?: Prisma.SortOrderInput | Prisma.SortOrder
+  discordId?: Prisma.SortOrderInput | Prisma.SortOrder
   username?: Prisma.SortOrderInput | Prisma.SortOrder
   firstName?: Prisma.SortOrderInput | Prisma.SortOrder
   lastName?: Prisma.SortOrderInput | Prisma.SortOrder
   referralCode?: Prisma.SortOrder
   referredBy?: Prisma.SortOrderInput | Prisma.SortOrder
+  walletAddress?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.UserCountOrderByAggregateInput
   _max?: Prisma.UserMaxOrderByAggregateInput
@@ -264,138 +298,176 @@ export type UserScalarWhereWithAggregatesInput = {
   OR?: Prisma.UserScalarWhereWithAggregatesInput[]
   NOT?: Prisma.UserScalarWhereWithAggregatesInput | Prisma.UserScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"User"> | string
-  telegramId?: Prisma.StringWithAggregatesFilter<"User"> | string
+  telegramId?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  discordId?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   username?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   firstName?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   lastName?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   referralCode?: Prisma.StringWithAggregatesFilter<"User"> | string
   referredBy?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
+  walletAddress?: Prisma.StringNullableWithAggregatesFilter<"User"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"User"> | Date | string
 }
 
 export type UserCreateInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   purchases?: Prisma.PurchaseCreateNestedManyWithoutUserInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutUserInput
   referralEvents?: Prisma.ReferralEventCreateNestedManyWithoutUserInput
   preferences?: Prisma.UserPreferenceCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutUserInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutUserInput
   referralEvents?: Prisma.ReferralEventUncheckedCreateNestedManyWithoutUserInput
   preferences?: Prisma.UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryUncheckedCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionUncheckedCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   purchases?: Prisma.PurchaseUpdateManyWithoutUserNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutUserNestedInput
   referralEvents?: Prisma.ReferralEventUpdateManyWithoutUserNestedInput
   preferences?: Prisma.UserPreferenceUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutUserNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutUserNestedInput
   referralEvents?: Prisma.ReferralEventUncheckedUpdateManyWithoutUserNestedInput
   preferences?: Prisma.UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUncheckedUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUncheckedUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
 }
 
 export type UserUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type UserCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   telegramId?: Prisma.SortOrder
+  discordId?: Prisma.SortOrder
   username?: Prisma.SortOrder
   firstName?: Prisma.SortOrder
   lastName?: Prisma.SortOrder
   referralCode?: Prisma.SortOrder
   referredBy?: Prisma.SortOrder
+  walletAddress?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
 export type UserMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   telegramId?: Prisma.SortOrder
+  discordId?: Prisma.SortOrder
   username?: Prisma.SortOrder
   firstName?: Prisma.SortOrder
   lastName?: Prisma.SortOrder
   referralCode?: Prisma.SortOrder
   referredBy?: Prisma.SortOrder
+  walletAddress?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
 export type UserMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   telegramId?: Prisma.SortOrder
+  discordId?: Prisma.SortOrder
   username?: Prisma.SortOrder
   firstName?: Prisma.SortOrder
   lastName?: Prisma.SortOrder
   referralCode?: Prisma.SortOrder
   referredBy?: Prisma.SortOrder
+  walletAddress?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -460,32 +532,100 @@ export type UserUpdateOneRequiredWithoutWatchlistItemsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutWatchlistItemsInput, Prisma.UserUpdateWithoutWatchlistItemsInput>, Prisma.UserUncheckedUpdateWithoutWatchlistItemsInput>
 }
 
+export type UserCreateNestedOneWithoutUserQueriesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutUserQueriesInput, Prisma.UserUncheckedCreateWithoutUserQueriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutUserQueriesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutUserQueriesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutUserQueriesInput, Prisma.UserUncheckedCreateWithoutUserQueriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutUserQueriesInput
+  upsert?: Prisma.UserUpsertWithoutUserQueriesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutUserQueriesInput, Prisma.UserUpdateWithoutUserQueriesInput>, Prisma.UserUncheckedUpdateWithoutUserQueriesInput>
+}
+
+export type UserCreateNestedOneWithoutUserActionsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutUserActionsInput, Prisma.UserUncheckedCreateWithoutUserActionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutUserActionsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutUserActionsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutUserActionsInput, Prisma.UserUncheckedCreateWithoutUserActionsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutUserActionsInput
+  upsert?: Prisma.UserUpsertWithoutUserActionsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutUserActionsInput, Prisma.UserUpdateWithoutUserActionsInput>, Prisma.UserUncheckedUpdateWithoutUserActionsInput>
+}
+
+export type UserCreateNestedOneWithoutUserOutcomesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutUserOutcomesInput, Prisma.UserUncheckedCreateWithoutUserOutcomesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutUserOutcomesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutUserOutcomesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutUserOutcomesInput, Prisma.UserUncheckedCreateWithoutUserOutcomesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutUserOutcomesInput
+  upsert?: Prisma.UserUpsertWithoutUserOutcomesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutUserOutcomesInput, Prisma.UserUpdateWithoutUserOutcomesInput>, Prisma.UserUncheckedUpdateWithoutUserOutcomesInput>
+}
+
+export type UserCreateNestedOneWithoutAlertDeliveriesInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAlertDeliveriesInput, Prisma.UserUncheckedCreateWithoutAlertDeliveriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAlertDeliveriesInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutAlertDeliveriesNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutAlertDeliveriesInput, Prisma.UserUncheckedCreateWithoutAlertDeliveriesInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutAlertDeliveriesInput
+  upsert?: Prisma.UserUpsertWithoutAlertDeliveriesInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutAlertDeliveriesInput, Prisma.UserUpdateWithoutAlertDeliveriesInput>, Prisma.UserUncheckedUpdateWithoutAlertDeliveriesInput>
+}
+
 export type UserCreateWithoutPreferencesInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   purchases?: Prisma.PurchaseCreateNestedManyWithoutUserInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutUserInput
   referralEvents?: Prisma.ReferralEventCreateNestedManyWithoutUserInput
+  userQueries?: Prisma.UserQueryCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutPreferencesInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutUserInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutUserInput
   referralEvents?: Prisma.ReferralEventUncheckedCreateNestedManyWithoutUserInput
+  userQueries?: Prisma.UserQueryUncheckedCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionUncheckedCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutPreferencesInput = {
@@ -506,58 +646,82 @@ export type UserUpdateToOneWithWhereWithoutPreferencesInput = {
 
 export type UserUpdateWithoutPreferencesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   purchases?: Prisma.PurchaseUpdateManyWithoutUserNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutUserNestedInput
   referralEvents?: Prisma.ReferralEventUpdateManyWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPreferencesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutUserNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutUserNestedInput
   referralEvents?: Prisma.ReferralEventUncheckedUpdateManyWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUncheckedUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUncheckedUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutReferralEventsInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   purchases?: Prisma.PurchaseCreateNestedManyWithoutUserInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutUserInput
   preferences?: Prisma.UserPreferenceCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutReferralEventsInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutUserInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutUserInput
   preferences?: Prisma.UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryUncheckedCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionUncheckedCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutReferralEventsInput = {
@@ -578,58 +742,82 @@ export type UserUpdateToOneWithWhereWithoutReferralEventsInput = {
 
 export type UserUpdateWithoutReferralEventsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   purchases?: Prisma.PurchaseUpdateManyWithoutUserNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutUserNestedInput
   preferences?: Prisma.UserPreferenceUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutReferralEventsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutUserNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutUserNestedInput
   preferences?: Prisma.UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUncheckedUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUncheckedUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutPurchasesInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutUserInput
   referralEvents?: Prisma.ReferralEventCreateNestedManyWithoutUserInput
   preferences?: Prisma.UserPreferenceCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutPurchasesInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutUserInput
   referralEvents?: Prisma.ReferralEventUncheckedCreateNestedManyWithoutUserInput
   preferences?: Prisma.UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryUncheckedCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionUncheckedCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutPurchasesInput = {
@@ -650,58 +838,82 @@ export type UserUpdateToOneWithWhereWithoutPurchasesInput = {
 
 export type UserUpdateWithoutPurchasesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutUserNestedInput
   referralEvents?: Prisma.ReferralEventUpdateManyWithoutUserNestedInput
   preferences?: Prisma.UserPreferenceUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPurchasesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutUserNestedInput
   referralEvents?: Prisma.ReferralEventUncheckedUpdateManyWithoutUserNestedInput
   preferences?: Prisma.UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUncheckedUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUncheckedUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutWatchlistItemsInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   purchases?: Prisma.PurchaseCreateNestedManyWithoutUserInput
   referralEvents?: Prisma.ReferralEventCreateNestedManyWithoutUserInput
   preferences?: Prisma.UserPreferenceCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutWatchlistItemsInput = {
   id?: string
-  telegramId: string
+  telegramId?: string | null
+  discordId?: string | null
   username?: string | null
   firstName?: string | null
   lastName?: string | null
   referralCode: string
   referredBy?: string | null
+  walletAddress?: string | null
   createdAt?: Date | string
   purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutUserInput
   referralEvents?: Prisma.ReferralEventUncheckedCreateNestedManyWithoutUserInput
   preferences?: Prisma.UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryUncheckedCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionUncheckedCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutWatchlistItemsInput = {
@@ -722,30 +934,426 @@ export type UserUpdateToOneWithWhereWithoutWatchlistItemsInput = {
 
 export type UserUpdateWithoutWatchlistItemsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   purchases?: Prisma.PurchaseUpdateManyWithoutUserNestedInput
   referralEvents?: Prisma.ReferralEventUpdateManyWithoutUserNestedInput
   preferences?: Prisma.UserPreferenceUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutWatchlistItemsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  telegramId?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   referralCode?: Prisma.StringFieldUpdateOperationsInput | string
   referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutUserNestedInput
   referralEvents?: Prisma.ReferralEventUncheckedUpdateManyWithoutUserNestedInput
   preferences?: Prisma.UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUncheckedUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUncheckedUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutUserQueriesInput = {
+  id?: string
+  telegramId?: string | null
+  discordId?: string | null
+  username?: string | null
+  firstName?: string | null
+  lastName?: string | null
+  referralCode: string
+  referredBy?: string | null
+  walletAddress?: string | null
+  createdAt?: Date | string
+  purchases?: Prisma.PurchaseCreateNestedManyWithoutUserInput
+  watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutUserInput
+  referralEvents?: Prisma.ReferralEventCreateNestedManyWithoutUserInput
+  preferences?: Prisma.UserPreferenceCreateNestedOneWithoutUserInput
+  userActions?: Prisma.UserActionCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutUserQueriesInput = {
+  id?: string
+  telegramId?: string | null
+  discordId?: string | null
+  username?: string | null
+  firstName?: string | null
+  lastName?: string | null
+  referralCode: string
+  referredBy?: string | null
+  walletAddress?: string | null
+  createdAt?: Date | string
+  purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutUserInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutUserInput
+  referralEvents?: Prisma.ReferralEventUncheckedCreateNestedManyWithoutUserInput
+  preferences?: Prisma.UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  userActions?: Prisma.UserActionUncheckedCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutUserQueriesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutUserQueriesInput, Prisma.UserUncheckedCreateWithoutUserQueriesInput>
+}
+
+export type UserUpsertWithoutUserQueriesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutUserQueriesInput, Prisma.UserUncheckedUpdateWithoutUserQueriesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutUserQueriesInput, Prisma.UserUncheckedCreateWithoutUserQueriesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutUserQueriesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutUserQueriesInput, Prisma.UserUncheckedUpdateWithoutUserQueriesInput>
+}
+
+export type UserUpdateWithoutUserQueriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referralCode?: Prisma.StringFieldUpdateOperationsInput | string
+  referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  purchases?: Prisma.PurchaseUpdateManyWithoutUserNestedInput
+  watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutUserNestedInput
+  referralEvents?: Prisma.ReferralEventUpdateManyWithoutUserNestedInput
+  preferences?: Prisma.UserPreferenceUpdateOneWithoutUserNestedInput
+  userActions?: Prisma.UserActionUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutUserQueriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referralCode?: Prisma.StringFieldUpdateOperationsInput | string
+  referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutUserNestedInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutUserNestedInput
+  referralEvents?: Prisma.ReferralEventUncheckedUpdateManyWithoutUserNestedInput
+  preferences?: Prisma.UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  userActions?: Prisma.UserActionUncheckedUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutUserActionsInput = {
+  id?: string
+  telegramId?: string | null
+  discordId?: string | null
+  username?: string | null
+  firstName?: string | null
+  lastName?: string | null
+  referralCode: string
+  referredBy?: string | null
+  walletAddress?: string | null
+  createdAt?: Date | string
+  purchases?: Prisma.PurchaseCreateNestedManyWithoutUserInput
+  watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutUserInput
+  referralEvents?: Prisma.ReferralEventCreateNestedManyWithoutUserInput
+  preferences?: Prisma.UserPreferenceCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutUserActionsInput = {
+  id?: string
+  telegramId?: string | null
+  discordId?: string | null
+  username?: string | null
+  firstName?: string | null
+  lastName?: string | null
+  referralCode: string
+  referredBy?: string | null
+  walletAddress?: string | null
+  createdAt?: Date | string
+  purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutUserInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutUserInput
+  referralEvents?: Prisma.ReferralEventUncheckedCreateNestedManyWithoutUserInput
+  preferences?: Prisma.UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryUncheckedCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutUserActionsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutUserActionsInput, Prisma.UserUncheckedCreateWithoutUserActionsInput>
+}
+
+export type UserUpsertWithoutUserActionsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutUserActionsInput, Prisma.UserUncheckedUpdateWithoutUserActionsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutUserActionsInput, Prisma.UserUncheckedCreateWithoutUserActionsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutUserActionsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutUserActionsInput, Prisma.UserUncheckedUpdateWithoutUserActionsInput>
+}
+
+export type UserUpdateWithoutUserActionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referralCode?: Prisma.StringFieldUpdateOperationsInput | string
+  referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  purchases?: Prisma.PurchaseUpdateManyWithoutUserNestedInput
+  watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutUserNestedInput
+  referralEvents?: Prisma.ReferralEventUpdateManyWithoutUserNestedInput
+  preferences?: Prisma.UserPreferenceUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutUserActionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referralCode?: Prisma.StringFieldUpdateOperationsInput | string
+  referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutUserNestedInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutUserNestedInput
+  referralEvents?: Prisma.ReferralEventUncheckedUpdateManyWithoutUserNestedInput
+  preferences?: Prisma.UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUncheckedUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutUserOutcomesInput = {
+  id?: string
+  telegramId?: string | null
+  discordId?: string | null
+  username?: string | null
+  firstName?: string | null
+  lastName?: string | null
+  referralCode: string
+  referredBy?: string | null
+  walletAddress?: string | null
+  createdAt?: Date | string
+  purchases?: Prisma.PurchaseCreateNestedManyWithoutUserInput
+  watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutUserInput
+  referralEvents?: Prisma.ReferralEventCreateNestedManyWithoutUserInput
+  preferences?: Prisma.UserPreferenceCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutUserOutcomesInput = {
+  id?: string
+  telegramId?: string | null
+  discordId?: string | null
+  username?: string | null
+  firstName?: string | null
+  lastName?: string | null
+  referralCode: string
+  referredBy?: string | null
+  walletAddress?: string | null
+  createdAt?: Date | string
+  purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutUserInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutUserInput
+  referralEvents?: Prisma.ReferralEventUncheckedCreateNestedManyWithoutUserInput
+  preferences?: Prisma.UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryUncheckedCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionUncheckedCreateNestedManyWithoutUserInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutUserOutcomesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutUserOutcomesInput, Prisma.UserUncheckedCreateWithoutUserOutcomesInput>
+}
+
+export type UserUpsertWithoutUserOutcomesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutUserOutcomesInput, Prisma.UserUncheckedUpdateWithoutUserOutcomesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutUserOutcomesInput, Prisma.UserUncheckedCreateWithoutUserOutcomesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutUserOutcomesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutUserOutcomesInput, Prisma.UserUncheckedUpdateWithoutUserOutcomesInput>
+}
+
+export type UserUpdateWithoutUserOutcomesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referralCode?: Prisma.StringFieldUpdateOperationsInput | string
+  referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  purchases?: Prisma.PurchaseUpdateManyWithoutUserNestedInput
+  watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutUserNestedInput
+  referralEvents?: Prisma.ReferralEventUpdateManyWithoutUserNestedInput
+  preferences?: Prisma.UserPreferenceUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutUserOutcomesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referralCode?: Prisma.StringFieldUpdateOperationsInput | string
+  referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutUserNestedInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutUserNestedInput
+  referralEvents?: Prisma.ReferralEventUncheckedUpdateManyWithoutUserNestedInput
+  preferences?: Prisma.UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUncheckedUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUncheckedUpdateManyWithoutUserNestedInput
+  alertDeliveries?: Prisma.AlertDeliveryUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutAlertDeliveriesInput = {
+  id?: string
+  telegramId?: string | null
+  discordId?: string | null
+  username?: string | null
+  firstName?: string | null
+  lastName?: string | null
+  referralCode: string
+  referredBy?: string | null
+  walletAddress?: string | null
+  createdAt?: Date | string
+  purchases?: Prisma.PurchaseCreateNestedManyWithoutUserInput
+  watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutUserInput
+  referralEvents?: Prisma.ReferralEventCreateNestedManyWithoutUserInput
+  preferences?: Prisma.UserPreferenceCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutAlertDeliveriesInput = {
+  id?: string
+  telegramId?: string | null
+  discordId?: string | null
+  username?: string | null
+  firstName?: string | null
+  lastName?: string | null
+  referralCode: string
+  referredBy?: string | null
+  walletAddress?: string | null
+  createdAt?: Date | string
+  purchases?: Prisma.PurchaseUncheckedCreateNestedManyWithoutUserInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutUserInput
+  referralEvents?: Prisma.ReferralEventUncheckedCreateNestedManyWithoutUserInput
+  preferences?: Prisma.UserPreferenceUncheckedCreateNestedOneWithoutUserInput
+  userQueries?: Prisma.UserQueryUncheckedCreateNestedManyWithoutUserInput
+  userActions?: Prisma.UserActionUncheckedCreateNestedManyWithoutUserInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutAlertDeliveriesInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutAlertDeliveriesInput, Prisma.UserUncheckedCreateWithoutAlertDeliveriesInput>
+}
+
+export type UserUpsertWithoutAlertDeliveriesInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutAlertDeliveriesInput, Prisma.UserUncheckedUpdateWithoutAlertDeliveriesInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutAlertDeliveriesInput, Prisma.UserUncheckedCreateWithoutAlertDeliveriesInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutAlertDeliveriesInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutAlertDeliveriesInput, Prisma.UserUncheckedUpdateWithoutAlertDeliveriesInput>
+}
+
+export type UserUpdateWithoutAlertDeliveriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referralCode?: Prisma.StringFieldUpdateOperationsInput | string
+  referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  purchases?: Prisma.PurchaseUpdateManyWithoutUserNestedInput
+  watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutUserNestedInput
+  referralEvents?: Prisma.ReferralEventUpdateManyWithoutUserNestedInput
+  preferences?: Prisma.UserPreferenceUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutAlertDeliveriesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  telegramId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  discordId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  username?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  referralCode?: Prisma.StringFieldUpdateOperationsInput | string
+  referredBy?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  walletAddress?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  purchases?: Prisma.PurchaseUncheckedUpdateManyWithoutUserNestedInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutUserNestedInput
+  referralEvents?: Prisma.ReferralEventUncheckedUpdateManyWithoutUserNestedInput
+  preferences?: Prisma.UserPreferenceUncheckedUpdateOneWithoutUserNestedInput
+  userQueries?: Prisma.UserQueryUncheckedUpdateManyWithoutUserNestedInput
+  userActions?: Prisma.UserActionUncheckedUpdateManyWithoutUserNestedInput
+  userOutcomes?: Prisma.UserOutcomeUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -757,12 +1365,20 @@ export type UserCountOutputType = {
   purchases: number
   watchlistItems: number
   referralEvents: number
+  userQueries: number
+  userActions: number
+  userOutcomes: number
+  alertDeliveries: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   purchases?: boolean | UserCountOutputTypeCountPurchasesArgs
   watchlistItems?: boolean | UserCountOutputTypeCountWatchlistItemsArgs
   referralEvents?: boolean | UserCountOutputTypeCountReferralEventsArgs
+  userQueries?: boolean | UserCountOutputTypeCountUserQueriesArgs
+  userActions?: boolean | UserCountOutputTypeCountUserActionsArgs
+  userOutcomes?: boolean | UserCountOutputTypeCountUserOutcomesArgs
+  alertDeliveries?: boolean | UserCountOutputTypeCountAlertDeliveriesArgs
 }
 
 /**
@@ -796,62 +1412,106 @@ export type UserCountOutputTypeCountReferralEventsArgs<ExtArgs extends runtime.T
   where?: Prisma.ReferralEventWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountUserQueriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserQueryWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountUserActionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserActionWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountUserOutcomesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserOutcomeWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountAlertDeliveriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.AlertDeliveryWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   telegramId?: boolean
+  discordId?: boolean
   username?: boolean
   firstName?: boolean
   lastName?: boolean
   referralCode?: boolean
   referredBy?: boolean
+  walletAddress?: boolean
   createdAt?: boolean
   purchases?: boolean | Prisma.User$purchasesArgs<ExtArgs>
   watchlistItems?: boolean | Prisma.User$watchlistItemsArgs<ExtArgs>
   referralEvents?: boolean | Prisma.User$referralEventsArgs<ExtArgs>
   preferences?: boolean | Prisma.User$preferencesArgs<ExtArgs>
+  userQueries?: boolean | Prisma.User$userQueriesArgs<ExtArgs>
+  userActions?: boolean | Prisma.User$userActionsArgs<ExtArgs>
+  userOutcomes?: boolean | Prisma.User$userOutcomesArgs<ExtArgs>
+  alertDeliveries?: boolean | Prisma.User$alertDeliveriesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   telegramId?: boolean
+  discordId?: boolean
   username?: boolean
   firstName?: boolean
   lastName?: boolean
   referralCode?: boolean
   referredBy?: boolean
+  walletAddress?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   telegramId?: boolean
+  discordId?: boolean
   username?: boolean
   firstName?: boolean
   lastName?: boolean
   referralCode?: boolean
   referredBy?: boolean
+  walletAddress?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["user"]>
 
 export type UserSelectScalar = {
   id?: boolean
   telegramId?: boolean
+  discordId?: boolean
   username?: boolean
   firstName?: boolean
   lastName?: boolean
   referralCode?: boolean
   referredBy?: boolean
+  walletAddress?: boolean
   createdAt?: boolean
 }
 
-export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "telegramId" | "username" | "firstName" | "lastName" | "referralCode" | "referredBy" | "createdAt", ExtArgs["result"]["user"]>
+export type UserOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "telegramId" | "discordId" | "username" | "firstName" | "lastName" | "referralCode" | "referredBy" | "walletAddress" | "createdAt", ExtArgs["result"]["user"]>
 export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   purchases?: boolean | Prisma.User$purchasesArgs<ExtArgs>
   watchlistItems?: boolean | Prisma.User$watchlistItemsArgs<ExtArgs>
   referralEvents?: boolean | Prisma.User$referralEventsArgs<ExtArgs>
   preferences?: boolean | Prisma.User$preferencesArgs<ExtArgs>
+  userQueries?: boolean | Prisma.User$userQueriesArgs<ExtArgs>
+  userActions?: boolean | Prisma.User$userActionsArgs<ExtArgs>
+  userOutcomes?: boolean | Prisma.User$userOutcomesArgs<ExtArgs>
+  alertDeliveries?: boolean | Prisma.User$alertDeliveriesArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -864,15 +1524,21 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     watchlistItems: Prisma.$WatchlistItemPayload<ExtArgs>[]
     referralEvents: Prisma.$ReferralEventPayload<ExtArgs>[]
     preferences: Prisma.$UserPreferencePayload<ExtArgs> | null
+    userQueries: Prisma.$UserQueryPayload<ExtArgs>[]
+    userActions: Prisma.$UserActionPayload<ExtArgs>[]
+    userOutcomes: Prisma.$UserOutcomePayload<ExtArgs>[]
+    alertDeliveries: Prisma.$AlertDeliveryPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    telegramId: string
+    telegramId: string | null
+    discordId: string | null
     username: string | null
     firstName: string | null
     lastName: string | null
     referralCode: string
     referredBy: string | null
+    walletAddress: string | null
     createdAt: Date
   }, ExtArgs["result"]["user"]>
   composites: {}
@@ -1272,6 +1938,10 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   watchlistItems<T extends Prisma.User$watchlistItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$watchlistItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WatchlistItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   referralEvents<T extends Prisma.User$referralEventsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$referralEventsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ReferralEventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   preferences<T extends Prisma.User$preferencesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$preferencesArgs<ExtArgs>>): Prisma.Prisma__UserPreferenceClient<runtime.Types.Result.GetResult<Prisma.$UserPreferencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  userQueries<T extends Prisma.User$userQueriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$userQueriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserQueryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  userActions<T extends Prisma.User$userActionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$userActionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserActionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  userOutcomes<T extends Prisma.User$userOutcomesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$userOutcomesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserOutcomePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  alertDeliveries<T extends Prisma.User$alertDeliveriesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$alertDeliveriesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AlertDeliveryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1303,11 +1973,13 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
 export interface UserFieldRefs {
   readonly id: Prisma.FieldRef<"User", 'String'>
   readonly telegramId: Prisma.FieldRef<"User", 'String'>
+  readonly discordId: Prisma.FieldRef<"User", 'String'>
   readonly username: Prisma.FieldRef<"User", 'String'>
   readonly firstName: Prisma.FieldRef<"User", 'String'>
   readonly lastName: Prisma.FieldRef<"User", 'String'>
   readonly referralCode: Prisma.FieldRef<"User", 'String'>
   readonly referredBy: Prisma.FieldRef<"User", 'String'>
+  readonly walletAddress: Prisma.FieldRef<"User", 'String'>
   readonly createdAt: Prisma.FieldRef<"User", 'DateTime'>
 }
     
@@ -1785,6 +2457,102 @@ export type User$preferencesArgs<ExtArgs extends runtime.Types.Extensions.Intern
    */
   include?: Prisma.UserPreferenceInclude<ExtArgs> | null
   where?: Prisma.UserPreferenceWhereInput
+}
+
+/**
+ * User.userQueries
+ */
+export type User$userQueriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UserQuery
+   */
+  select?: Prisma.UserQuerySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the UserQuery
+   */
+  omit?: Prisma.UserQueryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserQueryInclude<ExtArgs> | null
+  where?: Prisma.UserQueryWhereInput
+  orderBy?: Prisma.UserQueryOrderByWithRelationInput | Prisma.UserQueryOrderByWithRelationInput[]
+  cursor?: Prisma.UserQueryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserQueryScalarFieldEnum | Prisma.UserQueryScalarFieldEnum[]
+}
+
+/**
+ * User.userActions
+ */
+export type User$userActionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UserAction
+   */
+  select?: Prisma.UserActionSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the UserAction
+   */
+  omit?: Prisma.UserActionOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserActionInclude<ExtArgs> | null
+  where?: Prisma.UserActionWhereInput
+  orderBy?: Prisma.UserActionOrderByWithRelationInput | Prisma.UserActionOrderByWithRelationInput[]
+  cursor?: Prisma.UserActionWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserActionScalarFieldEnum | Prisma.UserActionScalarFieldEnum[]
+}
+
+/**
+ * User.userOutcomes
+ */
+export type User$userOutcomesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UserOutcome
+   */
+  select?: Prisma.UserOutcomeSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the UserOutcome
+   */
+  omit?: Prisma.UserOutcomeOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserOutcomeInclude<ExtArgs> | null
+  where?: Prisma.UserOutcomeWhereInput
+  orderBy?: Prisma.UserOutcomeOrderByWithRelationInput | Prisma.UserOutcomeOrderByWithRelationInput[]
+  cursor?: Prisma.UserOutcomeWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UserOutcomeScalarFieldEnum | Prisma.UserOutcomeScalarFieldEnum[]
+}
+
+/**
+ * User.alertDeliveries
+ */
+export type User$alertDeliveriesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AlertDelivery
+   */
+  select?: Prisma.AlertDeliverySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AlertDelivery
+   */
+  omit?: Prisma.AlertDeliveryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AlertDeliveryInclude<ExtArgs> | null
+  where?: Prisma.AlertDeliveryWhereInput
+  orderBy?: Prisma.AlertDeliveryOrderByWithRelationInput | Prisma.AlertDeliveryOrderByWithRelationInput[]
+  cursor?: Prisma.AlertDeliveryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.AlertDeliveryScalarFieldEnum | Prisma.AlertDeliveryScalarFieldEnum[]
 }
 
 /**

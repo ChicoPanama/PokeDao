@@ -77,21 +77,6 @@ export async function runAgentTick() {
     });
 
     tickSpan.setAttribute('total_signals', kept.length);
-
-    // Send Telegram alerts for new signals
-    const TELEGRAM_ENABLED = process.env.TELEGRAM_ALERTS_ENABLED === 'true';
-    if (TELEGRAM_ENABLED) {
-      await withSpan(agentTracer, 'telegram_alerts', async (span) => {
-        try {
-          const { processAlerts, checkWatchlistPriceDrops } = await import('../../../ml/src/alertSystem.js');
-          await processAlerts();
-          await checkWatchlistPriceDrops();
-          span.addEvent('alerts_sent');
-        } catch (e: any) {
-          span.setStatus('error', e?.message || String(e));
-          console.error('[agent] Telegram alert error:', e?.message || e);
-        }
-      });
-    }
+    // Note: Alerts are now handled by alert-bridge worker -> bot alert-consumer
   });
 }

@@ -13,8 +13,7 @@ PokeDAO is a Pokemon TCG investment platform combining quantitative market analy
 - **Web Framework**: Fastify v4 (API) + Grammy (Telegram bot)
 - **Database**: PostgreSQL + Prisma ORM
 - **Cache/Queue**: Redis + BullMQ
-- **AI Models**: Mew-1A (custom Llama 3.2 3B), DeepSeek, Ollama
-- **Vector Search**: Qdrant (production), FAISS (development)
+- **AI Models**: Groq (llama-3.1-8b-instant), DeepSeek, Ollama (optional)
 - **Testing**: Vitest
 - **Logging**: Pino (structured JSON)
 
@@ -52,51 +51,59 @@ cd bot && pnpm dev                    # Start Telegram bot locally
 ```
 pokedao/
 ├── api/                    # REST API (Fastify) - port 3000
-│   └── src/routes/         # API endpoints
+│   └── src/routes/         # API endpoints (search, collect, analytics)
 ├── bot/                    # Telegram bot (Grammy)
 │   └── src/
-│       ├── commands/       # /start, /watch, /alerts, /wallet
+│       ├── commands/       # /start, /watch, /alerts, /portfolio
 │       ├── callbacks/      # Inline button handlers
 │       └── alerts/         # Alert formatting & delivery
 ├── apps/
-│   ├── agent/              # Signal generation (BullMQ worker)
-│   │   └── src/steps/      # 6-step pipeline (fetch→normalize→features→signal→validate→output)
-│   └── mew1a/              # Custom LLM (vLLM + Modal Labs)
-├── ml/                     # ML analysis system
-│   └── src/alertSystem.ts  # Signal-to-alert pipeline
+│   ├── agent/              # 3-Layer Architecture
+│   │   └── src/
+│   │       ├── workers/    # Layer 1: Data collection (eBay, Reddit, PSA)
+│   │       ├── processor/  # Layer 2: Signal processing + thesis generation
+│   │       └── collectors/ # Data warehouse aggregation
+│   ├── dashboard/          # Next.js Bloomberg-style terminal
+│   └── clawdbot-skills/    # Layer 3: Clawdbot user interface skills
 ├── packages/
 │   ├── core/               # Domain types, utilities
 │   ├── shared/             # Logging, config, validation
 │   ├── storage/            # Database adapters
 │   ├── analysis/           # TFV, liquidity scoring
 │   ├── adapters/           # JustTCG, Phygitals, eBay clients
-│   └── social/             # X/Twitter integration
-├── prisma/                 # Database schema (schema.prisma)
-├── data_lake/              # Bronze/Silver/Gold Parquet files
-└── scripts/                # Data pipelines, training, utilities
+│   └── streams/            # Data stream processing
+├── prisma/                 # Root database schema
+├── deprecated/             # Legacy code (MEW-1A, old workers)
+└── scripts/                # Utilities and data pipelines
 ```
 
 ## Architecture
 
-### Signal Pipeline
+### 3-Layer Architecture
 
 ```
-Market Sources (eBay, TCGPlayer, JustTCG, CollectorCrypt, Phygitals, Courtyard)
-    ↓
-Agent Pipeline (apps/agent/src/tick.ts)
-    ├── 01_fetch.ts      → Fetch fresh listings
-    ├── 02_normalize.ts  → Normalize data format
-    ├── 03_features.ts   → Attach historical comps (time-decay weighted)
-    ├── 04_signal.ts     → Detect arbitrage candidates
-    ├── 05_validate.ts   → Validate & persist to DB
-    └── 06_output.ts     → Stage outputs
-    ↓
-AI Ensemble (api/src/lib/ai-ensemble.ts)
-    ├── Mew-1A (TCG-specialized) + Vector RAG
-    ├── DeepSeek R1 (deep reasoning)
-    └── Ollama (fast local inference)
-    ↓
-Telegram Alerts + X/Twitter Posts
+LAYER 1: DATA COLLECTION (Pure TypeScript, No LLM)
+┌──────────────────────────────────────────────────────────────┐
+│  ebay-worker (*/15 * * * *)  → eBay sold listings           │
+│  crypto-worker (*/5 * * * *) → Magic Eden, Courtyard        │
+│  reddit-worker (0 * * * *)   → Reddit sentiment             │
+│  psa-worker (0 6 * * *)      → PSA population data          │
+└──────────────────────────────────────────────────────────────┘
+                              ↓
+LAYER 2: SIGNAL PROCESSING (TypeScript + Groq LLM)
+┌──────────────────────────────────────────────────────────────┐
+│  processor/index.ts         → Runs every minute             │
+│  signal-calculator.ts       → Fair value, trend, liquidity  │
+│  thesis-generator.ts        → Template (70%) + Groq (30%)   │
+└──────────────────────────────────────────────────────────────┘
+                              ↓
+LAYER 3: USER INTERFACE
+┌──────────────────────────────────────────────────────────────┐
+│  Telegram Bot (Grammy)      → Alerts, portfolio, settings   │
+│  Dashboard (Next.js)        → Bloomberg-style terminal      │
+│  Clawdbot Skills            → NLU-powered interactions      │
+│  X/Twitter Poster           → Auto-post opportunities       │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ### Database Models (prisma/schema.prisma)
@@ -165,7 +172,6 @@ POST_TO_X=false
 - **Platform**: Render.com (see `render.yaml`)
 - **Health check**: `/health` endpoint
 - **Start command**: `cd api && pnpm start`
-- **ML Model**: Modal Labs serverless GPU (vLLM)
 
 ## MCP Servers
 
@@ -293,4 +299,263 @@ Features:
 - Graceful fallback to static rationale if AI unavailable
 - Top 10 candidates enriched per tick (cost optimization)
 
+### AI Provider Configuration
+
+Thesis generation uses Groq API (llama-3.1-8b-instant):
+
+```bash
+# Groq API (primary)
+GROQ_API_KEY=...
+GROQ_MODEL=llama-3.1-8b-instant  # Fast, cheap, good quality
+
+# Optional fallbacks
+USE_OLLAMA=0                      # Enable local Ollama
+OLLAMA_BASE_URL=http://localhost:11434
+DEEPSEEK_API_KEY=...              # DeepSeek fallback
+```
+
+### Health Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `/health` | Basic check (Redis + Postgres) |
+| `/ready` | Kubernetes readiness probe |
+| `/health/comprehensive` | Full check including LLM providers |
+| `/metrics` | Prometheus metrics |
+
 See `docs/BLOOMBERG_TERMINAL_ROADMAP.md` for full roadmap.
+
+## 3-Layer Architecture (2026-01-25)
+
+The system has been restructured into a clean 3-layer architecture:
+
+### Layer 1: Data Collection Workers (No LLM)
+
+Pure TypeScript workers that collect data on a schedule:
+
+| Worker | Schedule | Description |
+|--------|----------|-------------|
+| `ebay-worker` | `*/15 * * * *` | Sold listings for price history |
+| `crypto-worker` | `*/5 * * * *` | Magic Eden, Courtyard listings |
+| `reddit-worker` | `0 * * * *` | Sentiment from Pokemon subreddits |
+| `psa-worker` | `0 6 * * *` | Population data for scarcity |
+
+Start workers:
+```bash
+cd apps/agent && pnpm run workers
+```
+
+### Layer 2: Signal Processing (TypeScript + Groq)
+
+Processes listings and generates opportunities:
+
+```
+apps/agent/src/processor/
+├── index.ts              # Main processor (runs every minute)
+├── signal-calculator.ts  # Fair value, trend, liquidity, arbitrage
+└── thesis-generator.ts   # Template (70%) + Groq LLM (30%)
+```
+
+Start processor:
+```bash
+cd apps/agent && pnpm run processor
+```
+
+**Cost:** Templates are free, Groq calls ~$0.00014 each (llama-3.1-8b-instant)
+
+### Layer 3: User Interface (Clawdbot Skills)
+
+Clawdbot skills for user interaction:
+
+| Skill | Description |
+|-------|-------------|
+| `pokedao-alerts` | Receives alerts, sends notifications |
+| `pokedao-query` | Answers card investment questions |
+| `pokedao-portfolio` | Tracks user holdings and P&L |
+| `pokedao-x` | Posts opportunities to X/Twitter |
+
+Skills location:
+```
+apps/clawdbot-skills/
+├── pokedao-alerts/
+├── pokedao-query/
+├── pokedao-portfolio/
+└── pokedao-x/
+```
+
+### Running the Full Stack
+
+```bash
+# Terminal 1: Data Workers
+cd apps/agent && pnpm run workers
+
+# Terminal 2: Signal Processor
+cd apps/agent && pnpm run processor
+
+# Terminal 3: API
+pnpm api:dev
+
+# Terminal 4: Dashboard
+cd apps/dashboard && pnpm dev
+```
+
+### Production-Grade Worker Infrastructure (2026-01-25)
+
+The worker system has been upgraded with production-grade infrastructure:
+
+**Features:**
+- **Distributed Locking** - Redis-based locks prevent multiple instances from running the same worker
+- **Retry Logic** - Exponential backoff with configurable max retries
+- **Rate Limiting** - Per-API rate limiting with automatic backoff
+- **Deduplication** - Redis-based dedup prevents duplicate processing
+- **Health Monitoring** - HTTP health endpoints for Kubernetes probes
+- **Metrics** - Per-worker metrics (runs, failures, duration, items processed)
+- **Graceful Shutdown** - Proper cleanup on SIGTERM/SIGINT
+
+**Health Endpoints:**
+- `GET /health` - Full health status (returns 503 if unhealthy)
+- `GET /ready` - Kubernetes readiness probe
+- `GET /live` - Kubernetes liveness probe
+- `GET /metrics` - Prometheus-format metrics
+- `POST /worker/{name}/run` - Manual worker trigger
+
+**Commands:**
+```bash
+# Start workers with health endpoint
+cd apps/agent && pnpm run workers
+
+# Dev mode with auto-reload
+cd apps/agent && pnpm run workers:dev
+
+# Check health
+curl http://localhost:3001/health
+```
+
+**Worker Files:**
+```
+apps/agent/src/workers/
+├── base-worker.ts      # Production-grade base class
+├── registry.ts         # Worker lifecycle management
+├── health.ts           # HTTP health server
+├── index.ts            # Main entry point
+├── ebay-worker.ts      # eBay sold listings
+├── crypto-worker.ts    # Magic Eden, Courtyard
+├── reddit-worker.ts    # Reddit sentiment
+├── psa-worker.ts       # PSA population
+├── x-poster.ts         # X/Twitter posting (BullMQ)
+└── commentary-poster.ts # Daily market commentary (BullMQ)
+```
+
+### Environment Variables
+
+```bash
+# Data Workers (cron-based)
+DATA_WORKERS_ENABLED=true    # Enable/disable all data workers
+EBAY_WORKER_ENABLED=true     # Individual worker toggles
+CRYPTO_WORKER_ENABLED=true
+REDDIT_WORKER_ENABLED=true
+PSA_WORKER_ENABLED=true
+EBAY_APP_ID=...              # eBay API credentials
+EBAY_CERT_ID=...
+
+# Output Workers (BullMQ)
+X_POSTER_ENABLED=true        # X/Twitter poster
+COMMENTARY_ENABLED=true      # Daily market commentary
+POSTING_ENABLED=false        # Enable live posting (false = dry run)
+
+# Worker Infrastructure
+WORKER_HEALTH_PORT=3001      # Health endpoint port
+
+# Signal Processor
+GROQ_API_KEY=...             # For thesis generation (llama-3.1-8b-instant)
+```
+
+### New Database Models
+
+```prisma
+# RedditPost - Sentiment data from subreddits
+# Opportunity - Generated investment opportunities with thesis
+```
+
+Run migration:
+```bash
+pnpm prisma migrate dev --name add-layer1-models
+```
+
+## Data Warehouse (2026-01-25)
+
+Full ML-ready data collection infrastructure for training future models.
+
+### Data Collection API
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/collect/query` | POST | Record user queries |
+| `/api/collect/action` | POST | Record user actions (view, click, buy, pass) |
+| `/api/collect/outcome` | POST | Record purchase outcomes |
+| `/api/collect/alert-delivery` | POST | Record alert delivery status |
+| `/api/collect/alert-delivery/:id` | PATCH | Update delivery status |
+
+### Analytics API
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/analytics/card/:id/history` | GET | Price history with daily aggregations |
+| `/api/analytics/card/:id/signals` | GET | Signal snapshot history |
+| `/api/analytics/card/:id/stats` | GET | Latest daily stats and 7-day trend |
+| `/api/analytics/market/overview` | GET | Market summary with source breakdown |
+| `/api/analytics/market/movers` | GET | Top gainers and losers |
+| `/api/analytics/thesis/performance` | GET | Thesis accuracy metrics |
+
+### Data Warehouse Cron Jobs
+
+Located in `apps/agent/src/collectors/data-warehouse.ts`:
+
+| Job | Schedule | Description |
+|-----|----------|-------------|
+| `snapshotSignals` | Every hour | Create SignalSnapshot for tracked cards |
+| `aggregateDailyStats` | Daily 1 AM | Aggregate DailyCardStats, DailyMarketStats, DailySourceStats |
+| `updateOutcomes` | Weekly Sunday | Update UserOutcome current values and returns |
+
+Start the data warehouse:
+```bash
+cd apps/agent && pnpm run warehouse
+```
+
+Run immediately (skip cron):
+```bash
+cd apps/agent && pnpm run warehouse:now
+```
+
+### New Data Warehouse Models
+
+```prisma
+# PriceSnapshot - Raw price data with deduplication (rawHash)
+# SignalSnapshot - Signal calculations at a point in time
+# ThesisRecord - Thesis generation tracking with cost/tokens
+# UserQuery - User query collection for intent analysis
+# UserAction - User action tracking (view, buy, pass)
+# UserOutcome - Purchase outcome tracking with returns
+# AlertDelivery - Alert delivery tracking
+# DailyCardStats - Daily card statistics (OHLC, volume)
+# DailyMarketStats - Daily market overview (top movers, sentiment)
+# DailySourceStats - Per-source daily statistics
+```
+
+### Running All Services
+
+```bash
+# Run workers, processor, and warehouse together
+cd apps/agent && pnpm run all
+
+# Or run individually in terminals:
+pnpm run workers     # Data collection
+pnpm run processor   # Signal processing
+pnpm run warehouse   # Aggregation/snapshots
+```
+
+### Clawdbot Data Collection
+
+Skills now POST to `/api/collect/*`:
+- `pokedao-query` - Collects UserQuery on every query
+- `pokedao-alerts` - Collects AlertDelivery and UserAction on notifications

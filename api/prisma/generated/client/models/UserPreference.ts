@@ -45,6 +45,8 @@ export type UserPreferenceMinAggregateOutputType = {
   minDiscountPct: number | null
   minPriceUsd: number | null
   maxPriceUsd: number | null
+  quietHoursStart: string | null
+  quietHoursEnd: string | null
   updatedAt: Date | null
 }
 
@@ -55,6 +57,8 @@ export type UserPreferenceMaxAggregateOutputType = {
   minDiscountPct: number | null
   minPriceUsd: number | null
   maxPriceUsd: number | null
+  quietHoursStart: string | null
+  quietHoursEnd: string | null
   updatedAt: Date | null
 }
 
@@ -66,6 +70,8 @@ export type UserPreferenceCountAggregateOutputType = {
   minPriceUsd: number
   maxPriceUsd: number
   grades: number
+  quietHoursStart: number
+  quietHoursEnd: number
   snoozedCards: number
   updatedAt: number
   _all: number
@@ -91,6 +97,8 @@ export type UserPreferenceMinAggregateInputType = {
   minDiscountPct?: true
   minPriceUsd?: true
   maxPriceUsd?: true
+  quietHoursStart?: true
+  quietHoursEnd?: true
   updatedAt?: true
 }
 
@@ -101,6 +109,8 @@ export type UserPreferenceMaxAggregateInputType = {
   minDiscountPct?: true
   minPriceUsd?: true
   maxPriceUsd?: true
+  quietHoursStart?: true
+  quietHoursEnd?: true
   updatedAt?: true
 }
 
@@ -112,6 +122,8 @@ export type UserPreferenceCountAggregateInputType = {
   minPriceUsd?: true
   maxPriceUsd?: true
   grades?: true
+  quietHoursStart?: true
+  quietHoursEnd?: true
   snoozedCards?: true
   updatedAt?: true
   _all?: true
@@ -211,6 +223,8 @@ export type UserPreferenceGroupByOutputType = {
   minPriceUsd: number
   maxPriceUsd: number
   grades: string[]
+  quietHoursStart: string | null
+  quietHoursEnd: string | null
   snoozedCards: runtime.JsonValue | null
   updatedAt: Date
   _count: UserPreferenceCountAggregateOutputType | null
@@ -242,10 +256,12 @@ export type UserPreferenceWhereInput = {
   id?: Prisma.StringFilter<"UserPreference"> | string
   userId?: Prisma.StringFilter<"UserPreference"> | string
   alertsEnabled?: Prisma.BoolFilter<"UserPreference"> | boolean
-  minDiscountPct?: Prisma.IntFilter<"UserPreference"> | number
-  minPriceUsd?: Prisma.IntFilter<"UserPreference"> | number
-  maxPriceUsd?: Prisma.IntFilter<"UserPreference"> | number
+  minDiscountPct?: Prisma.FloatFilter<"UserPreference"> | number
+  minPriceUsd?: Prisma.FloatFilter<"UserPreference"> | number
+  maxPriceUsd?: Prisma.FloatFilter<"UserPreference"> | number
   grades?: Prisma.StringNullableListFilter<"UserPreference">
+  quietHoursStart?: Prisma.StringNullableFilter<"UserPreference"> | string | null
+  quietHoursEnd?: Prisma.StringNullableFilter<"UserPreference"> | string | null
   snoozedCards?: Prisma.JsonNullableFilter<"UserPreference">
   updatedAt?: Prisma.DateTimeFilter<"UserPreference"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -259,6 +275,8 @@ export type UserPreferenceOrderByWithRelationInput = {
   minPriceUsd?: Prisma.SortOrder
   maxPriceUsd?: Prisma.SortOrder
   grades?: Prisma.SortOrder
+  quietHoursStart?: Prisma.SortOrderInput | Prisma.SortOrder
+  quietHoursEnd?: Prisma.SortOrderInput | Prisma.SortOrder
   snoozedCards?: Prisma.SortOrderInput | Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -271,10 +289,12 @@ export type UserPreferenceWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.UserPreferenceWhereInput[]
   NOT?: Prisma.UserPreferenceWhereInput | Prisma.UserPreferenceWhereInput[]
   alertsEnabled?: Prisma.BoolFilter<"UserPreference"> | boolean
-  minDiscountPct?: Prisma.IntFilter<"UserPreference"> | number
-  minPriceUsd?: Prisma.IntFilter<"UserPreference"> | number
-  maxPriceUsd?: Prisma.IntFilter<"UserPreference"> | number
+  minDiscountPct?: Prisma.FloatFilter<"UserPreference"> | number
+  minPriceUsd?: Prisma.FloatFilter<"UserPreference"> | number
+  maxPriceUsd?: Prisma.FloatFilter<"UserPreference"> | number
   grades?: Prisma.StringNullableListFilter<"UserPreference">
+  quietHoursStart?: Prisma.StringNullableFilter<"UserPreference"> | string | null
+  quietHoursEnd?: Prisma.StringNullableFilter<"UserPreference"> | string | null
   snoozedCards?: Prisma.JsonNullableFilter<"UserPreference">
   updatedAt?: Prisma.DateTimeFilter<"UserPreference"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
@@ -288,6 +308,8 @@ export type UserPreferenceOrderByWithAggregationInput = {
   minPriceUsd?: Prisma.SortOrder
   maxPriceUsd?: Prisma.SortOrder
   grades?: Prisma.SortOrder
+  quietHoursStart?: Prisma.SortOrderInput | Prisma.SortOrder
+  quietHoursEnd?: Prisma.SortOrderInput | Prisma.SortOrder
   snoozedCards?: Prisma.SortOrderInput | Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.UserPreferenceCountOrderByAggregateInput
@@ -304,10 +326,12 @@ export type UserPreferenceScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"UserPreference"> | string
   userId?: Prisma.StringWithAggregatesFilter<"UserPreference"> | string
   alertsEnabled?: Prisma.BoolWithAggregatesFilter<"UserPreference"> | boolean
-  minDiscountPct?: Prisma.IntWithAggregatesFilter<"UserPreference"> | number
-  minPriceUsd?: Prisma.IntWithAggregatesFilter<"UserPreference"> | number
-  maxPriceUsd?: Prisma.IntWithAggregatesFilter<"UserPreference"> | number
+  minDiscountPct?: Prisma.FloatWithAggregatesFilter<"UserPreference"> | number
+  minPriceUsd?: Prisma.FloatWithAggregatesFilter<"UserPreference"> | number
+  maxPriceUsd?: Prisma.FloatWithAggregatesFilter<"UserPreference"> | number
   grades?: Prisma.StringNullableListFilter<"UserPreference">
+  quietHoursStart?: Prisma.StringNullableWithAggregatesFilter<"UserPreference"> | string | null
+  quietHoursEnd?: Prisma.StringNullableWithAggregatesFilter<"UserPreference"> | string | null
   snoozedCards?: Prisma.JsonNullableWithAggregatesFilter<"UserPreference">
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"UserPreference"> | Date | string
 }
@@ -319,6 +343,8 @@ export type UserPreferenceCreateInput = {
   minPriceUsd?: number
   maxPriceUsd?: number
   grades?: Prisma.UserPreferenceCreategradesInput | string[]
+  quietHoursStart?: string | null
+  quietHoursEnd?: string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Date | string
   user: Prisma.UserCreateNestedOneWithoutPreferencesInput
@@ -332,6 +358,8 @@ export type UserPreferenceUncheckedCreateInput = {
   minPriceUsd?: number
   maxPriceUsd?: number
   grades?: Prisma.UserPreferenceCreategradesInput | string[]
+  quietHoursStart?: string | null
+  quietHoursEnd?: string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Date | string
 }
@@ -339,10 +367,12 @@ export type UserPreferenceUncheckedCreateInput = {
 export type UserPreferenceUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   alertsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  minDiscountPct?: Prisma.IntFieldUpdateOperationsInput | number
-  minPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
-  maxPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
+  minDiscountPct?: Prisma.FloatFieldUpdateOperationsInput | number
+  minPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
+  maxPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
   grades?: Prisma.UserPreferenceUpdategradesInput | string[]
+  quietHoursStart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quietHoursEnd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneRequiredWithoutPreferencesNestedInput
@@ -352,10 +382,12 @@ export type UserPreferenceUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   alertsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  minDiscountPct?: Prisma.IntFieldUpdateOperationsInput | number
-  minPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
-  maxPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
+  minDiscountPct?: Prisma.FloatFieldUpdateOperationsInput | number
+  minPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
+  maxPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
   grades?: Prisma.UserPreferenceUpdategradesInput | string[]
+  quietHoursStart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quietHoursEnd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -368,6 +400,8 @@ export type UserPreferenceCreateManyInput = {
   minPriceUsd?: number
   maxPriceUsd?: number
   grades?: Prisma.UserPreferenceCreategradesInput | string[]
+  quietHoursStart?: string | null
+  quietHoursEnd?: string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Date | string
 }
@@ -375,10 +409,12 @@ export type UserPreferenceCreateManyInput = {
 export type UserPreferenceUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   alertsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  minDiscountPct?: Prisma.IntFieldUpdateOperationsInput | number
-  minPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
-  maxPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
+  minDiscountPct?: Prisma.FloatFieldUpdateOperationsInput | number
+  minPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
+  maxPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
   grades?: Prisma.UserPreferenceUpdategradesInput | string[]
+  quietHoursStart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quietHoursEnd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -387,10 +423,12 @@ export type UserPreferenceUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   userId?: Prisma.StringFieldUpdateOperationsInput | string
   alertsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  minDiscountPct?: Prisma.IntFieldUpdateOperationsInput | number
-  minPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
-  maxPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
+  minDiscountPct?: Prisma.FloatFieldUpdateOperationsInput | number
+  minPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
+  maxPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
   grades?: Prisma.UserPreferenceUpdategradesInput | string[]
+  quietHoursStart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quietHoursEnd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -408,6 +446,8 @@ export type UserPreferenceCountOrderByAggregateInput = {
   minPriceUsd?: Prisma.SortOrder
   maxPriceUsd?: Prisma.SortOrder
   grades?: Prisma.SortOrder
+  quietHoursStart?: Prisma.SortOrder
+  quietHoursEnd?: Prisma.SortOrder
   snoozedCards?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -425,6 +465,8 @@ export type UserPreferenceMaxOrderByAggregateInput = {
   minDiscountPct?: Prisma.SortOrder
   minPriceUsd?: Prisma.SortOrder
   maxPriceUsd?: Prisma.SortOrder
+  quietHoursStart?: Prisma.SortOrder
+  quietHoursEnd?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
@@ -435,6 +477,8 @@ export type UserPreferenceMinOrderByAggregateInput = {
   minDiscountPct?: Prisma.SortOrder
   minPriceUsd?: Prisma.SortOrder
   maxPriceUsd?: Prisma.SortOrder
+  quietHoursStart?: Prisma.SortOrder
+  quietHoursEnd?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
 
@@ -492,6 +536,8 @@ export type UserPreferenceCreateWithoutUserInput = {
   minPriceUsd?: number
   maxPriceUsd?: number
   grades?: Prisma.UserPreferenceCreategradesInput | string[]
+  quietHoursStart?: string | null
+  quietHoursEnd?: string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Date | string
 }
@@ -503,6 +549,8 @@ export type UserPreferenceUncheckedCreateWithoutUserInput = {
   minPriceUsd?: number
   maxPriceUsd?: number
   grades?: Prisma.UserPreferenceCreategradesInput | string[]
+  quietHoursStart?: string | null
+  quietHoursEnd?: string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Date | string
 }
@@ -526,10 +574,12 @@ export type UserPreferenceUpdateToOneWithWhereWithoutUserInput = {
 export type UserPreferenceUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   alertsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  minDiscountPct?: Prisma.IntFieldUpdateOperationsInput | number
-  minPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
-  maxPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
+  minDiscountPct?: Prisma.FloatFieldUpdateOperationsInput | number
+  minPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
+  maxPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
   grades?: Prisma.UserPreferenceUpdategradesInput | string[]
+  quietHoursStart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quietHoursEnd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -537,10 +587,12 @@ export type UserPreferenceUpdateWithoutUserInput = {
 export type UserPreferenceUncheckedUpdateWithoutUserInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   alertsEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  minDiscountPct?: Prisma.IntFieldUpdateOperationsInput | number
-  minPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
-  maxPriceUsd?: Prisma.IntFieldUpdateOperationsInput | number
+  minDiscountPct?: Prisma.FloatFieldUpdateOperationsInput | number
+  minPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
+  maxPriceUsd?: Prisma.FloatFieldUpdateOperationsInput | number
   grades?: Prisma.UserPreferenceUpdategradesInput | string[]
+  quietHoursStart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quietHoursEnd?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   snoozedCards?: Prisma.NullableJsonNullValueInput | runtime.InputJsonValue
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -555,6 +607,8 @@ export type UserPreferenceSelect<ExtArgs extends runtime.Types.Extensions.Intern
   minPriceUsd?: boolean
   maxPriceUsd?: boolean
   grades?: boolean
+  quietHoursStart?: boolean
+  quietHoursEnd?: boolean
   snoozedCards?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -568,6 +622,8 @@ export type UserPreferenceSelectCreateManyAndReturn<ExtArgs extends runtime.Type
   minPriceUsd?: boolean
   maxPriceUsd?: boolean
   grades?: boolean
+  quietHoursStart?: boolean
+  quietHoursEnd?: boolean
   snoozedCards?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -581,6 +637,8 @@ export type UserPreferenceSelectUpdateManyAndReturn<ExtArgs extends runtime.Type
   minPriceUsd?: boolean
   maxPriceUsd?: boolean
   grades?: boolean
+  quietHoursStart?: boolean
+  quietHoursEnd?: boolean
   snoozedCards?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
@@ -594,11 +652,13 @@ export type UserPreferenceSelectScalar = {
   minPriceUsd?: boolean
   maxPriceUsd?: boolean
   grades?: boolean
+  quietHoursStart?: boolean
+  quietHoursEnd?: boolean
   snoozedCards?: boolean
   updatedAt?: boolean
 }
 
-export type UserPreferenceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "alertsEnabled" | "minDiscountPct" | "minPriceUsd" | "maxPriceUsd" | "grades" | "snoozedCards" | "updatedAt", ExtArgs["result"]["userPreference"]>
+export type UserPreferenceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "userId" | "alertsEnabled" | "minDiscountPct" | "minPriceUsd" | "maxPriceUsd" | "grades" | "quietHoursStart" | "quietHoursEnd" | "snoozedCards" | "updatedAt", ExtArgs["result"]["userPreference"]>
 export type UserPreferenceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
@@ -622,6 +682,8 @@ export type $UserPreferencePayload<ExtArgs extends runtime.Types.Extensions.Inte
     minPriceUsd: number
     maxPriceUsd: number
     grades: string[]
+    quietHoursStart: string | null
+    quietHoursEnd: string | null
     snoozedCards: runtime.JsonValue | null
     updatedAt: Date
   }, ExtArgs["result"]["userPreference"]>
@@ -1051,10 +1113,12 @@ export interface UserPreferenceFieldRefs {
   readonly id: Prisma.FieldRef<"UserPreference", 'String'>
   readonly userId: Prisma.FieldRef<"UserPreference", 'String'>
   readonly alertsEnabled: Prisma.FieldRef<"UserPreference", 'Boolean'>
-  readonly minDiscountPct: Prisma.FieldRef<"UserPreference", 'Int'>
-  readonly minPriceUsd: Prisma.FieldRef<"UserPreference", 'Int'>
-  readonly maxPriceUsd: Prisma.FieldRef<"UserPreference", 'Int'>
+  readonly minDiscountPct: Prisma.FieldRef<"UserPreference", 'Float'>
+  readonly minPriceUsd: Prisma.FieldRef<"UserPreference", 'Float'>
+  readonly maxPriceUsd: Prisma.FieldRef<"UserPreference", 'Float'>
   readonly grades: Prisma.FieldRef<"UserPreference", 'String[]'>
+  readonly quietHoursStart: Prisma.FieldRef<"UserPreference", 'String'>
+  readonly quietHoursEnd: Prisma.FieldRef<"UserPreference", 'String'>
   readonly snoozedCards: Prisma.FieldRef<"UserPreference", 'Json'>
   readonly updatedAt: Prisma.FieldRef<"UserPreference", 'DateTime'>
 }

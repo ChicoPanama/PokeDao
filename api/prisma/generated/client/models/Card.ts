@@ -328,6 +328,9 @@ export type CardWhereInput = {
   opportunities?: Prisma.OpportunityListRelationFilter
   signals?: Prisma.SignalListRelationFilter
   watchlistItems?: Prisma.WatchlistItemListRelationFilter
+  priceSnapshots?: Prisma.PriceSnapshotListRelationFilter
+  signalSnapshots?: Prisma.SignalSnapshotListRelationFilter
+  dailyStats?: Prisma.DailyCardStatsListRelationFilter
 }
 
 export type CardOrderByWithRelationInput = {
@@ -357,6 +360,9 @@ export type CardOrderByWithRelationInput = {
   opportunities?: Prisma.OpportunityOrderByRelationAggregateInput
   signals?: Prisma.SignalOrderByRelationAggregateInput
   watchlistItems?: Prisma.WatchlistItemOrderByRelationAggregateInput
+  priceSnapshots?: Prisma.PriceSnapshotOrderByRelationAggregateInput
+  signalSnapshots?: Prisma.SignalSnapshotOrderByRelationAggregateInput
+  dailyStats?: Prisma.DailyCardStatsOrderByRelationAggregateInput
 }
 
 export type CardWhereUniqueInput = Prisma.AtLeast<{
@@ -390,6 +396,9 @@ export type CardWhereUniqueInput = Prisma.AtLeast<{
   opportunities?: Prisma.OpportunityListRelationFilter
   signals?: Prisma.SignalListRelationFilter
   watchlistItems?: Prisma.WatchlistItemListRelationFilter
+  priceSnapshots?: Prisma.PriceSnapshotListRelationFilter
+  signalSnapshots?: Prisma.SignalSnapshotListRelationFilter
+  dailyStats?: Prisma.DailyCardStatsListRelationFilter
 }, "id" | "set_number_variant_grade_language">
 
 export type CardOrderByWithAggregationInput = {
@@ -468,6 +477,9 @@ export type CardCreateInput = {
   opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
 }
 
 export type CardUncheckedCreateInput = {
@@ -496,6 +508,9 @@ export type CardUncheckedCreateInput = {
   opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
 }
 
 export type CardUpdateInput = {
@@ -524,6 +539,9 @@ export type CardUpdateInput = {
   opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateInput = {
@@ -552,6 +570,9 @@ export type CardUncheckedUpdateInput = {
   opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
 }
 
 export type CardCreateManyInput = {
@@ -710,6 +731,11 @@ export type CardScalarRelationFilter = {
   isNot?: Prisma.CardWhereInput
 }
 
+export type CardNullableScalarRelationFilter = {
+  is?: Prisma.CardWhereInput | null
+  isNot?: Prisma.CardWhereInput | null
+}
+
 export type CardCreateNestedManyWithoutCardSetInput = {
   create?: Prisma.XOR<Prisma.CardCreateWithoutCardSetInput, Prisma.CardUncheckedCreateWithoutCardSetInput> | Prisma.CardCreateWithoutCardSetInput[] | Prisma.CardUncheckedCreateWithoutCardSetInput[]
   connectOrCreate?: Prisma.CardCreateOrConnectWithoutCardSetInput | Prisma.CardCreateOrConnectWithoutCardSetInput[]
@@ -850,6 +876,50 @@ export type CardUpdateOneRequiredWithoutWatchlistItemsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.CardUpdateToOneWithWhereWithoutWatchlistItemsInput, Prisma.CardUpdateWithoutWatchlistItemsInput>, Prisma.CardUncheckedUpdateWithoutWatchlistItemsInput>
 }
 
+export type CardCreateNestedOneWithoutPriceSnapshotsInput = {
+  create?: Prisma.XOR<Prisma.CardCreateWithoutPriceSnapshotsInput, Prisma.CardUncheckedCreateWithoutPriceSnapshotsInput>
+  connectOrCreate?: Prisma.CardCreateOrConnectWithoutPriceSnapshotsInput
+  connect?: Prisma.CardWhereUniqueInput
+}
+
+export type CardUpdateOneWithoutPriceSnapshotsNestedInput = {
+  create?: Prisma.XOR<Prisma.CardCreateWithoutPriceSnapshotsInput, Prisma.CardUncheckedCreateWithoutPriceSnapshotsInput>
+  connectOrCreate?: Prisma.CardCreateOrConnectWithoutPriceSnapshotsInput
+  upsert?: Prisma.CardUpsertWithoutPriceSnapshotsInput
+  disconnect?: Prisma.CardWhereInput | boolean
+  delete?: Prisma.CardWhereInput | boolean
+  connect?: Prisma.CardWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.CardUpdateToOneWithWhereWithoutPriceSnapshotsInput, Prisma.CardUpdateWithoutPriceSnapshotsInput>, Prisma.CardUncheckedUpdateWithoutPriceSnapshotsInput>
+}
+
+export type CardCreateNestedOneWithoutSignalSnapshotsInput = {
+  create?: Prisma.XOR<Prisma.CardCreateWithoutSignalSnapshotsInput, Prisma.CardUncheckedCreateWithoutSignalSnapshotsInput>
+  connectOrCreate?: Prisma.CardCreateOrConnectWithoutSignalSnapshotsInput
+  connect?: Prisma.CardWhereUniqueInput
+}
+
+export type CardUpdateOneRequiredWithoutSignalSnapshotsNestedInput = {
+  create?: Prisma.XOR<Prisma.CardCreateWithoutSignalSnapshotsInput, Prisma.CardUncheckedCreateWithoutSignalSnapshotsInput>
+  connectOrCreate?: Prisma.CardCreateOrConnectWithoutSignalSnapshotsInput
+  upsert?: Prisma.CardUpsertWithoutSignalSnapshotsInput
+  connect?: Prisma.CardWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.CardUpdateToOneWithWhereWithoutSignalSnapshotsInput, Prisma.CardUpdateWithoutSignalSnapshotsInput>, Prisma.CardUncheckedUpdateWithoutSignalSnapshotsInput>
+}
+
+export type CardCreateNestedOneWithoutDailyStatsInput = {
+  create?: Prisma.XOR<Prisma.CardCreateWithoutDailyStatsInput, Prisma.CardUncheckedCreateWithoutDailyStatsInput>
+  connectOrCreate?: Prisma.CardCreateOrConnectWithoutDailyStatsInput
+  connect?: Prisma.CardWhereUniqueInput
+}
+
+export type CardUpdateOneRequiredWithoutDailyStatsNestedInput = {
+  create?: Prisma.XOR<Prisma.CardCreateWithoutDailyStatsInput, Prisma.CardUncheckedCreateWithoutDailyStatsInput>
+  connectOrCreate?: Prisma.CardCreateOrConnectWithoutDailyStatsInput
+  upsert?: Prisma.CardUpsertWithoutDailyStatsInput
+  connect?: Prisma.CardWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.CardUpdateToOneWithWhereWithoutDailyStatsInput, Prisma.CardUpdateWithoutDailyStatsInput>, Prisma.CardUncheckedUpdateWithoutDailyStatsInput>
+}
+
 export type CardCreateWithoutCardSetInput = {
   id?: string
   name: string
@@ -875,6 +945,9 @@ export type CardCreateWithoutCardSetInput = {
   opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
 }
 
 export type CardUncheckedCreateWithoutCardSetInput = {
@@ -902,6 +975,9 @@ export type CardUncheckedCreateWithoutCardSetInput = {
   opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
 }
 
 export type CardCreateOrConnectWithoutCardSetInput = {
@@ -979,6 +1055,9 @@ export type CardCreateWithoutCompSalesInput = {
   opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
 }
 
 export type CardUncheckedCreateWithoutCompSalesInput = {
@@ -1006,6 +1085,9 @@ export type CardUncheckedCreateWithoutCompSalesInput = {
   opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
 }
 
 export type CardCreateOrConnectWithoutCompSalesInput = {
@@ -1049,6 +1131,9 @@ export type CardUpdateWithoutCompSalesInput = {
   opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateWithoutCompSalesInput = {
@@ -1076,6 +1161,9 @@ export type CardUncheckedUpdateWithoutCompSalesInput = {
   opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
 }
 
 export type CardCreateWithoutDataQualityInput = {
@@ -1103,6 +1191,9 @@ export type CardCreateWithoutDataQualityInput = {
   opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
 }
 
 export type CardUncheckedCreateWithoutDataQualityInput = {
@@ -1130,6 +1221,9 @@ export type CardUncheckedCreateWithoutDataQualityInput = {
   opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
 }
 
 export type CardCreateOrConnectWithoutDataQualityInput = {
@@ -1173,6 +1267,9 @@ export type CardUpdateWithoutDataQualityInput = {
   opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateWithoutDataQualityInput = {
@@ -1200,6 +1297,9 @@ export type CardUncheckedUpdateWithoutDataQualityInput = {
   opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
 }
 
 export type CardCreateWithoutEvaluationsInput = {
@@ -1227,6 +1327,9 @@ export type CardCreateWithoutEvaluationsInput = {
   opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
 }
 
 export type CardUncheckedCreateWithoutEvaluationsInput = {
@@ -1254,6 +1357,9 @@ export type CardUncheckedCreateWithoutEvaluationsInput = {
   opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
 }
 
 export type CardCreateOrConnectWithoutEvaluationsInput = {
@@ -1297,6 +1403,9 @@ export type CardUpdateWithoutEvaluationsInput = {
   opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateWithoutEvaluationsInput = {
@@ -1324,6 +1433,9 @@ export type CardUncheckedUpdateWithoutEvaluationsInput = {
   opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
 }
 
 export type CardCreateWithoutListingsInput = {
@@ -1351,6 +1463,9 @@ export type CardCreateWithoutListingsInput = {
   opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
 }
 
 export type CardUncheckedCreateWithoutListingsInput = {
@@ -1378,6 +1493,9 @@ export type CardUncheckedCreateWithoutListingsInput = {
   opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
 }
 
 export type CardCreateOrConnectWithoutListingsInput = {
@@ -1421,6 +1539,9 @@ export type CardUpdateWithoutListingsInput = {
   opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateWithoutListingsInput = {
@@ -1448,6 +1569,9 @@ export type CardUncheckedUpdateWithoutListingsInput = {
   opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
 }
 
 export type CardCreateWithoutOpportunitiesInput = {
@@ -1475,6 +1599,9 @@ export type CardCreateWithoutOpportunitiesInput = {
   listings?: Prisma.ListingCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
 }
 
 export type CardUncheckedCreateWithoutOpportunitiesInput = {
@@ -1502,6 +1629,9 @@ export type CardUncheckedCreateWithoutOpportunitiesInput = {
   listings?: Prisma.ListingUncheckedCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
 }
 
 export type CardCreateOrConnectWithoutOpportunitiesInput = {
@@ -1545,6 +1675,9 @@ export type CardUpdateWithoutOpportunitiesInput = {
   listings?: Prisma.ListingUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateWithoutOpportunitiesInput = {
@@ -1572,6 +1705,9 @@ export type CardUncheckedUpdateWithoutOpportunitiesInput = {
   listings?: Prisma.ListingUncheckedUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
 }
 
 export type CardCreateWithoutSignalsInput = {
@@ -1599,6 +1735,9 @@ export type CardCreateWithoutSignalsInput = {
   listings?: Prisma.ListingCreateNestedManyWithoutCardInput
   opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
 }
 
 export type CardUncheckedCreateWithoutSignalsInput = {
@@ -1626,6 +1765,9 @@ export type CardUncheckedCreateWithoutSignalsInput = {
   listings?: Prisma.ListingUncheckedCreateNestedManyWithoutCardInput
   opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
   watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
 }
 
 export type CardCreateOrConnectWithoutSignalsInput = {
@@ -1669,6 +1811,9 @@ export type CardUpdateWithoutSignalsInput = {
   listings?: Prisma.ListingUpdateManyWithoutCardNestedInput
   opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateWithoutSignalsInput = {
@@ -1696,6 +1841,9 @@ export type CardUncheckedUpdateWithoutSignalsInput = {
   listings?: Prisma.ListingUncheckedUpdateManyWithoutCardNestedInput
   opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
 }
 
 export type CardCreateWithoutWatchlistItemsInput = {
@@ -1723,6 +1871,9 @@ export type CardCreateWithoutWatchlistItemsInput = {
   listings?: Prisma.ListingCreateNestedManyWithoutCardInput
   opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
 }
 
 export type CardUncheckedCreateWithoutWatchlistItemsInput = {
@@ -1750,6 +1901,9 @@ export type CardUncheckedCreateWithoutWatchlistItemsInput = {
   listings?: Prisma.ListingUncheckedCreateNestedManyWithoutCardInput
   opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
   signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
 }
 
 export type CardCreateOrConnectWithoutWatchlistItemsInput = {
@@ -1793,6 +1947,9 @@ export type CardUpdateWithoutWatchlistItemsInput = {
   listings?: Prisma.ListingUpdateManyWithoutCardNestedInput
   opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateWithoutWatchlistItemsInput = {
@@ -1820,6 +1977,417 @@ export type CardUncheckedUpdateWithoutWatchlistItemsInput = {
   listings?: Prisma.ListingUncheckedUpdateManyWithoutCardNestedInput
   opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
+}
+
+export type CardCreateWithoutPriceSnapshotsInput = {
+  id?: string
+  name: string
+  set: string
+  number: string
+  variant?: string | null
+  grade?: string | null
+  condition?: string | null
+  language?: string
+  normalizedName?: string
+  rarity?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  cardKey?: string | null
+  cardType?: string
+  isValidated?: boolean
+  lastValidated?: Date | string | null
+  validationScore?: number
+  cardSet?: Prisma.CardSetCreateNestedOneWithoutCardsInput
+  compSales?: Prisma.CompSaleCreateNestedManyWithoutCardInput
+  dataQuality?: Prisma.DataQualityCreateNestedManyWithoutCardInput
+  evaluations?: Prisma.EvaluationCreateNestedManyWithoutCardInput
+  listings?: Prisma.ListingCreateNestedManyWithoutCardInput
+  opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
+  signals?: Prisma.SignalCreateNestedManyWithoutCardInput
+  watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
+}
+
+export type CardUncheckedCreateWithoutPriceSnapshotsInput = {
+  id?: string
+  name: string
+  set: string
+  number: string
+  variant?: string | null
+  grade?: string | null
+  condition?: string | null
+  language?: string
+  normalizedName?: string
+  setCode?: string
+  rarity?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  cardKey?: string | null
+  cardType?: string
+  isValidated?: boolean
+  lastValidated?: Date | string | null
+  validationScore?: number
+  compSales?: Prisma.CompSaleUncheckedCreateNestedManyWithoutCardInput
+  dataQuality?: Prisma.DataQualityUncheckedCreateNestedManyWithoutCardInput
+  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutCardInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutCardInput
+  opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
+  signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
+}
+
+export type CardCreateOrConnectWithoutPriceSnapshotsInput = {
+  where: Prisma.CardWhereUniqueInput
+  create: Prisma.XOR<Prisma.CardCreateWithoutPriceSnapshotsInput, Prisma.CardUncheckedCreateWithoutPriceSnapshotsInput>
+}
+
+export type CardUpsertWithoutPriceSnapshotsInput = {
+  update: Prisma.XOR<Prisma.CardUpdateWithoutPriceSnapshotsInput, Prisma.CardUncheckedUpdateWithoutPriceSnapshotsInput>
+  create: Prisma.XOR<Prisma.CardCreateWithoutPriceSnapshotsInput, Prisma.CardUncheckedCreateWithoutPriceSnapshotsInput>
+  where?: Prisma.CardWhereInput
+}
+
+export type CardUpdateToOneWithWhereWithoutPriceSnapshotsInput = {
+  where?: Prisma.CardWhereInput
+  data: Prisma.XOR<Prisma.CardUpdateWithoutPriceSnapshotsInput, Prisma.CardUncheckedUpdateWithoutPriceSnapshotsInput>
+}
+
+export type CardUpdateWithoutPriceSnapshotsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  set?: Prisma.StringFieldUpdateOperationsInput | string
+  number?: Prisma.StringFieldUpdateOperationsInput | string
+  variant?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  grade?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  condition?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedName?: Prisma.StringFieldUpdateOperationsInput | string
+  rarity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  cardKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cardType?: Prisma.StringFieldUpdateOperationsInput | string
+  isValidated?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastValidated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  validationScore?: Prisma.FloatFieldUpdateOperationsInput | number
+  cardSet?: Prisma.CardSetUpdateOneWithoutCardsNestedInput
+  compSales?: Prisma.CompSaleUpdateManyWithoutCardNestedInput
+  dataQuality?: Prisma.DataQualityUpdateManyWithoutCardNestedInput
+  evaluations?: Prisma.EvaluationUpdateManyWithoutCardNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutCardNestedInput
+  opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
+  signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
+  watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
+}
+
+export type CardUncheckedUpdateWithoutPriceSnapshotsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  set?: Prisma.StringFieldUpdateOperationsInput | string
+  number?: Prisma.StringFieldUpdateOperationsInput | string
+  variant?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  grade?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  condition?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedName?: Prisma.StringFieldUpdateOperationsInput | string
+  setCode?: Prisma.StringFieldUpdateOperationsInput | string
+  rarity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  cardKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cardType?: Prisma.StringFieldUpdateOperationsInput | string
+  isValidated?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastValidated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  validationScore?: Prisma.FloatFieldUpdateOperationsInput | number
+  compSales?: Prisma.CompSaleUncheckedUpdateManyWithoutCardNestedInput
+  dataQuality?: Prisma.DataQualityUncheckedUpdateManyWithoutCardNestedInput
+  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutCardNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutCardNestedInput
+  opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
+  signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
+}
+
+export type CardCreateWithoutSignalSnapshotsInput = {
+  id?: string
+  name: string
+  set: string
+  number: string
+  variant?: string | null
+  grade?: string | null
+  condition?: string | null
+  language?: string
+  normalizedName?: string
+  rarity?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  cardKey?: string | null
+  cardType?: string
+  isValidated?: boolean
+  lastValidated?: Date | string | null
+  validationScore?: number
+  cardSet?: Prisma.CardSetCreateNestedOneWithoutCardsInput
+  compSales?: Prisma.CompSaleCreateNestedManyWithoutCardInput
+  dataQuality?: Prisma.DataQualityCreateNestedManyWithoutCardInput
+  evaluations?: Prisma.EvaluationCreateNestedManyWithoutCardInput
+  listings?: Prisma.ListingCreateNestedManyWithoutCardInput
+  opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
+  signals?: Prisma.SignalCreateNestedManyWithoutCardInput
+  watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsCreateNestedManyWithoutCardInput
+}
+
+export type CardUncheckedCreateWithoutSignalSnapshotsInput = {
+  id?: string
+  name: string
+  set: string
+  number: string
+  variant?: string | null
+  grade?: string | null
+  condition?: string | null
+  language?: string
+  normalizedName?: string
+  setCode?: string
+  rarity?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  cardKey?: string | null
+  cardType?: string
+  isValidated?: boolean
+  lastValidated?: Date | string | null
+  validationScore?: number
+  compSales?: Prisma.CompSaleUncheckedCreateNestedManyWithoutCardInput
+  dataQuality?: Prisma.DataQualityUncheckedCreateNestedManyWithoutCardInput
+  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutCardInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutCardInput
+  opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
+  signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedCreateNestedManyWithoutCardInput
+}
+
+export type CardCreateOrConnectWithoutSignalSnapshotsInput = {
+  where: Prisma.CardWhereUniqueInput
+  create: Prisma.XOR<Prisma.CardCreateWithoutSignalSnapshotsInput, Prisma.CardUncheckedCreateWithoutSignalSnapshotsInput>
+}
+
+export type CardUpsertWithoutSignalSnapshotsInput = {
+  update: Prisma.XOR<Prisma.CardUpdateWithoutSignalSnapshotsInput, Prisma.CardUncheckedUpdateWithoutSignalSnapshotsInput>
+  create: Prisma.XOR<Prisma.CardCreateWithoutSignalSnapshotsInput, Prisma.CardUncheckedCreateWithoutSignalSnapshotsInput>
+  where?: Prisma.CardWhereInput
+}
+
+export type CardUpdateToOneWithWhereWithoutSignalSnapshotsInput = {
+  where?: Prisma.CardWhereInput
+  data: Prisma.XOR<Prisma.CardUpdateWithoutSignalSnapshotsInput, Prisma.CardUncheckedUpdateWithoutSignalSnapshotsInput>
+}
+
+export type CardUpdateWithoutSignalSnapshotsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  set?: Prisma.StringFieldUpdateOperationsInput | string
+  number?: Prisma.StringFieldUpdateOperationsInput | string
+  variant?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  grade?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  condition?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedName?: Prisma.StringFieldUpdateOperationsInput | string
+  rarity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  cardKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cardType?: Prisma.StringFieldUpdateOperationsInput | string
+  isValidated?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastValidated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  validationScore?: Prisma.FloatFieldUpdateOperationsInput | number
+  cardSet?: Prisma.CardSetUpdateOneWithoutCardsNestedInput
+  compSales?: Prisma.CompSaleUpdateManyWithoutCardNestedInput
+  dataQuality?: Prisma.DataQualityUpdateManyWithoutCardNestedInput
+  evaluations?: Prisma.EvaluationUpdateManyWithoutCardNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutCardNestedInput
+  opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
+  signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
+  watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
+}
+
+export type CardUncheckedUpdateWithoutSignalSnapshotsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  set?: Prisma.StringFieldUpdateOperationsInput | string
+  number?: Prisma.StringFieldUpdateOperationsInput | string
+  variant?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  grade?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  condition?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedName?: Prisma.StringFieldUpdateOperationsInput | string
+  setCode?: Prisma.StringFieldUpdateOperationsInput | string
+  rarity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  cardKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cardType?: Prisma.StringFieldUpdateOperationsInput | string
+  isValidated?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastValidated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  validationScore?: Prisma.FloatFieldUpdateOperationsInput | number
+  compSales?: Prisma.CompSaleUncheckedUpdateManyWithoutCardNestedInput
+  dataQuality?: Prisma.DataQualityUncheckedUpdateManyWithoutCardNestedInput
+  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutCardNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutCardNestedInput
+  opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
+  signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
+}
+
+export type CardCreateWithoutDailyStatsInput = {
+  id?: string
+  name: string
+  set: string
+  number: string
+  variant?: string | null
+  grade?: string | null
+  condition?: string | null
+  language?: string
+  normalizedName?: string
+  rarity?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  cardKey?: string | null
+  cardType?: string
+  isValidated?: boolean
+  lastValidated?: Date | string | null
+  validationScore?: number
+  cardSet?: Prisma.CardSetCreateNestedOneWithoutCardsInput
+  compSales?: Prisma.CompSaleCreateNestedManyWithoutCardInput
+  dataQuality?: Prisma.DataQualityCreateNestedManyWithoutCardInput
+  evaluations?: Prisma.EvaluationCreateNestedManyWithoutCardInput
+  listings?: Prisma.ListingCreateNestedManyWithoutCardInput
+  opportunities?: Prisma.OpportunityCreateNestedManyWithoutCardInput
+  signals?: Prisma.SignalCreateNestedManyWithoutCardInput
+  watchlistItems?: Prisma.WatchlistItemCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotCreateNestedManyWithoutCardInput
+}
+
+export type CardUncheckedCreateWithoutDailyStatsInput = {
+  id?: string
+  name: string
+  set: string
+  number: string
+  variant?: string | null
+  grade?: string | null
+  condition?: string | null
+  language?: string
+  normalizedName?: string
+  setCode?: string
+  rarity?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  cardKey?: string | null
+  cardType?: string
+  isValidated?: boolean
+  lastValidated?: Date | string | null
+  validationScore?: number
+  compSales?: Prisma.CompSaleUncheckedCreateNestedManyWithoutCardInput
+  dataQuality?: Prisma.DataQualityUncheckedCreateNestedManyWithoutCardInput
+  evaluations?: Prisma.EvaluationUncheckedCreateNestedManyWithoutCardInput
+  listings?: Prisma.ListingUncheckedCreateNestedManyWithoutCardInput
+  opportunities?: Prisma.OpportunityUncheckedCreateNestedManyWithoutCardInput
+  signals?: Prisma.SignalUncheckedCreateNestedManyWithoutCardInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedCreateNestedManyWithoutCardInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedCreateNestedManyWithoutCardInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedCreateNestedManyWithoutCardInput
+}
+
+export type CardCreateOrConnectWithoutDailyStatsInput = {
+  where: Prisma.CardWhereUniqueInput
+  create: Prisma.XOR<Prisma.CardCreateWithoutDailyStatsInput, Prisma.CardUncheckedCreateWithoutDailyStatsInput>
+}
+
+export type CardUpsertWithoutDailyStatsInput = {
+  update: Prisma.XOR<Prisma.CardUpdateWithoutDailyStatsInput, Prisma.CardUncheckedUpdateWithoutDailyStatsInput>
+  create: Prisma.XOR<Prisma.CardCreateWithoutDailyStatsInput, Prisma.CardUncheckedCreateWithoutDailyStatsInput>
+  where?: Prisma.CardWhereInput
+}
+
+export type CardUpdateToOneWithWhereWithoutDailyStatsInput = {
+  where?: Prisma.CardWhereInput
+  data: Prisma.XOR<Prisma.CardUpdateWithoutDailyStatsInput, Prisma.CardUncheckedUpdateWithoutDailyStatsInput>
+}
+
+export type CardUpdateWithoutDailyStatsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  set?: Prisma.StringFieldUpdateOperationsInput | string
+  number?: Prisma.StringFieldUpdateOperationsInput | string
+  variant?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  grade?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  condition?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedName?: Prisma.StringFieldUpdateOperationsInput | string
+  rarity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  cardKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cardType?: Prisma.StringFieldUpdateOperationsInput | string
+  isValidated?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastValidated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  validationScore?: Prisma.FloatFieldUpdateOperationsInput | number
+  cardSet?: Prisma.CardSetUpdateOneWithoutCardsNestedInput
+  compSales?: Prisma.CompSaleUpdateManyWithoutCardNestedInput
+  dataQuality?: Prisma.DataQualityUpdateManyWithoutCardNestedInput
+  evaluations?: Prisma.EvaluationUpdateManyWithoutCardNestedInput
+  listings?: Prisma.ListingUpdateManyWithoutCardNestedInput
+  opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
+  signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
+  watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+}
+
+export type CardUncheckedUpdateWithoutDailyStatsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  set?: Prisma.StringFieldUpdateOperationsInput | string
+  number?: Prisma.StringFieldUpdateOperationsInput | string
+  variant?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  grade?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  condition?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language?: Prisma.StringFieldUpdateOperationsInput | string
+  normalizedName?: Prisma.StringFieldUpdateOperationsInput | string
+  setCode?: Prisma.StringFieldUpdateOperationsInput | string
+  rarity?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  cardKey?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  cardType?: Prisma.StringFieldUpdateOperationsInput | string
+  isValidated?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  lastValidated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  validationScore?: Prisma.FloatFieldUpdateOperationsInput | number
+  compSales?: Prisma.CompSaleUncheckedUpdateManyWithoutCardNestedInput
+  dataQuality?: Prisma.DataQualityUncheckedUpdateManyWithoutCardNestedInput
+  evaluations?: Prisma.EvaluationUncheckedUpdateManyWithoutCardNestedInput
+  listings?: Prisma.ListingUncheckedUpdateManyWithoutCardNestedInput
+  opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
+  signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
+  watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
 }
 
 export type CardCreateManyCardSetInput = {
@@ -1867,6 +2435,9 @@ export type CardUpdateWithoutCardSetInput = {
   opportunities?: Prisma.OpportunityUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateWithoutCardSetInput = {
@@ -1894,6 +2465,9 @@ export type CardUncheckedUpdateWithoutCardSetInput = {
   opportunities?: Prisma.OpportunityUncheckedUpdateManyWithoutCardNestedInput
   signals?: Prisma.SignalUncheckedUpdateManyWithoutCardNestedInput
   watchlistItems?: Prisma.WatchlistItemUncheckedUpdateManyWithoutCardNestedInput
+  priceSnapshots?: Prisma.PriceSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  signalSnapshots?: Prisma.SignalSnapshotUncheckedUpdateManyWithoutCardNestedInput
+  dailyStats?: Prisma.DailyCardStatsUncheckedUpdateManyWithoutCardNestedInput
 }
 
 export type CardUncheckedUpdateManyWithoutCardSetInput = {
@@ -1929,6 +2503,9 @@ export type CardCountOutputType = {
   opportunities: number
   signals: number
   watchlistItems: number
+  priceSnapshots: number
+  signalSnapshots: number
+  dailyStats: number
 }
 
 export type CardCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1939,6 +2516,9 @@ export type CardCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.I
   opportunities?: boolean | CardCountOutputTypeCountOpportunitiesArgs
   signals?: boolean | CardCountOutputTypeCountSignalsArgs
   watchlistItems?: boolean | CardCountOutputTypeCountWatchlistItemsArgs
+  priceSnapshots?: boolean | CardCountOutputTypeCountPriceSnapshotsArgs
+  signalSnapshots?: boolean | CardCountOutputTypeCountSignalSnapshotsArgs
+  dailyStats?: boolean | CardCountOutputTypeCountDailyStatsArgs
 }
 
 /**
@@ -2000,6 +2580,27 @@ export type CardCountOutputTypeCountWatchlistItemsArgs<ExtArgs extends runtime.T
   where?: Prisma.WatchlistItemWhereInput
 }
 
+/**
+ * CardCountOutputType without action
+ */
+export type CardCountOutputTypeCountPriceSnapshotsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PriceSnapshotWhereInput
+}
+
+/**
+ * CardCountOutputType without action
+ */
+export type CardCountOutputTypeCountSignalSnapshotsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SignalSnapshotWhereInput
+}
+
+/**
+ * CardCountOutputType without action
+ */
+export type CardCountOutputTypeCountDailyStatsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DailyCardStatsWhereInput
+}
+
 
 export type CardSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -2028,6 +2629,9 @@ export type CardSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   opportunities?: boolean | Prisma.Card$opportunitiesArgs<ExtArgs>
   signals?: boolean | Prisma.Card$signalsArgs<ExtArgs>
   watchlistItems?: boolean | Prisma.Card$watchlistItemsArgs<ExtArgs>
+  priceSnapshots?: boolean | Prisma.Card$priceSnapshotsArgs<ExtArgs>
+  signalSnapshots?: boolean | Prisma.Card$signalSnapshotsArgs<ExtArgs>
+  dailyStats?: boolean | Prisma.Card$dailyStatsArgs<ExtArgs>
   _count?: boolean | Prisma.CardCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["card"]>
 
@@ -2106,6 +2710,9 @@ export type CardInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   opportunities?: boolean | Prisma.Card$opportunitiesArgs<ExtArgs>
   signals?: boolean | Prisma.Card$signalsArgs<ExtArgs>
   watchlistItems?: boolean | Prisma.Card$watchlistItemsArgs<ExtArgs>
+  priceSnapshots?: boolean | Prisma.Card$priceSnapshotsArgs<ExtArgs>
+  signalSnapshots?: boolean | Prisma.Card$signalSnapshotsArgs<ExtArgs>
+  dailyStats?: boolean | Prisma.Card$dailyStatsArgs<ExtArgs>
   _count?: boolean | Prisma.CardCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type CardIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2126,6 +2733,9 @@ export type $CardPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     opportunities: Prisma.$OpportunityPayload<ExtArgs>[]
     signals: Prisma.$SignalPayload<ExtArgs>[]
     watchlistItems: Prisma.$WatchlistItemPayload<ExtArgs>[]
+    priceSnapshots: Prisma.$PriceSnapshotPayload<ExtArgs>[]
+    signalSnapshots: Prisma.$SignalSnapshotPayload<ExtArgs>[]
+    dailyStats: Prisma.$DailyCardStatsPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2548,6 +3158,9 @@ export interface Prisma__CardClient<T, Null = never, ExtArgs extends runtime.Typ
   opportunities<T extends Prisma.Card$opportunitiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Card$opportunitiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$OpportunityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   signals<T extends Prisma.Card$signalsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Card$signalsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SignalPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   watchlistItems<T extends Prisma.Card$watchlistItemsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Card$watchlistItemsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WatchlistItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  priceSnapshots<T extends Prisma.Card$priceSnapshotsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Card$priceSnapshotsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PriceSnapshotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  signalSnapshots<T extends Prisma.Card$signalSnapshotsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Card$signalSnapshotsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SignalSnapshotPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  dailyStats<T extends Prisma.Card$dailyStatsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Card$dailyStatsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DailyCardStatsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3175,6 +3788,78 @@ export type Card$watchlistItemsArgs<ExtArgs extends runtime.Types.Extensions.Int
   take?: number
   skip?: number
   distinct?: Prisma.WatchlistItemScalarFieldEnum | Prisma.WatchlistItemScalarFieldEnum[]
+}
+
+/**
+ * Card.priceSnapshots
+ */
+export type Card$priceSnapshotsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PriceSnapshot
+   */
+  select?: Prisma.PriceSnapshotSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PriceSnapshot
+   */
+  omit?: Prisma.PriceSnapshotOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PriceSnapshotInclude<ExtArgs> | null
+  where?: Prisma.PriceSnapshotWhereInput
+  orderBy?: Prisma.PriceSnapshotOrderByWithRelationInput | Prisma.PriceSnapshotOrderByWithRelationInput[]
+  cursor?: Prisma.PriceSnapshotWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.PriceSnapshotScalarFieldEnum | Prisma.PriceSnapshotScalarFieldEnum[]
+}
+
+/**
+ * Card.signalSnapshots
+ */
+export type Card$signalSnapshotsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SignalSnapshot
+   */
+  select?: Prisma.SignalSnapshotSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SignalSnapshot
+   */
+  omit?: Prisma.SignalSnapshotOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SignalSnapshotInclude<ExtArgs> | null
+  where?: Prisma.SignalSnapshotWhereInput
+  orderBy?: Prisma.SignalSnapshotOrderByWithRelationInput | Prisma.SignalSnapshotOrderByWithRelationInput[]
+  cursor?: Prisma.SignalSnapshotWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SignalSnapshotScalarFieldEnum | Prisma.SignalSnapshotScalarFieldEnum[]
+}
+
+/**
+ * Card.dailyStats
+ */
+export type Card$dailyStatsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the DailyCardStats
+   */
+  select?: Prisma.DailyCardStatsSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the DailyCardStats
+   */
+  omit?: Prisma.DailyCardStatsOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.DailyCardStatsInclude<ExtArgs> | null
+  where?: Prisma.DailyCardStatsWhereInput
+  orderBy?: Prisma.DailyCardStatsOrderByWithRelationInput | Prisma.DailyCardStatsOrderByWithRelationInput[]
+  cursor?: Prisma.DailyCardStatsWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.DailyCardStatsScalarFieldEnum | Prisma.DailyCardStatsScalarFieldEnum[]
 }
 
 /**

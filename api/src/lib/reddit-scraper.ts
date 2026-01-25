@@ -22,6 +22,14 @@ let circuitOpen = false;
 let lastFailureTime = 0;
 const CIRCUIT_RESET_MS = 5 * 60 * 1000; // 5 minutes
 
+/**
+ * Reset circuit breaker state (for testing purposes)
+ */
+export function resetCircuitBreaker(): void {
+  circuitOpen = false;
+  lastFailureTime = 0;
+}
+
 // Legacy exports for backward compatibility
 const USER_AGENT = CONFIG.userAgent;
 const SUBREDDITS = CONFIG.subreddits;

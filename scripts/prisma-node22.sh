@@ -1,21 +1,37 @@
 #!/bin/bash
-# Run prisma commands with Node.js 22 to avoid ESM/CommonJS conflicts
-# Usage: ./scripts/prisma-node22.sh generate
-#        ./scripts/prisma-node22.sh migrate dev --name my_migration
+# Wrapper script to run Prisma with Node.js 22
+# Required due to ESM/CommonJS conflict with zeptomatch in Prisma 7.x
+# See: https://github.com/prisma/prisma/issues/25587
 
-NODE22_PATH="$HOME/.nvm/versions/node/v22.22.0/bin"
+# Try NVM first, then fnm
+NODE22_PATH="$HOME/.nvm/versions/node/v22.22.0/bin/node"
 
-if [ ! -d "$NODE22_PATH" ]; then
-  # Try to find any Node.js 22.x version
-  NODE22_PATH=$(ls -d "$HOME/.nvm/versions/node/v22."* 2>/dev/null | head -1)/bin
+if [ ! -f "$NODE22_PATH" ]; then
+  NODE22_PATH="$HOME/.nvm/versions/node/v22.19.0/bin/node"
 fi
 
-if [ ! -d "$NODE22_PATH" ]; then
-  echo "Error: Node.js 22 not found. Install it with: nvm install 22"
+if [ ! -f "$NODE22_PATH" ]; then
+  NODE22_PATH="$HOME/.fnm/node-versions/v22.22.0/installation/bin/node"
+fi
+
+if [ ! -f "$NODE22_PATH" ]; then
+  echo "Error: Node.js 22 not found. Install with: nvm install 22 or fnm install 22"
   exit 1
 fi
 
-export PATH="$NODE22_PATH:$PATH"
-echo "Using Node.js: $(node --version)"
+# Find the prisma build directory
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PRISMA_BUILD="$SCRIPT_DIR/../node_modules/prisma/build/index.js"
 
-exec ./node_modules/.bin/prisma "$@"
+if [ ! -f "$PRISMA_BUILD" ]; then
+  # Try pnpm location
+  PRISMA_BUILD=$(find "$SCRIPT_DIR/../node_modules/.pnpm" -name "index.js" -path "*/prisma/build/*" 2>/dev/null | head -1)
+fi
+
+if [ ! -f "$PRISMA_BUILD" ]; then
+  echo "Error: Prisma build not found"
+  exit 1
+fi
+
+# Run prisma with Node 22
+exec "$NODE22_PATH" "$PRISMA_BUILD" "$@"

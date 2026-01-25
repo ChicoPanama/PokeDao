@@ -1,6 +1,6 @@
 import { formatOpportunityThread } from '../../../../packages/social/x/post.js';
 import { postThread } from '../../../../packages/social/x/client.js';
-import { sharedPrisma as prisma } from '../../../../packages/shared/db.js';
+import { getSharedPrisma } from '../../../../packages/shared/db.js';
 import { cardTitleForTweet } from './title.js';
 
 function inWindow(now: Date) {
@@ -15,6 +15,7 @@ function inWindow(now: Date) {
 }
 
 export async function postDailyBest() {
+  const prisma = await getSharedPrisma();
   const now = new Date();
   if (!inWindow(now)) {
     console.log('[post] daily: outside posting window, skipping');

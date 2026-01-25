@@ -314,6 +314,11 @@ model Card {
   signals         Signal[]
   watchlistItems  WatchlistItem[]
 
+  // Data warehouse relations
+  priceSnapshots  PriceSnapshot[]
+  signalSnapshots SignalSnapshot[]
+  dailyStats      DailyCardStats[]
+
   @@unique([set, number, variant, grade, language])
   @@index([cardKey])
   @@index([isValidated, validationScore])
@@ -557,12 +562,14 @@ model UnifiedPortfolioItem {
 
 model User {
   id           String   @id @default(cuid())
-  telegramId   String   @unique
+  telegramId   String?  @unique
+  discordId    String?  @unique
   username     String?  @db.VarChar(255)
   firstName    String?  @db.VarChar(255)
   lastName     String?  @db.VarChar(255)
   referralCode String   @unique @db.VarChar(50)
   referredBy   String?  @db.VarChar(50)
+  walletAddress String? @db.VarChar(255)
   createdAt    DateTime @default(now())
 
   purchases       Purchase[]
@@ -570,20 +577,29 @@ model User {
   referralEvents  ReferralEvent[]
   preferences     UserPreference?
 
+  // Data warehouse relations
+  userQueries     UserQuery[]
+  userActions     UserAction[]
+  userOutcomes    UserOutcome[]
+  alertDeliveries AlertDelivery[]
+
   @@index([referralCode])
   @@index([telegramId])
+  @@index([discordId])
 }
 
 model UserPreference {
-  id             String   @id @default(cuid())
-  userId         String   @unique
-  alertsEnabled  Boolean  @default(true)
-  minDiscountPct Int      @default(10)
-  minPriceUsd    Int      @default(0)
-  maxPriceUsd    Int      @default(10000)
-  grades         String[] @default(["PSA 10", "PSA 9", "CGC 10", "BGS 10"])
-  snoozedCards   Json?    // Map<cardId, expiresAt timestamp>
-  updatedAt      DateTime @updatedAt
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  alertsEnabled   Boolean  @default(true)
+  minDiscountPct  Float    @default(10)
+  minPriceUsd     Float    @default(0)
+  maxPriceUsd     Float    @default(10000)
+  grades          String[] @default(["PSA 10", "PSA 9", "CGC 10", "BGS 10"])
+  quietHoursStart String?  // HH:MM format or hour in UTC
+  quietHoursEnd   String?  // HH:MM format or hour in UTC
+  snoozedCards    Json?    @default("{}") // Map<cardId, expiresAt timestamp>
+  updatedAt       DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -677,4 +693,201 @@ enum RiskLevel {
   LOW
   MEDIUM
   HIGH
+}
+
+// ===========================================
+// DATA WAREHOUSE MODELS (2026-01-25)
+// ===========================================
+
+model PriceSnapshot {
+  id              String   @id @default(cuid())
+  cardId          String?
+  card            Card?    @relation(fields: [cardId], references: [id])
+  cardKey         String?
+  source          String
+  sourceVersion   String   @default("v1")
+  externalId      String?
+  priceCents      Int
+  currency        String   @default("USD")
+  grade           String?
+  grader          String?
+  gradeNumeric    Float?
+  condition       String?
+  listingType     String?
+  sellerId        String?
+  sellerRating    Float?
+  listedAt        DateTime?
+  soldAt          DateTime?
+  country         String?
+  shippingCents   Int?
+  raw             Json?
+  rawHash         String?
+  timestamp       DateTime @default(now())
+  parserVersion   String   @default("1.0.0")
+
+  @@unique([source, externalId])
+  @@index([cardId, source, timestamp])
+  @@index([cardKey, timestamp])
+  @@index([rawHash])
+}
+
+model SignalSnapshot {
+  id              String   @id @default(cuid())
+  cardId          String
+  card            Card     @relation(fields: [cardId], references: [id])
+  cardKey         String?
+  timestamp       DateTime @default(now())
+  fairValueCents  Int
+  confidenceScore Float
+  trendDirection  String?
+  trendPct        Float?
+  trendPeriodDays Int?
+  liquidityScore  Float?
+  activeListings  Int?
+  avgDaysOnMarket Float?
+  velocity30d     Int?
+  sentimentScore  Float?
+  sentimentLabel  String?
+  sentimentPostCount Int?
+  psa10Pop        Int?
+  totalPop        Int?
+  scarcityScore   Float?
+  arbitrageOpportunities Json?
+
+  @@index([cardId, timestamp])
+  @@index([cardKey, timestamp])
+}
+
+model ThesisRecord {
+  id              String   @id @default(cuid())
+  opportunityId   String   @unique
+  thesis          String   @db.Text
+  recommendation  String
+  usedLLM         Boolean  @default(false)
+  modelName       String?
+  promptTokens    Int?
+  completionTokens Int?
+  costCents       Float?
+  generationTimeMs Int
+  signalsSnapshot Json?
+  createdAt       DateTime @default(now())
+
+  @@index([recommendation])
+  @@index([usedLLM])
+}
+
+model UserQuery {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  platform        String
+  rawText         String   @db.Text
+  intentType      String?
+  entities        Json?
+  responseTimeMs  Int?
+  timestamp       DateTime @default(now())
+
+  @@index([userId, timestamp])
+  @@index([platform, timestamp])
+}
+
+model UserAction {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  opportunityId   String?
+  action          String
+  platform        String
+  source          String?
+  timeToActionMs  Int?
+  timestamp       DateTime @default(now())
+
+  @@index([userId, timestamp])
+  @@index([opportunityId])
+}
+
+model UserOutcome {
+  id                  String   @id @default(cuid())
+  userId              String
+  user                User     @relation(fields: [userId], references: [id])
+  opportunityId       String?
+  cardId              String?
+  purchasePriceCents  Int
+  purchaseDate        DateTime @default(now())
+  grade               String?
+  status              String   @default("HOLDING")
+  currentValueCents   Int?
+  realizedReturnPct   Float?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([userId, status])
+  @@index([cardId])
+}
+
+model AlertDelivery {
+  id              String   @id @default(cuid())
+  userId          String
+  user            User     @relation(fields: [userId], references: [id])
+  opportunityId   String
+  platform        String
+  status          String
+  messageId       String?
+  sentAt          DateTime @default(now())
+  readAt          DateTime?
+  clickedAt       DateTime?
+
+  @@index([userId, sentAt])
+  @@index([opportunityId])
+  @@index([status])
+}
+
+model DailyCardStats {
+  id              String   @id @default(cuid())
+  date            DateTime @db.Date
+  cardId          String
+  card            Card     @relation(fields: [cardId], references: [id])
+  cardKey         String?
+  openPriceCents  Int
+  closePriceCents Int
+  highPriceCents  Int
+  lowPriceCents   Int
+  avgPriceCents   Int
+  medianPriceCents Int
+  volume          Int      @default(0)
+  salesCount      Int      @default(0)
+  listingsCount   Int      @default(0)
+
+  @@unique([date, cardId])
+  @@index([date])
+  @@index([cardId])
+}
+
+model DailyMarketStats {
+  id                  String   @id @default(cuid())
+  date                DateTime @db.Date @unique
+  totalVolume         Float    @default(0)
+  totalSaleCount      Int      @default(0)
+  totalListingCount   Int      @default(0)
+  activeCardCount     Int      @default(0)
+  avgPriceChangePct   Float?
+  topGainers          Json?
+  topLosers           Json?
+  sentimentAvg        Float?
+
+  @@index([date])
+}
+
+model DailySourceStats {
+  id              String   @id @default(cuid())
+  date            DateTime @db.Date
+  source          String
+  snapshotCount   Int      @default(0)
+  uniqueCardCount Int      @default(0)
+  saleCount       Int      @default(0)
+  listingCount    Int      @default(0)
+  avgPriceCents   Int      @default(0)
+
+  @@unique([date, source])
+  @@index([date])
 }

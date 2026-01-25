@@ -124,6 +124,28 @@ export interface AIAnalysisResult {
 }
 
 // ============================================================================
+// CONFIGURATION
+// ============================================================================
+
+const TIMEOUTS = {
+  mew1a: Number(process.env.MEW1A_TIMEOUT_MS || 30000),
+  ollama: Number(process.env.OLLAMA_TIMEOUT_MS || 15000),
+  deepseek: Number(process.env.DEEPSEEK_TIMEOUT_MS || 60000),
+};
+
+// Model weights for ensemble voting (configurable via env vars)
+// Default: DeepSeek 2x, MEW-1A 1x, Ollama 1x, Reddit 0.5x
+const WEIGHTS = {
+  mew1a: Number(process.env.ENSEMBLE_WEIGHT_MEW1A || 1),
+  ollama: Number(process.env.ENSEMBLE_WEIGHT_OLLAMA || 1),
+  deepseek: Number(process.env.ENSEMBLE_WEIGHT_DEEPSEEK || 2),
+  reddit: Number(process.env.ENSEMBLE_WEIGHT_REDDIT || 0.5),
+};
+
+// Skip MEW-1A if SKIP_MEW1A=true (useful for avoiding cold start delays)
+const SKIP_MEW1A = process.env.SKIP_MEW1A === 'true';
+
+// ============================================================================
 // MEW-1A CLIENT (vLLM + Modal Labs fallback)
 // ============================================================================
 
@@ -131,15 +153,18 @@ class Mew1AClient {
   private vllmEndpoint: string;
   private modalEndpoint: string;
   private useVLLM: boolean;
+  private timeout: number;
 
   constructor(
-    vllmEndpoint = process.env.VLLM_ENDPOINT || 'https://chicopanama--mew1a-vllm-analyze.modal.run',
+    // Updated to use the working vLLM v4.3 Vector RAG endpoint
+    vllmEndpoint = process.env.VLLM_ENDPOINT || 'https://chicopanama--mew1a-vllm-v4-3-vector-rag-fastapi-app.modal.run/analyze',
     modalEndpoint = 'https://chicopanama--mew1a-tcg-pricing-analyze-card.modal.run',
     useVLLM = process.env.USE_VLLM !== 'false' // Default to vLLM unless explicitly disabled
   ) {
     this.vllmEndpoint = vllmEndpoint;
     this.modalEndpoint = modalEndpoint;
     this.useVLLM = useVLLM;
+    this.timeout = TIMEOUTS.mew1a;
   }
 
   async analyze(prompt: string, maxTokens = 150): Promise<{ response: string; time: number; backend: 'vllm' | 'modal' }> {
@@ -155,7 +180,7 @@ class Mew1AClient {
             prompt,
             max_tokens: maxTokens,
           }),
-          signal: AbortSignal.timeout(30000), // 30s timeout
+          signal: AbortSignal.timeout(this.timeout),
         });
 
         if (response.ok) {
@@ -214,7 +239,7 @@ class Mew1AClient {
             fair_value: fairValue,
             max_tokens: maxTokens,
           }),
-          signal: AbortSignal.timeout(30000),
+          signal: AbortSignal.timeout(this.timeout),
         });
 
         if (response.ok) {
@@ -227,7 +252,7 @@ class Mew1AClient {
           };
         }
       } catch (error) {
-        console.warn('vLLM card analysis failed, using prompt-based fallback');
+        console.warn('[mew1a] vLLM card analysis failed, using prompt-based fallback');
       }
     }
 
@@ -259,33 +284,44 @@ class Mew1AClient {
 
 class OllamaClient {
   private baseURL: string;
+  private timeout: number;
 
   constructor(baseURL = 'http://localhost:11434') {
     this.baseURL = baseURL;
+    this.timeout = TIMEOUTS.ollama;
   }
 
   async generate(model: string, prompt: string): Promise<{ response: string; time: number }> {
     const start = Date.now();
 
-    const response = await fetch(`${this.baseURL}/api/generate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model,
-        prompt,
-        stream: false,
-        options: {
-          temperature: 0.3,
-          num_predict: 300,
-        },
-      }),
-    });
+    try {
+      const response = await fetch(`${this.baseURL}/api/generate`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model,
+          prompt,
+          stream: false,
+          options: {
+            temperature: 0.3,
+            num_predict: 300,
+          },
+        }),
+        signal: AbortSignal.timeout(this.timeout),
+      });
 
-    const data: any = await response.json();
-    return {
-      response: data.response,
-      time: Date.now() - start,
-    };
+      const data: any = await response.json();
+      return {
+        response: data.response || '',
+        time: Date.now() - start,
+      };
+    } catch (error) {
+      console.warn('[ollama] Request failed:', error instanceof Error ? error.message : 'Unknown error');
+      return {
+        response: '',
+        time: Date.now() - start,
+      };
+    }
   }
 }
 
@@ -295,11 +331,14 @@ class OllamaClient {
 
 class DeepSeekClient {
   private client: OpenAI;
+  private timeout: number;
 
   constructor(apiKey: string) {
+    this.timeout = TIMEOUTS.deepseek;
     this.client = new OpenAI({
       baseURL: 'https://api.deepseek.com',
       apiKey,
+      timeout: this.timeout,
     });
   }
 
@@ -337,8 +376,9 @@ export class AIEnsembleEngine {
 
   async analyzeCard(signal: MarketSignal): Promise<AIAnalysisResult> {
     // Parallel execution: Layer 1-4 (TCG specialist + fast + deep + Reddit)
+    // Skip MEW-1A if SKIP_MEW1A=true to avoid cold start delays
     const [mew1aResult, quickResult, deepResult, redditResult] = await Promise.all([
-      this.runMew1AAnalysis(signal),
+      SKIP_MEW1A ? this.getDefaultMew1AResult() : this.runMew1AAnalysis(signal),
       this.runQuickAnalysis(signal),
       this.runDeepAnalysis(signal),
       this.runRedditAnalysis(signal),
@@ -419,6 +459,17 @@ Provide your BUY/PASS recommendation with reasoning (50 words max).`;
       reasoning: result.response,
       confidence,
       responseTime: result.time,
+    };
+  }
+
+  // Default MEW-1A result when skipped (for cold start mitigation)
+  private getDefaultMew1AResult() {
+    return {
+      model: 'mew1a-llama-3.2' as const,
+      recommendation: 'NEUTRAL' as const,
+      reasoning: 'MEW-1A skipped (SKIP_MEW1A=true for cold start mitigation)',
+      confidence: 0,
+      responseTime: 0,
     };
   }
 
@@ -527,23 +578,40 @@ CONFIDENCE: [75-95]%`;
                      deep.investmentThesis.toLowerCase().includes('pass') ? -1 : 0;
     const redditScore = reddit.sentiment === 'BULLISH' ? reddit.score : reddit.sentiment === 'BEARISH' ? reddit.score : 0;
 
-    // Four-way agreement level with weighted scoring (Mew-1A gets 2x weight, Reddit gets 0.5x weight)
-    const scores = [mew1aScore, mew1aScore, quickScore, deepScore, redditScore * 0.5];
-    const avgScore = scores.reduce((a, b) => a + b, 0) / scores.length;
-    const variance = scores.reduce((sum, s) => sum + Math.pow(s - avgScore, 2), 0) / scores.length;
+    // Weighted scoring using configurable WEIGHTS
+    // Default: DeepSeek 2x, MEW-1A 1x, Ollama 1x, Reddit 0.5x
+    const weightedScores = [
+      { score: mew1aScore, weight: WEIGHTS.mew1a },
+      { score: quickScore, weight: WEIGHTS.ollama },
+      { score: deepScore, weight: WEIGHTS.deepseek },
+      { score: redditScore, weight: WEIGHTS.reddit },
+    ];
+    const totalWeight = weightedScores.reduce((sum, s) => sum + s.weight, 0);
+    const weightedSum = weightedScores.reduce((sum, s) => sum + s.score * s.weight, 0);
+    const avgScore = weightedSum / totalWeight;
+
+    // Variance calculation for agreement
+    const variance = weightedScores.reduce((sum, s) => sum + s.weight * Math.pow(s.score - avgScore, 2), 0) / totalWeight;
     const agreement = 1 - Math.min(1, variance); // Low variance = high agreement
 
-    // Conviction = agreement * avg(confidence) with 2x weight on Mew-1A, 0.3x weight on Reddit
-    const avgConfidence = (mew1a.confidence * 2 + quick.confidence + deep.confidence + reddit.confidence * 0.3) / 4.3;
+    // Conviction = agreement * weighted avg(confidence)
+    const confidenceWeightedSum =
+      mew1a.confidence * WEIGHTS.mew1a +
+      quick.confidence * WEIGHTS.ollama +
+      deep.confidence * WEIGHTS.deepseek +
+      reddit.confidence * WEIGHTS.reddit;
+    const avgConfidence = confidenceWeightedSum / totalWeight;
     const convictionScore = agreement * avgConfidence;
 
     // Alpha strength = discount magnitude * conviction
     const discount = ((signal.listedPrice - signal.marketData.fairValue) / signal.marketData.fairValue) * 100;
     const alphaStrength = Math.min(100, Math.abs(discount) * (convictionScore / 100));
 
-    // Final recommendation (prioritize Mew-1A when high confidence)
+    // Final recommendation (prioritize DeepSeek when MEW-1A skipped)
     let recommendation: AIAnalysisResult['recommendation'];
-    if (mew1a.confidence >= 85 && mew1aScore === 1 && discount < -15) recommendation = 'STRONG_BUY';
+    const hasMew1a = !SKIP_MEW1A && mew1a.confidence > 0;
+    if (hasMew1a && mew1a.confidence >= 85 && mew1aScore === 1 && discount < -15) recommendation = 'STRONG_BUY';
+    else if (deep.confidence >= 85 && deepScore === 1 && discount < -15) recommendation = 'STRONG_BUY';
     else if (convictionScore >= 80 && discount < -15) recommendation = 'STRONG_BUY';
     else if (convictionScore >= 70 && discount < -10) recommendation = 'BUY';
     else if (convictionScore >= 60 && discount < 10) recommendation = 'HOLD';
@@ -660,14 +728,17 @@ CONFIDENCE: [75-95]%`;
     return match ? parseInt(match[1]) : 75;
   }
 
-  private extractMew1ARecommendation(text: string): 'BUY' | 'PASS' | 'NEUTRAL' {
+  private extractMew1ARecommendation(text: string | undefined): 'BUY' | 'PASS' | 'NEUTRAL' {
+    if (!text) return 'NEUTRAL';
     const lower = text.toLowerCase();
     if (lower.includes('buy') || lower.includes('strong buy')) return 'BUY';
     if (lower.includes('pass') || lower.includes('avoid')) return 'PASS';
     return 'NEUTRAL';
   }
 
-  private extractMew1AConfidence(text: string, discount: number): number {
+  private extractMew1AConfidence(text: string | undefined, discount: number): number {
+    if (!text) return 50; // Low confidence when no response
+
     // Extract explicit confidence if present
     const match = text.match(/confidence[:\s]+(\d+)/i);
     if (match) return parseInt(match[1]);

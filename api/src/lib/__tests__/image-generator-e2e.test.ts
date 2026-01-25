@@ -40,37 +40,41 @@ describe('Image Generator - E2E Real API Tests', () => {
     });
   });
 
-  describe('generatePriceChart - Real SVG Generation', () => {
-    it('should generate real SVG chart for BULLISH signal', async () => {
+  describe('generatePriceChart - Real PNG Generation', () => {
+    it('should generate real PNG chart', async () => {
       const history = generateMockPriceHistory(100, 30);
-      const svg = await generatePriceChart(history, 'BULLISH');
+      const chartBuffer = await generatePriceChart('Test Card', history);
 
-      expect(svg).toContain('<svg');
-      expect(svg).toContain('</svg>');
-      expect(svg).toContain('#22c55e'); // Green color
-      expect(svg).toContain('<path'); // Chart line
+      expect(Buffer.isBuffer(chartBuffer)).toBe(true);
+      expect(chartBuffer.length).toBeGreaterThan(1000); // PNG should be substantial
 
       // Save for manual inspection
-      writeFileSync('/tmp/test-chart-bullish.svg', svg);
-      console.log('✓ Generated BULLISH SVG chart (saved to /tmp/test-chart-bullish.svg)');
+      writeFileSync('/tmp/test-chart.png', chartBuffer);
+      console.log(`✓ Generated PNG chart (${chartBuffer.length} bytes, saved to /tmp/test-chart.png)`);
     });
 
-    it('should generate real SVG chart for BEARISH signal', async () => {
-      const history = generateMockPriceHistory(100, 30);
-      const svg = await generatePriceChart(history, 'BEARISH');
+    it('should generate charts for different price histories', async () => {
+      const shortHistory = generateMockPriceHistory(50, 7);
+      const longHistory = generateMockPriceHistory(200, 60);
 
-      expect(svg).toContain('#ef4444'); // Red color
-      writeFileSync('/tmp/test-chart-bearish.svg', svg);
-      console.log('✓ Generated BEARISH SVG chart (saved to /tmp/test-chart-bearish.svg)');
+      const shortChart = await generatePriceChart('Short Term Card', shortHistory);
+      const longChart = await generatePriceChart('Long Term Card', longHistory);
+
+      expect(Buffer.isBuffer(shortChart)).toBe(true);
+      expect(Buffer.isBuffer(longChart)).toBe(true);
+
+      writeFileSync('/tmp/test-chart-short.png', shortChart);
+      writeFileSync('/tmp/test-chart-long.png', longChart);
+      console.log('✓ Generated charts for different time periods');
     });
 
-    it('should generate real SVG chart for NEUTRAL signal', async () => {
+    it('should handle volatile price history', async () => {
       const history = generateMockPriceHistory(100, 30);
-      const svg = await generatePriceChart(history, 'NEUTRAL');
+      const chartBuffer = await generatePriceChart('Volatile Card', history);
 
-      expect(svg).toContain('#6b7280'); // Gray color
-      writeFileSync('/tmp/test-chart-neutral.svg', svg);
-      console.log('✓ Generated NEUTRAL SVG chart (saved to /tmp/test-chart-neutral.svg)');
+      expect(Buffer.isBuffer(chartBuffer)).toBe(true);
+      writeFileSync('/tmp/test-chart-volatile.png', chartBuffer);
+      console.log('✓ Generated chart for volatile price history');
     });
   });
 
@@ -122,6 +126,7 @@ describe('Image Generator - E2E Real API Tests', () => {
 
       const mockAnalysis = {
         signal: 'BUY' as const,
+        recommendation: 'STRONG_BUY' as const,
         conviction: 85,
         avgScore: 0.75,
         avgConfidence: 0.88,
@@ -163,10 +168,7 @@ describe('Image Generator - E2E Real API Tests', () => {
       expect(cardImage).not.toBeNull();
 
       const history = generateMockPriceHistory(50, 30);
-      const chartSvg = await generatePriceChart(history, 'BULLISH');
-
-      // Convert SVG to buffer for combination
-      const chartBuffer = Buffer.from(chartSvg);
+      const chartBuffer = await generatePriceChart('Pikachu', history);
 
       const combined = await combineImages(cardImage!, chartBuffer);
 
@@ -182,6 +184,7 @@ describe('Image Generator - E2E Real API Tests', () => {
     it('should generate complete Twitter image from real data', async () => {
       const mockAnalysis = {
         signal: 'BUY' as const,
+        recommendation: 'BUY' as const,
         conviction: 75,
         avgScore: 0.7,
         avgConfidence: 0.85,
@@ -207,13 +210,14 @@ describe('Image Generator - E2E Real API Tests', () => {
         }
       };
 
-      const twitterImage = await generateTwitterImage(mockAnalysis);
+      const result = await generateTwitterImage(mockAnalysis);
 
-      expect(Buffer.isBuffer(twitterImage)).toBe(true);
-      expect(twitterImage.length).toBeGreaterThan(5000); // Full Twitter image should be substantial
+      expect(Buffer.isBuffer(result.buffer)).toBe(true);
+      expect(result.buffer.length).toBeGreaterThan(5000); // Full Twitter image should be substantial
+      expect(result.imagePath).toBeTruthy();
 
-      writeFileSync('/tmp/test-twitter-full.png', twitterImage);
-      console.log(`✓ Generated complete Twitter image (${twitterImage.length} bytes, saved to /tmp/test-twitter-full.png)`);
+      writeFileSync('/tmp/test-twitter-full.png', result.buffer);
+      console.log(`✓ Generated complete Twitter image (${result.buffer.length} bytes, saved to /tmp/test-twitter-full.png)`);
       console.log(`  Card: ${mockAnalysis.card.name} - ${mockAnalysis.card.setName}`);
       console.log(`  Signal: ${mockAnalysis.signal} (${mockAnalysis.conviction}% conviction)`);
       console.log(`  Price: $${mockAnalysis.pricing.listed} (${mockAnalysis.pricing.discount}% discount)`);
@@ -222,6 +226,7 @@ describe('Image Generator - E2E Real API Tests', () => {
     it('should generate Twitter image for PASS signal', async () => {
       const mockAnalysis = {
         signal: 'PASS' as const,
+        recommendation: 'SELL' as const,
         conviction: 80,
         avgScore: -0.7,
         avgConfidence: 0.88,
@@ -244,16 +249,17 @@ describe('Image Generator - E2E Real API Tests', () => {
         }
       };
 
-      const twitterImage = await generateTwitterImage(mockAnalysis);
+      const result = await generateTwitterImage(mockAnalysis);
 
-      expect(Buffer.isBuffer(twitterImage)).toBe(true);
-      writeFileSync('/tmp/test-twitter-pass.png', twitterImage);
+      expect(Buffer.isBuffer(result.buffer)).toBe(true);
+      writeFileSync('/tmp/test-twitter-pass.png', result.buffer);
       console.log(`✓ Generated PASS signal Twitter image (saved to /tmp/test-twitter-pass.png)`);
     }, 60000);
 
     it('should generate Twitter image for WATCH signal', async () => {
       const mockAnalysis = {
         signal: 'WATCH' as const,
+        recommendation: 'HOLD' as const,
         conviction: 50,
         avgScore: 0.2,
         avgConfidence: 0.6,
@@ -275,10 +281,10 @@ describe('Image Generator - E2E Real API Tests', () => {
         }
       };
 
-      const twitterImage = await generateTwitterImage(mockAnalysis);
+      const result = await generateTwitterImage(mockAnalysis);
 
-      expect(Buffer.isBuffer(twitterImage)).toBe(true);
-      writeFileSync('/tmp/test-twitter-watch.png', twitterImage);
+      expect(Buffer.isBuffer(result.buffer)).toBe(true);
+      writeFileSync('/tmp/test-twitter-watch.png', result.buffer);
       console.log(`✓ Generated WATCH signal Twitter image (saved to /tmp/test-twitter-watch.png)`);
     }, 60000);
   });

@@ -174,3 +174,53 @@ export type Purchase = Prisma.PurchaseModel
  * 
  */
 export type WatchlistItem = Prisma.WatchlistItemModel
+/**
+ * Model PriceSnapshot
+ * 
+ */
+export type PriceSnapshot = Prisma.PriceSnapshotModel
+/**
+ * Model SignalSnapshot
+ * 
+ */
+export type SignalSnapshot = Prisma.SignalSnapshotModel
+/**
+ * Model ThesisRecord
+ * 
+ */
+export type ThesisRecord = Prisma.ThesisRecordModel
+/**
+ * Model UserQuery
+ * 
+ */
+export type UserQuery = Prisma.UserQueryModel
+/**
+ * Model UserAction
+ * 
+ */
+export type UserAction = Prisma.UserActionModel
+/**
+ * Model UserOutcome
+ * 
+ */
+export type UserOutcome = Prisma.UserOutcomeModel
+/**
+ * Model AlertDelivery
+ * 
+ */
+export type AlertDelivery = Prisma.AlertDeliveryModel
+/**
+ * Model DailyCardStats
+ * 
+ */
+export type DailyCardStats = Prisma.DailyCardStatsModel
+/**
+ * Model DailyMarketStats
+ * 
+ */
+export type DailyMarketStats = Prisma.DailyMarketStatsModel
+/**
+ * Model DailySourceStats
+ * 
+ */
+export type DailySourceStats = Prisma.DailySourceStatsModel

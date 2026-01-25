@@ -1,4 +1,4 @@
-import { sharedPrisma as prisma } from '../../../../packages/shared/db.js';
+import { getSharedPrisma } from '../../../../packages/shared/db.js';
 
 export type FreshListing = {
   id: string; // MarketListing.id
@@ -13,28 +13,40 @@ export type FreshListing = {
 export async function findFreshListings({
   maxAgeMin = Number(process.env.OPP_MAX_LISTING_AGE_MIN || 60),
 } = {}): Promise<FreshListing[]> {
+  const prisma = await getSharedPrisma();
   const since = new Date(Date.now() - maxAgeMin * 60_000);
-  // Use MarketListing.seenAt as freshness indicator
+  // Use MarketListing.seenAt or lastSeenAt as freshness indicator
   const rows = await prisma.marketListing.findMany({
-    where: { seenAt: { gte: since }, isActive: true },
+    where: {
+      OR: [
+        { seenAt: { gte: since } },
+        { lastSeenAt: { gte: since } },
+      ],
+      isActive: true,
+      canonicalCardId: { not: null },
+      priceCents: { not: null },
+    },
     select: {
       id: true,
-      cardId: true,
+      canonicalCardId: true,
       source: true,
       priceCents: true,
       url: true,
       seenAt: true,
+      lastSeenAt: true,
     },
     take: 2000,
-    orderBy: { seenAt: 'desc' },
+    orderBy: { lastSeenAt: 'desc' },
   });
-  return rows.map((r) => ({
-    id: r.id,
-    cardId: r.cardId,
-    source: r.source,
-    priceCents: r.priceCents,
-    shippingCents: null, // unknown at this layer; fee profile provides default
-    url: r.url,
-    seenAt: r.seenAt,
-  }));
+  return rows
+    .filter((r) => r.canonicalCardId && r.priceCents)
+    .map((r) => ({
+      id: r.id,
+      cardId: r.canonicalCardId!,
+      source: r.source,
+      priceCents: r.priceCents!,
+      shippingCents: null, // unknown at this layer; fee profile provides default
+      url: r.url,
+      seenAt: r.seenAt ?? r.lastSeenAt,
+    }));
 }

@@ -1,4 +1,4 @@
-import { sharedPrisma as prisma } from '../../../../packages/shared/db.js';
+import { getSharedPrisma } from '../../../../packages/shared/db.js';
 import type { FreshListing } from './01_fetch.js';
 
 export type ListingWithComps = FreshListing & {
@@ -10,18 +10,21 @@ export async function attachComps(listings: FreshListing[]): Promise<ListingWith
   const results: ListingWithComps[] = [];
   if (!listings.length) return results;
 
+  const prisma = await getSharedPrisma();
   const cardIds = Array.from(new Set(listings.map((l) => l.cardId)));
   const since = new Date(Date.now() - 30 * 24 * 3600 * 1000);
-  const comps = await prisma.compSale.findMany({
-    where: { cardId: { in: cardIds }, soldAt: { gte: since } },
-    select: { cardId: true, priceCents: true },
+  // Use SaleRecord (canonicalCardId) for comps with CanonicalCard-based listings
+  const comps = await prisma.saleRecord.findMany({
+    where: { canonicalCardId: { in: cardIds }, soldAt: { gte: since } },
+    select: { canonicalCardId: true, soldPriceCents: true },
   });
 
   const grouped = new Map<string, number[]>();
   for (const c of comps) {
-    const arr = grouped.get(c.cardId) ?? [];
-    arr.push(c.priceCents);
-    grouped.set(c.cardId, arr);
+    if (!c.canonicalCardId) continue;
+    const arr = grouped.get(c.canonicalCardId) ?? [];
+    arr.push(c.soldPriceCents);
+    grouped.set(c.canonicalCardId, arr);
   }
 
   for (const l of listings) {

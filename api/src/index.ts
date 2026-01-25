@@ -43,6 +43,8 @@ import { registerAIAnalysis } from "./routes/ai-analysis.js";
 import cardComprehensiveRoutes from "./routes/card-comprehensive.js";
 import { registerPortfolio } from "./routes/portfolio.js";
 import { registerMarketCommentary } from "./routes/market-commentary.js";
+import collectRoutes from "./routes/collect.js";
+import analyticsRoutes from "./routes/analytics.js";
 import { initWebSocket, shutdownWebSocket, subscribeToRedisUpdates, getClientCount } from "./lib/websocket.js";
 import { createServer } from "http";
 
@@ -107,6 +109,8 @@ async function buildServer() {
   await registerPortfolio(app);
   await registerMarketCommentary(app);
   await app.register(cardComprehensiveRoutes, { prefix: '/api/cards' });
+  await app.register(collectRoutes, { prefix: '/api/collect' });
+  await app.register(analyticsRoutes, { prefix: '/api/analytics' });
 
   app.get('/health', async (request, reply) => {
     try {
@@ -119,6 +123,62 @@ async function buildServer() {
       // Return 200 for Docker health checks, but log the error
       return reply.code(200).send({ status: 'degraded', error: msg });
     }
+  });
+
+  // Comprehensive health check including external services
+  app.get('/health/comprehensive', async (request, reply) => {
+    const checks: Record<string, { status: 'ok' | 'degraded' | 'error'; latency?: number; error?: string }> = {};
+    let overallStatus: 'ok' | 'degraded' | 'error' = 'ok';
+
+    // Check Redis
+    try {
+      const start = Date.now();
+      await redis.ping();
+      checks.redis = { status: 'ok', latency: Date.now() - start };
+    } catch (e) {
+      checks.redis = { status: 'error', error: e instanceof Error ? e.message : String(e) };
+      overallStatus = 'degraded';
+    }
+
+    // Check Postgres
+    try {
+      const start = Date.now();
+      await prisma.$queryRaw`SELECT 1`;
+      checks.postgres = { status: 'ok', latency: Date.now() - start };
+    } catch (e) {
+      checks.postgres = { status: 'error', error: e instanceof Error ? e.message : String(e) };
+      overallStatus = 'error'; // DB is critical
+    }
+
+    // Check Ollama (non-critical)
+    try {
+      const ollamaUrl = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
+      const start = Date.now();
+      const res = await fetch(`${ollamaUrl}/api/tags`, { signal: AbortSignal.timeout(5000) });
+      checks.ollama = res.ok
+        ? { status: 'ok', latency: Date.now() - start }
+        : { status: 'degraded', error: `HTTP ${res.status}` };
+    } catch (e) {
+      checks.ollama = { status: 'degraded', error: e instanceof Error ? e.message : String(e) };
+      // Ollama is optional, don't change overall status
+    }
+
+    // Check DeepSeek API (non-critical, just verify API key format)
+    const deepseekKey = process.env.DEEPSEEK_API_KEY;
+    if (deepseekKey && deepseekKey.startsWith('sk-')) {
+      checks.deepseek = { status: 'ok' };
+    } else {
+      checks.deepseek = { status: 'degraded', error: 'API key not configured' };
+    }
+
+    // Check WebSocket clients
+    checks.websocket = { status: 'ok', latency: getClientCount() };
+
+    return reply.code(overallStatus === 'error' ? 503 : 200).send({
+      status: overallStatus,
+      checks,
+      timestamp: new Date().toISOString(),
+    });
   });
 
   app.get('/ready', async (request, reply) => {

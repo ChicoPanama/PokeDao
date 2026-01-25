@@ -77,7 +77,17 @@ export const ModelName = {
   UserPreference: 'UserPreference',
   ReferralEvent: 'ReferralEvent',
   Purchase: 'Purchase',
-  WatchlistItem: 'WatchlistItem'
+  WatchlistItem: 'WatchlistItem',
+  PriceSnapshot: 'PriceSnapshot',
+  SignalSnapshot: 'SignalSnapshot',
+  ThesisRecord: 'ThesisRecord',
+  UserQuery: 'UserQuery',
+  UserAction: 'UserAction',
+  UserOutcome: 'UserOutcome',
+  AlertDelivery: 'AlertDelivery',
+  DailyCardStats: 'DailyCardStats',
+  DailyMarketStats: 'DailyMarketStats',
+  DailySourceStats: 'DailySourceStats'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -547,11 +557,13 @@ export type UnifiedPortfolioItemScalarFieldEnum = (typeof UnifiedPortfolioItemSc
 export const UserScalarFieldEnum = {
   id: 'id',
   telegramId: 'telegramId',
+  discordId: 'discordId',
   username: 'username',
   firstName: 'firstName',
   lastName: 'lastName',
   referralCode: 'referralCode',
   referredBy: 'referredBy',
+  walletAddress: 'walletAddress',
   createdAt: 'createdAt'
 } as const
 
@@ -566,6 +578,8 @@ export const UserPreferenceScalarFieldEnum = {
   minPriceUsd: 'minPriceUsd',
   maxPriceUsd: 'maxPriceUsd',
   grades: 'grades',
+  quietHoursStart: 'quietHoursStart',
+  quietHoursEnd: 'quietHoursEnd',
   snoozedCards: 'snoozedCards',
   updatedAt: 'updatedAt'
 } as const
@@ -606,6 +620,189 @@ export const WatchlistItemScalarFieldEnum = {
 } as const
 
 export type WatchlistItemScalarFieldEnum = (typeof WatchlistItemScalarFieldEnum)[keyof typeof WatchlistItemScalarFieldEnum]
+
+
+export const PriceSnapshotScalarFieldEnum = {
+  id: 'id',
+  cardId: 'cardId',
+  cardKey: 'cardKey',
+  source: 'source',
+  sourceVersion: 'sourceVersion',
+  externalId: 'externalId',
+  priceCents: 'priceCents',
+  currency: 'currency',
+  grade: 'grade',
+  grader: 'grader',
+  gradeNumeric: 'gradeNumeric',
+  condition: 'condition',
+  listingType: 'listingType',
+  sellerId: 'sellerId',
+  sellerRating: 'sellerRating',
+  listedAt: 'listedAt',
+  soldAt: 'soldAt',
+  country: 'country',
+  shippingCents: 'shippingCents',
+  raw: 'raw',
+  rawHash: 'rawHash',
+  timestamp: 'timestamp',
+  parserVersion: 'parserVersion'
+} as const
+
+export type PriceSnapshotScalarFieldEnum = (typeof PriceSnapshotScalarFieldEnum)[keyof typeof PriceSnapshotScalarFieldEnum]
+
+
+export const SignalSnapshotScalarFieldEnum = {
+  id: 'id',
+  cardId: 'cardId',
+  cardKey: 'cardKey',
+  timestamp: 'timestamp',
+  fairValueCents: 'fairValueCents',
+  confidenceScore: 'confidenceScore',
+  trendDirection: 'trendDirection',
+  trendPct: 'trendPct',
+  trendPeriodDays: 'trendPeriodDays',
+  liquidityScore: 'liquidityScore',
+  activeListings: 'activeListings',
+  avgDaysOnMarket: 'avgDaysOnMarket',
+  velocity30d: 'velocity30d',
+  sentimentScore: 'sentimentScore',
+  sentimentLabel: 'sentimentLabel',
+  sentimentPostCount: 'sentimentPostCount',
+  psa10Pop: 'psa10Pop',
+  totalPop: 'totalPop',
+  scarcityScore: 'scarcityScore',
+  arbitrageOpportunities: 'arbitrageOpportunities'
+} as const
+
+export type SignalSnapshotScalarFieldEnum = (typeof SignalSnapshotScalarFieldEnum)[keyof typeof SignalSnapshotScalarFieldEnum]
+
+
+export const ThesisRecordScalarFieldEnum = {
+  id: 'id',
+  opportunityId: 'opportunityId',
+  thesis: 'thesis',
+  recommendation: 'recommendation',
+  usedLLM: 'usedLLM',
+  modelName: 'modelName',
+  promptTokens: 'promptTokens',
+  completionTokens: 'completionTokens',
+  costCents: 'costCents',
+  generationTimeMs: 'generationTimeMs',
+  signalsSnapshot: 'signalsSnapshot',
+  createdAt: 'createdAt'
+} as const
+
+export type ThesisRecordScalarFieldEnum = (typeof ThesisRecordScalarFieldEnum)[keyof typeof ThesisRecordScalarFieldEnum]
+
+
+export const UserQueryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  platform: 'platform',
+  rawText: 'rawText',
+  intentType: 'intentType',
+  entities: 'entities',
+  responseTimeMs: 'responseTimeMs',
+  timestamp: 'timestamp'
+} as const
+
+export type UserQueryScalarFieldEnum = (typeof UserQueryScalarFieldEnum)[keyof typeof UserQueryScalarFieldEnum]
+
+
+export const UserActionScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  opportunityId: 'opportunityId',
+  action: 'action',
+  platform: 'platform',
+  source: 'source',
+  timeToActionMs: 'timeToActionMs',
+  timestamp: 'timestamp'
+} as const
+
+export type UserActionScalarFieldEnum = (typeof UserActionScalarFieldEnum)[keyof typeof UserActionScalarFieldEnum]
+
+
+export const UserOutcomeScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  opportunityId: 'opportunityId',
+  cardId: 'cardId',
+  purchasePriceCents: 'purchasePriceCents',
+  purchaseDate: 'purchaseDate',
+  grade: 'grade',
+  status: 'status',
+  currentValueCents: 'currentValueCents',
+  realizedReturnPct: 'realizedReturnPct',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserOutcomeScalarFieldEnum = (typeof UserOutcomeScalarFieldEnum)[keyof typeof UserOutcomeScalarFieldEnum]
+
+
+export const AlertDeliveryScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  opportunityId: 'opportunityId',
+  platform: 'platform',
+  status: 'status',
+  messageId: 'messageId',
+  sentAt: 'sentAt',
+  readAt: 'readAt',
+  clickedAt: 'clickedAt'
+} as const
+
+export type AlertDeliveryScalarFieldEnum = (typeof AlertDeliveryScalarFieldEnum)[keyof typeof AlertDeliveryScalarFieldEnum]
+
+
+export const DailyCardStatsScalarFieldEnum = {
+  id: 'id',
+  date: 'date',
+  cardId: 'cardId',
+  cardKey: 'cardKey',
+  openPriceCents: 'openPriceCents',
+  closePriceCents: 'closePriceCents',
+  highPriceCents: 'highPriceCents',
+  lowPriceCents: 'lowPriceCents',
+  avgPriceCents: 'avgPriceCents',
+  medianPriceCents: 'medianPriceCents',
+  volume: 'volume',
+  salesCount: 'salesCount',
+  listingsCount: 'listingsCount'
+} as const
+
+export type DailyCardStatsScalarFieldEnum = (typeof DailyCardStatsScalarFieldEnum)[keyof typeof DailyCardStatsScalarFieldEnum]
+
+
+export const DailyMarketStatsScalarFieldEnum = {
+  id: 'id',
+  date: 'date',
+  totalVolume: 'totalVolume',
+  totalSaleCount: 'totalSaleCount',
+  totalListingCount: 'totalListingCount',
+  activeCardCount: 'activeCardCount',
+  avgPriceChangePct: 'avgPriceChangePct',
+  topGainers: 'topGainers',
+  topLosers: 'topLosers',
+  sentimentAvg: 'sentimentAvg'
+} as const
+
+export type DailyMarketStatsScalarFieldEnum = (typeof DailyMarketStatsScalarFieldEnum)[keyof typeof DailyMarketStatsScalarFieldEnum]
+
+
+export const DailySourceStatsScalarFieldEnum = {
+  id: 'id',
+  date: 'date',
+  source: 'source',
+  snapshotCount: 'snapshotCount',
+  uniqueCardCount: 'uniqueCardCount',
+  saleCount: 'saleCount',
+  listingCount: 'listingCount',
+  avgPriceCents: 'avgPriceCents'
+} as const
+
+export type DailySourceStatsScalarFieldEnum = (typeof DailySourceStatsScalarFieldEnum)[keyof typeof DailySourceStatsScalarFieldEnum]
 
 
 export const SortOrder = {
