@@ -78,21 +78,27 @@ export async function handleAlertsCallback(ctx: UserContext, action: string, par
     await updateAlertSettingsMessage(ctx, prefs);
   } else if (action === 'discount' && params) {
     const discount = parseInt(params, 10);
-    if (!isNaN(discount)) {
+    // P1-4 Fix: Validate discount is within reasonable bounds (0-100%)
+    if (!isNaN(discount) && discount >= 0 && discount <= 100) {
       prefs = await updatePreferences(telegramId, { minDiscountPct: discount });
       await ctx.answerCallbackQuery({
         text: `Min discount set to ${discount}%`,
       });
       await updateAlertSettingsMessage(ctx, prefs);
+    } else {
+      await ctx.answerCallbackQuery({ text: 'Invalid discount value' });
     }
   } else if (action === 'price' && params) {
     const [min, max] = params.split('-').map(s => parseInt(s, 10));
-    if (!isNaN(min) && !isNaN(max)) {
+    // P1-4 Fix: Validate price range is within reasonable bounds
+    if (!isNaN(min) && !isNaN(max) && min >= 0 && max >= min && max <= 10000000) {
       prefs = await updatePreferences(telegramId, { minPriceUsd: min, maxPriceUsd: max });
       await ctx.answerCallbackQuery({
         text: `Price range set to $${min} - $${max === 999999 ? '∞' : max}`,
       });
       await updateAlertSettingsMessage(ctx, prefs);
+    } else {
+      await ctx.answerCallbackQuery({ text: 'Invalid price range' });
     }
   } else if (action === 'grades') {
     await ctx.answerCallbackQuery();

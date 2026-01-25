@@ -46,6 +46,21 @@ export async function registerSearch(app: FastifyInstance) {
     try {
       const query = req.query as SearchQuery;
 
+      // P1-4 Fix: Validate search query length to prevent DoS
+      const MAX_QUERY_LENGTH = 200;
+      if (query.q && query.q.length > MAX_QUERY_LENGTH) {
+        reply.code(400);
+        return { ok: false, error: `Search query too long (max ${MAX_QUERY_LENGTH} characters)` };
+      }
+      if (query.cardName && query.cardName.length > MAX_QUERY_LENGTH) {
+        reply.code(400);
+        return { ok: false, error: `Card name query too long (max ${MAX_QUERY_LENGTH} characters)` };
+      }
+      if (query.setName && query.setName.length > MAX_QUERY_LENGTH) {
+        reply.code(400);
+        return { ok: false, error: `Set name query too long (max ${MAX_QUERY_LENGTH} characters)` };
+      }
+
       // Validate and parse parameters
       const limit = Math.min(100, Math.max(1, Number(query.limit || '25')));
       const cursor = query.cursor ? { id: query.cursor } : undefined;

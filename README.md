@@ -389,7 +389,7 @@ Proprietary. All rights reserved.
 
 **Built with ❤️ by collectors, for collectors.**
 
-*Last Updated: 2026-01-23*
+*Last Updated: 2026-01-24*
 
 ---
 
@@ -397,19 +397,28 @@ Proprietary. All rights reserved.
 
 PokeDAO has been upgraded with the latest 2026 technology stack:
 
+| Technology | Status | Notes |
+|------------|--------|-------|
+| Qdrant Vector DB | **PRODUCTION** | 8.3KB TS + 13KB Python |
+| TimescaleDB | **SCAFFOLDING** | Migration exists, needs manual setup |
+| tRPC API Layer | **PARTIAL** | Router exists, not fully integrated |
+| LangGraph Agents | **PRODUCTION** | 9 files, replaces sequential tick.ts |
+| Redpanda/Kafka | **PRODUCTION** | 9.7KB with 5 typed topics |
+| CrewAI Multi-Agent | **PRODUCTION** | 4 agents implemented |
+
 ### Phase 1: Qdrant Vector Database
 - **Replaces**: FAISS in-memory
 - **Benefits**: Persistent storage, hybrid search, metadata filtering, production SLAs
 - **Files**: `packages/shared/qdrant.ts`, `apps/mew1a/rag_middleware_qdrant.py`
 
-### Phase 2: TimescaleDB Extension
+### Phase 2: TimescaleDB Extension (Setup Required)
 - **Enhances**: PostgreSQL for time-series price data
-- **Benefits**: 95% compression, automatic partitioning, continuous aggregates
+- **Status**: Migration file exists but requires manual database setup before Prisma runs
 - **Migration**: `api/prisma/migrations/20260123_add_timescaledb/`
 
-### Phase 3: tRPC API Layer
+### Phase 3: tRPC API Layer (Partial)
 - **Adds**: End-to-end type safety
-- **Benefits**: Auto-generated client types, no API drift, Zod validation
+- **Status**: Router structure exists but not fully connected to Fastify server
 - **Files**: `api/src/trpc/`
 
 ### Phase 4: LangGraph Agent Orchestration
@@ -427,4 +436,148 @@ PokeDAO has been upgraded with the latest 2026 technology stack:
 - **Agents**: PriceAnalyst, MarketScanner, RiskAssessor, ContentWriter
 - **Files**: `apps/crew/`
 
-[Full Plan →](.claude/plans/harmonic-dreaming-treehouse.md)
+---
+
+## Code Audit (January 2026)
+
+Comprehensive audit completed 2026-01-24. See [docs/AUDIT_RECOMMENDATIONS.md](docs/AUDIT_RECOMMENDATIONS.md) for details.
+
+**Critical Fixes Applied:**
+- Memory leak in alert system (bounded cache with TTL)
+- Division by zero guard in fair value calculation
+- Median calculation bug (even-length arrays)
+- Cryptographic referral code generation
+
+**Audit Documentation:**
+- [docs/AUDIT_DISCREPANCIES.md](docs/AUDIT_DISCREPANCIES.md) - README vs Reality
+- [docs/AUDIT_CODE_QUALITY.md](docs/AUDIT_CODE_QUALITY.md) - Bug & Security Issues
+- [docs/AUDIT_RECOMMENDATIONS.md](docs/AUDIT_RECOMMENDATIONS.md) - Prioritized Fixes
+- [docs/AUDIT_FIXES_APPLIED.md](docs/AUDIT_FIXES_APPLIED.md) - Applied Changes
+
+---
+
+## Bloomberg Terminal for Trading Cards (Phase 1)
+
+PokeDAO now includes a real-time trading terminal with automated social presence:
+
+### Working Components
+
+| Component | Status | Description |
+|-----------|--------|-------------|
+| **Dashboard** | ✅ READY | Next.js 14 real-time terminal at `apps/dashboard/` |
+| **Telegram Bot** | ✅ READY | Grammy-based bot with inline keyboards and alerts |
+| **X/Twitter Agent** | ✅ READY | Auto-posting opportunities with dry-run mode |
+| **Alert Pipeline** | ✅ READY | Queue-based delivery via Redis/BullMQ |
+| **Signal Detection** | ✅ READY | LangGraph 6-step pipeline with arbitrage detection |
+
+### Architecture
+
+```
+Signal Pipeline (LangGraph)
+    ↓
+┌───────────────────────────────────────────┐
+│  Alert Bridge (apps/agent/src/workers/)   │
+│  Queues opportunities to Redis            │
+└───────────────────────────────────────────┘
+    ↓                           ↓
+┌─────────────────┐   ┌─────────────────────┐
+│ Telegram Queue  │   │ X/Twitter Queue     │
+│ telegram:alerts │   │ agent:post          │
+└─────────────────┘   └─────────────────────┘
+    ↓                           ↓
+┌─────────────────┐   ┌─────────────────────┐
+│ Bot Consumer    │   │ X Poster Worker     │
+│ bot/src/workers │   │ apps/agent/workers  │
+└─────────────────┘   └─────────────────────┘
+    ↓                           ↓
+   Users                    Followers
+```
+
+### Quick Start
+
+```bash
+# Start the dashboard
+cd apps/dashboard && pnpm dev  # http://localhost:3001
+
+# Start the Telegram bot (requires TELEGRAM_BOT_TOKEN)
+cd bot && pnpm dev
+
+# Start workers (X posting + alert queueing)
+cd apps/agent && tsx src/workers/index.ts
+
+# Run a tick to generate signals
+pnpm agent:tick
+```
+
+### Environment Variables
+
+```bash
+# Required for Telegram
+TELEGRAM_BOT_TOKEN=your_bot_token
+TELEGRAM_ALERTS_ENABLED=true
+
+# Required for X/Twitter
+X_API_KEY=your_key
+X_API_SECRET=your_secret
+X_ACCESS_TOKEN=your_token
+X_ACCESS_SECRET=your_secret
+POSTING_ENABLED=false  # Set to true for live posting
+
+# Redis for queues
+REDIS_URL=redis://localhost:6379/0
+```
+
+### Dashboard Features
+
+- **Opportunity Table**: Real-time arbitrage opportunities with buy/sell sources
+- **Signal Table**: Recent signals with confidence scores
+- **Status Bar**: Pipeline health, queue depths, last update time
+- Auto-refresh every 30 seconds
+
+### Telegram Bot Commands
+
+| Command | Description |
+|---------|-------------|
+| `/start` | Welcome + registration |
+| `/alerts` | Configure alert preferences (spread threshold, price range) |
+| `/watch <cardId>` | Add card to watchlist |
+| `/portfolio` | View tracked positions |
+| `/wallet` | Connect wallet for on-chain features |
+
+### Alert Format
+
+```
+🔥 **OPPORTUNITY ALERT**
+
+📦 **Charizard ex (151)**
+📚 Scarlet & Violet 151
+🏪 JustTCG → eBay
+
+💰 **Buy:** $45.99
+💵 **Sell (comp):** $62.50
+📊 **Spread:** +35.9%
+💸 **Est. Profit:** $12.51
+⭐ **Confidence:** █████ 95%
+
+Strong buy signal based on recent sales velocity...
+
+[🛒 Open Listing] [👀 Watch] [✅ Bought] [😴 Ignore]
+```
+
+### Phase 2: Core Features (2026-01-24)
+
+| Feature | Status | Description |
+|---------|--------|-------------|
+| **Price Charts** | ✅ | Recharts line/area charts with weekly trends |
+| **Portfolio API** | ✅ | Full CRUD with P&L calculation |
+| **Portfolio UI** | ✅ | Holdings table, gain/loss, performance |
+| **Market Summary** | ✅ | Top movers, sentiment, opportunities |
+| **Commentary Worker** | ✅ | Daily AI commentary to X/Twitter |
+| **Bot /portfolio** | ✅ | View holdings via Telegram |
+| **Bot /settings** | ✅ | Deep preferences (grades, sources, quiet hours) |
+
+**New Dashboard Tabs:** Arbitrage, Signals, Portfolio, Market, Charts
+
+**New Bot Commands:** `/portfolio`, `/add_holding`, `/settings`
+
+See [docs/BLOOMBERG_TERMINAL_ROADMAP.md](docs/BLOOMBERG_TERMINAL_ROADMAP.md) for the full roadmap.

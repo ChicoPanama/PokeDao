@@ -53,20 +53,23 @@ model Listing {
 }
 
 model User {
-  id           String   @id @default(cuid())
-  telegramId   String   @unique
-  username     String?
-  firstName    String?
-  lastName     String?
-  referralCode String   @unique
-  referredBy   String?
-  createdAt    DateTime @default(now())
+  id            String   @id @default(cuid())
+  telegramId    String   @unique
+  username      String?
+  firstName     String?
+  lastName      String?
+  referralCode  String   @unique
+  referredBy    String?
+  walletAddress String?  // P1-3: Solana wallet address for tokenized features
+  createdAt     DateTime @default(now())
 
   purchases      Purchase[]
   referrals      User[]          @relation("UserReferrals")
   referrer       User?           @relation("UserReferrals", fields: [referredBy], references: [referralCode])
   referralEvents ReferralEvent[]
   watchlistItems WatchlistItem[]
+  portfolio      Portfolio?
+  preferences    UserPreferences?
 }
 
 model Evaluation {
@@ -206,9 +209,114 @@ model RateBudget {
   id            String   @id @default(cuid())
   source        String   @unique
   maxPerWindow  Int      // Max requests per window
-  windowSec     Int      // Window size in seconds  
+  windowSec     Int      // Window size in seconds
   lastResetAt   DateTime @default(now())
   usedCount     Int      @default(0)
-  
+
   @@index([source, lastResetAt])
+}
+
+// === PHASE 2: Bloomberg Terminal Tables ===
+
+model PriceHistory {
+  id        String   @id @default(cuid())
+  cardKey   String   // Normalized card identifier
+  cardId    String?  // Link to canonical card
+  source    String   // Venue: eBay, JustTCG, etc.
+  priceCents Int     // Price in cents
+  soldAt    DateTime // When the sale occurred
+  condition String?  // Near Mint, Played, etc.
+  grade     String?  // PSA 10, BGS 9.5
+  url       String?  // Original listing URL
+  createdAt DateTime @default(now())
+
+  @@index([cardKey, soldAt])
+  @@index([cardId, soldAt])
+  @@index([source, soldAt])
+}
+
+model Portfolio {
+  id        String   @id @default(cuid())
+  userId    String   @unique
+  name      String   @default("Default Portfolio")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id])
+  holdings  PortfolioHolding[]
+}
+
+model PortfolioHolding {
+  id            String   @id @default(cuid())
+  portfolioId   String
+  cardId        String?  // Link to canonical card
+  cardKey       String   // Normalized key for lookups
+  cardName      String   // Display name
+  setName       String?
+  grade         String?
+  quantity      Int      @default(1)
+  costBasisCents Int     // Total cost in cents
+  purchaseDate  DateTime @default(now())
+  purchaseVenue String?  // Where bought
+  notes         String?
+  soldAt        DateTime?
+  soldPriceCents Int?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  portfolio Portfolio @relation(fields: [portfolioId], references: [id], onDelete: Cascade)
+
+  @@index([portfolioId, cardKey])
+  @@index([cardId])
+}
+
+model UserPreferences {
+  id                 String   @id @default(cuid())
+  userId             String   @unique
+
+  // Alert settings
+  alertsEnabled      Boolean  @default(true)
+  minSpreadPct       Float    @default(15.0)
+  minPriceCents      Int      @default(500)    // $5 minimum
+  maxPriceCents      Int      @default(100000) // $1000 maximum
+  alertGrades        String[] @default(["PSA 10", "PSA 9", "BGS 9.5", "CGC 10"])
+  alertSources       String[] @default(["eBay", "JustTCG", "Phygitals"])
+  maxAlertsPerHour   Int      @default(10)
+  quietHoursStart    Int?     // Hour in UTC (0-23)
+  quietHoursEnd      Int?     // Hour in UTC (0-23)
+
+  // Snooze/ignore tracking
+  snoozedCards       String[] @default([])
+  snoozedUntil       DateTime?
+
+  // Token gating
+  tokenGateEnabled   Boolean  @default(false)
+  minTokenBalance    Int      @default(0)
+
+  // Display preferences
+  currency           String   @default("USD")
+  timezone           String   @default("UTC")
+
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  user               User     @relation(fields: [userId], references: [id])
+}
+
+model MarketCommentary {
+  id           String   @id @default(cuid())
+  type         String   // "daily", "weekly", "alert"
+  title        String
+  content      String   // Full commentary text
+  highlights   String[] // Key points
+  topCards     String[] // Card IDs mentioned
+  sentiment    String?  // "bullish", "bearish", "neutral"
+  model        String   @default("deepseek")
+  publishedAt  DateTime?
+  xPostId      String?  // X/Twitter post ID if posted
+  telegramMsgId String? // Telegram message ID
+  createdAt    DateTime @default(now())
+
+  @@index([type, createdAt])
+  @@index([publishedAt])
 }

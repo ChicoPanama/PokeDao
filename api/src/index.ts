@@ -41,6 +41,8 @@ import { registerBestExecution } from "./routes/best-execution.js";
 import { registerConfidence } from "./routes/confidence.js";
 import { registerAIAnalysis } from "./routes/ai-analysis.js";
 import cardComprehensiveRoutes from "./routes/card-comprehensive.js";
+import { registerPortfolio } from "./routes/portfolio.js";
+import { registerMarketCommentary } from "./routes/market-commentary.js";
 
 // External data integration endpoints
 import { 
@@ -100,6 +102,8 @@ async function buildServer() {
   await registerBestExecution(app);
   await registerConfidence(app);
   await registerAIAnalysis(app);
+  await registerPortfolio(app);
+  await registerMarketCommentary(app);
   await app.register(cardComprehensiveRoutes, { prefix: '/api/cards' });
 
   app.get('/health', async (request, reply) => {
@@ -495,43 +499,9 @@ async function buildServer() {
     }
   });
 
-  // watchlist endpoints
-  app.post('/watchlist', async (req, reply) => {
-    try {
-      const { cardId } = req.body as { cardId: string };
-      const userId = 'stub-user'; // Replace with actual user auth logic
-
-      await prisma.watchlistItem.upsert({
-        where: {
-          id: `${userId}-${cardId}`,
-        },
-        create: { userId, cardId },
-        update: {},
-      });
-
-      return { ok: true };
-    } catch (err: any) {
-      logger.error?.({ err }, 'watchlist add error'); // Use optional chaining for safety
-      reply.code(500);
-      return { ok: false, error: 'Internal error' };
-    }
-  });
-
-  app.get('/watchlist', async (req, reply) => {
-    try {
-      const userId = 'stub-user'; // Replace with actual user auth logic
-      const items = await prisma.watchlistItem.findMany({
-        where: { userId },
-        include: { card: true },
-      });
-
-      return { ok: true, items };
-    } catch (err: any) {
-      logger.error?.({ err }, 'watchlist fetch error'); // Use optional chaining for safety
-      reply.code(500);
-      return { ok: false, error: 'Internal error' };
-    }
-  });
+  // P1-1 Fix: Watchlist endpoints removed until proper auth is implemented
+  // TODO: Re-enable with JWT/session auth middleware
+  // See: docs/AUDIT_RECOMMENDATIONS.md for implementation guidance
 
   // Central error handler for consistency
   app.setErrorHandler((err, req, reply) => {

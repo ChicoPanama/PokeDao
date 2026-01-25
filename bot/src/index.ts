@@ -30,6 +30,8 @@ import { alertsCommand, handleAlertsCallback } from './commands/alerts.js';
 import { referralCommand, handleReferralCallback } from './commands/referral.js';
 import { arbitrageCommand, handleArbitrageCallback } from './commands/arbitrage.js';
 import { walletCommand, handleWalletCallback } from './commands/wallet.js';
+import { portfolioCommand, handlePortfolioCallback, addHoldingCommand } from './commands/portfolio.js';
+import { settingsCommand, handleSettingsCallback } from './commands/settings.js';
 
 // Import callback handlers from other modules
 import { handleListingCallback } from './callbacks/listing.js';
@@ -71,6 +73,9 @@ bot.command('alerts', alertsCommand);
 bot.command('referral', referralCommand);
 bot.command('arbitrage', arbitrageCommand);
 bot.command('wallet', walletCommand);
+bot.command('portfolio', portfolioCommand);
+bot.command('add_holding', addHoldingCommand);
+bot.command('settings', settingsCommand);
 
 // Admin-only commands
 bot.command('test_alert', adminOnlyMiddleware, handleTestAlert);
@@ -129,6 +134,24 @@ bot.callbackQuery(/^wallet:(\w+):?(.*)$/, async (ctx) => {
   if (match) {
     const [, action, params] = match;
     await handleWalletCallback(ctx as any, action, params || undefined);
+  }
+});
+
+// Portfolio callbacks
+bot.callbackQuery(/^portfolio:(\w+):?(.*)$/, async (ctx) => {
+  const match = ctx.callbackQuery.data.match(/^portfolio:(\w+):?(.*)$/);
+  if (match) {
+    const [, action, params] = match;
+    await handlePortfolioCallback(ctx as any, action, params || undefined);
+  }
+});
+
+// Settings callbacks
+bot.callbackQuery(/^settings:(\w+):?(.*)$/, async (ctx) => {
+  const match = ctx.callbackQuery.data.match(/^settings:(\w+):?(.*)$/);
+  if (match) {
+    const [, action, params] = match;
+    await handleSettingsCallback(ctx as any, action, params || undefined);
   }
 });
 
@@ -218,6 +241,9 @@ async function main(): Promise<void> {
   console.log('   /deals - Show current top deals');
   console.log('   /alerts - Configure alert settings');
   console.log('   /arbitrage - View cross-venue arbitrage opportunities');
+  console.log('   /portfolio - View portfolio and P&L');
+  console.log('   /add_holding - Add card to portfolio');
+  console.log('   /settings - Deep preferences');
   console.log('   /referral - Referral program and earnings');
   console.log('   /wallet - Manage connected wallet');
   console.log('   /test_alert - Send a test deal alert (admin only)');

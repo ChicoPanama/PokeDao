@@ -4,6 +4,14 @@ import { prisma } from '../lib/prisma.js';
 import { logger } from '../lib/logger.js';
 import { snoozeCard } from '../lib/preferences.js';
 
+// P1-4 Fix: CUID validation regex (starts with 'c' or is UUID format)
+const CUID_REGEX = /^c[a-z0-9]{20,}$/;
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+function isValidId(id: string): boolean {
+  return CUID_REGEX.test(id) || UUID_REGEX.test(id);
+}
+
 /**
  * Handle listing-related callbacks from deal alerts
  */
@@ -13,6 +21,21 @@ export async function handleListingCallback(
   listingId: string
 ) {
   if (!ctx.callbackQuery || !ctx.from) return;
+
+  // P1-4 Fix: Validate listing ID format to prevent injection
+  if (!isValidId(listingId)) {
+    logger.warn({ listingId, action }, 'Invalid listing ID format in callback');
+    await ctx.answerCallbackQuery({ text: 'Invalid listing ID' });
+    return;
+  }
+
+  // P1-4 Fix: Whitelist valid actions
+  const VALID_ACTIONS = ['open', 'bought', 'ignore', 'watch', 'snooze', 'snoozed', 'confirmed', 'dismissed'];
+  if (!VALID_ACTIONS.includes(action)) {
+    logger.warn({ listingId, action }, 'Invalid action in listing callback');
+    await ctx.answerCallbackQuery({ text: 'Unknown action' });
+    return;
+  }
 
   const user = await prisma.user.findUnique({
     where: { telegramId: ctx.from.id.toString() },

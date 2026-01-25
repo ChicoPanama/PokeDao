@@ -33,9 +33,56 @@ const ALERT_CONFIG = {
   COOLDOWN_MINUTES: Number(process.env.ALERT_COOLDOWN_MINUTES || 15),
 };
 
-// Track sent alerts to prevent duplicates
-const sentAlerts = new Set<string>();
+// Bounded cache configuration
+const CACHE_CONFIG = {
+  MAX_ENTRIES: 10000,
+  TTL_MS: 24 * 60 * 60 * 1000, // 24 hours
+  CLEANUP_INTERVAL_MS: 60 * 60 * 1000, // 1 hour
+};
+
+// Track sent alerts to prevent duplicates (bounded with TTL)
+const sentAlerts = new Map<string, number>(); // alertKey -> timestamp
 const lastAlertTime = new Map<string, number>(); // cardId -> timestamp
+
+// Periodic cleanup to prevent memory leaks
+let cleanupInterval: NodeJS.Timeout | null = null;
+
+function startCacheCleanup(): void {
+  if (cleanupInterval) return;
+  cleanupInterval = setInterval(() => {
+    const now = Date.now();
+    const expiry = now - CACHE_CONFIG.TTL_MS;
+
+    // Clean expired sentAlerts
+    for (const [key, timestamp] of sentAlerts.entries()) {
+      if (timestamp < expiry) {
+        sentAlerts.delete(key);
+      }
+    }
+
+    // Clean expired lastAlertTime
+    for (const [key, timestamp] of lastAlertTime.entries()) {
+      if (timestamp < expiry) {
+        lastAlertTime.delete(key);
+      }
+    }
+
+    // Enforce max entries (remove oldest if over limit)
+    if (sentAlerts.size > CACHE_CONFIG.MAX_ENTRIES) {
+      const entries = Array.from(sentAlerts.entries())
+        .sort((a, b) => a[1] - b[1]);
+      const toRemove = entries.slice(0, entries.length - CACHE_CONFIG.MAX_ENTRIES);
+      for (const [key] of toRemove) {
+        sentAlerts.delete(key);
+      }
+    }
+
+    console.log(`[alertSystem] Cache cleanup: sentAlerts=${sentAlerts.size}, lastAlertTime=${lastAlertTime.size}`);
+  }, CACHE_CONFIG.CLEANUP_INTERVAL_MS);
+}
+
+// Start cleanup on module load
+startCacheCleanup();
 
 export interface TelegramAlertData {
   listingId: string;
@@ -80,9 +127,16 @@ export async function fetchAlertableSignals(limit = 20): Promise<TelegramAlertDa
     const alerts: TelegramAlertData[] = [];
 
     for (const sig of signals) {
-      // Skip if already sent
+      // Skip if already sent (check Map instead of Set)
       const alertKey = `${sig.id}`;
       if (sentAlerts.has(alertKey)) continue;
+
+      // Guard against invalid edge values (prevents division by zero)
+      const edgePctCheck = sig.edgeBp / 10000;
+      if (edgePctCheck >= 1) {
+        console.warn(`[alertSystem] Invalid edgeBp ${sig.edgeBp} (>=10000), skipping signal ${sig.id}`);
+        continue;
+      }
 
       // Skip if card was alerted recently (cooldown)
       const lastAlert = lastAlertTime.get(sig.cardId);
@@ -139,8 +193,8 @@ export async function fetchAlertableSignals(limit = 20): Promise<TelegramAlertDa
         listingUrl: listing.url || '',
       });
 
-      // Mark as sent
-      sentAlerts.add(alertKey);
+      // Mark as sent (use Map.set for timestamp tracking)
+      sentAlerts.set(alertKey, Date.now());
       lastAlertTime.set(sig.cardId, Date.now());
 
       // Limit alerts
@@ -328,6 +382,17 @@ export function clearSentAlerts(): void {
   sentAlerts.clear();
   lastAlertTime.clear();
   console.log('[alertSystem] Cleared alert cache');
+}
+
+/**
+ * Stop the cache cleanup interval (for graceful shutdown)
+ */
+export function stopCacheCleanup(): void {
+  if (cleanupInterval) {
+    clearInterval(cleanupInterval);
+    cleanupInterval = null;
+    console.log('[alertSystem] Cache cleanup stopped');
+  }
 }
 
 function sleep(ms: number): Promise<void> {

@@ -26,7 +26,18 @@ export async function attachComps(listings: FreshListing[]): Promise<ListingWith
 
   for (const l of listings) {
     const arr = (grouped.get(l.cardId) ?? []).sort((a, b) => a - b);
-    const mid = arr.length ? arr[Math.floor(arr.length / 2)] : null;
+    // Calculate median correctly for both odd and even-length arrays
+    let mid: number | null = null;
+    if (arr.length > 0) {
+      const midIndex = Math.floor(arr.length / 2);
+      if (arr.length % 2 === 0) {
+        // Even length: average the two middle values
+        mid = Math.round((arr[midIndex - 1] + arr[midIndex]) / 2);
+      } else {
+        // Odd length: take the middle value
+        mid = arr[midIndex];
+      }
+    }
     results.push({ ...l, compMedianCents30d: mid, compCount30d: arr.length });
   }
 

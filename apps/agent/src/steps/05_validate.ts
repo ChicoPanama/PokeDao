@@ -15,33 +15,41 @@ export async function validateAndPersist(cands: OpportunityCandidate[]) {
     kept.push(c);
   }
 
-  for (const k of kept) {
-    try {
-      await prisma.opportunity.create({
-        data: {
-          cardId: k.cardId,
-          listingId: k.id,
-          sourceBuy: k.source,
-          sourceSell: k.sourceSell,
-          buyPriceCents: k.priceCents,
-          buyShippingCents: k.shippingCents ?? 0,
-          buyFeesCents: Math.max(0, k.buyNetCents - k.priceCents - (k.shippingCents ?? 0)),
-          sellCompCents: k.sellCompCents,
-          // Approximate breakdown (sellNet = comp - fees - ship)
-          sellFeesCents: Math.max(0, k.sellCompCents - k.sellNetCents - 549),
-          sellShippingCents: 549,
-          expectedProfitCents: k.expectedProfitCents,
-          netSpreadBps: k.netSpreadBps,
-          confidence: k.confidence,
-          rationale: k.rationale,
-          status: 'PENDING',
-        },
-      });
-    } catch (e: any) {
-      const msg = String(e?.message || '');
-      if (!msg.includes('Unique constraint')) throw e;
+  // P1-5 Fix: Wrap all opportunity creates in a transaction for atomicity
+  let persistedCount = 0;
+  await prisma.$transaction(async (tx) => {
+    for (const k of kept) {
+      try {
+        await tx.opportunity.create({
+          data: {
+            cardId: k.cardId,
+            listingId: k.id,
+            sourceBuy: k.source,
+            sourceSell: k.sourceSell,
+            buyPriceCents: k.priceCents,
+            buyShippingCents: k.shippingCents ?? 0,
+            buyFeesCents: Math.max(0, k.buyNetCents - k.priceCents - (k.shippingCents ?? 0)),
+            sellCompCents: k.sellCompCents,
+            // Approximate breakdown (sellNet = comp - fees - ship)
+            sellFeesCents: Math.max(0, k.sellCompCents - k.sellNetCents - 549),
+            sellShippingCents: 549,
+            expectedProfitCents: k.expectedProfitCents,
+            netSpreadBps: k.netSpreadBps,
+            confidence: k.confidence,
+            rationale: k.rationale,
+            status: 'PENDING',
+          },
+        });
+        persistedCount++;
+      } catch (e: any) {
+        const msg = String(e?.message || '');
+        if (!msg.includes('Unique constraint')) throw e;
+        // Log duplicate but continue - this is expected for re-runs
+        console.log(`[validate] Skipping duplicate opportunity for listing ${k.id}`);
+      }
     }
-  }
+  });
 
+  console.log(`[validate] Persisted ${persistedCount}/${kept.length} opportunities`);
   return kept;
 }

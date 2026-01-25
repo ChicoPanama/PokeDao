@@ -5,11 +5,14 @@ const redisUrl = process.env.REDIS_URL || 'redis://localhost:6379';
 // Upstash requires TLS - enable if using rediss:// or if URL contains upstash.io
 const isTLS = redisUrl.startsWith('rediss://') || redisUrl.includes('upstash.io');
 
+// P1-2 Fix: TLS validation is enabled by default, can be disabled via env var for dev
+const rejectUnauthorized = process.env.REDIS_TLS_VERIFY !== 'false';
+
 const client = createClient({
   url: redisUrl,
   socket: isTLS ? {
     tls: true,
-    rejectUnauthorized: false // Upstash uses self-signed certs
+    rejectUnauthorized, // Verify TLS certs by default (set REDIS_TLS_VERIFY=false to disable)
   } : undefined
 });
 

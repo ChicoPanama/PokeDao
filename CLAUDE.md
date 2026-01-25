@@ -174,3 +174,92 @@ Pre-configured in `.mcp.json`:
 - **GitHub**: PR/issue management
 - **Redis**: Cache inspection
 - **Telegram**: Task notifications
+
+## Bloomberg Terminal - Phase 1 Complete (2026-01-24)
+
+### What's Working
+
+| Component | Location | Description |
+|-----------|----------|-------------|
+| **Dashboard** | `apps/dashboard/` | Next.js 14 terminal with opportunities table |
+| **Alert Bridge** | `apps/agent/src/workers/alert-bridge.ts` | Queues signals to Redis |
+| **X Poster Worker** | `apps/agent/src/workers/x-poster.ts` | Auto-posts to X/Twitter |
+| **Bot Alert Consumer** | `bot/src/workers/alert-consumer.ts` | Sends Telegram alerts |
+| **Worker Runner** | `apps/agent/src/workers/index.ts` | Manages all workers |
+
+### Architecture
+
+```
+Signal Pipeline (LangGraph)
+    ↓
+06_output.ts
+    ↓
+┌─────────────────────────────────────┐
+│  Alert Bridge                       │
+│  telegram:alerts → Bot Consumer     │
+│  agent:post → X Poster Worker       │
+└─────────────────────────────────────┘
+    ↓                    ↓
+Telegram Users      X/Twitter
+```
+
+### Quick Start (Full Stack)
+
+```bash
+# Terminal 1: API
+pnpm api:dev
+
+# Terminal 2: Bot with alert consumer
+cd bot && pnpm dev
+
+# Terminal 3: Workers (X poster)
+cd apps/agent && tsx src/workers/index.ts
+
+# Terminal 4: Dashboard
+cd apps/dashboard && pnpm dev  # http://localhost:3001
+
+# Terminal 5: Generate signals
+pnpm agent:tick
+```
+
+### Phase 2 Complete (2026-01-24)
+
+| Component | Location | Description |
+|-----------|----------|-------------|
+| **Price Charts** | `apps/dashboard/src/components/PriceChart.tsx` | Recharts line/area charts with trends |
+| **Portfolio API** | `api/src/routes/portfolio.ts` | CRUD, P&L calculation, performance |
+| **Portfolio UI** | `apps/dashboard/src/components/PortfolioPanel.tsx` | Holdings table with gain/loss |
+| **Market Summary** | `api/src/routes/market-commentary.ts` | Summary, top movers, commentary |
+| **Market Panel** | `apps/dashboard/src/components/MarketPanel.tsx` | Sentiment, sources, opportunities |
+| **Commentary Worker** | `apps/agent/src/workers/commentary-poster.ts` | Daily market commentary to X |
+| **Bot /portfolio** | `bot/src/commands/portfolio.ts` | View portfolio in Telegram |
+| **Bot /settings** | `bot/src/commands/settings.ts` | Deep user preferences |
+
+### New Dashboard Tabs
+
+- **Arbitrage** - Cross-venue arbitrage opportunities
+- **Signals** - AI-generated trading signals
+- **Portfolio** - Holdings, cost basis, P&L tracking
+- **Market** - Market summary and commentary
+- **Charts** - Historical price charts with Recharts
+
+### New Bot Commands
+
+| Command | Description |
+|---------|-------------|
+| `/portfolio` | View portfolio with P&L |
+| `/add_holding` | Add card to portfolio |
+| `/settings` | Deep preferences (grades, sources, quiet hours) |
+
+### Schema Updates (Pending Migration)
+
+New models added to `prisma/schema.prisma`:
+- `PriceHistory` - Historical sold prices
+- `Portfolio` - User portfolios
+- `PortfolioHolding` - Individual holdings with P&L
+- `UserPreferences` - Extended alert settings
+- `MarketCommentary` - AI-generated commentaries
+
+**Note:** Run `prisma generate` after fixing local tooling issue to enable type-safe queries.
+
+See `docs/BLOOMBERG_TERMINAL_ROADMAP.md` for full roadmap.
