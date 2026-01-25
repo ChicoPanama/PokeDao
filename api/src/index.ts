@@ -43,6 +43,8 @@ import { registerAIAnalysis } from "./routes/ai-analysis.js";
 import cardComprehensiveRoutes from "./routes/card-comprehensive.js";
 import { registerPortfolio } from "./routes/portfolio.js";
 import { registerMarketCommentary } from "./routes/market-commentary.js";
+import { initWebSocket, shutdownWebSocket, subscribeToRedisUpdates, getClientCount } from "./lib/websocket.js";
+import { createServer } from "http";
 
 // External data integration endpoints
 import { 
@@ -522,14 +524,31 @@ async function buildServer() {
 }
 
 let server: Awaited<ReturnType<typeof buildServer>>;
+let httpServer: ReturnType<typeof createServer>;
 
 buildServer()
-  .then((app) => {
+  .then(async (app) => {
     server = app;
+
+    // Create HTTP server for both Fastify and WebSocket
+    httpServer = createServer(app.server);
+
+    // Initialize WebSocket server
+    initWebSocket(httpServer);
+    console.log('[api] WebSocket server initialized at /ws');
+
+    // Subscribe to Redis for cross-instance broadcasts
+    try {
+      await subscribeToRedisUpdates();
+    } catch (e) {
+      console.warn('[api] Redis pub/sub subscription failed (non-fatal):', e);
+    }
+
     return app.listen({ port: PORT, host: HOST });
   })
   .then(() => {
     console.log(`[api] listening on http://${HOST}:${PORT}`);
+    console.log(`[api] WebSocket available at ws://${HOST}:${PORT}/ws`);
   })
   .catch((err) => {
     console.error("[api] failed to start:", err);
@@ -540,6 +559,10 @@ buildServer()
 const shutdown = async (signal: string) => {
   console.log(`\n[api] ${signal} received, shutting down gracefully...`);
   try {
+    // Shutdown WebSocket first
+    shutdownWebSocket();
+    console.log('[api] WebSocket server closed');
+
     if (server) {
       await server.close();
       console.log('[api] server closed');

@@ -16,6 +16,7 @@
     "@pokedao/storage": "workspace:*",
     "@prisma/adapter-pg": "^7.2.0",
     "@prisma/client": "^7.2.0",
+    "@solana/web3.js": "^1.95.0",
     "bullmq": "^5.52.1",
     "dotenv": "^16.6.1",
     "grammy": "^1.38.2",
