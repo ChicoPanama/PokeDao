@@ -13,7 +13,8 @@
     "packages/analysis",
     "packages/storage",
     "packages/adapters",
-    "apps/agent"
+    "apps/agent",
+    "apps/dashboard"
   ],
   "scripts": {
     "preflight": "ts-node scripts/preflight.ts",
@@ -28,6 +29,7 @@
     "db:reset": "pnpm --filter api prisma migrate reset --force && pnpm run db:seed",
     "db:seed": "pnpm --filter api prisma db seed",
     "test": "pnpm -r run test",
+    "test:smoke": "pnpm smoke && pnpm smoke:tick",
     "smoke": "node scripts/smoke.sh",
     "pipeline:relaxed": "pnpm dlx tsx scripts/run-featurizer.ts && pnpm dlx tsx scripts/run-scorer.ts && THESIS_RELAXED=1 pnpm dlx tsx scripts/run-thesis.ts",
     "pipeline:strict": "pnpm dlx tsx scripts/run-featurizer.ts && pnpm dlx tsx scripts/run-scorer.ts && THESIS_RELAXED=0 THESIS_MIN_COMPS_90=5 THESIS_MAX_VOL_BP=1200 THESIS_MAX_FRESH_DAYS=14 pnpm dlx tsx scripts/run-thesis.ts",
@@ -51,6 +53,9 @@
     "x:dry": "POSTING_ENABLED=false POSTING_DRY_RUN=true tsx scripts/x-dry-run.ts",
     "agent:dev": "pnpm --filter @pokedao/agent dev",
     "agent:tick": "pnpm --filter @pokedao/agent tick",
+    "agent:workers": "tsx apps/agent/src/workers/index.ts",
+    "dashboard:dev": "pnpm --filter @pokedao/dashboard dev",
+    "dashboard:build": "pnpm --filter @pokedao/dashboard build",
     "smoke:tick": "tsx scripts/agent-smoke-tick.ts",
     "smoke:daily": "tsx scripts/post-daily-once.ts",
     "smoke:flash": "tsx scripts/flash-direct.ts",
