@@ -29,6 +29,7 @@ import { ebayWorker } from './ebay-worker.js';
 import { cryptoWorker } from './crypto-worker.js';
 import { redditWorker } from './reddit-worker.js';
 import { psaWorker } from './psa-worker.js';
+import { web2Worker } from './web2-worker.js';
 
 // BullMQ workers
 import { startXPoster } from './x-poster.js';
@@ -47,6 +48,7 @@ const config = {
   cryptoEnabled: process.env.CRYPTO_WORKER_ENABLED !== 'false',
   redditEnabled: process.env.REDDIT_WORKER_ENABLED !== 'false',
   psaEnabled: process.env.PSA_WORKER_ENABLED !== 'false',
+  web2Enabled: process.env.WEB2_WORKER_ENABLED !== 'false',
   xPosterEnabled: process.env.X_POSTER_ENABLED !== 'false',
   commentaryEnabled: process.env.COMMENTARY_ENABLED !== 'false',
 };
@@ -64,6 +66,7 @@ function registerWorkers(): void {
     registry.register(cryptoWorker, config.cryptoEnabled);
     registry.register(redditWorker, config.redditEnabled);
     registry.register(psaWorker, config.psaEnabled);
+    registry.register(web2Worker, config.web2Enabled);
   }
 
   logger.info({
@@ -72,6 +75,7 @@ function registerWorkers(): void {
     crypto: config.cryptoEnabled,
     reddit: config.redditEnabled,
     psa: config.psaEnabled,
+    web2: config.web2Enabled,
   }, 'Data collection workers registered');
 }
 
