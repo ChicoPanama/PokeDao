@@ -188,6 +188,9 @@ importers:
       ioredis:
         specifier: ^5.7.0
         version: 5.7.0
+      openai:
+        specifier: ^5.20.2
+        version: 5.20.2(ws@8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10))(zod@4.1.11)
 
   apps/dashboard:
     dependencies:
@@ -9287,7 +9290,6 @@ snapshots:
     optionalDependencies:
       ws: 8.18.3(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       zod: 4.1.11
-    optional: true
 
   openapi-types@12.1.3: {}
 

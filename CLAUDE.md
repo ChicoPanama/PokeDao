@@ -260,6 +260,37 @@ New models added to `prisma/schema.prisma`:
 - `UserPreferences` - Extended alert settings
 - `MarketCommentary` - AI-generated commentaries
 
-**Note:** Run `prisma generate` after fixing local tooling issue to enable type-safe queries.
+**Note:** Run `prisma generate` using the Node.js 22 wrapper: `./scripts/prisma-node22.sh generate`
+
+### Phase 3 In Progress (2026-01-24)
+
+| Component | Location | Description |
+|-----------|----------|-------------|
+| **Token Gating** | `bot/src/middleware/tokenGate.ts` | Solana wallet verification, tier system |
+| **TCGPlayer Adapter** | `packages/adapters/src/tcgplayer/` | Full OAuth, rate limiting, pricing APIs |
+| **Courtyard Adapter** | `packages/adapters/src/courtyard/` | Tokenized card marketplace |
+| **Magic Eden Adapter** | `packages/adapters/src/magiceden/` | Solana NFT marketplace |
+| **PSA Adapter** | `packages/adapters/src/psa/` | Population reports for rarity |
+| **WebSocket Server** | `api/src/lib/websocket.ts` | Real-time dashboard updates |
+| **AI Thesis Integration** | `apps/agent/src/lib/ai-thesis.ts` | DeepSeek-powered thesis generation |
+
+### AI Ensemble Integration
+
+The signal pipeline now supports AI-powered investment thesis generation:
+
+```bash
+# Enable AI thesis (requires DeepSeek API key)
+AI_THESIS_ENABLED=true
+DEEPSEEK_API_KEY=your_key
+
+# Run agent with AI thesis
+pnpm agent:tick
+```
+
+Features:
+- DeepSeek R1 generates investment thesis, risks, catalysts
+- Caching (1hr TTL) to avoid duplicate API calls
+- Graceful fallback to static rationale if AI unavailable
+- Top 10 candidates enriched per tick (cost optimization)
 
 See `docs/BLOOMBERG_TERMINAL_ROADMAP.md` for full roadmap.
