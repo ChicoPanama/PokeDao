@@ -12,7 +12,7 @@
 
 | Layer | Status | Description |
 |-------|--------|-------------|
-| **Data Collection** | Running | 8 workers on cron schedules (eBay, crypto, Reddit, PSA, PPT, web2) |
+| **Data Collection** | Running | 9 workers on cron schedules (eBay, crypto, Reddit, PSA, PPT, web2, TCGdex sync) |
 | **Signal Processing** | Running | Fair value, trend, liquidity, arbitrage detection + Groq LLM thesis |
 | **User Interface** | Running | Telegram bot, X/Twitter poster, Next.js dashboard |
 
@@ -31,6 +31,7 @@ LAYER 1: DATA COLLECTION (Pure TypeScript, No LLM)
 |  psa-worker        (0 6 * * *)     - PSA population data     |
 |  ppt-worker        (0 */2 * * *)   - PokemonPriceTracker     |
 |  web2-worker       (configurable)  - Web2 marketplace data   |
+|  tcgdex-sync       (0 2 * * *)    - Card metadata (21k+)    |
 +--------------------------------------------------------------+
                             |
                             v
@@ -170,17 +171,17 @@ pokedao/
 │   │       ├── steps/          # 6-step pipeline (fetch → output)
 │   │       ├── pipelines/      # Daily posting pipeline
 │   │       ├── processor/      # Signal calculator + thesis generator
-│   │       ├── workers/        # 8 data workers + health server
+│   │       ├── workers/        # 9 data workers + health server
 │   │       ├── collectors/     # Data warehouse aggregation
 │   │       └── services/       # External API clients
 │   ├── dashboard/              # Next.js Bloomberg-style terminal
 │   └── clawdbot-skills/        # Clawdbot user interface skills
 ├── packages/
 │   ├── core/                   # Domain types, utilities
-│   ├── shared/                 # Logging, config, validation, DB
+│   ├── shared/                 # Logging, config, validation, DB, CardMatcher, FuzzyMatcher
 │   ├── storage/                # Database adapters
 │   ├── analysis/               # TFV, liquidity scoring
-│   ├── adapters/               # TCGPlayer, eBay, Courtyard, Magic Eden, PSA, JustTCG
+│   ├── adapters/               # TCGPlayer, eBay, Courtyard, Magic Eden, PSA, JustTCG, TCGdex
 │   ├── social/                 # X/Twitter posting
 │   ├── reddit-sentiment/       # Reddit analysis
 │   └── streams/                # Data stream processing
@@ -204,6 +205,7 @@ Production-grade worker infrastructure with distributed locking, retry logic, ra
 | `psa-worker` | `0 6 * * *` | PSA | Population data for scarcity |
 | `pokemon-price-tracker` | `0 */2 * * *` | PPT API | Multi-source pricing (TCGPlayer, eBay, CardMarket) |
 | `web2-worker` | Configurable | Web2 marketplaces | Traditional marketplace data |
+| `tcgdex-sync` | `0 2 * * *` | TCGdex (local JSON + API) | Card metadata: rarity, illustrator, types, images |
 | `x-poster` | BullMQ | - | Posts opportunities to X/Twitter |
 | `commentary-poster` | BullMQ | - | Daily AI market commentary |
 
@@ -228,9 +230,59 @@ The processor runs every minute, analyzing listings to find investment opportuni
 4. **Sentiment Analysis** - Reddit mention frequency and sentiment scores
 5. **Scarcity Assessment** - PSA population data and rarity metrics
 6. **Arbitrage Detection** - Cross-venue price differentials after fees
-7. **Thesis Generation** - Template-based (70%) + Groq LLM (30%) investment thesis
+7. **TCGdex Enrichment** - Rarity, illustrator, types, images from local card catalog
+8. **Thesis Generation** - Template-based (70%) + Groq LLM (30%) investment thesis with rarity/illustrator context
 
 Cost: Templates are free, Groq calls ~$0.00014 each (llama-3.1-8b-instant).
+
+---
+
+## TCGdex Card Metadata
+
+TCGdex provides canonical card metadata (rarity, illustrator, types, images) for 21,000+ Pokemon TCG cards. The integration follows a **Nightly Sync → PostgreSQL → Redis Cache → Lookup** pattern with zero external API calls during runtime.
+
+```
+NIGHTLY SYNC (2 AM)                     RUNTIME (agent:tick)
+┌───────────────────────┐               ┌──────────────────────┐
+│ tcgdex-sync-worker    │               │ processor/index.ts   │
+│                       │               │                      │
+│ 1. Seed from local    │──────────┐    │ listing.card.rarity  │
+│    JSON (21k cards)   │          │    │ listing.card.illust… │
+│                       │          │    │ listing.card.types   │
+│ 2. Incremental API    │          │    │ listing.card.imageUrl│
+│    sync (new sets)    │          │    └──────────┬───────────┘
+│                       │          │               │
+│ 3. Match Cards with   │──┐       │               v
+│    tcgdexId enrichment│  │       │    ┌──────────────────────┐
+└───────────────────────┘  │       │    │ thesis-generator.ts  │
+                           v       v    │ rarity + illustrator │
+                    ┌────────────────┐  │ context in thesis    │
+                    │  PostgreSQL    │  └──────────────────────┘
+                    │  Card model    │
+                    │  + tcgdexId    │
+                    │  + rarity      │
+                    │  + illustrator │
+                    │  + pokemonTypes│
+                    │  + imageUrl    │
+                    └────────────────┘
+```
+
+**Key components:**
+
+| Component | Location | Purpose |
+|-----------|----------|---------|
+| **TCGdex Adapter** | `packages/adapters/src/tcgdex/` | SDK wrapper with rate limiting, retry, Zod validation |
+| **Sync Worker** | `apps/agent/src/workers/tcgdex-sync-worker.ts` | Nightly seed + incremental API sync + card matching |
+| **Card Matcher** | `packages/shared/card-matcher.ts` | Cascading lookup: tcgdexId → exact → normalized → fuzzy (Jaro-Winkler) |
+| **API Service** | `api/src/lib/tcgdex.ts` | DB-backed search with 5min Redis cache |
+
+**Card Matcher strategy chain** (used by crypto + eBay workers):
+
+1. Direct `tcgdexId` lookup (confidence: 1.0)
+2. Exact `searchName` + `searchSet` + `number` (confidence: 1.0)
+3. Normalized name + set via `FuzzyMatcher` (confidence: 0.9)
+4. Fuzzy match via Jaro-Winkler against SourceCatalogItem (confidence: 0.8+)
+5. Redis cache: 1h TTL for hits, 5min TTL for misses
 
 ---
 
@@ -298,7 +350,7 @@ Grammy-based bot with inline keyboards and real-time alerts.
 
 | Domain | Key Models |
 |--------|-----------|
-| **Cards** | `Card`, `SourceCatalogItem`, `PriceCache` |
+| **Cards** | `Card` (with tcgdexId, rarity, illustrator, pokemonTypes), `SourceCatalogItem`, `PriceCache` |
 | **Listings** | `Listing`, `PriceSnapshot`, `PriceHistory` |
 | **Signals** | `SignalSnapshot`, `Opportunity`, `ThesisRecord` |
 | **Users** | `User`, `UserPreferences`, `Portfolio`, `PortfolioHolding` |
@@ -329,6 +381,7 @@ POKEMON_PRICE_TRACKER_API_KEY=...
 # Workers
 DATA_WORKERS_ENABLED=true
 WORKER_HEALTH_PORT=3001
+TCGDEX_SYNC_ENABLED=true                  # TCGdex metadata sync (free, no key needed)
 
 # Output
 POSTING_ENABLED=false                     # Set true for live X posting
@@ -356,6 +409,7 @@ Pre-built marketplace integrations in `packages/adapters/`:
 | **PSA** | Implemented | Population reports for rarity |
 | **JustTCG** | Implemented | Card marketplace |
 | **Phygitals** | Implemented | Physical-digital card platform |
+| **TCGdex** | Implemented | Card metadata (rarity, illustrator, types, images) — free, keyless |
 
 ---
 
@@ -402,6 +456,7 @@ agent:tick (1.2s)
 - Data warehouse with ML-ready collection endpoints
 - Production worker infrastructure (distributed locks, retry, rate limiting, health monitoring)
 - PokemonPriceTracker multi-source pricing integration
+- TCGdex card metadata integration (21k+ cards synced nightly, CardMatcher with cascading lookup, rarity/illustrator enrichment in thesis generation)
 
 ### In Progress
 

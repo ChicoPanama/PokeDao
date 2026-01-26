@@ -111,7 +111,12 @@ export async function processNewListings() {
             grade: listing.card?.grade || listing.condition,
             listingPrice: listing.price,
             listingUrl: listing.url,
-            source: listing.source
+            source: listing.source,
+            // TCGdex enrichment
+            rarity: listing.card?.rarity || null,
+            illustrator: listing.card?.illustrator || null,
+            pokemonTypes: listing.card?.pokemonTypes || [],
+            imageUrl: listing.card?.imageUrl || null,
           };
 
           // Generate thesis with timing
@@ -154,7 +159,11 @@ export async function processNewListings() {
                 trend: signals.trend,
                 liquidity: signals.liquidity.score,
                 sentiment: signals.sentiment.label
-              }
+              },
+              // TCGdex metadata
+              rarity: opportunity.rarity || null,
+              illustrator: opportunity.illustrator || null,
+              imageUrl: opportunity.imageUrl || null,
             },
             { removeOnComplete: 1000, removeOnFail: 500 }
           );

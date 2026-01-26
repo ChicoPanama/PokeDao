@@ -21,6 +21,11 @@ export interface Opportunity {
   listingPrice: number;
   listingUrl: string;
   source: string;
+  // TCGdex enrichment (optional)
+  rarity?: string | null;
+  illustrator?: string | null;
+  pokemonTypes?: string[];
+  imageUrl?: string | null;
 }
 
 export interface ThesisResult {
@@ -141,7 +146,11 @@ ${signals.scarcity.psa10Pop > 0 ? `• Scarcity: PSA 10 pop ${signals.scarcity.p
 
 **Thesis:** This ${opp.cardName} is trading ${discountFormatted}% below fair value with ${
         signals.trend.direction === 'UP' ? 'bullish' : 'stable'
-      } momentum.${signals.scarcity.psa10Pop < 100 ? ' Low population adds scarcity premium.' : ''} Excellent entry point.
+      } momentum.${signals.scarcity.psa10Pop < 100 ? ' Low population adds scarcity premium.' : ''}${
+        opp.rarity && opp.rarity !== 'Common' && opp.rarity !== 'Uncommon'
+          ? ` ${opp.rarity}${opp.illustrator ? ` illustrated by ${opp.illustrator}` : ''} — high collector demand for this rarity tier.`
+          : ''
+      } Excellent entry point.
 
 **Risk:** ${
         signals.liquidity.score < 5
@@ -240,7 +249,7 @@ Card: ${opp.cardName}
 Set: ${opp.setName}
 Grade: ${opp.grade || 'Raw'}
 Listing Price: $${opp.listingPrice}
-Source: ${opp.source}
+Source: ${opp.source}${opp.rarity ? `\nRarity: ${opp.rarity}` : ''}${opp.illustrator ? `\nIllustrator: ${opp.illustrator}` : ''}${opp.pokemonTypes && opp.pokemonTypes.length > 0 ? `\nTypes: ${opp.pokemonTypes.join(', ')}` : ''}
 
 Market Data:
 - Fair Value: $${signals.fairValue.toFixed(2)} (${signals.confidence * 100}% confidence)

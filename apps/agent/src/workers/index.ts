@@ -31,6 +31,7 @@ import { redditWorker } from './reddit-worker.js';
 import { psaWorker } from './psa-worker.js';
 import { web2Worker } from './web2-worker.js';
 import { pokemonPriceTrackerWorker } from './pokemon-price-tracker-worker.js';
+import { tcgdexSyncWorker } from './tcgdex-sync-worker.js';
 
 // BullMQ workers
 import { startXPoster } from './x-poster.js';
@@ -51,6 +52,7 @@ const config = {
   psaEnabled: process.env.PSA_WORKER_ENABLED !== 'false',
   web2Enabled: process.env.WEB2_WORKER_ENABLED !== 'false',
   pokemonPriceTrackerEnabled: process.env.POKEMON_PRICE_TRACKER_ENABLED === 'true', // Multi-source pricing aggregator
+  tcgdexSyncEnabled: process.env.TCGDEX_SYNC_ENABLED !== 'false', // TCGdex card metadata sync
   xPosterEnabled: process.env.X_POSTER_ENABLED !== 'false',
   commentaryEnabled: process.env.COMMENTARY_ENABLED !== 'false',
 };
@@ -70,6 +72,7 @@ function registerWorkers(): void {
     registry.register(psaWorker, config.psaEnabled);
     registry.register(web2Worker, config.web2Enabled);
     registry.register(pokemonPriceTrackerWorker, config.pokemonPriceTrackerEnabled);
+    registry.register(tcgdexSyncWorker, config.tcgdexSyncEnabled);
   }
 
   logger.info({
@@ -80,6 +83,7 @@ function registerWorkers(): void {
     psa: config.psaEnabled,
     web2: config.web2Enabled,
     pokemonPriceTracker: config.pokemonPriceTrackerEnabled,
+    tcgdexSync: config.tcgdexSyncEnabled,
   }, 'Data collection workers registered');
 }
 

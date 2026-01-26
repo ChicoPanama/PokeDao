@@ -164,7 +164,7 @@ const cardComprehensiveRoutes: FastifyPluginAsync = async (fastify) => {
     });
 
     // TCGdex matches to enrich rarity/image candidates
-    const tcgMatches: TCGdexCard[] = tcgdex.searchByName(String(q), set);
+    const tcgMatches: TCGdexCard[] = await tcgdex.searchByName(String(q), set);
 
     const enriched = await Promise.all(
       canon.map(async (card) => {
@@ -447,7 +447,7 @@ const cardComprehensiveRoutes: FastifyPluginAsync = async (fastify) => {
 
     // TCGdex image candidates
     await tcgdex.load();
-    const tcgList = tcgdex.searchByName(card.canonicalName, card.canonicalSet);
+    const tcgList = await tcgdex.searchByName(card.canonicalName, card.canonicalSet);
     const tcgMatch = tcgList.find((c) => c.localId === card.cardNumber);
     const imageCandidateUrls = tcgMatch ? tcgdex.getImageCandidates(tcgMatch, params.language || 'EN') : [];
 

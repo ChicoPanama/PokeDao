@@ -27,7 +27,7 @@ export interface MagicEdenUnifiedListing {
 /**
  * Parse attributes to extract card info
  */
-function parseAttributes(attributes?: Array<{ trait_type: string; value: string | number }>): {
+function parseAttributes(attributes?: Array<{ trait_type: string; value?: string | number }>): {
   gradeCompany?: string;
   grade?: number;
   setName?: string;

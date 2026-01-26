@@ -32,6 +32,15 @@ model Card {
   priceChartingId String?
   tcgPlayerId     String?
   psaCertNumber   String?
+  tcgdexId        String?   // TCGdex canonical ID (e.g., "base1-4")
+
+  // TCGdex enrichment
+  rarity          String?   // "Rare", "Common", "Secret Rare"
+  category        String?   // "Pokemon", "Trainer", "Energy"
+  illustrator     String?
+  pokemonTypes    String[]  // ["Fire", "Water"]
+  stage           String?   // "Basic", "Stage1", "Stage2"
+  imageUrl        String?
 
   // Tracking
   tracked         Boolean  @default(false)
@@ -55,6 +64,7 @@ model Card {
   @@index([cardKey])
   @@index([searchName, searchSet])
   @@index([tracked])
+  @@index([tcgdexId])
 }
 
 model User {

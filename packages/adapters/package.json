@@ -7,13 +7,15 @@
     ".": "./src/index.ts",
     "./justtcg": "./src/justtcg/index.ts",
     "./phygitals": "./src/phygitals/index.ts",
-    "./collectorcrypt": "./src/collectorcrypt/index.ts"
+    "./collectorcrypt": "./src/collectorcrypt/index.ts",
+    "./tcgdex": "./src/tcgdex/index.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@pokedao/core": "workspace:*",
+    "@tcgdex/sdk": "^2.0.0",
     "zod": "^4.1.11",
     "node-fetch": "^2.6.7"
   },

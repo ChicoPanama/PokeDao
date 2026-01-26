@@ -8,3 +8,5 @@ export * from './mappers/ebaySoldToComp.js';
 export * from './fees.js';
 export * from './config.js';
 export * from './tracing.js';
+export * from './card-matcher.js';
+export * from './fuzzy-matcher.js';

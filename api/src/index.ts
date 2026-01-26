@@ -47,6 +47,7 @@ import collectRoutes from "./routes/collect.js";
 import analyticsRoutes from "./routes/analytics.js";
 import { initWebSocket, shutdownWebSocket, subscribeToRedisUpdates, getClientCount } from "./lib/websocket.js";
 import { createServer } from "http";
+import { tcgdex } from "./lib/tcgdex.js";
 
 // External data integration endpoints
 import { 
@@ -73,6 +74,9 @@ async function buildServer() {
     genReqId: (req) => (req.headers['x-request-id'] as string) || randomUUID(),
     trustProxy: process.env.TRUST_PROXY === 'true',
   });
+
+  // Initialize TCGdex service with DB-backed queries (skips 50MB JSON load)
+  tcgdex.initDb(prisma, redis);
 
   // Propagate request id for client correlation
   app.addHook('onRequest', async (req, reply) => {

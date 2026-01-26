@@ -10,3 +10,4 @@ export * from './tcgplayer/index.js';
 export * from './courtyard/index.js';
 export * from './magiceden/index.js';
 export * from './psa/index.js';
+export * from './tcgdex/index.js';

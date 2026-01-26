@@ -10,6 +10,7 @@
 
 import crypto from 'crypto';
 import { BaseWorker } from './base-worker.js';
+import { createCardMatcher, type CardMatcher } from '@pokedao/shared/card-matcher.js';
 
 const PARSER_VERSION = '1.0.0';
 const SOURCE_VERSION = 'browse-api-v1';
@@ -27,6 +28,7 @@ interface EbaySale {
 
 export class EbayWorker extends BaseWorker {
   private ebayAppId: string;
+  private cardMatcher: CardMatcher | null = null;
 
   constructor() {
     super({
@@ -37,6 +39,13 @@ export class EbayWorker extends BaseWorker {
       timeoutMs: 120000, // 2 minutes
     });
     this.ebayAppId = process.env.EBAY_APP_ID || '';
+  }
+
+  private getCardMatcher(): CardMatcher {
+    if (!this.cardMatcher) {
+      this.cardMatcher = createCardMatcher(this.redis);
+    }
+    return this.cardMatcher;
   }
 
   async run() {
@@ -59,9 +68,17 @@ export class EbayWorker extends BaseWorker {
       let totalSnapshots = 0;
       let duplicatesSkipped = 0;
 
+      const matcher = this.getCardMatcher();
+
       for (const card of cards) {
         try {
           const sales = await this.fetchSoldListings(card.canonicalName, card.canonicalSet);
+
+          // Resolve Card record via CardMatcher (cached, one lookup per canonical card)
+          const matchResult = await matcher.match(
+            { name: card.canonicalName, setName: card.canonicalSet },
+            prisma
+          );
 
           for (const sale of sales) {
             // Calculate rawHash for deduplication
@@ -80,10 +97,11 @@ export class EbayWorker extends BaseWorker {
               continue;
             }
 
-            // Create PriceSnapshot
+            // Create PriceSnapshot with Card link from CardMatcher
             await prisma.priceSnapshot.create({
               data: {
-                cardKey: `${card.canonicalName}-${card.canonicalSet}`.toLowerCase().replace(/\s+/g, '-'),
+                cardId: matchResult.cardId ?? undefined,
+                cardKey: matchResult.cardKey ?? `${card.canonicalName}-${card.canonicalSet}`.toLowerCase().replace(/\s+/g, '-'),
                 timestamp: sale.date,
                 source: 'EBAY',
                 externalId: sale.sourceItemId,

@@ -11,6 +11,7 @@
 
 import crypto from 'crypto';
 import { BaseWorker } from './base-worker.js';
+import { createCardMatcher, type CardMatcher } from '@pokedao/shared/card-matcher.js';
 
 const PARSER_VERSION = '1.0.0';
 
@@ -28,6 +29,8 @@ interface CryptoListing {
 }
 
 export class CryptoWorker extends BaseWorker {
+  private cardMatcher: CardMatcher | null = null;
+
   constructor() {
     super({
       name: 'crypto',
@@ -36,6 +39,13 @@ export class CryptoWorker extends BaseWorker {
       retryDelayMs: 1000,
       timeoutMs: 60000,
     });
+  }
+
+  private getCardMatcher(): CardMatcher {
+    if (!this.cardMatcher) {
+      this.cardMatcher = createCardMatcher(this.redis);
+    }
+    return this.cardMatcher;
   }
 
   async run() {
@@ -202,16 +212,15 @@ export class CryptoWorker extends BaseWorker {
         return 'duplicate';
       }
 
-      // Try to find matching card
-      const card = await prisma.card.findFirst({
-        where: {
-          OR: [
-            { name: { contains: listing.cardName.split(' ')[0], mode: 'insensitive' } },
-            { cardKey: { contains: listing.cardName.toLowerCase().replace(/\s+/g, '-') } }
-          ]
-        },
-        select: { id: true, cardKey: true }
-      });
+      // Match listing to Card via CardMatcher (cascading: tcgdexId → exact → normalized → fuzzy)
+      const matcher = this.getCardMatcher();
+      const matchResult = await matcher.match(
+        { name: listing.cardName, grade: listing.grade },
+        prisma
+      );
+      const card = matchResult.cardId
+        ? { id: matchResult.cardId, cardKey: matchResult.cardKey }
+        : null;
 
       // Create PriceSnapshot
       await prisma.priceSnapshot.create({
