@@ -32,6 +32,7 @@ import { psaWorker } from './psa-worker.js';
 import { web2Worker } from './web2-worker.js';
 import { pokemonPriceTrackerWorker } from './pokemon-price-tracker-worker.js';
 import { tcgdexSyncWorker } from './tcgdex-sync-worker.js';
+import { contractScannerWorker } from './contract-scanner-worker.js';
 
 // BullMQ workers
 import { startXPoster } from './x-poster.js';
@@ -53,6 +54,7 @@ const config = {
   web2Enabled: process.env.WEB2_WORKER_ENABLED !== 'false',
   pokemonPriceTrackerEnabled: process.env.POKEMON_PRICE_TRACKER_ENABLED === 'true', // Multi-source pricing aggregator
   tcgdexSyncEnabled: process.env.TCGDEX_SYNC_ENABLED !== 'false', // TCGdex card metadata sync
+  contractScannerEnabled: process.env.CONTRACT_SCANNER_ENABLED === 'true', // Smart contract vulnerability scanner
   xPosterEnabled: process.env.X_POSTER_ENABLED !== 'false',
   commentaryEnabled: process.env.COMMENTARY_ENABLED !== 'false',
 };
@@ -73,6 +75,7 @@ function registerWorkers(): void {
     registry.register(web2Worker, config.web2Enabled);
     registry.register(pokemonPriceTrackerWorker, config.pokemonPriceTrackerEnabled);
     registry.register(tcgdexSyncWorker, config.tcgdexSyncEnabled);
+    registry.register(contractScannerWorker, config.contractScannerEnabled);
   }
 
   logger.info({
@@ -84,6 +87,7 @@ function registerWorkers(): void {
     web2: config.web2Enabled,
     pokemonPriceTracker: config.pokemonPriceTrackerEnabled,
     tcgdexSync: config.tcgdexSyncEnabled,
+    contractScanner: config.contractScannerEnabled,
   }, 'Data collection workers registered');
 }
 
@@ -150,6 +154,9 @@ async function main(): Promise<void> {
     const state = worker.enabled ? 'ACTIVE' : 'DISABLED';
     console.log(`   - ${worker.name}: ${state}`);
   }
+  console.log('');
+  console.log('  SECURITY SCANNER:');
+  console.log(`   - Contract Scanner: ${config.contractScannerEnabled ? 'ACTIVE' : 'DISABLED'}`);
   console.log('');
   console.log('  OUTPUT (BullMQ-based):');
   console.log(`   - X Poster: ${config.xPosterEnabled ? 'ACTIVE' : 'DISABLED'}`);

@@ -1171,3 +1171,158 @@ model MarketCommentary {
   @@index([type, createdAt])
   @@index([publishedAt])
 }
+
+// ===========================================
+// SMART CONTRACT VULNERABILITY SCANNER
+// ===========================================
+
+model SmartContract {
+  id              String   @id @default(cuid())
+
+  // Identity
+  address         String
+  chainId         Int
+  chainName       String   // Ethereum, Base, Arbitrum, etc.
+  name            String?  // Contract name from Etherscan
+  compilerVersion String?
+
+  // Source
+  sourceCode      String?  @db.Text
+  abi             Json?
+  isProxy         Boolean  @default(false)
+  implementationAddress String?
+
+  // Protocol context (from DeFiLlama)
+  protocolName    String?
+  protocolSlug    String?
+  tvlUsd          Float?   // Total value locked at scan time
+  category        String?  // DEX, Lending, Bridge, etc.
+
+  // Status
+  verified        Boolean  @default(false)
+  lastScannedAt   DateTime?
+
+  // Tracking
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  scans           ContractScan[]
+
+  @@unique([address, chainId])
+  @@index([chainId])
+  @@index([protocolName])
+  @@index([tvlUsd])
+  @@index([lastScannedAt])
+}
+
+model ContractScan {
+  id              String   @id @default(cuid())
+
+  // Contract reference
+  contractId      String
+  contract        SmartContract @relation(fields: [contractId], references: [id])
+
+  // Scan config
+  scanType        String   // FULL, QUICK, DEEP
+  toolsUsed       String[] // ["slither", "aderyn", "semgrep", "ai"]
+
+  // Results
+  status          String   // PENDING, RUNNING, COMPLETED, FAILED
+  findingsCount   Int      @default(0)
+  criticalCount   Int      @default(0)
+  highCount       Int      @default(0)
+  mediumCount     Int      @default(0)
+  lowCount        Int      @default(0)
+  infoCount       Int      @default(0)
+
+  // Performance
+  durationMs      Int?
+  errorMessage    String?  @db.Text
+
+  // Raw outputs
+  slitherOutput   Json?
+  aiAnalysis      Json?
+
+  // Tracking
+  startedAt       DateTime @default(now())
+  completedAt     DateTime?
+
+  // Relations
+  findings        ScanFinding[]
+  alerts          ScanAlert[]
+
+  @@index([contractId, startedAt])
+  @@index([status])
+  @@index([startedAt])
+}
+
+model ScanFinding {
+  id              String   @id @default(cuid())
+
+  // Scan reference
+  scanId          String
+  scan            ContractScan @relation(fields: [scanId], references: [id])
+
+  // Finding details
+  detector        String   // slither check name or AI detector
+  tool            String   // slither, aderyn, semgrep, ai
+  severity        String   // CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL
+  confidence      String   // HIGH, MEDIUM, LOW
+
+  // Description
+  title           String
+  description     String   @db.Text
+
+  // Code location
+  filePath        String?
+  lineNumbers     Int[]
+  codeSnippet     String?  @db.Text
+
+  // AI enrichment
+  aiAssessment    String?  // TRUE_POSITIVE, FALSE_POSITIVE, NEEDS_REVIEW
+  attackPath      String?  @db.Text
+  recommendation  String?  @db.Text
+  exploitability  String?  // EXPLOITABLE, THEORETICAL, UNLIKELY
+
+  // Deduplication
+  findingHash     String   // Hash of detector+severity+location for dedup
+
+  // Tracking
+  createdAt       DateTime @default(now())
+
+  @@unique([scanId, findingHash])
+  @@index([scanId])
+  @@index([severity])
+  @@index([detector])
+  @@index([tool])
+}
+
+model ScanAlert {
+  id              String   @id @default(cuid())
+
+  // Scan reference
+  scanId          String
+  scan            ContractScan @relation(fields: [scanId], references: [id])
+
+  // Delivery
+  platform        String   // TELEGRAM, CLAWDBOT
+  chatId          String?
+  messageId       String?
+
+  // Content
+  severity        String   // Overall severity of the alert
+  summary         String   @db.Text
+  findingsCount   Int
+
+  // Status
+  status          String   // QUEUED, SENT, DELIVERED, FAILED
+  sentAt          DateTime?
+  failureReason   String?
+
+  createdAt       DateTime @default(now())
+
+  @@index([scanId])
+  @@index([status])
+  @@index([platform, sentAt])
+}

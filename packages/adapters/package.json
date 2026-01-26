@@ -8,7 +8,9 @@
     "./justtcg": "./src/justtcg/index.ts",
     "./phygitals": "./src/phygitals/index.ts",
     "./collectorcrypt": "./src/collectorcrypt/index.ts",
-    "./tcgdex": "./src/tcgdex/index.ts"
+    "./tcgdex": "./src/tcgdex/index.ts",
+    "./etherscan": "./src/etherscan/index.ts",
+    "./defillama": "./src/defillama/index.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

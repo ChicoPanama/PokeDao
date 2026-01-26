@@ -11,3 +11,5 @@ export * from './courtyard/index.js';
 export * from './magiceden/index.js';
 export * from './psa/index.js';
 export * from './tcgdex/index.js';
+export * from './etherscan/index.js';
+export * from './defillama/index.js';

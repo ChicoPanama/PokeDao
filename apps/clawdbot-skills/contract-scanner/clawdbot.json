@@ -1,0 +1,23 @@
+{
+  "agents": {
+    "defaults": {
+      "heartbeat": {
+        "every": "30m",
+        "activeHours": {
+          "start": "00:00",
+          "end": "24:00"
+        }
+      }
+    }
+  },
+  "cron": [
+    {
+      "name": "Contract vulnerability scan",
+      "cron": "0 */4 * * *",
+      "session": "isolated",
+      "message": "Run vulnerability scan on newly verified contracts across Ethereum, Base, and Arbitrum",
+      "deliver": true,
+      "channel": "telegram"
+    }
+  ]
+}
