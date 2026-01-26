@@ -60,9 +60,15 @@ export class CryptoWorker extends BaseWorker {
 
     try {
       // Pokemon-related collections on Magic Eden
+      // Collector Crypt is the primary partner for tokenized Pokemon cards
+      // See: https://magiceden.us/marketplace/collector_crypt
       const collections = [
-        { symbol: 'pokemon_1', name: 'Pokemon TCG Collection 1' },
-        { symbol: 'pokemon_base_set', name: 'Pokemon Base Set' }
+        {
+          symbol: 'collector_crypt',
+          name: 'Collector Crypt',
+          description: 'Tokenized graded Pokemon cards (RWA)',
+          contractAddress: 'CCryptWBYktukHDQ2vHGtVcmtjXxYzvw8XNVY64YN2Yf'
+        }
       ];
 
       let totalSnapshots = 0;
