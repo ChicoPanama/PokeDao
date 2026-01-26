@@ -30,6 +30,7 @@ import { cryptoWorker } from './crypto-worker.js';
 import { redditWorker } from './reddit-worker.js';
 import { psaWorker } from './psa-worker.js';
 import { web2Worker } from './web2-worker.js';
+import { pricechartingWorker } from './pricecharting-worker.js';
 
 // BullMQ workers
 import { startXPoster } from './x-poster.js';
@@ -49,6 +50,7 @@ const config = {
   redditEnabled: process.env.REDDIT_WORKER_ENABLED !== 'false',
   psaEnabled: process.env.PSA_WORKER_ENABLED !== 'false',
   web2Enabled: process.env.WEB2_WORKER_ENABLED !== 'false',
+  pricechartingEnabled: process.env.PRICECHARTING_WORKER_ENABLED === 'true', // Disabled by default (paid API)
   xPosterEnabled: process.env.X_POSTER_ENABLED !== 'false',
   commentaryEnabled: process.env.COMMENTARY_ENABLED !== 'false',
 };
@@ -67,6 +69,7 @@ function registerWorkers(): void {
     registry.register(redditWorker, config.redditEnabled);
     registry.register(psaWorker, config.psaEnabled);
     registry.register(web2Worker, config.web2Enabled);
+    registry.register(pricechartingWorker, config.pricechartingEnabled);
   }
 
   logger.info({
@@ -76,6 +79,7 @@ function registerWorkers(): void {
     reddit: config.redditEnabled,
     psa: config.psaEnabled,
     web2: config.web2Enabled,
+    pricecharting: config.pricechartingEnabled,
   }, 'Data collection workers registered');
 }
 
