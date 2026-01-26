@@ -18,12 +18,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@pokedao/shared": "workspace:*",
     "@langchain/core": "^1.1.16",
     "@langchain/langgraph": "^1.1.2",
+    "@pokedao/shared": "workspace:*",
     "@prisma/adapter-pg": "^6.0.0",
     "@prisma/client": "^6.0.0",
     "bullmq": "^4.15.4",
+    "cheerio": "^1.2.0",
     "cron": "^3.5.0",
     "dotenv": "^16.4.5",
     "ioredis": "^5.7.0",
@@ -32,6 +33,7 @@
     "pino": "^9.6.0"
   },
   "devDependencies": {
+    "@types/cheerio": "^1.0.0",
     "@types/cron": "^2.4.3",
     "concurrently": "^9.0.0"
   }

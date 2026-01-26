@@ -6,29 +6,28 @@
  * - r/pkmntcgtrades
  * - r/PokeInvesting
  *
- * Saves to SocialPost table with engagement metrics.
+ * Saves to RedditSignal table with engagement metrics.
  * Runs every hour.
  * Uses simple keyword-based sentiment (no LLM needed).
  */
 
-import crypto from 'crypto';
+import { randomUUID } from 'crypto';
 import { BaseWorker } from './base-worker.js';
-
-const PARSER_VERSION = '1.0.0';
 
 interface RedditPostData {
   redditId: string;
   subreddit: string;
   title: string;
   body: string;
+  author: string;
   score: number;
   numComments: number;
   url: string;
   sentiment: number;
   sentimentLabel: string;
   mentionedCards: string[];
+  keyPhrases: string[];
   createdAt: Date;
-  raw: object;
 }
 
 export class RedditWorker extends BaseWorker {
@@ -84,78 +83,78 @@ export class RedditWorker extends BaseWorker {
         const sentiment = this.analyzeSentiment(text);
         const mentionedCards = this.extractCardMentions(text);
 
+        const keyPhrases = this.extractKeyPhrases(text);
         const redditPost: RedditPostData = {
           redditId: postData.id,
           subreddit,
           title: postData.title,
           body: postData.selftext || '',
+          author: postData.author || '[deleted]',
           score: postData.score,
           numComments: postData.num_comments,
           url: `https://reddit.com${postData.permalink}`,
           sentiment: sentiment.score,
           sentimentLabel: sentiment.label,
           mentionedCards,
+          keyPhrases,
           createdAt: new Date(postData.created_utc * 1000),
-          raw: postData
         };
 
-        // Calculate rawHash for deduplication
-        const rawHash = crypto
-          .createHash('sha256')
-          .update(JSON.stringify({ id: redditPost.redditId, score: redditPost.score }))
-          .digest('hex');
+        // Save to RedditSignal table - one signal per mentioned card
+        // If no cards mentioned, create a general signal
+        const cardsToProcess = mentionedCards.length > 0 ? mentionedCards : ['general'];
 
-        // Save to SocialPost table
         try {
-          const existing = await prisma.socialPost.findFirst({
-            where: { sourceId: redditPost.redditId, platform: 'REDDIT' }
-          });
+          for (const cardName of cardsToProcess) {
+            const signalId = `reddit:${redditPost.redditId}:${cardName}`;
 
-          if (existing) {
-            // Update engagement metrics
-            await prisma.socialPost.update({
-              where: { id: existing.id },
-              data: {
-                engagement: {
-                  score: redditPost.score,
-                  comments: redditPost.numComments
-                },
-                updatedAt: new Date()
-              }
+            // Check if signal already exists
+            const existing = await prisma.redditSignal.findUnique({
+              where: { id: signalId }
             });
-            duplicates++;
-          } else {
-            // Create new
-            await prisma.socialPost.create({
-              data: {
-                platform: 'REDDIT',
-                sourceId: redditPost.redditId,
-                sourceUrl: redditPost.url,
-                author: postData.author || '[deleted]',
-                content: redditPost.title + '\n\n' + redditPost.body.substring(0, 5000),
-                timestamp: redditPost.createdAt,
-                engagement: {
+
+            if (existing) {
+              // Update engagement metrics
+              await prisma.redditSignal.update({
+                where: { id: signalId },
+                data: {
                   score: redditPost.score,
-                  comments: redditPost.numComments,
-                  upvoteRatio: postData.upvote_ratio
-                },
-                sentiment: redditPost.sentiment,
-                sentimentLabel: redditPost.sentimentLabel,
-                mentionedCards: redditPost.mentionedCards,
-                raw: redditPost.raw as any,
-                rawHash,
-                parserVersion: PARSER_VERSION
-              }
-            });
-            newPosts++;
+                  numComments: redditPost.numComments,
+                  scrapedAt: new Date()
+                }
+              });
+              duplicates++;
+            } else {
+              // Create new signal
+              await prisma.redditSignal.create({
+                data: {
+                  id: signalId,
+                  cardName: cardName === 'general' ? 'Pokemon TCG' : cardName,
+                  setName: null,
+                  subreddit: redditPost.subreddit,
+                  postId: redditPost.redditId,
+                  postTitle: redditPost.title.substring(0, 500),
+                  postUrl: redditPost.url,
+                  author: redditPost.author,
+                  score: redditPost.score,
+                  numComments: redditPost.numComments,
+                  sentiment: redditPost.sentimentLabel,
+                  sentimentScore: redditPost.sentiment,
+                  confidence: Math.min(1, Math.abs(redditPost.sentiment) + 0.3),
+                  discussionVolume: 1,
+                  keyPhrases: redditPost.keyPhrases,
+                  createdAt: redditPost.createdAt,
+                  scrapedAt: new Date(),
+                  expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000) // 7 days
+                }
+              });
+              newPosts++;
+            }
           }
         } catch (error) {
           const msg = error instanceof Error ? error.message : 'Unknown error';
           console.warn(`[reddit] Error saving post ${redditPost.redditId}:`, msg);
         }
-
-        // Also keep legacy RedditPost table updated
-        await this.saveLegacyRedditPost(prisma, redditPost);
       }
 
       console.log(
@@ -180,32 +179,25 @@ export class RedditWorker extends BaseWorker {
     }
   }
 
-  private async saveLegacyRedditPost(prisma: any, post: RedditPostData) {
-    try {
-      await prisma.redditPost.upsert({
-        where: { redditId: post.redditId },
-        create: {
-          redditId: post.redditId,
-          subreddit: post.subreddit,
-          title: post.title,
-          body: post.body.substring(0, 10000),
-          score: post.score,
-          numComments: post.numComments,
-          url: post.url,
-          sentiment: post.sentiment,
-          sentimentLabel: post.sentimentLabel,
-          mentionedCards: post.mentionedCards,
-          createdAt: post.createdAt
-        },
-        update: {
-          score: post.score,
-          numComments: post.numComments,
-          updatedAt: new Date()
-        }
-      });
-    } catch {
-      // Legacy table might not exist, ignore
+  private extractKeyPhrases(text: string): string[] {
+    const lower = text.toLowerCase();
+    const phrases = new Set<string>();
+
+    // Investment-related phrases
+    const investmentPhrases = [
+      'investment', 'investing', 'buy', 'sell', 'hold',
+      'bullish', 'bearish', 'undervalued', 'overvalued',
+      'price prediction', 'market', 'speculation',
+      'long term', 'short term', 'portfolio'
+    ];
+
+    for (const phrase of investmentPhrases) {
+      if (lower.includes(phrase)) {
+        phrases.add(phrase);
+      }
     }
+
+    return Array.from(phrases).slice(0, 10); // Max 10 phrases
   }
 
   private analyzeSentiment(text: string): { score: number; label: string } {
