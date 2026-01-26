@@ -166,67 +166,52 @@ export class PokemonPriceTrackerWorker extends BaseWorker {
   }): Promise<NormalizedPrice | null> {
     const client = this.getClient();
 
-    // Try by set + number first (most accurate)
-    if (card.number) {
-      // Convert set name to setId format (e.g., "Base Set" -> "base1")
-      const setId = this.normalizeSetId(card.set);
-      const response = await client.getPriceBySetNumber(setId, card.number);
-      if (response) {
-        return client.normalizePrice(response);
-      }
+    // Use the parse-title endpoint which is the primary working API
+    // Build a search title from card name and set
+    const searchTitle = `${card.name} ${card.set}`;
+    const response = await client.parseTitle(searchTitle);
+
+    if (!response || response.matches.length === 0) {
+      return null;
     }
 
-    // Fallback: search by name
-    const searchResults = await client.searchCards(card.name, 5);
-    if (searchResults.length > 0) {
-      // Find best match by set name
-      const bestMatch = searchResults.find((r) =>
-        r.setId?.toLowerCase().includes(card.set.toLowerCase().replace(/\s+/g, ''))
-      ) || searchResults[0];
+    // Find the best match - prefer exact set name match
+    const bestMatch = response.matches.find((m) =>
+      m.setName.toLowerCase().includes(card.set.toLowerCase()) ||
+      card.set.toLowerCase().includes(m.setName.toLowerCase())
+    ) || response.matches[0];
 
-      const response = await client.getCardPrices(bestMatch.id);
-      if (response) {
-        return client.normalizePrice(response);
-      }
+    // Build normalized price from the match
+    const prices: NormalizedPrice['prices'] = [];
+
+    if (bestMatch.prices.market !== null) {
+      prices.push({
+        source: 'tcgplayer',
+        market: bestMatch.prices.market,
+        low: bestMatch.prices.low,
+        high: bestMatch.prices.high,
+      });
     }
 
-    return null;
-  }
+    // PSA grade if parsed
+    const gradedPrices: NormalizedPrice['gradedPrices'] = [];
+    if (response.parsed.psaGrade) {
+      // The market price likely includes the grade factor
+      gradedPrices.push({
+        grade: response.parsed.psaGrade.toString(),
+        grader: 'PSA',
+        priceCents: bestMatch.prices.market ? Math.round(bestMatch.prices.market * 100) : 0,
+      });
+    }
 
-  private normalizeSetId(setName: string): string {
-    // Common set name to ID mappings
-    const setMappings: Record<string, string> = {
-      'base set': 'base1',
-      'jungle': 'jungle',
-      'fossil': 'fossil',
-      'team rocket': 'teamrocket',
-      'gym heroes': 'gymheroes',
-      'gym challenge': 'gymchallenge',
-      'neo genesis': 'neogenesis',
-      'neo discovery': 'neodiscovery',
-      'neo revelation': 'neorevelation',
-      'neo destiny': 'neodestiny',
-      'legendary collection': 'legendary',
-      'expedition': 'expedition',
-      'aquapolis': 'aquapolis',
-      'skyridge': 'skyridge',
-      // Modern sets
-      'scarlet & violet': 'sv1',
-      'paldea evolved': 'sv2',
-      'obsidian flames': 'sv3',
-      '151': 'sv3pt5',
-      'paradox rift': 'sv4',
-      'paldean fates': 'sv4pt5',
-      'temporal forces': 'sv5',
-      'twilight masquerade': 'sv6',
-      'shrouded fable': 'sv6pt5',
-      'stellar crown': 'sv7',
-      'surging sparks': 'sv8',
-      'prismatic evolutions': 'sv8pt5',
+    return {
+      cardId: bestMatch.tcgPlayerId,
+      cardName: bestMatch.name,
+      setId: bestMatch.setId.toString(),
+      prices,
+      gradedPrices,
+      fetchedAt: new Date(),
     };
-
-    const normalized = setName.toLowerCase().trim();
-    return setMappings[normalized] || normalized.replace(/\s+/g, '');
   }
 
   private async storePrices(

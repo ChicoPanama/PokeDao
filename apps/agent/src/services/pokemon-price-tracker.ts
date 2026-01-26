@@ -83,6 +83,47 @@ export type PriceResponse = z.infer<typeof PriceResponseSchema>;
 export type CardData = z.infer<typeof CardSchema>;
 export type SetData = z.infer<typeof SetSchema>;
 
+export interface ParseTitleMatch {
+  tcgPlayerId: string;
+  name: string;
+  setName: string;
+  setId: number;
+  cardNumber: string;
+  rarity: string | null;
+  language: string;
+  matchScore: number;
+  matchReasons: string[];
+  prices: {
+    market: number | null;
+    low: number | null;
+    mid: number | null;
+    high: number | null;
+  };
+}
+
+export interface ParseTitleResponse {
+  originalTitle: string;
+  sanitizedTitle: string;
+  parsed: {
+    confidence: number;
+    psaGrade?: number;
+    setName?: string;
+    cardName?: string;
+    fieldConfidence: {
+      grade?: number;
+      setName?: number;
+      cardName?: number;
+    };
+  };
+  matches: ParseTitleMatch[];
+  metadata: {
+    parseTime: string;
+    processingTimeMs: number;
+    confidence: number;
+    apiCallsConsumed: number;
+  };
+}
+
 export interface NormalizedPrice {
   cardId: string;
   cardName: string;
@@ -102,7 +143,7 @@ export interface NormalizedPrice {
 }
 
 export class PokemonPriceTrackerClient {
-  private baseUrl = 'https://pokemonpricetracker.com/api/v1';
+  private baseUrl = 'https://www.pokemonpricetracker.com/api';
   private apiKey: string;
   private requestCount = 0;
   private lastRequestTime = 0;
@@ -158,7 +199,7 @@ export class PokemonPriceTrackerClient {
 
       const response = await fetch(url.toString(), {
         headers: {
-          'X-API-Key': this.apiKey,
+          'Authorization': `Bearer ${this.apiKey}`,
           'Content-Type': 'application/json',
         },
       });
@@ -268,6 +309,43 @@ export class PokemonPriceTrackerClient {
       return PriceResponseSchema.parse(data);
     } catch (error) {
       logger.warn({ setId, number, error }, 'Failed to parse price response');
+      return null;
+    }
+  }
+
+  /**
+   * Parse a card title (e.g., eBay listing title) and get pricing
+   * This is the primary working endpoint for the API
+   */
+  async parseTitle(title: string): Promise<ParseTitleResponse | null> {
+    await this.throttle();
+
+    try {
+      const response = await fetch(`${this.baseUrl}/v2/parse-title`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title }),
+      });
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          logger.error('API key unauthorized');
+          return null;
+        }
+        if (response.status === 429) {
+          logger.warn('Rate limit exceeded');
+          return null;
+        }
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const data = (await response.json()) as { data: ParseTitleResponse };
+      return data.data;
+    } catch (error) {
+      logger.error({ title, error }, 'Failed to parse title');
       return null;
     }
   }
