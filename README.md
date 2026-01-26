@@ -12,17 +12,28 @@
 
 | Layer | Status | Description |
 |-------|--------|-------------|
-| **Data Collection** | Running | 9 workers on cron schedules (eBay, crypto, Reddit, PSA, PPT, web2, TCGdex sync) |
-| **Signal Processing** | Running | Fair value, trend, liquidity, arbitrage detection + Groq LLM thesis |
-| **User Interface** | Running | Telegram bot, X/Twitter poster, Next.js dashboard |
+| **Card Metadata** (L0) | Running | TCGdex sync (21k+ cards), CardMatcher with cascading lookup, Redis cache |
+| **Data Collection** (L1) | Running | 8 market workers on cron (eBay, crypto, Reddit, PSA, PPT, web2) |
+| **Signal Processing** (L2) | Running | Fair value, trend, liquidity, arbitrage + Groq LLM thesis with rarity/illustrator |
+| **User Interface** (L3) | Running | Telegram bot, X/Twitter poster, Next.js dashboard |
 
 ---
 
 ## Architecture
 
-### 3-Layer System
+### 4-Layer System
 
 ```
+LAYER 0: CARD METADATA (TCGdex — Canonical Identity)
++--------------------------------------------------------------+
+|  tcgdex-sync       (0 2 * * *)   - 21k+ cards from TCGdex   |
+|  CardMatcher        (shared)     - Cascading card lookup     |
+|                                                              |
+|  Local JSON → PostgreSQL → Redis cache → Prisma relations    |
+|  rarity | illustrator | types | stage | imageUrl | tcgdexId  |
++--------------------------------------------------------------+
+            |  Card.tcgdexId + enrichment fields
+            v
 LAYER 1: DATA COLLECTION (Pure TypeScript, No LLM)
 +--------------------------------------------------------------+
 |  ebay-worker       (*/15 * * * *)  - eBay sold listings      |
@@ -31,7 +42,8 @@ LAYER 1: DATA COLLECTION (Pure TypeScript, No LLM)
 |  psa-worker        (0 6 * * *)     - PSA population data     |
 |  ppt-worker        (0 */2 * * *)   - PokemonPriceTracker     |
 |  web2-worker       (configurable)  - Web2 marketplace data   |
-|  tcgdex-sync       (0 2 * * *)    - Card metadata (21k+)    |
+|                                                              |
+|  Workers use CardMatcher for listing-to-card matching        |
 +--------------------------------------------------------------+
                             |
                             v
@@ -40,6 +52,8 @@ LAYER 2: SIGNAL PROCESSING (TypeScript + Groq LLM)
 |  processor/index.ts           - Runs every minute            |
 |  signal-calculator.ts         - Fair value, trend, liquidity |
 |  thesis-generator.ts          - Template (70%) + Groq (30%) |
+|                                                              |
+|  Reads card.rarity, card.illustrator from Layer 0            |
 +--------------------------------------------------------------+
                             |
               +-------------+-------------+
