@@ -31,7 +31,7 @@ export async function runAgentTick() {
     const { findFreshListings } = await import('./steps/01_fetch.js');
     const { normalizeListings } = await import('./steps/02_normalize.js');
     const { attachComps } = await import('./steps/03_features.js');
-    const { detectCandidatesWithAI } = await import('./steps/04_signal.js');
+    const { detectCandidates } = await import('./steps/04_signal.js');
     const { validateAndPersist } = await import('./steps/05_validate.js');
     const { stageAndMaybePost } = await import('./steps/06_output.js');
 
@@ -58,7 +58,7 @@ export async function runAgentTick() {
 
     // Step 4: Detect candidates (with optional AI thesis generation)
     const cands = await withSpan(agentTracer, 'detect_candidates', async (span) => {
-      const result = await detectCandidatesWithAI(withComps);
+      const result = detectCandidates(withComps);
       span.setAttribute('candidate_count', result.length);
       span.setAttribute('ai_thesis_enabled', process.env.AI_THESIS_ENABLED === 'true');
       return result;

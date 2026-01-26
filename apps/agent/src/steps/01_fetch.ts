@@ -1,9 +1,9 @@
-import { getSharedPrisma } from '../../../../packages/shared/db.js';
+import { sharedPrisma as prisma } from '../../../../packages/shared/db.js';
 
 export type FreshListing = {
-  id: string; // MarketListing.id
-  cardId: string; // normalized card id
-  source: string; // 'EBAY' | 'TCGPLAYER' | ...
+  id: string;
+  cardId: string;
+  source: string;
   priceCents: number;
   shippingCents: number | null;
   url?: string | null;
@@ -13,40 +13,30 @@ export type FreshListing = {
 export async function findFreshListings({
   maxAgeMin = Number(process.env.OPP_MAX_LISTING_AGE_MIN || 60),
 } = {}): Promise<FreshListing[]> {
-  const prisma = await getSharedPrisma();
   const since = new Date(Date.now() - maxAgeMin * 60_000);
-  // Use MarketListing.seenAt or lastSeenAt as freshness indicator
-  const rows = await prisma.marketListing.findMany({
-    where: {
-      OR: [
-        { seenAt: { gte: since } },
-        { lastSeenAt: { gte: since } },
-      ],
-      isActive: true,
-      canonicalCardId: { not: null },
-      priceCents: { not: null },
-    },
+  const rows = await prisma.listing.findMany({
+    where: { scrapedAt: { gte: since }, isActive: true },
     select: {
       id: true,
-      canonicalCardId: true,
+      cardId: true,
       source: true,
-      priceCents: true,
+      price: true,
+      priceUsd: true,
       url: true,
-      seenAt: true,
-      lastSeenAt: true,
+      scrapedAt: true,
     },
     take: 2000,
-    orderBy: { lastSeenAt: 'desc' },
+    orderBy: { scrapedAt: 'desc' },
   });
   return rows
-    .filter((r) => r.canonicalCardId && r.priceCents)
+    .filter((r): r is typeof r & { cardId: string } => !!r.cardId)
     .map((r) => ({
       id: r.id,
-      cardId: r.canonicalCardId!,
+      cardId: r.cardId,
       source: r.source,
-      priceCents: r.priceCents!,
-      shippingCents: null, // unknown at this layer; fee profile provides default
+      priceCents: Math.round((r.priceUsd ?? r.price) * 100),
+      shippingCents: null,
       url: r.url,
-      seenAt: r.seenAt ?? r.lastSeenAt,
+      seenAt: r.scrapedAt,
     }));
 }

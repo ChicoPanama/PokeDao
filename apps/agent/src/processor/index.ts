@@ -241,27 +241,29 @@ async function createSignalSnapshot(
       data: {
         cardId: card.id,
         cardKey: card.cardKey,
-        timestamp: new Date(),
 
         // Fair value
-        fairValueCents: Math.round(signals.fairValue * 100),
-        confidenceScore: signals.confidence,
+        fairValue: signals.fairValue,
+        fairValueMethod: 'MEDIAN_10',
+        confidence: signals.confidence,
+        sampleSize: 10, // Default from signal calculator
 
         // Trend
         trendDirection: signals.trend.direction,
-        trendPct: signals.trend.percent,
+        trendPercent: signals.trend.percent,
         trendPeriodDays: signals.trend.period,
 
         // Liquidity
         liquidityScore: signals.liquidity.score,
         activeListings: signals.liquidity.activeListings,
+        salesLast7d: 0,
+        salesLast30d: signals.liquidity.velocity30d,
         avgDaysOnMarket: signals.liquidity.avgDaysOnMarket,
-        velocity30d: signals.liquidity.velocity30d,
 
         // Sentiment
         sentimentScore: signals.sentiment.score,
         sentimentLabel: signals.sentiment.label,
-        sentimentPostCount: signals.sentiment.postCount,
+        mentionCount7d: signals.sentiment.postCount,
 
         // Scarcity
         psa10Pop: signals.scarcity.psa10Pop,
@@ -269,7 +271,13 @@ async function createSignalSnapshot(
         scarcityScore: signals.scarcity.scarcityScore,
 
         // Arbitrage
-        arbitrageOpportunities: signals.arbitrage as any
+        arbitrageCount: signals.arbitrage.length,
+        bestArbitrage: signals.arbitrage.length > 0 ? signals.arbitrage[0] as any : null,
+
+        // Full signal object
+        signals: signals as any,
+
+        calculatedAt: new Date()
       }
     });
 
@@ -300,23 +308,32 @@ async function storeOpportunityWithThesis(
     data: {
       cardId: opportunity.cardId,
       cardKey: opportunity.cardName.toLowerCase().replace(/\s+/g, '-'),
+      cardName: opportunity.cardName,
+      setName: opportunity.setName,
+      grade: opportunity.grade,
       listingId: opportunity.id,
       signalSnapshotId,
 
       // Pricing
-      listingPriceCents: Math.round(opportunity.listingPrice * 100),
-      fairValueCents: Math.round(signals.fairValue * 100),
-      discountPct: discount,
+      listingPrice: opportunity.listingPrice,
+      fairValue: signals.fairValue,
+      discount,
 
-      // Status
-      status: 'ACTIVE',
+      // Thesis
+      thesis,
+      thesisType: usedLLM ? 'LLM' : 'TEMPLATE',
       recommendation,
+      usedLLM,
+
+      // Signals snapshot
+      signals: signals as any,
 
       // Source
       source: opportunity.source,
-      sourceUrl: opportunity.listingUrl,
+      url: opportunity.listingUrl,
 
-      detectedAt: new Date()
+      // Status
+      status: 'PENDING'
     }
   });
 
@@ -324,21 +341,25 @@ async function storeOpportunityWithThesis(
   const thesisRecord = await db.thesisRecord.create({
     data: {
       opportunityId: dbOpportunity.id,
+      cardId: opportunity.cardId,
+      cardKey: opportunity.cardName.toLowerCase().replace(/\s+/g, '-'),
 
       // Thesis content
       thesis,
       recommendation,
+      confidence: signals.confidence,
 
       // Generation details
-      usedLLM,
-      modelName: usedLLM ? 'llama-3.1-8b-instant' : 'template',
-      promptTokens: usedLLM ? 500 : 0, // Approximate
-      completionTokens: usedLLM ? 200 : 0, // Approximate
-      costCents: usedLLM ? 0.014 : 0, // ~$0.00014 per call
-      generationTimeMs: thesisTimeMs,
+      thesisType: usedLLM ? 'LLM' : 'TEMPLATE',
+      templateName: usedLLM ? undefined : 'default',
+      model: usedLLM ? 'groq/llama-3.1-8b-instant' : undefined,
+      inputTokens: usedLLM ? 500 : undefined,
+      outputTokens: usedLLM ? 200 : undefined,
+      cost: usedLLM ? 0.00014 : 0,
+      generationMs: thesisTimeMs,
 
-      // Signals snapshot
-      signalsSnapshot: {
+      // Signals used to generate
+      signalsInput: {
         fairValue: signals.fairValue,
         confidence: signals.confidence,
         trend: signals.trend,
@@ -346,9 +367,7 @@ async function storeOpportunityWithThesis(
         sentiment: signals.sentiment,
         scarcity: signals.scarcity,
         arbitrage: signals.arbitrage
-      },
-
-      createdAt: new Date()
+      }
     }
   });
 

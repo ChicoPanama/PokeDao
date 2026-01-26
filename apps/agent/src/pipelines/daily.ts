@@ -1,6 +1,6 @@
 import { formatOpportunityThread } from '../../../../packages/social/x/post.js';
 import { postThread } from '../../../../packages/social/x/client.js';
-import { getSharedPrisma } from '../../../../packages/shared/db.js';
+import { sharedPrisma as prisma } from '../../../../packages/shared/db.js';
 import { cardTitleForTweet } from './title.js';
 
 function inWindow(now: Date) {
@@ -15,7 +15,6 @@ function inWindow(now: Date) {
 }
 
 export async function postDailyBest() {
-  const prisma = await getSharedPrisma();
   const now = new Date();
   if (!inWindow(now)) {
     console.log('[post] daily: outside posting window, skipping');
@@ -25,30 +24,30 @@ export async function postDailyBest() {
   const since = new Date(Date.now() - 24 * 3600 * 1000);
   const best = await prisma.opportunity.findFirst({
     where: { status: 'PENDING', createdAt: { gte: since } },
-    orderBy: [{ netSpreadBps: 'desc' }, { confidence: 'desc' }],
+    orderBy: [{ discount: 'desc' }],
   });
   if (!best) {
     console.log('[post] daily: no PENDING opportunities in 24h');
     return;
   }
 
-  const listing = await prisma.marketListing.findUnique({
+  const listing = await prisma.listing.findUnique({
     where: { id: best.listingId },
     select: { url: true },
   });
 
-  const cardTitle = await cardTitleForTweet(best.cardId);
+  const cardTitle = best.cardId ? await cardTitleForTweet(best.cardId) : best.cardName;
 
   const lines = formatOpportunityThread({
     cardTitle,
-    spreadPct: best.netSpreadBps / 100,
-    buyUrl: listing?.url || 'https://example.com',
+    spreadPct: best.discount,
+    buyUrl: listing?.url || best.url || 'https://example.com',
     sellCompUrl: undefined,
-    rationale: best.rationale,
+    rationale: best.thesis,
     risks: ['Condition variance', 'Fee drift', 'Listing cancellation'],
     timeWindow: 'Next 24–72h',
   });
 
   await postThread(lines);
-  await prisma.opportunity.update({ where: { id: best.id }, data: { status: 'POSTED' } });
+  await prisma.opportunity.update({ where: { id: best.id }, data: { status: 'ALERTED' } });
 }

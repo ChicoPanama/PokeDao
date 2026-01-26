@@ -250,7 +250,7 @@ export class PokemonPriceTrackerWorker extends BaseWorker {
       const existing = await prisma.priceSnapshot.findFirst({
         where: {
           rawHash,
-          timestamp: {
+          collectedAt: {
             gte: new Date(Date.now() - 24 * 60 * 60 * 1000),
           },
         },
@@ -267,20 +267,19 @@ export class PokemonPriceTrackerWorker extends BaseWorker {
 
       await prisma.priceSnapshot.create({
         data: {
-          cardId: card.id,
+          card: { connect: { id: card.id } },
           cardKey:
             card.cardKey || card.name.toLowerCase().replace(/\s+/g, '-'),
-          timestamp: now,
           source: sourceMap[sourcePrice.source] || 'POKEMON_PRICE_TRACKER',
           sourceVersion: 'ppt-v1',
-          sourceItemId: prices.cardId,
-          sourceUrl: `https://www.pokemonpricetracker.com/card/${prices.cardId}`,
+          externalId: prices.cardId,
           listingType: 'market_price',
-          priceCents: Math.round(sourcePrice.market * 100),
+          price: sourcePrice.market,
+          priceUsd: sourcePrice.market,
           currency: 'USD',
-          title: prices.cardName,
           raw: rawData as any,
           rawHash,
+          collectedAt: now,
           parserVersion: PARSER_VERSION,
         },
       });
@@ -311,7 +310,7 @@ export class PokemonPriceTrackerWorker extends BaseWorker {
       const existing = await prisma.priceSnapshot.findFirst({
         where: {
           rawHash,
-          timestamp: {
+          collectedAt: {
             gte: new Date(Date.now() - 24 * 60 * 60 * 1000),
           },
         },
@@ -321,23 +320,22 @@ export class PokemonPriceTrackerWorker extends BaseWorker {
 
       await prisma.priceSnapshot.create({
         data: {
-          cardId: card.id,
+          card: { connect: { id: card.id } },
           cardKey:
             card.cardKey || card.name.toLowerCase().replace(/\s+/g, '-'),
-          timestamp: now,
           source: 'POKEMON_PRICE_TRACKER',
           sourceVersion: 'ppt-v1',
-          sourceItemId: prices.cardId,
-          sourceUrl: `https://www.pokemonpricetracker.com/card/${prices.cardId}`,
+          externalId: prices.cardId,
           listingType: 'graded_price',
-          priceCents: gradePrice.priceCents,
+          price: gradePrice.priceCents / 100,
+          priceUsd: gradePrice.priceCents / 100,
           currency: 'USD',
           grade: `${gradePrice.grader} ${gradePrice.grade}`,
           grader: gradePrice.grader,
           gradeNumeric: parseFloat(gradePrice.grade),
-          title: `${prices.cardName} - ${gradePrice.grader} ${gradePrice.grade}`,
           raw: rawData as any,
           rawHash,
+          collectedAt: now,
           parserVersion: PARSER_VERSION,
         },
       });

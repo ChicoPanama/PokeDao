@@ -1,6 +1,5 @@
 import { getProfile } from '../../../../packages/shared/fees.js';
 import type { ListingWithComps } from './03_features.js';
-import { generateThesis, isAIThesisEnabled, type AIThesis } from '../lib/ai-thesis.js';
 
 export type OpportunityCandidate = ListingWithComps & {
   sellCompCents: number;
@@ -11,14 +10,8 @@ export type OpportunityCandidate = ListingWithComps & {
   confidence: number;
   rationale: string;
   sourceSell: string; // choose best exit (start with EBAY)
-  // AI-enhanced fields
-  aiThesis?: AIThesis;
 };
 
-/**
- * Detect arbitrage candidates from listings with comparable sales data
- * This is the synchronous version that generates static rationale only
- */
 export function detectCandidates(rows: ListingWithComps[]): OpportunityCandidate[] {
   const minSpreadBps = Number(process.env.OPP_MIN_NET_SPREAD_BPS || 1500);
   const minSales = Number(process.env.OPP_MIN_30D_SALES || 3);
@@ -58,65 +51,4 @@ export function detectCandidates(rows: ListingWithComps[]): OpportunityCandidate
     }
   }
   return out;
-}
-
-/**
- * Detect candidates with AI-powered thesis generation
- * Enriches candidates with investment thesis, risk factors, and catalysts
- */
-export async function detectCandidatesWithAI(rows: ListingWithComps[]): Promise<OpportunityCandidate[]> {
-  // First detect candidates with static rationale
-  const candidates = detectCandidates(rows);
-
-  // If AI thesis is not enabled, return as-is
-  if (!isAIThesisEnabled()) {
-    console.log('[SIGNAL] AI thesis disabled, using static rationale');
-    return candidates;
-  }
-
-  // Enrich top candidates with AI thesis (limit to top 10 to save API costs)
-  const topCandidates = candidates
-    .sort((a, b) => b.netSpreadBps - a.netSpreadBps)
-    .slice(0, 10);
-
-  console.log(`[SIGNAL] Generating AI thesis for ${topCandidates.length} candidates...`);
-
-  // Generate AI thesis for each candidate
-  const enrichedCandidates = await Promise.all(
-    topCandidates.map(async (candidate) => {
-      try {
-        const aiThesis = await generateThesis({
-          cardName: candidate.cardId, // Use cardId as fallback card identifier
-          priceCents: candidate.priceCents,
-          fairValueCents: candidate.compMedianCents30d,
-          compCount: candidate.compCount30d,
-          spreadBps: candidate.netSpreadBps,
-        });
-
-        // Update rationale with AI thesis if generated
-        const rationale = aiThesis.source === 'ai'
-          ? aiThesis.thesis
-          : candidate.rationale;
-
-        // Update confidence if AI provides higher conviction
-        const confidence = aiThesis.source === 'ai'
-          ? Math.max(candidate.confidence, aiThesis.confidence / 100)
-          : candidate.confidence;
-
-        return {
-          ...candidate,
-          rationale,
-          confidence,
-          aiThesis,
-        };
-      } catch (error) {
-        console.warn(`[SIGNAL] AI thesis failed for ${candidate.cardId}:`, error instanceof Error ? error.message : 'Unknown error');
-        return candidate;
-      }
-    })
-  );
-
-  // Combine AI-enriched top candidates with remaining candidates
-  const remainingCandidates = candidates.slice(10);
-  return [...enrichedCandidates, ...remainingCandidates];
 }
