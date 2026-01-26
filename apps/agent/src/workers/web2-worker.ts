@@ -41,7 +41,7 @@ export class Web2Worker extends BaseWorker {
       name: 'PRICECHARTING',
       baseUrl: 'https://www.pricecharting.com',
       rateLimit: 30,
-      enabled: process.env.WEB2_PRICECHARTING_ENABLED !== 'false',
+      enabled: process.env.WEB2_PRICECHARTING_ENABLED === 'true', // Disabled - use PokemonPriceTracker instead
     },
     {
       name: 'TCGPLAYER',

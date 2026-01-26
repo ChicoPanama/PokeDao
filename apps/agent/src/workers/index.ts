@@ -30,7 +30,6 @@ import { cryptoWorker } from './crypto-worker.js';
 import { redditWorker } from './reddit-worker.js';
 import { psaWorker } from './psa-worker.js';
 import { web2Worker } from './web2-worker.js';
-import { pricechartingWorker } from './pricecharting-worker.js';
 import { pokemonPriceTrackerWorker } from './pokemon-price-tracker-worker.js';
 
 // BullMQ workers
@@ -51,8 +50,7 @@ const config = {
   redditEnabled: process.env.REDDIT_WORKER_ENABLED !== 'false',
   psaEnabled: process.env.PSA_WORKER_ENABLED !== 'false',
   web2Enabled: process.env.WEB2_WORKER_ENABLED !== 'false',
-  pricechartingEnabled: process.env.PRICECHARTING_WORKER_ENABLED === 'true', // Disabled by default (paid API)
-  pokemonPriceTrackerEnabled: process.env.POKEMON_PRICE_TRACKER_ENABLED === 'true', // Disabled by default
+  pokemonPriceTrackerEnabled: process.env.POKEMON_PRICE_TRACKER_ENABLED === 'true', // Multi-source pricing aggregator
   xPosterEnabled: process.env.X_POSTER_ENABLED !== 'false',
   commentaryEnabled: process.env.COMMENTARY_ENABLED !== 'false',
 };
@@ -71,7 +69,6 @@ function registerWorkers(): void {
     registry.register(redditWorker, config.redditEnabled);
     registry.register(psaWorker, config.psaEnabled);
     registry.register(web2Worker, config.web2Enabled);
-    registry.register(pricechartingWorker, config.pricechartingEnabled);
     registry.register(pokemonPriceTrackerWorker, config.pokemonPriceTrackerEnabled);
   }
 
@@ -82,7 +79,6 @@ function registerWorkers(): void {
     reddit: config.redditEnabled,
     psa: config.psaEnabled,
     web2: config.web2Enabled,
-    pricecharting: config.pricechartingEnabled,
     pokemonPriceTracker: config.pokemonPriceTrackerEnabled,
   }, 'Data collection workers registered');
 }
